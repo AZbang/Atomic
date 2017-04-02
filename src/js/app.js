@@ -1,4 +1,6 @@
 const THREE = require('three');
+const OrbitControls = require('./OrbitControls');
+const constants = require('./constants');
 
 var container, stats;
 var camera, scene, raycaster, renderer;
@@ -6,67 +8,99 @@ var mouse = new THREE.Vector2(), INTERSECTED;
 var radius = 500, theta = 0;
 var frustumSize = 1000;
 
-init();
-animate();
+// Create your main scene
+var scene = new THREE.Scene();
 
-function init() {
-	container = document.createElement( 'div' );
-	document.body.appendChild( container );
+// Create your main camera
+var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
-	var aspect = window.innerWidth / window.innerHeight;
-	camera = new THREE.OrthographicCamera( frustumSize * aspect / - 2, frustumSize * aspect / 2, frustumSize / 2, frustumSize / - 2, 1, 1000 );
-	scene = new THREE.Scene();
+var lights = [];
+lights[ 0 ] = new THREE.PointLight( 0xffffff, 1, 0 );
+lights[ 1 ] = new THREE.PointLight( 0xffffff, 1, 0 );
+lights[ 2 ] = new THREE.PointLight( 0xffffff, 1, 0 );
 
-	var light = new THREE.DirectionalLight( 0xffffff, 1 );
-	light.position.set( 1, 1, 1 ).normalize();
-	scene.add( light );
+lights[ 0 ].position.set( 0, 200, 0 );
+lights[ 1 ].position.set( 100, 200, 100 );
+lights[ 2 ].position.set( - 100, - 200, - 100 );
+
+scene.add( lights[ 0 ] );
+scene.add( lights[ 1 ] );
+scene.add( lights[ 2 ] );
+
+// Create your renderer
+var renderer = new THREE.WebGLRenderer();
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
+
+var orbit = new THREE.OrbitControls( camera, renderer.domElement );
+
+// Create a cube
+var data = {
+	radius : 30,
+	widthSegments : 10,
+	heightSegments : 7,
+	phiStart : 0,
+	phiLength : Math.PI * 2,
+	thetaStart : 0,
+	thetaLength : Math.PI
+};
+
+var geometry = new THREE.SphereGeometry(data.radius, data.widthSegments, data.heightSegments, data.phiStart, data.phiLength, data.thetaStart, data.thetaLength);
+
+var mesh = new THREE.Object3D();
+mesh.add(new THREE.Mesh(
+	geometry,
+	new THREE.MeshPhongMaterial( {
+		color: 0xFF4848,
+		emissive: 0xDE2A2A,
+		side: THREE.DoubleSide,
+		shading: THREE.FlatShading
+	})
+));
+scene.add(mesh);
+
+// Set up the main camera
+camera.position.z = 500;
+
+// Load the background texture
+var texture = THREE.ImageUtils.loadTexture('img/bg1.png');
+var backgroundMesh = new THREE.Mesh(
+    new THREE.PlaneGeometry(2, 2, 0),
+    new THREE.MeshBasicMaterial({
+        map: texture
+    }));
+
+backgroundMesh.material.depthTest = false;
+backgroundMesh.material.depthWrite = false;
+
+// Create your background scene
+var backgroundScene = new THREE.Scene();
+var backgroundCamera = new THREE.Camera();
+backgroundScene.add(backgroundCamera );
+backgroundScene.add(backgroundMesh );
 
 
-	var geometry = new THREE.SphereGeometry(100, 100, 100);
-	var material = new THREE.MeshBasicMaterial( { color: Math.random() * 0xffffff, wireframe: true } )
-	var sphere = new THREE.Mesh( geometry, material );
-	sphere.position.x = Math.random() * 800 - 400;
-	sphere.position.y = Math.random() * 800 - 400;
-	sphere.position.z = Math.random() * 800 - 400;
-	scene.add( sphere );
+// Rendering function
+var render = () => {
+    requestAnimationFrame(render);
 
-	renderer = new THREE.WebGLRenderer();
-	renderer.setClearColor( 0xf0f0f0 );
-	renderer.setPixelRatio( window.devicePixelRatio );
-	renderer.setSize( window.innerWidth, window.innerHeight );
-	renderer.sortObjects = false;
-	container.appendChild(renderer.domElement);
-
-
-	document.addEventListener( 'mousemove', onDocumentMouseMove, false );
-	window.addEventListener( 'resize', onWindowResize, false );
-}
-function onWindowResize() {
-	var aspect = window.innerWidth / window.innerHeight;
-	camera.left   = - frustumSize * aspect / 2;
-	camera.right  =   frustumSize * aspect / 2;
-	camera.top    =   frustumSize / 2;
-	camera.bottom = - frustumSize / 2;
-	camera.updateProjectionMatrix();
-	renderer.setSize( window.innerWidth, window.innerHeight );
-}
-function onDocumentMouseMove( event ) {
-	event.preventDefault();
-	mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-	mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
-}
-
-function animate() {
-	requestAnimationFrame( animate );
-	render();
-}
-function render() {
-	theta += 0.1;
-	camera.position.x = radius * Math.sin( THREE.Math.degToRad( theta ) );
-	camera.position.y = radius * Math.sin( THREE.Math.degToRad( theta ) );
-	camera.position.z = radius * Math.cos( THREE.Math.degToRad( theta ) );
+	mesh.rotation.x += 0.001;
+	mesh.rotation.y += 0.001;
 	camera.lookAt( scene.position );
 	camera.updateMatrixWorld();
 
-	renderer.render( scene, camera );
+    renderer.autoClear = false;
+    renderer.clear();
+    renderer.render(backgroundScene , backgroundCamera );
+    renderer.render(scene, camera);
+};
+render();
+
+
+// Bind Events
+var onWindowResize = () => {
+	camera.aspect = window.innerWidth / window.innerHeight;
+	camera.updateProjectionMatrix();
+	renderer.setSize( window.innerWidth, window.innerHeight );
 }
+window.addEventListener('resize', onWindowResize, false);
