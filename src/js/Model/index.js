@@ -1,5 +1,5 @@
 const THREE = require('three');
-const Molecule = require('Molecule');
+const Molecule = require('./Molecule');
 const OrbitControls = require('./OrbitControls');
 
 class Model {
@@ -7,16 +7,17 @@ class Model {
 		this.w = w;
 		this.h = h;
 
-		this.molecule;
+		this.molecules = [];
 
 		// init three.js
 		this.renderer = new THREE.WebGLRenderer();
 		this.renderer.setSize(this.w, this.h);
-		document.body.appendChild(renderer.domElement);
+		document.body.appendChild(this.renderer.domElement);
 
 		this.camera = new THREE.PerspectiveCamera(75, this.w / this.h, 0.1, 1000);
+		this.camera.position.z = 500;
 		
-		this.orbit = new THREE.OrbitControls( camera, renderer.domElement );
+		this.orbit = new THREE.OrbitControls(this.camera, this.renderer.domElement);
 		
 		this.scene = new THREE.Scene();
 
@@ -29,16 +30,16 @@ class Model {
 		this.lights[1].position.set(100, 200, 100);
 		this.lights[2].position.set(-100, -200, -100);
 
-		this.scene.add(lights[0]);
-		this.scene.add(lights[1]);
-		this.scene.add(lights[2]);
+		this.scene.add(this.lights[0]);
+		this.scene.add(this.lights[1]);
+		this.scene.add(this.lights[2]);
 
 		// Load the background texture
 		this.backgroundTexture = THREE.ImageUtils.loadTexture('img/bg1.png');
 		this.backgroundMesh = new THREE.Mesh(
 			new THREE.PlaneGeometry(2, 2, 0),
 			new THREE.MeshBasicMaterial({
-				map: backgroundTexture
+				map: this.backgroundTexture
 			}));
 
 		this.backgroundMesh.material.depthTest = false;
@@ -62,7 +63,7 @@ class Model {
 
 	addMolecule() {
 		let mol = new Molecule(this, this.molecules.length);
-		this.molecules.push(mol);
+		return this.molecules.push(mol);
 	}
 	removeMolecule(mol) {
 		this.molecules.splice(mol.index, 1);
@@ -73,7 +74,7 @@ class Model {
 	}
 
 	loop() {
-		requestAnimationFrame(this.loop);
+		requestAnimationFrame(() => this.loop());
 
 		for(let i = 0; i < this.molecules.lenght; i++) {
 			this.molecules.update();
