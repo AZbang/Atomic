@@ -61,8 +61,8 @@ class Model {
 		this.renderer.setSize(this.w, this.h);	
 	}
 
-	addMolecule() {
-		let mol = new Molecule(this, this.molecules.length);
+	addMolecule(data) {
+		let mol = new Molecule(this, this.molecules.length, data);
 		return this.molecules.push(mol);
 	}
 	removeMolecule(mol) {
