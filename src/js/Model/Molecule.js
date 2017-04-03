@@ -1,5 +1,6 @@
 const THREE = require('three');
 const Atom = require('./Atom');
+const Link = require('./Link');
 
 class Molecule {
 	constructor(model, index, data) {
@@ -16,6 +17,7 @@ class Molecule {
 		this.model.scene.add(this.stage);
 
 		this.atoms = [];
+		this.links = [];
 
 		this._initAtoms();
 		this._bindNodes();
@@ -25,22 +27,27 @@ class Molecule {
 		let pos = this._data.coords[0].conformers[0];
 		
 		for(let i = 0; i < this._data.atoms.element.length; i++) {
-			this.atoms.push(new Atom(this, this._data.atoms.element[i], pos.x[i], pos.y[i], pos.z[i]));
+			this.atoms.push(
+				new Atom(this, this._data.atoms.element[i], pos.x[i], pos.y[i], pos.z[i])
+			);
 		}
 	}
 	_bindNodes() {
 		for(let i = 0; i < this._data.bonds.aid1.length; i++) {
-			let id = this._data.bonds.aid1[i]-1;
-			let aid = this._data.bonds.aid2[i]-1;
+			let aid1 = this._data.bonds.aid1[i]-1;
+			let aid2 = this._data.bonds.aid2[i]-1;
 			let type = this._data.bonds.order[i];
-			this.atoms[id].bindNode(aid, type);
+
+			this.links.push(
+				new Link(this, this.atoms[aid1], this.atoms[aid2], type)
+			);
 		}
 	}
 
 	update() {
-		for(let i = 0; i < atoms.length; i++) {
-			this.atoms.update();
-		}
+		// for(let i = 0; i < atoms.length; i++) {
+		// 	this.atoms.update();
+		// }
 	}
 }
 

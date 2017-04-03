@@ -1,10 +1,14 @@
 const THREE = require('three');
 
 class Atom {
-	constructor(molecule, x, y, z) {
+	constructor(molecule, id, x, y, z) {
 		this.molecule = molecule;
 		this.model = molecule.model;
 
+		this.x = x*20;
+		this.y = y*20;
+		this.z = z*20;
+		
 		this.nodes = [];
 
 		this.formula;
@@ -12,11 +16,10 @@ class Atom {
 
 		this.color = 0xFF4848;
 		this.radius = 10;
-		this.widthSegments = 5;
-		this.heightSegments = 5;
+		this.detail = 2;
 
 		// create three.js objects
-		this.geometry = new THREE.SphereGeometry(this.radius, this.widthSegments, this.heightSegments);
+		this.geometry = new THREE.IcosahedronGeometry(this.radius, this.detail);
 		this.mesh = new THREE.Object3D();
 		this.mesh.add(new THREE.Mesh(
 			this.geometry,
@@ -28,17 +31,9 @@ class Atom {
 			})
 		));
 
-		this.mesh.position
-			.set(x, y, z)
-			.multiplyScalar(20);
+		this.mesh.position.set(this.x, this.y, this.z);
 
 		this.molecule.stage.add(this.mesh);
-	}
-	bindNode(aid, type) {
-		this.nodes.push({
-			atom: this.molecule.atoms[aid],
-			type: type
-		});
 	}
 	update() {
 
