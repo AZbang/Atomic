@@ -1,4 +1,5 @@
 const THREE = require('three');
+const atoms = require('./atoms.json');
 
 class Atom {
 	constructor(molecule, id, x, y, z) {
@@ -11,10 +12,10 @@ class Atom {
 		
 		this.nodes = [];
 
-		this.formula;
-		this.label;
+		this.data = atoms[id];
 
-		this.color = 0xFF4848;
+		this.color = +(''+this.data.color).toLowerCase();
+		this.shadow = +(''+this.data.shadow).toLowerCase();
 		this.radius = 10;
 		this.detail = 2;
 
@@ -25,7 +26,7 @@ class Atom {
 			this.geometry,
 			new THREE.MeshPhongMaterial({
 				color: this.color,
-				emissive: this.color + 0x990000,
+				emissive: this.shadow,
 				side: THREE.DoubleSide,
 				shading: THREE.FlatShading
 			})
