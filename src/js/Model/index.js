@@ -35,11 +35,10 @@ class Model {
 		this.scene.add(this.lights[2]);
 
 		// Load the background texture
-		this.backgroundTexture = THREE.ImageUtils.loadTexture('img/bg1.png');
 		this.backgroundMesh = new THREE.Mesh(
 			new THREE.PlaneGeometry(2, 2, 0),
 			new THREE.MeshBasicMaterial({
-				map: this.backgroundTexture
+				color: 0x000000
 			}));
 
 		this.backgroundMesh.material.depthTest = false;

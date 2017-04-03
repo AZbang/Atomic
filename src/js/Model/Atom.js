@@ -12,11 +12,11 @@ class Atom {
 		
 		this.nodes = [];
 
-		this.data = atoms[id];
+		this.data = atoms[id-1];
 
 		this.color = +(''+this.data.color).toLowerCase();
 		this.shadow = +(''+this.data.shadow).toLowerCase();
-		this.radius = 10;
+		this.radius = +this.data.covalentRadius ? +this.data.covalentRadius*10 : 20;
 		this.detail = 2;
 
 		// create three.js objects
