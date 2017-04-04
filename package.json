@@ -30,6 +30,9 @@
     "gulp-zip": "^4.0.0"
   },
   "dependencies": {
+    "jquery": "^3.2.1",
+    "node-fetch": "^1.6.3",
+    "pubchem-access": "^1.0.1",
     "three": "^0.84.0"
   }
 }
