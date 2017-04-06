@@ -45,9 +45,9 @@ class Molecule {
 	}
 
 	update() {
-		// for(let i = 0; i < atoms.length; i++) {
-		// 	this.atoms.update();
-		// }
+		this.stage.rotation.x += 0.001;
+		this.stage.rotation.y += 0.001;
+		this.stage.rotation.z += 0.001;
 	}
 }
 

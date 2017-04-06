@@ -15,7 +15,7 @@ class Model {
 		document.body.appendChild(this.renderer.domElement);
 
 		this.camera = new THREE.PerspectiveCamera(75, this.w / this.h, 0.1, 1000);
-		this.camera.position.z = 500;
+		this.camera.position.z = 40;
 		
 		this.orbit = new THREE.OrbitControls(this.camera, this.renderer.domElement);
 		
@@ -64,8 +64,8 @@ class Model {
 		let mol = new Molecule(this, this.molecules.length, data);
 		return this.molecules.push(mol);
 	}
-	removeMolecule(mol) {
-		this.molecules.splice(mol.index, 1);
+	removeMolecule(i) {
+		this.molecules.splice(i, 1);
 	}
 
 	start() {
