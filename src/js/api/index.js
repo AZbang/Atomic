@@ -26,11 +26,11 @@ module.exports.search = (req, cb) => {
 			}, 'JSON', 'raw');
 	});
 
-	$('body').wikiblurb({
+	$('#info').wikiblurb({
 		wikiURL: "http://ru.wikipedia.org/",
-		type: "custom",
-		customSelector: ".thumbinner",
-		page: req.replace(' ', '_'),
-		section: 0          
+		// type: "custom",
+		// customSelector: ".thumbinner",
+		page: req,
+		section: 0
 	});
 }

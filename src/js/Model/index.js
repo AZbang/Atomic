@@ -1,6 +1,7 @@
 const THREE = require('three');
 const Molecule = require('./Molecule');
 const OrbitControls = require('./OrbitControls');
+const $ = require('jquery');
 
 class Model {
 	constructor(w, h) {
@@ -12,12 +13,12 @@ class Model {
 		// init three.js
 		this.renderer = new THREE.WebGLRenderer();
 		this.renderer.setSize(this.w, this.h);
-		document.body.appendChild(this.renderer.domElement);
+		document.getElementById('model').appendChild(this.renderer.domElement);
 
 		this.camera = new THREE.PerspectiveCamera(75, this.w / this.h, 0.1, 1000);
 		this.camera.position.z = 40;
 		
-		this.orbit = new THREE.OrbitControls(this.camera, this.renderer.domElement);
+		this.orbit = new THREE.OrbitControls(this.camera, this.renderer.domElement, document.getElementById('model'));
 		
 		this.scene = new THREE.Scene();
 
@@ -49,6 +50,14 @@ class Model {
 		this.backgroundCamera = new THREE.Camera();
 		this.backgroundScene.add(this.backgroundCamera);
 		this.backgroundScene.add(this.backgroundMesh);
+
+		$('input').focusin( function(e) {
+		    // disable orbit camera when cursor is in input field
+		    controls.noPan = true;
+		}).focusout( function(e) {
+		    // enable orbit camera when cursor is losing focus
+		    controls.noPan = false;
+		});
 	}
 
 	resize(w, h) {
