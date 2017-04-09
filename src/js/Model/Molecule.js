@@ -8,6 +8,8 @@ class Molecule {
 		this.index = 0;
 		this._data = data.PC_Compounds[0];
 
+		console.log(this._data);
+
 		this.label;
 		this.synonymLabel;
 		this.formula;
@@ -21,6 +23,8 @@ class Molecule {
 
 		this._initAtoms();
 		this._bindNodes();
+
+		this.model.camera.position.z = Math.min(this.atoms.length*20, 200);
 	}
 
 	_initAtoms() {
@@ -46,8 +50,7 @@ class Molecule {
 
 	update() {
 		this.stage.rotation.x += 0.001;
-		this.stage.rotation.y += 0.001;
-		this.stage.rotation.z += 0.001;
+		this.stage.rotation.y += 0.0001;
 	}
 }
 

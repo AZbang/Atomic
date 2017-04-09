@@ -5,18 +5,22 @@ const $ = require('jquery');
 
 class Model {
 	constructor(w, h) {
-		this.w = w;
+		this.w = w - w/100*25;
 		this.h = h;
 
 		this.molecules = [];
 
 		// init three.js
-		this.renderer = new THREE.WebGLRenderer();
+		this.renderer = new THREE.WebGLRenderer({
+			antialias: true,
+			alpha: true
+		});
+		this.renderer.setClearColor(0xffffff, 0);
 		this.renderer.setSize(this.w, this.h);
+
 		document.getElementById('model').appendChild(this.renderer.domElement);
 
 		this.camera = new THREE.PerspectiveCamera(75, this.w / this.h, 0.1, 1000);
-		this.camera.position.z = 40;
 		
 		this.orbit = new THREE.OrbitControls(this.camera, this.renderer.domElement, document.getElementById('model'));
 		
@@ -34,30 +38,6 @@ class Model {
 		this.scene.add(this.lights[0]);
 		this.scene.add(this.lights[1]);
 		this.scene.add(this.lights[2]);
-
-		// Load the background texture
-		this.backgroundMesh = new THREE.Mesh(
-			new THREE.PlaneGeometry(2, 2, 0),
-			new THREE.MeshBasicMaterial({
-				color: 0x000000
-			}));
-
-		this.backgroundMesh.material.depthTest = false;
-		this.backgroundMesh.material.depthWrite = false;
-
-		// Create your background scene
-		this.backgroundScene = new THREE.Scene();
-		this.backgroundCamera = new THREE.Camera();
-		this.backgroundScene.add(this.backgroundCamera);
-		this.backgroundScene.add(this.backgroundMesh);
-
-		$('input').focusin( function(e) {
-		    // disable orbit camera when cursor is in input field
-		    controls.noPan = true;
-		}).focusout( function(e) {
-		    // enable orbit camera when cursor is losing focus
-		    controls.noPan = false;
-		});
 	}
 
 	resize(w, h) {
@@ -74,7 +54,10 @@ class Model {
 		return this.molecules.push(mol);
 	}
 	removeMolecule(i) {
-		this.molecules.splice(i, 1);
+		if(this.molecules[i]) {
+			this.scene.remove(this.molecules[i].stage);
+			this.molecules.splice(i, 1);
+		}
 	}
 
 	start() {
@@ -84,16 +67,12 @@ class Model {
 	loop() {
 		requestAnimationFrame(() => this.loop());
 
-		for(let i = 0; i < this.molecules.lenght; i++) {
-			this.molecules.update();
+		for(let i = 0; i < this.molecules.length; i++) {
+			this.molecules[i].update();
 		}
 
 		this.camera.lookAt(this.scene.position);
 		this.camera.updateMatrixWorld();
-
-		this.renderer.autoClear = false;
-		this.renderer.clear();
-		this.renderer.render(this.backgroundScene , this.backgroundCamera);
 		this.renderer.render(this.scene, this.camera);
 	}
 }

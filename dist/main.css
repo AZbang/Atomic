@@ -1,37 +1,59 @@
 body {
 	margin: 0px;
 	overflow: hidden;
-	background: #000;
+
+	background: -moz-radial-gradient(center, ellipse cover, rgba(130,130,130,1) 0%, rgba(255,255,255,1) 100%); /* ff3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(130,130,130,1)), color-stop(100%, rgba(255,255,255,1))); /* safari4+,chrome */
+	background:-webkit-radial-gradient(center, ellipse cover, rgba(130,130,130,1) 0%, rgba(255,255,255,1) 100%); /* safari5.1+,chrome10+ */
+	background: -o-radial-gradient(center, ellipse cover, rgba(130,130,130,1) 0%, rgba(255,255,255,1) 100%); /* opera 11.10+ */
+	background: -ms-radial-gradient(center, ellipse cover, rgba(130,130,130,1) 0%, rgba(255,255,255,1) 100%); /* ie10+ */
+	background:radial-gradient(ellipse at center, rgba(130,130,130,1) 0%, rgba(255,255,255,1) 100%); /* w3c */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#828282', endColorstr='#FFFFFF',GradientType=1 ); /* ie6-9 */
 }
-canvas {
-	margin-top: 70px;
+
+
+
+.wiki-hidden {
+	display: none;
+}
+
+#logo {
+	font-size: 2em;
+	position: absolute;
+	top: 30px;
+	left: 30px;
+}
+#logo .icon {
+	color: #54ABFF;
 }
 #search-form {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 62%;
-    height: 50px;
+	position: absolute;
+	right: 470px;
+	top: 30px;
 }
+
 #search {
-	width: 100%;
-    height: 90%;
-    border-radius: 10px;
-    border: none;
-    padding-left: 20px;
-    font-size: 1.1em;
-}
-#search:focus {
-	outline: none;
+	width: 40rem;
 }
 
 #info {
-    width: 30%;
     position: absolute;
     right: 20px;
     top: 20px;
-    background: #fff;
-    height: 95%;
-    border-radius: 4px;
     overflow-y: scroll;
+    width: 18%;
+    max-height: 93%;
+}
+
+#btn-choose-structure {
+	position: absolute;
+	right: 400px;
+	top: 40px;
+	font-size: 2em;
+	cursor: pointer;
+}
+
+
+#btn-toggle-info:hover, #btn-choose-structure:hover {
+	color: #54ABFF;
 }

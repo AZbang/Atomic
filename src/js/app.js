@@ -10,13 +10,13 @@ $('#search-form').on('submit', (e) => {
 
     let req = $('#search').val();
     api.search(req, (data) => {
-        $('#search').val('');
-
         model.removeMolecule(0);
         model.addMolecule(data);
     });
 });
 
+$('#search').val('ЛСД');
+$('#search-form').submit();
 
 window.onresize = () => {
 	model.resize(window.innerWidth, window.innerHeight);

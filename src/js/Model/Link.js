@@ -20,7 +20,7 @@ class Link {
 
 			let mesh = new THREE.Object3D();
 			let geometry = new THREE.TubeGeometry(
-				new THREE.SplineCurve3([p1, p2]),
+				new THREE.CatmullRomCurve3([p1, p2]),
 				12, 2/type
 			);
 

@@ -17,6 +17,20 @@ module.exports.search = (req, cb) => {
 			.execute((data, status) => {
 				if(status !== 1) return;
 
+				let wiki = $('<div></div>').wikiblurb({
+					wikiURL: "http://ru.wikipedia.org/",
+					// type: "custom",
+					// customSelector: ".thumbinner",
+					page: req,
+					section: 0,
+					callback: () => {
+						let table = wiki.find('.infobox tbody');
+						$('#info .image').html(table.find('tr img')[0]);
+						$('#info .header').text(req[0].toUpperCase() + req.slice(1));
+						$('#info .description').html(wiki.find('.nbs-wikiblurb > p'));
+					}
+				});
+
 				let cid = data.PropertyTable.Properties[0].CID;
 				let url = `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/${cid}/record/JSON/?record_type=3d&response_type=display`;
 				$.getJSON(url)
@@ -24,13 +38,5 @@ module.exports.search = (req, cb) => {
 						cb(data);
 					});
 			}, 'JSON', 'raw');
-	});
-
-	$('#info').wikiblurb({
-		wikiURL: "http://ru.wikipedia.org/",
-		// type: "custom",
-		// customSelector: ".thumbinner",
-		page: req,
-		section: 0
 	});
 }
