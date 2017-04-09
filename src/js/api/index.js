@@ -21,7 +21,7 @@ module.exports.search = (req, cb) => {
 				}
 
 				let wiki = $('<div></div>').wikiblurb({
-					wikiURL: "http://ru.wikipedia.org/",
+					wikiURL: "https://ru.wikipedia.org/",
 					// type: "custom",
 					// customSelector: ".thumbinner",
 					page: req,
