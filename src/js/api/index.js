@@ -15,7 +15,10 @@ module.exports.search = (req, cb) => {
 			.setName(data.text[0])
 			.getIUPACName()
 			.execute((data, status) => {
-				if(status !== 1) return;
+				if(status !== 1) {
+					cb.error && cb.error();
+					return;
+				}
 
 				let wiki = $('<div></div>').wikiblurb({
 					wikiURL: "http://ru.wikipedia.org/",
@@ -35,7 +38,7 @@ module.exports.search = (req, cb) => {
 				let url = `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/${cid}/record/JSON/?record_type=3d&response_type=display`;
 				$.getJSON(url)
 					.done((data) => {
-						cb(data);
+						cb.done && cb.done(data);
 					});
 			}, 'JSON', 'raw');
 	});

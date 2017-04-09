@@ -9,12 +9,26 @@ $('#search-form').on('submit', (e) => {
     e.preventDefault();
 
     let req = $('#search').val();
-    api.search(req, (data) => {
-        model.removeMolecule(0);
-        model.addMolecule(data);
+    $('#loader').show();
+
+    model.removeMolecule(0);
+    $('#error').hide();
+
+    api.search(req, {
+    	done: (data) => {
+	    	$('#loader').hide();
+	        model.addMolecule(data);
+	    },
+    	error: () => {
+    		$('#loader').hide();
+    		$('#error').show();
+    		$('#error-info').text(`Вещества по запросу "${req}" нет в базе данных PubChem`);
+    	}
     });
 });
 
+$('#error').hide();
+$('#loader').hide();
 $('#search').val('ЛСД');
 $('#search-form').submit();
 
