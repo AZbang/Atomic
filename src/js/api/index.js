@@ -1,4 +1,3 @@
-const $ = require('jquery');
 const pubchem = require('pubchem-access').domain('compound');
 
 const key = require('./key');
@@ -11,27 +10,48 @@ module.exports.search = (req, cb) => {
 		'&lang=ru-en'
 
 	$.getJSON(translate, (data) => {
+		let image = $('#info .image').empty();
+		let header = $('#info .header').empty();
+		let description = $('#info .description').empty();
+		let meta = $('#info .meta').empty();
+
+		$('#info-icon').show();
+
 		pubchem
 			.setName(data.text[0])
 			.getIUPACName()
 			.execute((data, status) => {
 				if(status !== 1) {
 					cb.error && cb.error();
+					$('#info-icon').attr('class', 'icon sticky note outline');
+					header.text(req[0].toUpperCase() + req.slice(1));
+					description.empty().html(`<p>По запросу <b>"${req}"</b> нет данных на Википедиа</p>`);
 					return;
 				}
 
 				let wiki = $('<div></div>').wikiblurb({
 					wikiURL: "https://ru.wikipedia.org/",
-					// type: "custom",
-					// customSelector: ".thumbinner",
 					page: req,
 					section: 0,
 					callback: () => {
+						$('body').append(wiki);
 						let table = wiki.find('.infobox tbody');
 						
-						$('#info .header').text(req[0].toUpperCase() + req.slice(1));
-						$('#info .image').empty().append(table.find('tr img')[0]);
-						$('#info .description').empty().append(wiki.find('.nbs-wikiblurb > p'));
+						if(table[0]) {
+							$('#info-icon').attr('class', 'lab icon loading');
+							$('#info-icon').hide();
+
+							header.text(req[0].toUpperCase() + req.slice(1));
+							image.append(table.find('tr img')[0]);
+
+							let wikiDesc = wiki.find('.nbs-wikiblurb > p');
+							description.empty().append(wikiDesc);
+
+							$('#info').transition('pulse');
+						} else {
+							$('#info-icon').attr('class', 'icon sticky note outline');
+							description.empty().html(`<p>По запросу <b>"${req}"</b> нет данных на Википедиа</p>`);
+						}
 					}
 				});
 

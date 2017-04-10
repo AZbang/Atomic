@@ -1,4 +1,3 @@
-const THREE = require('three');
 const atoms = require('./atoms.json');
 
 class Atom {

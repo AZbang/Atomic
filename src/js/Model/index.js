@@ -1,7 +1,5 @@
-const THREE = require('three');
 const Molecule = require('./Molecule');
 const OrbitControls = require('./OrbitControls');
-const $ = require('jquery');
 
 class Model {
 	constructor(w, h) {
@@ -18,13 +16,14 @@ class Model {
 		this.renderer.setClearColor(0xffffff, 0);
 		this.renderer.setSize(this.w, this.h);
 
-		document.getElementById('model').appendChild(this.renderer.domElement);
+		this.wrap = document.getElementById('model');
+		this.wrap.appendChild(this.renderer.domElement);
 
 		this.camera = new THREE.PerspectiveCamera(75, this.w / this.h, 0.1, 1000);
-		
-		this.orbit = new THREE.OrbitControls(this.camera, this.renderer.domElement, document.getElementById('model'));
-		
+		this.raycaster = new THREE.Raycaster();
+		this.orbit = new THREE.OrbitControls(this.camera, this.renderer.domElement, this.wrap);
 		this.scene = new THREE.Scene();
+		this.mouse = new THREE.Vector2();
 
 		this.lights = [];
 		this.lights[0] = new THREE.PointLight(0xffffff, 1, 0);
@@ -38,6 +37,7 @@ class Model {
 		this.scene.add(this.lights[0]);
 		this.scene.add(this.lights[1]);
 		this.scene.add(this.lights[2]);
+
 	}
 
 	resize(w, h) {
@@ -67,12 +67,13 @@ class Model {
 	loop() {
 		requestAnimationFrame(() => this.loop());
 
+		this.camera.lookAt(this.scene.position);
+		this.camera.updateMatrixWorld();
+
 		for(let i = 0; i < this.molecules.length; i++) {
 			this.molecules[i].update();
 		}
 
-		this.camera.lookAt(this.scene.position);
-		this.camera.updateMatrixWorld();
 		this.renderer.render(this.scene, this.camera);
 	}
 }

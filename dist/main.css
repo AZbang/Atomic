@@ -48,6 +48,13 @@ body {
     overflow-y: scroll;
     width: 18%;
     max-height: 93%;
+    min-height: 50%;
+}
+#info-icon {
+	position: absolute;
+	left: 42%;
+	top: 45%;
+	font-size: 5em;
 }
 
 #btn-choose-structure {
@@ -66,5 +73,5 @@ body {
 }
 
 #btn-choose-structure:hover {
-	color: #54ABFF;
+	color: #378CFF;
 }

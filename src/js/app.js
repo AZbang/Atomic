@@ -1,4 +1,3 @@
-const $ = require('jquery');
 const Model = require('./Model');
 const api = require('./api');
 
@@ -17,11 +16,13 @@ $('#search-form').on('submit', (e) => {
     api.search(req, {
     	done: (data) => {
 	    	$('#loader').hide();
-	        model.addMolecule(data);
+            $('#model').css('opacity', 0);
+            setTimeout(() => $('#model').animate({opacity: 1}, 1000), 500);
+            model.addMolecule(data);
 	    },
     	error: () => {
     		$('#loader').hide();
-    		$('#error').show();
+    		$('#error').show().transition('pulse');
     		$('#error-info').text(`Вещества по запросу "${req}" нет в базе данных PubChem`);
     	}
     });

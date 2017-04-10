@@ -1,4 +1,3 @@
-const THREE = require('three');
 
 class Link {
 	constructor(molecula, atom1, atom2, type) {

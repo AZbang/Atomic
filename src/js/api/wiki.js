@@ -9,8 +9,6 @@
 * http://www.opensource.org/licenses/mit-license.php
 */
 
-const $ = require('jquery');
-
 $.fn.wikiblurb = function (options) {
 
 	var defaults = $.extend({

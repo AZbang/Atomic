@@ -24,8 +24,6 @@
 //      controls.target.z = 150;
 // Simple substitute "OrbitControls" and the control should work as-is.
 
-const THREE = require('three');
-
 THREE.OrbitControls = function ( object, domElement, localElement ) {
 
 	this.object = object;
