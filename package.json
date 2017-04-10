@@ -1,5 +1,5 @@
 {
-  "name": "atomic",
+  "name": "molecules",
   "version": "1.0.0",
   "description": "model",
   "main": "gulpfile.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AZbang/Atomic.git"
+    "url": "git+https://github.com/AZbang/Molecules.git"
   },
   "author": "azbang (Andrey Zhevlakov)",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/AZbang/Atomic/issues"
+    "url": "https://github.com/AZbang/Molecules/issues"
   },
-  "homepage": "https://github.com/AZbang/Atomic#readme",
+  "homepage": "https://github.com/AZbang/Molecules#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
