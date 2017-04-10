@@ -28,18 +28,23 @@ module.exports.search = (req, cb) => {
 					section: 0,
 					callback: () => {
 						let table = wiki.find('.infobox tbody');
-						$('#info .image').html(table.find('tr img')[0]);
+						
 						$('#info .header').text(req[0].toUpperCase() + req.slice(1));
-						$('#info .description').html(wiki.find('.nbs-wikiblurb > p'));
+						$('#info .image').empty().append(table.find('tr img')[0]);
+						$('#info .description').empty().append(wiki.find('.nbs-wikiblurb > p'));
 					}
 				});
 
 				let cid = data.PropertyTable.Properties[0].CID;
-				let url = `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/${cid}/record/JSON/?record_type=3d&response_type=display`;
-				$.getJSON(url)
+				let url3d = `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/${cid}/record/JSON/?record_type=3d&response_type=display`;
+				let url2d = `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/${cid}/record/JSON/?record_type=2d&response_type=display`;
+				$.getJSON(url3d)
 					.done((data) => {
 						cb.done && cb.done(data);
-					});
+					})
+					.fail(() => {
+						cb.error && cb.error();
+					})
 			}, 'JSON', 'raw');
 	});
 }

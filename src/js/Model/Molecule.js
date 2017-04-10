@@ -32,7 +32,7 @@ class Molecule {
 		
 		for(let i = 0; i < this._data.atoms.element.length; i++) {
 			this.atoms.push(
-				new Atom(this, this._data.atoms.element[i], pos.x[i], pos.y[i], pos.z[i])
+				new Atom(this, this._data.atoms.element[i], pos.x[i], pos.y[i], pos.z && pos.z[i])
 			);
 		}
 	}
