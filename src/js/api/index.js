@@ -18,7 +18,7 @@ module.exports.search = (req, cb) => {
 		$('#info-icon').show();
 
 		pubchem
-			.setName(data.text[0])
+			.setName(data.text[0].replace('the ', ''))
 			.getIUPACName()
 			.execute((data, status) => {
 				if(status !== 1) {
@@ -60,10 +60,18 @@ module.exports.search = (req, cb) => {
 				let url2d = `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/${cid}/record/JSON/?record_type=2d&response_type=display`;
 				$.getJSON(url3d)
 					.done((data) => {
+						data.typeStructure = '3d';
 						cb.done && cb.done(data);
 					})
 					.fail(() => {
-						cb.error && cb.error();
+						$.getJSON(url2d)
+							.done((data) => {
+								data.typeStructure = '2d';
+								cb.done && cb.done(data);
+							})
+							.fail(() => {
+								cb.error && cb.error();
+							});
 					})
 			}, 'JSON', 'raw');
 	});

@@ -5,9 +5,9 @@ class Atom {
 		this.molecule = molecule;
 		this.model = molecule.model;
 
-		this.x = x*20;
-		this.y = y*20;
-		this.z = z*20;
+		this.x = x;
+		this.y = y;
+		this.z = z;
 		
 		this.nodes = [];
 
@@ -15,7 +15,7 @@ class Atom {
 
 		this.color = +(''+this.data.color).toLowerCase();
 		this.shadow = +(''+this.data.shadow).toLowerCase();
-		this.radius = +this.data.covalentRadius ? +this.data.covalentRadius*10 : 20;
+		this.radius = +this.data.covalentRadius ? Math.min(+this.data.covalentRadius*10, 10) : 10;
 		this.detail = 2;
 
 		// create three.js objects
