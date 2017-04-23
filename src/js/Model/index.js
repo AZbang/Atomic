@@ -1,5 +1,6 @@
 const Molecule = require('./Molecule');
 const OrbitControls = require('./OrbitControls');
+const DomEvents = require('./domEvents');
 
 class Model {
 	constructor(w, h) {
@@ -20,10 +21,8 @@ class Model {
 		this.wrap.appendChild(this.renderer.domElement);
 
 		this.camera = new THREE.PerspectiveCamera(75, this.w / this.h, 0.1, 1000);
-		this.raycaster = new THREE.Raycaster();
 		this.orbit = new THREE.OrbitControls(this.camera, this.renderer.domElement, this.wrap);
 		this.scene = new THREE.Scene();
-		this.mouse = new THREE.Vector2();
 
 		this.lights = [];
 		this.lights[0] = new THREE.PointLight(0xffffff, 1, 0);
@@ -37,7 +36,8 @@ class Model {
 		this.scene.add(this.lights[0]);
 		this.scene.add(this.lights[1]);
 		this.scene.add(this.lights[2]);
-
+		
+		this.domEvents = new DomEvents(this.camera, this.wrap);
 	}
 
 	resize(w, h) {

@@ -41,7 +41,7 @@ body {
 	width: 40rem;
 }
 
-#info {
+#info-substance, #info-atom {
     position: absolute;
     right: 20px;
     top: 20px;

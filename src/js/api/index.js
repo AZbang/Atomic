@@ -10,10 +10,13 @@ module.exports.search = (req, cb) => {
 		'&lang=ru-en'
 
 	$.getJSON(translate, (data) => {
-		let image = $('#info .image').empty();
-		let header = $('#info .header').empty();
-		let description = $('#info .description').empty();
-		let meta = $('#info .meta').empty();
+		$('#info-substance').show();
+		$('#info-atom').hide();
+		
+		let image = $('#info-substance .image').empty();
+		let header = $('#info-substance .header').empty();
+		let description = $('#info-substance .description').empty();
+		let meta = $('#info-substance .meta').empty();
 
 		$('#info-icon').show();
 
@@ -47,7 +50,7 @@ module.exports.search = (req, cb) => {
 							let wikiDesc = wiki.find('.nbs-wikiblurb > p');
 							description.empty().append(wikiDesc);
 
-							$('#info').transition('pulse');
+							$('#info-substance').transition('pulse');
 						} else {
 							$('#info-icon').attr('class', 'icon sticky note outline');
 							description.empty().html(`<p>По запросу <b>"${req}"</b> нет данных на Википедиа</p>`);

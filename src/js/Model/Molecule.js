@@ -7,8 +7,6 @@ class Molecule {
 		this.index = 0;
 		this._data = data.PC_Compounds[0];
 
-		console.log(this._data);
-
 		this.typeStructure = data.typeStructure;
 
 		this.stage = new THREE.Group();
@@ -27,32 +25,55 @@ class Molecule {
 	}
 
 	_bindEvents() {
-		this.model.wrap.onclick = (e) => {
-			e.preventDefault();
-			this.model.mouse.x = (e.clientX / window.innerWidth)*2-1;
-			this.model.mouse.y = -(e.clientY / window.innerHeight)*2+1;
 
-			this.model.raycaster.setFromCamera(this.model.mouse, this.model.camera);
-			let intersects = this.model.raycaster.intersectObjects(this.model.scene.children);
+		this.stage.children.forEach((mesh) => {
+			this.model.domEvents.addEventListener(mesh, 'click', (event) => {
+				if(!mesh.atom) return;
 
-			if (intersects.length > 0 ) {
-				if (this.intesected != intersects[0].object) {
-					if(this.intesected) {
-						this.intesected.material.emissive.setHex(this.intesected.currentHex);
-					}
+				// this.stage.children.forEach((mesh) => {
+				// 	mesh.hex != null && mesh.children[0].material.emissive.setHex(mesh.hex);
+				// });
+				
+				// mesh.hex = mesh.children[0].material.emissive.getHex();
+				// mesh.children[0].material.emissive.setHex(0xF6D53B);
 
-					this.intesected = intersects[ 0 ].object;
-					this.intesected.currentHex = this.intesected.material.emissive.getHex();
-					this.intesected.material.emissive.setHex( 0xff0000 );
+				var outlineMaterial2 = new THREE.MeshBasicMaterial( { color: 0x3992FF, side: THREE.BackSide } );
+				var outlineMesh2 = new THREE.Mesh( mesh.atom.geometry, outlineMaterial2 );
+				outlineMesh2.position.x = mesh.atom.x;
+				outlineMesh2.position.y = mesh.atom.y;
+				outlineMesh2.position.z = mesh.atom.z;
+				outlineMesh2.scale.multiplyScalar(1.1);
+				this.stage.add( outlineMesh2 );
+
+				let table = $(`<table class="ui blue table">
+									<thead>
+										<tr>
+											<th>Key</th>
+											<th>Value</th>
+										</tr>
+									</thead>
+									<tbody></tbody>
+								</table>`);
+
+				for(let key in mesh.atom.data) {
+					if(key == 'description' || key == 'label' || key == 'color') continue;
+					table.find('tbody').append(`<tr><td>${key}</td><td>${mesh.atom.data[key]}</td></tr>`);
 				}
-			} else {
-				if(this.intesected) { 
-					this.intesected.material.emissive.setHex(this.intesected.currentHex);
-					console.log(this.intesected);
-				}
-				this.intesected = null;
-			}
-		};
+				$('#info-atom .content').empty();
+				$('#info-atom .content').append(`<i class="right floated large close icon" style="cursor: pointer"></i>`);
+				$('#info-atom .content i.close').on('click', () => {
+					$('#info-atom').hide();
+					$('#info-substance').show().transition('pulse');
+				});
+				$('#info-atom .content').append(`<div class="header">${mesh.atom.data.label.split(' ')[0]}</div>`);
+				$('#info-atom .content').append(`<div class="meta">${mesh.atom.data.label.split(' ')[1]}</div>`);
+				$('#info-atom .content').append(`<div class="description">${mesh.atom.data.description}</div>`);
+				$('#info-atom .content').append(table);
+				$('#info-substance').hide();
+				$('#info-atom').show().transition('pulse');
+
+			}, false)
+		});
 	}
 
 	_computedCenter() {

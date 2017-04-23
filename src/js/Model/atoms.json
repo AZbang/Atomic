@@ -1,7 +1,7 @@
 [
     {
         "formula": "H",
-        "label": "ВодородHydrogen",
+        "label": "Водород Hydrogen",
         "color": "0xFFFFFF",
         "shadow": "0xEEEEEE",
         "est": "()1s0",
@@ -17,7 +17,7 @@
     },
     {
         "formula": "He",
-        "label": "ГелийHelium",
+        "label": "Гелий Helium",
         "color": "0x30C7E6",
         "shadow": "0x10AFC8",
         "est": "()1s0",
@@ -33,7 +33,7 @@
     },
     {
         "formula": "Li",
-        "label": "ЛитийLithium",
+        "label": "Литий Lithium",
         "color": "0x5422ED",
         "shadow": "0x511DEB",
         "est": "(He)2s1",
@@ -49,7 +49,7 @@
     },
     {
         "formula": "Be",
-        "label": "БериллийBeryllium",
+        "label": "Бериллий Beryllium",
         "color": "0x3E7819",
         "shadow": "0x206827",
         "est": "(He)2s2",
@@ -65,7 +65,7 @@
     },
     {
         "formula": "B",
-        "label": "БорBoron",
+        "label": "Бор Boron",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(He)2s22p1",
@@ -81,7 +81,7 @@
     },
     {
         "formula": "C",
-        "label": "УглеродCarbon",
+        "label": "Углерод Carbon",
         "color": "0x343434",
         "shadow": "0x000000",
         "est": "(He)2s22p2",
@@ -97,7 +97,7 @@
     },
     {
         "formula": "N",
-        "label": "АзотNitrogen",
+        "label": "Азот Nitrogen",
         "color": "0x1157FF",
         "shadow": "0x1030FF",
         "est": "(He)2s22p3",
@@ -113,7 +113,7 @@
     },
     {
         "formula": "O",
-        "label": "КислородOxygen",
+        "label": "Кислород Oxygen",
         "color": "0xFF3A3A",
         "shadow": "0xFF1313",
         "est": "(He)2s22p4",
@@ -129,7 +129,7 @@
     },
     {
         "formula": "F",
-        "label": "ФторFluorine",
+        "label": "Фтор Fluorine",
         "color": "0x55B940",
         "shadow": "0x1F7B00",
         "est": "(He)2s22p5",
@@ -145,7 +145,7 @@
     },
     {
         "formula": "Ne",
-        "label": "НеонNeon",
+        "label": "Неон Neon",
         "color": "0x30C7E6",
         "shadow": "0x10AFC8",
         "est": "(He)2s22p6",
@@ -161,7 +161,7 @@
     },
     {
         "formula": "Na",
-        "label": "НатрийSodium",
+        "label": "Натрий Sodium",
         "color": "0x5422ED",
         "shadow": "0x511DEB",
         "est": "(Ne)3s1",
@@ -177,7 +177,7 @@
     },
     {
         "formula": "Mg",
-        "label": "МагнийMagnesium",
+        "label": "Магний Magnesium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Ne)3s2",
@@ -193,7 +193,7 @@
     },
     {
         "formula": "Al",
-        "label": "АлюминийAluminium",
+        "label": "Алюминий Aluminium",
         "est": "(Ne)3s23p1",
         "description": "",
         "mass": "26.982",
@@ -207,7 +207,7 @@
     },
     {
         "formula": "Si",
-        "label": "КремнийSilicon",
+        "label": "Кремний Silicon",
         "est": "(Ne)3s23p2",
         "description": "",
         "mass": "28.086",
@@ -221,7 +221,7 @@
     },
     {
         "formula": "P",
-        "label": "ФосфорPhosphorus",
+        "label": "Фосфор Phosphorus",
         "color": "0xFF7A44",
         "shadow": "0xFF7320",
         "est": "(Ne)3s23p3",
@@ -237,7 +237,7 @@
     },
     {
         "formula": "S",
-        "label": "СераSulfur",
+        "label": "Сера Sulfur",
         "color": "0xFFDF39",
         "shadow": "0xE9CE29",
         "est": "(Ne)3s23p4",
@@ -253,7 +253,7 @@
     },
     {
         "formula": "Cl",
-        "label": "ХлорChlorine",
+        "label": "Хлор Chlorine",
         "color": "0x55B940",
         "shadow": "0x1F7B00",
         "est": "(Ne)3s23p5",
@@ -269,7 +269,7 @@
     },
     {
         "formula": "Ar",
-        "label": "АргонArgon",
+        "label": "Аргон Argon",
         "est": "(Ne)3s23p6",
         "color": "0x30C7E6",
         "shadow": "0x10AFC8",
@@ -285,7 +285,7 @@
     },
     {
         "formula": "K",
-        "label": "КалийPotassium",
+        "label": "Калий Potassium",
         "color": "0x5422ED",
         "shadow": "0x511DEB",
         "est": "(Ar)4s1",
@@ -301,7 +301,7 @@
     },
     {
         "formula": "Ca",
-        "label": "КальцийCalcium",
+        "label": "Кальций Calcium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Ar)4s2",
@@ -317,7 +317,7 @@
     },
     {
         "formula": "Sc",
-        "label": "CкандийScandium",
+        "label": "Cкандий Scandium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Ar)3d14s2",
@@ -333,7 +333,7 @@
     },
     {
         "formula": "Ti",
-        "label": "ТитанTitanium",
+        "label": "Титан Titanium",
         "color": "0x9E9E9E",
         "shadow": "0x666666",
         "est": "(Ar)3d24s2",
@@ -349,7 +349,7 @@
     },
     {
         "formula": "V",
-        "label": "ВанадийVanadium",
+        "label": "Ванадий Vanadium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Ar)3d34s2",
@@ -365,7 +365,7 @@
     },
     {
         "formula": "Cr",
-        "label": "ХромChromium",
+        "label": "Хром Chromium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Ar)3d54s1",
@@ -381,7 +381,7 @@
     },
     {
         "formula": "Mn",
-        "label": "МарганецManganese",
+        "label": "Марганец Manganese",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Ar)3d54s2",
@@ -397,7 +397,7 @@
     },
     {
         "formula": "Fe",
-        "label": "ЖелезоIron",
+        "label": "Железо Iron",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Ar)3d64s2",
@@ -413,7 +413,7 @@
     },
     {
         "formula": "Co",
-        "label": "КобальтCobalt",
+        "label": "Кобальт Cobalt",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Ar)3d74s2",
@@ -429,7 +429,7 @@
     },
     {
         "formula": "Ni",
-        "label": "НикельNickel",
+        "label": "Никель Nickel",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Ar)3d84s2",
@@ -445,7 +445,7 @@
     },
     {
         "formula": "Cu",
-        "label": "МедьCopper",
+        "label": "Медь Copper",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Ar)3d104s1",
@@ -461,7 +461,7 @@
     },
     {
         "formula": "Zn",
-        "label": "ЦинкZinc",
+        "label": "Цинк Zinc",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Ar)3d104s2",
@@ -477,7 +477,7 @@
     },
     {
         "formula": "Ga",
-        "label": "ГаллийGallium",
+        "label": "Галлий Gallium",
         "est": "(Ar)3d104s24p1",
         "description": "",
         "mass": "69.723",
@@ -491,7 +491,7 @@
     },
     {
         "formula": "Ge",
-        "label": "ГерманийGermanium",
+        "label": "Германий Germanium",
         "est": "(Ar)3d104s24p2",
         "description": "",
         "mass": "72.64",
@@ -505,7 +505,7 @@
     },
     {
         "formula": "As",
-        "label": "МышьякArsenic",
+        "label": "Мышьяк Arsenic",
         "est": "(Ar)3d104s24p3",
         "description": "",
         "mass": "74.922",
@@ -519,7 +519,7 @@
     },
     {
         "formula": "Se",
-        "label": "СеленSelenium",
+        "label": "Селен Selenium",
         "est": "(Ar)3d104s24p4",
         "description": "",
         "mass": "78.96",
@@ -533,7 +533,7 @@
     },
     {
         "formula": "Br",
-        "label": "БромBromine",
+        "label": "Бром Bromine",
         "color": "0xDF902B",
         "shadow": "0xAF6018",
         "est": "(Ar)3d104s24p5",
@@ -549,7 +549,7 @@
     },
     {
         "formula": "Kr",
-        "label": "КриптонKrypton",
+        "label": "Криптон Krypton",
         "color": "0x30C7E6",
         "shadow": "0x10AFC8",
         "est": "(Ar)3d104s24p6",
@@ -565,7 +565,7 @@
     },
     {
         "formula": "Rb",
-        "label": "РубидийRubidium",
+        "label": "Рубидий Rubidium",
         "color": "0x5422ED",
         "shadow": "0x511DEB",
         "est": "(Kr)5s1",
@@ -581,7 +581,7 @@
     },
     {
         "formula": "Sr",
-        "label": "СтронцийStrontium",
+        "label": "Стронций Strontium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Kr)5s2",
@@ -597,7 +597,7 @@
     },
     {
         "formula": "Y",
-        "label": "ИттрийYttrium",
+        "label": "Иттрий Yttrium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Kr)4d15s2",
@@ -613,7 +613,7 @@
     },
     {
         "formula": "Zr",
-        "label": "ЦирконийZirconium",
+        "label": "Цирконий Zirconium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Kr)4d25s2",
@@ -629,7 +629,7 @@
     },
     {
         "formula": "Nb",
-        "label": "НиобийNiobium",
+        "label": "Ниобий Niobium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Kr)4d45s1",
@@ -645,7 +645,7 @@
     },
     {
         "formula": "Mo",
-        "label": "МолибденMolybdenum",
+        "label": "Молибден Molybdenum",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Kr)4d55s1",
@@ -661,7 +661,7 @@
     },
     {
         "formula": "Tc",
-        "label": "ТехнецийTechnetium",
+        "label": "Технеций Technetium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Kr)4d55s2",
@@ -677,7 +677,7 @@
     },
     {
         "formula": "Ru",
-        "label": "РутенийRuthenium",
+        "label": "Рутений Ruthenium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Kr)4d75s1",
@@ -693,7 +693,7 @@
     },
     {
         "formula": "Rh",
-        "label": "РодийRhodium",
+        "label": "Родий Rhodium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Kr)4d85s1",
@@ -709,7 +709,7 @@
     },
     {
         "formula": "Pd",
-        "label": "ПалладийPalladium",
+        "label": "Палладий Palladium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Kr)4d105s0",
@@ -725,7 +725,7 @@
     },
     {
         "formula": "Ag",
-        "label": "СереброSilver",
+        "label": "Серебро Silver",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Kr)4d105s1",
@@ -741,7 +741,7 @@
     },
     {
         "formula": "Cd",
-        "label": "КадмийCadmium",
+        "label": "Кадмий Cadmium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Kr)4d105s2",
@@ -757,7 +757,7 @@
     },
     {
         "formula": "In",
-        "label": "ИндийIndium",
+        "label": "Индий Indium",
         "est": "(Kr)4d105s25p1",
         "description": "",
         "mass": "114.82",
@@ -771,7 +771,7 @@
     },
     {
         "formula": "Sn",
-        "label": "ОловоTin",
+        "label": "Олово Tin",
         "est": "(Kr)4d105s25p2",
         "description": "",
         "mass": "118.71",
@@ -785,7 +785,7 @@
     },
     {
         "formula": "Sb",
-        "label": "СурьмаAntimony",
+        "label": "Сурьма Antimony",
         "est": "(Kr)4d105s25p3",
         "description": "",
         "mass": "121.76",
@@ -799,7 +799,7 @@
     },
     {
         "formula": "Te",
-        "label": "ТеллурTellurium",
+        "label": "Теллур Tellurium",
         "est": "(Kr)4d105s25p4",
         "description": "",
         "mass": "127.6",
@@ -815,7 +815,7 @@
         "formula": "I",
         "color": "0xA057E6",
         "shadow": "0xA429F4",
-        "label": "ИодIodine",
+        "label": "Иод Iodine",
         "est": "(Kr)4d105s25p5",
         "description": "",
         "mass": "126.90",
@@ -829,7 +829,7 @@
     },
     {
         "formula": "Xe",
-        "label": "КсенонXenon",
+        "label": "Ксенон Xenon",
         "color": "0x30C7E6",
         "shadow": "0x10AFC8",
         "est": "(Kr)4d105s25p6",
@@ -845,7 +845,7 @@
     },
     {
         "formula": "Cs",
-        "label": "ЦезийCaesium",
+        "label": "Цезий Caesium",
         "color": "0x5422ED",
         "shadow": "0x511DEB",
         "est": "(Xe)6s1",
@@ -861,7 +861,7 @@
     },
     {
         "formula": "Ba",
-        "label": "БарийBarium",
+        "label": "Барий Barium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Xe)6s2",
@@ -877,7 +877,7 @@
     },
     {
         "formula": "La",
-        "label": "ЛантанLanthanum",
+        "label": "Лантан Lanthanum",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Xe)5d16s2",
@@ -893,7 +893,7 @@
     },
     {
         "formula": "Ce",
-        "label": "ЦерийCerium",
+        "label": "Церий Cerium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Xe)4f25d06s2",
@@ -909,7 +909,7 @@
     },
     {
         "formula": "Pr",
-        "label": "ПразеодимPraseodymium",
+        "label": "Празеодим Praseodymium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Xe)4f35d06s2",
@@ -925,7 +925,7 @@
     },
     {
         "formula": "Nd",
-        "label": "НеодимNeodymium",
+        "label": "Неодим Neodymium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Xe)4f45d06s2",
@@ -941,7 +941,7 @@
     },
     {
         "formula": "Pm",
-        "label": "ПрометийPromethium",
+        "label": "Прометий Promethium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Xe)4f55d06s2",
@@ -957,7 +957,7 @@
     },
     {
         "formula": "Sm",
-        "label": "СамарийSamarium",
+        "label": "Самарий Samarium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Xe)4f65d06s2",
@@ -973,7 +973,7 @@
     },
     {
         "formula": "Eu",
-        "label": "ЕвропийEuropium",
+        "label": "Европий Europium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Xe)4f75d06s2",
@@ -989,7 +989,7 @@
     },
     {
         "formula": "Gd",
-        "label": "ГадолинийGadolinium",
+        "label": "Гадолиний Gadolinium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Xe)4f75d16s2",
@@ -1005,7 +1005,7 @@
     },
     {
         "formula": "Tb",
-        "label": "ТербийTerbium",
+        "label": "Тербий Terbium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Xe)4f95d06s2",
@@ -1021,7 +1021,7 @@
     },
     {
         "formula": "Dy",
-        "label": "ДиспрозийDysprosium",
+        "label": "Диспрозий Dysprosium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Xe)4f105d06s2",
@@ -1037,7 +1037,7 @@
     },
     {
         "formula": "Ho",
-        "label": "ГольмийHolmium",
+        "label": "Гольмий Holmium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Xe)4f115d06s2",
@@ -1053,7 +1053,7 @@
     },
     {
         "formula": "Er",
-        "label": "ЭрбийErbium",
+        "label": "Эрбий Erbium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Xe)4f125d06s2",
@@ -1069,7 +1069,7 @@
     },
     {
         "formula": "Tm",
-        "label": "ТулийThulium",
+        "label": "Тулий Thulium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Xe)4f135d06s2",
@@ -1085,7 +1085,7 @@
     },
     {
         "formula": "Yb",
-        "label": "ИттербийYtterbium",
+        "label": "Иттербий Ytterbium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Xe)4f145d06s2",
@@ -1101,7 +1101,7 @@
     },
     {
         "formula": "Lu",
-        "label": "ЛютецийLutetium",
+        "label": "Лютеций Lutetium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Xe)4f145d16s2",
@@ -1117,7 +1117,7 @@
     },
     {
         "formula": "Hf",
-        "label": "ГафнийHafnium",
+        "label": "Гафний Hafnium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Xe)4f145d26s2",
@@ -1133,7 +1133,7 @@
     },
     {
         "formula": "Ta",
-        "label": "ТанталTantalum",
+        "label": "Тантал Tantalum",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Xe)4f145d36s2",
@@ -1149,7 +1149,7 @@
     },
     {
         "formula": "W",
-        "label": "ВольфрамTungsten",
+        "label": "Вольфрам Tungsten",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Xe)4f145d46s2",
@@ -1165,7 +1165,7 @@
     },
     {
         "formula": "Re",
-        "label": "РенийRhenium",
+        "label": "Рений Rhenium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Xe)4f145d56s2",
@@ -1181,7 +1181,7 @@
     },
     {
         "formula": "Os",
-        "label": "ОсмийOsmium",
+        "label": "Осмий Osmium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Xe)4f145d66s2",
@@ -1197,7 +1197,7 @@
     },
     {
         "formula": "Ir",
-        "label": "ИридийIridium",
+        "label": "Иридий Iridium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Xe)4f145d76s2",
@@ -1213,7 +1213,7 @@
     },
     {
         "formula": "Pt",
-        "label": "ПлатинаPlatinum",
+        "label": "Платина Platinum",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Xe)4f145d96s1",
@@ -1229,7 +1229,7 @@
     },
     {
         "formula": "Au",
-        "label": "ЗолотоGold",
+        "label": "Золото Gold",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Xe)4f145d106s1",
@@ -1245,7 +1245,7 @@
     },
     {
         "formula": "Hg",
-        "label": "РтутьMercury",
+        "label": "Ртуть Mercury",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Xe)4f145d106s2",
@@ -1261,7 +1261,7 @@
     },
     {
         "formula": "Tl",
-        "label": "ТаллийThallium",
+        "label": "Таллий Thallium",
         "est": "(Xe)4f145d106s26p1",
         "description": "",
         "mass": "204.38",
@@ -1275,7 +1275,7 @@
     },
     {
         "formula": "Pb",
-        "label": "СвинецLead",
+        "label": "Свинец Lead",
         "est": "(Xe)4f145d106s26p2",
         "description": "",
         "mass": "207.2",
@@ -1289,7 +1289,7 @@
     },
     {
         "formula": "Bi",
-        "label": "ВисмутBismuth",
+        "label": "Висмут Bismuth",
         "est": "(Xe)4f145d106s26p3",
         "description": "",
         "mass": "208.98",
@@ -1303,7 +1303,7 @@
     },
     {
         "formula": "Po",
-        "label": "ПолонийPolonium",
+        "label": "Полоний Polonium",
         "est": "(Xe)4f145d106s26p4",
         "description": "",
         "mass": "[209]",
@@ -1317,7 +1317,7 @@
     },
     {
         "formula": "At",
-        "label": "АстатAstatine",
+        "label": "Астат Astatine",
         "est": "(Xe)4f145d106s26p5",
         "description": "",
         "mass": "[210]",
@@ -1331,7 +1331,7 @@
     },
     {
         "formula": "Rn",
-        "label": "РадонRadon",
+        "label": "Радон Radon",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Xe)4f145d106s26p6",
@@ -1347,7 +1347,7 @@
     },
     {
         "formula": "Fr",
-        "label": "ФранцийFrancium",
+        "label": "Франций Francium",
         "est": "(Rn)7s1",
         "description": "",
         "mass": "[223]",
@@ -1361,7 +1361,7 @@
     },
     {
         "formula": "Ra",
-        "label": "РадийRadium",
+        "label": "Радий Radium",
         "est": "(Rn)7s2",
         "description": "",
         "mass": "[226]",
@@ -1375,7 +1375,7 @@
     },
     {
         "formula": "Ac",
-        "label": "АктинийActinium",
+        "label": "Актиний Actinium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Rn)6d17s2",
@@ -1391,7 +1391,7 @@
     },
     {
         "formula": "Th",
-        "label": "ТорийThorium",
+        "label": "Торий Thorium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Rn)6d27s2",
@@ -1407,7 +1407,7 @@
     },
     {
         "formula": "Pa",
-        "label": "ПроактинийProtactinium",
+        "label": "Проактиний Protactinium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Rn)5f26d17s2",
@@ -1423,7 +1423,7 @@
     },
     {
         "formula": "U",
-        "label": "УранUranium",
+        "label": "Уран Uranium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Rn)5f36d17s2",
@@ -1439,7 +1439,7 @@
     },
     {
         "formula": "Np",
-        "label": "НептунийNeptunium",
+        "label": "Нептуний Neptunium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Rn)5f46d17s2",
@@ -1455,7 +1455,7 @@
     },
     {
         "formula": "Pu",
-        "label": "ПлутонийPlutonium",
+        "label": "Плутоний Plutonium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Rn)5f66d07s2",
@@ -1471,7 +1471,7 @@
     },
     {
         "formula": "Am",
-        "label": "АмерицийAmericium",
+        "label": "Америций Americium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Rn)5f76d07s2",
@@ -1487,7 +1487,7 @@
     },
     {
         "formula": "Cm",
-        "label": "КюрийCurium",
+        "label": "Кюрий Curium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Rn)5f76d17s2",
@@ -1503,7 +1503,7 @@
     },
     {
         "formula": "Bk",
-        "label": "БерклийBerkelium",
+        "label": "Берклий Berkelium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Rn)5f96d07s2",
@@ -1519,7 +1519,7 @@
     },
     {
         "formula": "Cf",
-        "label": "КалифорнийCalifornium",
+        "label": "Калифорний Californium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Rn)5f106d07s2",
@@ -1535,7 +1535,7 @@
     },
     {
         "formula": "Es",
-        "label": "ЭйнштейнийEinsteinium",
+        "label": "Эйнштейний Einsteinium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Rn)5f116d07s2",
@@ -1551,7 +1551,7 @@
     },
     {
         "formula": "Fm",
-        "label": "ФермийFermium",
+        "label": "Фермий Fermium",
         "color": "0xF96727",
         "shadow": "0xE96219",
         "est": "(Rn)5f126d07s2",
@@ -1567,7 +1567,7 @@
     },
     {
         "formula": "Md",
-        "label": "МенделевийMendelevium",
+        "label": "Менделевий Mendelevium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Rn)5f136d07s2",
@@ -1583,7 +1583,7 @@
     },
     {
         "formula": "No",
-        "label": "НобелийNobelium",
+        "label": "Нобелий Nobelium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Rn)5f146d07s2",
@@ -1599,7 +1599,7 @@
     },
     {
         "formula": "Lr",
-        "label": "ЛоуренсийLawrencium",
+        "label": "Лоуренсий Lawrencium",
         "color": "0xFCA06E",
         "shadow": "0xFE8E62",
         "est": "(Rn)5f146d17s2",

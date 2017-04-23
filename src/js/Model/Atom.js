@@ -30,6 +30,7 @@ class Atom {
 				shading: THREE.FlatShading
 			})
 		));
+		this.mesh.atom = this;
 
 		this.mesh.position.set(this.x, this.y, this.z);
 
