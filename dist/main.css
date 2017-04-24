@@ -57,7 +57,7 @@ body {
 	font-size: 5em;
 }
 
-#btn-choose-structure {
+#btn-settings {
 	position: absolute;
 	right: 400px;
 	top: 40px;
@@ -72,6 +72,6 @@ body {
     width: 30%;
 }
 
-#btn-choose-structure:hover {
+#btn-settings:hover {
 	color: #378CFF;
 }
