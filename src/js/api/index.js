@@ -19,10 +19,13 @@ module.exports.search = (req, cb) => {
 		let meta = $('#info-substance .meta').empty();
 
 		$('#info-icon').show();
-
+		$('#name').empty();
+		$('#formula').empty();
+		$('#weight').empty();
+		
 		pubchem
 			.setName(data.text[0].replace('the ', ''))
-			.getIUPACName()
+			.getProperties(["IUPACName", "MolecularFormula", "MolecularWeight"])
 			.execute((data, status) => {
 				if(status !== 1) {
 					cb.error && cb.error();
@@ -31,7 +34,6 @@ module.exports.search = (req, cb) => {
 					description.empty().html(`<p>По запросу <b>"${req}"</b> нет данных на Википедиа</p>`);
 					return;
 				}
-				console.log(req);
 
 				let wiki = $('<div></div>').wikiblurb({
 					wikiURL: "https://ru.wikipedia.org/",
@@ -56,9 +58,14 @@ module.exports.search = (req, cb) => {
 					}
 				});
 
-				let cid = data.PropertyTable.Properties[0].CID;
-				let url3d = `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/${cid}/record/JSON/?record_type=3d&response_type=display`;
-				let url2d = `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/${cid}/record/JSON/?record_type=2d&response_type=display`;
+				let props = data.PropertyTable.Properties[0];
+				$('#name').text(req[0].toUpperCase() + req.slice(1));
+				$('#formula').text('Формула: ' + props.MolecularFormula);
+				$('#weight').text('Вес: ' + props.MolecularWeight + ' грамм/моль');
+
+
+				let url3d = `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/${props.CID}/record/JSON/?record_type=3d&response_type=display`;
+				let url2d = `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/${props.CID}/record/JSON/?record_type=2d&response_type=display`;
 				$.getJSON(url3d)
 					.done((data) => {
 						data.typeStructure = '3d';
