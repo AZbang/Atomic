@@ -77,8 +77,8 @@ class Atom {
 		}, false);
 	}
 
-	update() {
-
+	remove() {
+		this.model.domEvents.unbind(this.mesh, 'click');
 	}
 }
 

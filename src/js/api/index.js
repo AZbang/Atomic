@@ -31,30 +31,28 @@ module.exports.search = (req, cb) => {
 					description.empty().html(`<p>По запросу <b>"${req}"</b> нет данных на Википедиа</p>`);
 					return;
 				}
+				console.log(req);
 
 				let wiki = $('<div></div>').wikiblurb({
 					wikiURL: "https://ru.wikipedia.org/",
 					page: req,
 					section: 0,
 					callback: () => {
-						$('body').append(wiki);
-						let table = wiki.find('.infobox tbody');
-						
-						if(table[0]) {
-							$('#info-icon').attr('class', 'lab icon loading');
-							$('#info-icon').hide();
-
+						if(!wiki[0]) {
 							header.text(req[0].toUpperCase() + req.slice(1));
-							image.append(table.find('tr img')[0]);
-
-							let wikiDesc = wiki.find('.nbs-wikiblurb > p');
-							description.empty().append(wikiDesc);
-
-							$('#info-substance').transition('pulse');
-						} else {
-							$('#info-icon').attr('class', 'icon sticky note outline');
 							description.empty().html(`<p>По запросу <b>"${req}"</b> нет данных на Википедиа</p>`);
 						}
+
+						$('#info-icon').attr('class', 'lab icon loading');
+						$('#info-icon').hide();
+
+						header.text(req[0].toUpperCase() + req.slice(1));
+						image.append(wiki.find('img')[0]);
+
+						let wikiDesc = wiki.find('.nbs-wikiblurb > p');
+						description.empty().append(wikiDesc);
+
+						$('#info-substance').transition('pulse');
 					}
 				});
 

@@ -67,13 +67,16 @@ class Molecule {
 		}
 	}
 
+	remove() {
+		for(let i = 0; i < this.atoms.length; i++) {
+			this.atoms[i].remove();
+		}
+		this.stage.parent.remove(this.stage);
+	}
+
 	update() {
 		this.stage.rotation.x += 0.001;
 		this.stage.rotation.y += 0.0001;
-
-		for(let i = 0; i < this.atoms.length; i++) {
-			this.atoms[i].update();
-		}
 	}
 }
 

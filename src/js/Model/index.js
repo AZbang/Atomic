@@ -55,7 +55,7 @@ class Model {
 	}
 	removeMolecule(i) {
 		if(this.molecules[i]) {
-			this.scene.remove(this.molecules[i].stage);
+			this.molecules[i].remove();
 			this.molecules.splice(i, 1);
 		}
 	}
