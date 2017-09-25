@@ -1,16 +1,17 @@
 'use strict';
 
+const fs = require('fs');
 const gulp = require('gulp');
 const connect = require('gulp-connect');
 const uglify = require('gulp-uglify');
-const imagemin = require('gulp-imagemin');
 const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
 const gulpIf = require('gulp-if');
-const zip = require('gulp-zip');
-const builder = require('gulp-nw-builder');
-const babel = require('gulp-babel');
-const browserify = require('gulp-browserify');
+const browserify = require('browserify');
+const babelify = require('babelify');
+const vueify = require('vueify');
+const source = require('vinyl-source-stream');
+
 const isDev = process.env.DEV !== 'production';
 
 var errorMessage = () => {
@@ -26,41 +27,23 @@ gulp.task('server', () => {
 	return connect.server({
 		port: 1338,
 		livereload: true,
-		root: './'
+		root: './www'
 	});
 });
 
-gulp.task('js', () => {
-	return gulp.src('src/js/app.js')
-		.pipe(errorMessage())
-		.pipe(browserify({
-			debug: isDev
-		}))
-		.pipe(gulpIf(!isDev, babel({
-			presets: ['es2015']
-		})))
-		.pipe(gulpIf(!isDev, uglify()))
-		.pipe(gulp.dest('dist'))
+gulp.task('dev', () => {
+	return browserify({ entries: 'dev/index.js'})
+		.transform(babelify, { presets: ['es2015'] })
+		.transform(vueify)
+		.bundle()
+		.pipe(source('app.js'))
+		.pipe(gulp.dest('./www'))
 		.pipe(connect.reload());
 });
 
-gulp.task('images', function () {
-	return gulp.src('src/img/**/*.*')
-		.pipe(errorMessage())
-		.pipe(imagemin())
-		.pipe(gulp.dest('dist/img'))
-		.pipe(connect.reload());
+gulp.task('watch', function() {
+	gulp.watch('./dev/**/*.*', ['dev']);
 });
 
-gulp.task('zip', function() {
-	return gulp.src('dist/**/*.*')
-		.pipe(zip('PolyAlarm.zip'))
-		.pipe(gulp.dest('zip'))
-});
 
-gulp.task('watch', () => {
-	gulp.watch('src/js/**/*.*', ['js']);
-	gulp.watch('src/img/**/*.*', ['images']);
-});
-
-gulp.task('default', ['js', 'images', 'server', 'watch']);
+gulp.task('default', ['dev', 'watch', 'server']);
