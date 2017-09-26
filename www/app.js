@@ -1,10 +1,15 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".row[data-v-96bedcd8] {\n  margin-top: 6px;\n}\n.button-collapse[data-v-96bedcd8] {\n  margin-top: 6px;\n  width: 50px;\n  height: 50px;\n  border-radius: 50%;\n  box-shadow: none;\n}\n.button-collapse i[data-v-96bedcd8] {\n  line-height: 33px;\n  color: #333;\n  right: 13px !important;\n}\n\n.search-wrapper input#search[data-v-96bedcd8] {\n  display: block;\n  font-size: 16px;\n  font-weight: 300;\n  width: 100%;\n  height: 45px;\n  margin: 0;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  padding: 0 45px 0 15px;\n  border: 0;\n}\ni.material-icons[data-v-96bedcd8] {\n  position: absolute;\n  top: 10px;\n  right: 10px;\n  cursor: pointer;\n}")
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".row[data-v-96bedcd8] {\n  margin-top: 6px;\n}\n.button-collapse[data-v-96bedcd8] {\n  margin-top: 6px;\n  width: 50px;\n  height: 50px;\n  border-radius: 50%;\n  box-shadow: none;\n}\n.button-collapse i[data-v-96bedcd8] {\n  position: absolute;\n  top: 10px;\n  right: 13px;\n  cursor: pointer;\n  line-height: 33px;\n  color: #333;\n}\n.search-wrapper[data-v-96bedcd8] {\n  box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.1), 0 1px 1px 0 rgba(0,0,0,0.05), 0 3px 1px -6px rgba(0,0,0,0.1) !important;\n}\n.search-wrapper input#search[data-v-96bedcd8] {\n  display: block;\n  font-size: 16px;\n  font-weight: 300;\n  width: 100%;\n  height: 45px;\n  margin: 0;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  padding: 0 45px 0 15px;\n  border: 0;\n}\n.search-wrapper i.material-icons[data-v-96bedcd8] {\n  position: absolute;\n  top: 10px;\n  right: 10px;\n  cursor: pointer;\n}")
 ;(function(){
-"use strict";
+'use strict';
 
 module.exports = {
   name: 'Navigation',
+  methods: {
+    closeSideNav: function closeSideNav() {
+      $('.button-collapse').sideNav('hide');
+    }
+  },
   mounted: function mounted() {
     $(".button-collapse").sideNav();
   }
@@ -13,8 +18,8 @@ module.exports = {
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _vm._m(0)}
-__vue__options__.staticRenderFns = [function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"navigation"}},[_c('div',{attrs:{"id":"side-nav"}},[_c('ul',{staticClass:"side-nav",attrs:{"id":"slide-out"}},[_c('li',[_c('a',{staticClass:"header"},[_c('i',{staticClass:"material-icons"},[_vm._v("cloud")]),_vm._v("Molecls!")])]),_vm._v(" "),_c('li',[_c('div',{staticClass:"divider"})]),_vm._v(" "),_c('li',[_c('a',{staticClass:"waves-effect",attrs:{"href":"#!"}},[_vm._v("Главная")])]),_vm._v(" "),_c('li',[_c('a',{staticClass:"waves-effect",attrs:{"href":"#!"}},[_vm._v("Типы веществ")])]),_vm._v(" "),_c('li',[_c('a',{staticClass:"waves-effect",attrs:{"href":"#!"}},[_vm._v("Отмеченные")])]),_vm._v(" "),_c('li',[_c('a',{staticClass:"waves-effect",attrs:{"href":"#!"}},[_vm._v("Тренажер")])])])]),_vm._v(" "),_c('div',{staticClass:"row"},[_c('div',{staticClass:"col s2"},[_c('a',{staticClass:"waves-effect button-collapse"},[_c('i',{staticClass:"material-icons"},[_vm._v("dehaze")])])]),_vm._v(" "),_c('div',{staticClass:"col s10"},[_c('div',{staticClass:"search-wrapper card"},[_c('input',{attrs:{"id":"search"}}),_c('i',{staticClass:"material-icons"},[_vm._v("search")])])])])])}]
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"navigation"}},[_c('ul',{staticClass:"side-nav",attrs:{"id":"slide-out"}},[_c('br'),_vm._v(" "),_vm._m(0),_vm._v(" "),_c('li',{on:{"click":_vm.closeSideNav}},[_c('router-link',{attrs:{"to":"/main"}},[_c('i',{staticClass:"material-icons"},[_vm._v("visibility")]),_vm._v("Главная")])],1),_vm._v(" "),_c('li',{on:{"click":_vm.closeSideNav}},[_c('router-link',{attrs:{"to":"/types"}},[_c('i',{staticClass:"material-icons"},[_vm._v("view_module")]),_vm._v("Типы веществ")])],1),_vm._v(" "),_c('li',{on:{"click":_vm.closeSideNav}},[_c('router-link',{attrs:{"to":"/main"}},[_c('i',{staticClass:"material-icons"},[_vm._v("star")]),_vm._v("Отмеченные")])],1),_vm._v(" "),_c('li',{on:{"click":_vm.closeSideNav}},[_c('router-link',{attrs:{"to":"/main"}},[_c('i',{staticClass:"material-icons"},[_vm._v("extension")]),_vm._v("Тренажер")])],1)]),_vm._v(" "),_vm._m(1)])}
+__vue__options__.staticRenderFns = [function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('li',[_c('a',{staticClass:"subheader"},[_vm._v("Molecules")])])},function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"row"},[_c('div',{staticClass:"col s2"},[_c('a',{staticClass:"waves-effect button-collapse",attrs:{"data-activates":"slide-out"}},[_c('i',{staticClass:"material-icons"},[_vm._v("menu")])])]),_vm._v(" "),_c('div',{staticClass:"col s10"},[_c('div',{staticClass:"search-wrapper card"},[_c('input',{attrs:{"id":"search"}}),_c('i',{staticClass:"material-icons"},[_vm._v("search")])])])])}]
 __vue__options__._scopeId = "data-v-96bedcd8"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -27,7 +32,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
     hotAPI.rerender("data-v-96bedcd8", __vue__options__)
   }
 })()}
-},{"vue":8,"vue-hot-reload-api":6,"vueify/lib/insert-css":9}],2:[function(require,module,exports){
+},{"vue":9,"vue-hot-reload-api":7,"vueify/lib/insert-css":10}],2:[function(require,module,exports){
 'use strict';
 
 var Vue = require('vue');
@@ -35,7 +40,7 @@ var VueRouter = require('vue-router');
 
 var App = require('./views/App.vue');
 var Main = require('./views/Main.vue');
-// const TypesSubstances = require('./views/TypesSubstances.vue');
+var TypesSubstances = require('./views/TypesSubstances.vue');
 // const Substances = require('./views/Substances.vue');
 // const ViewSubstance = require('./views/ViewSubstance.vue');
 // const TrainerTypes = require('./views/TrainerTypes.vue');
@@ -45,7 +50,7 @@ var Main = require('./views/Main.vue');
 Vue.use(VueRouter);
 
 var router = new VueRouter({
-	routes: [{ path: '/', redirect: '/main' }, { path: '/main', component: Main }]
+	routes: [{ path: '/', redirect: '/main' }, { path: '/main', component: Main }, { path: '/types', component: TypesSubstances }]
 });
 
 new Vue({
@@ -56,7 +61,7 @@ new Vue({
 	router: router
 });
 
-},{"./views/App.vue":3,"./views/Main.vue":4,"vue":8,"vue-router":7}],3:[function(require,module,exports){
+},{"./views/App.vue":3,"./views/Main.vue":4,"./views/TypesSubstances.vue":5,"vue":9,"vue-router":8}],3:[function(require,module,exports){
 ;(function(){
 'use strict';
 
@@ -84,12 +89,12 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
     hotAPI.rerender("data-v-3b72e0ed", __vue__options__)
   }
 })()}
-},{"../components/Navigation.vue":1,"vue":8,"vue-hot-reload-api":6}],4:[function(require,module,exports){
+},{"../components/Navigation.vue":1,"vue":9,"vue-hot-reload-api":7}],4:[function(require,module,exports){
 var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("#main[data-v-2125c4c6] {\n  margin-top: 25%;\n}\nh1[data-v-2125c4c6] {\n  font-weight: 200;\n}")
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
 __vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _vm._m(0)}
-__vue__options__.staticRenderFns = [function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"center-align container сenter",attrs:{"id":"main"}},[_c('h1',[_vm._v("Molecls!")]),_vm._v(" "),_c('p',{staticClass:"flow-text"},[_vm._v("Интерактивный тренажер по изучению веществ неорганической химии.")]),_vm._v(" "),_c('a',{staticClass:"waves-effect waves-light btn-large blue darken-2"},[_vm._v("Начните с H2SO4!")]),_vm._v(" "),_c('br'),_vm._v(" "),_c('br'),_vm._v(" "),_c('br'),_vm._v(" "),_c('p',{staticClass:"flow-text"},[_vm._v("Сервис разработал:"),_c('br'),_c('a',{attrs:{"href":"https://github.com/AZbang"}},[_vm._v("@azbang")])])])}]
+__vue__options__.staticRenderFns = [function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"center-align container сenter",attrs:{"id":"main"}},[_c('h1',[_vm._v("Molecules!")]),_vm._v(" "),_c('p',{staticClass:"flow-text"},[_vm._v("Интерактивный тренажер по изучению веществ неорганической химии.")]),_vm._v(" "),_c('a',{staticClass:"waves-effect waves-light btn-large blue darken-2"},[_vm._v("Начните с H2SO4!")]),_vm._v(" "),_c('br'),_vm._v(" "),_c('br'),_vm._v(" "),_c('br'),_vm._v(" "),_c('p',{staticClass:"flow-text"},[_vm._v("Сервис разработал:"),_c('br'),_c('a',{attrs:{"href":"https://github.com/AZbang"}},[_vm._v("@azbang")])])])}]
 __vue__options__._scopeId = "data-v-2125c4c6"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -102,7 +107,60 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
     hotAPI.rerender("data-v-2125c4c6", __vue__options__)
   }
 })()}
-},{"vue":8,"vue-hot-reload-api":6,"vueify/lib/insert-css":9}],5:[function(require,module,exports){
+},{"vue":9,"vue-hot-reload-api":7,"vueify/lib/insert-css":10}],5:[function(require,module,exports){
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("h1 {\n  margin-top: 0;\n  font-weight: 300;\n  font-size: 2em;\n}")
+;(function(){
+"use strict";
+
+module.exports = {
+  data: function data() {
+    return {
+      types: [{
+        label: "Оксиды",
+        img: "img/oxide.jpg",
+        description: "Окси́д — бинарное соединение химического элемента с кислородом в степени окисления −2, в котором сам кислород связан только с менее электроотрицательным элементом."
+      }, {
+        label: "Основания",
+        img: "img/foundations.jpeg",
+        description: "Основание — химическое соединение, способное образовывать ковалентную связь с протоном либо с вакантной орбиталью другого химического соединения."
+      }, {
+        label: "Соли",
+        img: "img/salt.jpg",
+        description: "Со́ли — сложные вещества, которые в водных растворах диссоциируют на катионы металлов и анионы кислотных остатков. ИЮПАК определяет соли как химические соединения, состоящие из катионов и анионов."
+      }, {
+        label: "Кислоты",
+        img: "img/acid.jpg",
+        description: "Кисло́ты — химические соединения, способные отдавать катион водорода (кислоты Брёнстеда), либо соединения, способные принимать электронную пару с образованием ковалентной связи (кислоты Льюиса)."
+      }, {
+        label: "Щелочи",
+        img: "img/caustic.jpg",
+        description: "Щёлочи — гидроксиды щелочных, щёлочноземельных металлов и некоторых других элементов, например, таллия. К щелочам относятся хорошо растворимые в воде основания. При диссоциации щёлочи образуют анионы OH− и катион металла."
+      }, {
+        label: "Спирты",
+        img: "img/alcohols.jpg",
+        description: "Спирты́ — органические соединения, содержащие одну или более гидроксильных групп, непосредственно связанных с насыщенным атомом углерода. "
+      }]
+    };
+  }
+};
+})()
+if (module.exports.__esModule) module.exports = module.exports.default
+var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
+if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"container",attrs:{"id":"types"}},[_c('h1',[_vm._v("Типы веществ:")]),_vm._v(" "),_vm._l((_vm.types),function(type){return _c('div',{staticClass:"card"},[_c('div',{staticClass:"card-image waves-effect waves-block waves-light"},[_c('img',{attrs:{"src":type.img}}),_vm._v(" "),_c('span',{staticClass:"card-title"},[_vm._v(_vm._s(type.label))])]),_vm._v(" "),_c('div',{staticClass:"card-content"},[_c('p',[_vm._v(_vm._s(type.description))])])])})],2)}
+__vue__options__.staticRenderFns = []
+if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  module.hot.dispose(__vueify_style_dispose__)
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-1237fda8", __vue__options__)
+  } else {
+    hotAPI.rerender("data-v-1237fda8", __vue__options__)
+  }
+})()}
+},{"vue":9,"vue-hot-reload-api":7,"vueify/lib/insert-css":10}],6:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -288,7 +346,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 var Vue // late bind
 var version
 var map = window.__VUE_HOT_MAP__ = Object.create(null)
@@ -434,7 +492,7 @@ exports.reload = tryWrap(function (id, options) {
   })
 })
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 (function (process){
 /**
   * vue-router v2.7.0
@@ -2945,7 +3003,7 @@ if (inBrowser && window.Vue) {
 module.exports = VueRouter;
 
 }).call(this,require('_process'))
-},{"_process":5}],8:[function(require,module,exports){
+},{"_process":6}],9:[function(require,module,exports){
 (function (process,global){
 /*!
  * Vue.js v2.4.4
@@ -13141,7 +13199,7 @@ Vue$3.compile = compileToFunctions;
 module.exports = Vue$3;
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"_process":5}],9:[function(require,module,exports){
+},{"_process":6}],10:[function(require,module,exports){
 var inserted = exports.cache = {}
 
 function noop () {}

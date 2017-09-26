@@ -3,7 +3,7 @@ const VueRouter = require('vue-router');
 
 const App = require('./views/App.vue');
 const Main = require('./views/Main.vue');
-// const TypesSubstances = require('./views/TypesSubstances.vue');
+const TypesSubstances = require('./views/TypesSubstances.vue');
 // const Substances = require('./views/Substances.vue');
 // const ViewSubstance = require('./views/ViewSubstance.vue');
 // const TrainerTypes = require('./views/TrainerTypes.vue');
@@ -16,7 +16,7 @@ var router = new VueRouter({
 	routes: [
 		{path: '/', redirect: '/main'},
 		{path: '/main', component: Main},
-		// {path: '/types', component: TypesSubstances},
+		{path: '/types', component: TypesSubstances},
 		// {path: '/types/:type', component:	Substances},
     // {path: '/substance', component: ViewSubstance},
     // {path: '/trainer_types', component: TrainerTypes},

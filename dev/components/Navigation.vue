@@ -1,19 +1,17 @@
 <template>
   <div id="navigation">
-    <div id="side-nav">
-      <ul id="slide-out" class="side-nav">
-        <li><a class="header"><i class="material-icons">cloud</i>Molecls!</a></li>
-        <li><div class="divider"></div></li>
-        <li><a class="waves-effect" href="#!">Главная</a></li>
-        <li><a class="waves-effect" href="#!">Типы веществ</a></li>
-        <li><a class="waves-effect" href="#!">Отмеченные</a></li>
-        <li><a class="waves-effect" href="#!">Тренажер</a></li>
-      </ul>
-    </div>
+    <ul id="slide-out" class="side-nav">
+      <br>
+      <li><a class="subheader">Molecules</a></li>
+      <li v-on:click="closeSideNav"><router-link to="/main"><i class="material-icons">visibility</i>Главная</router-link></li>
+      <li v-on:click="closeSideNav"><router-link to="/types"><i class="material-icons">view_module</i>Типы веществ</router-link></li>
+      <li v-on:click="closeSideNav"><router-link to="/main"><i class="material-icons">star</i>Отмеченные</router-link></li>
+      <li v-on:click="closeSideNav"><router-link to="/main"><i class="material-icons">extension</i>Тренажер</router-link></li>
+    </ul>
 
     <div class="row">
       <div class="col s2">
-       <a class="waves-effect button-collapse"><i class="material-icons">dehaze</i></a>
+       <a class="waves-effect button-collapse" data-activates="slide-out"><i class="material-icons">menu</i></a>
       </div>
       <div class="col s10">
        <div class="search-wrapper card">
@@ -27,6 +25,11 @@
 <script>
   module.exports = {
     name: 'Navigation',
+    methods: {
+      closeSideNav() {
+        $('.button-collapse').sideNav('hide');
+      }
+    },
     mounted() {
       $(".button-collapse").sideNav();
     }
@@ -45,11 +48,16 @@
     box-shadow: none;
   }
   .button-collapse i {
+    position: absolute;
+    top: 10px;
+    right: 13px;
+    cursor: pointer;
     line-height: 33px;
     color: #333;
-    right: 13px !important;
   }
-
+  .search-wrapper {
+    box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.1), 0 1px 1px 0 rgba(0,0,0,0.05), 0 3px 1px -6px rgba(0,0,0,0.1) !important;
+  }
   .search-wrapper input#search {
     display: block;
     font-size: 16px;
@@ -62,7 +70,7 @@
     padding: 0 45px 0 15px;
     border: 0;
   }
-  i.material-icons {
+  .search-wrapper i.material-icons {
     position: absolute;
     top: 10px;
     right: 10px;

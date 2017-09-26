@@ -1,6 +1,6 @@
 <template>
 	<div id="main" class="center-align container сenter">
-    <h1>Molecls!</h1>
+    <h1>Molecules!</h1>
     <p class="flow-text">Интерактивный тренажер по изучению веществ неорганической химии.</p>
     <a class="waves-effect waves-light btn-large blue darken-2">Начните с H2SO4!</a>
     <br>
