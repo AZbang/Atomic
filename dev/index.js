@@ -1,42 +1,32 @@
-const Model = require('./Model');
-const api = require('./api');
+const Vue = require('vue');
+const VueRouter = require('vue-router');
 
-var model = new Model(window.innerWidth, window.innerHeight);
-model.start();
- 
-$('#search-form').on('submit', (e) => {
-	e.preventDefault();
+const App = require('./views/App.vue');
+const Main = require('./views/Main.vue');
+// const TypesSubstances = require('./views/TypesSubstances.vue');
+// const Substances = require('./views/Substances.vue');
+// const ViewSubstance = require('./views/ViewSubstance.vue');
+// const TrainerTypes = require('./views/TrainerTypes.vue');
+// const Trainer = require('./views/Trainer.vue');
+// const MarkedSubstances = require('./views/MarkedSubstances.vue');
 
-	let req = $('#search').val();
-	$('#loader').show();
+Vue.use(VueRouter);
 
-	model.removeMolecule(0);
-	$('#error').hide();
-
-	api.search(req, {
-		done: (data) => {
-			$('#loader').hide();
-			$('#model').css('opacity', 0);
-			setTimeout(() => $('#model').animate({opacity: 1}, 1000), 500);
-			model.addMolecule(data);
-		},
-		error: () => {
-			$('#loader').hide();
-			$('#error').show().transition('pulse');
-			$('#error-info').text(`Вещества по запросу "${req}" нет в базе данных PubChem`);
-		}
-	});
+var router = new VueRouter({
+	routes: [
+		{path: '/', redirect: '/main'},
+		{path: '/main', component: Main},
+		// {path: '/types', component: TypesSubstances},
+		// {path: '/types/:type', component:	Substances},
+    // {path: '/substance', component: ViewSubstance},
+    // {path: '/trainer_types', component: TrainerTypes},
+    // {path: '/trainer', component: Trainer},
+    // {path: '/marked', component: MarkedSubstances}
+	]
 });
 
-$('#error').hide();
-$('#loader').hide();
-$('#search').val('ЛСД');
-$('#search-form').submit();
-
-$('#btn-settings').on('click', () => {
-	$('#settings-model').modal('show');
+new Vue({
+  el: '#app',
+	render: (h) => h(App),
+	router
 });
-
-window.onresize = () => {
-	model.resize(window.innerWidth, window.innerHeight);
-}
