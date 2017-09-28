@@ -1,62 +1,49 @@
 <template>
   <div id="types" class="container">
     <h1>Типы веществ:</h1>
-    <div class="card" v-for="type in types">
-      <div class="card-image waves-effect waves-block waves-light">
-        <img :src="type.img">
-        <span class="card-title">{{type.label}}</span>
-      </div>
-      <div class="card-content">
-        <p>{{type.description}}</p>
-      </div>
+
+    <div class="card" v-for="item in types">
+      <router-link :to="item.link">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img :src="item.img">
+          <span class="card-title">{{item.label}}</span>
+        </div>
+        <div class="card-content">
+          <router-link :to="getLearnLink(item.type)" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">book</i></router-link>
+          <p>{{item.description}}</p>
+        </div>
+      </router-link>
     </div>
   </div>
 </template>
 <script>
   module.exports = {
-    data() {
-      return {
-        types: [
-          {
-            label: "Оксиды",
-            img: "img/oxide.jpg",
-            description: "Окси́д — бинарное соединение химического элемента с кислородом в степени окисления −2, в котором сам кислород связан только с менее электроотрицательным элементом."
-          },
-          {
-            label: "Основания",
-            img: "img/foundations.jpeg",
-            description: "Основание — химическое соединение, способное образовывать ковалентную связь с протоном либо с вакантной орбиталью другого химического соединения."
-          },
-          {
-            label: "Соли",
-            img: "img/salt.jpg",
-            description: "Со́ли — сложные вещества, которые в водных растворах диссоциируют на катионы металлов и анионы кислотных остатков. ИЮПАК определяет соли как химические соединения, состоящие из катионов и анионов."
-          },
-          {
-            label: "Кислоты",
-            img: "img/acid.jpg",
-            description: "Кисло́ты — химические соединения, способные отдавать катион водорода (кислоты Брёнстеда), либо соединения, способные принимать электронную пару с образованием ковалентной связи (кислоты Льюиса)."
-          },
-          {
-            label: "Щелочи",
-            img: "img/caustic.jpg",
-            description: "Щёлочи — гидроксиды щелочных, щёлочноземельных металлов и некоторых других элементов, например, таллия. К щелочам относятся хорошо растворимые в воде основания. При диссоциации щёлочи образуют анионы OH− и катион металла."
-          },
-          {
-            label: "Спирты",
-            img: "img/alcohols.jpg",
-            description: "Спирты́ — органические соединения, содержащие одну или более гидроксильных групп, непосредственно связанных с насыщенным атомом углерода. "
-          }
-        ]
+    computed: {
+      types() {
+        return this.$store.state.types
+      }
+    },
+    methods: {
+      getLearnLink(type) {
+        return "train/" + type;
       }
     }
   }
 </script>
 
-<style lang="css">
+<style scoped="">
   h1 {
     margin-top: 0;
     font-weight: 300;
     font-size: 2em;
+  }
+  a {
+    color: #000;
+  }
+  .card-content {
+    position: relative;
+  }
+  .card-content a.btn-floating {
+    top: -20px;
   }
 </style>

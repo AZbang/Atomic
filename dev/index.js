@@ -1,5 +1,8 @@
 const Vue = require('vue');
 const VueRouter = require('vue-router');
+const Vuex = require('vuex');
+
+const store = require('./store')
 
 const App = require('./views/App.vue');
 const Main = require('./views/Main.vue');
@@ -11,6 +14,7 @@ const TypesSubstances = require('./views/TypesSubstances.vue');
 // const MarkedSubstances = require('./views/MarkedSubstances.vue');
 
 Vue.use(VueRouter);
+Vue.use(Vuex);
 
 var router = new VueRouter({
 	routes: [
@@ -28,5 +32,6 @@ var router = new VueRouter({
 new Vue({
   el: '#app',
 	render: (h) => h(App),
-	router
+	router,
+	store
 });

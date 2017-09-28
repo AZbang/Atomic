@@ -6,6 +6,7 @@
       <li v-on:click="closeSideNav"><router-link to="/main"><i class="material-icons">visibility</i>Главная</router-link></li>
       <li v-on:click="closeSideNav"><router-link to="/types"><i class="material-icons">view_module</i>Типы веществ</router-link></li>
       <li v-on:click="closeSideNav"><router-link to="/main"><i class="material-icons">star</i>Отмеченные</router-link></li>
+      <li v-on:click="closeSideNav"><router-link to="/main"><i class="material-icons">history</i>История</router-link></li>
       <li v-on:click="closeSideNav"><router-link to="/main"><i class="material-icons">extension</i>Тренажер</router-link></li>
     </ul>
 
