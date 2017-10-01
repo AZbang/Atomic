@@ -10,8 +10,8 @@ module.exports = {
     types(state) {
       return state.types;
     },
-    substances(state, type) {
-      return state.substances[type];
+    substances(state) {
+      return state.substances;
     }
   }
 };

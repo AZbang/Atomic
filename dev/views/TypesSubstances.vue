@@ -16,6 +16,7 @@
     </div>
   </div>
 </template>
+
 <script>
   module.exports = {
     computed: {

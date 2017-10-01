@@ -30,7 +30,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
     hotAPI.rerender("data-v-96bedcd8", __vue__options__)
   }
 })()}
-},{"./Search.vue":2,"./SideNav.vue":3,"vue":14,"vue-hot-reload-api":12,"vueify/lib/insert-css":15}],2:[function(require,module,exports){
+},{"./Search.vue":2,"./SideNav.vue":3,"vue":15,"vue-hot-reload-api":13,"vueify/lib/insert-css":16}],2:[function(require,module,exports){
 var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".search-wrapper[data-v-b00e91b0] {\n  box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.1), 0 1px 1px 0 rgba(0,0,0,0.05), 0 3px 1px -6px rgba(0,0,0,0.1) !important;\n}\n.search-wrapper input#search[data-v-b00e91b0] {\n  display: block;\n  font-size: 16px;\n  font-weight: 300;\n  width: 100%;\n  height: 45px;\n  margin: 0;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  padding: 0 45px 0 15px;\n  border: 0;\n}\n.search-wrapper i.material-icons[data-v-b00e91b0] {\n  position: absolute;\n  top: 10px;\n  right: 10px;\n  cursor: pointer;\n}")
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
@@ -48,7 +48,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
     hotAPI.rerender("data-v-b00e91b0", __vue__options__)
   }
 })()}
-},{"vue":14,"vue-hot-reload-api":12,"vueify/lib/insert-css":15}],3:[function(require,module,exports){
+},{"vue":15,"vue-hot-reload-api":13,"vueify/lib/insert-css":16}],3:[function(require,module,exports){
 var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".button-collapse[data-v-3fa316fc] {\n  margin-top: 6px;\n  width: 50px;\n  height: 50px;\n  border-radius: 50%;\n  box-shadow: none;\n}\n.button-collapse i[data-v-3fa316fc] {\n  position: absolute;\n  top: 10px;\n  right: 13px;\n  cursor: pointer;\n  line-height: 33px;\n  color: #333;\n}")
 ;(function(){
 'use strict';
@@ -81,7 +81,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
     hotAPI.rerender("data-v-3fa316fc", __vue__options__)
   }
 })()}
-},{"vue":14,"vue-hot-reload-api":12,"vueify/lib/insert-css":15}],4:[function(require,module,exports){
+},{"vue":15,"vue-hot-reload-api":13,"vueify/lib/insert-css":16}],4:[function(require,module,exports){
 'use strict';
 
 var Vue = require('vue');
@@ -93,7 +93,7 @@ var store = require('./store');
 var App = require('./views/App.vue');
 var Main = require('./views/Main.vue');
 var TypesSubstances = require('./views/TypesSubstances.vue');
-// const Substances = require('./views/Substances.vue');
+var Substances = require('./views/Substances.vue');
 // const ViewSubstance = require('./views/ViewSubstance.vue');
 // const TrainerTypes = require('./views/TrainerTypes.vue');
 // const Trainer = require('./views/Trainer.vue');
@@ -103,7 +103,7 @@ Vue.use(VueRouter);
 Vue.use(Vuex);
 
 var router = new VueRouter({
-	routes: [{ path: '/', redirect: '/main' }, { path: '/main', component: Main }, { path: '/types', component: TypesSubstances }]
+	routes: [{ path: '/', redirect: '/main' }, { path: '/main', component: Main }, { path: '/types', component: TypesSubstances }, { path: '/type/:type', component: Substances }]
 });
 
 new Vue({
@@ -115,7 +115,7 @@ new Vue({
 	store: store
 });
 
-},{"./store":5,"./views/App.vue":8,"./views/Main.vue":9,"./views/TypesSubstances.vue":10,"vue":14,"vue-router":13,"vuex":16}],5:[function(require,module,exports){
+},{"./store":5,"./views/App.vue":8,"./views/Main.vue":9,"./views/Substances.vue":10,"./views/TypesSubstances.vue":11,"vue":15,"vue-router":14,"vuex":17}],5:[function(require,module,exports){
 'use strict';
 
 var types = require('./types.json');
@@ -130,20 +130,166 @@ module.exports = {
     types: function types(state) {
       return state.types;
     },
-    substances: function substances(state, type) {
-      return state.substances[type];
+    substances: function substances(state) {
+      return state.substances;
     }
   }
 };
 
 },{"./substances.json":6,"./types.json":7}],6:[function(require,module,exports){
 module.exports={
-  "acids": [
-    {
-      "label": "Серная кислота",
-      "formula": "H2SO4"
-    }
-  ]
+  "acids": {
+    "color": "orange",
+    "label": "кислоты",
+    "substances": [
+      {
+        "label": "Серная кислота",
+        "formula": "H2SO4",
+      },
+      {
+        "formula": "HAlO2",
+        "label": "Метаалюминиевая"
+      },
+      {
+        "formula": "HBO2",
+        "label": "Метаборная"
+      },
+      {
+        "formula": "H3BO3",
+        "label": "Ортоборная"
+      },
+      {
+        "formula": "HBr",
+        "label": "Бромоводородная"
+      }
+      ,{"formula": "HCOOH",
+        "label": "Муравьиная"}
+      ,{"formula": "HCN",
+        "label": "Циановодородная"}
+      ,{"formula": "H2CO3",
+        "label": "Угольная"}
+      ,{"formula": "H2C2O4",
+        "label": "Щавелевая"}
+      ,{"formula": "H4C2O2",
+        "label": "Уксусная"}
+      ,{"formula": "HCl",
+        "label": "Хлороводородная"}
+      ,{"formula": "HClO",
+        "label": "Хлорноватистая"}
+      ,{"formula": "HClO2",
+        "label": "Хлористая"}
+      ,{"formula": "HClO3",
+        "label": "Хлорноватая"}
+      ,{"formula": "HClO4",
+        "label": "Хлорная"}
+      ,{"formula": "HCrO2",
+        "label": "Метахромистая"}
+      ,{"formula": "HCrO4",
+        "label": "Хромовая"}
+      ,{"formula": "HCr2O7",
+        "label": "Двухромовая"}
+      ,{"formula": "HI",
+        "label": "Иодоводородная"}
+      ,{"formula": "HMnO4",
+        "label": "Марганцевая"}
+      ,{"formula": "H2MnO4",
+        "label": "Марганцовистая"}
+      ,{"formula": "H2MoO4",
+        "label": "Молибденовая"}
+      ,{"formula": "HNO2",
+        "label": "Азотистая"}
+      ,{"formula": "HNO3",
+        "label": "Азотная"}
+      ,{"formula": "HPO3",
+        "label": "Метафосфорная"}
+      ,{"formula": "HPO4",
+        "label": "Ортофосфорная"}
+      ,{"formula": "H4P2O7",
+          "label": "Двуфосфорная (Пирофосфорная)"}
+      ,{"formula": "H3PO3",
+        "label": "Фосфористая"}
+      ,{"formula": "H3PO2",
+        "label": "Фосфорноватистая"}
+      ,{"formula": "H2S",
+        "label": "Сероводородная"}
+      ,{"formula": "H2SO3",
+        "label": "Сернистая"}
+      ,{"formula": "H2SO4",
+        "label": "Серная"}
+      ,{"formula": "H2S2O3",
+        "label": "Тиосерная"}
+      ,{"formula": "H2Se",
+        "label": "Селеноводородная"}
+      ,{"formula": "H2SiO3",
+        "label": "Кремниевая"}
+      ,{"formula": "HVO3",
+        "label": "Ванадиевая"}
+      ,{"formula": "H2WO4",
+        "label": "Вольфрамовая"}
+    ]
+  },
+  "oxides": {
+    "color": "blue",
+    "label": "Оксиды",
+    "substances": [
+      {
+        "formula": "CO",
+        "label": "Оксид углерода (II)"
+      },
+      {
+        "formula": "CO2",
+        "label": "Оксид углерода (IV)"
+      },
+      {
+        "formula": "MgO",
+        "label": "Оксид магния"
+      },
+      {
+        "formula": "CaO",
+        "label": "Оксид кальция"
+      },
+      {
+        "formula": "FeO",
+        "label": "Оксид железа(II)"
+      },
+      {
+        "formula": "Fe2O3",
+        "label": "Оксид железа(III)"
+      },
+      {
+        "formula": "P2O5",
+        "label": "Оксид фосфора(V)"
+      }
+    ]
+  },
+  "foundations": {
+    "color": "indigo",
+    "label": "Основания",
+    "substances": [
+      {"formula": "КОН", "label": "гидроксид калия"},
+      {"formula": "Ca(OH)2", "label": "гидроксид кальция"},
+      {"formula": "Fe(OH)2", "label": "гидроксид железа (II)"},
+      {"formula": "Fe(OH)3", "label": "гидроксид железа (III)"}
+    ]
+  },
+  "salts": {
+    "color": "lime",
+    "label": "Соли",
+    "substances": [
+    ]
+  },
+  "caustics": {
+    "color": "red",
+    "label": "Щелочи",
+    "substances": [
+    ]
+  },
+  "alcohols": {
+    "color": "green",
+    "label": "Спирты",
+    "substances": [
+    ]
+  }
 }
 
 },{}],7:[function(require,module,exports){
@@ -220,7 +366,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
     hotAPI.rerender("data-v-3b72e0ed", __vue__options__)
   }
 })()}
-},{"../components/Navigation.vue":1,"vue":14,"vue-hot-reload-api":12}],9:[function(require,module,exports){
+},{"../components/Navigation.vue":1,"vue":15,"vue-hot-reload-api":13}],9:[function(require,module,exports){
 var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("#main[data-v-2125c4c6] {\n  margin-top: 25%;\n}\nh1[data-v-2125c4c6] {\n  font-weight: 200;\n}")
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
@@ -238,7 +384,47 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
     hotAPI.rerender("data-v-2125c4c6", __vue__options__)
   }
 })()}
-},{"vue":14,"vue-hot-reload-api":12,"vueify/lib/insert-css":15}],10:[function(require,module,exports){
+},{"vue":15,"vue-hot-reload-api":13,"vueify/lib/insert-css":16}],10:[function(require,module,exports){
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("h1[data-v-23e8c2e7] {\n  margin-top: 0;\n  font-weight: 300;\n  font-size: 2em;\n}\n.collection .collection-item.avatar[data-v-23e8c2e7] {\n  min-height: inherit;\n  width: 100%;\n}\n\na.btn-star[data-v-23e8c2e7] {\n  position: absolute;\n  right: 10px;\n  top: 50%;\n  margin-top: -5px;\n  width: 40px;\n  height: 40px;\n  border-radius: 50%;\n  text-align: center;\n}\na.btn-star i[data-v-23e8c2e7] {\n  line-height: 40px;\n}")
+;(function(){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  data: function data() {
+    return {
+      data: this.$store.state.substances[this.$route.params.type],
+      colorBtnStar: 'grey-text'
+    };
+  },
+
+  methods: {
+    substanceStar: function substanceStar() {
+      this.colorBtnStar = this.colorBtnStar == 'grey-text' ? 'orange-text' : 'grey-text';
+    }
+  }
+};
+})()
+if (module.exports.__esModule) module.exports = module.exports.default
+var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
+if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"container",attrs:{"id":"substances"}},[_c('h1',[_vm._v("Тип \""+_vm._s(_vm.data.label)+"\":")]),_vm._v(" "),_c('ul',{staticClass:"collection"},_vm._l((_vm.data.substances),function(item){return _c('li',{staticClass:"collection-item avatar waves-effect"},[_c('i',{staticClass:"material-icons circle",class:_vm.data.color},[_vm._v("assignment")]),_vm._v(" "),_c('span',{staticClass:"title"},[_vm._v(_vm._s(item.formula))]),_vm._v(" "),_c('p',[_vm._v(_vm._s(item.label))]),_vm._v(" "),_c('a',{staticClass:"waves-effect secondary-content btn-star",on:{"click":_vm.substanceStar}},[_c('i',{staticClass:"material-icons",class:_vm.colorBtnStar},[_vm._v("star")])])])}))])}
+__vue__options__.staticRenderFns = []
+__vue__options__._scopeId = "data-v-23e8c2e7"
+if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  module.hot.dispose(__vueify_style_dispose__)
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-23e8c2e7", __vue__options__)
+  } else {
+    hotAPI.rerender("data-v-23e8c2e7", __vue__options__)
+  }
+})()}
+},{"vue":15,"vue-hot-reload-api":13,"vueify/lib/insert-css":16}],11:[function(require,module,exports){
 var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("h1[data-v-1237fda8] {\n  margin-top: 0;\n  font-weight: 300;\n  font-size: 2em;\n}\na[data-v-1237fda8] {\n  color: #000;\n}\n.card-content[data-v-1237fda8] {\n  position: relative;\n}\n.card-content a.btn-floating[data-v-1237fda8] {\n  top: -20px;\n}")
 ;(function(){
 "use strict";
@@ -273,7 +459,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
     hotAPI.rerender("data-v-1237fda8", __vue__options__)
   }
 })()}
-},{"vue":14,"vue-hot-reload-api":12,"vueify/lib/insert-css":15}],11:[function(require,module,exports){
+},{"vue":15,"vue-hot-reload-api":13,"vueify/lib/insert-css":16}],12:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -459,7 +645,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 var Vue // late bind
 var version
 var map = window.__VUE_HOT_MAP__ = Object.create(null)
@@ -605,7 +791,7 @@ exports.reload = tryWrap(function (id, options) {
   })
 })
 
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 (function (process){
 /**
   * vue-router v2.7.0
@@ -3116,7 +3302,7 @@ if (inBrowser && window.Vue) {
 module.exports = VueRouter;
 
 }).call(this,require('_process'))
-},{"_process":11}],14:[function(require,module,exports){
+},{"_process":12}],15:[function(require,module,exports){
 (function (process,global){
 /*!
  * Vue.js v2.4.4
@@ -13312,7 +13498,7 @@ Vue$3.compile = compileToFunctions;
 module.exports = Vue$3;
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"_process":11}],15:[function(require,module,exports){
+},{"_process":12}],16:[function(require,module,exports){
 var inserted = exports.cache = {}
 
 function noop () {}
@@ -13337,7 +13523,7 @@ exports.insert = function (css) {
   }
 }
 
-},{}],16:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 (function (process){
 /**
  * vuex v2.4.0
@@ -14224,4 +14410,4 @@ var index = {
 module.exports = index;
 
 }).call(this,require('_process'))
-},{"_process":11}]},{},[4]);
+},{"_process":12}]},{},[4]);

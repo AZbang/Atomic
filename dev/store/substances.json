@@ -1,8 +1,154 @@
 {
-  "acids": [
-    {
-      "label": "Серная кислота",
-      "formula": "H2SO4"
-    }
-  ]
+  "acids": {
+    "color": "orange",
+    "label": "кислоты",
+    "substances": [
+      {
+        "label": "Серная кислота",
+        "formula": "H2SO4",
+      },
+      {
+        "formula": "HAlO2",
+        "label": "Метаалюминиевая"
+      },
+      {
+        "formula": "HBO2",
+        "label": "Метаборная"
+      },
+      {
+        "formula": "H3BO3",
+        "label": "Ортоборная"
+      },
+      {
+        "formula": "HBr",
+        "label": "Бромоводородная"
+      }
+      ,{"formula": "HCOOH",
+        "label": "Муравьиная"}
+      ,{"formula": "HCN",
+        "label": "Циановодородная"}
+      ,{"formula": "H2CO3",
+        "label": "Угольная"}
+      ,{"formula": "H2C2O4",
+        "label": "Щавелевая"}
+      ,{"formula": "H4C2O2",
+        "label": "Уксусная"}
+      ,{"formula": "HCl",
+        "label": "Хлороводородная"}
+      ,{"formula": "HClO",
+        "label": "Хлорноватистая"}
+      ,{"formula": "HClO2",
+        "label": "Хлористая"}
+      ,{"formula": "HClO3",
+        "label": "Хлорноватая"}
+      ,{"formula": "HClO4",
+        "label": "Хлорная"}
+      ,{"formula": "HCrO2",
+        "label": "Метахромистая"}
+      ,{"formula": "HCrO4",
+        "label": "Хромовая"}
+      ,{"formula": "HCr2O7",
+        "label": "Двухромовая"}
+      ,{"formula": "HI",
+        "label": "Иодоводородная"}
+      ,{"formula": "HMnO4",
+        "label": "Марганцевая"}
+      ,{"formula": "H2MnO4",
+        "label": "Марганцовистая"}
+      ,{"formula": "H2MoO4",
+        "label": "Молибденовая"}
+      ,{"formula": "HNO2",
+        "label": "Азотистая"}
+      ,{"formula": "HNO3",
+        "label": "Азотная"}
+      ,{"formula": "HPO3",
+        "label": "Метафосфорная"}
+      ,{"formula": "HPO4",
+        "label": "Ортофосфорная"}
+      ,{"formula": "H4P2O7",
+          "label": "Двуфосфорная (Пирофосфорная)"}
+      ,{"formula": "H3PO3",
+        "label": "Фосфористая"}
+      ,{"formula": "H3PO2",
+        "label": "Фосфорноватистая"}
+      ,{"formula": "H2S",
+        "label": "Сероводородная"}
+      ,{"formula": "H2SO3",
+        "label": "Сернистая"}
+      ,{"formula": "H2SO4",
+        "label": "Серная"}
+      ,{"formula": "H2S2O3",
+        "label": "Тиосерная"}
+      ,{"formula": "H2Se",
+        "label": "Селеноводородная"}
+      ,{"formula": "H2SiO3",
+        "label": "Кремниевая"}
+      ,{"formula": "HVO3",
+        "label": "Ванадиевая"}
+      ,{"formula": "H2WO4",
+        "label": "Вольфрамовая"}
+    ]
+  },
+  "oxides": {
+    "color": "blue",
+    "label": "Оксиды",
+    "substances": [
+      {
+        "formula": "CO",
+        "label": "Оксид углерода (II)"
+      },
+      {
+        "formula": "CO2",
+        "label": "Оксид углерода (IV)"
+      },
+      {
+        "formula": "MgO",
+        "label": "Оксид магния"
+      },
+      {
+        "formula": "CaO",
+        "label": "Оксид кальция"
+      },
+      {
+        "formula": "FeO",
+        "label": "Оксид железа(II)"
+      },
+      {
+        "formula": "Fe2O3",
+        "label": "Оксид железа(III)"
+      },
+      {
+        "formula": "P2O5",
+        "label": "Оксид фосфора(V)"
+      }
+    ]
+  },
+  "foundations": {
+    "color": "indigo",
+    "label": "Основания",
+    "substances": [
+      {"formula": "КОН", "label": "гидроксид калия"},
+      {"formula": "Ca(OH)2", "label": "гидроксид кальция"},
+      {"formula": "Fe(OH)2", "label": "гидроксид железа (II)"},
+      {"formula": "Fe(OH)3", "label": "гидроксид железа (III)"}
+    ]
+  },
+  "salts": {
+    "color": "lime",
+    "label": "Соли",
+    "substances": [
+    ]
+  },
+  "caustics": {
+    "color": "red",
+    "label": "Щелочи",
+    "substances": [
+    ]
+  },
+  "alcohols": {
+    "color": "green",
+    "label": "Спирты",
+    "substances": [
+    ]
+  }
 }
