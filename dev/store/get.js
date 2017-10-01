@@ -1,86 +1,54 @@
+// UNWORK MODULE!!! 
+
 const pubchem = require('pubchem-access').domain('compound');
-
 const key = require('./key');
-require('./wiki');
 
-module.exports.search = (req, cb) => {
-	let translate = 'https://translate.yandex.net/api/v1.5/tr.json/translate?' +
-		'key=' + key +
-		'&text=' + encodeURIComponent(req) +
-		'&lang=ru-en'
+module.exports = {
+	searchSubstance(req) {
+		let label = this.translateLabel(req);
+		let data = this.getPubchemData(label);
+		let structure = this.getStructureData(data.CID);
+	},
 
-	$.getJSON(translate, (data) => {
-		$('#info-substance').show();
-		$('#info-atom').hide();
-		
-		let image = $('#info-substance .image').empty();
-		let header = $('#info-substance .header').empty();
-		let description = $('#info-substance .description').empty();
-		let meta = $('#info-substance .meta').empty();
+	translateLabel(req) {
+		let translate = 'https://translate.yandex.net/api/v1.5/tr.json/translate?' +
+			'key=' + key +
+			'&text=' + encodeURIComponent(req) +
+			'&lang=ru-en';
 
-		$('#info-icon').show();
-		$('#name').empty();
-		$('#formula').empty();
-		$('#weight').empty();
-		
+		$.getJSON(translate, (data) => {
+			return data.text[0].replace('the ', '');
+		});
+	},
+
+	getPubchemData(req) {
 		pubchem
-			.setName(data.text[0].replace('the ', ''))
+			.setName(formatReq)
 			.getProperties(["IUPACName", "MolecularFormula", "MolecularWeight"])
 			.execute((data, status) => {
-				if(status !== 1) {
-					cb.error && cb.error();
-					$('#info-icon').attr('class', 'icon sticky note outline');
-					header.text(req[0].toUpperCase() + req.slice(1));
-					description.empty().html(`<p>По запросу <b>"${req}"</b> нет данных на Википедиа</p>`);
-					return;
-				}
+				if(status !== 1) return {};
+				else return data.PropertyTable.Properties[0];
+			}, 'JSON', 'raw');
+	},
 
-				let wiki = $('<div></div>').wikiblurb({
-					wikiURL: "https://ru.wikipedia.org/",
-					page: req,
-					section: 0,
-					callback: () => {
-						if(!wiki[0]) {
-							header.text(req[0].toUpperCase() + req.slice(1));
-							description.empty().html(`<p>По запросу <b>"${req}"</b> нет данных на Википедиа</p>`);
-						}
+	getStructureData(CID) {
+		let url3d = `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/${CID}/record/JSON/?record_type=3d&response_type=display`;
+		let url2d = `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/${CID}/record/JSON/?record_type=2d&response_type=display`;
 
-						$('#info-icon').attr('class', 'lab icon loading');
-						$('#info-icon').hide();
-
-						header.text(req[0].toUpperCase() + req.slice(1));
-						image.append(wiki.find('img')[0]);
-
-						let wikiDesc = wiki.find('.nbs-wikiblurb > p');
-						description.empty().append(wikiDesc);
-
-						$('#info-substance').transition('pulse');
-					}
-				});
-
-				let props = data.PropertyTable.Properties[0];
-				$('#name').text(req[0].toUpperCase() + req.slice(1));
-				$('#formula').text('Формула: ' + props.MolecularFormula);
-				$('#weight').text('Вес: ' + props.MolecularWeight + ' грамм/моль');
-
-
-				let url3d = `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/${props.CID}/record/JSON/?record_type=3d&response_type=display`;
-				let url2d = `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/${props.CID}/record/JSON/?record_type=2d&response_type=display`;
-				$.getJSON(url3d)
+		$.getJSON(url3d)
+			.done((data) => {
+				data.typeStructure = '3d';
+				this.state.currentSubstance = data;
+			})
+			.fail(() => {
+				$.getJSON(url2d)
 					.done((data) => {
-						data.typeStructure = '3d';
-						cb.done && cb.done(data);
+						data.typeStructure = '2d';
+						this.state.currentSubstance = data;
 					})
 					.fail(() => {
-						$.getJSON(url2d)
-							.done((data) => {
-								data.typeStructure = '2d';
-								cb.done && cb.done(data);
-							})
-							.fail(() => {
-								cb.error && cb.error();
-							});
-					})
-			}, 'JSON', 'raw');
-	});
+						this.state.errorMessage = 'Вещество не найдено';
+					});
+				});
+	}
 }

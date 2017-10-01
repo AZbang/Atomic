@@ -8,7 +8,7 @@ const App = require('./views/App.vue');
 const Main = require('./views/Main.vue');
 const TypesSubstances = require('./views/TypesSubstances.vue');
 const Substances = require('./views/Substances.vue');
-// const ViewSubstance = require('./views/ViewSubstance.vue');
+const ViewSubstance = require('./views/ViewSubstance.vue');
 // const TrainerTypes = require('./views/TrainerTypes.vue');
 // const Trainer = require('./views/Trainer.vue');
 // const MarkedSubstances = require('./views/MarkedSubstances.vue');
@@ -22,7 +22,7 @@ var router = new VueRouter({
 		{path: '/main', component: Main},
 		{path: '/types', component: TypesSubstances},
 		{path: '/type/:type', component:	Substances},
-    // {path: '/substance', component: ViewSubstance},
+    {path: '/substance', component: ViewSubstance, props: (route) => ({ query: route.query.q })},
     // {path: '/trainer_types', component: TrainerTypes},
     // {path: '/trainer', component: Trainer},
     // {path: '/marked', component: MarkedSubstances}
