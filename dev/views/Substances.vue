@@ -1,30 +1,25 @@
 <template>
   <div id="substances" class="container">
     <h1>Тип "{{data.label}}":</h1>
-
-    <ul class="collection">
-      <li class="collection-item avatar waves-effect" v-for="item in data.substances">
-        <i class="material-icons circle" :class="data.color">assignment</i>
-        <span class="title">{{item.formula}}</span>
-        <p>{{item.label}}</p>
-
-        <a class="waves-effect secondary-content btn-star" @click="substanceStar"><i class="material-icons" :class="colorBtnStar">star</i></a>
-      </li>
-    </ul>
+    <card-substance v-for="item in data.substances" :data="item"></card-substance>
   </div>
 </template>
 
 <script>
-  export default {
+  const CardSubstance = require('../components/CardSubstance.vue');
+
+  module.exports = {
+    components: {
+      CardSubstance
+    },
     data() {
       return {
-        data: this.$store.state.substances[this.$route.params.type],
-        colorBtnStar: 'grey-text'
+        type: this.$route.params.type,
       }
     },
-    methods: {
-      substanceStar() {
-        this.colorBtnStar = (this.colorBtnStar == 'grey-text' ? 'orange-text' : 'grey-text');
+    computed: {
+      data() {
+        return this.$store.getters.substances(this.type)
       }
     }
   }
@@ -35,23 +30,5 @@
     margin-top: 0;
     font-weight: 300;
     font-size: 2em;
-  }
-  .collection .collection-item.avatar {
-    min-height: inherit;
-    width: 100%;
-  }
-
-  a.btn-star {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    margin-top: -5px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    text-align: center;
-  }
-  a.btn-star i {
-    line-height: 40px;
   }
 </style>

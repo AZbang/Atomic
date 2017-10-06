@@ -35,7 +35,7 @@ class Molecule {
 
 	_initAtoms() {
 		let pos = this._data.coords[0].conformers[0];
-		
+
 		for(let i = 0; i < this._data.atoms.element.length; i++) {
 			let x, y, z;
 

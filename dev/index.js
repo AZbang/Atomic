@@ -33,5 +33,5 @@ new Vue({
   el: '#app',
 	render: (h) => h(App),
 	router,
-	store
+	store: new Vuex.Store(store)
 });

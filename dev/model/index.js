@@ -3,8 +3,8 @@ const OrbitControls = require('./OrbitControls');
 const DomEvents = require('./domEvents');
 
 class Model {
-	constructor(w, h) {
-		this.w = w - w/100*25;
+	constructor(wrap, w, h) {
+		this.w = w;
 		this.h = h;
 
 		this.molecules = [];
@@ -17,7 +17,8 @@ class Model {
 		this.renderer.setClearColor(0xffffff, 0);
 		this.renderer.setSize(this.w, this.h);
 
-		this.wrap = document.getElementById('model');
+		this.wrap = wrap;
+		console.log(wrap)
 		this.wrap.appendChild(this.renderer.domElement);
 
 		this.camera = new THREE.PerspectiveCamera(75, this.w / this.h, 0.1, 1000);
@@ -36,7 +37,7 @@ class Model {
 		this.scene.add(this.lights[0]);
 		this.scene.add(this.lights[1]);
 		this.scene.add(this.lights[2]);
-		
+
 		this.domEvents = new DomEvents(this.camera, this.wrap);
 	}
 
@@ -46,7 +47,7 @@ class Model {
 
 		this.camera.aspect = this.w/this.h;
 		this.camera.updateProjectionMatrix();
-		this.renderer.setSize(this.w, this.h);	
+		this.renderer.setSize(this.w, this.h);
 	}
 
 	addMolecule(data) {

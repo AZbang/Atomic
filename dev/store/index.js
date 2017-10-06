@@ -1,17 +1,36 @@
-const types = require('./types.json');
-const substances = require('./substances.json');
+const database = require('./clientDataBase');
+const substance = require('./substanceData');
+const errors = require('./errors.json');
 
 module.exports = {
-  state: {
-    types,
-    substances
+  modules: {
+    substance,
+    database
   },
-  getters: {
-    types(state) {
-      return state.types;
+  state: {
+    loading: false,
+    errorLog: "",
+    lang: "ru",
+    standartLang: "en"
+  },
+  mutations: {
+    loadingStart(state) {
+      state.loading = true;
     },
-    substances(state) {
-      return state.substances;
+    loadingEnd(state) {
+      state.loading = false;
+    },
+    errorLog(state, log) {
+      state.errorLog = log;
+    },
+    changeLang(state, lang) {
+      state.lang = lang;
+    }
+  },
+  actions: {
+    error({commit, state}, obj) {
+      commit('errorLog', errors[obj.type][state.lang || state.standartLang]);
+      console.log(obj.error);
     }
   }
 };

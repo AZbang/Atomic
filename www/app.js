@@ -1,15 +1,150 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".card[data-v-42fd26f0] {\n  width: 100%;\n}\n\na.btn-star[data-v-42fd26f0] {\n  position: absolute;\n  right: 10px;\n  top: 50%;\n  margin-top: -5px;\n  width: 40px;\n  height: 40px;\n  border-radius: 50%;\n  text-align: center;\n}\na.btn-star i[data-v-42fd26f0] {\n  line-height: 40px;\n}")
+;(function(){
+
+
+module.exports = {
+  props: ['data'],
+  data() {
+    return {
+      isClick: false,
+      classStar: 'grey-text'
+    };
+  },
+  methods: {
+    substanceToggleStar() {
+      if (this.isClick) {
+        this.classStar = 'grey-text';
+      } else {
+        this.classStar = 'orange-text';
+        this.$store.dispatch('addStar', this.data);
+      }
+
+      this.isClick = !this.isClick;
+    },
+    getSubstanceLink(req) {
+      return "/substance?q=" + req;
+    }
+  }
+};
+})()
+if (module.exports.__esModule) module.exports = module.exports.default
+var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
+if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('router-link',{attrs:{"to":_vm.getSubstanceLink(_vm.data.label)}},[_c('div',{staticClass:"card waves-effect"},[_c('img',{attrs:{"src":"http://cosmetic.ua/uploads/spool/photo/00000018037-filename-00002-tape.jpg","alt":""}}),_vm._v(" "),_c('div',{staticClass:"card-content white-text"},[_c('span',{staticClass:"card-title"},[_vm._v(_vm._s(_vm.data.formula))]),_vm._v(" "),_c('p',[_vm._v(_vm._s(_vm.data.label))])]),_vm._v(" "),_c('a',{staticClass:"waves-effect btn-star",class:_vm.classStar},[_c('i',{staticClass:"material-icons"},[_vm._v("star")])])])])}
+__vue__options__.staticRenderFns = []
+__vue__options__._scopeId = "data-v-42fd26f0"
+if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  module.hot.dispose(__vueify_style_dispose__)
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-42fd26f0", __vue__options__)
+  } else {
+    hotAPI.reload("data-v-42fd26f0", __vue__options__)
+  }
+})()}
+},{"vue":62,"vue-hot-reload-api":60,"vueify/lib/insert-css":63}],2:[function(require,module,exports){
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".error-log {\n  border-radius: 10px;\n  top: 0px;\n  margin-bottom: 12px;\n  width: 90%;\n  left: 50%;\n  margin-left: -45%;\n}")
+;(function(){
+
+
+module.exports = {
+  props: ['errorLog'],
+  computed: {
+    showError() {
+      Materialize.toast(this.errorLog, 10000, 'error-log');
+      return this.errorLog;
+    }
+  }
+};
+})()
+if (module.exports.__esModule) module.exports = module.exports.default
+var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
+if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"errors","error-log":_vm.showError}})}
+__vue__options__.staticRenderFns = []
+if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  module.hot.dispose(__vueify_style_dispose__)
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-34e3276b", __vue__options__)
+  } else {
+    hotAPI.reload("data-v-34e3276b", __vue__options__)
+  }
+})()}
+},{"vue":62,"vue-hot-reload-api":60,"vueify/lib/insert-css":63}],3:[function(require,module,exports){
+;(function(){
+
+
+module.exports = {};
+})()
+if (module.exports.__esModule) module.exports = module.exports.default
+var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
+if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c("div")}
+__vue__options__.staticRenderFns = []
+if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-199f4e12", __vue__options__)
+  } else {
+    hotAPI.reload("data-v-199f4e12", __vue__options__)
+  }
+})()}
+},{"vue":62,"vue-hot-reload-api":60}],4:[function(require,module,exports){
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("#model {\n  position: absolute;\n  top: 60px;\n  left: 0px;\n}")
+;(function(){
+
+
+const Model = require('../model');
+
+module.exports = {
+  props: ['data'],
+  mounted() {
+    let wrap = document.getElementById('model');
+    this.model = new Model(wrap, window.innerWidth, window.innerHeight / 2);
+    setTimeout(() => {
+      this.model.removeMolecule(0);
+      this.model.addMolecule(this.data);
+      this.model.start();
+    }, 5000);
+  }
+};
+})()
+if (module.exports.__esModule) module.exports = module.exports.default
+var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
+if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"model"}})}
+__vue__options__.staticRenderFns = []
+if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  module.hot.dispose(__vueify_style_dispose__)
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-5383ea47", __vue__options__)
+  } else {
+    hotAPI.reload("data-v-5383ea47", __vue__options__)
+  }
+})()}
+},{"../model":16,"vue":62,"vue-hot-reload-api":60,"vueify/lib/insert-css":63}],5:[function(require,module,exports){
 var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".row[data-v-96bedcd8] {\n  margin-top: 6px;\n}")
 ;(function(){
-'use strict';
 
-var Search = require('./Search.vue');
-var SideNav = require('./SideNav.vue');
+
+const Search = require('./Search.vue');
+const SideNav = require('./SideNav.vue');
 
 module.exports = {
   components: {
-    Search: Search,
-    SideNav: SideNav
+    Search,
+    SideNav
   }
 };
 })()
@@ -27,10 +162,27 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-96bedcd8", __vue__options__)
   } else {
-    hotAPI.rerender("data-v-96bedcd8", __vue__options__)
+    hotAPI.reload("data-v-96bedcd8", __vue__options__)
   }
 })()}
-},{"./Search.vue":2,"./SideNav.vue":3,"vue":16,"vue-hot-reload-api":14,"vueify/lib/insert-css":17}],2:[function(require,module,exports){
+},{"./Search.vue":7,"./SideNav.vue":8,"vue":62,"vue-hot-reload-api":60,"vueify/lib/insert-css":63}],6:[function(require,module,exports){
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".preloader-wrapper {\n  top: 50%;\n  left: 50%;\n  margin: -32px;\n  position: fixed;\n}")
+var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
+if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _vm._m(0)}
+__vue__options__.staticRenderFns = [function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"preloader-wrapper big active"},[_c('div',{staticClass:"spinner-layer spinner-blue"},[_c('div',{staticClass:"circle-clipper left"},[_c('div',{staticClass:"circle"})]),_c('div',{staticClass:"gap-patch"},[_c('div',{staticClass:"circle"})]),_c('div',{staticClass:"circle-clipper right"},[_c('div',{staticClass:"circle"})])])])}]
+if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  module.hot.dispose(__vueify_style_dispose__)
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-61fa2826", __vue__options__)
+  } else {
+    hotAPI.reload("data-v-61fa2826", __vue__options__)
+  }
+})()}
+},{"vue":62,"vue-hot-reload-api":60,"vueify/lib/insert-css":63}],7:[function(require,module,exports){
 var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".search-wrapper[data-v-b00e91b0] {\n  box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.1), 0 1px 1px 0 rgba(0,0,0,0.05), 0 3px 1px -6px rgba(0,0,0,0.1) !important;\n}\n.search-wrapper input#search[data-v-b00e91b0] {\n  display: block;\n  font-size: 16px;\n  font-weight: 300;\n  width: 100%;\n  height: 45px;\n  margin: 0;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  padding: 0 45px 0 15px;\n  border: 0;\n}\n.search-wrapper i.material-icons[data-v-b00e91b0] {\n  position: absolute;\n  top: 10px;\n  right: 10px;\n  cursor: pointer;\n}")
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
@@ -45,21 +197,21 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-b00e91b0", __vue__options__)
   } else {
-    hotAPI.rerender("data-v-b00e91b0", __vue__options__)
+    hotAPI.reload("data-v-b00e91b0", __vue__options__)
   }
 })()}
-},{"vue":16,"vue-hot-reload-api":14,"vueify/lib/insert-css":17}],3:[function(require,module,exports){
+},{"vue":62,"vue-hot-reload-api":60,"vueify/lib/insert-css":63}],8:[function(require,module,exports){
 var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".button-collapse[data-v-3fa316fc] {\n  margin-top: 6px;\n  width: 50px;\n  height: 50px;\n  border-radius: 50%;\n  box-shadow: none;\n}\n.button-collapse i[data-v-3fa316fc] {\n  position: absolute;\n  top: 10px;\n  right: 13px;\n  cursor: pointer;\n  line-height: 33px;\n  color: #333;\n}\n.router-link-active[data-v-3fa316fc] {\n  color: #1976D2;\n}\n.router-link-active i[data-v-3fa316fc] {\n  color: #1976D2 !important;\n}")
 ;(function(){
-'use strict';
+
 
 module.exports = {
   methods: {
-    closeSideNav: function closeSideNav() {
+    closeSideNav() {
       $('.button-collapse').sideNav('hide');
     }
   },
-  mounted: function mounted() {
+  mounted() {
     $(".button-collapse").sideNav();
   }
 };
@@ -78,10 +230,10 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-3fa316fc", __vue__options__)
   } else {
-    hotAPI.rerender("data-v-3fa316fc", __vue__options__)
+    hotAPI.reload("data-v-3fa316fc", __vue__options__)
   }
 })()}
-},{"vue":16,"vue-hot-reload-api":14,"vueify/lib/insert-css":17}],4:[function(require,module,exports){
+},{"vue":62,"vue-hot-reload-api":60,"vueify/lib/insert-css":63}],9:[function(require,module,exports){
 'use strict';
 
 var Vue = require('vue');
@@ -114,10 +266,3026 @@ new Vue({
 		return h(App);
 	},
 	router: router,
-	store: store
+	store: new Vuex.Store(store)
 });
 
-},{"./store":5,"./views/App.vue":8,"./views/Main.vue":9,"./views/Substances.vue":10,"./views/TypesSubstances.vue":11,"./views/ViewSubstance.vue":12,"vue":16,"vue-router":15,"vuex":18}],5:[function(require,module,exports){
+},{"./store":21,"./views/App.vue":24,"./views/Main.vue":25,"./views/Substances.vue":26,"./views/TypesSubstances.vue":27,"./views/ViewSubstance.vue":28,"vue":62,"vue-router":61,"vuex":64}],10:[function(require,module,exports){
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var atoms = require('./atoms.json');
+
+var Atom = function () {
+	function Atom(molecule, id, x, y, z) {
+		_classCallCheck(this, Atom);
+
+		this.molecule = molecule;
+		this.model = molecule.model;
+
+		this.id = id;
+
+		this.x = x;
+		this.y = y;
+		this.z = z;
+
+		this.nodes = [];
+
+		this.data = atoms[id - 1];
+
+		this.color = +('' + this.data.color).toLowerCase();
+		this.shadow = +('' + this.data.shadow).toLowerCase();
+		this.radius = +this.data['Ковалентный радиус, Å'] ? Math.min(+this.data['Ковалентный радиус, Å'] * 10, 10) : 10;
+		this.detail = 2;
+
+		// create three.js objects
+		this.geometry = new THREE.IcosahedronGeometry(this.radius, this.detail);
+		this.mesh = new THREE.Object3D();
+		this.mesh.add(new THREE.Mesh(this.geometry, new THREE.MeshPhongMaterial({
+			color: this.color,
+			emissive: this.shadow,
+			side: THREE.DoubleSide,
+			shading: THREE.FlatShading
+		})));
+		this.mesh.position.set(this.x, this.y, this.z);
+		this.molecule.stage.add(this.mesh);
+
+		this.materialSelect = new THREE.MeshBasicMaterial({ color: 0x3992FF, side: THREE.BackSide });
+		this.meshSelect = new THREE.Mesh(this.geometry, this.materialSelect);
+		this.meshSelect.scale.multiplyScalar(1.2);
+		this.meshSelect.position.x = this.x;
+		this.meshSelect.position.y = this.y;
+		this.meshSelect.position.z = this.z;
+		this.meshSelect.visible = false;
+		this.molecule.stage.add(this.meshSelect);
+
+		this._bindEvents();
+	}
+
+	_createClass(Atom, [{
+		key: '_bindEvents',
+		value: function _bindEvents() {
+			var _this = this;
+
+			this.model.domEvents.addEventListener(this.mesh, 'click', function (event) {
+
+				_this.molecule.atoms.forEach(function (atom) {
+					atom.meshSelect.visible = false;
+				});
+				_this.meshSelect.visible = true;
+
+				var table = $('<table class="ui blue table"><tbody></tbody></table>');
+
+				table.find('tbody').append('<tr><td>\u041F\u043E\u0440\u044F\u0434\u043A\u043E\u0432\u044B\u0439 \u043D\u043E\u043C\u0435\u0440 \u0430\u0442\u043E\u043C\u0430</td><td>' + _this.id + '</td></tr>');
+				for (var key in _this.data) {
+					if (key == 'description' || key == 'label' || key == 'shadow' || key == 'color') continue;
+					table.find('tbody').append('<tr><td>' + key + '</td><td>' + _this.data[key] + '</td></tr>');
+				}
+				$('#info-atom .content').empty();
+				$('#info-atom .content').append('<i class="right floated large close icon" style="cursor: pointer"></i>');
+				$('#info-atom .content i.close').on('click', function () {
+					$('#info-atom').hide();
+					$('#info-substance').show().transition('pulse');
+				});
+				$('#info-atom .content').append('<div class="header">' + _this.data.label.split(' ')[0] + '</div>');
+				$('#info-atom .content').append('<div class="meta">' + _this.data.label.split(' ')[1] + '</div>');
+				$('#info-atom .content').append('<div class="description">' + _this.data.description + '</div>');
+				$('#info-atom .content').append(table);
+				$('#info-substance').hide();
+				$('#info-atom').show().transition('pulse');
+			}, false);
+		}
+	}, {
+		key: 'remove',
+		value: function remove() {
+			this.model.domEvents.unbind(this.mesh, 'click');
+		}
+	}]);
+
+	return Atom;
+}();
+
+module.exports = Atom;
+
+},{"./atoms.json":14}],11:[function(require,module,exports){
+"use strict";
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Link = function Link(molecula, atom1, atom2, type) {
+	_classCallCheck(this, Link);
+
+	this.molecula = molecula;
+	this.atom1 = atom1;
+	this.atom2 = atom2;
+	this.type = type;
+
+	// create three.js objects
+
+	this.tubes = new THREE.Group();
+	this.molecula.stage.add(this.tubes);
+
+	for (var i = 0; i < type; i++) {
+
+		var p1 = new THREE.Vector3(this.atom1.x, this.atom1.y, this.atom1.z + i * (6 / type) - 2 / type * (type - 1));
+		var p2 = new THREE.Vector3(this.atom2.x, this.atom2.y, this.atom2.z + i * (6 / type) - 2 / type * (type - 1));
+
+		var mesh = new THREE.Object3D();
+		var geometry = new THREE.TubeGeometry(new THREE.CatmullRomCurve3([p1, p2]), 12, 2 / type);
+
+		mesh.add(new THREE.Mesh(geometry, new THREE.MeshPhongMaterial({
+			color: 0xB0B0B0,
+			emissive: 0x7B7B7B,
+			side: THREE.DoubleSide,
+			shading: THREE.FlatShading
+		})));
+		this.tubes.add(mesh);
+	}
+};
+
+module.exports = Link;
+
+},{}],12:[function(require,module,exports){
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Atom = require('./Atom');
+var Link = require('./Link');
+
+var Molecule = function () {
+	function Molecule(model, index, data) {
+		_classCallCheck(this, Molecule);
+
+		this.model = model;
+		this.index = 0;
+		this._data = data.PC_Compounds[0];
+
+		this.typeStructure = data.typeStructure;
+
+		this.stage = new THREE.Group();
+		this.model.scene.add(this.stage);
+
+		this.atoms = [];
+		this.links = [];
+
+		this.typeStructure === '2d' && this._computedCenter();
+		this._initAtoms();
+		this._bindNodes();
+
+		this.model.camera.position.z = Math.max(Math.min(this.atoms.length * 20, 200), 70);
+	}
+
+	_createClass(Molecule, [{
+		key: '_computedCenter',
+		value: function _computedCenter() {
+			var pos = this._data.coords[0].conformers[0];
+			var sortX = pos.x.slice(0).sort(function (a, b) {
+				return a - b;
+			});
+			var sortY = pos.y.slice(0).sort(function (a, b) {
+				return a - b;
+			});
+
+			this.center = {
+				x: sortX[Math.round(sortX.length / 2)],
+				y: sortY[Math.round(sortY.length / 2)]
+			};
+		}
+	}, {
+		key: '_initAtoms',
+		value: function _initAtoms() {
+			var pos = this._data.coords[0].conformers[0];
+
+			for (var i = 0; i < this._data.atoms.element.length; i++) {
+				var x = void 0,
+				    y = void 0,
+				    z = void 0;
+
+				if (this.typeStructure === '3d') {
+					x = pos.x[i] * 20;
+					y = pos.y[i] * 20;
+					z = pos.z[i] * 20;
+				} else {
+					x = this.center.x * 30 - pos.x[i] * 30;
+					y = this.center.y * 30 - pos.y[i] * 30;
+					z = 0;
+				}
+
+				var atom = new Atom(this, this._data.atoms.element[i], x, y, z);
+				this.atoms.push(atom);
+			}
+		}
+	}, {
+		key: '_bindNodes',
+		value: function _bindNodes() {
+			if (!this._data.bonds) return;
+
+			for (var i = 0; i < this._data.bonds.aid1.length; i++) {
+				var aid1 = this._data.bonds.aid1[i] - 1;
+				var aid2 = this._data.bonds.aid2[i] - 1;
+				var type = this._data.bonds.order[i];
+
+				this.links.push(new Link(this, this.atoms[aid1], this.atoms[aid2], type));
+			}
+		}
+	}, {
+		key: 'remove',
+		value: function remove() {
+			for (var i = 0; i < this.atoms.length; i++) {
+				this.atoms[i].remove();
+			}
+			this.stage.parent.remove(this.stage);
+		}
+	}, {
+		key: 'update',
+		value: function update() {
+			this.stage.rotation.x += 0.001;
+			this.stage.rotation.y += 0.0001;
+		}
+	}]);
+
+	return Molecule;
+}();
+
+module.exports = Molecule;
+
+},{"./Atom":10,"./Link":11}],13:[function(require,module,exports){
+'use strict';
+
+/**
+ * @author qiao / https://github.com/qiao
+ * @author mrdoob / http://mrdoob.com
+ * @author alteredq / http://alteredqualia.com/
+ * @author WestLangley / http://github.com/WestLangley
+ * @author erich666 / http://erichaines.com
+ * @author mrflix / http://felixniklas.de
+ * 
+ * released under MIT License (MIT)
+ */
+/*global THREE, console */
+
+// This set of controls performs orbiting, dollying (zooming), and panning. It maintains
+// the "up" direction as +Y, unlike the TrackballControls. Touch on tablet and phones is
+// supported.
+//
+//    Orbit - left mouse / touch: one finger move
+//    Zoom - middle mouse, or mousewheel / touch: two finger spread or squish
+//    Pan - right mouse, or arrow keys / touch: three finter swipe
+//
+// This is a drop-in replacement for (most) TrackballControls used in examples.
+// That is, include this js file and wherever you see:
+//    	controls = new THREE.TrackballControls( camera );
+//      controls.target.z = 150;
+// Simple substitute "OrbitControls" and the control should work as-is.
+
+THREE.OrbitControls = function (object, domElement, localElement) {
+
+		this.object = object;
+		this.domElement = domElement !== undefined ? domElement : document;
+		this.localElement = localElement !== undefined ? localElement : document;
+
+		// API
+
+		// Set to false to disable this control
+		this.enabled = true;
+
+		// "target" sets the location of focus, where the control orbits around
+		// and where it pans with respect to.
+		this.target = new THREE.Vector3();
+		// center is old, deprecated; use "target" instead
+		this.center = this.target;
+
+		// This option actually enables dollying in and out; left as "zoom" for
+		// backwards compatibility
+		this.noZoom = false;
+		this.zoomSpeed = 1.0;
+		// Limits to how far you can dolly in and out
+		this.minDistance = 0;
+		this.maxDistance = Infinity;
+
+		// Set to true to disable this control
+		this.noRotate = false;
+		this.rotateSpeed = 1.0;
+
+		// Set to true to disable this control
+		this.noPan = false;
+		this.keyPanSpeed = 7.0; // pixels moved per arrow key push
+
+		// Set to true to automatically rotate around the target
+		this.autoRotate = false;
+		this.autoRotateSpeed = 2.0; // 30 seconds per round when fps is 60
+
+		// How far you can orbit vertically, upper and lower limits.
+		// Range is 0 to Math.PI radians.
+		this.minPolarAngle = 0; // radians
+		this.maxPolarAngle = Math.PI; // radians
+
+		// Set to true to disable use of the keys
+		this.noKeys = false;
+		// The four arrow keys
+		this.keys = { LEFT: 37, UP: 38, RIGHT: 39, BOTTOM: 40 };
+
+		////////////
+		// internals
+
+		var scope = this;
+
+		var EPS = 0.000001;
+
+		var rotateStart = new THREE.Vector2();
+		var rotateEnd = new THREE.Vector2();
+		var rotateDelta = new THREE.Vector2();
+
+		var panStart = new THREE.Vector2();
+		var panEnd = new THREE.Vector2();
+		var panDelta = new THREE.Vector2();
+
+		var dollyStart = new THREE.Vector2();
+		var dollyEnd = new THREE.Vector2();
+		var dollyDelta = new THREE.Vector2();
+
+		var phiDelta = 0;
+		var thetaDelta = 0;
+		var scale = 1;
+		var pan = new THREE.Vector3();
+
+		var lastPosition = new THREE.Vector3();
+
+		var STATE = { NONE: -1, ROTATE: 0, DOLLY: 1, PAN: 2, TOUCH_ROTATE: 3, TOUCH_DOLLY: 4, TOUCH_PAN: 5 };
+		var state = STATE.NONE;
+
+		// events
+
+		var changeEvent = { type: 'change' };
+
+		this.rotateLeft = function (angle) {
+
+				if (angle === undefined) {
+
+						angle = getAutoRotationAngle();
+				}
+
+				thetaDelta -= angle;
+		};
+
+		this.rotateUp = function (angle) {
+
+				if (angle === undefined) {
+
+						angle = getAutoRotationAngle();
+				}
+
+				phiDelta -= angle;
+		};
+
+		// pass in distance in world space to move left
+		this.panLeft = function (distance) {
+
+				var panOffset = new THREE.Vector3();
+				var te = this.object.matrix.elements;
+				// get X column of matrix
+				panOffset.set(te[0], te[1], te[2]);
+				panOffset.multiplyScalar(-distance);
+
+				pan.add(panOffset);
+		};
+
+		// pass in distance in world space to move up
+		this.panUp = function (distance) {
+
+				var panOffset = new THREE.Vector3();
+				var te = this.object.matrix.elements;
+				// get Y column of matrix
+				panOffset.set(te[4], te[5], te[6]);
+				panOffset.multiplyScalar(distance);
+
+				pan.add(panOffset);
+		};
+
+		// main entry point; pass in Vector2 of change desired in pixel space,
+		// right and down are positive
+		this.pan = function (delta) {
+
+				var element = scope.domElement === document ? scope.domElement.body : scope.domElement;
+
+				if (scope.object.fov !== undefined) {
+
+						// perspective
+						var position = scope.object.position;
+						var offset = position.clone().sub(scope.target);
+						var targetDistance = offset.length();
+
+						// half of the fov is center to top of screen
+						targetDistance *= Math.tan(scope.object.fov / 2 * Math.PI / 180.0);
+						// we actually don't use screenWidth, since perspective camera is fixed to screen height
+						scope.panLeft(2 * delta.x * targetDistance / element.clientHeight);
+						scope.panUp(2 * delta.y * targetDistance / element.clientHeight);
+				} else if (scope.object.top !== undefined) {
+
+						// orthographic
+						scope.panLeft(delta.x * (scope.object.right - scope.object.left) / element.clientWidth);
+						scope.panUp(delta.y * (scope.object.top - scope.object.bottom) / element.clientHeight);
+				} else {
+
+						// camera neither orthographic or perspective - warn user
+						console.warn('WARNING: OrbitControls.js encountered an unknown camera type - pan disabled.');
+				}
+		};
+
+		this.dollyIn = function (dollyScale) {
+
+				if (dollyScale === undefined) {
+
+						dollyScale = getZoomScale();
+				}
+
+				scale /= dollyScale;
+		};
+
+		this.dollyOut = function (dollyScale) {
+
+				if (dollyScale === undefined) {
+
+						dollyScale = getZoomScale();
+				}
+
+				scale *= dollyScale;
+		};
+
+		this.update = function () {
+
+				var position = this.object.position;
+				var offset = position.clone().sub(this.target);
+
+				// angle from z-axis around y-axis
+
+				var theta = Math.atan2(offset.x, offset.z);
+
+				// angle from y-axis
+
+				var phi = Math.atan2(Math.sqrt(offset.x * offset.x + offset.z * offset.z), offset.y);
+
+				if (this.autoRotate) {
+
+						this.rotateLeft(getAutoRotationAngle());
+				}
+
+				theta += thetaDelta;
+				phi += phiDelta;
+
+				// restrict phi to be between desired limits
+				phi = Math.max(this.minPolarAngle, Math.min(this.maxPolarAngle, phi));
+
+				// restrict phi to be betwee EPS and PI-EPS
+				phi = Math.max(EPS, Math.min(Math.PI - EPS, phi));
+
+				var radius = offset.length() * scale;
+
+				// restrict radius to be between desired limits
+				radius = Math.max(this.minDistance, Math.min(this.maxDistance, radius));
+
+				// move target to panned location
+				this.target.add(pan);
+
+				offset.x = radius * Math.sin(phi) * Math.sin(theta);
+				offset.y = radius * Math.cos(phi);
+				offset.z = radius * Math.sin(phi) * Math.cos(theta);
+
+				position.copy(this.target).add(offset);
+
+				this.object.lookAt(this.target);
+
+				thetaDelta = 0;
+				phiDelta = 0;
+				scale = 1;
+				pan.set(0, 0, 0);
+
+				if (lastPosition.distanceTo(this.object.position) > 0) {
+
+						this.dispatchEvent(changeEvent);
+
+						lastPosition.copy(this.object.position);
+				}
+		};
+
+		function getAutoRotationAngle() {
+
+				return 2 * Math.PI / 60 / 60 * scope.autoRotateSpeed;
+		}
+
+		function getZoomScale() {
+
+				return Math.pow(0.95, scope.zoomSpeed);
+		}
+
+		function onMouseDown(event) {
+
+				if (scope.enabled === false) {
+						return;
+				}
+				event.preventDefault();
+
+				if (event.button === 0) {
+						if (scope.noRotate === true) {
+								return;
+						}
+
+						state = STATE.ROTATE;
+
+						rotateStart.set(event.clientX, event.clientY);
+				} else if (event.button === 1) {
+						if (scope.noZoom === true) {
+								return;
+						}
+
+						state = STATE.DOLLY;
+
+						dollyStart.set(event.clientX, event.clientY);
+				} else if (event.button === 2) {
+						if (scope.noPan === true) {
+								return;
+						}
+
+						state = STATE.PAN;
+
+						panStart.set(event.clientX, event.clientY);
+				}
+
+				// Greggman fix: https://github.com/greggman/three.js/commit/fde9f9917d6d8381f06bf22cdff766029d1761be
+				scope.domElement.addEventListener('mousemove', onMouseMove, false);
+				scope.domElement.addEventListener('mouseup', onMouseUp, false);
+		}
+
+		function onMouseMove(event) {
+
+				if (scope.enabled === false) return;
+
+				event.preventDefault();
+
+				var element = scope.domElement === document ? scope.domElement.body : scope.domElement;
+
+				if (state === STATE.ROTATE) {
+
+						if (scope.noRotate === true) return;
+
+						rotateEnd.set(event.clientX, event.clientY);
+						rotateDelta.subVectors(rotateEnd, rotateStart);
+
+						// rotating across whole screen goes 360 degrees around
+						scope.rotateLeft(2 * Math.PI * rotateDelta.x / element.clientWidth * scope.rotateSpeed);
+						// rotating up and down along whole screen attempts to go 360, but limited to 180
+						scope.rotateUp(2 * Math.PI * rotateDelta.y / element.clientHeight * scope.rotateSpeed);
+
+						rotateStart.copy(rotateEnd);
+				} else if (state === STATE.DOLLY) {
+
+						if (scope.noZoom === true) return;
+
+						dollyEnd.set(event.clientX, event.clientY);
+						dollyDelta.subVectors(dollyEnd, dollyStart);
+
+						if (dollyDelta.y > 0) {
+
+								scope.dollyIn();
+						} else {
+
+								scope.dollyOut();
+						}
+
+						dollyStart.copy(dollyEnd);
+				} else if (state === STATE.PAN) {
+
+						if (scope.noPan === true) return;
+
+						panEnd.set(event.clientX, event.clientY);
+						panDelta.subVectors(panEnd, panStart);
+
+						scope.pan(panDelta);
+
+						panStart.copy(panEnd);
+				}
+
+				// Greggman fix: https://github.com/greggman/three.js/commit/fde9f9917d6d8381f06bf22cdff766029d1761be
+				scope.update();
+		}
+
+		function onMouseUp() /* event */{
+
+				if (scope.enabled === false) return;
+
+				// Greggman fix: https://github.com/greggman/three.js/commit/fde9f9917d6d8381f06bf22cdff766029d1761be
+				scope.domElement.removeEventListener('mousemove', onMouseMove, false);
+				scope.domElement.removeEventListener('mouseup', onMouseUp, false);
+
+				state = STATE.NONE;
+		}
+
+		function onMouseWheel(event) {
+
+				if (scope.enabled === false || scope.noZoom === true) return;
+
+				var delta = 0;
+
+				if (event.wheelDelta) {
+						// WebKit / Opera / Explorer 9
+
+						delta = event.wheelDelta;
+				} else if (event.detail) {
+						// Firefox
+
+						delta = -event.detail;
+				}
+
+				if (delta > 0) {
+
+						scope.dollyOut();
+				} else {
+
+						scope.dollyIn();
+				}
+		}
+
+		function onKeyDown(event) {
+
+				if (scope.enabled === false) {
+						return;
+				}
+				if (scope.noKeys === true) {
+						return;
+				}
+				if (scope.noPan === true) {
+						return;
+				}
+
+				// pan a pixel - I guess for precise positioning?
+				// Greggman fix: https://github.com/greggman/three.js/commit/fde9f9917d6d8381f06bf22cdff766029d1761be
+				var needUpdate = false;
+
+				switch (event.keyCode) {
+
+						case scope.keys.UP:
+								scope.pan(new THREE.Vector2(0, scope.keyPanSpeed));
+								needUpdate = true;
+								break;
+						case scope.keys.BOTTOM:
+								scope.pan(new THREE.Vector2(0, -scope.keyPanSpeed));
+								needUpdate = true;
+								break;
+						case scope.keys.LEFT:
+								scope.pan(new THREE.Vector2(scope.keyPanSpeed, 0));
+								needUpdate = true;
+								break;
+						case scope.keys.RIGHT:
+								scope.pan(new THREE.Vector2(-scope.keyPanSpeed, 0));
+								needUpdate = true;
+								break;
+				}
+
+				// Greggman fix: https://github.com/greggman/three.js/commit/fde9f9917d6d8381f06bf22cdff766029d1761be
+				if (needUpdate) {
+
+						scope.update();
+				}
+		}
+
+		function touchstart(event) {
+
+				if (scope.enabled === false) {
+						return;
+				}
+
+				switch (event.touches.length) {
+
+						case 1:
+								// one-fingered touch: rotate
+								if (scope.noRotate === true) {
+										return;
+								}
+
+								state = STATE.TOUCH_ROTATE;
+
+								rotateStart.set(event.touches[0].pageX, event.touches[0].pageY);
+								break;
+
+						case 2:
+								// two-fingered touch: dolly
+								if (scope.noZoom === true) {
+										return;
+								}
+
+								state = STATE.TOUCH_DOLLY;
+
+								var dx = event.touches[0].pageX - event.touches[1].pageX;
+								var dy = event.touches[0].pageY - event.touches[1].pageY;
+								var distance = Math.sqrt(dx * dx + dy * dy);
+								dollyStart.set(0, distance);
+								break;
+
+						case 3:
+								// three-fingered touch: pan
+								if (scope.noPan === true) {
+										return;
+								}
+
+								state = STATE.TOUCH_PAN;
+
+								panStart.set(event.touches[0].pageX, event.touches[0].pageY);
+								break;
+
+						default:
+								state = STATE.NONE;
+
+				}
+		}
+
+		function touchmove(event) {
+
+				if (scope.enabled === false) {
+						return;
+				}
+
+				event.preventDefault();
+				event.stopPropagation();
+
+				var element = scope.domElement === document ? scope.domElement.body : scope.domElement;
+
+				switch (event.touches.length) {
+
+						case 1:
+								// one-fingered touch: rotate
+								if (scope.noRotate === true) {
+										return;
+								}
+								if (state !== STATE.TOUCH_ROTATE) {
+										return;
+								}
+
+								rotateEnd.set(event.touches[0].pageX, event.touches[0].pageY);
+								rotateDelta.subVectors(rotateEnd, rotateStart);
+
+								// rotating across whole screen goes 360 degrees around
+								scope.rotateLeft(2 * Math.PI * rotateDelta.x / element.clientWidth * scope.rotateSpeed);
+								// rotating up and down along whole screen attempts to go 360, but limited to 180
+								scope.rotateUp(2 * Math.PI * rotateDelta.y / element.clientHeight * scope.rotateSpeed);
+
+								rotateStart.copy(rotateEnd);
+								break;
+
+						case 2:
+								// two-fingered touch: dolly
+								if (scope.noZoom === true) {
+										return;
+								}
+								if (state !== STATE.TOUCH_DOLLY) {
+										return;
+								}
+
+								var dx = event.touches[0].pageX - event.touches[1].pageX;
+								var dy = event.touches[0].pageY - event.touches[1].pageY;
+								var distance = Math.sqrt(dx * dx + dy * dy);
+
+								dollyEnd.set(0, distance);
+								dollyDelta.subVectors(dollyEnd, dollyStart);
+
+								if (dollyDelta.y > 0) {
+
+										scope.dollyOut();
+								} else {
+
+										scope.dollyIn();
+								}
+
+								dollyStart.copy(dollyEnd);
+								break;
+
+						case 3:
+								// three-fingered touch: pan
+								if (scope.noPan === true) {
+										return;
+								}
+								if (state !== STATE.TOUCH_PAN) {
+										return;
+								}
+
+								panEnd.set(event.touches[0].pageX, event.touches[0].pageY);
+								panDelta.subVectors(panEnd, panStart);
+
+								scope.pan(panDelta);
+
+								panStart.copy(panEnd);
+								break;
+
+						default:
+								state = STATE.NONE;
+
+				}
+		}
+
+		function touchend() /* event */{
+
+				if (scope.enabled === false) {
+						return;
+				}
+
+				state = STATE.NONE;
+		}
+
+		this.domElement.addEventListener('contextmenu', function (event) {
+				event.preventDefault();
+		}, false);
+		this.localElement.addEventListener('mousedown', onMouseDown, false);
+		this.domElement.addEventListener('mousewheel', onMouseWheel, false);
+		this.domElement.addEventListener('DOMMouseScroll', onMouseWheel, false); // firefox
+
+		this.domElement.addEventListener('keydown', onKeyDown, false);
+
+		this.localElement.addEventListener('touchstart', touchstart, false);
+		this.domElement.addEventListener('touchend', touchend, false);
+		this.domElement.addEventListener('touchmove', touchmove, false);
+};
+
+THREE.OrbitControls.prototype = Object.create(THREE.EventDispatcher.prototype);
+
+module.exports = THREE.OrbitControls;
+
+},{}],14:[function(require,module,exports){
+module.exports=[
+    {
+        "Химический символ": "H",
+        "label": "Водород Hydrogen",
+        "color": "0xFFFFFF",
+        "shadow": "0xEEEEEE",
+        "Электронная формула": "()1s0",
+        "description": "<b>&#x412;&#x43E;&#x434;&#x43E;&#x440;&#x43E;&#x434;</b> (&#x43B;&#x430;&#x442;. Hydrogenium), H, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;, &#x43F;&#x435;&#x440;&#x432;&#x44B;&#x439; &#x43F;&#x43E; &#x43F;&#x43E;&#x440;&#x44F;&#x434;&#x43A;&#x43E;&#x432;&#x43E;&#x43C;&#x443; &#x43D;&#x43E;&#x43C;&#x435;&#x440;&#x443; &#x432; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x435; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 1,0079. &#x41F;&#x440;&#x438; &#x43E;&#x431;&#x44B;&#x447;&#x43D;&#x44B;&#x445; &#x443;&#x441;&#x43B;&#x43E;&#x432;&#x438;&#x44F;&#x445; &#x412;&#x43E;&#x434;&#x43E;&#x440;&#x43E;&#x434; - &#x433;&#x430;&#x437;; &#x43D;&#x435; &#x438;&#x43C;&#x435;&#x435;&#x442; &#x446;&#x432;&#x435;&#x442;&#x430;, &#x437;&#x430;&#x43F;&#x430;&#x445;&#x430; &#x438; &#x432;&#x43A;&#x443;&#x441;&#x430;.\n",
+        "Атомная масса": "1.0079",
+        "Плотность, кг/м³": "0.0898",
+        "Температура плавления, °С": "-259.1",
+        "Температура кипения, °С": "-252.8",
+        "Теплоемкость, кДж/(кг·°С)": "14.442",
+        "Электроотрицательность": "2.1",
+        "Ковалентный радиус, Å": "0.32",
+        "1-й ионизац. потенциал, эв": "13.60"
+    },
+    {
+        "Химический символ": "He",
+        "label": "Гелий Helium",
+        "color": "0x30C7E6",
+        "shadow": "0x10AFC8",
+        "Электронная формула": "()1s0",
+        "description": "<b>&#x413;&#x435;&#x43B;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Helium), &#x441;&#x438;&#x43C;&#x432;&#x43E;&#x43B; &#x41D;&#x435;, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; VIII &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B;, &#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x438;&#x442;&#x441;&#x44F; &#x43A; &#x438;&#x43D;&#x435;&#x440;&#x442;&#x43D;&#x44B;&#x43C; &#x433;&#x430;&#x437;&#x430;&#x43C;; &#x43F;&#x43E;&#x440;&#x44F;&#x434;&#x43A;&#x43E;&#x432;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 2, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 4,0026; &#x433;&#x430;&#x437; &#x431;&#x435;&#x437; &#x446;&#x432;&#x435;&#x442;&#x430; &#x438; &#x437;&#x430;&#x43F;&#x430;&#x445;&#x430;. &#x41F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x43D;&#x44B;&#x439; &#x413;&#x435;&#x43B;&#x438;&#x439; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x438;&#x442; &#x438;&#x437; 2 &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432;: <sup>3</sup>&#x41D;&#x435; &#x438; <sup>4</sup>&#x41D;&#x435; (&#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x430;&#x43D;&#x438;&#x435; <sup>4</sup>&#x41D;&#x435; &#x440;&#x435;&#x437;&#x43A;&#x43E; &#x43F;&#x440;&#x435;&#x43E;&#x431;&#x43B;&#x430;&#x434;&#x430;&#x435;&#x442;).\n",
+        "Атомная масса": "4.0026",
+        "Плотность, кг/м³": "0.179",
+        "Температура плавления, °С": "-272.2",
+        "Температура кипения, °С": "-268.9",
+        "Теплоемкость, кДж/(кг·°С)": "5.232",
+        "Электроотрицательность": " ",
+        "Ковалентный радиус, Å": "0.93",
+        "1-й ионизац. потенциал, эв": "24.59"
+    },
+    {
+        "Химический символ": "Li",
+        "label": "Литий Lithium",
+        "color": "0x5422ED",
+        "shadow": "0x511DEB",
+        "Электронная формула": "(He)2s1",
+        "description": "<b>&#x41B;&#x438;&#x442;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Lithium), Li, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; I &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 3, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 6,941, &#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x438;&#x442;&#x441;&#x44F; &#x43A; &#x449;&#x435;&#x43B;&#x43E;&#x447;&#x43D;&#x44B;&#x43C; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;&#x430;&#x43C;. &#x41F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x43D;&#x44B;&#x439; &#x41B;&#x438;&#x442;&#x438;&#x439; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x438;&#x442; &#x438;&#x437; &#x434;&#x432;&#x443;&#x445; &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; - <sup>6</sup>Li (7,42%) &#x438; <sup>7</sup>Li (92,58%). &#x41B;&#x438;&#x442;&#x438;&#x439; &#x431;&#x44B;&#x43B; &#x43E;&#x442;&#x43A;&#x440;&#x44B;&#x442; &#x432; 1817 &#x433;&#x43E;&#x434;&#x443; &#x448;&#x432;&#x435;&#x434;&#x441;&#x43A;&#x438;&#x43C; &#x445;&#x438;&#x43C;&#x438;&#x43A;&#x43E;&#x43C; &#x410;. &#x410;&#x440;&#x444;&#x432;&#x435;&#x434;&#x441;&#x43E;&#x43D;&#x43E;&#x43C; &#x432; &#x43C;&#x438;&#x43D;&#x435;&#x440;&#x430;&#x43B;&#x435; &#x43F;&#x435;&#x442;&#x430;&#x43B;&#x438;&#x442;&#x435;; &#x43D;&#x430;&#x437;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x43E;&#x442; &#x433;&#x440;&#x435;&#x447;. lithos - &#x43A;&#x430;&#x43C;&#x435;&#x43D;&#x44C;. &#x41C;&#x435;&#x442;&#x430;&#x43B;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x41B;&#x438;&#x442;&#x438;&#x439; &#x432;&#x43F;&#x435;&#x440;&#x432;&#x44B;&#x435; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D; &#x432; 1818 &#x433;&#x43E;&#x434;&#x443; &#x430;&#x43D;&#x433;&#x43B;&#x438;&#x439;&#x441;&#x43A;&#x438;&#x43C; &#x445;&#x438;&#x43C;&#x438;&#x43A;&#x43E;&#x43C; &#x413;. &#x414;&#x44D;&#x432;&#x438;.\n",
+        "Атомная масса": "6.941",
+        "Плотность, кг/м³": "530",
+        "Температура плавления, °С": "180.5",
+        "Температура кипения, °С": "1342",
+        "Теплоемкость, кДж/(кг·°С)": "3.307",
+        "Электроотрицательность": "1.0",
+        "Ковалентный радиус, Å": "1.23",
+        "1-й ионизац. потенциал, эв": "5.39"
+    },
+    {
+        "Химический символ": "Be",
+        "label": "Бериллий Beryllium",
+        "color": "0x3E7819",
+        "shadow": "0x206827",
+        "Электронная формула": "(He)2s2",
+        "description": "<b>&#x411;&#x435;&#x440;&#x438;&#x43B;&#x43B;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Beryllium), Be, &#x445;&#x44F;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; II &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 4, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 9,0122; &#x43B;&#x435;&#x433;&#x43A;&#x438;&#x439; &#x441;&#x432;&#x435;&#x442;&#x43B;&#x43E;-&#x441;&#x435;&#x440;&#x44B;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;. &#x418;&#x43C;&#x435;&#x435;&#x442; &#x43E;&#x434;&#x438;&#x43D; &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x439; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F; <sup>9</sup>&#x412;&#x435;. \n",
+        "Атомная масса": "9.0122",
+        "Плотность, кг/м³": "1850",
+        "Температура плавления, °С": "1285",
+        "Температура кипения, °С": "2470",
+        "Теплоемкость, кДж/(кг·°С)": "1.884",
+        "Электроотрицательность": "1.5",
+        "Ковалентный радиус, Å": "0.90",
+        "1-й ионизац. потенциал, эв": "9.32"
+    },
+    {
+        "Химический символ": "B",
+        "label": "Бор Boron",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(He)2s22p1",
+        "description": "<b>&#x411;&#x43E;&#x440;</b> (&#x43B;&#x430;&#x442;. Borum), &#x412;, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; III &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 5, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 10,811; &#x43A;&#x440;&#x438;&#x441;&#x442;&#x430;&#x43B;&#x43B;&#x44B; &#x441;&#x435;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x43E;-&#x447;&#x435;&#x440;&#x43D;&#x43E;&#x433;&#x43E; &#x446;&#x432;&#x435;&#x442;&#x430; (&#x43E;&#x447;&#x435;&#x43D;&#x44C; &#x447;&#x438;&#x441;&#x442;&#x44B;&#x439; &#x411;&#x43E;&#x440; &#x431;&#x435;&#x441;&#x446;&#x432;&#x435;&#x442;&#x435;&#x43D;). &#x41F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x43D;&#x44B;&#x439; &#x411;&#x43E;&#x440; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x438;&#x442; &#x438;&#x437; &#x434;&#x432;&#x443;&#x445; &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432;: <sup>10</sup>B (19%) &#x438; <sup>11</sup>B (81%). \n",
+        "Атомная масса": "10.811",
+        "Плотность, кг/м³": "2340",
+        "Температура плавления, °С": "2030",
+        "Температура кипения, °С": "3860",
+        "Теплоемкость, кДж/(кг·°С)": "1.293",
+        "Электроотрицательность": "2.0",
+        "Ковалентный радиус, Å": "0.82",
+        "1-й ионизац. потенциал, эв": "8.30"
+    },
+    {
+        "Химический символ": "C",
+        "label": "Углерод Carbon",
+        "color": "0x343434",
+        "shadow": "0x000000",
+        "Электронная формула": "(He)2s22p2",
+        "description": "<b>&#x423;&#x433;&#x43B;&#x435;&#x440;&#x43E;&#x434;</b> (&#x43B;&#x430;&#x442;. Carboneum), &#x421;, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; IV &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 6, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 12,011. &#x418;&#x437;&#x432;&#x435;&#x441;&#x442;&#x43D;&#x44B; &#x434;&#x432;&#x430; &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x430;: <sup>12</sup>&#x421; (98,892%) &#x438; <sup>13</sup>&#x421; (1,108%). &#x418;&#x437; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x43D;&#x430;&#x438;&#x431;&#x43E;&#x43B;&#x435;&#x435; &#x432;&#x430;&#x436;&#x435;&#x43D; <sup>14</sup>&#x421; &#x441; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x43E;&#x43C; &#x43F;&#x43E;&#x43B;&#x443;&#x440;&#x430;&#x441;&#x43F;&#x430;&#x434;&#x430;(&#x422;<sub>&#xBD;</sub> = 5,6&#xB7;10<sup>3</sup> &#x43B;&#x435;&#x442;). &#x41D;&#x435;&#x431;&#x43E;&#x43B;&#x44C;&#x448;&#x438;&#x435; &#x43A;&#x43E;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x442;&#x432;&#x430; <sup>14</sup>&#x421; (&#x43E;&#x43A;&#x43E;&#x43B;&#x43E; 2&#xB7;10<sup>-10</sup>% &#x43F;&#x43E; &#x43C;&#x430;&#x441;&#x441;&#x435;) &#x43F;&#x43E;&#x441;&#x442;&#x43E;&#x44F;&#x43D;&#x43D;&#x43E; &#x43E;&#x431;&#x440;&#x430;&#x437;&#x443;&#x44E;&#x442;&#x441;&#x44F; &#x432; &#x432;&#x435;&#x440;&#x445;&#x43D;&#x438;&#x445; &#x441;&#x43B;&#x43E;&#x44F;&#x445; &#x430;&#x442;&#x43C;&#x43E;&#x441;&#x444;&#x435;&#x440;&#x44B; &#x43F;&#x440;&#x438; &#x434;&#x435;&#x439;&#x441;&#x442;&#x432;&#x438;&#x438; &#x43D;&#x435;&#x439;&#x442;&#x440;&#x43E;&#x43D;&#x43E;&#x432; &#x43A;&#x43E;&#x441;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x433;&#x43E; &#x438;&#x437;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x43D;&#x430; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F; &#x430;&#x437;&#x43E;&#x442;&#x430; <sup>14</sup>N. &#x41F;&#x43E; &#x443;&#x434;&#x435;&#x43B;&#x44C;&#x43D;&#x43E;&#x439; &#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x43E;&#x441;&#x442;&#x438; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x430; <sup>14</sup>&#x421; &#x432; &#x43E;&#x441;&#x442;&#x430;&#x442;&#x43A;&#x430;&#x445; &#x431;&#x438;&#x43E;&#x433;&#x435;&#x43D;&#x43D;&#x43E;&#x433;&#x43E; &#x43F;&#x440;&#x43E;&#x438;&#x441;&#x445;&#x43E;&#x436;&#x434;&#x435;&#x43D;&#x438;&#x44F; &#x43E;&#x43F;&#x440;&#x435;&#x434;&#x435;&#x43B;&#x44F;&#x44E;&#x442; &#x438;&#x445; &#x432;&#x43E;&#x437;&#x440;&#x430;&#x441;&#x442;. <sup>14</sup>&#x421; &#x448;&#x438;&#x440;&#x43E;&#x43A;&#x43E; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x432; &#x43A;&#x430;&#x447;&#x435;&#x441;&#x442;&#x432;&#x435; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43D;&#x43E;&#x433;&#x43E; &#x438;&#x43D;&#x434;&#x438;&#x43A;&#x430;&#x442;&#x43E;&#x440;&#x430;.\n",
+        "Атомная масса": "12.011",
+        "Плотность, кг/м³": "2260",
+        "Температура плавления, °С": "3700 (возг.)",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.69",
+        "Электроотрицательность": "2.5",
+        "Ковалентный радиус, Å": "0.77",
+        "1-й ионизац. потенциал, эв": "11.26"
+    },
+    {
+        "Химический символ": "N",
+        "label": "Азот Nitrogen",
+        "color": "0x1157FF",
+        "shadow": "0x1030FF",
+        "Электронная формула": "(He)2s22p3",
+        "description": "<b>&#x410;&#x437;&#x43E;&#x442;</b> (&#x43E;&#x442; &#x433;&#x440;&#x435;&#x447;. azoos - &#x431;&#x435;&#x437;&#x436;&#x438;&#x437;&#x43D;&#x435;&#x43D;&#x43D;&#x44B;&#x439;, &#x43B;&#x430;&#x442;. Nitrogenium), N, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; V &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 7, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 14,0067; &#x431;&#x435;&#x441;&#x446;&#x432;&#x435;&#x442;&#x43D;&#x44B;&#x439; &#x433;&#x430;&#x437;, &#x43D;&#x435; &#x438;&#x43C;&#x435;&#x44E;&#x449;&#x438;&#x439; &#x437;&#x430;&#x43F;&#x430;&#x445;&#x430; &#x438; &#x432;&#x43A;&#x443;&#x441;&#x430;.\n",
+        "Атомная масса": "14.007",
+        "Плотность, кг/м³": "1.251",
+        "Температура плавления, °С": "-210",
+        "Температура кипения, °С": "-195.8",
+        "Теплоемкость, кДж/(кг·°С)": "1.034",
+        "Электроотрицательность": "3.0",
+        "Ковалентный радиус, Å": "0.74",
+        "1-й ионизац. потенциал, эв": "14.53"
+    },
+    {
+        "Химический символ": "O",
+        "label": "Кислород Oxygen",
+        "color": "0xFF3A3A",
+        "shadow": "0xFF1313",
+        "Электронная формула": "(He)2s22p4",
+        "description": "<b>&#x41A;&#x438;&#x441;&#x43B;&#x43E;&#x440;&#x43E;&#x434;</b> (&#x43B;&#x430;&#x442;. Oxygenium), &#x41E;, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; VI &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 8, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 15,9994. &#x41F;&#x440;&#x438; &#x43D;&#x43E;&#x440;&#x43C;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x443;&#x441;&#x43B;&#x43E;&#x432;&#x438;&#x44F;&#x445; &#x41A;&#x438;&#x441;&#x43B;&#x43E;&#x440;&#x43E;&#x434; &#x433;&#x430;&#x437; &#x431;&#x435;&#x437; &#x446;&#x432;&#x435;&#x442;&#x430;, &#x437;&#x430;&#x43F;&#x430;&#x445;&#x430; &#x438; &#x432;&#x43A;&#x443;&#x441;&#x430;. &#x422;&#x440;&#x443;&#x434;&#x43D;&#x43E; &#x43D;&#x430;&#x437;&#x432;&#x430;&#x442;&#x44C; &#x434;&#x440;&#x443;&#x433;&#x43E;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;, &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x439; &#x438;&#x433;&#x440;&#x430;&#x43B; &#x431;&#x44B; &#x43D;&#x430; &#x43D;&#x430;&#x448;&#x435;&#x439; &#x43F;&#x43B;&#x430;&#x43D;&#x435;&#x442;&#x435; &#x442;&#x430;&#x43A;&#x443;&#x44E; &#x432;&#x430;&#x436;&#x43D;&#x443;&#x44E; &#x440;&#x43E;&#x43B;&#x44C;, &#x43A;&#x430;&#x43A; &#x41A;&#x438;&#x441;&#x43B;&#x43E;&#x440;&#x43E;&#x434;.\n",
+        "Атомная масса": "15.999",
+        "Плотность, кг/м³": "1.429",
+        "Температура плавления, °С": "-218.8",
+        "Температура кипения, °С": "-183",
+        "Теплоемкость, кДж/(кг·°С)": "0.913",
+        "Электроотрицательность": "3.5",
+        "Ковалентный радиус, Å": "0.73",
+        "1-й ионизац. потенциал, эв": "13.62"
+    },
+    {
+        "Химический символ": "F",
+        "label": "Фтор Fluorine",
+        "color": "0x55B940",
+        "shadow": "0x1F7B00",
+        "Электронная формула": "(He)2s22p5",
+        "description": "<b>&#x424;&#x442;&#x43E;&#x440;</b> (&#x43B;&#x430;&#x442;. Fluorum), F, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; VII &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;, &#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x438;&#x442;&#x441;&#x44F; &#x43A; &#x433;&#x430;&#x43B;&#x43E;&#x433;&#x435;&#x43D;&#x430;&#x43C;, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 9, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 18,998403; &#x43F;&#x440;&#x438; &#x43D;&#x43E;&#x440;&#x43C;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x443;&#x441;&#x43B;&#x43E;&#x432;&#x438;&#x44F;&#x445; (0 &#xB0;&#x421;; 0,1 &#x41C;&#x43D;/&#x43C;<sup>2</sup>, &#x438;&#x43B;&#x438; 1 &#x43A;&#x433;&#x441;/&#x441;&#x43C;<sup>2</sup>) - &#x433;&#x430;&#x437; &#x431;&#x43B;&#x435;&#x434;&#x43D;&#x43E;-&#x436;&#x435;&#x43B;&#x442;&#x43E;&#x433;&#x43E; &#x446;&#x432;&#x435;&#x442;&#x430; &#x441; &#x440;&#x435;&#x437;&#x43A;&#x438;&#x43C; &#x437;&#x430;&#x43F;&#x430;&#x445;&#x43E;&#x43C;.\n",
+        "Атомная масса": "18.998",
+        "Плотность, кг/м³": "1.696",
+        "Температура плавления, °С": "-219.6",
+        "Температура кипения, °С": "-188.2",
+        "Теплоемкость, кДж/(кг·°С)": "0.753",
+        "Электроотрицательность": "4.0",
+        "Ковалентный радиус, Å": "0.72",
+        "1-й ионизац. потенциал, эв": "17.42"
+    },
+    {
+        "Химический символ": "Ne",
+        "label": "Неон Neon",
+        "color": "0x30C7E6",
+        "shadow": "0x10AFC8",
+        "Электронная формула": "(He)2s22p6",
+        "description": "<b>&#x41D;&#x435;&#x43E;&#x43D;</b> (&#x43B;&#x430;&#x442;. Neonum), Ne, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; VIII &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;, &#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x438;&#x442;&#x441;&#x44F; &#x43A; &#x438;&#x43D;&#x435;&#x440;&#x442;&#x43D;&#x44B;&#x43C; &#x433;&#x430;&#x437;&#x430;&#x43C;, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 10, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 20,179. &#x41D;&#x430; &#x417;&#x435;&#x43C;&#x43B;&#x435; &#x43F;&#x440;&#x438;&#x441;&#x443;&#x442;&#x441;&#x442;&#x432;&#x443;&#x435;&#x442; &#x433;&#x43B;&#x430;&#x432;&#x43D;&#x44B;&#x43C; &#x43E;&#x431;&#x440;&#x430;&#x437;&#x43E;&#x43C; &#x432; &#x430;&#x442;&#x43C;&#x43E;&#x441;&#x444;&#x435;&#x440;&#x435;, &#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x430;&#x43D;&#x438;&#x435; &#x41D;&#x435;&#x43E;&#x43D;&#x430; &#x432; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x43E;&#x439; &#x43E;&#x446;&#x435;&#x43D;&#x438;&#x432;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x432; 7,1&#xB7;10<sup>11</sup> &#x442;. &#x412; 1 &#x43C;<sup>3</sup>&#x432;&#x43E;&#x437;&#x434;&#x443;&#x445;&#x430; &#x43D;&#x430;&#x445;&#x43E;&#x434;&#x438;&#x442;&#x441;&#x44F; &#x43E;&#x43A;&#x43E;&#x43B;&#x43E; 16 &#x441;&#x43C;<sup>3</sup> &#x41D;&#x435;&#x43E;&#x43D;&#x430;. &#x410;&#x442;&#x43C;&#x43E;&#x441;&#x444;&#x435;&#x440;&#x43D;&#x44B;&#x439; &#x41D;&#x435;&#x43E;&#x43D; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x438;&#x442; &#x438;&#x437; &#x441;&#x43C;&#x435;&#x441;&#x438; &#x442;&#x440;&#x435;&#x445; &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432;: <sup>20</sup>Ne, <sup>21</sup>Ne &#x438; <sup>22</sup>Ne; &#x43F;&#x440;&#x435;&#x43E;&#x431;&#x43B;&#x430;&#x434;&#x430;&#x435;&#x442; <sup>20</sup>Ne (90,92%). &#x41D;&#x435;&#x43E;&#x43D; &#x43E;&#x442;&#x43A;&#x440;&#x44B;&#x442; &#x432; 1898 &#x433;&#x43E;&#x434;&#x443; &#x430;&#x43D;&#x433;&#x43B;&#x438;&#x439;&#x441;&#x43A;&#x438;&#x43C;&#x438; &#x443;&#x447;&#x435;&#x43D;&#x44B;&#x43C;&#x438; &#x423;. &#x420;&#x430;&#x43C;&#x437;&#x430;&#x435;&#x43C; &#x438; M. &#x422;&#x440;&#x430;&#x432;&#x435;&#x440;&#x441;&#x43E;&#x43C; &#x43F;&#x440;&#x438; &#x438;&#x441;&#x441;&#x43B;&#x435;&#x434;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x438; &#x43B;&#x435;&#x433;&#x43A;&#x43E;&#x43B;&#x435;&#x442;&#x443;&#x447;&#x435;&#x439; &#x444;&#x440;&#x430;&#x43A;&#x446;&#x438;&#x438; &#x436;&#x438;&#x434;&#x43A;&#x43E;&#x433;&#x43E; &#x432;&#x43E;&#x437;&#x434;&#x443;&#x445;&#x430;; &#x43D;&#x430;&#x437;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x43F;&#x440;&#x43E;&#x438;&#x441;&#x445;&#x43E;&#x434;&#x438;&#x442; &#x43E;&#x442; &#x433;&#x440;&#x435;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x433;&#x43E; neos - &#x43D;&#x43E;&#x432;&#x44B;&#x439;.\n",
+        "Атомная масса": "20.180",
+        "Плотность, кг/м³": "0.901",
+        "Температура плавления, °С": "-248.6",
+        "Температура кипения, °С": "-246",
+        "Теплоемкость, кДж/(кг·°С)": "0.904",
+        "Электроотрицательность": " ",
+        "Ковалентный радиус, Å": "0.71",
+        "1-й ионизац. потенциал, эв": "21.56"
+    },
+    {
+        "Химический символ": "Na",
+        "label": "Натрий Sodium",
+        "color": "0x5422ED",
+        "shadow": "0x511DEB",
+        "Электронная формула": "(Ne)3s1",
+        "description": "<b>&#x41D;&#x430;&#x442;&#x440;&#x438;&#x439;</b> (Natrium), Na, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; I &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;: &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 11, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 22,9898; &#x441;&#x435;&#x440;&#x435;&#x431;&#x440;&#x438;&#x441;&#x442;&#x43E;-&#x431;&#x435;&#x43B;&#x44B;&#x439; &#x43C;&#x44F;&#x433;&#x43A;&#x438;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;, &#x43D;&#x430; &#x432;&#x43E;&#x437;&#x434;&#x443;&#x445;&#x435; &#x431;&#x44B;&#x441;&#x442;&#x440;&#x43E; &#x43E;&#x43A;&#x438;&#x441;&#x43B;&#x44F;&#x44E;&#x449;&#x438;&#x439;&#x441;&#x44F; &#x441; &#x43F;&#x43E;&#x432;&#x435;&#x440;&#x445;&#x43D;&#x43E;&#x441;&#x442;&#x438;. &#x41F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x43D;&#x44B;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x438;&#x442; &#x438;&#x437; &#x43E;&#x434;&#x43D;&#x43E;&#x433;&#x43E; &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x43E;&#x433;&#x43E; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x430; <sup>23</sup>Na.\n",
+        "Атомная масса": "22.990",
+        "Плотность, кг/м³": "970",
+        "Температура плавления, °С": "97.8",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "1.235",
+        "Электроотрицательность": "0.9",
+        "Ковалентный радиус, Å": "1.54",
+        "1-й ионизац. потенциал, эв": "5.14"
+    },
+    {
+        "Химический символ": "Mg",
+        "label": "Магний Magnesium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Ne)3s2",
+        "description": "<b>&#x41C;&#x430;&#x433;&#x43D;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Magnesium), Mg, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; II &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 12, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 24,305. &#x41F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x43D;&#x44B;&#x439; &#x41C;&#x430;&#x433;&#x43D;&#x438;&#x439; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x438;&#x442; &#x438;&#x437; &#x442;&#x440;&#x435;&#x445; &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432;: <sup>24</sup>Mg (78,60%), <sup>25</sup>Mg (10,11%) &#x438; <sup>26</sup>Mg (11,29%). &#x41C;&#x430;&#x433;&#x43D;&#x438;&#x439; &#x43E;&#x442;&#x43A;&#x440;&#x44B;&#x442; &#x432; 1808 &#x433;&#x43E;&#x434;&#x443; &#x413;. &#x414;&#x44D;&#x432;&#x438;, &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x439; &#x43F;&#x43E;&#x434;&#x432;&#x435;&#x440;&#x433; &#x44D;&#x43B;&#x435;&#x43A;&#x442;&#x440;&#x43E;&#x43B;&#x438;&#x437;&#x443; &#x441; &#x440;&#x442;&#x443;&#x442;&#x43D;&#x44B;&#x43C; &#x43A;&#x430;&#x442;&#x43E;&#x434;&#x43E;&#x43C; &#x443;&#x432;&#x43B;&#x430;&#x436;&#x43D;&#x435;&#x43D;&#x43D;&#x443;&#x44E; &#x43C;&#x430;&#x433;&#x43D;&#x435;&#x437;&#x438;&#x44E; (&#x434;&#x430;&#x432;&#x43D;&#x43E; &#x438;&#x437;&#x432;&#x435;&#x441;&#x442;&#x43D;&#x43E;&#x435; &#x432;&#x435;&#x449;&#x435;&#x441;&#x442;&#x432;&#x43E;); &#x414;&#x44D;&#x432;&#x438; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x438;&#x43B; &#x430;&#x43C;&#x430;&#x43B;&#x44C;&#x433;&#x430;&#x43C;&#x443;, &#x430; &#x438;&#x437; &#x43D;&#x435;&#x435; &#x43F;&#x43E;&#x441;&#x43B;&#x435; &#x43E;&#x442;&#x433;&#x43E;&#x43D;&#x43A;&#x438; &#x440;&#x442;&#x443;&#x442;&#x438; - &#x43D;&#x43E;&#x432;&#x44B;&#x439; &#x43F;&#x43E;&#x440;&#x43E;&#x448;&#x43A;&#x43E;&#x43E;&#x431;&#x440;&#x430;&#x437;&#x43D;&#x44B;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;, &#x43D;&#x430;&#x437;&#x432;&#x430;&#x43D;&#x43D;&#x44B;&#x439; &#x43C;&#x430;&#x433;&#x43D;&#x438;&#x435;&#x43C;. &#x412; 1828 &#x433;&#x43E;&#x434;&#x443; &#x444;&#x440;&#x430;&#x43D;&#x446;&#x443;&#x437;&#x441;&#x43A;&#x438;&#x439; &#x445;&#x438;&#x43C;&#x438;&#x43A; &#x410;. &#x411;&#x44E;&#x441;&#x441;&#x438; &#x432;&#x43E;&#x441;&#x441;&#x442;&#x430;&#x43D;&#x43E;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x435;&#x43C; &#x440;&#x430;&#x441;&#x43F;&#x43B;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x43D;&#x43E;&#x433;&#x43E; &#x445;&#x43B;&#x43E;&#x440;&#x438;&#x434;&#x430; &#x41C;&#x430;&#x433;&#x43D;&#x438;&#x44F; &#x43F;&#x430;&#x440;&#x430;&#x43C;&#x438; &#x43A;&#x430;&#x43B;&#x438;&#x44F; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x438;&#x43B; &#x41C;&#x430;&#x433;&#x43D;&#x438;&#x439; &#x432; &#x432;&#x438;&#x434;&#x435; &#x43D;&#x435;&#x431;&#x43E;&#x43B;&#x44C;&#x448;&#x438;&#x445; &#x448;&#x430;&#x440;&#x438;&#x43A;&#x43E;&#x432; &#x441; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x43C; &#x431;&#x43B;&#x435;&#x441;&#x43A;&#x43E;&#x43C;.\n",
+        "Атомная масса": "24.305",
+        "Плотность, кг/м³": "1740",
+        "Температура плавления, °С": "650",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "1.047",
+        "Электроотрицательность": "1.2",
+        "Ковалентный радиус, Å": "1.36",
+        "1-й ионизац. потенциал, эв": "7.64"
+    },
+    {
+        "Химический символ": "Al",
+        "label": "Алюминий Aluminium",
+        "Электронная формула": "(Ne)3s23p1",
+        "description": "<b>&#x410;&#x43B;&#x44E;&#x43C;&#x438;&#x43D;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Aluminium), Al, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; III &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 13, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 26,9815; &#x441;&#x435;&#x440;&#x435;&#x431;&#x440;&#x438;&#x441;&#x442;&#x43E;-&#x431;&#x435;&#x43B;&#x44B;&#x439; &#x43B;&#x435;&#x433;&#x43A;&#x438;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;. &#x421;&#x43E;&#x441;&#x442;&#x43E;&#x438;&#x442; &#x438;&#x437; &#x43E;&#x434;&#x43D;&#x43E;&#x433;&#x43E; &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x43E;&#x433;&#x43E; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x430; <sup>27</sup>Al.\n",
+        "Атомная масса": "26.982",
+        "Плотность, кг/м³": "2700",
+        "Температура плавления, °С": "660",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.9",
+        "Электроотрицательность": "1.5",
+        "Ковалентный радиус, Å": "1.18",
+        "1-й ионизац. потенциал, эв": "5.98"
+    },
+    {
+        "Химический символ": "Si",
+        "label": "Кремний Silicon",
+        "Электронная формула": "(Ne)3s23p2",
+        "description": "<b>&#x41A;&#x440;&#x435;&#x43C;&#x43D;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Silicium), Si, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; IV &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 14, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 28,086. &#x412; &#x43F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x435; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; &#x43F;&#x440;&#x435;&#x434;&#x441;&#x442;&#x430;&#x432;&#x43B;&#x435;&#x43D; &#x442;&#x440;&#x435;&#x43C;&#x44F; &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x43C;&#x438; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x430;&#x43C;&#x438;: <sup>28</sup>Si (92,27%), <sup>29</sup>Si (4,68%) &#x438; <sup>30</sup>Si (3,05%).\n",
+        "Атомная масса": "28.086",
+        "Плотность, кг/м³": "2330",
+        "Температура плавления, °С": "1410",
+        "Температура кипения, °С": "2600",
+        "Теплоемкость, кДж/(кг·°С)": "0.678",
+        "Электроотрицательность": "1.8",
+        "Ковалентный радиус, Å": "1.11",
+        "1-й ионизац. потенциал, эв": "8.15"
+    },
+    {
+        "Химический символ": "P",
+        "label": "Фосфор Phosphorus",
+        "color": "0xFF7A44",
+        "shadow": "0xFF7320",
+        "Электронная формула": "(Ne)3s23p3",
+        "description": "<b>&#x424;&#x43E;&#x441;&#x444;&#x43E;&#x440;</b> (&#x43B;&#x430;&#x442;. Phosphorus), P, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; V &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 15, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 30,97376, &#x43D;&#x435;&#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;. &#x41F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x43D;&#x44B;&#x439; &#x424;&#x43E;&#x441;&#x444;&#x43E;&#x440; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x438;&#x442; &#x438;&#x437; &#x43E;&#x434;&#x43D;&#x43E;&#x433;&#x43E; &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x43E;&#x433;&#x43E; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x430; <sup>31</sup>&#x420;; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D; &#x440;&#x44F;&#x434; &#x438;&#x441;&#x43A;&#x443;&#x441;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x44B;&#x445; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432;, &#x432; &#x442;&#x43E;&#x43C; &#x447;&#x438;&#x441;&#x43B;&#x435;: <sup>28</sup>&#x420; (&#x422;<sub>&#xBD;</sub> = 6,27 &#x441;&#x435;&#x43A;); <sup>29</sup>&#x420; (&#x422;<sub>&#xBD;</sub> = 4,45 &#x441;&#x435;&#x43A;); <sup>30</sup>&#x420; (&#x422;<sub>&#xBD;</sub> = 2,55 &#x43C;&#x438;&#x43D;); <sup>32</sup>&#x420; (&#x422;<sub>&#xBD;</sub> = 14,22 &#x441;&#x443;&#x442;); <sup>33</sup>&#x420; (&#x422;<sub>&#xBD;</sub> = 25 &#x441;&#x443;&#x442;); <sup>34</sup>&#x420; (&#x422;<sub>&#xBD;</sub> =12,5 &#x441;&#x435;&#x43A;). &#x41D;&#x430;&#x438;&#x431;&#x43E;&#x43B;&#x44C;&#x448;&#x435;&#x435; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x438;&#x43C;&#x435;&#x435;&#x442; <sup>32</sup>&#x420;, &#x43E;&#x431;&#x43B;&#x430;&#x434;&#x430;&#x44E;&#x449;&#x438;&#x439; &#x437;&#x43D;&#x430;&#x447;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E;&#x439; &#x44D;&#x43D;&#x435;&#x440;&#x433;&#x438;&#x435;&#x439; &#x3B2;-&#x438;&#x437;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x438; &#x43F;&#x440;&#x438;&#x43C;&#x435;&#x43D;&#x44F;&#x435;&#x43C;&#x44B;&#x439; &#x432; &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x445; &#x438; &#x431;&#x438;&#x43E;&#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x445; &#x438;&#x441;&#x441;&#x43B;&#x435;&#x434;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F;&#x445; &#x432; &#x43A;&#x430;&#x447;&#x435;&#x441;&#x442;&#x432;&#x435; &#x43C;&#x435;&#x447;&#x435;&#x43D;&#x43E;&#x433;&#x43E; &#x430;&#x442;&#x43E;&#x43C;&#x430;.\n",
+        "Атомная масса": "30.974",
+        "Плотность, кг/м³": "1820",
+        "Температура плавления, °С": "44,2 (бел.), 410 (кр.)",
+        "Температура кипения, °С": "280 (бел.)",
+        "Теплоемкость, кДж/(кг·°С)": "0.741",
+        "Электроотрицательность": "2.1",
+        "Ковалентный радиус, Å": "1.06",
+        "1-й ионизац. потенциал, эв": "10.49"
+    },
+    {
+        "Химический символ": "S",
+        "label": "Сера Sulfur",
+        "color": "0xFFDF39",
+        "shadow": "0xE9CE29",
+        "Электронная формула": "(Ne)3s23p4",
+        "description": "<b>&#x421;&#x435;&#x440;&#x430;</b> (&#x43B;&#x430;&#x442;. Sulfur) S, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; VI &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 16, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 32,06. &#x41F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x43D;&#x430;&#x44F; &#x421;&#x435;&#x440;&#x430; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x438;&#x442; &#x438;&#x437; &#x447;&#x435;&#x442;&#x44B;&#x440;&#x435;&#x445; &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432;: <sup>32</sup>S (95,02%), <sup>33</sup>S (0,75%), <sup>34</sup>S (4,21%), <sup>36</sup>S (0,02%). &#x41F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x44B; &#x442;&#x430;&#x43A;&#x436;&#x435; &#x438;&#x441;&#x43A;&#x443;&#x441;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x44B;&#x435; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x435; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x44B; <sup>31</sup>S (T<sub>&#xBD;</sub> = 2,4 &#x441;&#x435;&#x43A;), <sup>35</sup>S (T<sub>&#xBD;</sub> = 87,1 &#x441;&#x443;&#x442;), <sup>37</sup>S (&#x422;<sub>&#xBD;</sub>= 5,04 &#x43C;&#x438;&#x43D;) &#x438; &#x434;&#x440;&#x443;&#x433;&#x438;&#x435;.\n",
+        "Атомная масса": "32.065",
+        "Плотность, кг/м³": "2070",
+        "Температура плавления, °С": "113 (ромб.), 119 (монокл.)",
+        "Температура кипения, °С": "444",
+        "Теплоемкость, кДж/(кг·°С)": "0.733",
+        "Электроотрицательность": "2.5",
+        "Ковалентный радиус, Å": "1.02",
+        "1-й ионизац. потенциал, эв": "10.36"
+    },
+    {
+        "Химический символ": "Cl",
+        "label": "Хлор Chlorine",
+        "color": "0x55B940",
+        "shadow": "0x1F7B00",
+        "Электронная формула": "(Ne)3s23p5",
+        "description": "<b>&#x425;&#x43B;&#x43E;&#x440;</b> (&#x43B;&#x430;&#x442;. Chlorum), Cl, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; VII &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 17, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 35,453; &#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x438;&#x442;&#x441;&#x44F; &#x43A; &#x441;&#x435;&#x43C;&#x435;&#x439;&#x441;&#x442;&#x432;&#x443; &#x433;&#x430;&#x43B;&#x43E;&#x433;&#x435;&#x43D;&#x43E;&#x432;. &#x41F;&#x440;&#x438; &#x43D;&#x43E;&#x440;&#x43C;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x443;&#x441;&#x43B;&#x43E;&#x432;&#x438;&#x44F;&#x445; (0&#xB0;&#x421;, 0,1 &#x41C;&#x43D;/&#x43C;<sup>2</sup>, &#x438;&#x43B;&#x438; 1 &#x43A;&#x433;&#x441;/&#x441;&#x43C;<sup>2</sup>) &#x436;&#x435;&#x43B;&#x442;&#x43E;-&#x437;&#x435;&#x43B;&#x435;&#x43D;&#x44B;&#x439; &#x433;&#x430;&#x437; &#x441; &#x440;&#x435;&#x437;&#x43A;&#x438;&#x43C; &#x440;&#x430;&#x437;&#x434;&#x440;&#x430;&#x436;&#x430;&#x44E;&#x449;&#x438;&#x43C; &#x437;&#x430;&#x43F;&#x430;&#x445;&#x43E;&#x43C;. &#x41F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x43D;&#x44B;&#x439; &#x425;&#x43B;&#x43E;&#x440; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x438;&#x442; &#x438;&#x437; &#x434;&#x432;&#x443;&#x445; &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432;: <sup>35</sup>&#x421;l (75,77%) &#x438; <sup>37</sup>Cl (24,23%). &#x418;&#x441;&#x43A;&#x443;&#x441;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x43E; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x44B; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x435; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x44B; &#x441; &#x43C;&#x430;&#x441;&#x441;&#x43E;&#x432;&#x44B;&#x43C;&#x438; &#x447;&#x438;&#x441;&#x43B;&#x430;&#x43C;&#x438; 31-47, &#x432; &#x447;&#x430;&#x441;&#x442;&#x43D;&#x43E;&#x441;&#x442;&#x438;: 32, 33, 34, 36, 38, 39, 40 &#x441; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x430;&#x43C;&#x438; &#x43F;&#x43E;&#x43B;&#x443;&#x440;&#x430;&#x441;&#x43F;&#x430;&#x434;&#x430; (T<sup>&#xBD;) &#x441;&#x43E;&#x43E;&#x442;&#x432;&#x435;&#x442;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x43E; 0,31; 2,5; 1,56 &#x441;&#x435;&#x43A;; 3,1&#xB7;10<sup>5</sup> &#x43B;&#x435;&#x442;; 37,3, 55,5 &#x438; 1,4 &#x43C;&#x438;&#x43D;. <sup>36</sup>Cl &#x438; <sup>38</sup>Cl &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x44E;&#x442;&#x441;&#x44F; &#x43A;&#x430;&#x43A; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43D;&#x44B;&#x435; &#x438;&#x43D;&#x434;&#x438;&#x43A;&#x430;&#x442;&#x43E;&#x440;&#x44B;.\n<p><a class=\"ogln\" name=\"m0\">&#x418;&#x441;&#x442;&#x43E;&#x440;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x430;&#x44F; &#x441;&#x43F;&#x440;&#x430;&#x432;&#x43A;&#x430;.</a> &#x425;&#x43B;&#x43E;&#x440; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D; &#x432;&#x43F;&#x435;&#x440;&#x432;&#x44B;&#x435; &#x432; 1774 &#x433;&#x43E;&#x434;&#x443; &#x41A;. &#x428;&#x435;&#x435;&#x43B;&#x435; &#x432;&#x437;&#x430;&#x438;&#x43C;&#x43E;&#x434;&#x435;&#x439;&#x441;&#x442;&#x432;&#x438;&#x435;&#x43C; &#x441;&#x43E;&#x43B;&#x44F;&#x43D;&#x43E;&#x439; &#x43A;&#x438;&#x441;&#x43B;&#x43E;&#x442;&#x44B; &#x441; &#x43F;&#x438;&#x440;&#x43E;&#x43B;&#x44E;&#x437;&#x438;&#x442;&#x43E;&#x43C; Mn&#x41E;<sub>2</sub>. &#x41E;&#x434;&#x43D;&#x430;&#x43A;&#x43E; &#x442;&#x43E;&#x43B;&#x44C;&#x43A;&#x43E; &#x432; 1810 &#x433;&#x43E;&#x434;&#x443; &#x413;. &#x414;&#x44D;&#x432;&#x438; &#x443;&#x441;&#x442;&#x430;&#x43D;&#x43E;&#x432;&#x438;&#x43B;, &#x447;&#x442;&#x43E; &#x445;&#x43B;&#x43E;&#x440; - &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; &#x438; &#x43D;&#x430;&#x437;&#x432;&#x430;&#x43B; &#x435;&#x433;&#x43E; chlorine (&#x43E;&#x442; &#x433;&#x440;&#x435;&#x447;. chloros - &#x436;&#x435;&#x43B;&#x442;&#x43E;-&#x437;&#x435;&#x43B;&#x435;&#x43D;&#x44B;&#x439;). &#x412; 1813 &#x433;&#x43E;&#x434;&#x443; &#x416;. &#x41B;. &#x413;&#x435;&#x439;-&#x41B;&#x44E;&#x441;&#x441;&#x430;&#x43A; &#x43F;&#x440;&#x435;&#x434;&#x43B;&#x43E;&#x436;&#x438;&#x43B; &#x434;&#x43B;&#x44F; &#x44D;&#x442;&#x43E;&#x433;&#x43E; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x430; &#x43D;&#x430;&#x437;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x425;&#x43B;&#x43E;&#x440;.\n</p><p><a class=\"ogln\" name=\"m1\">&#x420;&#x430;&#x441;&#x43F;&#x440;&#x43E;&#x441;&#x442;&#x440;&#x430;&#x43D;&#x435;&#x43D;&#x438;&#x435; &#x425;&#x43B;&#x43E;&#x440;&#x430; &#x432; &#x43F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x435;.</a> &#x425;&#x43B;&#x43E;&#x440; &#x432;&#x441;&#x442;&#x440;&#x435;&#x447;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x432; &#x43F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x435; &#x442;&#x43E;&#x43B;&#x44C;&#x43A;&#x43E; &#x432; &#x432;&#x438;&#x434;&#x435; &#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x439;. &#x421;&#x440;&#x435;&#x434;&#x43D;&#x435;&#x435; &#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x430;&#x43D;&#x438;&#x435; &#x425;&#x43B;&#x43E;&#x440;&#x430; &#x432; &#x437;&#x435;&#x43C;&#x43D;&#x43E;&#x439; &#x43A;&#x43E;&#x440;&#x435; (&#x43A;&#x43B;&#x430;&#x440;&#x43A;) 1,7&#xB7;10<sup>-2</sup>% &#x43F;&#x43E; &#x43C;&#x430;&#x441;&#x441;&#x435;, &#x432; &#x43A;&#x438;&#x441;&#x43B;&#x44B;&#x445; &#x438;&#x437;&#x432;&#x435;&#x440;&#x436;&#x435;&#x43D;&#x43D;&#x44B;&#x445; &#x43F;&#x43E;&#x440;&#x43E;&#x434;&#x430;&#x445;- &#x433;&#x440;&#x430;&#x43D;&#x438;&#x442;&#x430;&#x445; &#x438; &#x434;&#x440;&#x443;&#x433;&#x438;&#x445; 2,4&#xB7;10<sup>-2</sup>, &#x432; &#x43E;&#x441;&#x43D;&#x43E;&#x432;&#x43D;&#x44B;&#x445; &#x438; &#x443;&#x43B;&#x44C;&#x442;&#x440;&#x430;&#x43E;&#x441;&#x43D;&#x43E;&#x432;&#x43D;&#x44B;&#x445; 5&#xB7;10<sup>-3</sup>. &#x41E;&#x441;&#x43D;&#x43E;&#x432;&#x43D;&#x443;&#x44E; &#x440;&#x43E;&#x43B;&#x44C; &#x432; &#x438;&#x441;&#x442;&#x43E;&#x440;&#x438;&#x438; &#x425;&#x43B;&#x43E;&#x440;&#x430; &#x432; &#x437;&#x435;&#x43C;&#x43D;&#x43E;&#x439; &#x43A;&#x43E;&#x440;&#x435; &#x438;&#x433;&#x440;&#x430;&#x435;&#x442; &#x432;&#x43E;&#x434;&#x43D;&#x430;&#x44F; &#x43C;&#x438;&#x433;&#x440;&#x430;&#x446;&#x438;&#x44F;. &#x412; &#x432;&#x438;&#x434;&#x435; &#x438;&#x43E;&#x43D;&#x430; Cl<sup>-</sup> &#x43E;&#x43D; &#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x438;&#x442;&#x441;&#x44F; &#x432; &#x41C;&#x438;&#x440;&#x43E;&#x432;&#x43E;&#x43C; &#x43E;&#x43A;&#x435;&#x430;&#x43D;&#x435; (1,93%), &#x43F;&#x43E;&#x434;&#x437;&#x435;&#x43C;&#x43D;&#x44B;&#x445; &#x440;&#x430;&#x441;&#x441;&#x43E;&#x43B;&#x430;&#x445; &#x438; &#x441;&#x43E;&#x43B;&#x44F;&#x43D;&#x44B;&#x445; &#x43E;&#x437;&#x435;&#x440;&#x430;&#x445;. &#x427;&#x438;&#x441;&#x43B;&#x43E; &#x441;&#x43E;&#x431;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x44B;&#x445; &#x43C;&#x438;&#x43D;&#x435;&#x440;&#x430;&#x43B;&#x43E;&#x432; (&#x43F;&#x440;&#x435;&#x438;&#x43C;&#x443;&#x449;&#x435;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x43E; &#x43F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x43D;&#x44B;&#x445; &#x445;&#x43B;&#x43E;&#x440;&#x438;&#x434;&#x43E;&#x432;) 97, &#x433;&#x43B;&#x430;&#x432;&#x43D;&#x44B;&#x439; &#x438;&#x437; &#x43D;&#x438;&#x445; &#x433;&#x430;&#x43B;&#x438;&#x442; NaCl (&#x41A;&#x430;&#x43C;&#x435;&#x43D;&#x43D;&#x430;&#x44F; &#x441;&#x43E;&#x43B;&#x44C;). &#x418;&#x437;&#x432;&#x435;&#x441;&#x442;&#x43D;&#x44B; &#x442;&#x430;&#x43A;&#x436;&#x435; &#x43A;&#x440;&#x443;&#x43F;&#x43D;&#x44B;&#x435; &#x43C;&#x435;&#x441;&#x442;&#x43E;&#x440;&#x43E;&#x436;&#x434;&#x435;&#x43D;&#x438;&#x44F; &#x445;&#x43B;&#x43E;&#x440;&#x438;&#x434;&#x43E;&#x432; &#x43A;&#x430;&#x43B;&#x438;&#x44F; &#x438; &#x43C;&#x430;&#x433;&#x43D;&#x438;&#x44F; &#x438; &#x441;&#x43C;&#x435;&#x448;&#x430;&#x43D;&#x43D;&#x44B;&#x445; &#x445;&#x43B;&#x43E;&#x440;&#x438;&#x434;&#x43E;&#x432;: &#x441;&#x438;&#x43B;&#x44C;&#x432;&#x438;&#x43D; &#x41A;Cl, &#x441;&#x438;&#x43B;&#x44C;&#x432;&#x438;&#x43D;&#x438;&#x442; (Na,K)Cl, &#x43A;&#x430;&#x440;&#x43D;&#x430;&#x43B;&#x438;&#x442; KCl&#xB7;MgCl<sub>2</sub><sup>&#xB7;</sup>6H<sub>2</sub>O, &#x43A;&#x430;&#x438;&#x43D;&#x438;&#x442; KCl&#xB7;MgSO<sub>4</sub>&#xB7;3H<sub>2</sub>O, &#x431;&#x438;&#x448;&#x43E;&#x444;&#x438;&#x442; MgCl<sub>2</sub>&#xB7;6H<sub>2</sub>O. &#x412; &#x438;&#x441;&#x442;&#x43E;&#x440;&#x438;&#x438; &#x417;&#x435;&#x43C;&#x43B;&#x438; &#x431;&#x43E;&#x43B;&#x44C;&#x448;&#x43E;&#x435; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x438;&#x43C;&#x435;&#x43B;&#x43E; &#x43F;&#x43E;&#x441;&#x442;&#x443;&#x43F;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x430;&#x449;&#x435;&#x433;&#x43E;&#x441;&#x44F; &#x432; &#x432;&#x443;&#x43B;&#x43A;&#x430;&#x43D;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x445; &#x433;&#x430;&#x437;&#x430;&#x445; &#x41D;Cl &#x432; &#x432;&#x435;&#x440;&#x445;&#x43D;&#x438;&#x435; &#x447;&#x430;&#x441;&#x442;&#x438; &#x437;&#x435;&#x43C;&#x43D;&#x43E;&#x439; &#x43A;&#x43E;&#x440;&#x44B;.\n</p><p><a class=\"ogln\" name=\"m2\">&#x424;&#x438;&#x437;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x435; &#x441;&#x432;&#x43E;&#x439;&#x441;&#x442;&#x432;&#x430; &#x425;&#x43B;&#x43E;&#x440;&#x430;.</a> &#x425;&#x43B;&#x43E;&#x440; &#x438;&#x43C;&#x435;&#x435;&#x442; t<sub>&#x43A;&#x438;&#x43F;</sub> -34,05&#xB0;&#x421;, t<sub>&#x43F;&#x43B;</sub> -101&#xB0;&#x421;. &#x41F;&#x43B;&#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x442;&#x44C; &#x433;&#x430;&#x437;&#x43E;&#x43E;&#x431;&#x440;&#x430;&#x437;&#x43D;&#x43E;&#x433;&#x43E; &#x425;&#x43B;&#x43E;&#x440;&#x430; &#x43F;&#x440;&#x438; &#x43D;&#x43E;&#x440;&#x43C;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x443;&#x441;&#x43B;&#x43E;&#x432;&#x438;&#x44F;&#x445; 3,214 &#x433;/&#x43B;; &#x43D;&#x430;&#x441;&#x44B;&#x449;&#x435;&#x43D;&#x43D;&#x43E;&#x433;&#x43E; &#x43F;&#x430;&#x440;&#x430; &#x43F;&#x440;&#x438; 0&#xB0;&#x421; 12,21 &#x433;/&#x43B;; &#x436;&#x438;&#x434;&#x43A;&#x43E;&#x433;&#x43E; &#x425;&#x43B;&#x43E;&#x440;&#x430; &#x43F;&#x440;&#x438; &#x442;&#x435;&#x43C;&#x43F;&#x435;&#x440;&#x430;&#x442;&#x443;&#x440;&#x435; &#x43A;&#x438;&#x43F;&#x435;&#x43D;&#x438;&#x44F; 1,557 &#x433;/&#x441;&#x43C;<sup>3</sup>; &#x442;&#x432;&#x435;&#x440;&#x434;&#x43E;&#x433;&#x43E; &#x425;&#x43B;&#x43E;&#x440;&#x430; &#x43F;&#x440;&#x438; - 102&#xB0;&#x421; 1,9 &#x433;/&#x441;&#x43C;<sup>3</sup>. &#x414;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x43D;&#x430;&#x441;&#x44B;&#x449;&#x435;&#x43D;&#x43D;&#x44B;&#x445; &#x43F;&#x430;&#x440;&#x43E;&#x432; &#x425;&#x43B;&#x43E;&#x440;&#x430; &#x43F;&#x440;&#x438; 0&#xB0;&#x421; 0,369; &#x43F;&#x440;&#x438; 25&#xB0;&#x421; 0,772; &#x43F;&#x440;&#x438; 100&#xB0;&#x421; 3,814 &#x41C;&#x43D;/&#x43C;<sup>2</sup> &#x438;&#x43B;&#x438; &#x441;&#x43E;&#x43E;&#x442;&#x432;&#x435;&#x442;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x43E; 3,69; 7,72; 38,14 &#x43A;&#x433;&#x441;/&#x441;&#x43C;<sup>2</sup>. &#x422;&#x435;&#x43F;&#x43B;&#x43E;&#x442;&#x430; &#x43F;&#x43B;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x44F; 90,3 &#x43A;&#x434;&#x436;/&#x43A;&#x433; (21,5 &#x43A;&#x430;&#x43B;/&#x433;); &#x442;&#x435;&#x43F;&#x43B;&#x43E;&#x442;&#x430; &#x438;&#x441;&#x43F;&#x430;&#x440;&#x435;&#x43D;&#x438;&#x44F; 288 &#x43A;&#x434;&#x436;/&#x43A;&#x433; (68,8 &#x43A;&#x430;&#x43B;/&#x433;); &#x442;&#x435;&#x43F;&#x43B;&#x43E;&#x435;&#x43C;&#x43A;&#x43E;&#x441;&#x442;&#x44C; &#x433;&#x430;&#x437;&#x430; &#x43F;&#x440;&#x438; &#x43F;&#x43E;&#x441;&#x442;&#x43E;&#x44F;&#x43D;&#x43D;&#x43E;&#x43C; &#x434;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x438; 0,48 &#x43A;&#x434;&#x436;/(&#x43A;&#x433;&#xB7;&#x41A;) [0,11 &#x43A;&#x430;&#x43B;/(&#x433;&#xB7;&#xB0;&#x421;)]. &#x41A;&#x440;&#x438;&#x442;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x435; &#x43A;&#x43E;&#x43D;&#x441;&#x442;&#x430;&#x43D;&#x442;&#x44B; &#x425;&#x43B;&#x43E;&#x440;&#x430;: &#x442;&#x435;&#x43C;&#x43F;&#x435;&#x440;&#x430;&#x442;&#x443;&#x440;&#x430; 144&#xB0;&#x421;, &#x434;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x435; 7,72 &#x41C;&#x43D;/&#x43C;<sup>2</sup> (77,2 &#x43A;&#x433;&#x441;/&#x441;&#x43C;<sup>2</sup>), &#x43F;&#x43B;&#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x442;&#x44C; 573 &#x433;/&#x43B;, &#x443;&#x434;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x439; &#x43E;&#x431;&#x44A;&#x435;&#x43C; 1,745&#xB7;10<sup>-3</sup> &#x43B;/&#x433;. &#x420;&#x430;&#x441;&#x442;&#x432;&#x43E;&#x440;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x44C; (&#x432; &#x433;/&#x43B;) &#x425;&#x43B;&#x43E;&#x440;&#x430; &#x43F;&#x440;&#x438; &#x43F;&#x430;&#x440;&#x446;&#x438;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x43C; &#x434;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x438; 0,1 &#x41C;&#x43D;/&#x43C;<sup>2</sup>, &#x438;&#x43B;&#x438; 1 &#x43A;&#x433;&#x441;/&#x441;&#x43C;<sup>2</sup>, &#x432; &#x432;&#x43E;&#x434;&#x435; 14,8 (0&#xB0;&#x421;), 5,8 (30&#xB0;&#x421;), 2,8 (70&#xB0;&#x421;); &#x432; &#x440;&#x430;&#x441;&#x442;&#x432;&#x43E;&#x440;&#x435; 300 &#x433;/&#x43B; NaCl 1,42 (30&#xB0;&#x421;), 0,64 (70&#xB0;&#x421;). &#x41D;&#x438;&#x436;&#x435; 9,6&#xB0;&#x421; &#x432; &#x432;&#x43E;&#x434;&#x43D;&#x44B;&#x445; &#x440;&#x430;&#x441;&#x442;&#x432;&#x43E;&#x440;&#x430;&#x445; &#x43E;&#x431;&#x440;&#x430;&#x437;&#x443;&#x44E;&#x442;&#x441;&#x44F; &#x433;&#x438;&#x434;&#x440;&#x430;&#x442;&#x44B; &#x425;&#x43B;&#x43E;&#x440;&#x430; &#x43F;&#x435;&#x440;&#x435;&#x43C;&#x435;&#x43D;&#x43D;&#x43E;&#x433;&#x43E; &#x441;&#x43E;&#x441;&#x442;&#x430;&#x432;&#x430; Cl<sub>2</sub>&#xB7;n&#x41D;<sub>2</sub>&#x41E; (&#x433;&#x434;&#x435; n = 6-8); &#x44D;&#x442;&#x43E; &#x436;&#x435;&#x43B;&#x442;&#x44B;&#x435; &#x43A;&#x440;&#x438;&#x441;&#x442;&#x430;&#x43B;&#x43B;&#x44B; &#x43A;&#x443;&#x431;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x43D;&#x433;&#x43E;&#x43D;&#x438;&#x438;, &#x440;&#x430;&#x437;&#x43B;&#x430;&#x433;&#x430;&#x44E;&#x449;&#x438;&#x435;&#x441;&#x44F; &#x43F;&#x440;&#x438; &#x43F;&#x43E;&#x432;&#x44B;&#x448;&#x435;&#x43D;&#x438;&#x438; &#x442;&#x435;&#x43C;&#x43F;&#x435;&#x440;&#x430;&#x442;&#x443;&#x440;&#x44B; &#x43D;&#x430; &#x425;&#x43B;&#x43E;&#x440; &#x438; &#x432;&#x43E;&#x434;&#x443;. &#x425;&#x43B;&#x43E;&#x440; &#x445;&#x43E;&#x440;&#x43E;&#x448;&#x43E; &#x440;&#x430;&#x441;&#x442;&#x432;&#x43E;&#x440;&#x44F;&#x435;&#x442;&#x441;&#x44F; &#x432; TiCl<sub>4</sub>, SiCl<sub>4</sub>, SnCl<sub>4</sub> &#x438; &#x43D;&#x435;&#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x445; &#x43E;&#x440;&#x433;&#x430;&#x43D;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x445; &#x440;&#x430;&#x441;&#x442;&#x432;&#x43E;&#x440;&#x438;&#x442;&#x435;&#x43B;&#x44F;&#x445; (&#x43E;&#x441;&#x43E;&#x431;&#x435;&#x43D;&#x43D;&#x43E; &#x432; &#x433;&#x435;&#x43A;&#x441;&#x430;&#x43D;&#x435; &#x421;<sub>6</sub>H<sub>14</sub> &#x438; &#x447;&#x435;&#x442;&#x44B;&#x440;&#x435;&#x445;&#x445;&#x43B;&#x43E;&#x440;&#x438;&#x441;&#x442;&#x43E;&#x43C; &#x443;&#x433;&#x43B;&#x435;&#x440;&#x43E;&#x434;&#x435; CCl<sub>4</sub>). &#x41C;&#x43E;&#x43B;&#x435;&#x43A;&#x443;&#x43B;&#x430; &#x425;&#x43B;&#x43E;&#x440;&#x430; &#x434;&#x432;&#x443;&#x445;&#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430; (Cl<sub>2</sub>). &#x421;&#x442;&#x435;&#x43F;&#x435;&#x43D;&#x44C; &#x442;&#x435;&#x440;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x434;&#x438;&#x441;&#x441;&#x43E;&#x446;&#x438;&#x430;&#x446;&#x438;&#x438; Cl<sub>2</sub> + 243&#x43A;&#x434;&#x436; = 2Cl &#x43F;&#x440;&#x438; 1000 &#x41A; &#x440;&#x430;&#x432;&#x43D;&#x430; 2,07&#xB7;10<sup>-4</sup>%, &#x43F;&#x440;&#x438; 2500 &#x41A; 0,909%.\n</p><p><a class=\"ogln\" name=\"m3\">&#x425;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x435; &#x441;&#x432;&#x43E;&#x439;&#x441;&#x442;&#x432;&#x430; &#x425;&#x43B;&#x43E;&#x440;&#x430;.</a> &#x412;&#x43D;&#x435;&#x448;&#x43D;&#x44F;&#x44F; &#x44D;&#x43B;&#x435;&#x43A;&#x442;&#x440;&#x43E;&#x43D;&#x43D;&#x430;&#x44F; &#x43A;&#x43E;&#x43D;&#x444;&#x438;&#x433;&#x443;&#x440;&#x430;&#x446;&#x438;&#x44F; &#x430;&#x442;&#x43E;&#x43C;&#x430; Cl 3s<sup>2</sup>&#x417;&#x440;<sup>5</sup>. &#x412; &#x441;&#x43E;&#x43E;&#x442;&#x432;&#x435;&#x442;&#x441;&#x442;&#x432;&#x438;&#x438; &#x441; &#x44D;&#x442;&#x438;&#x43C; &#x425;&#x43B;&#x43E;&#x440; &#x432; &#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x44F;&#x445; &#x43F;&#x440;&#x43E;&#x44F;&#x432;&#x43B;&#x44F;&#x435;&#x442; &#x441;&#x442;&#x435;&#x43F;&#x435;&#x43D;&#x438; &#x43E;&#x43A;&#x438;&#x441;&#x43B;&#x435;&#x43D;&#x438;&#x44F; -1,+1, +3, +4, +5, +6 &#x438; +7. &#x41A;&#x43E;&#x432;&#x430;&#x43B;&#x435;&#x43D;&#x442;&#x43D;&#x44B;&#x439; &#x440;&#x430;&#x434;&#x438;&#x443;&#x441; &#x430;&#x442;&#x43E;&#x43C;&#x430; 0,99&#xC5;, &#x438;&#x43E;&#x43D;&#x43D;&#x44B;&#x439; &#x440;&#x430;&#x434;&#x438;&#x443;&#x441; Cl<sup>-</sup> 1.82&#xC5;, &#x441;&#x440;&#x43E;&#x434;&#x441;&#x442;&#x432;&#x43E; &#x430;&#x442;&#x43E;&#x43C;&#x430; &#x425;&#x43B;&#x43E;&#x440;&#x430; &#x43A; &#x44D;&#x43B;&#x435;&#x43A;&#x442;&#x440;&#x43E;&#x43D;&#x443; 3,65 &#x44D;&#x432;, &#x44D;&#x43D;&#x435;&#x440;&#x433;&#x438;&#x44F; &#x438;&#x43E;&#x43D;&#x438;&#x437;&#x430;&#x446;&#x438;&#x438; 12,97 &#x44D;&#x432;.\n</p><p>&#x425;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438; &#x425;&#x43B;&#x43E;&#x440; &#x43E;&#x447;&#x435;&#x43D;&#x44C; &#x430;&#x43A;&#x442;&#x438;&#x432;&#x435;&#x43D;, &#x43D;&#x435;&#x43F;&#x43E;&#x441;&#x440;&#x435;&#x434;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x43E; &#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x44F;&#x435;&#x442;&#x441;&#x44F; &#x43F;&#x43E;&#x447;&#x442;&#x438; &#x441;&#x43E; &#x432;&#x441;&#x435;&#x43C;&#x438; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;&#x430;&#x43C;&#x438; (&#x441; &#x43D;&#x435;&#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x43C;&#x438; &#x442;&#x43E;&#x43B;&#x44C;&#x43A;&#x43E; &#x432; &#x43F;&#x440;&#x438;&#x441;&#x443;&#x442;&#x441;&#x442;&#x432;&#x438;&#x438; &#x432;&#x43B;&#x430;&#x433;&#x438; &#x438;&#x43B;&#x438; &#x43F;&#x440;&#x438; &#x43D;&#x430;&#x433;&#x440;&#x435;&#x432;&#x430;&#x43D;&#x438;&#x438;) &#x438; &#x441; &#x43D;&#x435;&#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;&#x430;&#x43C;&#x438; (&#x43A;&#x440;&#x43E;&#x43C;&#x435; &#x443;&#x433;&#x43B;&#x435;&#x440;&#x43E;&#x434;&#x430;, &#x430;&#x437;&#x43E;&#x442;&#x430;, &#x43A;&#x438;&#x441;&#x43B;&#x43E;&#x440;&#x43E;&#x434;&#x430;, &#x438;&#x43D;&#x435;&#x440;&#x442;&#x43D;&#x44B;&#x445; &#x433;&#x430;&#x437;&#x43E;&#x432;), &#x43E;&#x431;&#x440;&#x430;&#x437;&#x443;&#x44F; &#x441;&#x43E;&#x43E;&#x442;&#x432;&#x435;&#x442;&#x441;&#x442;&#x432;&#x443;&#x44E;&#x449;&#x438;&#x435; &#x445;&#x43B;&#x43E;&#x440;&#x438;&#x434;&#x44B;, &#x432;&#x441;&#x442;&#x443;&#x43F;&#x430;&#x435;&#x442; &#x432; &#x440;&#x435;&#x430;&#x43A;&#x446;&#x438;&#x44E; &#x441;&#x43E; &#x43C;&#x43D;&#x43E;&#x433;&#x438;&#x43C;&#x438; &#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x44F;&#x43C;&#x438;, &#x437;&#x430;&#x43C;&#x435;&#x449;&#x430;&#x435;&#x442; &#x432;&#x43E;&#x434;&#x43E;&#x440;&#x43E;&#x434; &#x432; &#x43F;&#x440;&#x435;&#x434;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x443;&#x433;&#x43B;&#x435;&#x432;&#x43E;&#x434;&#x43E;&#x440;&#x43E;&#x434;&#x430;&#x445; &#x438; &#x43F;&#x440;&#x438;&#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x44F;&#x435;&#x442;&#x441;&#x44F; &#x43A; &#x43D;&#x435;&#x43D;&#x430;&#x441;&#x44B;&#x449;&#x435;&#x43D;&#x43D;&#x44B;&#x43C; &#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x44F;&#x43C;. &#x425;&#x43B;&#x43E;&#x440; &#x432;&#x44B;&#x442;&#x435;&#x441;&#x43D;&#x44F;&#x435;&#x442; &#x431;&#x440;&#x43E;&#x43C; &#x438; &#x438;&#x43E;&#x434; &#x438;&#x437; &#x438;&#x445; &#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x439; &#x441; &#x432;&#x43E;&#x434;&#x43E;&#x440;&#x43E;&#x434;&#x43E;&#x43C; &#x438; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;&#x430;&#x43C;&#x438;; &#x438;&#x437; &#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x439; &#x425;&#x43B;&#x43E;&#x440;&#x430; &#x441; &#x44D;&#x442;&#x438;&#x43C;&#x438; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x430;&#x43C;&#x438; &#x43E;&#x43D; &#x432;&#x44B;&#x442;&#x435;&#x441;&#x43D;&#x44F;&#x435;&#x442;&#x441;&#x44F; &#x444;&#x442;&#x43E;&#x440;&#x43E;&#x43C;. &#x429;&#x435;&#x43B;&#x43E;&#x447;&#x43D;&#x44B;&#x435; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;&#x44B; &#x432; &#x43F;&#x440;&#x438;&#x441;&#x443;&#x442;&#x441;&#x442;&#x432;&#x438;&#x438; &#x441;&#x43B;&#x435;&#x434;&#x43E;&#x432; &#x432;&#x43B;&#x430;&#x433;&#x438; &#x432;&#x437;&#x430;&#x438;&#x43C;&#x43E;&#x434;&#x435;&#x439;&#x441;&#x442;&#x432;&#x443;&#x44E;&#x442; &#x441; &#x425;&#x43B;&#x43E;&#x440;&#x43E;&#x43C; &#x441; &#x432;&#x43E;&#x441;&#x43F;&#x43B;&#x430;&#x43C;&#x435;&#x43D;&#x435;&#x43D;&#x438;&#x435;&#x43C;, &#x431;&#x43E;&#x43B;&#x44C;&#x448;&#x438;&#x43D;&#x441;&#x442;&#x432;&#x43E; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;&#x43E;&#x432; &#x440;&#x435;&#x430;&#x433;&#x438;&#x440;&#x443;&#x435;&#x442; &#x441; &#x441;&#x443;&#x445;&#x438;&#x43C; &#x425;&#x43B;&#x43E;&#x440;&#x43E;&#x43C; &#x442;&#x43E;&#x43B;&#x44C;&#x43A;&#x43E; &#x43F;&#x440;&#x438; &#x43D;&#x430;&#x433;&#x440;&#x435;&#x432;&#x430;&#x43D;&#x438;&#x438;. &#x421;&#x442;&#x430;&#x43B;&#x44C;, &#x430; &#x442;&#x430;&#x43A;&#x436;&#x435; &#x43D;&#x435;&#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x435; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;&#x44B; &#x441;&#x442;&#x43E;&#x439;&#x43A;&#x438; &#x432; &#x430;&#x442;&#x43C;&#x43E;&#x441;&#x444;&#x435;&#x440;&#x435; &#x441;&#x443;&#x445;&#x43E;&#x433;&#x43E; &#x425;&#x43B;&#x43E;&#x440;&#x430; &#x432; &#x443;&#x441;&#x43B;&#x43E;&#x432;&#x438;&#x44F;&#x445; &#x43D;&#x435;&#x432;&#x44B;&#x441;&#x43E;&#x43A;&#x438;&#x445; &#x442;&#x435;&#x43C;&#x43F;&#x435;&#x440;&#x430;&#x442;&#x443;&#x440;, &#x43F;&#x43E;&#x44D;&#x442;&#x43E;&#x43C;&#x443; &#x438;&#x445; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x44E;&#x442; &#x434;&#x43B;&#x44F; &#x438;&#x437;&#x433;&#x43E;&#x442;&#x43E;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x430;&#x43F;&#x43F;&#x430;&#x440;&#x430;&#x442;&#x443;&#x440;&#x44B; &#x438; &#x445;&#x440;&#x430;&#x43D;&#x438;&#x43B;&#x438;&#x449; &#x434;&#x43B;&#x44F; &#x441;&#x443;&#x445;&#x43E;&#x433;&#x43E; &#x425;&#x43B;&#x43E;&#x440;&#x430;. &#x424;&#x43E;&#x441;&#x444;&#x43E;&#x440; &#x432;&#x43E;&#x441;&#x43F;&#x43B;&#x430;&#x43C;&#x435;&#x43D;&#x44F;&#x435;&#x442;&#x441;&#x44F; &#x432; &#x430;&#x442;&#x43C;&#x43E;&#x441;&#x444;&#x435;&#x440;&#x435; &#x425;&#x43B;&#x43E;&#x440;&#x430;, &#x43E;&#x431;&#x440;&#x430;&#x437;&#x443;&#x44F; &#x420;Cl<sub>3</sub>, &#x430; &#x43F;&#x440;&#x438; &#x434;&#x430;&#x43B;&#x44C;&#x43D;&#x435;&#x439;&#x448;&#x435;&#x43C; &#x445;&#x43B;&#x43E;&#x440;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x438; - &#x420;&#x421;l<sub>5</sub>; &#x441;&#x435;&#x440;&#x430; &#x441; &#x425;&#x43B;&#x43E;&#x440;&#x43E;&#x43C; &#x43F;&#x440;&#x438; &#x43D;&#x430;&#x433;&#x440;&#x435;&#x432;&#x430;&#x43D;&#x438;&#x438; &#x434;&#x430;&#x435;&#x442; S<sub>2</sub>Cl<sub>2</sub>, SCl<sub>2</sub> &#x438; &#x434;&#x440;&#x443;&#x433;&#x438;&#x435; S<sub>n</sub>Cl<sub>m</sub>. &#x41C;&#x44B;&#x448;&#x44C;&#x44F;&#x43A;, &#x441;&#x443;&#x440;&#x44C;&#x43C;&#x430;, &#x432;&#x438;&#x441;&#x43C;&#x443;&#x442;, &#x441;&#x442;&#x440;&#x43E;&#x43D;&#x446;&#x438;&#x439;, &#x442;&#x435;&#x43B;&#x43B;&#x443;&#x440; &#x44D;&#x43D;&#x435;&#x440;&#x433;&#x438;&#x447;&#x43D;&#x43E; &#x432;&#x437;&#x430;&#x438;&#x43C;&#x43E;&#x434;&#x435;&#x439;&#x441;&#x442;&#x432;&#x443;&#x44E;&#x442; &#x441; &#x425;&#x43B;&#x43E;&#x440;&#x43E;&#x43C;. &#x421;&#x43C;&#x435;&#x441;&#x44C; &#x425;&#x43B;&#x43E;&#x440;&#x430; &#x441; &#x432;&#x43E;&#x434;&#x43E;&#x440;&#x43E;&#x434;&#x43E;&#x43C; &#x433;&#x43E;&#x440;&#x438;&#x442; &#x431;&#x435;&#x441;&#x446;&#x432;&#x435;&#x442;&#x43D;&#x44B;&#x43C; &#x438;&#x43B;&#x438; &#x436;&#x435;&#x43B;&#x442;&#x43E;-&#x437;&#x435;&#x43B;&#x435;&#x43D;&#x44B;&#x43C; &#x43F;&#x43B;&#x430;&#x43C;&#x435;&#x43D;&#x435;&#x43C; &#x441; &#x43E;&#x431;&#x440;&#x430;&#x437;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435;&#x43C; &#x445;&#x43B;&#x43E;&#x440;&#x438;&#x441;&#x442;&#x43E;&#x433;&#x43E; &#x432;&#x43E;&#x434;&#x43E;&#x440;&#x43E;&#x434;&#x430; (&#x44D;&#x442;&#x43E; &#x446;&#x435;&#x43F;&#x43D;&#x430;&#x44F; &#x440;&#x435;&#x430;&#x43A;&#x446;&#x438;&#x44F;).\n</p><p>&#x41C;&#x430;&#x43A;&#x441;&#x438;&#x43C;&#x430;&#x43B;&#x44C;&#x43D;&#x430;&#x44F; &#x442;&#x435;&#x43C;&#x43F;&#x435;&#x440;&#x430;&#x442;&#x443;&#x440;&#x430; &#x432;&#x43E;&#x434;&#x43E;&#x440;&#x43E;&#x434;&#x43D;&#x43E;-&#x445;&#x43B;&#x43E;&#x440;&#x43D;&#x43E;&#x433;&#x43E; &#x43F;&#x43B;&#x430;&#x43C;&#x435;&#x43D;&#x438; 2200&#xB0;&#x421;. &#x421;&#x43C;&#x435;&#x441;&#x438; &#x425;&#x43B;&#x43E;&#x440;&#x430; &#x441; &#x432;&#x43E;&#x434;&#x43E;&#x440;&#x43E;&#x434;&#x43E;&#x43C;, &#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x430;&#x449;&#x438;&#x435; &#x43E;&#x442; 5,8 &#x434;&#x43E; 88,5% &#x41D;<sub>2</sub>, &#x432;&#x437;&#x440;&#x44B;&#x432;&#x43E;&#x43E;&#x43F;&#x430;&#x441;&#x43D;&#x44B;.\n</p><p>&#x421; &#x43A;&#x438;&#x441;&#x43B;&#x43E;&#x440;&#x43E;&#x434;&#x43E;&#x43C; &#x425;&#x43B;&#x43E;&#x440; &#x43E;&#x431;&#x440;&#x430;&#x437;&#x443;&#x435;&#x442; &#x43E;&#x43A;&#x441;&#x438;&#x434;&#x44B;: Cl<sub>2</sub>&#x41E;, &#x421;lO<sub>2</sub>, Cl<sub>2</sub>&#x41E;<sub>6</sub>, &#x421;l<sub>2</sub>&#x41E;<sub>7</sub>, Cl<sub>2</sub>&#x41E;<sub>8</sub>, &#x430; &#x442;&#x430;&#x43A;&#x436;&#x435; &#x433;&#x438;&#x43F;&#x43E;&#x445;&#x43B;&#x43E;&#x440;&#x438;&#x442;&#x44B; (&#x441;&#x43E;&#x43B;&#x438; &#x445;&#x43B;&#x43E;&#x440;&#x43D;&#x43E;&#x432;&#x430;&#x442;&#x438;&#x441;&#x442;&#x43E;&#x439; &#x43A;&#x438;&#x441;&#x43B;&#x43E;&#x442;&#x44B;), &#x445;&#x43B;&#x43E;&#x440;&#x438;&#x442;&#x44B;, &#x445;&#x43B;&#x43E;&#x440;&#x430;&#x442;&#x44B; &#x438; &#x43F;&#x435;&#x440;&#x445;&#x43B;&#x43E;&#x440;&#x430;&#x442;&#x44B;. &#x412;&#x441;&#x435; &#x43A;&#x438;&#x441;&#x43B;&#x43E;&#x440;&#x43E;&#x434;&#x43D;&#x44B;&#x435; &#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x44F; &#x445;&#x43B;&#x43E;&#x440;&#x430; &#x43E;&#x431;&#x440;&#x430;&#x437;&#x443;&#x44E;&#x442; &#x432;&#x437;&#x440;&#x44B;&#x432;&#x43E;&#x43E;&#x43F;&#x430;&#x441;&#x43D;&#x44B;&#x435; &#x441;&#x43C;&#x435;&#x441;&#x438; &#x441; &#x43B;&#x435;&#x433;&#x43A;&#x43E; &#x43E;&#x43A;&#x438;&#x441;&#x43B;&#x44F;&#x44E;&#x449;&#x438;&#x43C;&#x438;&#x441;&#x44F; &#x432;&#x435;&#x449;&#x435;&#x441;&#x442;&#x432;&#x430;&#x43C;&#x438;. &#x41E;&#x43A;&#x441;&#x438;&#x434;&#x44B; &#x425;&#x43B;&#x43E;&#x440;&#x430; &#x43C;&#x430;&#x43B;&#x43E;&#x441;&#x442;&#x43E;&#x439;&#x43A;&#x438; &#x438; &#x43C;&#x43E;&#x433;&#x443;&#x442; &#x441;&#x430;&#x43C;&#x43E;&#x43F;&#x440;&#x43E;&#x438;&#x437;&#x432;&#x43E;&#x43B;&#x44C;&#x43D;&#x43E; &#x432;&#x437;&#x440;&#x44B;&#x432;&#x430;&#x442;&#x44C;&#x441;&#x44F;, &#x433;&#x438;&#x43F;&#x43E;&#x445;&#x43B;&#x43E;&#x440;&#x438;&#x442;&#x44B; &#x43F;&#x440;&#x438; &#x445;&#x440;&#x430;&#x43D;&#x435;&#x43D;&#x438;&#x438; &#x43C;&#x435;&#x434;&#x43B;&#x435;&#x43D;&#x43D;&#x43E; &#x440;&#x430;&#x437;&#x43B;&#x430;&#x433;&#x430;&#x44E;&#x442;&#x441;&#x44F;, &#x445;&#x43B;&#x43E;&#x440;&#x430;&#x442;&#x44B; &#x438; &#x43F;&#x435;&#x440;&#x445;&#x43B;&#x43E;&#x440;&#x430;&#x442;&#x44B; &#x43C;&#x43E;&#x433;&#x443;&#x442; &#x432;&#x437;&#x440;&#x44B;&#x432;&#x430;&#x442;&#x44C;&#x441;&#x44F; &#x43F;&#x43E;&#x434; &#x432;&#x43B;&#x438;&#x44F;&#x43D;&#x438;&#x435;&#x43C; &#x438;&#x43D;&#x438;&#x446;&#x438;&#x430;&#x442;&#x43E;&#x440;&#x43E;&#x432;.\n</p><p>&#x425;&#x43B;&#x43E;&#x440; &#x432; &#x432;&#x43E;&#x434;&#x435; &#x433;&#x438;&#x434;&#x440;&#x43E;&#x43B;&#x438;&#x437;&#x443;&#x435;&#x442;&#x441;&#x44F;, &#x43E;&#x431;&#x440;&#x430;&#x437;&#x443;&#x44F; &#x445;&#x43B;&#x43E;&#x440;&#x43D;&#x43E;&#x432;&#x430;&#x442;&#x438;&#x441;&#x442;&#x443;&#x44E; &#x438; &#x441;&#x43E;&#x43B;&#x44F;&#x43D;&#x443;&#x44E; &#x43A;&#x438;&#x441;&#x43B;&#x43E;&#x442;&#x44B;: Cl<sub>2</sub> + &#x41D;<sub>2</sub>&#x41E; = &#x41D;Cl&#x41E; + &#x41D;Cl. &#x41F;&#x440;&#x438; &#x445;&#x43B;&#x43E;&#x440;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x438; &#x432;&#x43E;&#x434;&#x43D;&#x44B;&#x445; &#x440;&#x430;&#x441;&#x442;&#x432;&#x43E;&#x440;&#x43E;&#x432; &#x449;&#x435;&#x43B;&#x43E;&#x447;&#x435;&#x439; &#x43D;&#x430; &#x445;&#x43E;&#x43B;&#x43E;&#x434;&#x443; &#x43E;&#x431;&#x440;&#x430;&#x437;&#x443;&#x44E;&#x442;&#x441;&#x44F; &#x433;&#x438;&#x43F;&#x43E;&#x445;&#x43B;&#x43E;&#x440;&#x438;&#x442;&#x44B; &#x438; &#x445;&#x43B;&#x43E;&#x440;&#x438;&#x434;&#x44B;: 2NaOH + Cl<sub>2</sub>= NaClO + NaCl + &#x41D;<sub>2</sub>&#x41E;, &#x430; &#x43F;&#x440;&#x438; &#x43D;&#x430;&#x433;&#x440;&#x435;&#x432;&#x430;&#x43D;&#x438;&#x438; - &#x445;&#x43B;&#x43E;&#x440;&#x430;&#x442;&#x44B;. &#x425;&#x43B;&#x43E;&#x440;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435;&#x43C; &#x441;&#x443;&#x445;&#x43E;&#x433;&#x43E; &#x433;&#x438;&#x434;&#x440;&#x43E;&#x43E;&#x43A;&#x441;&#x438;&#x434;&#x430; &#x43A;&#x430;&#x43B;&#x44C;&#x446;&#x438;&#x44F; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x430;&#x44E;&#x442; &#x445;&#x43B;&#x43E;&#x440;&#x43D;&#x443;&#x44E; &#x438;&#x437;&#x432;&#x435;&#x441;&#x442;&#x44C;.\n</p><p>&#x41F;&#x440;&#x438; &#x432;&#x437;&#x430;&#x438;&#x43C;&#x43E;&#x434;&#x435;&#x439;&#x441;&#x442;&#x432;&#x438;&#x438; &#x430;&#x43C;&#x43C;&#x438;&#x430;&#x43A;&#x430; &#x441; &#x425;&#x43B;&#x43E;&#x440;&#x43E;&#x43C; &#x43E;&#x431;&#x440;&#x430;&#x437;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x442;&#x440;&#x435;&#x445;&#x445;&#x43B;&#x43E;&#x440;&#x438;&#x441;&#x442;&#x44B;&#x439; &#x430;&#x437;&#x43E;&#x442;. &#x41F;&#x440;&#x438; &#x445;&#x43B;&#x43E;&#x440;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x438; &#x43E;&#x440;&#x433;&#x430;&#x43D;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x445; &#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x439; &#x425;&#x43B;&#x43E;&#x440; &#x43B;&#x438;&#x431;&#x43E; &#x437;&#x430;&#x43C;&#x435;&#x449;&#x430;&#x435;&#x442; &#x432;&#x43E;&#x434;&#x43E;&#x440;&#x43E;&#x434;, &#x43B;&#x438;&#x431;&#x43E; &#x43F;&#x440;&#x438;&#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x44F;&#x435;&#x442;&#x441;&#x44F; &#x43F;&#x43E; &#x43A;&#x440;&#x430;&#x442;&#x43D;&#x44B;&#x43C; &#x441;&#x432;&#x44F;&#x437;&#x44F;&#x43C;, &#x43E;&#x431;&#x440;&#x430;&#x437;&#x443;&#x44F; &#x440;&#x430;&#x437;&#x43B;&#x438;&#x447;&#x43D;&#x44B;&#x435; &#x445;&#x43B;&#x43E;&#x440;&#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x430;&#x449;&#x438;&#x435; &#x43E;&#x440;&#x433;&#x430;&#x43D;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x445; &#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x44F;.\n</p><p>&#x425;&#x43B;&#x43E;&#x440; &#x43E;&#x431;&#x440;&#x430;&#x437;&#x443;&#x435;&#x442; &#x441; &#x434;&#x440;&#x443;&#x433;&#x438;&#x445; &#x433;&#x430;&#x43B;&#x43E;&#x433;&#x435;&#x43D;&#x430;&#x43C;&#x438; &#x43C;&#x435;&#x436;&#x433;&#x430;&#x43B;&#x43E;&#x433;&#x435;&#x43D;&#x43D;&#x44B;&#x435; &#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x44F;. &#x424;&#x442;&#x43E;&#x440;&#x438;&#x434;&#x44B; ClF, ClF<sub>3</sub>, ClF<sub>3</sub> &#x43E;&#x447;&#x435;&#x43D;&#x44C; &#x440;&#x435;&#x430;&#x43A;&#x446;&#x438;&#x43E;&#x43D;&#x43D;&#x43E;&#x441;&#x43F;&#x43E;&#x441;&#x43E;&#x431;&#x43D;&#x44B;; &#x43D;&#x430;&#x43F;&#x440;&#x438;&#x43C;&#x435;&#x440;, &#x432; &#x430;&#x442;&#x43C;&#x43E;&#x441;&#x444;&#x435;&#x440;&#x435; ClF<sub>3</sub> &#x441;&#x442;&#x435;&#x43A;&#x43B;&#x44F;&#x43D;&#x43D;&#x430;&#x44F; &#x432;&#x430;&#x442;&#x430; &#x441;&#x430;&#x43C;&#x43E;&#x432;&#x43E;&#x441;&#x43F;&#x43B;&#x430;&#x43C;&#x435;&#x43D;&#x44F;&#x435;&#x442;&#x441;&#x44F;. &#x418;&#x437;&#x432;&#x435;&#x441;&#x442;&#x43D;&#x44B; &#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x44F; &#x445;&#x43B;&#x43E;&#x440;&#x430; &#x441; &#x43A;&#x438;&#x441;&#x43B;&#x43E;&#x440;&#x43E;&#x434;&#x43E;&#x43C; &#x438; &#x444;&#x442;&#x43E;&#x440;&#x43E;&#x43C; - &#x43E;&#x43A;&#x441;&#x438;&#x444;&#x442;&#x43E;&#x440;&#x438;&#x434;&#x44B; &#x425;&#x43B;&#x43E;&#x440;&#x430;: ClO<sub>3</sub>F, ClO<sub>2</sub>F<sub>3</sub>, ClOF, ClOF<sub>3</sub> &#x438; &#x43F;&#x435;&#x440;&#x445;&#x43B;&#x43E;&#x440;&#x430;&#x442; &#x444;&#x442;&#x43E;&#x440;&#x430; FClO<sub>4</sub>.\n</p><p><a class=\"ogln\" name=\"m4\">&#x41F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x425;&#x43B;&#x43E;&#x440;&#x430;.</a> &#x425;&#x43B;&#x43E;&#x440; &#x43D;&#x430;&#x447;&#x430;&#x43B;&#x438; &#x43F;&#x440;&#x43E;&#x438;&#x437;&#x432;&#x43E;&#x434;&#x438;&#x442;&#x44C; &#x432; &#x43F;&#x440;&#x43E;&#x43C;&#x44B;&#x448;&#x43B;&#x435;&#x43D;&#x43D;&#x43E;&#x441;&#x442;&#x438; &#x432; 1785 &#x433;&#x43E;&#x434;&#x443; &#x432;&#x437;&#x430;&#x438;&#x43C;&#x43E;&#x434;&#x435;&#x439;&#x441;&#x442;&#x432;&#x438;&#x435;&#x43C; &#x441;&#x43E;&#x43B;&#x44F;&#x43D;&#x43E;&#x439; &#x43A;&#x438;&#x441;&#x43B;&#x43E;&#x442;&#x44B; &#x441; &#x43E;&#x43A;&#x441;&#x438;&#x434;&#x43E;&#x43C; &#x43C;&#x430;&#x440;&#x433;&#x430;&#x43D;&#x446;&#x430; (II) &#x438;&#x43B;&#x438; &#x43F;&#x438;&#x440;&#x43E;&#x43B;&#x44E;&#x437;&#x438;&#x442;&#x43E;&#x43C;. &#x412; 1867 &#x433;&#x43E;&#x434;&#x443; &#x430;&#x43D;&#x433;&#x43B;&#x438;&#x439;&#x441;&#x43A;&#x438;&#x439; &#x445;&#x438;&#x43C;&#x438;&#x43A; &#x413;. &#x414;&#x438;&#x43A;&#x43E;&#x43D; &#x440;&#x430;&#x437;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x430;&#x43B; &#x441;&#x43F;&#x43E;&#x441;&#x43E;&#x431; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x425;&#x43B;&#x43E;&#x440;&#x430; &#x43E;&#x43A;&#x438;&#x441;&#x43B;&#x435;&#x43D;&#x438;&#x435;&#x43C; &#x41D;&#x421;l &#x43A;&#x438;&#x441;&#x43B;&#x43E;&#x440;&#x43E;&#x434;&#x43E;&#x43C; &#x432;&#x43E;&#x437;&#x434;&#x443;&#x445;&#x430; &#x432; &#x43F;&#x440;&#x438;&#x441;&#x443;&#x442;&#x441;&#x442;&#x432;&#x438;&#x438; &#x43A;&#x430;&#x442;&#x430;&#x43B;&#x438;&#x437;&#x430;&#x442;&#x43E;&#x440;&#x430;. &#x421; &#x43A;&#x43E;&#x43D;&#x446;&#x430; 19 - &#x43D;&#x430;&#x447;&#x430;&#x43B;&#x430; 20 &#x432;&#x435;&#x43A;&#x430; &#x425;&#x43B;&#x43E;&#x440; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x430;&#x44E;&#x442; &#x44D;&#x43B;&#x435;&#x43A;&#x442;&#x440;&#x43E;&#x43B;&#x438;&#x437;&#x43E;&#x43C; &#x432;&#x43E;&#x434;&#x43D;&#x44B;&#x445; &#x440;&#x430;&#x441;&#x442;&#x432;&#x43E;&#x440;&#x43E;&#x432; &#x445;&#x43B;&#x43E;&#x440;&#x438;&#x434;&#x43E;&#x432; &#x449;&#x435;&#x43B;&#x43E;&#x447;&#x43D;&#x44B;&#x445; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;&#x43E;&#x432;. &#x41F;&#x43E; &#x44D;&#x442;&#x438;&#x43C; &#x43C;&#x435;&#x442;&#x43E;&#x434;&#x430;&#x43C; &#x43F;&#x440;&#x43E;&#x438;&#x437;&#x432;&#x43E;&#x434;&#x438;&#x442;&#x441;&#x44F; 90-95% &#x425;&#x43B;&#x43E;&#x440;&#x430; &#x432; &#x43C;&#x438;&#x440;&#x435;. &#x41D;&#x435;&#x431;&#x43E;&#x43B;&#x44C;&#x448;&#x438;&#x435; &#x43A;&#x43E;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x442;&#x432;&#x430; &#x425;&#x43B;&#x43E;&#x440;&#x430; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x430;&#x44E;&#x442;&#x441;&#x44F; &#x43F;&#x43E;&#x43F;&#x443;&#x442;&#x43D;&#x43E; &#x43F;&#x440;&#x438; &#x43F;&#x440;&#x43E;&#x438;&#x437;&#x432;&#x43E;&#x434;&#x441;&#x442;&#x432;&#x435; &#x43C;&#x430;&#x433;&#x43D;&#x438;&#x44F;, &#x43A;&#x430;&#x43B;&#x44C;&#x446;&#x438;&#x44F;, &#x43D;&#x430;&#x442;&#x440;&#x438;&#x44F; &#x438; &#x43B;&#x438;&#x442;&#x438;&#x44F; &#x44D;&#x43B;&#x435;&#x43A;&#x442;&#x440;&#x43E;&#x43B;&#x438;&#x437;&#x43E;&#x43C; &#x440;&#x430;&#x441;&#x43F;&#x43B;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x43D;&#x44B;&#x445; &#x445;&#x43B;&#x43E;&#x440;&#x438;&#x434;&#x43E;&#x432;. &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x43D;&#x44F;&#x44E;&#x442;&#x441;&#x44F; &#x434;&#x432;&#x430; &#x43E;&#x441;&#x43D;&#x43E;&#x432;&#x43D;&#x44B;&#x435; &#x43C;&#x435;&#x442;&#x43E;&#x434;&#x430; &#x44D;&#x43B;&#x435;&#x43A;&#x442;&#x440;&#x43E;&#x43B;&#x438;&#x437;&#x430; &#x432;&#x43E;&#x434;&#x43D;&#x44B;&#x445; &#x440;&#x430;&#x441;&#x442;&#x432;&#x43E;&#x440;&#x43E;&#x432; NaCl: 1) &#x432; &#x44D;&#x43B;&#x435;&#x43A;&#x442;&#x440;&#x43E;&#x43B;&#x438;&#x437;&#x435;&#x440;&#x430;&#x445; &#x441; &#x442;&#x432;&#x435;&#x440;&#x434;&#x44B;&#x43C; &#x43A;&#x430;&#x442;&#x43E;&#x434;&#x43E;&#x43C; &#x438; &#x43F;&#x43E;&#x440;&#x438;&#x441;&#x442;&#x43E;&#x439; &#x444;&#x438;&#x43B;&#x44C;&#x442;&#x440;&#x443;&#x44E;&#x449;&#x435;&#x439; &#x434;&#x438;&#x430;&#x444;&#x440;&#x430;&#x433;&#x43C;&#x43E;&#x439;; 2) &#x432; &#x44D;&#x43B;&#x435;&#x43A;&#x442;&#x440;&#x43E;&#x43B;&#x438;&#x437;&#x435;&#x440;&#x430;&#x445; &#x441; &#x440;&#x442;&#x443;&#x442;&#x43D;&#x44B;&#x43C; &#x43A;&#x430;&#x442;&#x43E;&#x434;&#x43E;&#x43C;. &#x41F;&#x43E; &#x43E;&#x431;&#x43E;&#x438;&#x43C; &#x43C;&#x435;&#x442;&#x43E;&#x434;&#x430;&#x43C; &#x43D;&#x430; &#x433;&#x440;&#x430;&#x444;&#x438;&#x442;&#x43E;&#x432;&#x43E;&#x43C; &#x438;&#x43B;&#x438; &#x43E;&#x43A;&#x438;&#x441;&#x43D;&#x43E;&#x43C; &#x442;&#x438;&#x442;&#x430;&#x43D;&#x43E;-&#x440;&#x443;&#x442;&#x435;&#x43D;&#x438;&#x435;&#x432;&#x43E;&#x43C; &#x430;&#x43D;&#x43E;&#x434;&#x435; &#x432;&#x44B;&#x434;&#x435;&#x43B;&#x44F;&#x435;&#x442;&#x441;&#x44F; &#x433;&#x430;&#x437;&#x43E;&#x43E;&#x431;&#x440;&#x430;&#x437;&#x43D;&#x44B;&#x439; &#x425;&#x43B;&#x43E;&#x440;. &#x41F;&#x43E; &#x43F;&#x435;&#x440;&#x432;&#x43E;&#x43C;&#x443; &#x43C;&#x435;&#x442;&#x43E;&#x434;&#x443; &#x43D;&#x430; &#x43A;&#x430;&#x442;&#x43E;&#x434;&#x435; &#x432;&#x44B;&#x434;&#x435;&#x43B;&#x44F;&#x435;&#x442;&#x441;&#x44F; &#x432;&#x43E;&#x434;&#x43E;&#x440;&#x43E;&#x434; &#x438; &#x43E;&#x431;&#x440;&#x430;&#x437;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x440;&#x430;&#x441;&#x442;&#x432;&#x43E;&#x440; NaOH &#x438; NaCl, &#x438;&#x437; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x43E;&#x433;&#x43E; &#x43F;&#x43E;&#x441;&#x43B;&#x435;&#x434;&#x443;&#x44E;&#x449;&#x435;&#x439; &#x43F;&#x435;&#x440;&#x435;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x43E;&#x439; &#x432;&#x44B;&#x434;&#x435;&#x43B;&#x44F;&#x44E;&#x442; &#x442;&#x43E;&#x432;&#x430;&#x440;&#x43D;&#x443;&#x44E; &#x43A;&#x430;&#x443;&#x441;&#x442;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x443;&#x44E; &#x441;&#x43E;&#x434;&#x443;. &#x41F;&#x43E; &#x432;&#x442;&#x43E;&#x440;&#x43E;&#x43C;&#x443; &#x43C;&#x435;&#x442;&#x43E;&#x434;&#x443; &#x43D;&#x430; &#x43A;&#x430;&#x442;&#x43E;&#x434;&#x435; &#x43E;&#x431;&#x440;&#x430;&#x437;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x430;&#x43C;&#x430;&#x43B;&#x44C;&#x433;&#x430;&#x43C;&#x430; &#x43D;&#x430;&#x442;&#x440;&#x438;&#x44F;, &#x43F;&#x440;&#x438; &#x435;&#x435; &#x440;&#x430;&#x437;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x438;&#x438; &#x447;&#x438;&#x441;&#x442;&#x43E;&#x439; &#x432;&#x43E;&#x434;&#x43E;&#x439; &#x432; &#x43E;&#x442;&#x434;&#x435;&#x43B;&#x44C;&#x43D;&#x43E;&#x43C; &#x430;&#x43F;&#x43F;&#x430;&#x440;&#x430;&#x442;&#x435; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x430;&#x44E;&#x442;&#x441;&#x44F; &#x440;&#x430;&#x441;&#x442;&#x432;&#x43E;&#x440; NaOH, &#x432;&#x43E;&#x434;&#x43E;&#x440;&#x43E;&#x434; &#x438; &#x447;&#x438;&#x441;&#x442;&#x430;&#x44F; &#x440;&#x442;&#x443;&#x442;&#x44C;, &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x430;&#x44F; &#x432;&#x43D;&#x43E;&#x432;&#x44C; &#x438;&#x434;&#x435;&#x442; &#x432; &#x43F;&#x440;&#x43E;&#x438;&#x437;&#x432;&#x43E;&#x434;&#x441;&#x442;&#x432;&#x43E;. &#x41E;&#x431;&#x430; &#x43C;&#x435;&#x442;&#x43E;&#x434;&#x430; &#x434;&#x430;&#x44E;&#x442; &#x43D;&#x430; 1 &#x442; &#x425;&#x43B;&#x43E;&#x440;&#x430; 1,125 &#x442; NaOH.\n</p><p>&#x42D;&#x43B;&#x435;&#x43A;&#x442;&#x440;&#x43E;&#x43B;&#x438;&#x437; &#x441; &#x434;&#x438;&#x430;&#x444;&#x440;&#x430;&#x433;&#x43C;&#x43E;&#x439; &#x442;&#x440;&#x435;&#x431;&#x443;&#x435;&#x442; &#x43C;&#x435;&#x43D;&#x44C;&#x448;&#x438;&#x445; &#x43A;&#x430;&#x43F;&#x438;&#x442;&#x430;&#x43B;&#x43E;&#x432;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x438;&#x439; &#x434;&#x43B;&#x44F; &#x43E;&#x440;&#x433;&#x430;&#x43D;&#x438;&#x437;&#x430;&#x446;&#x438;&#x438; &#x43F;&#x440;&#x43E;&#x438;&#x437;&#x432;&#x43E;&#x434;&#x441;&#x442;&#x432;&#x430; &#x425;&#x43B;&#x43E;&#x440;&#x430;, &#x434;&#x430;&#x435;&#x442; &#x431;&#x43E;&#x43B;&#x435;&#x435; &#x434;&#x435;&#x448;&#x435;&#x432;&#x44B;&#x439; NaOH. &#x41C;&#x435;&#x442;&#x43E;&#x434; &#x441; &#x440;&#x442;&#x443;&#x442;&#x43D;&#x44B;&#x43C; &#x43A;&#x430;&#x442;&#x43E;&#x434;&#x43E;&#x43C; &#x43F;&#x43E;&#x437;&#x432;&#x43E;&#x43B;&#x44F;&#x435;&#x442; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x430;&#x442;&#x44C; &#x43E;&#x447;&#x435;&#x43D;&#x44C; &#x447;&#x438;&#x441;&#x442;&#x44B;&#x439; NaOH, &#x43D;&#x43E; &#x43F;&#x43E;&#x442;&#x435;&#x440;&#x438; &#x440;&#x442;&#x443;&#x442;&#x438; &#x437;&#x430;&#x433;&#x440;&#x44F;&#x437;&#x43D;&#x44F;&#x44E;&#x442; &#x43E;&#x43A;&#x440;&#x443;&#x436;&#x430;&#x44E;&#x449;&#x443;&#x44E; &#x441;&#x440;&#x435;&#x434;&#x443;.\n</p><p><a class=\"ogln\" name=\"m5\">&#x41F;&#x440;&#x438;&#x43C;&#x435;&#x43D;&#x435;&#x43D;&#x438;&#x435; &#x425;&#x43B;&#x43E;&#x440;&#x430;.</a> &#x41E;&#x434;&#x43D;&#x43E;&#x439; &#x438;&#x437; &#x432;&#x430;&#x436;&#x43D;&#x44B;&#x445; &#x43E;&#x442;&#x440;&#x430;&#x441;&#x43B;&#x435;&#x439; &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x435; &#x43F;&#x440;&#x43E;&#x43C;&#x44B;&#x448;&#x43B;&#x435;&#x43D;&#x43D;&#x43E;&#x441;&#x442;&#x438; &#x44F;&#x432;&#x43B;&#x44F;&#x435;&#x442;&#x441;&#x44F; &#x445;&#x43B;&#x43E;&#x440;&#x43D;&#x430;&#x44F; &#x43F;&#x440;&#x43E;&#x43C;&#x44B;&#x448;&#x43B;&#x435;&#x43D;&#x43D;&#x43E;&#x441;&#x442;&#x44C;. &#x41E;&#x441;&#x43D;&#x43E;&#x432;&#x43D;&#x44B;&#x435; &#x43A;&#x43E;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x442;&#x432;&#x430; &#x425;&#x43B;&#x43E;&#x440;&#x430; &#x43F;&#x435;&#x440;&#x435;&#x440;&#x430;&#x431;&#x430;&#x442;&#x44B;&#x432;&#x430;&#x44E;&#x442;&#x441;&#x44F; &#x43D;&#x430; &#x43C;&#x435;&#x441;&#x442;&#x435; &#x435;&#x433;&#x43E; &#x43F;&#x440;&#x43E;&#x438;&#x437;&#x432;&#x43E;&#x434;&#x441;&#x442;&#x432;&#x430; &#x432; &#x445;&#x43B;&#x43E;&#x440;&#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x430;&#x449;&#x438;&#x435; &#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x44F;. &#x425;&#x440;&#x430;&#x43D;&#x44F;&#x442; &#x438; &#x43F;&#x435;&#x440;&#x435;&#x432;&#x43E;&#x437;&#x44F;&#x442; &#x425;&#x43B;&#x43E;&#x440; &#x432; &#x436;&#x438;&#x434;&#x43A;&#x43E;&#x43C; &#x432;&#x438;&#x434;&#x435; &#x432; &#x431;&#x430;&#x43B;&#x43B;&#x43E;&#x43D;&#x430;&#x445;, &#x431;&#x43E;&#x447;&#x43A;&#x430;&#x445;, &#x436;&#x435;&#x43B;&#x435;&#x437;&#x43D;&#x43E;&#x434;&#x43E;&#x440;&#x43E;&#x436;&#x43D;&#x44B;&#x445; &#x446;&#x438;&#x441;&#x442;&#x435;&#x440;&#x43D;&#x430;&#x445; &#x438;&#x43B;&#x438; &#x432; &#x441;&#x43F;&#x435;&#x446;&#x438;&#x430;&#x43B;&#x44C;&#x43D;&#x43E; &#x43E;&#x431;&#x43E;&#x440;&#x443;&#x434;&#x43E;&#x432;&#x430;&#x43D;&#x43D;&#x44B;&#x445; &#x441;&#x443;&#x434;&#x430;&#x445;. &#x414;&#x43B;&#x44F; &#x438;&#x43D;&#x434;&#x443;&#x441;&#x442;&#x440;&#x438;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x441;&#x442;&#x440;&#x430;&#x43D; &#x445;&#x430;&#x440;&#x430;&#x43A;&#x442;&#x435;&#x440;&#x43D;&#x43E; &#x441;&#x43B;&#x435;&#x434;&#x443;&#x44E;&#x449;&#x435;&#x435; &#x43F;&#x440;&#x438;&#x43C;&#x435;&#x440;&#x43D;&#x43E;&#x435; &#x43F;&#x43E;&#x442;&#x440;&#x435;&#x431;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x425;&#x43B;&#x43E;&#x440;: &#x43D;&#x430; &#x43F;&#x440;&#x43E;&#x438;&#x437;&#x432;&#x43E;&#x434;&#x441;&#x442;&#x432;&#x43E; &#x445;&#x43B;&#x43E;&#x440;&#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x430;&#x449;&#x438;&#x445; &#x43E;&#x440;&#x433;&#x430;&#x43D;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x445; &#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x439; - 60-75%; &#x43D;&#x435;&#x43E;&#x440;&#x433;&#x430;&#x43D;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x445; &#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x439;, &#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x430;&#x449;&#x438;&#x445; &#x425;&#x43B;&#x43E;&#x440;, -10-20%; &#x43D;&#x430; &#x43E;&#x442;&#x431;&#x435;&#x43B;&#x43A;&#x443; &#x446;&#x435;&#x43B;&#x43B;&#x44E;&#x43B;&#x43E;&#x437;&#x44B; &#x438; &#x442;&#x43A;&#x430;&#x43D;&#x435;&#x439;- 5-15%; &#x43D;&#x430; &#x441;&#x430;&#x43D;&#x438;&#x442;&#x430;&#x440;&#x43D;&#x44B;&#x435; &#x43D;&#x443;&#x436;&#x434;&#x44B; &#x438; &#x445;&#x43B;&#x43E;&#x440;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x432;&#x43E;&#x434;&#x44B; - 2-6% &#x43E;&#x442; &#x43E;&#x431;&#x449;&#x435;&#x439; &#x432;&#x44B;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x438;.\n</p><p>&#x425;&#x43B;&#x43E;&#x440; &#x43F;&#x440;&#x438;&#x43C;&#x435;&#x43D;&#x44F;&#x435;&#x442;&#x441;&#x44F; &#x442;&#x430;&#x43A;&#x436;&#x435; &#x434;&#x43B;&#x44F; &#x445;&#x43B;&#x43E;&#x440;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; &#x43D;&#x435;&#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x445; &#x440;&#x443;&#x434; &#x441; &#x446;&#x435;&#x43B;&#x44C;&#x44E; &#x438;&#x437;&#x432;&#x43B;&#x435;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x442;&#x438;&#x442;&#x430;&#x43D;&#x430;, &#x43D;&#x438;&#x43E;&#x431;&#x438;&#x44F;, &#x446;&#x438;&#x440;&#x43A;&#x43E;&#x43D;&#x438;&#x44F; &#x438; &#x434;&#x440;&#x443;&#x433;&#x438;&#x445;\n</p><p><a class=\"ogln\" name=\"m6\">&#x425;&#x43B;&#x43E;&#x440; &#x432; &#x43E;&#x440;&#x433;&#x430;&#x43D;&#x438;&#x437;&#x43C;&#x435;.</a> &#x425;&#x43B;&#x43E;&#x440; - &#x43E;&#x434;&#x438;&#x43D; &#x438;&#x437; &#x431;&#x438;&#x43E;&#x433;&#x435;&#x43D;&#x43D;&#x44B;&#x445; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x43E;&#x432;, &#x43F;&#x43E;&#x441;&#x442;&#x43E;&#x44F;&#x43D;&#x43D;&#x44B;&#x439; &#x43A;&#x43E;&#x43C;&#x43F;&#x43E;&#x43D;&#x435;&#x43D;&#x442; &#x442;&#x43A;&#x430;&#x43D;&#x435;&#x439; &#x440;&#x430;&#x441;&#x442;&#x435;&#x43D;&#x438;&#x439; &#x438; &#x436;&#x438;&#x432;&#x43E;&#x442;&#x43D;&#x44B;&#x445;. &#x421;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x430;&#x43D;&#x438;&#x435; &#x425;&#x43B;&#x43E;&#x440;&#x430; &#x432; &#x440;&#x430;&#x441;&#x442;&#x435;&#x43D;&#x438;&#x44F;&#x445; (&#x43C;&#x43D;&#x43E;&#x433;&#x43E; &#x425;&#x43B;&#x43E;&#x440;&#x430; &#x432; &#x433;&#x430;&#x43B;&#x43E;&#x444;&#x438;&#x442;&#x430;&#x445;) - &#x43E;&#x442; &#x442;&#x44B;&#x441;&#x44F;&#x447;&#x43D;&#x44B;&#x445; &#x434;&#x43E;&#x43B;&#x435;&#x439; &#x43F;&#x440;&#x43E;&#x446;&#x435;&#x43D;&#x442;&#x430; &#x434;&#x43E; &#x446;&#x435;&#x43B;&#x44B;&#x445; &#x43F;&#x440;&#x43E;&#x446;&#x435;&#x43D;&#x442;&#x43E;&#x432;, &#x443; &#x436;&#x438;&#x432;&#x43E;&#x442;&#x43D;&#x44B;&#x445; - &#x434;&#x435;&#x441;&#x44F;&#x442;&#x44B;&#x435; &#x438; &#x441;&#x43E;&#x442;&#x44B;&#x435; &#x434;&#x43E;&#x43B;&#x438; &#x43F;&#x440;&#x43E;&#x446;&#x435;&#x43D;&#x442;&#x430;. &#x421;&#x443;&#x442;&#x43E;&#x447;&#x43D;&#x430;&#x44F; &#x43F;&#x43E;&#x442;&#x440;&#x435;&#x431;&#x43D;&#x43E;&#x441;&#x442;&#x44C; &#x432;&#x437;&#x440;&#x43E;&#x441;&#x43B;&#x43E;&#x433;&#x43E; &#x447;&#x435;&#x43B;&#x43E;&#x432;&#x435;&#x43A;&#x430; &#x432; &#x425;&#x43B;&#x43E;&#x440;&#x435; (2-4 &#x433;) &#x43F;&#x43E;&#x43A;&#x440;&#x44B;&#x432;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x437;&#x430; &#x441;&#x447;&#x435;&#x442; &#x43F;&#x438;&#x449;&#x435;&#x432;&#x44B;&#x445; &#x43F;&#x440;&#x43E;&#x434;&#x443;&#x43A;&#x442;&#x43E;&#x432;. &#x421; &#x43F;&#x438;&#x449;&#x435;&#x439; &#x425;&#x43B;&#x43E;&#x440; &#x43F;&#x43E;&#x441;&#x442;&#x443;&#x43F;&#x430;&#x435;&#x442; &#x43E;&#x431;&#x44B;&#x447;&#x43D;&#x43E; &#x432; &#x438;&#x437;&#x431;&#x44B;&#x442;&#x43A;&#x435; &#x432; &#x432;&#x438;&#x434;&#x435; &#x445;&#x43B;&#x43E;&#x440;&#x438;&#x434;&#x430; &#x43D;&#x430;&#x442;&#x440;&#x438;&#x44F; &#x438; &#x445;&#x43B;&#x43E;&#x440;&#x438;&#x434;&#x430; &#x43A;&#x430;&#x43B;&#x438;&#x44F;. &#x41E;&#x441;&#x43E;&#x431;&#x435;&#x43D;&#x43D;&#x43E; &#x431;&#x43E;&#x433;&#x430;&#x442;&#x44B; &#x425;&#x43B;&#x43E;&#x440;&#x43E;&#x43C; &#x445;&#x43B;&#x435;&#x431;, &#x43C;&#x44F;&#x441;&#x43D;&#x44B;&#x435; &#x438; &#x43C;&#x43E;&#x43B;&#x43E;&#x447;&#x43D;&#x44B;&#x435; &#x43F;&#x440;&#x43E;&#x434;&#x443;&#x43A;&#x442;&#x44B;. &#x412; &#x43E;&#x440;&#x433;&#x430;&#x43D;&#x438;&#x437;&#x43C;&#x435; &#x436;&#x438;&#x432;&#x43E;&#x442;&#x43D;&#x44B;&#x445; &#x425;&#x43B;&#x43E;&#x440; - &#x43E;&#x441;&#x43D;&#x43E;&#x432;&#x43D;&#x43E;&#x435; &#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438; &#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x43E;&#x435; &#x432;&#x435;&#x449;&#x435;&#x441;&#x442;&#x432;&#x43E; &#x43F;&#x43B;&#x430;&#x437;&#x43C;&#x44B; &#x43A;&#x440;&#x43E;&#x432;&#x438;, &#x43B;&#x438;&#x43C;&#x444;&#x44B;, &#x441;&#x43F;&#x438;&#x43D;&#x43D;&#x43E;&#x43C;&#x43E;&#x437;&#x433;&#x43E;&#x432;&#x43E;&#x439; &#x436;&#x438;&#x434;&#x43A;&#x43E;&#x441;&#x442;&#x438; &#x438; &#x43D;&#x435;&#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x445; &#x442;&#x43A;&#x430;&#x43D;&#x435;&#x439;. &#x418;&#x433;&#x440;&#x430;&#x435;&#x442; &#x440;&#x43E;&#x43B;&#x44C; &#x432; &#x432;&#x43E;&#x434;&#x43D;&#x43E;-&#x441;&#x43E;&#x43B;&#x435;&#x432;&#x43E;&#x43C; &#x43E;&#x431;&#x43C;&#x435;&#x43D;&#x435;, &#x441;&#x43F;&#x43E;&#x441;&#x43E;&#x431;&#x441;&#x442;&#x432;&#x443;&#x44F; &#x443;&#x434;&#x435;&#x440;&#x436;&#x430;&#x43D;&#x438;&#x44E; &#x442;&#x43A;&#x430;&#x43D;&#x44F;&#x43C;&#x438; &#x432;&#x43E;&#x434;&#x44B;. &#x420;&#x435;&#x433;&#x443;&#x43B;&#x44F;&#x446;&#x438;&#x44F; &#x43A;&#x438;&#x441;&#x43B;&#x43E;&#x442;&#x43D;&#x43E;-&#x449;&#x435;&#x43B;&#x43E;&#x447;&#x43D;&#x43E;&#x433;&#x43E; &#x440;&#x430;&#x432;&#x43D;&#x43E;&#x432;&#x435;&#x441;&#x438;&#x44F; &#x432; &#x442;&#x43A;&#x430;&#x43D;&#x44F;&#x445; &#x43E;&#x441;&#x443;&#x449;&#x435;&#x441;&#x442;&#x432;&#x43B;&#x44F;&#x435;&#x442;&#x441;&#x44F; &#x43D;&#x430;&#x440;&#x44F;&#x434;&#x443; &#x441; &#x434;&#x440;&#x443;&#x433;&#x438;&#x445; &#x43F;&#x440;&#x43E;&#x446;&#x435;&#x441;&#x441;&#x430;&#x43C;&#x438; &#x43F;&#x443;&#x442;&#x435;&#x43C; &#x438;&#x437;&#x43C;&#x435;&#x43D;&#x435;&#x43D;&#x438;&#x44F; &#x432; &#x440;&#x430;&#x441;&#x43F;&#x440;&#x435;&#x434;&#x435;&#x43B;&#x435;&#x43D;&#x438;&#x438; &#x425;&#x43B;&#x43E;&#x440;&#x430; &#x43C;&#x435;&#x436;&#x434;&#x443; &#x43A;&#x440;&#x43E;&#x432;&#x44C;&#x44E; &#x438; &#x434;&#x440;&#x443;&#x433;&#x438;&#x445; &#x442;&#x43A;&#x430;&#x43D;&#x44F;&#x43C;&#x438;. &#x425;&#x43B;&#x43E;&#x440; &#x443;&#x447;&#x430;&#x441;&#x442;&#x432;&#x443;&#x435;&#x442; &#x432; &#x44D;&#x43D;&#x435;&#x440;&#x433;&#x435;&#x442;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x43C; &#x43E;&#x431;&#x43C;&#x435;&#x43D;&#x435; &#x443; &#x440;&#x430;&#x441;&#x442;&#x435;&#x43D;&#x438;&#x439;, &#x430;&#x43A;&#x442;&#x438;&#x432;&#x438;&#x440;&#x443;&#x44F; &#x43A;&#x430;&#x43A; &#x43E;&#x43A;&#x438;&#x441;&#x43B;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E;&#x435; &#x444;&#x43E;&#x441;&#x444;&#x43E;&#x440;&#x438;&#x43B;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435;, &#x442;&#x430;&#x43A; &#x438; &#x444;&#x43E;&#x442;&#x43E;&#x444;&#x43E;&#x441;&#x444;&#x43E;&#x440;&#x438;&#x43B;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435;. &#x425;&#x43B;&#x43E;&#x440; &#x43F;&#x43E;&#x43B;&#x43E;&#x436;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E; &#x432;&#x43B;&#x438;&#x44F;&#x435;&#x442; &#x43D;&#x430; &#x43F;&#x43E;&#x433;&#x43B;&#x43E;&#x449;&#x435;&#x43D;&#x438;&#x435; &#x43A;&#x43E;&#x440;&#x43D;&#x44F;&#x43C;&#x438; &#x43A;&#x438;&#x441;&#x43B;&#x43E;&#x440;&#x43E;&#x434;&#x430;. &#x425;&#x43B;&#x43E;&#x440; &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C; &#x434;&#x43B;&#x44F; &#x43E;&#x431;&#x440;&#x430;&#x437;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; &#x43A;&#x438;&#x441;&#x43B;&#x43E;&#x440;&#x43E;&#x434;&#x430; &#x432; &#x43F;&#x440;&#x43E;&#x446;&#x435;&#x441;&#x441;&#x435; &#x444;&#x43E;&#x442;&#x43E;&#x441;&#x438;&#x43D;&#x442;&#x435;&#x437;&#x430; &#x438;&#x437;&#x43E;&#x43B;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x43D;&#x44B;&#x43C;&#x438; &#x445;&#x43B;&#x43E;&#x440;&#x43E;&#x43F;&#x43B;&#x430;&#x441;&#x442;&#x430;&#x43C;&#x438;. &#x412; &#x441;&#x43E;&#x441;&#x442;&#x430;&#x432; &#x431;&#x43E;&#x43B;&#x44C;&#x448;&#x438;&#x43D;&#x441;&#x442;&#x432;&#x430; &#x43F;&#x438;&#x442;&#x430;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x441;&#x440;&#x435;&#x434; &#x434;&#x43B;&#x44F; &#x438;&#x441;&#x43A;&#x443;&#x441;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x43E;&#x433;&#x43E; &#x43A;&#x443;&#x43B;&#x44C;&#x442;&#x438;&#x432;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; &#x440;&#x430;&#x441;&#x442;&#x435;&#x43D;&#x438;&#x439; &#x425;&#x43B;&#x43E;&#x440; &#x43D;&#x435; &#x432;&#x445;&#x43E;&#x434;&#x438;&#x442;. &#x412;&#x43E;&#x437;&#x43C;&#x43E;&#x436;&#x43D;&#x43E;, &#x434;&#x43B;&#x44F; &#x440;&#x430;&#x437;&#x432;&#x438;&#x442;&#x438;&#x44F; &#x440;&#x430;&#x441;&#x442;&#x435;&#x43D;&#x438;&#x439; &#x434;&#x43E;&#x441;&#x442;&#x430;&#x442;&#x43E;&#x447;&#x43D;&#x44B; &#x432;&#x435;&#x441;&#x44C;&#x43C;&#x430; &#x43C;&#x430;&#x43B;&#x44B;&#x435; &#x43A;&#x43E;&#x43D;&#x446;&#x435;&#x43D;&#x442;&#x440;&#x430;&#x446;&#x438;&#x438; &#x425;&#x43B;&#x43E;&#x440;&#x430;.\n</p><p>&#x41E;&#x442;&#x440;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x425;&#x43B;&#x43E;&#x440;&#x43E;&#x43C; &#x432;&#x43E;&#x437;&#x43C;&#x43E;&#x436;&#x43D;&#x44B; &#x432; &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439;, &#x446;&#x435;&#x43B;&#x43B;&#x44E;&#x43B;&#x43E;&#x437;&#x43D;&#x43E;-&#x431;&#x443;&#x43C;&#x430;&#x436;&#x43D;&#x43E;&#x439;, &#x442;&#x435;&#x43A;&#x441;&#x442;&#x438;&#x43B;&#x44C;&#x43D;&#x43E;&#x439;, &#x444;&#x430;&#x440;&#x43C;&#x430;&#x446;&#x435;&#x432;&#x442;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x43F;&#x440;&#x43E;&#x43C;&#x44B;&#x448;&#x43B;&#x435;&#x43D;&#x43D;&#x43E;&#x441;&#x442;&#x438; &#x438; &#x434;&#x440;&#x443;&#x433;&#x438;&#x445;. &#x425;&#x43B;&#x43E;&#x440; &#x440;&#x430;&#x437;&#x434;&#x440;&#x430;&#x436;&#x430;&#x435;&#x442; &#x441;&#x43B;&#x438;&#x437;&#x438;&#x441;&#x442;&#x44B;&#x435; &#x43E;&#x431;&#x43E;&#x43B;&#x43E;&#x447;&#x43A;&#x438; &#x433;&#x43B;&#x430;&#x437; &#x438; &#x434;&#x44B;&#x445;&#x430;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x43F;&#x443;&#x442;&#x435;&#x439;. &#x41A; &#x43F;&#x435;&#x440;&#x432;&#x438;&#x447;&#x43D;&#x44B;&#x43C; &#x432;&#x43E;&#x441;&#x43F;&#x430;&#x43B;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x43C; &#x438;&#x437;&#x43C;&#x435;&#x43D;&#x435;&#x43D;&#x438;&#x44F;&#x43C; &#x43E;&#x431;&#x44B;&#x447;&#x43D;&#x43E; &#x43F;&#x440;&#x438;&#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x44F;&#x435;&#x442;&#x441;&#x44F; &#x432;&#x442;&#x43E;&#x440;&#x438;&#x447;&#x43D;&#x430;&#x44F; &#x438;&#x43D;&#x444;&#x435;&#x43A;&#x446;&#x438;&#x44F;. &#x41E;&#x441;&#x442;&#x440;&#x43E;&#x435; &#x43E;&#x442;&#x440;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x440;&#x430;&#x437;&#x432;&#x438;&#x432;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x43F;&#x43E;&#x447;&#x442;&#x438; &#x43D;&#x435;&#x43C;&#x435;&#x434;&#x43B;&#x435;&#x43D;&#x43D;&#x43E;. &#x41F;&#x440;&#x438; &#x432;&#x434;&#x44B;&#x445;&#x430;&#x43D;&#x438;&#x438; &#x441;&#x440;&#x435;&#x434;&#x43D;&#x438;&#x445; &#x438; &#x43D;&#x438;&#x437;&#x43A;&#x438;&#x445; &#x43A;&#x43E;&#x43D;&#x446;&#x435;&#x43D;&#x442;&#x440;&#x430;&#x446;&#x438;&#x439; &#x425;&#x43B;&#x43E;&#x440; &#x43E;&#x442;&#x43C;&#x435;&#x447;&#x430;&#x44E;&#x442;&#x441;&#x44F; &#x441;&#x442;&#x435;&#x441;&#x43D;&#x435;&#x43D;&#x438;&#x435; &#x438; &#x431;&#x43E;&#x43B;&#x44C; &#x432; &#x433;&#x440;&#x443;&#x434;&#x438;, &#x441;&#x443;&#x445;&#x43E;&#x439; &#x43A;&#x430;&#x448;&#x435;&#x43B;&#x44C;, &#x443;&#x447;&#x430;&#x449;&#x435;&#x43D;&#x43D;&#x43E;&#x435; &#x434;&#x44B;&#x445;&#x430;&#x43D;&#x438;&#x435;, &#x440;&#x435;&#x437;&#x44C; &#x432; &#x433;&#x43B;&#x430;&#x437;&#x430;&#x445;, &#x441;&#x43B;&#x435;&#x437;&#x43E;&#x442;&#x435;&#x447;&#x435;&#x43D;&#x438;&#x435;, &#x43F;&#x43E;&#x432;&#x44B;&#x448;&#x435;&#x43D;&#x438;&#x435; &#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x430;&#x43D;&#x438;&#x44F; &#x43B;&#x435;&#x439;&#x43A;&#x43E;&#x446;&#x438;&#x442;&#x43E;&#x432; &#x432; &#x43A;&#x440;&#x43E;&#x432;&#x438;, &#x442;&#x435;&#x43C;&#x43F;&#x435;&#x440;&#x430;&#x442;&#x443;&#x440;&#x44B; &#x442;&#x435;&#x43B;&#x430; &#x438; &#x442;. &#x43F;. &#x412;&#x43E;&#x437;&#x43C;&#x43E;&#x436;&#x43D;&#x44B; &#x431;&#x440;&#x43E;&#x43D;&#x445;&#x43E;&#x43F;&#x43D;&#x435;&#x432;&#x43C;&#x43E;&#x43D;&#x438;&#x44F;, &#x442;&#x43E;&#x43A;&#x441;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x43E;&#x442;&#x435;&#x43A; &#x43B;&#x435;&#x433;&#x43A;&#x438;&#x445;, &#x434;&#x435;&#x43F;&#x440;&#x435;&#x441;&#x441;&#x438;&#x432;&#x43D;&#x44B;&#x435; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x44F;&#x43D;&#x438;&#x44F;, &#x441;&#x443;&#x434;&#x43E;&#x440;&#x43E;&#x433;&#x438;. &#x412; &#x43B;&#x435;&#x433;&#x43A;&#x438;&#x445; &#x441;&#x43B;&#x443;&#x447;&#x430;&#x44F;&#x445; &#x432;&#x44B;&#x437;&#x434;&#x43E;&#x440;&#x43E;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x43D;&#x430;&#x441;&#x442;&#x443;&#x43F;&#x430;&#x435;&#x442; &#x447;&#x435;&#x440;&#x435;&#x437; 3-7 &#x441;&#x443;&#x442;&#x43E;&#x43A;. &#x41A;&#x430;&#x43A; &#x43E;&#x442;&#x434;&#x430;&#x43B;&#x435;&#x43D;&#x43D;&#x44B;&#x435; &#x43F;&#x43E;&#x441;&#x43B;&#x435;&#x434;&#x441;&#x442;&#x432;&#x438;&#x44F; &#x43D;&#x430;&#x431;&#x43B;&#x44E;&#x434;&#x430;&#x44E;&#x442;&#x441;&#x44F; &#x43A;&#x430;&#x442;&#x430;&#x440;&#x44B; &#x432;&#x435;&#x440;&#x445;&#x43D;&#x438;&#x445; &#x434;&#x44B;&#x445;&#x430;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x43F;&#x443;&#x442;&#x435;&#x439;, &#x440;&#x435;&#x446;&#x438;&#x434;&#x438;&#x432;&#x438;&#x440;&#x443;&#x44E;&#x449;&#x438;&#x439; &#x431;&#x440;&#x43E;&#x43D;&#x445;&#x438;&#x442;, &#x43F;&#x43D;&#x435;&#x432;&#x43C;&#x43E;&#x441;&#x43A;&#x43B;&#x435;&#x440;&#x43E;&#x437; &#x438; &#x434;&#x440;&#x443;&#x433;&#x438;&#x445;; &#x432;&#x43E;&#x437;&#x43C;&#x43E;&#x436;&#x43D;&#x430; &#x430;&#x43A;&#x442;&#x438;&#x432;&#x438;&#x437;&#x430;&#x446;&#x438;&#x44F; &#x442;&#x443;&#x431;&#x435;&#x440;&#x43A;&#x443;&#x43B;&#x435;&#x437;&#x430; &#x43B;&#x435;&#x433;&#x43A;&#x438;&#x445;. &#x41F;&#x440;&#x438; &#x434;&#x43B;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E;&#x43C; &#x432;&#x434;&#x44B;&#x445;&#x430;&#x43D;&#x438;&#x438; &#x43D;&#x435;&#x431;&#x43E;&#x43B;&#x44C;&#x448;&#x438;&#x445; &#x43A;&#x43E;&#x43D;&#x446;&#x435;&#x43D;&#x442;&#x440;&#x430;&#x446;&#x438;&#x439; &#x425;&#x43B;&#x43E;&#x440;&#x430; &#x43D;&#x430;&#x431;&#x43B;&#x44E;&#x434;&#x430;&#x44E;&#x442;&#x441;&#x44F; &#x430;&#x43D;&#x430;&#x43B;&#x43E;&#x433;&#x438;&#x447;&#x43D;&#x44B;&#x435;, &#x43D;&#x43E; &#x43C;&#x435;&#x434;&#x43B;&#x435;&#x43D;&#x43D;&#x43E; &#x440;&#x430;&#x437;&#x432;&#x438;&#x432;&#x430;&#x44E;&#x449;&#x438;&#x435;&#x441;&#x44F; &#x444;&#x43E;&#x440;&#x43C;&#x44B; &#x437;&#x430;&#x431;&#x43E;&#x43B;&#x435;&#x432;&#x430;&#x43D;&#x438;&#x44F;. &#x41F;&#x440;&#x43E;&#x444;&#x438;&#x43B;&#x430;&#x43A;&#x442;&#x438;&#x43A;&#x430; &#x43E;&#x442;&#x440;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x439;: &#x433;&#x435;&#x440;&#x43C;&#x435;&#x442;&#x438;&#x437;&#x430;&#x446;&#x438;&#x44F; &#x43F;&#x440;&#x43E;&#x438;&#x437;&#x432;&#x43E;&#x434;&#x441;&#x442;&#x432;, &#x43E;&#x431;&#x43E;&#x440;&#x443;&#x434;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F;, &#x44D;&#x444;&#x444;&#x435;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x430;&#x44F; &#x432;&#x435;&#x43D;&#x442;&#x438;&#x43B;&#x44F;&#x446;&#x438;&#x44F;, &#x43F;&#x440;&#x438; &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x43F;&#x440;&#x43E;&#x442;&#x438;&#x432;&#x43E;&#x433;&#x430;&#x437;&#x430;. &#x41F;&#x440;&#x43E;&#x438;&#x437;&#x432;&#x43E;&#x434;&#x441;&#x442;&#x432;&#x43E; &#x425;&#x43B;&#x43E;&#x440;&#x430;, &#x445;&#x43B;&#x43E;&#x440;&#x43D;&#x43E;&#x439; &#x438;&#x437;&#x432;&#x435;&#x441;&#x442;&#x438; &#x438; &#x434;&#x440;&#x443;&#x433;&#x438;&#x445; &#x445;&#x43B;&#x43E;&#x440;&#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x430;&#x449;&#x438;&#x445; &#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x439; &#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x438;&#x442;&#x441;&#x44F; &#x43A; &#x43F;&#x440;&#x43E;&#x438;&#x437;&#x432;&#x43E;&#x434;&#x441;&#x442;&#x432;&#x430;&#x43C; &#x441; &#x432;&#x440;&#x435;&#x434;&#x43D;&#x44B;&#x43C;&#x438; &#x443;&#x441;&#x43B;&#x43E;&#x432;&#x438;&#x44F;&#x43C;&#x438; &#x442;&#x440;&#x443;&#x434;&#x430;.\n</p></sup>",
+        "Атомная масса": "35.453",
+        "Плотность, кг/м³": "0.317",
+        "Температура плавления, °С": "-101",
+        "Температура кипения, °С": "-34",
+        "Теплоемкость, кДж/(кг·°С)": "0.486",
+        "Электроотрицательность": "3.0",
+        "Ковалентный радиус, Å": "0.99",
+        "1-й ионизац. потенциал, эв": "12.97"
+    },
+    {
+        "Химический символ": "Ar",
+        "label": "Аргон Argon",
+        "Электронная формула": "(Ne)3s23p6",
+        "color": "0x30C7E6",
+        "shadow": "0x10AFC8",
+        "description": "<b>&#x410;&#x440;&#x433;&#x43E;&#x43D;</b> (&#x43B;&#x430;&#x442;. Argon), Ar, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; VIII &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;, &#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x438;&#x442;&#x441;&#x44F; &#x43A; &#x438;&#x43D;&#x435;&#x440;&#x442;&#x43D;&#x44B;&#x43C; &#x433;&#x430;&#x437;&#x430;&#x43C;; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 18, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 39,948. &#x41F;&#x440;&#x438; &#x43E;&#x431;&#x44B;&#x447;&#x43D;&#x44B;&#x445; &#x443;&#x441;&#x43B;&#x43E;&#x432;&#x438;&#x44F;&#x445; &#x410;&#x440;&#x433;&#x43E;&#x43D; - &#x433;&#x430;&#x437; &#x431;&#x435;&#x437; &#x446;&#x432;&#x435;&#x442;&#x430;, &#x437;&#x430;&#x43F;&#x430;&#x445;&#x430; &#x438; &#x432;&#x43A;&#x443;&#x441;&#x430;. &#x41A; &#x43E;&#x442;&#x43A;&#x440;&#x44B;&#x442;&#x438;&#x44E; &#x410;&#x440;&#x433;&#x43E;&#x43D;&#x430; &#x43F;&#x440;&#x438;&#x432;&#x435;&#x43B;&#x43E; &#x43E;&#x431;&#x43D;&#x430;&#x440;&#x443;&#x436;&#x435;&#x43D;&#x43D;&#x43E;&#x435; &#x432; 1892 &#x433;&#x43E;&#x434;&#x443; &#x414;&#x436;. &#x420;&#x44D;&#x43B;&#x435;&#x435;&#x43C; &#x43F;&#x440;&#x435;&#x432;&#x44B;&#x448;&#x435;&#x43D;&#x438;&#x435; &#x43D;&#x430; 0,0016 &#x433;/&#x43B; (&#x43F;&#x440;&#x438; 0&#xB0;&#x421; &#x438; 101325 &#x43D;/&#x43C;<sup>2</sup>) &#x43F;&#x43B;&#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x442;&#x438; &#x430;&#x437;&#x43E;&#x442;&#x430; &#x438;&#x437; &#x432;&#x43E;&#x437;&#x434;&#x443;&#x445;&#x430; &#x43F;&#x43E; &#x441;&#x440;&#x430;&#x432;&#x43D;&#x435;&#x43D;&#x438;&#x44E; &#x441; &#x43F;&#x43B;&#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x442;&#x44C;&#x44E; &#x430;&#x437;&#x43E;&#x442;&#x430;, &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x43D;&#x43E;&#x433;&#x43E; &#x438;&#x437; &#x435;&#x433;&#x43E; &#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x439;. &#x412; 1894 &#x420;&#x44D;&#x43B;&#x435;&#x439; &#x438; &#x423;. &#x420;&#x430;&#x43C;&#x437;&#x430;&#x439; &#x432;&#x44B;&#x434;&#x435;&#x43B;&#x438;&#x43B;&#x438; &#x438;&#x437; &#x430;&#x437;&#x43E;&#x442;&#x430; &#x432;&#x43E;&#x437;&#x434;&#x443;&#x445;&#x430; &#x433;&#x430;&#x437;, &#x43E;&#x431;&#x43B;&#x430;&#x434;&#x430;&#x44E;&#x449;&#x438;&#x439; &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x435; &#x438;&#x43D;&#x435;&#x440;&#x442;&#x43D;&#x43E;&#x441;&#x442;&#x44C;&#x44E; (&#x433;&#x440;&#x435;&#x447;. argos - &#x431;&#x435;&#x437;&#x434;&#x435;&#x44F;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x439;). &#x41F;&#x43E;&#x441;&#x43B;&#x435; &#x43E;&#x442;&#x43A;&#x440;&#x44B;&#x442;&#x438;&#x44F; &#x434;&#x440;&#x443;&#x433;&#x438;&#x445; &#x438;&#x43D;&#x435;&#x440;&#x442;&#x43D;&#x44B;&#x445; &#x433;&#x430;&#x437;&#x43E;&#x432; &#x43E;&#x43D;&#x438; &#x431;&#x44B;&#x43B;&#x438; &#x43E;&#x431;&#x44A;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x44B; &#x432; &#x43E;&#x442;&#x434;&#x435;&#x43B;&#x44C;&#x43D;&#x443;&#x44E; &#x43D;&#x443;&#x43B;&#x435;&#x432;&#x443;&#x44E; &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x443; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B;; &#x442;&#x435;&#x43F;&#x435;&#x440;&#x44C; &#x43E;&#x431;&#x449;&#x435;&#x43F;&#x440;&#x438;&#x43D;&#x44F;&#x442;&#x43E; &#x440;&#x430;&#x441;&#x441;&#x43C;&#x430;&#x442;&#x440;&#x438;&#x432;&#x430;&#x442;&#x44C; &#x438;&#x445; &#x43A;&#x430;&#x43A; &#x433;&#x43B;&#x430;&#x432;&#x43D;&#x443;&#x44E; &#x43F;&#x43E;&#x434;&#x433;&#x440;&#x443;&#x43F;&#x43F;&#x443; VIII &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B;.\n",
+        "Атомная масса": "39.948",
+        "Плотность, кг/м³": "1.784",
+        "Температура плавления, °С": "-189.2",
+        "Температура кипения, °С": "-185.8",
+        "Теплоемкость, кДж/(кг·°С)": "0.523",
+        "Электроотрицательность": " ",
+        "Ковалентный радиус, Å": "0.98",
+        "1-й ионизац. потенциал, эв": "15.76"
+    },
+    {
+        "Химический символ": "K",
+        "label": "Калий Potassium",
+        "color": "0x5422ED",
+        "shadow": "0x511DEB",
+        "Электронная формула": "(Ar)4s1",
+        "description": "<b>&#x41A;&#x430;&#x43B;&#x438;&#x439;</b> (Kalium), K , &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; I &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 19, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 39,098; &#x441;&#x435;&#x440;&#x435;&#x431;&#x440;&#x44F;&#x43D;&#x43E;-&#x431;&#x435;&#x43B;&#x44B;&#x439;, &#x43E;&#x447;&#x435;&#x43D;&#x44C; &#x43B;&#x435;&#x433;&#x43A;&#x438;&#x439;, &#x43C;&#x44F;&#x433;&#x43A;&#x438;&#x439; &#x438; &#x43B;&#x435;&#x433;&#x43A;&#x43E;&#x43F;&#x43B;&#x430;&#x432;&#x43A;&#x438;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;. &#x42D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x438;&#x442; &#x438;&#x437; &#x434;&#x432;&#x443;&#x445; &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; - <sup>39</sup>K (93,08%), <sup>41</sup>K (6,91%) &#x438; &#x43E;&#x434;&#x43D;&#x43E;&#x433;&#x43E; &#x441;&#x43B;&#x430;&#x431;&#x43E; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x43E;&#x433;&#x43E; <sup>40</sup>K (0,01%) &#x441; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x43E;&#x43C; &#x43F;&#x43E;&#x43B;&#x443;&#x440;&#x430;&#x441;&#x43F;&#x430;&#x434;&#x430; 1,32&#xB7;10<sup>9</sup> &#x43B;&#x435;&#x442;.\n",
+        "Атомная масса": "39.098",
+        "Плотность, кг/м³": "860",
+        "Температура плавления, °С": "63.6",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.741",
+        "Электроотрицательность": "0.8",
+        "Ковалентный радиус, Å": "2.03",
+        "1-й ионизац. потенциал, эв": "4.34"
+    },
+    {
+        "Химический символ": "Ca",
+        "label": "Кальций Calcium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Ar)4s2",
+        "description": "<b>&#x41A;&#x430;&#x43B;&#x44C;&#x446;&#x438;&#x439;</b> (Calcium), Ca, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; II &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 20, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 40,08; &#x441;&#x435;&#x440;&#x435;&#x431;&#x440;&#x44F;&#x43D;&#x43E;-&#x431;&#x435;&#x43B;&#x44B;&#x439; &#x43B;&#x435;&#x433;&#x43A;&#x438;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;. &#x41F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x43D;&#x44B;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; &#x43F;&#x440;&#x435;&#x434;&#x441;&#x442;&#x430;&#x432;&#x43B;&#x44F;&#x435;&#x442; &#x441;&#x43C;&#x435;&#x441;&#x44C; &#x448;&#x435;&#x441;&#x442;&#x438; &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432;: <sup>40</sup>Ca, <sup>42</sup>Ca, <sup>43</sup>Ca, <sup>44</sup>Ca, <sup>46</sup>Ca &#x438; <sup>48</sup>Ca, &#x438;&#x437; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x445; &#x43D;&#x430;&#x438;&#x431;&#x43E;&#x43B;&#x435;&#x435; &#x440;&#x430;&#x441;&#x43F;&#x440;&#x43E;&#x441;&#x442;&#x440;&#x430;&#x43D;&#x435;&#x43D; <sup>40</sup>Ca (96, 97%).\n",
+        "Атомная масса": "40.078",
+        "Плотность, кг/м³": "1550",
+        "Температура плавления, °С": "838",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.624",
+        "Электроотрицательность": "1.0",
+        "Ковалентный радиус, Å": "1.74",
+        "1-й ионизац. потенциал, эв": "6.11"
+    },
+    {
+        "Химический символ": "Sc",
+        "label": "Cкандий Scandium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Ar)3d14s2",
+        "description": "<b>&#x421;&#x43A;&#x430;&#x43D;&#x434;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Scandium), Sc, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; III &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 21, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 44,9559; &#x43B;&#x435;&#x433;&#x43A;&#x438;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B; &#x441; &#x445;&#x430;&#x440;&#x430;&#x43A;&#x442;&#x435;&#x440;&#x43D;&#x44B;&#x43C; &#x436;&#x435;&#x43B;&#x442;&#x44B;&#x43C; &#x43E;&#x442;&#x43B;&#x438;&#x432;&#x43E;&#x43C;, &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x439; &#x43F;&#x43E;&#x44F;&#x432;&#x43B;&#x44F;&#x435;&#x442;&#x441;&#x44F; &#x43F;&#x440;&#x438; &#x43A;&#x43E;&#x43D;&#x442;&#x430;&#x43A;&#x442;&#x435; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;&#x430; &#x441; &#x432;&#x43E;&#x437;&#x434;&#x443;&#x445;&#x43E;&#x43C;. &#x418;&#x437;&#x432;&#x435;&#x441;&#x442;&#x435;&#x43D; &#x43E;&#x434;&#x438;&#x43D; &#x43F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x43D;&#x44B;&#x439; &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x439; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F; <sup>45</sup>Sc. &#x418;&#x437; &#x438;&#x441;&#x43A;&#x443;&#x441;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x44B;&#x445; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x432;&#x430;&#x436;&#x43D;&#x435;&#x439;&#x448;&#x438;&#x439; <sup>46</sup>Sc &#x441; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x43E;&#x43C; &#x43F;&#x43E;&#x43B;&#x443;&#x440;&#x430;&#x441;&#x43F;&#x430;&#x434;&#x430; 84 &#x441;&#x443;&#x442;. &#x421;&#x43A;&#x430;&#x43D;&#x434;&#x438;&#x439; &#x431;&#x44B;&#x43B; &#x43F;&#x440;&#x435;&#x434;&#x441;&#x43A;&#x430;&#x437;&#x430;&#x43D; &#x414;. &#x418;. &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x44B;&#x43C; &#x432; 1870 &#x433;&#x43E;&#x434;&#x443; &#x438; &#x432;&#x44B;&#x434;&#x435;&#x43B;&#x435;&#x43D; &#x432; 1879 &#x433;&#x43E;&#x434;&#x443; &#x41B;. &#x424;. &#x41D;&#x438;&#x43B;&#x44A;&#x441;&#x43E;&#x43D;&#x43E;&#x43C; &#x438;&#x437; &#x43C;&#x438;&#x43D;&#x435;&#x440;&#x430;&#x43B;&#x43E;&#x432; &#x433;&#x430;&#x434;&#x43E;&#x43B;&#x438;&#x43D;&#x438;&#x442;&#x430; &#x438; &#x44D;&#x432;&#x43A;&#x441;&#x435;&#x43D;&#x438;&#x442;&#x430;, &#x43D;&#x430;&#x439;&#x434;&#x435;&#x43D;&#x43D;&#x44B;&#x445; &#x432; &#x421;&#x43A;&#x430;&#x43D;&#x434;&#x438;&#x43D;&#x430;&#x432;&#x438;&#x438; (&#x43B;&#x430;&#x442;. Scandia), &#x43E;&#x442;&#x441;&#x44E;&#x434;&#x430; &#x438; &#x43D;&#x430;&#x437;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x430;.\n",
+        "Атомная масса": "44.956",
+        "Плотность, кг/м³": "3000",
+        "Температура плавления, °С": "1539",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.544",
+        "Электроотрицательность": "1.3",
+        "Ковалентный радиус, Å": "1.44",
+        "1-й ионизац. потенциал, эв": "6.54"
+    },
+    {
+        "Химический символ": "Ti",
+        "label": "Титан Titanium",
+        "color": "0x9E9E9E",
+        "shadow": "0x666666",
+        "Электронная формула": "(Ar)3d24s2",
+        "description": "<b>&#x422;&#x438;&#x442;&#x430;&#x43D;</b> (&#x43B;&#x430;&#x442;. Titanium), Ti, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; IV &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 22, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 47,90; &#x438;&#x43C;&#x435;&#x435;&#x442; &#x441;&#x435;&#x440;&#x435;&#x431;&#x440;&#x438;&#x441;&#x442;&#x43E;-&#x431;&#x435;&#x43B;&#x44B;&#x439; &#x446;&#x432;&#x435;&#x442;, &#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x438;&#x442;&#x441;&#x44F; &#x43A; &#x43B;&#x435;&#x433;&#x43A;&#x438;&#x43C; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;&#x430;&#x43C;. &#x41F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x43D;&#x44B;&#x439; &#x422;&#x438;&#x442;&#x430;&#x43D; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x438;&#x442; &#x438;&#x437; &#x441;&#x43C;&#x435;&#x441;&#x438; &#x43F;&#x44F;&#x442;&#x438; &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432;: <sup>46</sup>Ti (7,95%), <sup>47</sup>Ti (7,75%), <sup>48</sup>Ti (73,45%), <sup>49</sup>Ti (5,51%), <sup>50</sup>Ti (5,34%). &#x418;&#x437;&#x432;&#x435;&#x441;&#x442;&#x43D;&#x44B; &#x438;&#x441;&#x43A;&#x443;&#x441;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x44B;&#x435; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x435; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x44B; <sup>45</sup>Ti (T<sub>&#xBD;</sub> = 3,09 &#x447;), <sup>51</sup>Ti (&#x422;<sub>&#xBD;</sub> = 5,79 &#x43C;&#x438;&#x43D;) &#x438; &#x434;&#x440;&#x443;&#x433;&#x438;&#x435;.\n",
+        "Атомная масса": "47.867",
+        "Плотность, кг/м³": "4510",
+        "Температура плавления, °С": "1668",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.527",
+        "Электроотрицательность": "1.5",
+        "Ковалентный радиус, Å": "1.32",
+        "1-й ионизац. потенциал, эв": "6.83"
+    },
+    {
+        "Химический символ": "V",
+        "label": "Ванадий Vanadium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Ar)3d34s2",
+        "description": "<b>&#x412;&#x430;&#x43D;&#x430;&#x434;&#x438;&#x439;</b> (Vanadium), V, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; V &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 23, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 50,942; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B; &#x441;&#x435;&#x440;&#x43E;-&#x441;&#x442;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x433;&#x43E; &#x446;&#x432;&#x435;&#x442;&#x430;. &#x41F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x43D;&#x44B;&#x439; &#x412;&#x430;&#x43D;&#x430;&#x434;&#x438;&#x439; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x438;&#x442; &#x438;&#x437; &#x434;&#x432;&#x443;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432;: <sup>51</sup>V (99,75%) &#x438; <sup>50</sup>V (0,25%); &#x43F;&#x43E;&#x441;&#x43B;&#x435;&#x434;&#x43D;&#x438;&#x439; &#x441;&#x43B;&#x430;&#x431;&#x43E; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x435;&#x43D; (&#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434; &#x43F;&#x43E;&#x43B;&#x443;&#x440;&#x430;&#x441;&#x43F;&#x430;&#x434;&#x430; T<sub>&#xBD;</sub> = 10<sup>14</sup> &#x43B;&#x435;&#x442;). &#x412;&#x430;&#x43D;&#x430;&#x434;&#x438;&#x439; &#x431;&#x44B;&#x43B; &#x43E;&#x442;&#x43A;&#x440;&#x44B;&#x442; &#x432; 1801 &#x433;&#x43E;&#x434;&#x443; &#x43C;&#x435;&#x43A;&#x441;&#x438;&#x43A;&#x430;&#x43D;&#x441;&#x43A;&#x438;&#x43C; &#x43C;&#x438;&#x43D;&#x435;&#x440;&#x430;&#x43B;&#x43E;&#x433;&#x43E;&#x43C; &#x410;. &#x41C;. &#x434;&#x435;&#x43B;&#x44C; &#x420;&#x438;&#x43E; &#x432; &#x43C;&#x435;&#x43A;&#x441;&#x438;&#x43A;&#x430;&#x43D;&#x441;&#x43A;&#x43E;&#x439; &#x431;&#x443;&#x440;&#x43E;&#x439; &#x441;&#x432;&#x438;&#x43D;&#x446;&#x43E;&#x432;&#x43E;&#x439; &#x440;&#x443;&#x434;&#x435; &#x438; &#x43D;&#x430;&#x437;&#x432;&#x430;&#x43D; &#x43F;&#x43E; &#x43A;&#x440;&#x430;&#x441;&#x438;&#x432;&#x43E;&#x43C;&#x443; &#x43A;&#x440;&#x430;&#x441;&#x43D;&#x43E;&#x43C;&#x443; &#x446;&#x432;&#x435;&#x442;&#x443; &#x43D;&#x430;&#x433;&#x440;&#x435;&#x442;&#x44B;&#x445; &#x441;&#x43E;&#x43B;&#x435;&#x439; &#x44D;&#x440;&#x438;&#x442;&#x440;&#x43E;&#x43D;&#x438;&#x435;&#x43C; (&#x43E;&#x442; &#x433;&#x440;&#x435;&#x447;. erythros - &#x43A;&#x440;&#x430;&#x441;&#x43D;&#x44B;&#x439;). &#x412; 1830 &#x433;&#x43E;&#x434;&#x443; &#x448;&#x432;&#x435;&#x434;&#x441;&#x43A;&#x438;&#x439; &#x445;&#x438;&#x43C;&#x438;&#x43A; &#x41D;. &#x413;. &#x421;&#x435;&#x444;&#x441;&#x442;&#x440;&#x435;&#x43C; &#x43E;&#x431;&#x43D;&#x430;&#x440;&#x443;&#x436;&#x438;&#x43B; &#x43D;&#x43E;&#x432;&#x44B;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; &#x432; &#x436;&#x435;&#x43B;&#x435;&#x437;&#x43D;&#x43E;&#x439; &#x440;&#x443;&#x434;&#x435; &#x438;&#x437; &#x422;&#x430;&#x431;&#x435;&#x440;&#x433;&#x430; (&#x428;&#x432;&#x435;&#x446;&#x438;&#x44F;) &#x438; &#x43D;&#x430;&#x437;&#x432;&#x430;&#x43B; &#x435;&#x433;&#x43E; &#x412;&#x430;&#x43D;&#x430;&#x434;&#x438;&#x439; &#x432; &#x447;&#x435;&#x441;&#x442;&#x44C; &#x434;&#x440;&#x435;&#x432;&#x43D;&#x435;&#x441;&#x43A;&#x430;&#x43D;&#x434;&#x438;&#x43D;&#x430;&#x432;&#x441;&#x43A;&#x43E;&#x439; &#x431;&#x43E;&#x433;&#x438;&#x43D;&#x438; &#x43A;&#x440;&#x430;&#x441;&#x43E;&#x442;&#x44B; &#x412;&#x430;&#x43D;&#x430;&#x434;&#x438;&#x441;. &#x410;&#x43D;&#x433;&#x43B;&#x438;&#x439;&#x441;&#x43A;&#x438;&#x439; &#x445;&#x438;&#x43C;&#x438;&#x43A; &#x413;. &#x420;&#x43E;&#x441;&#x43A;&#x43E; &#x432; 1869 &#x433;&#x43E;&#x434;&#x443; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x438;&#x43B; &#x43F;&#x43E;&#x440;&#x43E;&#x448;&#x43A;&#x43E;&#x43E;&#x431;&#x440;&#x430;&#x437;&#x43D;&#x44B;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x412;&#x430;&#x43D;&#x430;&#x434;&#x438;&#x439; &#x432;&#x43E;&#x441;&#x441;&#x442;&#x430;&#x43D;&#x43E;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x435;&#x43C; VCl<sub>2</sub> &#x432;&#x43E;&#x434;&#x43E;&#x440;&#x43E;&#x434;&#x43E;&#x43C;. &#x412; &#x43F;&#x440;&#x43E;&#x43C;&#x44B;&#x448;&#x43B;&#x435;&#x43D;&#x43D;&#x43E;&#x433;&#x43E; &#x43C;&#x430;&#x441;&#x448;&#x442;&#x430;&#x431;&#x435; &#x412;&#x430;&#x43D;&#x430;&#x434;&#x438;&#x439; &#x434;&#x43E;&#x431;&#x44B;&#x432;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x441; &#x43D;&#x430;&#x447;&#x430;&#x43B;&#x430; 20 &#x432;&#x435;&#x43A;&#x430;.\n",
+        "Атомная масса": "50.942",
+        "Плотность, кг/м³": "6110",
+        "Температура плавления, °С": "1900",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.502",
+        "Электроотрицательность": "1.6",
+        "Ковалентный радиус, Å": "1.22",
+        "1-й ионизац. потенциал, эв": "6.71"
+    },
+    {
+        "Химический символ": "Cr",
+        "label": "Хром Chromium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Ar)3d54s1",
+        "description": "<b>&#x425;&#x440;&#x43E;&#x43C;</b> (&#x43B;&#x430;&#x442;. Cromium), Cr, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; VI &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 24, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 51,996; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B; &#x433;&#x43E;&#x43B;&#x443;&#x431;&#x43E;&#x432;&#x430;&#x442;&#x43E;-&#x441;&#x442;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x433;&#x43E; &#x446;&#x432;&#x435;&#x442;&#x430;.\n",
+        "Атомная масса": "51.996",
+        "Плотность, кг/м³": "7190",
+        "Температура плавления, °С": "1856",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.46",
+        "Электроотрицательность": "1.6",
+        "Ковалентный радиус, Å": "1.18",
+        "1-й ионизац. потенциал, эв": "6.76"
+    },
+    {
+        "Химический символ": "Mn",
+        "label": "Марганец Manganese",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Ar)3d54s2",
+        "description": "<b>&#x41C;&#x430;&#x440;&#x433;&#x430;&#x43D;&#x435;&#x446;</b> (&#x43B;&#x430;&#x442;. Manganum), Mn, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; VII &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 25, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 54,9380; &#x442;&#x44F;&#x436;&#x435;&#x43B;&#x44B;&#x439; &#x441;&#x435;&#x440;&#x435;&#x431;&#x440;&#x438;&#x441;&#x442;&#x43E;-&#x431;&#x435;&#x43B;&#x44B;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;. &#x412; &#x43F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x435; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; &#x43F;&#x440;&#x435;&#x434;&#x441;&#x442;&#x430;&#x432;&#x43B;&#x435;&#x43D; &#x43E;&#x434;&#x43D;&#x438;&#x43C; &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x43C; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x43C; <sup>35</sup>&#x41C;n.\n",
+        "Атомная масса": "54.938",
+        "Плотность, кг/м³": "7430",
+        "Температура плавления, °С": "1244",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.481",
+        "Электроотрицательность": "1.5",
+        "Ковалентный радиус, Å": "1.17",
+        "1-й ионизац. потенциал, эв": "7.43"
+    },
+    {
+        "Химический символ": "Fe",
+        "label": "Железо Iron",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Ar)3d64s2",
+        "description": "<b>&#x416;&#x435;&#x43B;&#x435;&#x437;&#x43E;</b> (&#x43B;&#x430;&#x442;. Ferrum), Fe, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; VIII &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 26, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 55,847; &#x431;&#x43B;&#x435;&#x441;&#x442;&#x44F;&#x449;&#x438;&#x439; &#x441;&#x435;&#x440;&#x435;&#x431;&#x440;&#x438;&#x441;&#x442;&#x43E;-&#x431;&#x435;&#x43B;&#x44B;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;. &#x42D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; &#x432; &#x43F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x435; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x438;&#x442; &#x438;&#x437; &#x447;&#x435;&#x442;&#x44B;&#x440;&#x435;&#x445; &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432;: <sup>54</sup>Fe (5,84%), <sup>56</sup>Fe (91,68%), <sup>57</sup>Fe (2,17%) &#x438; <sup>58</sup>Fe (0,31%).\n",
+        "Атомная масса": "55.845",
+        "Плотность, кг/м³": "7860",
+        "Температура плавления, °С": "1536",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.46",
+        "Электроотрицательность": "1.8",
+        "Ковалентный радиус, Å": "1.17",
+        "1-й ионизац. потенциал, эв": "7.87"
+    },
+    {
+        "Химический символ": "Co",
+        "label": "Кобальт Cobalt",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Ar)3d74s2",
+        "description": "<b>&#x41A;&#x43E;&#x431;&#x430;&#x43B;&#x44C;&#x442;</b> (&#x43B;&#x430;&#x442;. Cobaltum), Co, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; &#x43F;&#x435;&#x440;&#x432;&#x43E;&#x439; &#x442;&#x440;&#x438;&#x430;&#x434;&#x44B; VIII &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 27, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 58,9332; &#x442;&#x44F;&#x436;&#x435;&#x43B;&#x44B;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B; &#x441;&#x435;&#x440;&#x435;&#x431;&#x440;&#x438;&#x441;&#x442;&#x43E;&#x433;&#x43E; &#x446;&#x432;&#x435;&#x442;&#x430; &#x441; &#x440;&#x43E;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x44B;&#x43C; &#x43E;&#x442;&#x43B;&#x438;&#x432;&#x43E;&#x43C;. &#x412; &#x43F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x435; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; &#x43F;&#x440;&#x435;&#x434;&#x441;&#x442;&#x430;&#x432;&#x43B;&#x435;&#x43D; &#x43E;&#x434;&#x43D;&#x438;&#x43C; &#x443;&#x441;&#x442;&#x43E;&#x439;&#x447;&#x438;&#x432;&#x44B;&#x43C; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x43C; <sup>59</sup>Co; &#x438;&#x437; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x43D;&#x44B;&#x445; &#x438;&#x441;&#x43A;&#x443;&#x441;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x43E; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x432;&#x430;&#x436;&#x43D;&#x435;&#x439;&#x448;&#x438;&#x439; <sup>60</sup>&#x421;&#x43E;.\n",
+        "Атомная масса": "58.933",
+        "Плотность, кг/м³": "8900",
+        "Температура плавления, °С": "1495",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.414",
+        "Электроотрицательность": "1.8",
+        "Ковалентный радиус, Å": "1.16",
+        "1-й ионизац. потенциал, эв": "7.86"
+    },
+    {
+        "Химический символ": "Ni",
+        "label": "Никель Nickel",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Ar)3d84s2",
+        "description": "<b>&#x41D;&#x438;&#x43A;&#x435;&#x43B;&#x44C;</b> (&#x43B;&#x430;&#x442;. Niccolum), Ni, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; &#x43F;&#x435;&#x440;&#x432;&#x43E;&#x439; &#x442;&#x440;&#x438;&#x430;&#x434;&#x44B; VIII &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 28, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 58,70; &#x441;&#x435;&#x440;&#x435;&#x431;&#x440;&#x438;&#x441;&#x442;&#x43E;-&#x431;&#x435;&#x43B;&#x44B;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;, &#x43A;&#x43E;&#x432;&#x43A;&#x438;&#x439; &#x438; &#x43F;&#x43B;&#x430;&#x441;&#x442;&#x438;&#x447;&#x43D;&#x44B;&#x439;. &#x41F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x43D;&#x44B;&#x439; &#x41D;&#x438;&#x43A;&#x435;&#x43B;&#x44C; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x438;&#x442; &#x438;&#x437; &#x441;&#x43C;&#x435;&#x441;&#x438; &#x43F;&#x44F;&#x442;&#x438; &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432;: <sup>58</sup>Ni (67,76%), <sup>60</sup>Ni (26,16%), <sup>61</sup>Ni (1,25%), <sup>63</sup>Ni (3,66%), <sup>64</sup>Ni (1,16%).\n",
+        "Атомная масса": "58.693",
+        "Плотность, кг/м³": "8900",
+        "Температура плавления, °С": "1453",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.44",
+        "Электроотрицательность": "1.8",
+        "Ковалентный радиус, Å": "1.15",
+        "1-й ионизац. потенциал, эв": "7.64"
+    },
+    {
+        "Химический символ": "Cu",
+        "label": "Медь Copper",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Ar)3d104s1",
+        "description": "<b>&#x41C;&#x435;&#x434;&#x44C;</b> (&#x43B;&#x430;&#x442;. Cuprum), &#x421;u, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; I &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 29, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 63,546; &#x43C;&#x44F;&#x433;&#x43A;&#x438;&#x439;, &#x43A;&#x43E;&#x432;&#x43A;&#x438;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B; &#x43A;&#x440;&#x430;&#x441;&#x43D;&#x43E;&#x433;&#x43E; &#x446;&#x432;&#x435;&#x442;&#x430;. &#x41F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x43D;&#x430;&#x44F; &#x41C;&#x435;&#x434;&#x44C; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x438;&#x442; &#x438;&#x437; &#x441;&#x43C;&#x435;&#x441;&#x438; &#x434;&#x432;&#x443;&#x445; &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; - <sup>63</sup>&#x421;u (69,1%) &#x438; <sup>65</sup>&#x421;u (30,9%).\n",
+        "Атомная масса": "63.546",
+        "Плотность, кг/м³": "8960",
+        "Температура плавления, °С": "1083",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.385",
+        "Электроотрицательность": "1.9",
+        "Ковалентный радиус, Å": "1.17",
+        "1-й ионизац. потенциал, эв": "7.73"
+    },
+    {
+        "Химический символ": "Zn",
+        "label": "Цинк Zinc",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Ar)3d104s2",
+        "description": "<b>&#x426;&#x438;&#x43D;&#x43A;</b> (&#x43B;&#x430;&#x442;. Zincum), Zn, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; II &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 30, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 65,38, &#x441;&#x438;&#x43D;&#x435;&#x432;&#x430;&#x442;&#x43E;-&#x431;&#x435;&#x43B;&#x44B;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;. &#x418;&#x437;&#x432;&#x435;&#x441;&#x442;&#x43D;&#x43E; 5 &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x441; &#x43C;&#x430;&#x441;&#x441;&#x43E;&#x432;&#x44B;&#x43C;&#x438; &#x447;&#x438;&#x441;&#x43B;&#x430;&#x43C;&#x438; 64, 66, 67, 68 &#x438; 70; &#x43D;&#x430;&#x438;&#x431;&#x43E;&#x43B;&#x435;&#x435; &#x440;&#x430;&#x441;&#x43F;&#x440;&#x43E;&#x441;&#x442;&#x440;&#x430;&#x43D;&#x435;&#x43D; <sup>64</sup>Zn (48,89%). &#x418;&#x441;&#x43A;&#x443;&#x441;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x43E; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D; &#x440;&#x44F;&#x434; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432;, &#x441;&#x440;&#x435;&#x434;&#x438; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x445; &#x43D;&#x430;&#x438;&#x431;&#x43E;&#x43B;&#x435;&#x435; &#x434;&#x43E;&#x43B;&#x433;&#x43E;&#x436;&#x438;&#x432;&#x443;&#x449;&#x438;&#x439; <sup>65</sup>Zn &#x441; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x43E;&#x43C; &#x43F;&#x43E;&#x43B;&#x443;&#x440;&#x430;&#x441;&#x43F;&#x430;&#x434;&#x430; &#x422;<sub>&#xBD;</sub> = 245 &#x441;&#x443;&#x442;; &#x43F;&#x440;&#x438;&#x43C;&#x435;&#x43D;&#x44F;&#x435;&#x442;&#x441;&#x44F; &#x43A;&#x430;&#x43A; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43D;&#x44B;&#x439; &#x438;&#x43D;&#x434;&#x438;&#x43A;&#x430;&#x442;&#x43E;&#x440;.\n",
+        "Атомная масса": "65.409",
+        "Плотность, кг/м³": "7140",
+        "Температура плавления, °С": "419.5",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.383",
+        "Электроотрицательность": "1.6",
+        "Ковалентный радиус, Å": "1.25",
+        "1-й ионизац. потенциал, эв": "9.39"
+    },
+    {
+        "Химический символ": "Ga",
+        "label": "Галлий Gallium",
+        "Электронная формула": "(Ar)3d104s24p1",
+        "description": "<b>&#x413;&#x430;&#x43B;&#x43B;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Gallium), Ga, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; III &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x414;. &#x418;. &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;, &#x43F;&#x43E;&#x440;&#x44F;&#x434;&#x43A;&#x43E;&#x432;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 31, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 69,72; &#x441;&#x435;&#x440;&#x435;&#x431;&#x440;&#x438;&#x441;&#x442;&#x43E;-&#x431;&#x435;&#x43B;&#x44B;&#x439; &#x43C;&#x44F;&#x433;&#x43A;&#x438;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;. &#x421;&#x43E;&#x441;&#x442;&#x43E;&#x438;&#x442; &#x438;&#x437; &#x434;&#x432;&#x443;&#x445; &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x441; &#x43C;&#x430;&#x441;&#x441;&#x43E;&#x432;&#x44B;&#x43C;&#x438; &#x447;&#x438;&#x441;&#x43B;&#x430;&#x43C;&#x438; 69 (60,5%) &#x438; 71 (39,5%).\n",
+        "Атомная масса": "69.723",
+        "Плотность, кг/м³": "5910",
+        "Температура плавления, °С": "29.8",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.331",
+        "Электроотрицательность": "1.8",
+        "Ковалентный радиус, Å": "1.26",
+        "1-й ионизац. потенциал, эв": "6.00"
+    },
+    {
+        "Химический символ": "Ge",
+        "label": "Германий Germanium",
+        "Электронная формула": "(Ar)3d104s24p2",
+        "description": "<b>&#x413;&#x435;&#x440;&#x43C;&#x430;&#x43D;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Germanium), Ge, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; IV &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;; &#x43F;&#x43E;&#x440;&#x44F;&#x434;&#x43A;&#x43E;&#x432;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 32, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 72,59; &#x442;&#x432;&#x435;&#x440;&#x434;&#x43E;&#x435; &#x432;&#x435;&#x449;&#x435;&#x441;&#x442;&#x432;&#x43E; &#x441;&#x435;&#x440;&#x43E;-&#x431;&#x435;&#x43B;&#x43E;&#x433;&#x43E; &#x446;&#x432;&#x435;&#x442;&#x430; &#x441; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x43C; &#x431;&#x43B;&#x435;&#x441;&#x43A;&#x43E;&#x43C;. &#x41F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x43D;&#x44B;&#x439; &#x413;&#x435;&#x440;&#x43C;&#x430;&#x43D;&#x438;&#x439; &#x43F;&#x440;&#x435;&#x434;&#x441;&#x442;&#x430;&#x432;&#x43B;&#x44F;&#x435;&#x442; &#x441;&#x43E;&#x431;&#x43E;&#x439; &#x441;&#x43C;&#x435;&#x441;&#x44C; &#x43F;&#x44F;&#x442;&#x438; &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x441; &#x43C;&#x430;&#x441;&#x441;&#x43E;&#x432;&#x44B;&#x43C;&#x438; &#x447;&#x438;&#x441;&#x43B;&#x430;&#x43C;&#x438; 70, 72, 73, 74 &#x438; 76. &#x421;&#x443;&#x449;&#x435;&#x441;&#x442;&#x432;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x438; &#x441;&#x432;&#x43E;&#x439;&#x441;&#x442;&#x432;&#x430; &#x413;&#x435;&#x440;&#x43C;&#x430;&#x43D;&#x438;&#x44F; &#x43F;&#x440;&#x435;&#x434;&#x441;&#x43A;&#x430;&#x437;&#x430;&#x43B; &#x432; 1871 &#x433;&#x43E;&#x434;&#x443; &#x414;. &#x418;. &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432; &#x438; &#x43D;&#x430;&#x437;&#x432;&#x430;&#x43B; &#x44D;&#x442;&#x43E;&#x442; &#x43D;&#x435;&#x438;&#x437;&#x432;&#x435;&#x441;&#x442;&#x43D;&#x44B;&#x439; &#x435;&#x449;&#x435; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; &#x44D;&#x43A;&#x430;&#x441;&#x438;&#x43B;&#x438;&#x446;&#x438;&#x435;&#x43C; &#x438;&#x437;-&#x437;&#x430; &#x431;&#x43B;&#x438;&#x437;&#x43E;&#x441;&#x442;&#x438; &#x441;&#x432;&#x43E;&#x439;&#x441;&#x442;&#x432; &#x435;&#x433;&#x43E; &#x441; &#x43A;&#x440;&#x435;&#x43C;&#x43D;&#x438;&#x435;&#x43C;. &#x412; 1886 &#x433;&#x43E;&#x434;&#x443; &#x43D;&#x435;&#x43C;&#x435;&#x446;&#x43A;&#x438;&#x439; &#x445;&#x438;&#x43C;&#x438;&#x43A; &#x41A;. &#x412;&#x438;&#x43D;&#x43A;&#x43B;&#x435;&#x440; &#x43E;&#x431;&#x43D;&#x430;&#x440;&#x443;&#x436;&#x438;&#x43B; &#x432; &#x43C;&#x438;&#x43D;&#x435;&#x440;&#x430;&#x43B;&#x435; &#x430;&#x440;&#x433;&#x438;&#x440;&#x43E;&#x434;&#x438;&#x442;&#x435; &#x43D;&#x43E;&#x432;&#x44B;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;, &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x439; &#x43D;&#x430;&#x437;&#x432;&#x430;&#x43B; &#x413;&#x435;&#x440;&#x43C;&#x430;&#x43D;&#x438;&#x435;&#x43C; &#x432; &#x447;&#x435;&#x441;&#x442;&#x44C; &#x441;&#x432;&#x43E;&#x435;&#x439; &#x441;&#x442;&#x440;&#x430;&#x43D;&#x44B;; &#x413;&#x435;&#x440;&#x43C;&#x430;&#x43D;&#x438;&#x439; &#x43E;&#x43A;&#x430;&#x437;&#x430;&#x43B;&#x441;&#x44F; &#x432;&#x43F;&#x43E;&#x43B;&#x43D;&#x435; &#x442;&#x43E;&#x436;&#x434;&#x435;&#x441;&#x442;&#x432;&#x435;&#x43D; &#x44D;&#x43A;&#x430;&#x441;&#x438;&#x43B;&#x438;&#x446;&#x438;&#x44E;. &#x414;&#x43E; &#x432;&#x442;&#x43E;&#x440;&#x43E;&#x439; &#x43F;&#x43E;&#x43B;&#x43E;&#x432;&#x438;&#x43D;&#x44B; 20 &#x432;&#x435;&#x43A;&#x430; &#x43F;&#x440;&#x430;&#x43A;&#x442;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x435; &#x43F;&#x440;&#x438;&#x43C;&#x435;&#x43D;&#x435;&#x43D;&#x438;&#x435; &#x413;&#x435;&#x440;&#x43C;&#x430;&#x43D;&#x438;&#x44F; &#x43E;&#x441;&#x442;&#x430;&#x432;&#x430;&#x43B;&#x43E;&#x441;&#x44C; &#x432;&#x435;&#x441;&#x44C;&#x43C;&#x430; &#x43E;&#x433;&#x440;&#x430;&#x43D;&#x438;&#x447;&#x435;&#x43D;&#x43D;&#x44B;&#x43C;. &#x41F;&#x440;&#x43E;&#x43C;&#x44B;&#x448;&#x43B;&#x435;&#x43D;&#x43D;&#x43E;&#x435; &#x43F;&#x440;&#x43E;&#x438;&#x437;&#x432;&#x43E;&#x434;&#x441;&#x442;&#x432;&#x43E; &#x413;&#x435;&#x440;&#x43C;&#x430;&#x43D;&#x438;&#x44F; &#x432;&#x43E;&#x437;&#x43D;&#x438;&#x43A;&#x43B;&#x43E; &#x432; &#x441;&#x432;&#x44F;&#x437;&#x438; &#x441; &#x440;&#x430;&#x437;&#x432;&#x438;&#x442;&#x438;&#x435;&#x43C; &#x43F;&#x43E;&#x43B;&#x443;&#x43F;&#x440;&#x43E;&#x432;&#x43E;&#x434;&#x43D;&#x438;&#x43A;&#x43E;&#x432;&#x43E;&#x439; &#x44D;&#x43B;&#x435;&#x43A;&#x442;&#x440;&#x43E;&#x43D;&#x438;&#x43A;&#x438;.\n",
+        "Атомная масса": "72.64",
+        "Плотность, кг/м³": "5320",
+        "Температура плавления, °С": "937.4",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.305",
+        "Электроотрицательность": "2.0",
+        "Ковалентный радиус, Å": "1.22",
+        "1-й ионизац. потенциал, эв": "8.13"
+    },
+    {
+        "Химический символ": "As",
+        "label": "Мышьяк Arsenic",
+        "Электронная формула": "(Ar)3d104s24p3",
+        "description": "<b>&#x41C;&#x44B;&#x448;&#x44C;&#x44F;&#x43A;</b> (&#x43B;&#x430;&#x442;. Arsenicum), As, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; V &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 33, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 74,9216; &#x43A;&#x440;&#x438;&#x441;&#x442;&#x430;&#x43B;&#x43B;&#x44B; &#x441;&#x435;&#x440;&#x43E;-&#x441;&#x442;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x433;&#x43E; &#x446;&#x432;&#x435;&#x442;&#x430;. &#x42D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x438;&#x442; &#x438;&#x437; &#x43E;&#x434;&#x43D;&#x43E;&#x433;&#x43E; &#x443;&#x441;&#x442;&#x43E;&#x439;&#x447;&#x438;&#x432;&#x43E;&#x433;&#x43E; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x430; <sup>75</sup>As.\n",
+        "Атомная масса": "74.922",
+        "Плотность, кг/м³": "5720",
+        "Температура плавления, °С": "817 (под давл.)",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.343",
+        "Электроотрицательность": "2.2",
+        "Ковалентный радиус, Å": "1.20",
+        "1-й ионизац. потенциал, эв": "9.81"
+    },
+    {
+        "Химический символ": "Se",
+        "label": "Селен Selenium",
+        "Электронная формула": "(Ar)3d104s24p4",
+        "description": "<b>&#x421;&#x435;&#x43B;&#x435;&#x43D;</b> (Selenium), Se, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; VI &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 34, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 78, 96; &#x43F;&#x440;&#x435;&#x438;&#x43C;&#x443;&#x449;&#x435;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x43E; &#x43D;&#x435;&#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;. &#x41F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x43D;&#x44B;&#x439; &#x421;&#x435;&#x43B;&#x435;&#x43D; &#x43F;&#x440;&#x435;&#x434;&#x441;&#x442;&#x430;&#x432;&#x43B;&#x44F;&#x435;&#x442; &#x441;&#x43E;&#x431;&#x43E;&#x439; &#x441;&#x43C;&#x435;&#x441;&#x44C; &#x448;&#x435;&#x441;&#x442;&#x438; &#x443;&#x441;&#x442;&#x43E;&#x439;&#x447;&#x438;&#x432;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; - <sup>74</sup>Se (0,87%), <sup>76</sup>Se (9,01%), <sup>77</sup>Se (7,58%), <sup>78</sup>Se (23,52%), <sup>80</sup>Se (49,82%), <sup>82</sup>Se (9,19%). &#x418;&#x437; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x43D;&#x430;&#x438;&#x431;&#x43E;&#x43B;&#x44C;&#x448;&#x435;&#x435; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x438;&#x43C;&#x435;&#x435;&#x442; <sup>75</sup>Se &#x441; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x43E;&#x43C; &#x43F;&#x43E;&#x43B;&#x443;&#x440;&#x430;&#x441;&#x43F;&#x430;&#x434;&#x430; 121 &#x441;&#x443;&#x442;. &#x42D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; &#x43E;&#x442;&#x43A;&#x440;&#x44B;&#x442; &#x432; 1817 &#x433;&#x43E;&#x434;&#x443; &#x418;. &#x411;&#x435;&#x440;&#x446;&#x435;&#x43B;&#x438;&#x443;&#x441;&#x43E;&#x43C; (&#x43D;&#x430;&#x437;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x434;&#x430;&#x43D;&#x43E; &#x43E;&#x442; &#x433;&#x440;&#x435;&#x447;. selene - &#x41B;&#x443;&#x43D;&#x430;).\n",
+        "Атомная масса": "78.96",
+        "Плотность, кг/м³": "4790",
+        "Температура плавления, °С": "217",
+        "Температура кипения, °С": "685",
+        "Теплоемкость, кДж/(кг·°С)": "0.352",
+        "Электроотрицательность": "2.5",
+        "Ковалентный радиус, Å": "1.16",
+        "1-й ионизац. потенциал, эв": "9.75"
+    },
+    {
+        "Химический символ": "Br",
+        "label": "Бром Bromine",
+        "color": "0xDF902B",
+        "shadow": "0xAF6018",
+        "Электронная формула": "(Ar)3d104s24p5",
+        "description": "<b>&#x411;&#x440;&#x43E;&#x43C;</b> (&#x43B;&#x430;&#x442;. Bromum), &#x412;&#x433;, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; VII &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;, &#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x438;&#x442;&#x441;&#x44F; &#x43A; &#x433;&#x430;&#x43B;&#x43E;&#x433;&#x435;&#x43D;&#x430;&#x43C;; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 35, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 79,904; &#x43A;&#x440;&#x430;&#x441;&#x43D;&#x43E;-&#x431;&#x443;&#x440;&#x430;&#x44F; &#x436;&#x438;&#x434;&#x43A;&#x43E;&#x441;&#x442;&#x44C; &#x441; &#x441;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x43C; &#x43D;&#x435;&#x43F;&#x440;&#x438;&#x44F;&#x442;&#x43D;&#x44B;&#x43C; &#x437;&#x430;&#x43F;&#x430;&#x445;&#x43E;&#x43C;. &#x411;&#x440;&#x43E;&#x43C; &#x43E;&#x442;&#x43A;&#x440;&#x44B;&#x442; &#x432; 1826 &#x433;&#x43E;&#x434;&#x443; &#x444;&#x440;&#x430;&#x43D;&#x446;&#x443;&#x437;&#x441;&#x43A;&#x438;&#x43C; &#x445;&#x438;&#x43C;&#x438;&#x43A;&#x43E;&#x43C; &#x410;. &#x416;. &#x411;&#x430;&#x43B;&#x430;&#x440;&#x43E;&#x43C; &#x43F;&#x440;&#x438; &#x438;&#x437;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x438; &#x440;&#x430;&#x441;&#x441;&#x43E;&#x43B;&#x43E;&#x432; &#x441;&#x440;&#x435;&#x434;&#x438;&#x437;&#x435;&#x43C;&#x43D;&#x43E;&#x43C;&#x43E;&#x440;&#x441;&#x43A;&#x438;&#x445; &#x441;&#x43E;&#x43B;&#x44F;&#x43D;&#x44B;&#x445; &#x43F;&#x440;&#x43E;&#x43C;&#x44B;&#x441;&#x43B;&#x43E;&#x432;; &#x43D;&#x430;&#x437;&#x432;&#x430;&#x43D; &#x43E;&#x442; &#x433;&#x440;&#x435;&#x447;. bromos - &#x437;&#x43B;&#x43E;&#x432;&#x43E;&#x43D;&#x438;&#x435;. &#x41F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x43D;&#x44B;&#x439; &#x411;&#x440;&#x43E;&#x43C; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x438;&#x442; &#x438;&#x437; 2 &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; <sup>79</sup>&#x412;r (50,54%) &#x438; <sup>81</sup>&#x412;r (49,46%). &#x418;&#x437; &#x438;&#x441;&#x43A;&#x443;&#x441;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x43E; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x43D;&#x44B;&#x445; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x411;&#x440;&#x43E;&#x43C; &#x43D;&#x430;&#x438;&#x431;&#x43E;&#x43B;&#x435;&#x435; &#x438;&#x43D;&#x442;&#x435;&#x440;&#x435;&#x441;&#x435;&#x43D; <sup>80</sup>&#x412;r, &#x43D;&#x430; &#x43F;&#x440;&#x438;&#x43C;&#x435;&#x440;&#x435; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x43E;&#x433;&#x43E; &#x418;. &#x412;. &#x41A;&#x443;&#x440;&#x447;&#x430;&#x442;&#x43E;&#x432;&#x44B;&#x43C; &#x43E;&#x442;&#x43A;&#x440;&#x44B;&#x442;&#x43E; &#x44F;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x438;&#x437;&#x43E;&#x43C;&#x435;&#x440;&#x438;&#x438; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x445; &#x44F;&#x434;&#x435;&#x440;.\n",
+        "Атомная масса": "79.904",
+        "Плотность, кг/м³": "3120",
+        "Температура плавления, °С": "-7.2",
+        "Температура кипения, °С": "58.8",
+        "Теплоемкость, кДж/(кг·°С)": "0.293",
+        "Электроотрицательность": "2.8",
+        "Ковалентный радиус, Å": "1.14",
+        "1-й ионизац. потенциал, эв": "11.81"
+    },
+    {
+        "Химический символ": "Kr",
+        "label": "Криптон Krypton",
+        "color": "0x30C7E6",
+        "shadow": "0x10AFC8",
+        "Электронная формула": "(Ar)3d104s24p6",
+        "description": "<b>&#x41A;&#x440;&#x438;&#x43F;&#x442;&#x43E;&#x43D;</b> (&#x43B;&#x430;&#x442;. Kryptonum), Kr, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; VIII &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;, &#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x438;&#x442;&#x441;&#x44F; &#x43A; &#x438;&#x43D;&#x435;&#x440;&#x442;&#x43D;&#x44B;&#x43C; &#x433;&#x430;&#x437;&#x430;&#x43C;, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 36, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 83,80. &#x41D;&#x430; &#x417;&#x435;&#x43C;&#x43B;&#x435; &#x43F;&#x440;&#x438;&#x441;&#x443;&#x442;&#x441;&#x442;&#x432;&#x443;&#x435;&#x442; &#x433;&#x43B;&#x430;&#x432;&#x43D;&#x44B;&#x43C; &#x43E;&#x431;&#x440;&#x430;&#x437;&#x43E;&#x43C; &#x432; &#x430;&#x442;&#x43C;&#x43E;&#x441;&#x444;&#x435;&#x440;&#x435;. &#x410;&#x442;&#x43C;&#x43E;&#x441;&#x444;&#x435;&#x440;&#x43D;&#x44B;&#x439; &#x41A;&#x440;&#x438;&#x43F;&#x442;&#x43E;&#x43D; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x438;&#x442; &#x438;&#x437; &#x441;&#x43C;&#x435;&#x441;&#x438; 6 &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432;, &#x441;&#x440;&#x435;&#x434;&#x438; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x445; &#x43F;&#x440;&#x435;&#x43E;&#x431;&#x43B;&#x430;&#x434;&#x430;&#x435;&#x442; <sup>84</sup>Kr (56,90%). &#x41E;&#x442;&#x43A;&#x440;&#x44B;&#x442; &#x432; 1898 &#x433;&#x43E;&#x434;&#x443; &#x423;. &#x420;&#x430;&#x43C;&#x437;&#x430;&#x435;&#x43C; &#x438; &#x41C;. &#x422;&#x440;&#x430;&#x432;&#x435;&#x440;&#x441;&#x43E;&#x43C; &#x43F;&#x440;&#x438; &#x441;&#x43F;&#x435;&#x43A;&#x442;&#x440;&#x43E;&#x441;&#x43A;&#x43E;&#x43F;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x43C; &#x438;&#x437;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x438; &#x442;&#x440;&#x443;&#x434;&#x43D;&#x43E;&#x43B;&#x435;&#x442;&#x443;&#x447;&#x438;&#x445; &#x444;&#x440;&#x430;&#x43A;&#x446;&#x438;&#x439; &#x436;&#x438;&#x434;&#x43A;&#x43E;&#x433;&#x43E; &#x432;&#x43E;&#x437;&#x434;&#x443;&#x445;&#x430;; &#x43D;&#x430;&#x437;&#x432;&#x430;&#x43D; &#x41A;&#x440;&#x438;&#x43F;&#x442;&#x43E;&#x43D; (&#x43E;&#x442; &#x433;&#x440;&#x435;&#x447;. kryptos - &#x441;&#x43A;&#x440;&#x44B;&#x442;&#x44B;&#x439;). &#x41F;&#x440;&#x438; &#x43D;&#x43E;&#x440;&#x43C;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x443;&#x441;&#x43B;&#x43E;&#x432;&#x438;&#x44F;&#x445; 1 &#x43C;<sup>3</sup> &#x432;&#x43E;&#x437;&#x434;&#x443;&#x445;&#x430; &#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x438;&#x442; &#x43E;&#x43A;&#x43E;&#x43B;&#x43E; 1 &#x441;&#x43C;<sup>3</sup> &#x41A;&#x440;&#x438;&#x43F;&#x442;&#x43E;&#x43D;&#x430;. &#x41A;&#x440;&#x438;&#x43F;&#x442;&#x43E;&#x43D; - &#x43E;&#x434;&#x43D;&#x43E;&#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x433;&#x430;&#x437; &#x431;&#x435;&#x437; &#x446;&#x432;&#x435;&#x442;&#x430; &#x438; &#x437;&#x430;&#x43F;&#x430;&#x445;&#x430;; &#x43F;&#x43B;&#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x442;&#x44C; &#x43F;&#x440;&#x438; 0 &#xB0;&#x421; &#x438; 100 &#x43A;&#x43D;/&#x43C;<sup>2</sup> (760 &#x43C;&#x43C; &#x440;&#x442;. &#x441;&#x442;.) 3,745 &#x433;/&#x43B;, t<sub>&#x43F;&#x43B;</sub>-157,1 &#xB0;&#x421;, t<sub>&#x43A;&#x438;&#x43F;</sub>-153,2 &#xB0;&#x421;. &#x412; &#x442;&#x432;&#x435;&#x440;&#x434;&#x43E;&#x43C; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x44F;&#x43D;&#x438;&#x438; &#x41A;&#x440;&#x438;&#x43F;&#x442;&#x43E;&#x43D; &#x43E;&#x431;&#x43B;&#x430;&#x434;&#x430;&#x435;&#x442; &#x43A;&#x443;&#x431;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x440;&#x435;&#x448;&#x435;&#x442;&#x43A;&#x43E;&#x439; &#x441; &#x43F;&#x430;&#x440;&#x430;&#x43C;&#x435;&#x442;&#x440;&#x43E;&#x43C; &#x430; = 5,706&#xC5; (-184 &#xB0;&#x421;). &#x41F;&#x43E;&#x441;&#x43B;&#x435; &#x441;&#x438;&#x43D;&#x442;&#x435;&#x437;&#x430; &#x432; 1961 &#x433;&#x43E;&#x434;&#x443; &#x444;&#x442;&#x43E;&#x440;&#x438;&#x434;&#x430; &#x43A;&#x441;&#x435;&#x43D;&#x43E;&#x43D;&#x430; &#x431;&#x44B;&#x43B;&#x43E; &#x443;&#x441;&#x442;&#x430;&#x43D;&#x43E;&#x432;&#x43B;&#x435;&#x43D;&#x43E;, &#x447;&#x442;&#x43E; &#x438; &#x41A;&#x440;&#x438;&#x43F;&#x442;&#x43E;&#x43D; &#x441;&#x43F;&#x43E;&#x441;&#x43E;&#x431;&#x435;&#x43D; &#x432;&#x441;&#x442;&#x443;&#x43F;&#x430;&#x442;&#x44C; &#x432; &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x435; &#x440;&#x435;&#x430;&#x43A;&#x446;&#x438;&#x438;. &#x412; &#x447;&#x430;&#x441;&#x442;&#x43D;&#x43E;&#x441;&#x442;&#x438;, &#x43F;&#x440;&#x438; &#x432;&#x437;&#x430;&#x438;&#x43C;&#x43E;&#x434;&#x435;&#x439;&#x441;&#x442;&#x432;&#x438;&#x438; &#x41A;&#x440;&#x438;&#x43F;&#x442;&#x43E;&#x43D;&#x430; &#x438; &#x444;&#x442;&#x43E;&#x440;&#x430; (&#x43D;&#x430;&#x43F;&#x440;&#x438;&#x43C;&#x435;&#x440;, &#x432; &#x44D;&#x43B;&#x435;&#x43A;&#x442;&#x440;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x43C; &#x440;&#x430;&#x437;&#x440;&#x44F;&#x434;&#x435;) &#x43C;&#x43E;&#x436;&#x43D;&#x43E; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x438;&#x442;&#x44C; &#x444;&#x442;&#x43E;&#x440;&#x438;&#x434;&#x44B; KrF<sub>2</sub> &#x438;&#x43B;&#x438; KrF<sub>4</sub>, &#x443;&#x441;&#x442;&#x43E;&#x439;&#x447;&#x438;&#x432;&#x44B;&#x435; &#x442;&#x43E;&#x43B;&#x44C;&#x43A;&#x43E; &#x43F;&#x440;&#x438; &#x43F;&#x43E;&#x43D;&#x438;&#x436;&#x435;&#x43D;&#x43D;&#x43E;&#x439; &#x442;&#x435;&#x43C;&#x43F;&#x435;&#x440;&#x430;&#x442;&#x443;&#x440;&#x435;. &#x414;&#x435;&#x439;&#x441;&#x442;&#x432;&#x438;&#x435;&#x43C; &#x440;&#x430;&#x441;&#x442;&#x432;&#x43E;&#x440;&#x430; Ba(&#x41E;&#x41D;)<sub>2</sub> &#x43D;&#x430; KrF<sub>4</sub> &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D; &#x43A;&#x440;&#x438;&#x43F;&#x442;&#x43E;&#x43D;&#x430;&#x442; &#x431;&#x430;&#x440;&#x438;&#x44F; &#x412;&#x430;&#x41A;r&#x41E;<sub>4</sub>. &#x41A;&#x430;&#x43A; &#x438; &#x434;&#x440;&#x443;&#x433;&#x438;&#x435; &#x438;&#x43D;&#x435;&#x440;&#x442;&#x43D;&#x44B;&#x435; &#x433;&#x430;&#x437;&#x44B;, &#x41A;&#x440;&#x438;&#x43F;&#x442;&#x43E;&#x43D; &#x43E;&#x431;&#x440;&#x430;&#x437;&#x443;&#x435;&#x442; &#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x44F; &#x432;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x438;&#x44F;: Kr&#xB7;6&#x41D;<sub>2</sub>&#x41E;, Kr&#xB7;&#x417;&#x421;<sub>6</sub>&#x41D;<sub>5</sub>&#x41E;&#x41D; &#x438; &#x434;&#x440;&#x443;&#x433;&#x438;&#x435;.\n",
+        "Атомная масса": "83.798",
+        "Плотность, кг/м³": "3.74",
+        "Температура плавления, °С": "-157.3",
+        "Температура кипения, °С": "-153.2",
+        "Теплоемкость, кДж/(кг·°С)": "0.248",
+        "Электроотрицательность": " ",
+        "Ковалентный радиус, Å": "1.12",
+        "1-й ионизац. потенциал, эв": "14.00"
+    },
+    {
+        "Химический символ": "Rb",
+        "label": "Рубидий Rubidium",
+        "color": "0x5422ED",
+        "shadow": "0x511DEB",
+        "Электронная формула": "(Kr)5s1",
+        "description": "<b>&#x420;&#x443;&#x431;&#x438;&#x434;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Rubidium), Rb, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; I &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 37, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 85,4678; &#x441;&#x435;&#x440;&#x435;&#x431;&#x440;&#x438;&#x441;&#x442;&#x43E;-&#x431;&#x435;&#x43B;&#x44B;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;, &#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x438;&#x442;&#x441;&#x44F; &#x43A; &#x449;&#x435;&#x43B;&#x43E;&#x447;&#x43D;&#x44B;&#x43C; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;&#x430;&#x43C;. &#x41F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x43D;&#x44B;&#x439; &#x420;&#x443;&#x431;&#x438;&#x434;&#x438;&#x439; &#x43F;&#x440;&#x435;&#x434;&#x441;&#x442;&#x430;&#x432;&#x43B;&#x44F;&#x435;&#x442; &#x441;&#x43E;&#x431;&#x43E;&#x439; &#x441;&#x43C;&#x435;&#x441;&#x44C; &#x434;&#x432;&#x443;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432;: &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x43E;&#x433;&#x43E; <sup>85</sup>Rb (72,15%) &#x438; &#x441;&#x43B;&#x430;&#x431;&#x43E;&#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x43E;&#x433;&#x43E; <sup>87</sup>Rb (&#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434; &#x43F;&#x43E;&#x43B;&#x443;&#x440;&#x430;&#x441;&#x43F;&#x430;&#x434;&#x430; &#x422;<sub>&#xBD;</sub>4,8&#xB7;10<sup>10</sup> &#x43B;&#x435;&#x442;). &#x41F;&#x440;&#x438; &#x3B2;-&#x440;&#x430;&#x441;&#x43F;&#x430;&#x434;&#x435; <sup>87</sup>Rb &#x43E;&#x431;&#x440;&#x430;&#x437;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x439; <sup>87</sup>Sr. &#x41E;&#x43F;&#x440;&#x435;&#x434;&#x435;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x430;&#x43D;&#x438;&#x44F; <sup>87</sup>Sr &#x438; &#x420;&#x443;&#x431;&#x438;&#x434;&#x438;&#x44F; &#x432; &#x433;&#x43E;&#x440;&#x43D;&#x44B;&#x445; &#x43F;&#x43E;&#x440;&#x43E;&#x434;&#x430;&#x445; &#x438; &#x43C;&#x438;&#x43D;&#x435;&#x440;&#x430;&#x43B;&#x430;&#x445; (&#x441;&#x442;&#x440;&#x43E;&#x43D;&#x446;&#x438;&#x435;&#x432;&#x44B;&#x439; &#x43C;&#x435;&#x442;&#x43E;&#x434;) &#x434;&#x430;&#x435;&#x442; &#x432;&#x43E;&#x437;&#x43C;&#x43E;&#x436;&#x43D;&#x43E;&#x441;&#x442;&#x44C; &#x43D;&#x430;&#x434;&#x435;&#x436;&#x43D;&#x43E; &#x443;&#x441;&#x442;&#x430;&#x43D;&#x43E;&#x432;&#x438;&#x442;&#x44C; &#x438;&#x445; &#x433;&#x435;&#x43E;&#x43B;&#x43E;&#x433;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x432;&#x43E;&#x437;&#x440;&#x430;&#x441;&#x442;. &#x418;&#x441;&#x43A;&#x443;&#x441;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x43E; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x43E; &#x43E;&#x43A;&#x43E;&#x43B;&#x43E; 20 &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x420;&#x443;&#x431;&#x438;&#x434;&#x438;&#x44F;. &#x420;&#x443;&#x431;&#x438;&#x434;&#x438;&#x439; &#x43E;&#x442;&#x43A;&#x440;&#x44B;&#x43B;&#x438; &#x432; 1861 &#x433;&#x43E;&#x434;&#x443; &#x420;. &#x411;&#x443;&#x43D;&#x437;&#x435;&#x43D; &#x438; &#x413;. &#x41A;&#x438;&#x440;&#x445;&#x433;&#x43E;&#x444; &#x43F;&#x440;&#x438; &#x441;&#x43F;&#x435;&#x43A;&#x442;&#x440;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x43C; &#x438;&#x441;&#x441;&#x43B;&#x435;&#x434;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x438; &#x441;&#x43E;&#x43B;&#x435;&#x439;, &#x432;&#x44B;&#x434;&#x435;&#x43B;&#x435;&#x43D;&#x43D;&#x44B;&#x445; &#x438;&#x437; &#x43C;&#x438;&#x43D;&#x435;&#x440;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x432;&#x43E;&#x434;. &#x41D;&#x430;&#x437;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x443; &#x434;&#x430;&#x43D;&#x43E; &#x43F;&#x43E; &#x446;&#x432;&#x435;&#x442;&#x443; &#x43D;&#x430;&#x438;&#x431;&#x43E;&#x43B;&#x435;&#x435; &#x445;&#x430;&#x440;&#x430;&#x43A;&#x442;&#x435;&#x440;&#x43D;&#x44B;&#x445; &#x43A;&#x440;&#x430;&#x441;&#x43D;&#x44B;&#x445; &#x43B;&#x438;&#x43D;&#x438;&#x439; &#x441;&#x43F;&#x435;&#x43A;&#x442;&#x440;&#x430; (&#x43E;&#x442; &#x43B;&#x430;&#x442;. rubidus - &#x43A;&#x440;&#x430;&#x441;&#x43D;&#x44B;&#x439;, &#x442;&#x435;&#x43C;&#x43D;&#x43E;&#x43A;&#x440;&#x430;&#x441;&#x43D;&#x44B;&#x439;). &#x41C;&#x435;&#x442;&#x430;&#x43B;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x420;&#x443;&#x431;&#x438;&#x434;&#x438;&#x439; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x438;&#x43B; &#x432;&#x43F;&#x435;&#x440;&#x432;&#x44B;&#x435; &#x432; 1863 &#x433;&#x43E;&#x434;&#x443; &#x411;&#x443;&#x43D;&#x437;&#x435;&#x43D;.\n",
+        "Атомная масса": "85.468",
+        "Плотность, кг/м³": "1530",
+        "Температура плавления, °С": "38.9",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.335",
+        "Электроотрицательность": "0.8",
+        "Ковалентный радиус, Å": "2.16",
+        "1-й ионизац. потенциал, эв": "4.18"
+    },
+    {
+        "Химический символ": "Sr",
+        "label": "Стронций Strontium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Kr)5s2",
+        "description": "<b>&#x421;&#x442;&#x440;&#x43E;&#x43D;&#x446;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Strontium), Sr, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; II &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 38, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 87,62, &#x441;&#x435;&#x440;&#x435;&#x431;&#x440;&#x438;&#x441;&#x442;&#x43E;-&#x431;&#x435;&#x43B;&#x44B;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;. &#x41F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x43D;&#x44B;&#x439; &#x421;&#x442;&#x440;&#x43E;&#x43D;&#x446;&#x438;&#x439; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x438;&#x442; &#x438;&#x437; &#x441;&#x43C;&#x435;&#x441;&#x438; &#x447;&#x435;&#x442;&#x44B;&#x440;&#x435;&#x445; &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432;: <sup>84</sup>Sr, <sup>86</sup>Sr, <sup>87</sup>Sr &#x438; <sup>88</sup>Sr; &#x43D;&#x430;&#x438;&#x431;&#x43E;&#x43B;&#x435;&#x435; &#x440;&#x430;&#x441;&#x43F;&#x440;&#x43E;&#x441;&#x442;&#x440;&#x430;&#x43D;&#x435;&#x43D; <sup>88</sup>Sr (82,56%).\n",
+        "Атомная масса": "87.62",
+        "Плотность, кг/м³": "2600",
+        "Температура плавления, °С": "768",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.737",
+        "Электроотрицательность": "1.0",
+        "Ковалентный радиус, Å": "1.91",
+        "1-й ионизац. потенциал, эв": "5.69"
+    },
+    {
+        "Химический символ": "Y",
+        "label": "Иттрий Yttrium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Kr)4d15s2",
+        "description": "<b>&#x418;&#x442;&#x442;&#x440;&#x438;&#x439;</b> (Yttrium), Y, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; III &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 39, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 88,9059. &#x412; &#x43F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x435; &#x43F;&#x440;&#x435;&#x434;&#x441;&#x442;&#x430;&#x432;&#x43B;&#x435;&#x43D; &#x43E;&#x434;&#x43D;&#x438;&#x43C; &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x43C; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x43C; <sup>89</sup>Y. &#x418;&#x442;&#x442;&#x440;&#x438;&#x439; &#x432;&#x43C;&#x435;&#x441;&#x442;&#x435; &#x441;&#x43E; &#x441;&#x43A;&#x430;&#x43D;&#x434;&#x438;&#x435;&#x43C;, &#x43B;&#x430;&#x43D;&#x442;&#x430;&#x43D;&#x43E;&#x43C; &#x438; <a href=\"art.php?t=la\">&#x43B;&#x430;&#x43D;&#x442;&#x430;&#x43D;&#x43E;&#x438;&#x434;&#x430;&#x43C;&#x438;</a> &#x441;&#x43E;&#x441;&#x442;&#x430;&#x432;&#x43B;&#x44F;&#x435;&#x442; &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x443; &#x442;&#x430;&#x43A; &#x43D;&#x430;&#x437;&#x44B;&#x432;&#x430;&#x435;&#x43C;&#x44B;&#x445; &#x440;&#x435;&#x434;&#x43A;&#x43E;&#x437;&#x435;&#x43C;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x43E;&#x432;. &#x42D;&#x442;&#x438; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x44B; &#x43E;&#x447;&#x435;&#x43D;&#x44C; &#x441;&#x445;&#x43E;&#x434;&#x43D;&#x44B; &#x43F;&#x43E; &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x43C; &#x441;&#x432;&#x43E;&#x439;&#x441;&#x442;&#x432;&#x430;&#x43C;, &#x441;&#x43E;&#x432;&#x43C;&#x435;&#x441;&#x442;&#x43D;&#x43E; &#x432;&#x441;&#x442;&#x440;&#x435;&#x447;&#x430;&#x44E;&#x442;&#x441;&#x44F; &#x432; &#x43F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x435;, &#x438;&#x43C;&#x435;&#x44E;&#x442; &#x43E;&#x431;&#x449;&#x443;&#x44E; &#x438;&#x441;&#x442;&#x43E;&#x440;&#x438;&#x44E; &#x43E;&#x442;&#x43A;&#x440;&#x44B;&#x442;&#x438;&#x44F;.\n",
+        "Атомная масса": "88.906",
+        "Плотность, кг/м³": "4470",
+        "Температура плавления, °С": "1525",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.297",
+        "Электроотрицательность": "1.3",
+        "Ковалентный радиус, Å": "1.62",
+        "1-й ионизац. потенциал, эв": "6.38"
+    },
+    {
+        "Химический символ": "Zr",
+        "label": "Цирконий Zirconium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Kr)4d25s2",
+        "description": "<b>&#x426;&#x438;&#x440;&#x43A;&#x43E;&#x43D;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Zirconium), Zr, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; IV &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 40, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 91,22; &#x441;&#x435;&#x440;&#x435;&#x431;&#x440;&#x438;&#x441;&#x442;&#x43E;-&#x431;&#x435;&#x43B;&#x44B;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B; &#x441; &#x445;&#x430;&#x440;&#x430;&#x43A;&#x442;&#x435;&#x440;&#x43D;&#x44B;&#x43C; &#x431;&#x43B;&#x435;&#x441;&#x43A;&#x43E;&#x43C;. &#x418;&#x437;&#x432;&#x435;&#x441;&#x442;&#x43D;&#x43E; &#x43F;&#x44F;&#x442;&#x44C; &#x43F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x426;&#x438;&#x440;&#x43A;&#x43E;&#x43D;&#x438;&#x44F;: <sup>90</sup>Zr (51,46%),<sup>91</sup>Zr (11,23%),<sup>92</sup>Zr (17,11%), <sup>94</sup>Zr (17,4%), <sup>96</sup>Zr (2,8%). &#x418;&#x437; &#x438;&#x441;&#x43A;&#x443;&#x441;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x44B;&#x445; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x432;&#x430;&#x436;&#x43D;&#x435;&#x439;&#x448;&#x438;&#x439; <sup>95</sup>Zr (&#x422;<sub>&#xBD;</sub> = 65 &#x441;&#x443;&#x442;); &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x432; &#x43A;&#x430;&#x447;&#x435;&#x441;&#x442;&#x432;&#x435; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43D;&#x43E;&#x433;&#x43E; &#x438;&#x43D;&#x434;&#x438;&#x43A;&#x430;&#x442;&#x43E;&#x440;&#x430;.\n",
+        "Атомная масса": "91.224",
+        "Плотность, кг/м³": "6490",
+        "Температура плавления, °С": "1852",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.276",
+        "Электроотрицательность": "1.4",
+        "Ковалентный радиус, Å": "1.45",
+        "1-й ионизац. потенциал, эв": "6.84"
+    },
+    {
+        "Химический символ": "Nb",
+        "label": "Ниобий Niobium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Kr)4d45s1",
+        "description": "<b>&#x41D;&#x438;&#x43E;&#x431;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Niobium), Nb, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; V &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 41, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 92,9064; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B; &#x441;&#x435;&#x440;&#x43E;-&#x441;&#x442;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x433;&#x43E; &#x446;&#x432;&#x435;&#x442;&#x430;. &#x42D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; &#x438;&#x43C;&#x435;&#x435;&#x442; &#x43E;&#x434;&#x438;&#x43D; &#x43F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x43D;&#x44B;&#x439; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F; <sup>93</sup>Nb.\n",
+        "Атомная масса": "92.906",
+        "Плотность, кг/м³": "8400",
+        "Температура плавления, °С": "2468",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.272",
+        "Электроотрицательность": "1.6",
+        "Ковалентный радиус, Å": "1.34",
+        "1-й ионизац. потенциал, эв": "6.88"
+    },
+    {
+        "Химический символ": "Mo",
+        "label": "Молибден Molybdenum",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Kr)4d55s1",
+        "description": "<b>&#x41C;&#x43E;&#x43B;&#x438;&#x431;&#x434;&#x435;&#x43D;</b> (&#x43B;&#x430;&#x442;. Molybdaenum), Mo, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; VI &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 42, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 95,94; &#x441;&#x432;&#x435;&#x442;&#x43B;&#x43E;-&#x441;&#x435;&#x440;&#x44B;&#x439; &#x442;&#x443;&#x433;&#x43E;&#x43F;&#x43B;&#x430;&#x432;&#x43A;&#x438;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;. &#x412; &#x43F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x435; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; &#x43F;&#x440;&#x435;&#x434;&#x441;&#x442;&#x430;&#x432;&#x43B;&#x435;&#x43D; &#x441;&#x435;&#x43C;&#x44C;&#x44E; &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x43C;&#x438; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x430;&#x43C;&#x438; &#x441; &#x43C;&#x430;&#x441;&#x441;&#x43E;&#x432;&#x44B;&#x43C;&#x438; &#x447;&#x438;&#x441;&#x43B;&#x430;&#x43C;&#x438; 92, 94-98 &#x438; 100, &#x438;&#x437; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x445; &#x43D;&#x430;&#x438;&#x431;&#x43E;&#x43B;&#x435;&#x435; &#x440;&#x430;&#x441;&#x43F;&#x440;&#x43E;&#x441;&#x442;&#x440;&#x430;&#x43D;&#x435;&#x43D; <sup>98</sup>&#x41C;&#x43E; (23,75%). &#x412;&#x43F;&#x43B;&#x43E;&#x442;&#x44C; &#x434;&#x43E; 18 &#x432;&#x435;&#x43A;&#x430; &#x43E;&#x441;&#x43D;&#x43E;&#x432;&#x43D;&#x43E;&#x439; &#x43C;&#x438;&#x43D;&#x435;&#x440;&#x430;&#x43B; &#x41C;&#x43E;&#x43B;&#x438;&#x431;&#x434;&#x435;&#x43D; &#x43C;&#x43E;&#x43B;&#x438;&#x431;&#x434;&#x435;&#x43D;&#x43E;&#x432;&#x44B;&#x439; &#x431;&#x43B;&#x435;&#x441;&#x43A; (&#x43C;&#x43E;&#x43B;&#x438;&#x431;&#x434;&#x435;&#x43D;&#x438;&#x442;) &#x43D;&#x435; &#x43E;&#x442;&#x43B;&#x438;&#x447;&#x430;&#x43B;&#x438; &#x43E;&#x442; &#x433;&#x440;&#x430;&#x444;&#x438;&#x442;&#x430; &#x438; &#x441;&#x432;&#x438;&#x43D;&#x446;&#x43E;&#x432;&#x43E;&#x433;&#x43E; &#x431;&#x43B;&#x435;&#x441;&#x43A;&#x430;, &#x442;&#x430;&#x43A; &#x43A;&#x430;&#x43A; &#x43E;&#x43D;&#x438; &#x43E;&#x447;&#x435;&#x43D;&#x44C; &#x441;&#x445;&#x43E;&#x436;&#x438; &#x43F;&#x43E; &#x432;&#x43D;&#x435;&#x448;&#x43D;&#x435;&#x43C;&#x443; &#x432;&#x438;&#x434;&#x443;. &#x42D;&#x442;&#x438; &#x43C;&#x438;&#x43D;&#x435;&#x440;&#x430;&#x43B;&#x44B; &#x43D;&#x43E;&#x441;&#x438;&#x43B;&#x438; &#x43E;&#x431;&#x449;&#x435;&#x435; &#x43D;&#x430;&#x437;&#x432;&#x430;&#x43D;&#x438;&#x435; &quot;&#x43C;&#x43E;&#x43B;&#x438;&#x431;&#x434;&#x435;&#x43D;&quot; (&#x43E;&#x442; &#x433;&#x440;&#x435;&#x447;. molybdos - &#x441;&#x432;&#x438;&#x43D;&#x435;&#x446;).\n",
+        "Атомная масса": "95.94",
+        "Плотность, кг/м³": "10200",
+        "Температура плавления, °С": "2620",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.255",
+        "Электроотрицательность": "1.8",
+        "Ковалентный радиус, Å": "1.30",
+        "1-й ионизац. потенциал, эв": "7.10"
+    },
+    {
+        "Химический символ": "Tc",
+        "label": "Технеций Technetium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Kr)4d55s2",
+        "description": "<b>&#x422;&#x435;&#x445;&#x43D;&#x435;&#x446;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Technetium), &#x422;&#x441;, &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x439; &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; VII &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 43, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 98, 9062; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;, &#x43A;&#x43E;&#x432;&#x43A;&#x438;&#x439; &#x438; &#x43F;&#x43B;&#x430;&#x441;&#x442;&#x438;&#x447;&#x43D;&#x44B;&#x439;.\n",
+        "Атомная масса": "[98]",
+        "Плотность, кг/м³": "11500",
+        "Температура плавления, °С": "2140",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.21",
+        "Электроотрицательность": "1.9",
+        "Ковалентный радиус, Å": "1.27",
+        "1-й ионизац. потенциал, эв": "7.28"
+    },
+    {
+        "Химический символ": "Ru",
+        "label": "Рутений Ruthenium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Kr)4d75s1",
+        "description": "<b>&#x420;&#x443;&#x442;&#x435;&#x43D;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Ruthenium), Ru, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; VIII &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 44, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 101,07; &#x43E;&#x434;&#x438;&#x43D; &#x438;&#x437; <a href=\"art.php?t=pt\">&#x43F;&#x43B;&#x430;&#x442;&#x438;&#x43D;&#x43E;&#x432;&#x44B;&#x445; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;&#x43E;&#x432;</a>.\n",
+        "Атомная масса": "101.07",
+        "Плотность, кг/м³": "12200",
+        "Температура плавления, °С": "2500",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.239",
+        "Электроотрицательность": "2.2",
+        "Ковалентный радиус, Å": "1.25",
+        "1-й ионизац. потенциал, эв": "7.36"
+    },
+    {
+        "Химический символ": "Rh",
+        "label": "Родий Rhodium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Kr)4d85s1",
+        "description": "<b>&#x420;&#x43E;&#x434;&#x438;&#x439;</b> (Rhodium, Rh), &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; VIII &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 45, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 102,9055; &#x43E;&#x434;&#x438;&#x43D; &#x438;&#x437; <a href=\"art.php?t=pt\">&#x43F;&#x43B;&#x430;&#x442;&#x438;&#x43D;&#x43E;&#x432;&#x44B;&#x445; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;&#x43E;&#x432;</a>.\n",
+        "Атомная масса": "102.91",
+        "Плотность, кг/м³": "12400",
+        "Температура плавления, °С": "1966",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.247",
+        "Электроотрицательность": "2.2",
+        "Ковалентный радиус, Å": "1.25",
+        "1-й ионизац. потенциал, эв": "7.46"
+    },
+    {
+        "Химический символ": "Pd",
+        "label": "Палладий Palladium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Kr)4d105s0",
+        "description": "<b>&#x41F;&#x430;&#x43B;&#x43B;&#x430;&#x434;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Palladium; &#x43D;&#x430;&#x437;&#x432;&#x430;&#x43D; &#x432; &#x447;&#x435;&#x441;&#x442;&#x44C; &#x43E;&#x442;&#x43A;&#x440;&#x44B;&#x442;&#x438;&#x44F; &#x43C;&#x430;&#x43B;&#x43E;&#x439; &#x43F;&#x43B;&#x430;&#x43D;&#x435;&#x442;&#x44B; &#x41F;&#x430;&#x43B;&#x43B;&#x430;&#x434;&#x44B;), Pd, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; VIII &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 46, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 106,4; &#x442;&#x44F;&#x436;&#x435;&#x43B;&#x44B;&#x439; &#x442;&#x443;&#x433;&#x43E;&#x43F;&#x43B;&#x430;&#x432;&#x43A;&#x438;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;. &#x41E;&#x442;&#x43D;&#x43E;&#x441;&#x438;&#x442;&#x441;&#x44F; &#x43A; <a href=\"art.php?t=pt\">&#x43F;&#x43B;&#x430;&#x442;&#x438;&#x43D;&#x43E;&#x432;&#x44B;&#x43C; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;&#x430;&#x43C;</a>.\n",
+        "Атомная масса": "106.42",
+        "Плотность, кг/м³": "12000",
+        "Температура плавления, °С": "1552",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.243",
+        "Электроотрицательность": "2.2",
+        "Ковалентный радиус, Å": "1.28",
+        "1-й ионизац. потенциал, эв": "8.33"
+    },
+    {
+        "Химический символ": "Ag",
+        "label": "Серебро Silver",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Kr)4d105s1",
+        "description": "<b>&#x421;&#x435;&#x440;&#x435;&#x431;&#x440;&#x43E;</b> (&#x43B;&#x430;&#x442;. Argentum), Ag, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; I &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 47, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 107,868; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B; &#x431;&#x435;&#x43B;&#x43E;&#x433;&#x43E; &#x446;&#x432;&#x435;&#x442;&#x430;, &#x43F;&#x43B;&#x430;&#x441;&#x442;&#x438;&#x447;&#x43D;&#x44B;&#x439;, &#x445;&#x43E;&#x440;&#x43E;&#x448;&#x43E; &#x43F;&#x43E;&#x43B;&#x438;&#x440;&#x443;&#x435;&#x442;&#x441;&#x44F;. &#x412; &#x43F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x435; &#x43D;&#x430;&#x445;&#x43E;&#x434;&#x438;&#x442;&#x441;&#x44F; &#x432; &#x432;&#x438;&#x434;&#x435; &#x441;&#x43C;&#x435;&#x441;&#x438; &#x434;&#x432;&#x443;&#x445; &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; <sup>107</sup>Ag &#x438; <sup>109</sup>Ag; &#x438;&#x437; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x43F;&#x440;&#x430;&#x43A;&#x442;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438; &#x432;&#x430;&#x436;&#x435;&#x43D; <sup>110</sup>Ag (T<sub>&#xBD;</sub> = 253 &#x441;&#x443;&#x442;). &#x421;&#x435;&#x440;&#x435;&#x431;&#x440;&#x43E; &#x431;&#x44B;&#x43B;&#x43E; &#x438;&#x437;&#x432;&#x435;&#x441;&#x442;&#x43D;&#x43E; &#x432; &#x433;&#x43B;&#x443;&#x431;&#x43E;&#x43A;&#x43E;&#x439; &#x434;&#x440;&#x435;&#x432;&#x43D;&#x43E;&#x441;&#x442;&#x438; (4-&#x435; &#x442;&#x44B;&#x441;&#x44F;&#x447;&#x435;&#x43B;&#x435;&#x442;&#x438;&#x435; &#x434;&#x43E; &#x43D;. &#x44D;.) &#x432; &#x415;&#x433;&#x438;&#x43F;&#x442;&#x435;, &#x41F;&#x435;&#x440;&#x441;&#x438;&#x438;, &#x41A;&#x438;&#x442;&#x430;&#x435;.\n",
+        "Атомная масса": "107.87",
+        "Плотность, кг/м³": "10500",
+        "Температура плавления, °С": "960.8",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.234",
+        "Электроотрицательность": "1.9",
+        "Ковалентный радиус, Å": "1.34",
+        "1-й ионизац. потенциал, эв": "7.58"
+    },
+    {
+        "Химический символ": "Cd",
+        "label": "Кадмий Cadmium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Kr)4d105s2",
+        "description": "<b>&#x41A;&#x430;&#x434;&#x43C;&#x438;&#x439;</b> (Cadmium), Cd, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; II &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 48, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 112,40; &#x431;&#x435;&#x43B;&#x44B;&#x439;, &#x431;&#x43B;&#x435;&#x441;&#x442;&#x44F;&#x449;&#x438;&#x439;, &#x442;&#x44F;&#x436;&#x435;&#x43B;&#x44B;&#x439;, &#x43C;&#x44F;&#x433;&#x43A;&#x438;&#x439;, &#x442;&#x44F;&#x433;&#x443;&#x447;&#x438;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;. &#x42D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x438;&#x442; &#x438;&#x437; &#x441;&#x43C;&#x435;&#x441;&#x438; 8 &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x441; &#x43C;&#x430;&#x441;&#x441;&#x43E;&#x432;&#x44B;&#x43C;&#x438; &#x447;&#x438;&#x441;&#x43B;&#x430;&#x43C;&#x438;: 106 (1,215%), 108 (0,875%), 110 (12,39%), 111 (12,75%), 112 (24,07%), 113 (12,26%), 114 (28,86%), 116 (7,58%).\n",
+        "Атомная масса": "112.41",
+        "Плотность, кг/м³": "8650",
+        "Температура плавления, °С": "320.9",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.23",
+        "Электроотрицательность": "1.7",
+        "Ковалентный радиус, Å": "1.48",
+        "1-й ионизац. потенциал, эв": "8.99"
+    },
+    {
+        "Химический символ": "In",
+        "label": "Индий Indium",
+        "Электронная формула": "(Kr)4d105s25p1",
+        "description": "<b>&#x418;&#x43D;&#x434;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Indium), In, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; III &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 49, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 114,82; &#x431;&#x435;&#x43B;&#x44B;&#x439; &#x431;&#x43B;&#x435;&#x441;&#x442;&#x44F;&#x449;&#x438;&#x439; &#x43C;&#x44F;&#x433;&#x43A;&#x438;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;. &#x42D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x438;&#x442; &#x438;&#x437; &#x441;&#x43C;&#x435;&#x441;&#x438; &#x434;&#x432;&#x443;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432;: <sup>113</sup>In (4,33%) &#x438; <sup>115</sup>In (95,67%); &#x43F;&#x43E;&#x441;&#x43B;&#x435;&#x434;&#x43D;&#x438;&#x439; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F; &#x43E;&#x431;&#x43B;&#x430;&#x434;&#x430;&#x435;&#x442; &#x43E;&#x447;&#x435;&#x43D;&#x44C; &#x441;&#x43B;&#x430;&#x431;&#x43E;&#x439; &#x3B2;-&#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x43E;&#x441;&#x442;&#x44C;&#x44E; (&#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434; &#x43F;&#x43E;&#x43B;&#x443;&#x440;&#x430;&#x441;&#x43F;&#x430;&#x434;&#x430; T<sub>&#xBD;</sub> = 6&#xB7;10<sup>14</sup> &#x43B;&#x435;&#x442;).\n",
+        "Атомная масса": "114.82",
+        "Плотность, кг/м³": "7310",
+        "Температура плавления, °С": "156.2",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.239",
+        "Электроотрицательность": "1.7",
+        "Ковалентный радиус, Å": "1.44",
+        "1-й ионизац. потенциал, эв": "5.78"
+    },
+    {
+        "Химический символ": "Sn",
+        "label": "Олово Tin",
+        "Электронная формула": "(Kr)4d105s25p2",
+        "description": "<b>&#x41E;&#x43B;&#x43E;&#x432;&#x43E;</b> (&#x43B;&#x430;&#x442;. Stannum), Sn, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; IV &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 50, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 118,69; &#x431;&#x435;&#x43B;&#x44B;&#x439; &#x431;&#x43B;&#x435;&#x441;&#x442;&#x44F;&#x449;&#x438;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;, &#x442;&#x44F;&#x436;&#x435;&#x43B;&#x44B;&#x439;, &#x43C;&#x44F;&#x433;&#x43A;&#x438;&#x439; &#x438; &#x43F;&#x43B;&#x430;&#x441;&#x442;&#x438;&#x447;&#x43D;&#x44B;&#x439;. &#x42D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x438;&#x442; &#x438;&#x437; 10 &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x441; &#x43C;&#x430;&#x441;&#x441;&#x43E;&#x432;&#x44B;&#x43C;&#x438; &#x447;&#x438;&#x441;&#x43B;&#x430;&#x43C;&#x438; 112, 114-120, 122, 124; &#x43F;&#x43E;&#x441;&#x43B;&#x435;&#x434;&#x43D;&#x438;&#x439; &#x441;&#x43B;&#x430;&#x431;&#x43E; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x435;&#x43D;; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F; <sup>120</sup>Sn &#x43D;&#x430;&#x438;&#x431;&#x43E;&#x43B;&#x435;&#x435; &#x440;&#x430;&#x441;&#x43F;&#x440;&#x43E;&#x441;&#x442;&#x440;&#x430;&#x43D;&#x435;&#x43D; (&#x43E;&#x43A;&#x43E;&#x43B;&#x43E; 33%).\n",
+        "Атомная масса": "118.71",
+        "Плотность, кг/м³": "7300",
+        "Температура плавления, °С": "231.9",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.226",
+        "Электроотрицательность": "1.8",
+        "Ковалентный радиус, Å": "1.41",
+        "1-й ионизац. потенциал, эв": "7.34"
+    },
+    {
+        "Химический символ": "Sb",
+        "label": "Сурьма Antimony",
+        "Электронная формула": "(Kr)4d105s25p3",
+        "description": "<b>&#x421;&#x443;&#x440;&#x44C;&#x43C;&#x430;</b> (&#x43B;&#x430;&#x442;. Stibium), Sb, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; V &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 51, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 121,75; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B; &#x441;&#x435;&#x440;&#x435;&#x431;&#x440;&#x438;&#x441;&#x442;&#x43E;-&#x431;&#x435;&#x43B;&#x43E;&#x433;&#x43E; &#x446;&#x432;&#x435;&#x442;&#x430; &#x441; &#x441;&#x438;&#x43D;&#x435;&#x432;&#x430;&#x442;&#x44B;&#x43C; &#x43E;&#x442;&#x442;&#x435;&#x43D;&#x43A;&#x43E;&#x43C;. &#x412; &#x43F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x435; &#x438;&#x437;&#x432;&#x435;&#x441;&#x442;&#x43D;&#x44B; &#x434;&#x432;&#x430; &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x430; <sup>121</sup>Sb (57,25%) &#x438; <sup>123</sup>Sb (42,75%). &#x418;&#x437; &#x438;&#x441;&#x43A;&#x443;&#x441;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x43E; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x43D;&#x44B;&#x445; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x432;&#x430;&#x436;&#x43D;&#x435;&#x439;&#x448;&#x438;&#x435; <sup>122</sup>Sb (&#x422;<sub>&#xBD;</sub> = 2,8 &#x441;&#x443;&#x442;), <sup>124</sup>Sb (&#x422;<sub>&#xBD;</sub> = 60,2 &#x441;&#x443;&#x442;) &#x438; <sup>123</sup>Sb (&#x422;<sub>&#xBD;</sub> = 2 &#x433;&#x43E;&#x434;&#x430;).\n",
+        "Атомная масса": "121.76",
+        "Плотность, кг/м³": "6620",
+        "Температура плавления, °С": "630.5",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.205",
+        "Электроотрицательность": "1.9",
+        "Ковалентный радиус, Å": "1.40",
+        "1-й ионизац. потенциал, эв": "8.64"
+    },
+    {
+        "Химический символ": "Te",
+        "label": "Теллур Tellurium",
+        "Электронная формула": "(Kr)4d105s25p4",
+        "description": "<b>&#x422;&#x435;&#x43B;&#x43B;&#x443;&#x440;</b> (&#x43B;&#x430;&#x442;. Tellurium), &#x422;&#x435;, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; VI &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x433;&#x43B;&#x430;&#x432;&#x43D;&#x43E;&#x439; &#x43F;&#x43E;&#x434;&#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 52, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 127,60, &#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x438;&#x442;&#x441;&#x44F; &#x43A; &#x440;&#x435;&#x434;&#x43A;&#x438;&#x43C; &#x440;&#x430;&#x441;&#x441;&#x435;&#x44F;&#x43D;&#x43D;&#x44B;&#x43C; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x430;&#x43C;. &#x412; &#x43F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x435; &#x432;&#x441;&#x442;&#x440;&#x435;&#x447;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x432; &#x432;&#x438;&#x434;&#x435; &#x432;&#x43E;&#x441;&#x44C;&#x43C;&#x438; &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x441; &#x43C;&#x430;&#x441;&#x441;&#x43E;&#x432;&#x44B;&#x43C;&#x438; &#x447;&#x438;&#x441;&#x43B;&#x430;&#x43C;&#x438; 120, 122-126, 128, 130, &#x438;&#x437; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x445; &#x43D;&#x430;&#x438;&#x431;&#x43E;&#x43B;&#x435;&#x435; &#x440;&#x430;&#x441;&#x43F;&#x440;&#x43E;&#x441;&#x442;&#x440;&#x430;&#x43D;&#x435;&#x43D;&#x44B; <sup>128</sup>&#x422;&#x435; (31,79%) &#x438; <sup>130</sup>&#x422;&#x435; (34,48%). &#x418;&#x437; &#x438;&#x441;&#x43A;&#x443;&#x441;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x43E; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x43D;&#x44B;&#x445; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x448;&#x438;&#x440;&#x43E;&#x43A;&#x43E;&#x435; &#x43F;&#x440;&#x438;&#x43C;&#x435;&#x43D;&#x435;&#x43D;&#x438;&#x435; &#x432; &#x43A;&#x430;&#x447;&#x435;&#x441;&#x442;&#x432;&#x435; &#x43C;&#x435;&#x447;&#x435;&#x43D;&#x44B;&#x445; &#x430;&#x442;&#x43E;&#x43C;&#x43E;&#x432; &#x438;&#x43C;&#x435;&#x44E;&#x442; <sup>127</sup>&#x422;&#x435; (&#x422;<sub>&#xBD;</sub> = 105 &#x441;&#x443;&#x442;) &#x438; <sup>129</sup>&#x422;&#x435; (&#x422;<sub>&#xBD;</sub> = 33,5 &#x441;&#x443;&#x442;). &#x422;&#x435;&#x43B;&#x43B;&#x443;&#x440; &#x43E;&#x442;&#x43A;&#x440;&#x44B;&#x442; &#x424;. &#x41C;&#x44E;&#x43B;&#x43B;&#x435;&#x440;&#x43E;&#x43C; &#x432; 1782 &#x433;&#x43E;&#x434;&#x443;. &#x41D;&#x435;&#x43C;&#x435;&#x446;&#x43A;&#x438;&#x439; &#x443;&#x447;&#x435;&#x43D;&#x44B;&#x439; &#x41C;. &#x413;. &#x41A;&#x43B;&#x430;&#x43F;&#x440;&#x43E;&#x442; &#x43F;&#x43E;&#x434;&#x442;&#x432;&#x435;&#x440;&#x434;&#x438;&#x43B; &#x44D;&#x442;&#x43E; &#x43E;&#x442;&#x43A;&#x440;&#x44B;&#x442;&#x438;&#x435; &#x438; &#x434;&#x430;&#x43B; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x443; &#x43D;&#x430;&#x437;&#x432;&#x430;&#x43D;&#x438;&#x435; &quot;&#x442;&#x435;&#x43B;&#x43B;&#x443;&#x440;&quot; (&#x43E;&#x442; &#x43B;&#x430;&#x442;. tellus, &#x440;&#x43E;&#x434;. &#x43F;&#x430;&#x434;&#x435;&#x436; telluris - &#x417;&#x435;&#x43C;&#x43B;&#x44F;). &#x41F;&#x435;&#x440;&#x432;&#x44B;&#x435; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x430;&#x442;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x435; &#x438;&#x441;&#x441;&#x43B;&#x435;&#x434;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; &#x445;&#x438;&#x43C;&#x438;&#x438; &#x422;&#x435;&#x43B;&#x43B;&#x443;&#x440;&#x430; &#x432;&#x44B;&#x43F;&#x43E;&#x43B;&#x43D;&#x435;&#x43D;&#x44B; &#x432; 30-&#x445; &#x433;&#x43E;&#x434;&#x430;&#x445; 19 &#x432;&#x435;&#x43A;&#x430; &#x418;. &#x42F;. &#x411;&#x435;&#x440;&#x446;&#x435;&#x43B;&#x438;&#x443;&#x441;&#x43E;&#x43C;.\n",
+        "Атомная масса": "127.6",
+        "Плотность, кг/м³": "6240",
+        "Температура плавления, °С": "449.5",
+        "Температура кипения, °С": "990",
+        "Теплоемкость, кДж/(кг·°С)": "0.197",
+        "Электроотрицательность": "2.1",
+        "Ковалентный радиус, Å": "1.36",
+        "1-й ионизац. потенциал, эв": "9.01"
+    },
+    {
+        "Химический символ": "I",
+        "color": "0xA057E6",
+        "shadow": "0xA429F4",
+        "label": "Иод Iodine",
+        "Электронная формула": "(Kr)4d105s25p5",
+        "description": "<b>&#x418;&#x43E;&#x434;</b> (&#x43B;&#x430;&#x442;. Iodum), I, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; VII &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;, &#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x438;&#x442;&#x441;&#x44F; &#x43A; &#x433;&#x430;&#x43B;&#x43E;&#x433;&#x435;&#x43D;&#x430;&#x43C; (&#x432; &#x43B;&#x438;&#x442;&#x435;&#x440;&#x430;&#x442;&#x443;&#x440;&#x435; &#x432;&#x441;&#x442;&#x440;&#x435;&#x447;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x442;&#x430;&#x43A;&#x436;&#x435; &#x443;&#x441;&#x442;&#x430;&#x440;&#x435;&#x432;&#x448;&#x438;&#x435; &#x43D;&#x430;&#x437;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x419;&#x43E;&#x434; &#x438; &#x441;&#x438;&#x43C;&#x432;&#x43E;&#x43B; J); &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 53, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 126,9045; &#x43A;&#x440;&#x438;&#x441;&#x442;&#x430;&#x43B;&#x43B;&#x44B; &#x447;&#x435;&#x440;&#x43D;&#x43E;-&#x441;&#x435;&#x440;&#x43E;&#x433;&#x43E; &#x446;&#x432;&#x435;&#x442;&#x430; &#x441; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x43C; &#x431;&#x43B;&#x435;&#x441;&#x43A;&#x43E;&#x43C;. &#x41F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x43D;&#x44B;&#x439; &#x418;&#x43E;&#x434; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x438;&#x442; &#x438;&#x437; &#x43E;&#x434;&#x43D;&#x43E;&#x433;&#x43E; &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x43E;&#x433;&#x43E; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x430; &#x441; &#x43C;&#x430;&#x441;&#x441;&#x43E;&#x432;&#x44B;&#x43C; &#x447;&#x438;&#x441;&#x43B;&#x43E;&#x43C; 127. &#x418;&#x43E;&#x434; &#x43E;&#x442;&#x43A;&#x440;&#x44B;&#x43B; &#x432; 1811 &#x433;&#x43E;&#x434;&#x443; &#x444;&#x440;&#x430;&#x43D;&#x446;&#x443;&#x437;&#x441;&#x43A;&#x438;&#x439; &#x445;&#x438;&#x43C;&#x438;&#x43A; &#x411;. &#x41A;&#x443;&#x440;&#x442;&#x443;&#x430;. &#x41D;&#x430;&#x433;&#x440;&#x435;&#x432;&#x430;&#x44F; &#x43C;&#x430;&#x442;&#x43E;&#x447;&#x43D;&#x44B;&#x439; &#x440;&#x430;&#x441;&#x441;&#x43E;&#x43B; &#x437;&#x43E;&#x43B;&#x44B; &#x43C;&#x43E;&#x440;&#x441;&#x43A;&#x438;&#x445; &#x432;&#x43E;&#x434;&#x43E;&#x440;&#x43E;&#x441;&#x43B;&#x435;&#x439; &#x441; &#x43A;&#x43E;&#x43D;&#x446;&#x435;&#x43D;&#x442;&#x440;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x43D;&#x43E;&#x439; &#x441;&#x435;&#x440;&#x43D;&#x43E;&#x439; &#x43A;&#x438;&#x441;&#x43B;&#x43E;&#x442;&#x43E;&#x439;, &#x43E;&#x43D; &#x43D;&#x430;&#x431;&#x43B;&#x44E;&#x434;&#x430;&#x43B; &#x432;&#x44B;&#x434;&#x435;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x444;&#x438;&#x43E;&#x43B;&#x435;&#x442;&#x43E;&#x432;&#x43E;&#x433;&#x43E; &#x43F;&#x430;&#x440;&#x430; (&#x43E;&#x442;&#x441;&#x44E;&#x434;&#x430; &#x43D;&#x430;&#x437;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x418;&#x43E;&#x434; - &#x43E;&#x442; &#x433;&#x440;&#x435;&#x447;. iodes, ioeides - &#x43F;&#x43E;&#x445;&#x43E;&#x436;&#x438;&#x439; &#x446;&#x432;&#x435;&#x442;&#x43E;&#x43C; &#x43D;&#x430; &#x444;&#x438;&#x430;&#x43B;&#x43A;&#x443;, &#x444;&#x438;&#x43E;&#x43B;&#x435;&#x442;&#x43E;&#x432;&#x44B;&#x439;), &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x439; &#x43A;&#x43E;&#x43D;&#x434;&#x435;&#x43D;&#x441;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43B;&#x441;&#x44F; &#x432; &#x432;&#x438;&#x434;&#x435; &#x442;&#x435;&#x43C;&#x43D;&#x44B;&#x445; &#x431;&#x43B;&#x435;&#x441;&#x442;&#x44F;&#x449;&#x438;&#x445; &#x43F;&#x43B;&#x430;&#x441;&#x442;&#x438;&#x43D;&#x447;&#x430;&#x442;&#x44B;&#x445; &#x43A;&#x440;&#x438;&#x441;&#x442;&#x430;&#x43B;&#x43B;&#x43E;&#x432;. &#x412; 1813-1814 &#x433;&#x43E;&#x434;&#x430;&#x445; &#x444;&#x440;&#x430;&#x43D;&#x446;&#x443;&#x437;&#x441;&#x43A;&#x438;&#x439; &#x445;&#x438;&#x43C;&#x438;&#x43A; &#x416;. &#x41B;. &#x413;&#x435;&#x439;-&#x41B;&#x44E;&#x441;&#x441;&#x430;&#x43A; &#x438; &#x430;&#x43D;&#x433;&#x43B;&#x438;&#x439;&#x441;&#x43A;&#x438;&#x439; &#x445;&#x438;&#x43C;&#x438;&#x43A; &#x413;. &#x414;&#x44D;&#x432;&#x438; &#x434;&#x43E;&#x43A;&#x430;&#x437;&#x430;&#x43B;&#x438; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x430;&#x440;&#x43D;&#x443;&#x44E; &#x43F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x443; &#x418;&#x43E;&#x434;&#x430;.\n",
+        "Атомная масса": "126.90",
+        "Плотность, кг/м³": "4940",
+        "Температура плавления, °С": "113.7",
+        "Температура кипения, °С": "183.5",
+        "Теплоемкость, кДж/(кг·°С)": "0.218",
+        "Электроотрицательность": "2.5",
+        "Ковалентный радиус, Å": "1.33",
+        "1-й ионизац. потенциал, эв": "10.45"
+    },
+    {
+        "Химический символ": "Xe",
+        "label": "Ксенон Xenon",
+        "color": "0x30C7E6",
+        "shadow": "0x10AFC8",
+        "Электронная формула": "(Kr)4d105s25p6",
+        "description": "<b>&#x41A;&#x441;&#x435;&#x43D;&#x43E;&#x43D;</b> (&#x43B;&#x430;&#x442;. Xenonum), Xe, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; VIII &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x414;. &#x418;. &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;, &#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x438;&#x442;&#x441;&#x44F; &#x43A; &#x438;&#x43D;&#x435;&#x440;&#x442;&#x43D;&#x44B;&#x43C; &#x433;&#x430;&#x437;&#x430;&#x43C;; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 54, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 131,30. &#x41D;&#x430; &#x417;&#x435;&#x43C;&#x43B;&#x435; &#x41A;&#x441;&#x435;&#x43D;&#x43E;&#x43D; &#x43F;&#x440;&#x438;&#x441;&#x443;&#x442;&#x441;&#x442;&#x432;&#x443;&#x435;&#x442; &#x433;&#x43B;&#x430;&#x432;&#x43D;&#x44B;&#x43C; &#x43E;&#x431;&#x440;&#x430;&#x437;&#x43E;&#x43C; &#x432; &#x430;&#x442;&#x43C;&#x43E;&#x441;&#x444;&#x435;&#x440;&#x435;. &#x410;&#x442;&#x43C;&#x43E;&#x441;&#x444;&#x435;&#x440;&#x43D;&#x44B;&#x439; &#x41A;&#x441;&#x435;&#x43D;&#x43E;&#x43D; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x438;&#x442; &#x438;&#x437; 9 &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432;, &#x441;&#x440;&#x435;&#x434;&#x438; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x445; &#x43F;&#x440;&#x435;&#x43E;&#x431;&#x43B;&#x430;&#x434;&#x430;&#x44E;&#x442; <sup>129</sup>&#x425;&#x435;, <sup>131</sup>&#x425;&#x435; &#x438; <sup>132</sup>&#x425;&#x435;. &#x41E;&#x442;&#x43A;&#x440;&#x44B;&#x442; &#x432; 1898 &#x433;&#x43E;&#x434;&#x443; &#x430;&#x43D;&#x433;&#x43B;&#x438;&#x439;&#x441;&#x43A;&#x438;&#x43C;&#x438; &#x438;&#x441;&#x441;&#x43B;&#x435;&#x434;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44F;&#x43C;&#x438; &#x423;. &#x420;&#x430;&#x43C;&#x437;&#x430;&#x435;&#x43C; &#x438; &#x41C;. &#x422;&#x440;&#x430;&#x432;&#x435;&#x440;&#x441;&#x43E;&#x43C;, &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x435; &#x43F;&#x43E;&#x434;&#x432;&#x435;&#x440;&#x433;&#x43B;&#x438; &#x43C;&#x435;&#x434;&#x43B;&#x435;&#x43D;&#x43D;&#x43E;&#x43C;&#x443; &#x438;&#x441;&#x43F;&#x430;&#x440;&#x435;&#x43D;&#x438;&#x44E; &#x436;&#x438;&#x434;&#x43A;&#x438;&#x439; &#x432;&#x43E;&#x437;&#x434;&#x443;&#x445; &#x438; &#x441;&#x43F;&#x435;&#x43A;&#x442;&#x440;&#x43E;&#x441;&#x43A;&#x43E;&#x43F;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x43C; &#x43C;&#x435;&#x442;&#x43E;&#x434;&#x43E;&#x43C; &#x438;&#x441;&#x441;&#x43B;&#x435;&#x434;&#x43E;&#x432;&#x430;&#x43B;&#x438; &#x435;&#x433;&#x43E; &#x43D;&#x430;&#x438;&#x431;&#x43E;&#x43B;&#x435;&#x435; &#x442;&#x440;&#x443;&#x434;&#x43D;&#x43E;&#x43B;&#x435;&#x442;&#x443;&#x447;&#x438;&#x435; &#x444;&#x440;&#x430;&#x43A;&#x446;&#x438;&#x438;. &#x41A;&#x441;&#x435;&#x43D;&#x43E;&#x43D; &#x431;&#x44B;&#x43B; &#x43E;&#x431;&#x43D;&#x430;&#x440;&#x443;&#x436;&#x435;&#x43D; &#x43A;&#x430;&#x43A; &#x43F;&#x440;&#x438;&#x43C;&#x435;&#x441;&#x44C; &#x43A; &#x43A;&#x440;&#x438;&#x43F;&#x442;&#x43E;&#x43D;&#x443;, &#x441; &#x447;&#x435;&#x43C; &#x441;&#x432;&#x44F;&#x437;&#x430;&#x43D;&#x43E; &#x435;&#x433;&#x43E; &#x43D;&#x430;&#x437;&#x432;&#x430;&#x43D;&#x438;&#x435; (&#x43E;&#x442; &#x433;&#x440;&#x435;&#x447;. xenos - &#x447;&#x443;&#x436;&#x43E;&#x439;). &#x41A;&#x441;&#x435;&#x43D;&#x43E;&#x43D; -&#x432;&#x435;&#x441;&#x44C;&#x43C;&#x430; &#x440;&#x435;&#x434;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;. &#x41F;&#x440;&#x438; &#x43D;&#x43E;&#x440;&#x43C;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x443;&#x441;&#x43B;&#x43E;&#x432;&#x438;&#x44F;&#x445; 1000 &#x43C;<sup>3</sup> &#x432;&#x43E;&#x437;&#x434;&#x443;&#x445;&#x430; &#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x430;&#x442; &#x43E;&#x43A;&#x43E;&#x43B;&#x43E; 87 &#x441;&#x43C;<sup>3</sup> &#x41A;&#x441;&#x435;&#x43D;&#x43E;&#x43D;&#x430;. &#x41A;&#x441;&#x435;&#x43D;&#x43E;&#x43D; - &#x43E;&#x434;&#x43D;&#x43E;&#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x433;&#x430;&#x437; &#x431;&#x435;&#x437; &#x446;&#x432;&#x435;&#x442;&#x430; &#x438; &#x437;&#x430;&#x43F;&#x430;&#x445;&#x430;; &#x43F;&#x43B;&#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x442;&#x44C; &#x43F;&#x440;&#x438; 0 &#xB0;&#x421; &#x438; 10<sup>5</sup> &#x43D;/&#x43C;<sup>2</sup> (760 &#x43C;&#x43C; &#x440;&#x442;. &#x441;&#x442;.) 5,851 &#x433;/&#x43B;, t<sub>&#x43F;&#x43B;</sub> -111,8 &#xB0;&#x421;, t<sub>&#x43A;&#x438;&#x43F;</sub> -108,1 &#xB0;&#x421;. &#x412; &#x442;&#x432;&#x435;&#x440;&#x434;&#x43E;&#x43C; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x44F;&#x43D;&#x438;&#x438; &#x43E;&#x431;&#x43B;&#x430;&#x434;&#x430;&#x435;&#x442; &#x43A;&#x443;&#x431;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x440;&#x435;&#x448;&#x435;&#x442;&#x43A;&#x43E;&#x439; &#x441; &#x43F;&#x430;&#x440;&#x430;&#x43C;&#x435;&#x442;&#x440;&#x43E;&#x43C; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x430;&#x440;&#x43D;&#x43E;&#x439; &#x44F;&#x447;&#x435;&#x439;&#x43A;&#x438; &#x430; = 6.25&#xC5; (&#x43F;&#x440;&#x438; -185 &#xB0;&#x421;). &#x41F;&#x44F;&#x442;&#x430;&#x44F;, &#x432;&#x43D;&#x435;&#x448;&#x43D;&#x44F;&#x44F; &#x44D;&#x43B;&#x435;&#x43A;&#x442;&#x440;&#x43E;&#x43D;&#x43D;&#x430;&#x44F; &#x43E;&#x431;&#x43E;&#x43B;&#x43E;&#x447;&#x43A;&#x430; &#x430;&#x442;&#x43E;&#x43C;&#x430; &#x41A;&#x441;&#x435;&#x43D;&#x43E;&#x43D;&#x430; &#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x438;&#x442; 8 &#x44D;&#x43B;&#x435;&#x43A;&#x442;&#x440;&#x43E;&#x43D;&#x43E;&#x432; &#x438; &#x432;&#x435;&#x441;&#x44C;&#x43C;&#x430; &#x443;&#x441;&#x442;&#x43E;&#x439;&#x447;&#x438;&#x432;&#x430;. &#x41E;&#x434;&#x43D;&#x430;&#x43A;&#x43E; &#x43F;&#x440;&#x438;&#x442;&#x44F;&#x436;&#x435;&#x43D;&#x438;&#x435; &#x432;&#x43D;&#x435;&#x448;&#x43D;&#x438;&#x445; &#x44D;&#x43B;&#x435;&#x43A;&#x442;&#x440;&#x43E;&#x43D;&#x43E;&#x432; &#x43A; &#x44F;&#x434;&#x440;&#x443; &#x432; &#x430;&#x442;&#x43E;&#x43C;&#x435; &#x41A;&#x441;&#x435;&#x43D;&#x43E;&#x43D;&#x430; &#x44D;&#x43A;&#x440;&#x430;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x43E; &#x431;&#x43E;&#x43B;&#x44C;&#x448;&#x438;&#x43C; &#x43A;&#x43E;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x442;&#x432;&#x43E;&#x43C; &#x43F;&#x440;&#x43E;&#x43C;&#x435;&#x436;&#x443;&#x442;&#x43E;&#x447;&#x43D;&#x44B;&#x445; &#x44D;&#x43B;&#x435;&#x43A;&#x442;&#x440;&#x43E;&#x43D;&#x43D;&#x44B;&#x445; &#x43E;&#x431;&#x43E;&#x43B;&#x43E;&#x447;&#x435;&#x43A;, &#x438; &#x43F;&#x435;&#x440;&#x432;&#x44B;&#x439; &#x43F;&#x43E;&#x442;&#x435;&#x43D;&#x446;&#x438;&#x430;&#x43B; &#x438;&#x43E;&#x43D;&#x438;&#x437;&#x430;&#x446;&#x438;&#x438; &#x41A;&#x441;&#x435;&#x43D;&#x43E;&#x43D;&#x430;, &#x445;&#x43E;&#x442;&#x44F; &#x438; &#x434;&#x43E;&#x432;&#x43E;&#x43B;&#x44C;&#x43D;&#x43E; &#x432;&#x435;&#x43B;&#x438;&#x43A; (12, 13 &#x44D;&#x432;), &#x43D;&#x43E; &#x437;&#x43D;&#x430;&#x447;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E; &#x43C;&#x435;&#x43D;&#x44C;&#x448;&#x435;, &#x447;&#x435;&#x43C; &#x443; &#x434;&#x440;&#x443;&#x433;&#x438;&#x445; &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x43D;&#x435;&#x440;&#x442;&#x43D;&#x44B;&#x445; &#x433;&#x430;&#x437;&#x43E;&#x432;. &#x41F;&#x43E;&#x44D;&#x442;&#x43E;&#x43C;&#x443; &#x41A;&#x441;&#x435;&#x43D;&#x43E;&#x43D; &#x431;&#x44B;&#x43B; &#x43F;&#x435;&#x440;&#x432;&#x44B;&#x43C; &#x438;&#x43D;&#x435;&#x440;&#x442;&#x43D;&#x44B;&#x43C; &#x433;&#x430;&#x437;&#x43E;&#x43C;, &#x434;&#x43B;&#x44F; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x43E;&#x433;&#x43E; &#x443;&#x434;&#x430;&#x43B;&#x43E;&#x441;&#x44C; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x438;&#x442;&#x44C; &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x435; &#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x435; - XePtF<sub>6</sub> (&#x43A;&#x430;&#x43D;&#x430;&#x434;&#x441;&#x43A;&#x438;&#x439; &#x445;&#x438;&#x43C;&#x438;&#x43A; &#x41D;. &#x411;&#x430;&#x440;&#x442;&#x43B;&#x435;&#x442;&#x442;, 1961). &#x414;&#x430;&#x43B;&#x44C;&#x43D;&#x435;&#x439;&#x448;&#x438;&#x435; &#x438;&#x441;&#x441;&#x43B;&#x435;&#x434;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; &#x43F;&#x43E;&#x43A;&#x430;&#x437;&#x430;&#x43B;&#x438;, &#x447;&#x442;&#x43E; &#x41A;&#x441;&#x435;&#x43D;&#x43E;&#x43D; &#x441;&#x43F;&#x43E;&#x441;&#x43E;&#x431;&#x435;&#x43D; &#x43F;&#x440;&#x43E;&#x44F;&#x432;&#x43B;&#x44F;&#x442;&#x44C; &#x432;&#x430;&#x43B;&#x435;&#x43D;&#x442;&#x43D;&#x43E;&#x441;&#x442;&#x438; I, II, IV, VI &#x438; VIII. &#x41B;&#x443;&#x447;&#x448;&#x435; &#x432;&#x441;&#x435;&#x433;&#x43E; &#x438;&#x437;&#x443;&#x447;&#x435;&#x43D;&#x44B; &#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x44F; &#x41A;&#x441;&#x435;&#x43D;&#x43E;&#x43D; &#x441; &#x444;&#x442;&#x43E;&#x440;&#x43E;&#x43C;: XeF<sub>2</sub>, XeF<sub>4</sub>, XeF<sub>6</sub>, XeF<sub>8</sub>, &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x435; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x430;&#x44E;&#x442; &#x432; &#x441;&#x43F;&#x435;&#x446;&#x438;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x443;&#x441;&#x43B;&#x43E;&#x432;&#x438;&#x44F;&#x445;, &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x44F; &#x43D;&#x438;&#x43A;&#x435;&#x43B;&#x435;&#x432;&#x443;&#x44E; &#x430;&#x43F;&#x43F;&#x430;&#x440;&#x430;&#x442;&#x443;&#x440;&#x443;. &#x422;&#x430;&#x43A;, &#x425;&#x435;F<sub>4</sub> &#x43C;&#x43E;&#x436;&#x43D;&#x43E; &#x441;&#x438;&#x43D;&#x442;&#x435;&#x437;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C; &#x43F;&#x440;&#x438; &#x43F;&#x440;&#x43E;&#x441;&#x442;&#x43E;&#x43C; &#x43F;&#x440;&#x43E;&#x43F;&#x443;&#x441;&#x43A;&#x430;&#x43D;&#x438;&#x438; &#x441;&#x43C;&#x435;&#x441;&#x438; &#x425;&#x435; &#x438; F<sub>2</sub> &#x447;&#x435;&#x440;&#x435;&#x437; &#x43D;&#x430;&#x433;&#x440;&#x435;&#x442;&#x443;&#x44E; &#x43D;&#x438;&#x43A;&#x435;&#x43B;&#x435;&#x432;&#x443;&#x44E; &#x442;&#x440;&#x443;&#x431;&#x43A;&#x443;. &#x421;&#x438;&#x43D;&#x442;&#x435;&#x437; XeF<sub>2</sub> &#x432;&#x43E;&#x437;&#x43C;&#x43E;&#x436;&#x435;&#x43D; &#x43F;&#x440;&#x438; &#x43E;&#x431;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x438; &#x441;&#x43C;&#x435;&#x441;&#x438; &#x425;&#x435; &#x438; F<sub>2</sub> &#x443;&#x43B;&#x44C;&#x442;&#x440;&#x430;&#x444;&#x438;&#x43E;&#x43B;&#x435;&#x442;&#x43E;&#x432;&#x44B;&#x43C; &#x438;&#x437;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435;&#x43C;. &#x41F;&#x43E;&#x43B;&#x443;&#x447;&#x438;&#x442;&#x44C; &#x436;&#x435; &#x444;&#x442;&#x43E;&#x440;&#x438;&#x434;&#x44B; XeF<sub>6</sub> &#x438; XeF<sub>8</sub> &#x443;&#x434;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x442;&#x43E;&#x43B;&#x44C;&#x43A;&#x43E; &#x43F;&#x440;&#x438; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x438; &#x432;&#x44B;&#x441;&#x43E;&#x43A;&#x438;&#x445; &#x434;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x439; (&#x434;&#x43E; 20 &#x41C;&#x43D;/&#x43C;<sup>2</sup>, &#x438;&#x43B;&#x438; 200 &#x430;&#x442;) &#x438; &#x43F;&#x43E;&#x432;&#x44B;&#x448;&#x435;&#x43D;&#x43D;&#x43E;&#x439; &#x442;&#x435;&#x43C;&#x43F;&#x435;&#x440;&#x430;&#x442;&#x443;&#x440;&#x44B; (300-600 &#xB0;&#x421;). &#x425;&#x435;F<sub>4</sub> &#x43D;&#x430;&#x438;&#x431;&#x43E;&#x43B;&#x435;&#x435; &#x443;&#x441;&#x442;&#x43E;&#x439;&#x447;&#x438;&#x432; (&#x434;&#x43B;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E;&#x435; &#x432;&#x440;&#x435;&#x43C;&#x44F; &#x441;&#x43E;&#x445;&#x440;&#x430;&#x43D;&#x44F;&#x435;&#x442;&#x441;&#x44F; &#x43F;&#x440;&#x438; &#x43A;&#x43E;&#x43C;&#x43D;&#x430;&#x442;&#x43D;&#x43E;&#x439; &#x442;&#x435;&#x43C;&#x43F;&#x435;&#x440;&#x430;&#x442;&#x443;&#x440;&#x435;), &#x43D;&#x430;&#x438;&#x43C;&#x435;&#x43D;&#x435;&#x435; &#x443;&#x441;&#x442;&#x43E;&#x439;&#x447;&#x438;&#x432; XeF<sub>8</sub> (&#x441;&#x43E;&#x445;&#x440;&#x430;&#x43D;&#x44F;&#x435;&#x442;&#x441;&#x44F; &#x43F;&#x440;&#x438; &#x442;&#x435;&#x43C;&#x43F;&#x435;&#x440;&#x430;&#x442;&#x443;&#x440;&#x435; &#x43D;&#x438;&#x436;&#x435; 77 &#x41A;). &#x41F;&#x440;&#x438; &#x43E;&#x441;&#x442;&#x43E;&#x440;&#x43E;&#x436;&#x43D;&#x43E;&#x43C; &#x443;&#x43F;&#x430;&#x440;&#x438;&#x432;&#x430;&#x43D;&#x438;&#x438; &#x440;&#x430;&#x441;&#x442;&#x432;&#x43E;&#x440;&#x430; XeF<sub>4</sub> &#x432; &#x432;&#x43E;&#x434;&#x435; &#x43E;&#x431;&#x440;&#x430;&#x437;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x432;&#x435;&#x441;&#x44C;&#x43C;&#x430; &#x43D;&#x435;&#x443;&#x441;&#x442;&#x43E;&#x439;&#x447;&#x438;&#x432;&#x44B;&#x439; &#x43D;&#x435;&#x43B;&#x435;&#x442;&#x443;&#x447;&#x438;&#x439; &#x43E;&#x43A;&#x441;&#x438;&#x434; &#x425;&#x435;&#x41E;<sub>3</sub> - &#x441;&#x438;&#x43B;&#x44C;&#x43D;&#x43E;&#x435; &#x432;&#x437;&#x440;&#x44B;&#x432;&#x447;&#x430;&#x442;&#x43E;&#x435; &#x432;&#x435;&#x449;&#x435;&#x441;&#x442;&#x432;&#x43E;. &#x414;&#x435;&#x439;&#x441;&#x442;&#x432;&#x438;&#x435;&#x43C; &#x440;&#x430;&#x441;&#x442;&#x432;&#x43E;&#x440;&#x430; &#x412;&#x430;(&#x41E;&#x41D;)<sub>2</sub> &#x43D;&#x430; XeF<sub>6</sub> &#x43C;&#x43E;&#x436;&#x43D;&#x43E; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x438;&#x442;&#x44C; &#x43A;&#x441;&#x435;&#x43D;&#x43E;&#x43D;&#x430;&#x442; &#x431;&#x430;&#x440;&#x438;&#x44F; &#x412;&#x430;<sub>3</sub>&#x425;&#x435;&#x41E;<sub>6</sub> &#x418;&#x437;&#x432;&#x435;&#x441;&#x442;&#x43D;&#x44B; &#x438; &#x441;&#x43E;&#x43B;&#x438;, &#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x430;&#x449;&#x438;&#x435; &#x432;&#x43E;&#x441;&#x44C;&#x43C;&#x438;&#x432;&#x430;&#x43B;&#x435;&#x43D;&#x442;&#x43D;&#x44B;&#x439; &#x41A;&#x441;&#x435;&#x43D;&#x43E;&#x43D;, - &#x43F;&#x435;&#x440;&#x43A;&#x441;&#x435;&#x43D;&#x43E;&#x43D;&#x430;&#x442;&#x44B;, &#x43D;&#x430;&#x43F;&#x440;&#x438;&#x43C;&#x435;&#x440; Na<sub>4</sub>&#x425;&#x435;&#x41E;<sub>6</sub>&#xB7;6&#x41D;<sub>2</sub>&#x41E;. &#x414;&#x435;&#x439;&#x441;&#x442;&#x432;&#x443;&#x44F; &#x43D;&#x430; &#x43D;&#x435;&#x433;&#x43E; &#x441;&#x435;&#x440;&#x43D;&#x43E;&#x439; &#x43A;&#x438;&#x441;&#x43B;&#x43E;&#x442;&#x43E;&#x439;, &#x43C;&#x43E;&#x436;&#x43D;&#x43E; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x438;&#x442;&#x44C; &#x432;&#x44B;&#x441;&#x448;&#x438;&#x439; &#x43E;&#x43A;&#x441;&#x438;&#x434; &#x425;&#x435;O<sub>4</sub>. &#x418;&#x437;&#x432;&#x435;&#x441;&#x442;&#x43D;&#x44B; &#x434;&#x432;&#x43E;&#x439;&#x43D;&#x44B;&#x435; &#x441;&#x43E;&#x43B;&#x438; XeF<sub>2&#xB7;</sub>2SbF<sub>5</sub>, XeF<sub>6</sub>&#xB7;AsF<sub>3</sub> &#x438; &#x434;&#x440;&#x443;&#x433;&#x438;&#x445;, &#x43F;&#x435;&#x440;&#x445;&#x43B;&#x43E;&#x440;&#x430;&#x442; &#x425;&#x435;Cl&#x41E;<sub>4</sub>- &#x43E;&#x447;&#x435;&#x43D;&#x44C; &#x441;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x439; &#x43E;&#x43A;&#x438;&#x441;&#x43B;&#x438;&#x442;&#x435;&#x43B;&#x44C; &#x438; &#x434;&#x440;&#x443;&#x433;&#x438;&#x435;.\n",
+        "Атомная масса": "131.29",
+        "Плотность, кг/м³": "5.86",
+        "Температура плавления, °С": "-111.9",
+        "Температура кипения, °С": "-108",
+        "Теплоемкость, кДж/(кг·°С)": "0.158",
+        "Электроотрицательность": " ",
+        "Ковалентный радиус, Å": "1.31",
+        "1-й ионизац. потенциал, эв": "12.13"
+    },
+    {
+        "Химический символ": "Cs",
+        "label": "Цезий Caesium",
+        "color": "0x5422ED",
+        "shadow": "0x511DEB",
+        "Электронная формула": "(Xe)6s1",
+        "description": "<b>&#x426;&#x435;&#x437;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Caesium), Cs, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; I &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 55, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 132, 9054; &#x441;&#x435;&#x440;&#x435;&#x431;&#x440;&#x438;&#x441;&#x442;&#x43E;-&#x431;&#x435;&#x43B;&#x44B;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;, &#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x438;&#x442;&#x441;&#x44F; &#x43A; &#x449;&#x435;&#x43B;&#x43E;&#x447;&#x43D;&#x44B;&#x43C; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;&#x430;&#x43C;. &#x412; &#x43F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x435; &#x432;&#x441;&#x442;&#x440;&#x435;&#x447;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x432; &#x432;&#x438;&#x434;&#x435; &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x43E;&#x433;&#x43E; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x430; <sup>133</sup>Cs. &#x418;&#x437; &#x438;&#x441;&#x43A;&#x443;&#x441;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x43E; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x43D;&#x44B;&#x445; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x441; &#x43C;&#x430;&#x441;&#x441;&#x43E;&#x432;&#x44B;&#x43C;&#x438; &#x447;&#x438;&#x441;&#x43B;&#x430;&#x43C;&#x438; &#x43E;&#x442; 113 &#x434;&#x43E; 148 &#x43D;&#x430;&#x438;&#x431;&#x43E;&#x43B;&#x435;&#x435; &#x443;&#x441;&#x442;&#x43E;&#x439;&#x447;&#x438;&#x432; <sup>137</sup>Cs &#x441; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x43E;&#x43C; &#x43F;&#x43E;&#x43B;&#x443;&#x440;&#x430;&#x441;&#x43F;&#x430;&#x434;&#x430; &#x422;<sub>&#xBD;</sub> = 33 &#x433;&#x43E;&#x434;&#x430;.\n",
+        "Атомная масса": "132.91",
+        "Плотность, кг/м³": "1900",
+        "Температура плавления, °С": "28.5",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.218",
+        "Электроотрицательность": "0.7",
+        "Ковалентный радиус, Å": "2.35",
+        "1-й ионизац. потенциал, эв": "3.89"
+    },
+    {
+        "Химический символ": "Ba",
+        "label": "Барий Barium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Xe)6s2",
+        "description": "<b>&#x411;&#x430;&#x440;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Baryum), Ba, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; II &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 56, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 137,34; &#x441;&#x435;&#x440;&#x435;&#x431;&#x440;&#x438;&#x441;&#x442;&#x43E;-&#x431;&#x435;&#x43B;&#x44B;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;. &#x421;&#x43E;&#x441;&#x442;&#x43E;&#x438;&#x442; &#x438;&#x437; &#x441;&#x43C;&#x435;&#x441;&#x438; 7 &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432;, &#x441;&#x440;&#x435;&#x434;&#x438; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x445; &#x43F;&#x440;&#x435;&#x43E;&#x431;&#x43B;&#x430;&#x434;&#x430;&#x435;&#x442; <sup>138</sup>&#x412;&#x430; (71,66%). &#x41F;&#x440;&#x438; &#x44F;&#x434;&#x435;&#x440;&#x43D;&#x43E;&#x43C; &#x434;&#x435;&#x43B;&#x435;&#x43D;&#x438;&#x438; &#x443;&#x440;&#x430;&#x43D;&#x430; &#x438; &#x43F;&#x43B;&#x443;&#x442;&#x43E;&#x43D;&#x438;&#x44F; &#x43E;&#x431;&#x440;&#x430;&#x437;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x439; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F; <sup>140</sup>&#x412;&#x430;, &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x43C;&#x44B;&#x439; &#x43A;&#x430;&#x43A; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x439; &#x438;&#x43D;&#x434;&#x438;&#x43A;&#x430;&#x442;&#x43E;&#x440;. &#x411;&#x430;&#x440;&#x438;&#x439; &#x431;&#x44B;&#x43B; &#x43E;&#x442;&#x43A;&#x440;&#x44B;&#x442; &#x448;&#x432;&#x435;&#x434;&#x441;&#x43A;&#x438;&#x43C; &#x445;&#x438;&#x43C;&#x438;&#x43A;&#x43E;&#x43C; &#x41A;. &#x428;&#x435;&#x435;&#x43B;&#x435; (1774) &#x432; &#x432;&#x438;&#x434;&#x435; &#x43E;&#x43A;&#x441;&#x438;&#x434;&#x430; &#x412;&#x430;&#x41E;, &#x43D;&#x430;&#x437;&#x432;&#x430;&#x43D;&#x43D;&#x43E;&#x439; &quot;&#x442;&#x44F;&#x436;&#x435;&#x43B;&#x43E;&#x439; &#x437;&#x435;&#x43C;&#x43B;&#x435;&#x439;&quot;, &#x438;&#x43B;&#x438; &#x431;&#x430;&#x440;&#x438;&#x442;&#x43E;&#x43C; (&#x43E;&#x442; &#x433;&#x440;&#x435;&#x447;. barys -&#x442;&#x44F;&#x436;&#x435;&#x43B;&#x44B;&#x439;). &#x41C;&#x435;&#x442;&#x430;&#x43B;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x411;&#x430;&#x440;&#x438;&#x439; (&#x432; &#x432;&#x438;&#x434;&#x435; &#x430;&#x43C;&#x430;&#x43B;&#x44C;&#x433;&#x430;&#x43C;&#x44B;) &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x438;&#x43B; &#x430;&#x43D;&#x433;&#x43B;&#x438;&#x439;&#x441;&#x43A;&#x438;&#x439; &#x445;&#x438;&#x43C;&#x438;&#x43A; &#x413;. &#x414;&#x44D;&#x432;&#x438; (1808) &#x44D;&#x43B;&#x435;&#x43A;&#x442;&#x440;&#x43E;&#x43B;&#x438;&#x437;&#x43E;&#x43C; &#x432;&#x43B;&#x430;&#x436;&#x43D;&#x43E;&#x433;&#x43E; &#x433;&#x438;&#x434;&#x440;&#x43E;&#x43E;&#x43A;&#x441;&#x438;&#x434;&#x430; &#x412;&#x430;(&#x41E;&#x41D;)<sub>2</sub>&#x441; &#x440;&#x442;&#x443;&#x442;&#x43D;&#x44B;&#x43C; &#x43A;&#x430;&#x442;&#x43E;&#x434;&#x43E;&#x43C;. &#x421;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x430;&#x43D;&#x438;&#x435; &#x411;&#x430;&#x440;&#x438;&#x44F; &#x432; &#x437;&#x435;&#x43C;&#x43D;&#x43E;&#x439; &#x43A;&#x43E;&#x440;&#x435; 0,05% &#x43F;&#x43E; &#x43C;&#x430;&#x441;&#x441;&#x435;, &#x432; &#x441;&#x432;&#x43E;&#x431;&#x43E;&#x434;&#x43D;&#x43E;&#x43C; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x44F;&#x43D;&#x438;&#x438; &#x432; &#x43F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x435; &#x43D;&#x435; &#x432;&#x441;&#x442;&#x440;&#x435;&#x447;&#x430;&#x435;&#x442;&#x441;&#x44F;. &#x418;&#x437; &#x43C;&#x438;&#x43D;&#x435;&#x440;&#x430;&#x43B;&#x43E;&#x432; &#x411;&#x430;&#x440;&#x438;&#x44F; &#x43F;&#x440;&#x43E;&#x43C;&#x44B;&#x448;&#x43B;&#x435;&#x43D;&#x43D;&#x43E;&#x435; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x438;&#x43C;&#x435;&#x44E;&#x442; &#x431;&#x430;&#x440;&#x438;&#x442; (&#x442;&#x44F;&#x436;&#x435;&#x43B;&#x44B;&#x439; &#x448;&#x43F;&#x430;&#x442;) BaSO<sub>4</sub> &#x438; &#x440;&#x435;&#x436;&#x435; &#x432;&#x441;&#x442;&#x440;&#x435;&#x447;&#x430;&#x44E;&#x449;&#x438;&#x439;&#x441;&#x44F; &#x432;&#x438;&#x442;&#x435;&#x440;&#x438;&#x442; &#x412;&#x430;&#x421;&#x41E;<sub>3</sub>.\n",
+        "Атомная масса": "137.33",
+        "Плотность, кг/м³": "3500",
+        "Температура плавления, °С": "729",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.285",
+        "Электроотрицательность": "0.9",
+        "Ковалентный радиус, Å": "1.98",
+        "1-й ионизац. потенциал, эв": "5.19"
+    },
+    {
+        "Химический символ": "La",
+        "label": "Лантан Lanthanum",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Xe)5d16s2",
+        "description": "<b>&#x41B;&#x430;&#x43D;&#x442;&#x430;&#x43D;</b> (&#x43B;&#x430;&#x442;. Lanthanum), La, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; III &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430; &#x441; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x43C; &#x43D;&#x43E;&#x43C;&#x435;&#x440;&#x43E;&#x43C; 57; &#x441;&#x43C;&#x43E;&#x442;&#x440;&#x438; <a href=\"art.php?t=la\">&#x43B;&#x430;&#x43D;&#x442;&#x430;&#x43D;&#x43E;&#x438;&#x434;&#x44B;</a>.\n",
+        "Атомная масса": "138.91",
+        "Плотность, кг/м³": "6170",
+        "Температура плавления, °С": "920",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.188",
+        "Электроотрицательность": "1.1",
+        "Ковалентный радиус, Å": "1.69",
+        "1-й ионизац. потенциал, эв": "5.61"
+    },
+    {
+        "Химический символ": "Ce",
+        "label": "Церий Cerium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Xe)4f25d06s2",
+        "description": "<b>&#x426;&#x435;&#x440;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Cerium), &#x421;&#x435;, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 58, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 140,12; &#x440;&#x435;&#x434;&#x43A;&#x43E;&#x437;&#x435;&#x43C;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;, &#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x438;&#x442;&#x441;&#x44F; &#x43A; <a href=\"art.php?t=la\">&#x43B;&#x430;&#x43D;&#x442;&#x430;&#x43D;&#x43E;&#x438;&#x434;&#x430;&#x43C;</a>.\n",
+        "Атомная масса": "140.12",
+        "Плотность, кг/м³": "6770",
+        "Температура плавления, °С": "795",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.176",
+        "Электроотрицательность": "1.1",
+        "Ковалентный радиус, Å": "1.65",
+        "1-й ионизац. потенциал, эв": "6.54"
+    },
+    {
+        "Химический символ": "Pr",
+        "label": "Празеодим Praseodymium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Xe)4f35d06s2",
+        "description": "<b>&#x41F;&#x440;&#x430;&#x437;&#x435;&#x43E;&#x434;&#x438;&#x43C;</b> (&#x43B;&#x430;&#x442;. Praseodymium), &#x420;&#x433;, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 59, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 140,9077; &#x440;&#x435;&#x434;&#x43A;&#x43E;&#x437;&#x435;&#x43C;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;, &#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x438;&#x442;&#x441;&#x44F; &#x43A; <a href=\"art.php?t=la\">&#x43B;&#x430;&#x43D;&#x442;&#x430;&#x43D;&#x43E;&#x438;&#x434;&#x430;&#x43C;</a>.\n",
+        "Атомная масса": "140.91",
+        "Плотность, кг/м³": "6780",
+        "Температура плавления, °С": "935",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.201",
+        "Электроотрицательность": "1.1",
+        "Ковалентный радиус, Å": "1.65",
+        "1-й ионизац. потенциал, эв": "5.76"
+    },
+    {
+        "Химический символ": "Nd",
+        "label": "Неодим Neodymium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Xe)4f45d06s2",
+        "description": "<b>&#x41D;&#x435;&#x43E;&#x434;&#x438;&#x43C;</b> (&#x43B;&#x430;&#x442;. Neodymium), Nd, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 60, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 144,24, &#x440;&#x435;&#x434;&#x43A;&#x43E;&#x437;&#x435;&#x43C;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;; &#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x438;&#x442;&#x441;&#x44F; &#x43A; <a href=\"art.php?t=la\">&#x43B;&#x430;&#x43D;&#x442;&#x430;&#x43D;&#x43E;&#x438;&#x434;&#x430;&#x43C;</a>.\n",
+        "Атомная масса": "144.24",
+        "Плотность, кг/м³": "7000",
+        "Температура плавления, °С": "1024",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.188",
+        "Электроотрицательность": "1.2",
+        "Ковалентный радиус, Å": "1.64",
+        "1-й ионизац. потенциал, эв": "6.31"
+    },
+    {
+        "Химический символ": "Pm",
+        "label": "Прометий Promethium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Xe)4f55d06s2",
+        "description": "<b>&#x41F;&#x440;&#x43E;&#x43C;&#x435;&#x442;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Prometium), Pm, &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x439; &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; III &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 61, &#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x438;&#x442;&#x441;&#x44F; &#x43A; <a href=\"art.php?t=la\">&#x43B;&#x430;&#x43D;&#x442;&#x430;&#x43D;&#x43E;&#x438;&#x434;&#x430;&#x43C;</a>. &#x418;&#x437;&#x432;&#x435;&#x441;&#x442;&#x43D;&#x43E; 16 &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x41F;&#x440;&#x43E;&#x43C;&#x435;&#x442;&#x438;&#x44F; &#x441; &#x43C;&#x430;&#x441;&#x441;&#x43E;&#x432;&#x44B;&#x43C;&#x438; &#x447;&#x438;&#x441;&#x43B;&#x430;&#x43C;&#x438; 141-154 &#x438; 2 &#x44F;&#x434;&#x435;&#x440;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x43C;&#x435;&#x440;&#x430;. &#x421;&#x430;&#x43C;&#x44B;&#x43C; &#x443;&#x441;&#x442;&#x43E;&#x439;&#x447;&#x438;&#x432;&#x44B;&#x43C; &#x44F;&#x432;&#x43B;&#x44F;&#x435;&#x442;&#x441;&#x44F; &#x43C;&#x430;&#x43B;&#x43E;&#x434;&#x43E;&#x441;&#x442;&#x443;&#x43F;&#x43D;&#x44B;&#x439; <sup>145</sup>&#x420;m (&#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434; &#x43F;&#x43E;&#x43B;&#x443;&#x440;&#x430;&#x441;&#x43F;&#x430;&#x434;&#x430; T<sub>&#xBD;</sub> &#x43E;&#x43A;&#x43E;&#x43B;&#x43E; 18 &#x43B;&#x435;&#x442; &#x43F;&#x440;&#x438; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x43E;&#x43C; &#x440;&#x430;&#x441;&#x43F;&#x430;&#x434;&#x435; &#x43F;&#x443;&#x442;&#x435;&#x43C; &#x44D;&#x43B;&#x435;&#x43A;&#x442;&#x440;&#x43E;&#x43D;&#x43D;&#x43E;&#x433;&#x43E; &#x437;&#x430;&#x445;&#x432;&#x430;&#x442;&#x430;). &#x41D;&#x430;&#x438;&#x431;&#x43E;&#x43B;&#x44C;&#x448;&#x435;&#x435; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x438;&#x43C;&#x435;&#x435;&#x442; &#x3B2;-&#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x439; <sup>147</sup>&#x420;m (&#x422;<sub>&#xBD;</sub> = 2,7 &#x433;&#x43E;&#x434;&#x430;).\n",
+        "Атомная масса": "[145]",
+        "Плотность, кг/м³": "7220",
+        "Температура плавления, °С": "1080",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.168",
+        "Электроотрицательность": "1.1",
+        "Ковалентный радиус, Å": "1.64",
+        "1-й ионизац. потенциал, эв": "5.90"
+    },
+    {
+        "Химический символ": "Sm",
+        "label": "Самарий Samarium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Xe)4f65d06s2",
+        "description": "<b>&#x421;&#x430;&#x43C;&#x430;&#x440;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Samarium), Sm, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 62, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 150,4; &#x440;&#x435;&#x434;&#x43A;&#x43E;&#x437;&#x435;&#x43C;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;; &#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x438;&#x442;&#x441;&#x44F; &#x43A; <a href=\"art.php?t=la\">&#x43B;&#x430;&#x43D;&#x442;&#x430;&#x43D;&#x43E;&#x438;&#x434;&#x430;&#x43C;</a>.\n",
+        "Атомная масса": "150.36",
+        "Плотность, кг/м³": "7540",
+        "Температура плавления, °С": "1072",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.176",
+        "Электроотрицательность": "1.2",
+        "Ковалентный радиус, Å": "1.62",
+        "1-й ионизац. потенциал, эв": "5.64"
+    },
+    {
+        "Химический символ": "Eu",
+        "label": "Европий Europium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Xe)4f75d06s2",
+        "description": "<b>&#x415;&#x432;&#x440;&#x43E;&#x43F;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Europium), Eu, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 63, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 151,96; &#x440;&#x435;&#x434;&#x43A;&#x43E;&#x437;&#x435;&#x43C;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;, &#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x438;&#x442;&#x441;&#x44F; &#x43A; <a href=\"art.php?t=la\">&#x43B;&#x430;&#x43D;&#x442;&#x430;&#x43D;&#x43E;&#x438;&#x434;&#x430;&#x43C;</a>.\n",
+        "Атомная масса": "151.96",
+        "Плотность, кг/м³": "5260",
+        "Температура плавления, °С": "826",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.163",
+        "Электроотрицательность": "1.2",
+        "Ковалентный радиус, Å": "1.85",
+        "1-й ионизац. потенциал, эв": "5.67"
+    },
+    {
+        "Химический символ": "Gd",
+        "label": "Гадолиний Gadolinium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Xe)4f75d16s2",
+        "description": "<b>&#x413;&#x430;&#x434;&#x43E;&#x43B;&#x438;&#x43D;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Gadolinium), Gd, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; &#x441; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x43C; &#x43D;&#x43E;&#x43C;&#x435;&#x440;&#x43E;&#x43C; 64, &#x440;&#x435;&#x434;&#x43A;&#x43E;&#x437;&#x435;&#x43C;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;; &#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x438;&#x442;&#x441;&#x44F; &#x43A; <a href=\"art.php?t=la\">&#x43B;&#x430;&#x43D;&#x442;&#x430;&#x43D;&#x43E;&#x438;&#x434;&#x430;&#x43C;</a>.\n",
+        "Атомная масса": "157.25",
+        "Плотность, кг/м³": "7890",
+        "Температура плавления, °С": "1312",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.297",
+        "Электроотрицательность": "1.1",
+        "Ковалентный радиус, Å": "1.61",
+        "1-й ионизац. потенциал, эв": "6.16"
+    },
+    {
+        "Химический символ": "Tb",
+        "label": "Тербий Terbium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Xe)4f95d06s2",
+        "description": "<b>&#x422;&#x435;&#x440;&#x431;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Terbium), Tb, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;q &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; &#x441; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x43C; &#x43D;&#x43E;&#x43C;&#x435;&#x440;&#x43E;&#x43C; 65, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 158,9254, &#x440;&#x435;&#x434;&#x43A;&#x43E;&#x437;&#x435;&#x43C;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;, &#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x438;&#x442;&#x441;&#x44F; &#x43A; <a href=\"art.php?t=la\">&#x43B;&#x430;&#x43D;&#x442;&#x430;&#x43D;&#x43E;&#x438;&#x434;&#x430;&#x43C;</a>.\n",
+        "Атомная масса": "158.93",
+        "Плотность, кг/м³": "8270",
+        "Температура плавления, °С": "1356",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.184",
+        "Электроотрицательность": "1.2",
+        "Ковалентный радиус, Å": "1.59",
+        "1-й ионизац. потенциал, эв": "5.86"
+    },
+    {
+        "Химический символ": "Dy",
+        "label": "Диспрозий Dysprosium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Xe)4f105d06s2",
+        "description": "<b>&#x414;&#x438;&#x441;&#x43F;&#x440;&#x43E;&#x437;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Dysprosium), Dy, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; &#x441; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x43C; &#x43D;&#x43E;&#x43C;&#x435;&#x440;&#x43E;&#x43C; 66, &#x440;&#x435;&#x434;&#x43A;&#x43E;&#x437;&#x435;&#x43C;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;, &#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x438;&#x442;&#x441;&#x44F; &#x43A; <a href=\"art.php?t=la\">&#x43B;&#x430;&#x43D;&#x442;&#x430;&#x43D;&#x43E;&#x438;&#x434;&#x430;&#x43C;</a>.\n",
+        "Атомная масса": "162.50",
+        "Плотность, кг/м³": "8540",
+        "Температура плавления, °С": "1407",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.172",
+        "Электроотрицательность": "1.2",
+        "Ковалентный радиус, Å": "1.59",
+        "1-й ионизац. потенциал, эв": "5.94"
+    },
+    {
+        "Химический символ": "Ho",
+        "label": "Гольмий Holmium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Xe)4f115d06s2",
+        "description": "<b>&#x413;&#x43E;&#x43B;&#x44C;&#x43C;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Holmium), &#x441;&#x438;&#x43C;&#x432;&#x43E;&#x43B; &#x41D;&#x43E;, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; &#x441; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x43C; &#x43D;&#x43E;&#x43C;&#x435;&#x440;&#x43E;&#x43C; 67, &#x440;&#x435;&#x434;&#x43A;&#x43E;&#x437;&#x435;&#x43C;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;, &#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x438;&#x442;&#x441;&#x44F; &#x43A; <a href=\"art.php?t=la\">&#x43B;&#x430;&#x43D;&#x442;&#x430;&#x43D;&#x43E;&#x438;&#x434;&#x430;&#x43C;</a>.\n",
+        "Атомная масса": "164.93",
+        "Плотность, кг/м³": "8800",
+        "Температура плавления, °С": "1461",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.163",
+        "Электроотрицательность": "1.2",
+        "Ковалентный радиус, Å": "1.57",
+        "1-й ионизац. потенциал, эв": "6.90"
+    },
+    {
+        "Химический символ": "Er",
+        "label": "Эрбий Erbium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Xe)4f125d06s2",
+        "description": "<b>&#x42D;&#x440;&#x431;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Erbium), Er, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 68, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 167,26; &#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x438;&#x442;&#x441;&#x44F; &#x43A; <a href=\"art.php?t=la\">&#x43B;&#x430;&#x43D;&#x442;&#x430;&#x43D;&#x43E;&#x438;&#x434;&#x430;&#x43C;</a>.\n",
+        "Атомная масса": "167.26",
+        "Плотность, кг/м³": "9050",
+        "Температура плавления, °С": "1497",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.167",
+        "Электроотрицательность": "1.2",
+        "Ковалентный радиус, Å": "1.57",
+        "1-й ионизац. потенциал, эв": "6.70"
+    },
+    {
+        "Химический символ": "Tm",
+        "label": "Тулий Thulium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Xe)4f135d06s2",
+        "description": "<b>&#x422;&#x443;&#x43B;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Thulium), Tm, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; &#x441;&#x435;&#x43C;&#x435;&#x439;&#x441;&#x442;&#x432;&#x430; <a href=\"art.php?t=la\">&#x43B;&#x430;&#x43D;&#x442;&#x430;&#x43D;&#x43E;&#x438;&#x434;&#x43E;&#x432;</a>; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 69, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 168,9342.\n",
+        "Атомная масса": "168.93",
+        "Плотность, кг/м³": "9330",
+        "Температура плавления, °С": "1545",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.159",
+        "Электроотрицательность": "1.2",
+        "Ковалентный радиус, Å": "1.56",
+        "1-й ионизац. потенциал, эв": "6.60"
+    },
+    {
+        "Химический символ": "Yb",
+        "label": "Иттербий Ytterbium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Xe)4f145d06s2",
+        "description": "<b>&#x418;&#x442;&#x442;&#x435;&#x440;&#x431;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Ytterbium), Yb, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; &#x441;&#x435;&#x43C;&#x435;&#x439;&#x441;&#x442;&#x432;&#x430; <a href=\"art.php?t=la\">&#x43B;&#x430;&#x43D;&#x442;&#x430;&#x43D;&#x43E;&#x438;&#x434;&#x43E;&#x432;</a>; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 70, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 173,04.\n",
+        "Атомная масса": "173.04",
+        "Плотность, кг/м³": "6980",
+        "Температура плавления, °С": "824",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.147",
+        "Электроотрицательность": "1.1",
+        "Ковалентный радиус, Å": "1.70",
+        "1-й ионизац. потенциал, эв": "6.22"
+    },
+    {
+        "Химический символ": "Lu",
+        "label": "Лютеций Lutetium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Xe)4f145d16s2",
+        "description": "<b>&#x41B;&#x44E;&#x442;&#x435;&#x446;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Lutetium), Lu, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; &#x441; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x43C; &#x43D;&#x43E;&#x43C;&#x435;&#x440;&#x43E;&#x43C; 71, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 174,97, &#x440;&#x435;&#x434;&#x43A;&#x43E;&#x437;&#x435;&#x43C;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;, &#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x438;&#x442;&#x441;&#x44F; &#x43A; <a href=\"art.php?t=la\">&#x43B;&#x430;&#x43D;&#x442;&#x430;&#x43D;&#x43E;&#x438;&#x434;&#x430;&#x43C;</a>.\n",
+        "Атомная масса": "174.97",
+        "Плотность, кг/м³": "9840",
+        "Температура плавления, °С": "1652",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.155",
+        "Электроотрицательность": "1.2",
+        "Ковалентный радиус, Å": "1.56",
+        "1-й ионизац. потенциал, эв": "6.15"
+    },
+    {
+        "Химический символ": "Hf",
+        "label": "Гафний Hafnium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Xe)4f145d26s2",
+        "description": "<b>&#x413;&#x430;&#x444;&#x43D;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Hafnium), Hf, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; IV &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;; &#x43F;&#x43E;&#x440;&#x44F;&#x434;&#x43A;&#x43E;&#x432;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 72, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 178,49; &#x441;&#x435;&#x440;&#x435;&#x431;&#x440;&#x438;&#x441;&#x442;&#x43E;-&#x431;&#x435;&#x43B;&#x44B;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;. &#x412; &#x441;&#x43E;&#x441;&#x442;&#x430;&#x432; &#x43F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x43D;&#x43E;&#x433;&#x43E; &#x413;&#x430;&#x444;&#x43D;&#x438;&#x44F; &#x432;&#x445;&#x43E;&#x434;&#x44F;&#x442; 6 &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x441; &#x43C;&#x430;&#x441;&#x441;&#x43E;&#x432;&#x44B;&#x43C;&#x438; &#x447;&#x438;&#x441;&#x43B;&#x430;&#x43C;&#x438; 174, 176-180. &#x421;&#x443;&#x449;&#x435;&#x441;&#x442;&#x432;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x413;&#x430;&#x444;&#x43D;&#x438;&#x44F; &#x431;&#x44B;&#x43B;&#x43E; &#x43F;&#x440;&#x435;&#x434;&#x441;&#x43A;&#x430;&#x437;&#x430;&#x43D;&#x43E; &#x414;.&#x418;. &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x44B;&#x43C; &#x432; 1870 &#x433;&#x43E;&#x434;&#x443;. &#x412; 1921 &#x433;&#x43E;&#x434;&#x443; &#x41D;. &#x411;&#x43E;&#x440; &#x43F;&#x43E;&#x43A;&#x430;&#x437;&#x430;&#x43B;, &#x447;&#x442;&#x43E; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; &#x2116; 72 &#x434;&#x43E;&#x43B;&#x436;&#x435;&#x43D; &#x438;&#x43C;&#x435;&#x442;&#x44C; &#x441;&#x442;&#x440;&#x43E;&#x435;&#x43D;&#x438;&#x435; &#x430;&#x442;&#x43E;&#x43C;&#x430;, &#x43F;&#x43E;&#x434;&#x43E;&#x431;&#x43D;&#x43E;&#x435; &#x446;&#x438;&#x440;&#x43A;&#x43E;&#x43D;&#x438;&#x44E;, &#x438; &#x447;&#x442;&#x43E;, &#x441;&#x43B;&#x435;&#x434;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E;, &#x435;&#x433;&#x43E; &#x43D;&#x430;&#x434;&#x43E; &#x438;&#x441;&#x43A;&#x430;&#x442;&#x44C; &#x43D;&#x435; &#x441;&#x440;&#x435;&#x434;&#x438; &#x440;&#x435;&#x434;&#x43A;&#x43E;&#x437;&#x435;&#x43C;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x43E;&#x432;, &#x43A;&#x430;&#x43A; &#x434;&#x443;&#x43C;&#x430;&#x43B;&#x438; &#x440;&#x430;&#x43D;&#x44C;&#x448;&#x435;, &#x430; &#x441;&#x440;&#x435;&#x434;&#x438; &#x43C;&#x438;&#x43D;&#x435;&#x440;&#x430;&#x43B;&#x43E;&#x432; &#x446;&#x438;&#x440;&#x43A;&#x43E;&#x43D;&#x438;&#x44F;. &#x412;&#x435;&#x43D;&#x433;&#x435;&#x440;&#x441;&#x43A;&#x438;&#x439; &#x445;&#x438;&#x43C;&#x438;&#x43A; &#x414;. &#x425;&#x435;&#x432;&#x435;&#x448;&#x438; &#x438; &#x433;&#x43E;&#x43B;&#x43B;&#x430;&#x43D;&#x434;&#x441;&#x43A;&#x438;&#x439; &#x444;&#x438;&#x437;&#x438;&#x43A; &#x414;. &#x41A;&#x43E;&#x441;&#x442;&#x435;&#x440; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x430;&#x442;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438; &#x438;&#x441;&#x441;&#x43B;&#x435;&#x434;&#x43E;&#x432;&#x430;&#x43B;&#x438; &#x43C;&#x438;&#x43D;&#x435;&#x440;&#x430;&#x43B;&#x44B; &#x446;&#x438;&#x440;&#x43A;&#x43E;&#x43D;&#x438;&#x44F; &#x43C;&#x435;&#x442;&#x43E;&#x434;&#x43E;&#x43C; &#x440;&#x435;&#x43D;&#x442;&#x433;&#x435;&#x43D;&#x43E;&#x441;&#x43F;&#x435;&#x43A;&#x442;&#x440;&#x430;&#x43B;&#x44B;&#x44E;&#x433;&#x43E; &#x430;&#x43D;&#x430;&#x43B;&#x438;&#x437;&#x430; &#x438; &#x432; 1922 &#x433;&#x43E;&#x434;&#x443; &#x43E;&#x431;&#x43D;&#x430;&#x440;&#x443;&#x436;&#x438;&#x43B;&#x438; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; &#x2116; 72, &#x43D;&#x430;&#x437;&#x432;&#x430;&#x432; &#x435;&#x433;&#x43E; &#x413;&#x430;&#x444;&#x43D;&#x438;&#x439; &#x43F;&#x43E; &#x43C;&#x435;&#x441;&#x442;&#x443; &#x43E;&#x442;&#x43A;&#x440;&#x44B;&#x442;&#x438;&#x44F; - &#x433;&#x43E;&#x440;&#x43E;&#x434;&#x443; &#x41A;&#x43E;&#x43F;&#x435;&#x43D;&#x433;&#x430;&#x433;&#x435;&#x43D;&#x443; (&#x43F;&#x43E;&#x437;&#x434;&#x43D;&#x435;&#x43B;&#x430;&#x442;. Hafnia).\n",
+        "Атомная масса": "178.49",
+        "Плотность, кг/м³": "13100",
+        "Температура плавления, °С": "2222",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.147",
+        "Электроотрицательность": "1.3",
+        "Ковалентный радиус, Å": "1.44",
+        "1-й ионизац. потенциал, эв": "7.30"
+    },
+    {
+        "Химический символ": "Ta",
+        "label": "Тантал Tantalum",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Xe)4f145d36s2",
+        "description": "<b>&#x422;&#x430;&#x43D;&#x442;&#x430;&#x43B;</b> (&#x43B;&#x430;&#x442;. Tantalum), &#x422;&#x430;, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; V &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 73, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 180,948; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B; &#x441;&#x435;&#x440;&#x43E;&#x433;&#x43E; &#x446;&#x432;&#x435;&#x442;&#x430; &#x441;&#x43E; &#x441;&#x43B;&#x435;&#x433;&#x43A;&#x430; &#x441;&#x432;&#x438;&#x43D;&#x446;&#x43E;&#x432;&#x44B;&#x43C; &#x43E;&#x442;&#x442;&#x435;&#x43D;&#x43A;&#x43E;&#x43C;. &#x412; &#x43F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x435; &#x43D;&#x430;&#x445;&#x43E;&#x434;&#x438;&#x442;&#x441;&#x44F; &#x432; &#x432;&#x438;&#x434;&#x435; &#x434;&#x432;&#x443;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432;: &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x43E;&#x433;&#x43E; <sup>181</sup>&#x422;&#x430; (99,99%) &#x438; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x43E;&#x433;&#x43E; <sup>180</sup>&#x422;&#x430; (0,012%; T<sub>&#xBD;</sub> = 10<sup>12</sup> &#x43B;&#x435;&#x442;). &#x418;&#x437; &#x438;&#x441;&#x43A;&#x443;&#x441;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x43E; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x43D;&#x44B;&#x445; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x439; <sup>182</sup>&#x422;&#x430; (&#x422;<sub>&#xBD;</sub> = 115,1 &#x441;&#x443;&#x442;) &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x44E;&#x442; &#x43A;&#x430;&#x43A; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x439; &#x438;&#x43D;&#x434;&#x438;&#x43A;&#x430;&#x442;&#x43E;&#x440;.\n",
+        "Атомная масса": "180.95",
+        "Плотность, кг/м³": "16600",
+        "Температура плавления, °С": "2996",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.151",
+        "Электроотрицательность": "1.5",
+        "Ковалентный радиус, Å": "1.34",
+        "1-й ионизац. потенциал, эв": "7.70"
+    },
+    {
+        "Химический символ": "W",
+        "label": "Вольфрам Tungsten",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Xe)4f145d46s2",
+        "description": "<b>&#x412;&#x43E;&#x43B;&#x44C;&#x444;&#x440;&#x430;&#x43C;</b> (&#x43B;&#x430;&#x442;. Wolframium), W, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; VI &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;, &#x43F;&#x43E;&#x440;&#x44F;&#x434;&#x43A;&#x43E;&#x432;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 74, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 183,85; &#x442;&#x443;&#x433;&#x43E;&#x43F;&#x43B;&#x430;&#x432;&#x43A;&#x438;&#x439; &#x442;&#x44F;&#x436;&#x435;&#x43B;&#x44B;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B; &#x441;&#x432;&#x435;&#x442;&#x43B;&#x43E;-&#x441;&#x435;&#x440;&#x43E;&#x433;&#x43E; &#x446;&#x432;&#x435;&#x442;&#x430;. &#x41F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x43D;&#x44B;&#x439; &#x412;&#x43E;&#x43B;&#x44C;&#x444;&#x440;&#x430;&#x43C; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x438;&#x442; &#x438;&#x437; &#x441;&#x43C;&#x435;&#x441;&#x438; &#x43F;&#x44F;&#x442;&#x438; &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x441; &#x43C;&#x430;&#x441;&#x441;&#x43E;&#x432;&#x44B;&#x43C;&#x438; &#x447;&#x438;&#x441;&#x43B;&#x430;&#x43C;&#x438; 180, 182, 183, 184 &#x438; 186. &#x412;&#x43E;&#x43B;&#x44C;&#x444;&#x440;&#x430;&#x43C; &#x431;&#x44B;&#x43B; &#x43E;&#x442;&#x43A;&#x440;&#x44B;&#x442; &#x438; &#x432;&#x44B;&#x434;&#x435;&#x43B;&#x435;&#x43D; &#x432; &#x432;&#x438;&#x434;&#x435; &#x432;&#x43E;&#x43B;&#x44C;&#x444;&#x440;&#x430;&#x43C;&#x43E;&#x432;&#x43E;&#x433;&#x43E; &#x430;&#x43D;&#x433;&#x438;&#x434;&#x440;&#x438;&#x434;&#x430; WO<sub>3</sub> &#x432; 1781 &#x433;&#x43E;&#x434;&#x443; &#x448;&#x432;&#x435;&#x434;&#x441;&#x43A;&#x438;&#x43C; &#x445;&#x438;&#x43C;&#x438;&#x43A;&#x43E;&#x43C; &#x41A;. &#x428;&#x435;&#x435;&#x43B;&#x435; &#x438;&#x437; &#x43C;&#x438;&#x43D;&#x435;&#x440;&#x430;&#x43B;&#x430; &#x442;&#x443;&#x43D;&#x433;&#x441;&#x442;&#x435;&#x43D;&#x430;, &#x43F;&#x43E;&#x437;&#x434;&#x43D;&#x435;&#x435; &#x43D;&#x430;&#x437;&#x432;&#x430;&#x43D;&#x43D;&#x43E;&#x433;&#x43E; &#x448;&#x435;&#x435;&#x43B;&#x438;&#x442;&#x43E;&#x43C;. &#x412; 1783 &#x433;&#x43E;&#x434;&#x443; &#x438;&#x441;&#x43F;&#x430;&#x43D;&#x441;&#x43A;&#x438;&#x435; &#x445;&#x438;&#x43C;&#x438;&#x43A;&#x438; &#x431;&#x440;&#x430;&#x442;&#x44C;&#x44F; &#x434;&apos;&#x42D;&#x43B;&#x443;&#x44F;&#x440; &#x432;&#x44B;&#x434;&#x435;&#x43B;&#x438;&#x43B;&#x438; WO<sub>3</sub> &#x438;&#x437; &#x43C;&#x438;&#x43D;&#x435;&#x440;&#x430;&#x43B;&#x430; &#x432;&#x43E;&#x43B;&#x44C;&#x444;&#x440;&#x430;&#x43C;&#x438;&#x442;&#x430; &#x438;, &#x432;&#x43E;&#x441;&#x441;&#x442;&#x430;&#x43D;&#x43E;&#x432;&#x438;&#x432; WO<sub>3</sub> &#x443;&#x433;&#x43B;&#x435;&#x440;&#x43E;&#x434;&#x43E;&#x43C;, &#x432;&#x43F;&#x435;&#x440;&#x432;&#x44B;&#x435; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x438;&#x43B;&#x438; &#x441;&#x430;&#x43C; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;, &#x43D;&#x430;&#x437;&#x432;&#x430;&#x43D;&#x43D;&#x44B;&#x439; &#x438;&#x43C;&#x438; &#x412;&#x43E;&#x43B;&#x44C;&#x444;&#x440;&#x430;&#x43C;&#x43E;&#x43C;. &#x41C;&#x438;&#x43D;&#x435;&#x440;&#x430;&#x43B; &#x436;&#x435; &#x432;&#x43E;&#x43B;&#x44C;&#x444;&#x440;&#x430;&#x43C;&#x438;&#x442; &#x431;&#x44B;&#x43B; &#x438;&#x437;&#x432;&#x435;&#x441;&#x442;&#x435;&#x43D; &#x435;&#x449;&#x435; &#x410;&#x433;&#x440;&#x438;&#x43A;&#x43E;&#x43B;&#x435; (16 &#x432;&#x435;&#x43A;) &#x438; &#x43D;&#x430;&#x437;&#x44B;&#x432;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x443; &#x43D;&#x435;&#x433;&#x43E; &quot;Spuma lupi&quot; - &#x432;&#x43E;&#x43B;&#x447;&#x44C;&#x44F; &#x43F;&#x435;&#x43D;&#x430; (&#x43D;&#x435;&#x43C;. Wolf - &#x432;&#x43E;&#x43B;&#x43A;, Rahm - &#x43F;&#x435;&#x43D;&#x430;) &#x432; &#x441;&#x432;&#x44F;&#x437;&#x438; &#x441; &#x442;&#x435;&#x43C;, &#x447;&#x442;&#x43E; &#x412;&#x43E;&#x43B;&#x44C;&#x444;&#x440;&#x430;&#x43C;, &#x432;&#x441;&#x435;&#x433;&#x434;&#x430; &#x441;&#x43E;&#x43F;&#x440;&#x43E;&#x432;&#x43E;&#x436;&#x434;&#x430;&#x44F; &#x43E;&#x43B;&#x43E;&#x432;&#x44F;&#x43D;&#x43D;&#x44B;&#x435; &#x440;&#x443;&#x434;&#x44B;, &#x43C;&#x435;&#x448;&#x430;&#x43B; &#x432;&#x44B;&#x43F;&#x43B;&#x430;&#x432;&#x43A;&#x435; &#x43E;&#x43B;&#x43E;&#x432;&#x430;, &#x43F;&#x435;&#x440;&#x435;&#x432;&#x43E;&#x434;&#x44F; &#x435;&#x433;&#x43E; &#x432; &#x43F;&#x435;&#x43D;&#x443; &#x448;&#x43B;&#x430;&#x43A;&#x43E;&#x432; (&quot;&#x43F;&#x43E;&#x436;&#x438;&#x440;&#x430;&#x435;&#x442; &#x43E;&#x43B;&#x43E;&#x432;&#x43E; &#x43A;&#x430;&#x43A; &#x432;&#x43E;&#x43B;&#x43A; &#x43E;&#x432;&#x446;&#x443;&quot;). &#x412; &#x421;&#x428;&#x410; &#x438; &#x43D;&#x435;&#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x445; &#x434;&#x440;&#x443;&#x433;&#x438;&#x445; &#x441;&#x442;&#x440;&#x430;&#x43D;&#x430;&#x445; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; &#x43D;&#x430;&#x437;&#x44B;&#x432;&#x430;&#x43B;&#x441;&#x44F; &#x442;&#x430;&#x43A;&#x436;&#x435; &quot;&#x442;&#x443;&#x43D;&#x433;&#x441;&#x442;&#x435;&#x43D;&quot; (&#x43F;&#x43E;-&#x448;&#x432;&#x435;&#x434;&#x441;&#x43A;&#x438; - &#x442;&#x44F;&#x436;&#x435;&#x43B;&#x44B;&#x439; &#x43A;&#x430;&#x43C;&#x435;&#x43D;&#x44C;). &#x412;&#x43E;&#x43B;&#x44C;&#x444;&#x440;&#x430;&#x43C; &#x434;&#x43E;&#x43B;&#x433;&#x43E; &#x43D;&#x435; &#x43D;&#x430;&#x445;&#x43E;&#x434;&#x438;&#x43B; &#x43F;&#x440;&#x43E;&#x43C;&#x44B;&#x448;&#x43B;&#x435;&#x43D;&#x43D;&#x43E;&#x433;&#x43E; &#x43F;&#x440;&#x438;&#x43C;&#x435;&#x43D;&#x435;&#x43D;&#x438;&#x44F;. &#x41B;&#x438;&#x448;&#x44C; &#x432;&#x43E; &#x432;&#x442;&#x43E;&#x440;&#x43E;&#x439; &#x43F;&#x43E;&#x43B;&#x43E;&#x432;&#x438;&#x43D;&#x435; 19 &#x432;&#x435;&#x43A;&#x430; &#x43D;&#x430;&#x447;&#x430;&#x43B;&#x438; &#x438;&#x437;&#x443;&#x447;&#x430;&#x442;&#x44C; &#x432;&#x43B;&#x438;&#x44F;&#x43D;&#x438;&#x435; &#x434;&#x43E;&#x431;&#x430;&#x432;&#x43E;&#x43A; &#x412;&#x43E;&#x43B;&#x44C;&#x444;&#x440;&#x430;&#x43C; &#x43D;&#x430; &#x441;&#x432;&#x43E;&#x439;&#x441;&#x442;&#x432;&#x430; &#x441;&#x442;&#x430;&#x43B;&#x438;.\n",
+        "Атомная масса": "183.84",
+        "Плотность, кг/м³": "19300",
+        "Температура плавления, °С": "3410",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.134",
+        "Электроотрицательность": "1.7",
+        "Ковалентный радиус, Å": "1.30",
+        "1-й ионизац. потенциал, эв": "7.98"
+    },
+    {
+        "Химический символ": "Re",
+        "label": "Рений Rhenium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Xe)4f145d56s2",
+        "description": "<b>&#x420;&#x435;&#x43D;&#x438;&#x439;</b> (Rhenium), Re, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; VII &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 75, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 186,207. &#x421;&#x432;&#x435;&#x442;&#x43B;&#x43E;-&#x441;&#x435;&#x440;&#x44B;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;. &#x412; &#x43F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x43D;&#x43E;&#x43C; &#x420;&#x435;&#x43D;&#x438;&#x438; &#x434;&#x432;&#x430; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x430;: &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x439; <sup>185</sup>Re (37,07%) &#x438; &#x441;&#x43B;&#x430;&#x431;&#x43E;&#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x439; <sup>187</sup>Re (&#x441; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x43E;&#x43C; &#x43F;&#x43E;&#x43B;&#x443;&#x440;&#x430;&#x441;&#x43F;&#x430;&#x434;&#x430; &#x422;<sup>&#xBD; = 10<sup>11</sup> &#x43B;&#x435;&#x442;). &#x412; 1871 &#x433;&#x43E;&#x434;&#x443; &#x414;. &#x418;. &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432; &#x43F;&#x440;&#x435;&#x434;&#x441;&#x43A;&#x430;&#x437;&#x430;&#x43B; &#x441;&#x443;&#x449;&#x435;&#x441;&#x442;&#x432;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x430; &#x441; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x43C; &#x432;&#x435;&#x441;&#x43E;&#x43C; 190 - &#x430;&#x43D;&#x430;&#x43B;&#x43E;&#x433;&#x430; &#x43C;&#x430;&#x440;&#x433;&#x430;&#x43D;&#x446;&#x430; - &#x438; &#x43D;&#x430;&#x437;&#x432;&#x430;&#x43B; &#x435;&#x433;&#x43E; &quot;&#x442;&#x440;&#x438;&#x43C;&#x430;&#x440;&#x433;&#x430;&#x43D;&#x446;&#x435;&#x43C;&quot;. &#x412; &#x43F;&#x43E;&#x441;&#x43B;&#x435;&#x434;&#x443;&#x44E;&#x449;&#x438;&#x435; &#x433;&#x43E;&#x434;&#x44B; &#x43F;&#x43E;&#x44F;&#x432;&#x43B;&#x44F;&#x43B;&#x43E;&#x441;&#x44C; &#x43C;&#x43D;&#x43E;&#x433;&#x43E; &#x43D;&#x435;&#x434;&#x43E;&#x441;&#x442;&#x43E;&#x432;&#x435;&#x440;&#x43D;&#x44B;&#x445; &#x441;&#x43E;&#x43E;&#x431;&#x449;&#x435;&#x43D;&#x438;&#x439; &#x43E;&#x431; &#x43E;&#x442;&#x43A;&#x440;&#x44B;&#x442;&#x438;&#x438; &#x44D;&#x442;&#x43E;&#x433;&#x43E; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x430;. &#x41D;&#x43E; &#x43B;&#x438;&#x448;&#x44C; &#x432; 1925 &#x433;&#x43E;&#x434;&#x443; &#x43D;&#x435;&#x43C;&#x435;&#x446;&#x43A;&#x438;&#x435; &#x445;&#x438;&#x43C;&#x438;&#x43A;&#x438; &#x418;. &#x438; &#x412;. &#x41D;&#x43E;&#x434;&#x434;&#x430;&#x43A; &#x43E;&#x431;&#x43D;&#x430;&#x440;&#x443;&#x436;&#x438;&#x43B;&#x438; &#x435;&#x433;&#x43E; &#x441;&#x43F;&#x435;&#x43A;&#x442;&#x440;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x43C; &#x43C;&#x435;&#x442;&#x43E;&#x434;&#x43E;&#x43C; &#x432; &#x43C;&#x438;&#x43D;&#x435;&#x440;&#x430;&#x43B;&#x435; &#x43A;&#x43E;&#x43B;&#x443;&#x43C;&#x431;&#x438;&#x442;&#x435;. &#x41D;&#x430;&#x437;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x420;&#x435;&#x43D;&#x438;&#x439; &#x43F;&#x440;&#x43E;&#x438;&#x441;&#x445;&#x43E;&#x434;&#x438;&#x442; &#x43E;&#x442; &#x43B;&#x430;&#x442;&#x438;&#x43D;&#x441;&#x43A;&#x43E;&#x433;&#x43E; &#x43D;&#x430;&#x438;&#x43C;&#x435;&#x43D;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; &#x440;&#x435;&#x43A;&#x438; &#x420;&#x435;&#x439;&#x43D; (Rhenus) &#x432; &#x413;&#x435;&#x440;&#x43C;&#x430;&#x43D;&#x438;&#x438;.\n<p><a class=\"ogln\" name=\"m0\">&#x420;&#x430;&#x441;&#x43F;&#x440;&#x43E;&#x441;&#x442;&#x440;&#x430;&#x43D;&#x435;&#x43D;&#x438;&#x435; &#x420;&#x435;&#x43D;&#x438;&#x44F; &#x432; &#x43F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x435;.</a> &#x420;&#x435;&#x43D;&#x438;&#x439; - &#x442;&#x438;&#x43F;&#x438;&#x447;&#x43D;&#x44B;&#x439; &#x440;&#x430;&#x441;&#x441;&#x435;&#x44F;&#x43D;&#x43D;&#x44B;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;. &#x421;&#x440;&#x435;&#x434;&#x43D;&#x435;&#x435; &#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x430;&#x43D;&#x438;&#x435; &#x435;&#x433;&#x43E; &#x432; &#x437;&#x435;&#x43C;&#x43D;&#x43E;&#x439; &#x43A;&#x43E;&#x440;&#x435; 7&#xB7;10<sup>-8</sup>% &#x43F;&#x43E; &#x43C;&#x430;&#x441;&#x441;&#x435;. &#x418;&#x437;&#x432;&#x435;&#x441;&#x442;&#x43D;&#x44B; &#x442;&#x440;&#x438; &#x43C;&#x438;&#x43D;&#x435;&#x440;&#x430;&#x43B;&#x430; &#x420;&#x435;&#x43D;&#x438;&#x44F; - &#x43E;&#x43A;&#x441;&#x438;&#x434;, &#x441;&#x443;&#x43B;&#x44C;&#x444;&#x438;&#x434; &#x438; &#x441;&#x443;&#x43B;&#x44C;&#x444;&#x43E;&#x440;&#x435;&#x43D;&#x430;&#x442; &#x43C;&#x435;&#x434;&#x438; CuReS<sub>4</sub> (&#x43C;&#x438;&#x43D;&#x435;&#x440;&#x430;&#x43B; &#x434;&#x436;&#x435;&#x437;&#x43A;&#x430;&#x437;&#x433;&#x430;&#x43D;&#x438;&#x442;). &#x41A;&#x430;&#x43A; &#x43F;&#x440;&#x438;&#x43C;&#x435;&#x441;&#x44C; &#x420;&#x435;&#x43D;&#x438;&#x439; &#x432;&#x441;&#x442;&#x440;&#x435;&#x447;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x432; &#x43C;&#x438;&#x43D;&#x435;&#x440;&#x430;&#x43B;&#x430;&#x445; &#x434;&#x440;&#x443;&#x433;&#x438;&#x445; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x43E;&#x432;; &#x435;&#x433;&#x43E; &#x43F;&#x43E;&#x432;&#x44B;&#x448;&#x435;&#x43D;&#x43D;&#x44B;&#x435; &#x43A;&#x43E;&#x43D;&#x446;&#x435;&#x43D;&#x442;&#x440;&#x430;&#x446;&#x438;&#x438; &#x43E;&#x442;&#x43C;&#x435;&#x447;&#x435;&#x43D;&#x44B; &#x432; &#x43A;&#x43E;&#x43B;&#x443;&#x43C;&#x431;&#x438;&#x442;&#x430;&#x445;, &#x442;&#x430;&#x43D;&#x442;&#x430;&#x43B;&#x438;&#x442;&#x430;&#x445;, &#x446;&#x438;&#x440;&#x43A;&#x43E;&#x43D;&#x430;&#x442;&#x430;&#x445;, &#x43C;&#x438;&#x43D;&#x435;&#x440;&#x430;&#x43B;&#x430;&#x445; &#x440;&#x435;&#x434;&#x43A;&#x438;&#x445; &#x437;&#x435;&#x43C;&#x435;&#x43B;&#x44C;, &#x441;&#x443;&#x43B;&#x44C;&#x444;&#x438;&#x434;&#x430;&#x445; &#x43C;&#x435;&#x434;&#x438; &#x438; &#x43E;&#x441;&#x43E;&#x431;&#x435;&#x43D;&#x43D;&#x43E; &#x432; &#x43C;&#x43E;&#x43B;&#x438;&#x431;&#x434;&#x435;&#x43D;&#x438;&#x442;&#x435; MoS<sub>2</sub> (&#x43E;&#x442; 0,1 &#x434;&#x43E; 10<sup>-5</sup>%). &#x421;&#x432;&#x44F;&#x437;&#x44C; &#x420;&#x435;&#x43D;&#x438;&#x44F; &#x441; &#x43C;&#x43E;&#x43B;&#x438;&#x431;&#x434;&#x435;&#x43D;&#x438;&#x442;&#x43E;&#x43C; &#x43E;&#x431;&#x443;&#x441;&#x43B;&#x43E;&#x432;&#x43B;&#x435;&#x43D;&#x430; &#x438;&#x437;&#x43E;&#x43C;&#x43E;&#x440;&#x444;&#x438;&#x437;&#x43C;&#x43E;&#x43C; MoS<sub>2</sub> &#x438; ReS<sub>2</sub>. &#x412;&#x430;&#x436;&#x43D;&#x44B;&#x439; &#x438;&#x441;&#x442;&#x43E;&#x447;&#x43D;&#x438;&#x43A; &#x420;&#x435;&#x43D;&#x438;&#x44F; - &#x43D;&#x435;&#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x435; &#x43C;&#x435;&#x434;&#x43D;&#x44B;&#x435; &#x441;&#x443;&#x43B;&#x44C;&#x444;&#x438;&#x434;&#x43D;&#x44B;&#x435; &#x43A;&#x43E;&#x43D;&#x446;&#x435;&#x43D;&#x442;&#x440;&#x430;&#x442;&#x44B; (0,002- 0,005% Re).\n</p><p><a class=\"ogln\" name=\"m1\">&#x424;&#x438;&#x437;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x435; &#x441;&#x432;&#x43E;&#x439;&#x441;&#x442;&#x432;&#x430; &#x420;&#x435;&#x43D;&#x438;&#x44F;.</a> &#x420;&#x435;&#x43D;&#x438;&#x439; &#x43A;&#x440;&#x438;&#x441;&#x442;&#x430;&#x43B;&#x43B;&#x438;&#x437;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x432; &#x433;&#x435;&#x43A;&#x441;&#x430;&#x433;&#x43E;&#x43D;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x439; &#x43F;&#x43B;&#x43E;&#x442;&#x43D;&#x43E;&#x443;&#x43F;&#x430;&#x43A;&#x43E;&#x432;&#x430;&#x43D;&#x43D;&#x43E;&#x439; &#x440;&#x435;&#x448;&#x435;&#x442;&#x43A;&#x435; (&#x430; = 2,760 &#xC5;, &#x441; = 4,458 &#xC5;). &#x410;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x440;&#x430;&#x434;&#x438;&#x443;&#x441; 1,373 &#xC5;, &#x438;&#x43E;&#x43D;&#x43D;&#x44B;&#x439; &#x440;&#x430;&#x434;&#x438;&#x443;&#x441; Re<sup>7+</sup> 0,56 &#xC5;. &#x41F;&#x43B;&#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x442;&#x44C; 21,03 &#x433;/&#x441;&#x43C;<sup>3</sup>; t<sub>&#x43F;&#x43B;</sub> 3180&#xB0;&#x421;, t<sub>&#x43A;&#x438;&#x43F;</sub> 5900 &#xB0;&#x421;. &#x423;&#x434;&#x435;&#x43B;&#x44C;&#x43D;&#x430;&#x44F; &#x442;&#x435;&#x43F;&#x43B;&#x43E;&#x435;&#x43C;&#x43A;&#x43E;&#x441;&#x442;&#x44C; 153 &#x434;&#x436;/(&#x43A;&#x433;&#xB7;&#x41A;), &#x438;&#x43B;&#x438; 0,03653 &#x43A;&#x430;&#x43B;/(&#x433;&#xB7;&#x433;&#x440;&#x430;&#x434;) (0-1200 &#xB0;&#x421;). &#x422;&#x435;&#x440;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x43A;&#x43E;&#x44D;&#x444;&#x444;&#x438;&#x446;&#x438;&#x435;&#x43D;&#x442; &#x43B;&#x438;&#x43D;&#x435;&#x439;&#x43D;&#x43E;&#x433;&#x43E; &#x440;&#x430;&#x441;&#x448;&#x438;&#x440;&#x435;&#x43D;&#x438;&#x44F; 6,7&#xB7;10<sup>-6</sup> (20-500 &#xB0;&#x421;). &#x423;&#x434;&#x435;&#x43B;&#x44C;&#x43D;&#x43E;&#x435; &#x43E;&#x431;&#x44A;&#x435;&#x43C;&#x43D;&#x43E;&#x435; &#x44D;&#x43B;&#x435;&#x43A;&#x442;&#x440;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x435; &#x441;&#x43E;&#x43F;&#x440;&#x43E;&#x442;&#x438;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x435; 19,3&#xB7;10<sup>-6</sup> &#x43E;&#x43C;&#xB7;&#x441;&#x43C; (20 &#xB0;&#x421;). &#x422;&#x435;&#x43C;&#x43F;&#x435;&#x440;&#x430;&#x442;&#x443;&#x440;&#x430; &#x43F;&#x435;&#x440;&#x435;&#x445;&#x43E;&#x434;&#x430; &#x432; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x44F;&#x43D;&#x438;&#x435; &#x441;&#x432;&#x435;&#x440;&#x445;&#x43F;&#x440;&#x43E;&#x432;&#x43E;&#x434;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438; 1,699 &#x41A;; &#x440;&#x430;&#x431;&#x43E;&#x442;&#x430; &#x432;&#x44B;&#x445;&#x43E;&#x434;&#x430; 4,80 &#x44D;&#x432;, &#x43F;&#x430;&#x440;&#x430;&#x43C;&#x430;&#x433;&#x43D;&#x438;&#x442;&#x435;&#x43D;.\n</p><p>&#x41F;&#x43E; &#x442;&#x443;&#x433;&#x43E;&#x43F;&#x43B;&#x430;&#x432;&#x43A;&#x43E;&#x441;&#x442;&#x438; &#x420;&#x435;&#x43D;&#x438;&#x439; &#x443;&#x441;&#x442;&#x443;&#x43F;&#x430;&#x435;&#x442; &#x43B;&#x438;&#x448;&#x44C; &#x432;&#x43E;&#x43B;&#x44C;&#x444;&#x440;&#x430;&#x43C;&#x443;. &#x412; &#x43E;&#x442;&#x43B;&#x438;&#x447;&#x438;&#x435; &#x43E;&#x442; &#x432;&#x43E;&#x43B;&#x44C;&#x444;&#x440;&#x430;&#x43C;&#x430;, &#x420;&#x435;&#x43D;&#x438;&#x439; &#x43F;&#x43B;&#x430;&#x441;&#x442;&#x438;&#x447;&#x435;&#x43D; &#x432; &#x43B;&#x438;&#x442;&#x43E;&#x43C; &#x438; &#x440;&#x435;&#x43A;&#x440;&#x438;&#x441;&#x442;&#x430;&#x43B;&#x43B;&#x438;&#x437;&#x43E;&#x432;&#x430;&#x43D;&#x43D;&#x43E;&#x43C; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x44F;&#x43D;&#x438;&#x438; &#x438; &#x434;&#x435;&#x444;&#x43E;&#x440;&#x43C;&#x438;&#x440;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x43D;&#x430; &#x445;&#x43E;&#x43B;&#x43E;&#x434;&#x443;. &#x41C;&#x43E;&#x434;&#x443;&#x43B;&#x44C; &#x443;&#x43F;&#x440;&#x443;&#x433;&#x43E;&#x441;&#x442;&#x438; &#x420;&#x435;&#x43D;&#x438;&#x44F; 470 &#x413;&#x43D;/&#x43C;<sup>2</sup>, &#x438;&#x43B;&#x438; 47 000 &#x43A;&#x433;&#x441;/&#x43C;&#x43C;<sup>2</sup> (&#x432;&#x44B;&#x448;&#x435;, &#x447;&#x435;&#x43C; &#x443; &#x434;&#x440;&#x443;&#x433;&#x438;&#x445; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;&#x43E;&#x432;, &#x437;&#x430; &#x438;&#x441;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x438;&#x435;&#x43C; Os &#x438; Ir). &#x42D;&#x442;&#x43E; &#x43E;&#x431;&#x443;&#x441;&#x43B;&#x43E;&#x432;&#x43B;&#x438;&#x432;&#x430;&#x435;&#x442; &#x432;&#x44B;&#x441;&#x43E;&#x43A;&#x43E;&#x435; &#x441;&#x43E;&#x43F;&#x440;&#x43E;&#x442;&#x438;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x434;&#x435;&#x444;&#x43E;&#x440;&#x43C;&#x430;&#x446;&#x438;&#x438; &#x438; &#x431;&#x44B;&#x441;&#x442;&#x440;&#x44B;&#x439; &#x43D;&#x430;&#x43A;&#x43B;&#x435;&#x43F; &#x43F;&#x440;&#x438; &#x43E;&#x431;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x435; &#x434;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x435;&#x43C;. &#x420;&#x435;&#x43D;&#x438;&#x439; &#x43E;&#x442;&#x43B;&#x438;&#x447;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x432;&#x44B;&#x441;&#x43E;&#x43A;&#x43E;&#x439; &#x434;&#x43B;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E;&#x439; &#x43F;&#x440;&#x43E;&#x447;&#x43D;&#x43E;&#x441;&#x442;&#x44C;&#x44E; &#x43F;&#x440;&#x438; &#x442;&#x435;&#x43C;&#x43F;&#x435;&#x440;&#x430;&#x442;&#x443;&#x440;&#x430;&#x445; 1000-2000 &#xB0;&#x421;.\n</p><p><a class=\"ogln\" name=\"m2\">&#x425;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x435; &#x441;&#x432;&#x43E;&#x439;&#x441;&#x442;&#x432;&#x430; &#x420;&#x435;&#x43D;&#x438;&#x44F;.</a> &#x423; &#x430;&#x442;&#x43E;&#x43C;&#x430; Re &#x441;&#x435;&#x43C;&#x44C; &#x432;&#x43D;&#x435;&#x448;&#x43D;&#x438;&#x445; &#x44D;&#x43B;&#x435;&#x43A;&#x442;&#x440;&#x43E;&#x43D;&#x43E;&#x432;; &#x43A;&#x43E;&#x43D;&#x444;&#x438;&#x433;&#x443;&#x440;&#x430;&#x446;&#x438;&#x44F; &#x432;&#x44B;&#x441;&#x448;&#x438;&#x445; &#x44D;&#x43D;&#x435;&#x440;&#x433;&#x435;&#x442;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x445; &#x443;&#x440;&#x43E;&#x432;&#x43D;&#x435;&#x439; 5d<sup>5</sup>6s<sup>2</sup>. &#x41D;&#x430; &#x432;&#x43E;&#x437;&#x434;&#x443;&#x445;&#x435; &#x43F;&#x440;&#x438; &#x43E;&#x431;&#x44B;&#x447;&#x43D;&#x43E;&#x439; &#x442;&#x435;&#x43C;&#x43F;&#x435;&#x440;&#x430;&#x442;&#x443;&#x440;&#x435; &#x420;&#x435;&#x43D;&#x438;&#x439; &#x443;&#x441;&#x442;&#x43E;&#x439;&#x447;&#x438;&#x432;. &#x41E;&#x43A;&#x438;&#x441;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;&#x430; &#x441; &#x43E;&#x431;&#x440;&#x430;&#x437;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435;&#x43C; &#x43E;&#x43A;&#x441;&#x438;&#x434;&#x43E;&#x432; (ReO<sub>3</sub>, Re<sub>2</sub>O<sub>7</sub>) &#x43D;&#x430;&#x431;&#x43B;&#x44E;&#x434;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x43D;&#x430;&#x447;&#x438;&#x43D;&#x430;&#x44F; &#x441; 300 &#xB0;&#x421; &#x438; &#x438;&#x43D;&#x442;&#x435;&#x43D;&#x441;&#x438;&#x432;&#x43D;&#x43E; &#x43F;&#x440;&#x43E;&#x442;&#x435;&#x43A;&#x430;&#x435;&#x442; &#x432;&#x44B;&#x448;&#x435; 600 &#xB0;&#x421;. &#x421; &#x432;&#x43E;&#x434;&#x43E;&#x440;&#x43E;&#x434;&#x43E;&#x43C; &#x420;&#x435;&#x43D;&#x438;&#x439; &#x43D;&#x435; &#x440;&#x435;&#x430;&#x433;&#x438;&#x440;&#x443;&#x435;&#x442; &#x432;&#x43F;&#x43B;&#x43E;&#x442;&#x44C; &#x434;&#x43E; &#x442;&#x435;&#x43C;&#x43F;&#x435;&#x440;&#x430;&#x442;&#x443;&#x440;&#x44B; &#x43F;&#x43B;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x44F;. &#x421; &#x430;&#x437;&#x43E;&#x442;&#x43E;&#x43C; &#x43D;&#x435; &#x432;&#x437;&#x430;&#x438;&#x43C;&#x43E;&#x434;&#x435;&#x439;&#x441;&#x442;&#x432;&#x443;&#x435;&#x442; &#x432;&#x43E;&#x43E;&#x431;&#x449;&#x435;. &#x420;&#x435;&#x43D;&#x438;&#x439;, &#x432; &#x43E;&#x442;&#x43B;&#x438;&#x447;&#x438;&#x435; &#x43E;&#x442; &#x434;&#x440;&#x443;&#x433;&#x438;&#x445; &#x442;&#x443;&#x433;&#x43E;&#x43F;&#x43B;&#x430;&#x432;&#x43A;&#x438;&#x445; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;&#x43E;&#x432;, &#x43D;&#x435; &#x43E;&#x431;&#x440;&#x430;&#x437;&#x443;&#x435;&#x442; &#x43A;&#x430;&#x440;&#x431;&#x438;&#x434;&#x43E;&#x432;. &#x424;&#x442;&#x43E;&#x440; &#x438; &#x445;&#x43B;&#x43E;&#x440; &#x440;&#x435;&#x430;&#x433;&#x438;&#x440;&#x443;&#x44E;&#x442; &#x441; &#x420;&#x435;&#x43D;&#x438;&#x435;&#x43C; &#x43F;&#x440;&#x438; &#x43D;&#x430;&#x433;&#x440;&#x435;&#x432;&#x430;&#x43D;&#x438;&#x438; &#x441; &#x43E;&#x431;&#x440;&#x430;&#x437;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435;&#x43C; ReF<sub>6</sub> &#x438; ReCl<sub>5</sub>, &#x441; &#x431;&#x440;&#x43E;&#x43C;&#x43E;&#x43C; &#x438; &#x438;&#x43E;&#x434;&#x43E;&#x43C; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B; &#x43D;&#x435;&#x43F;&#x43E;&#x441;&#x440;&#x435;&#x434;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x43E; &#x43D;&#x435; &#x432;&#x437;&#x430;&#x438;&#x43C;&#x43E;&#x434;&#x435;&#x439;&#x441;&#x442;&#x432;&#x443;&#x435;&#x442;. &#x41F;&#x430;&#x440;&#x44B; &#x441;&#x435;&#x440;&#x44B; &#x43F;&#x440;&#x438; 700-800 &#xB0;&#x421; &#x434;&#x430;&#x44E;&#x442; &#x441; &#x420;&#x435;&#x43D;&#x438;&#x435;&#x43C; &#x441;&#x443;&#x43B;&#x44C;&#x444;&#x438;&#x434; ReS<sub>2</sub>.\n</p><p>&#x420;&#x435;&#x43D;&#x438;&#x439; &#x43D;&#x435; &#x43A;&#x43E;&#x440;&#x440;&#x43E;&#x434;&#x438;&#x440;&#x443;&#x435;&#x442; &#x432; &#x441;&#x43E;&#x43B;&#x44F;&#x43D;&#x43E;&#x439; &#x438; &#x43F;&#x43B;&#x430;&#x432;&#x438;&#x43A;&#x43E;&#x432;&#x43E;&#x439; &#x43A;&#x438;&#x441;&#x43B;&#x43E;&#x442;&#x430;&#x445; &#x43B;&#x44E;&#x431;&#x44B;&#x445; &#x43A;&#x43E;&#x43D;&#x446;&#x435;&#x43D;&#x442;&#x440;&#x430;&#x446;&#x438;&#x439; &#x43D;&#x430; &#x445;&#x43E;&#x43B;&#x43E;&#x434;&#x443; &#x438; &#x43F;&#x440;&#x438; &#x43D;&#x430;&#x433;&#x440;&#x435;&#x432;&#x430;&#x43D;&#x438;&#x438; &#x434;&#x43E; 100 &#xB0;&#x421;. &#x412; &#x430;&#x437;&#x43E;&#x442;&#x43D;&#x43E;&#x439; &#x43A;&#x438;&#x441;&#x43B;&#x43E;&#x442;&#x435;, &#x433;&#x43E;&#x440;&#x44F;&#x447;&#x435;&#x439; &#x43A;&#x43E;&#x43D;&#x446;&#x435;&#x43D;&#x442;&#x440;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x43D;&#x43E;&#x439; &#x441;&#x435;&#x440;&#x43D;&#x43E;&#x439; &#x43A;&#x438;&#x441;&#x43B;&#x43E;&#x442;&#x435;, &#x432; &#x43F;&#x435;&#x440;&#x43E;&#x43A;&#x441;&#x438;&#x434;&#x435; &#x432;&#x43E;&#x434;&#x43E;&#x440;&#x43E;&#x434;&#x430; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B; &#x440;&#x430;&#x441;&#x442;&#x432;&#x43E;&#x440;&#x44F;&#x435;&#x442;&#x441;&#x44F; &#x441; &#x43E;&#x431;&#x440;&#x430;&#x437;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435;&#x43C; &#x440;&#x435;&#x43D;&#x438;&#x435;&#x432;&#x43E;&#x439; &#x43A;&#x438;&#x441;&#x43B;&#x43E;&#x442;&#x44B;. &#x412; &#x440;&#x430;&#x441;&#x442;&#x432;&#x43E;&#x440;&#x430;&#x445; &#x449;&#x435;&#x43B;&#x43E;&#x447;&#x435;&#x439; &#x43F;&#x440;&#x438; &#x43D;&#x430;&#x433;&#x440;&#x435;&#x432;&#x430;&#x43D;&#x438;&#x438; &#x420;&#x435;&#x43D;&#x438;&#x439; &#x43C;&#x435;&#x434;&#x43B;&#x435;&#x43D;&#x43D;&#x43E; &#x43A;&#x43E;&#x440;&#x440;&#x43E;&#x434;&#x438;&#x440;&#x443;&#x435;&#x442;, &#x440;&#x430;&#x441;&#x43F;&#x43B;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x43D;&#x44B;&#x435; &#x449;&#x435;&#x43B;&#x43E;&#x447;&#x438; &#x440;&#x430;&#x441;&#x442;&#x432;&#x43E;&#x440;&#x44F;&#x44E;&#x442; &#x435;&#x433;&#x43E; &#x431;&#x44B;&#x441;&#x442;&#x440;&#x43E;.\n</p><p>&#x414;&#x43B;&#x44F; &#x420;&#x435;&#x43D;&#x438;&#x44F; &#x438;&#x437;&#x432;&#x435;&#x441;&#x442;&#x43D;&#x44B; &#x432;&#x441;&#x435; &#x432;&#x430;&#x43B;&#x435;&#x43D;&#x442;&#x43D;&#x44B;&#x435; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x44F;&#x43D;&#x438;&#x44F; &#x43E;&#x442; +7 &#x434;&#x43E; -1, &#x447;&#x442;&#x43E; &#x43E;&#x431;&#x443;&#x441;&#x43B;&#x43E;&#x432;&#x43B;&#x438;&#x432;&#x430;&#x435;&#x442; &#x43C;&#x43D;&#x43E;&#x433;&#x43E;&#x447;&#x438;&#x441;&#x43B;&#x435;&#x43D;&#x43D;&#x43E;&#x441;&#x442;&#x44C; &#x438; &#x440;&#x430;&#x437;&#x43D;&#x43E;&#x43E;&#x431;&#x440;&#x430;&#x437;&#x438;&#x435; &#x435;&#x433;&#x43E; &#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x439;. &#x41D;&#x430;&#x438;&#x431;&#x43E;&#x43B;&#x435;&#x435; &#x443;&#x441;&#x442;&#x43E;&#x439;&#x447;&#x438;&#x432;&#x44B; &#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x44F; &#x441;&#x435;&#x43C;&#x438;&#x432;&#x430;&#x43B;&#x435;&#x43D;&#x442;&#x43D;&#x43E;&#x433;&#x43E; &#x420;&#x435;&#x43D;&#x438;&#x44F;. &#x420;&#x435;&#x43D;&#x438;&#x435;&#x432;&#x44B;&#x439; &#x430;&#x43D;&#x433;&#x438;&#x434;&#x440;&#x438;&#x434; Re&#x41E;<sub>7</sub> - &#x441;&#x432;&#x435;&#x442;&#x43B;&#x43E;-&#x436;&#x435;&#x43B;&#x442;&#x43E;&#x435; &#x432;&#x435;&#x449;&#x435;&#x441;&#x442;&#x432;&#x43E;, &#x445;&#x43E;&#x440;&#x43E;&#x448;&#x43E; &#x440;&#x430;&#x441;&#x442;&#x432;&#x43E;&#x440;&#x438;&#x43C;&#x43E;&#x435; &#x432; &#x432;&#x43E;&#x434;&#x435;. &#x420;&#x435;&#x43D;&#x438;&#x435;&#x432;&#x430;&#x44F; &#x43A;&#x438;&#x441;&#x43B;&#x43E;&#x442;&#x430; HReO<sub>4</sub> - &#x431;&#x435;&#x441;&#x446;&#x432;&#x435;&#x442;&#x43D;&#x430;&#x44F;, &#x441;&#x438;&#x43B;&#x44C;&#x43D;&#x430;&#x44F;; &#x441;&#x440;&#x430;&#x432;&#x43D;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E; &#x441;&#x43B;&#x430;&#x431;&#x44B;&#x439; &#x43E;&#x43A;&#x438;&#x441;&#x43B;&#x438;&#x442;&#x435;&#x43B;&#x44C; (&#x432; &#x43E;&#x442;&#x43B;&#x438;&#x447;&#x438;&#x435; &#x43E;&#x442; &#x43C;&#x430;&#x440;&#x433;&#x430;&#x43D;&#x446;&#x435;&#x432;&#x43E;&#x439; HMnO<sub>4</sub>). &#x41F;&#x440;&#x438; &#x432;&#x437;&#x430;&#x438;&#x43C;&#x43E;&#x434;&#x435;&#x439;&#x441;&#x442;&#x432;&#x438;&#x438; HReO<sub>4</sub> &#x441; &#x449;&#x435;&#x43B;&#x43E;&#x447;&#x430;&#x43C;&#x438;, &#x43E;&#x43A;&#x441;&#x438;&#x434;&#x430;&#x43C;&#x438; &#x438;&#x43B;&#x438; &#x43A;&#x430;&#x440;&#x431;&#x43E;&#x43D;&#x430;&#x442;&#x430;&#x43C;&#x438; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;&#x43E;&#x432; &#x43E;&#x431;&#x440;&#x430;&#x437;&#x443;&#x44E;&#x442;&#x441;&#x44F; &#x435;&#x435; &#x441;&#x43E;&#x43B;&#x438; - &#x43F;&#x435;&#x440;&#x440;&#x435;&#x43D;&#x430;&#x442;&#x44B;. &#x421;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x44F; &#x438;&#x43D;&#x44B;&#x445; &#x441;&#x442;&#x435;&#x43F;&#x435;&#x43D;&#x435;&#x439; &#x43E;&#x43A;&#x438;&#x441;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x420;&#x435;&#x43D;&#x438;&#x44F; - &#x43E;&#x440;&#x430;&#x43D;&#x436;&#x435;&#x432;&#x43E;-&#x43A;&#x440;&#x430;&#x441;&#x43D;&#x44B;&#x439; &#x43E;&#x43A;&#x441;&#x438;&#x434; (VI) R&#x435;&#x41E;<sub>3</sub>, &#x442;&#x435;&#x43C;&#x43D;&#x43E;-&#x43A;&#x43E;&#x440;&#x438;&#x447;&#x43D;&#x435;&#x432;&#x44B;&#x439; &#x43E;&#x43A;&#x441;&#x438;&#x434; (IV) ReO<sub>2</sub>, &#x43B;&#x435;&#x433;&#x43A;&#x43E;&#x43B;&#x435;&#x442;&#x443;&#x447;&#x438;&#x435; &#x445;&#x43B;&#x43E;&#x440;&#x438;&#x434;&#x44B; &#x438; &#x43E;&#x43A;&#x441;&#x438;&#x445;&#x43B;&#x43E;&#x440;&#x438;&#x434;&#x44B; ReCl<sub>5</sub>, ReOCl<sub>4</sub>, ReO<sub>3</sub>Cl &#x438; &#x434;&#x440;&#x443;&#x433;&#x438;&#x435;.\n</p><p><a class=\"ogln\" name=\"m3\">&#x41F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x420;&#x435;&#x43D;&#x438;&#x44F;.</a> &#x41E;&#x441;&#x43D;&#x43E;&#x432;&#x43D;&#x44B;&#x43C; &#x438;&#x441;&#x442;&#x43E;&#x447;&#x43D;&#x438;&#x43A;&#x43E;&#x43C; &#x420;&#x435;&#x43D;&#x438;&#x44F; &#x441;&#x43B;&#x443;&#x436;&#x430;&#x442; &#x43C;&#x43E;&#x43B;&#x438;&#x431;&#x434;&#x435;&#x43D;&#x438;&#x442;&#x43E;&#x432;&#x44B;&#x435; &#x43A;&#x43E;&#x43D;&#x446;&#x435;&#x43D;&#x442;&#x440;&#x430;&#x442;&#x44B; (&#x441; &#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x430;&#x43D;&#x438;&#x435;&#x43C; Re 0,01-0,04%) &#x438; &#x43C;&#x435;&#x434;&#x43D;&#x44B;&#x435; &#x43A;&#x43E;&#x43D;&#x446;&#x435;&#x43D;&#x442;&#x440;&#x430;&#x442;&#x44B; &#x43D;&#x435;&#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x445; &#x43C;&#x435;&#x441;&#x442;&#x43E;&#x440;&#x43E;&#x436;&#x434;&#x435;&#x43D;&#x438;&#x439; &#x43C;&#x435;&#x434;&#x438; (&#x441; &#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x430;&#x43D;&#x438;&#x435;&#x43C; Re 0,002-0,003%). &#x41F;&#x440;&#x438; &#x43E;&#x43A;&#x438;&#x441;&#x43B;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E;&#x43C; &#x43E;&#x431;&#x436;&#x438;&#x433;&#x435; &#x43C;&#x43E;&#x43B;&#x438;&#x431;&#x434;&#x435;&#x43D;&#x438;&#x442;&#x43E;&#x432;&#x44B;&#x445; &#x43A;&#x43E;&#x43D;&#x446;&#x435;&#x43D;&#x442;&#x440;&#x430;&#x442;&#x43E;&#x432; &#x420;&#x435;&#x43D;&#x438;&#x439; &#x443;&#x434;&#x430;&#x43B;&#x44F;&#x435;&#x442;&#x441;&#x44F; &#x441; &#x43F;&#x435;&#x447;&#x43D;&#x44B;&#x43C;&#x438; &#x433;&#x430;&#x437;&#x430;&#x43C;&#x438; &#x432; &#x432;&#x438;&#x434;&#x435; Re<sub>2</sub>O<sub>7</sub> (t<sub>&#x43A;&#x438;&#x43F;</sub> 360 &#xB0;&#x421;), &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x430;&#x44F; &#x43A;&#x43E;&#x43D;&#x446;&#x435;&#x43D;&#x442;&#x440;&#x438;&#x440;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x432; &#x43F;&#x440;&#x43E;&#x434;&#x443;&#x43A;&#x442;&#x430;&#x445; &#x43F;&#x44B;&#x43B;&#x435;&#x443;&#x43B;&#x43E;&#x432;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C; (&#x448;&#x43B;&#x430;&#x43C;&#x430;&#x445;, &#x440;&#x430;&#x441;&#x442;&#x432;&#x43E;&#x440;&#x430;&#x445;). &#x41D;&#x430; &#x440;&#x430;&#x437;&#x43B;&#x438;&#x447;&#x43D;&#x44B;&#x445; &#x441;&#x442;&#x430;&#x434;&#x438;&#x44F;&#x445; &#x43F;&#x440;&#x43E;&#x438;&#x437;&#x432;&#x43E;&#x434;&#x441;&#x442;&#x432;&#x430; &#x447;&#x435;&#x440;&#x43D;&#x43E;&#x432;&#x43E;&#x439; &#x43C;&#x435;&#x434;&#x438; &#x438;&#x437; &#x43A;&#x43E;&#x43D;&#x446;&#x435;&#x43D;&#x442;&#x440;&#x430;&#x442;&#x43E;&#x432; &#x420;&#x435;&#x43D;&#x438;&#x439; &#x442;&#x430;&#x43A;&#x436;&#x435; &#x443;&#x434;&#x430;&#x43B;&#x44F;&#x435;&#x442;&#x441;&#x44F; &#x441; &#x433;&#x430;&#x437;&#x430;&#x43C;&#x438;. &#x415;&#x441;&#x43B;&#x438; &#x43F;&#x435;&#x447;&#x43D;&#x44B;&#x435; &#x433;&#x430;&#x437;&#x44B; &#x43D;&#x430;&#x43F;&#x440;&#x430;&#x432;&#x43B;&#x44F;&#x44E;&#x442;&#x441;&#x44F; &#x432; &#x43F;&#x440;&#x43E;&#x438;&#x437;&#x432;&#x43E;&#x434;&#x441;&#x442;&#x432;&#x43E; &#x441;&#x435;&#x440;&#x43D;&#x43E;&#x439; &#x43A;&#x438;&#x441;&#x43B;&#x43E;&#x442;&#x44B;, &#x420;&#x435;&#x43D;&#x438;&#x439; &#x43A;&#x43E;&#x43D;&#x446;&#x435;&#x43D;&#x442;&#x440;&#x438;&#x440;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x432; &#x43F;&#x440;&#x43E;&#x43C;&#x44B;&#x432;&#x43D;&#x43E;&#x439; &#x43A;&#x438;&#x441;&#x43B;&#x43E;&#x442;&#x435; &#x44D;&#x43B;&#x435;&#x43A;&#x442;&#x440;&#x43E;&#x444;&#x438;&#x43B;&#x44C;&#x442;&#x440;&#x43E;&#x432;. &#x414;&#x43B;&#x44F; &#x438;&#x437;&#x432;&#x43B;&#x435;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x420;&#x435;&#x43D;&#x438;&#x44F; &#x438;&#x437; &#x43F;&#x44B;&#x43B;&#x435;&#x439; &#x438; &#x448;&#x43B;&#x430;&#x43C;&#x43E;&#x432; &#x43F;&#x440;&#x438;&#x43C;&#x435;&#x43D;&#x44F;&#x44E;&#x442; &#x432;&#x44B;&#x449;&#x435;&#x43B;&#x430;&#x447;&#x438;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x441;&#x43B;&#x430;&#x431;&#x43E;&#x439; H<sub>2</sub>SO<sub>4</sub> &#x441; &#x434;&#x43E;&#x431;&#x430;&#x432;&#x43A;&#x43E;&#x439; &#x43E;&#x43A;&#x438;&#x441;&#x43B;&#x438;&#x442;&#x435;&#x43B;&#x44F; - &#x43F;&#x438;&#x440;&#x43E;&#x43B;&#x44E;&#x437;&#x438;&#x442;&#x430;. &#x418;&#x437; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x43D;&#x44B;&#x445; &#x440;&#x430;&#x441;&#x442;&#x432;&#x43E;&#x440;&#x43E;&#x432;, &#x430; &#x442;&#x430;&#x43A;&#x436;&#x435; &#x438;&#x437; &#x43F;&#x440;&#x43E;&#x43C;&#x44B;&#x432;&#x43D;&#x43E;&#x439; &#x441;&#x435;&#x440;&#x43D;&#x43E;&#x439; &#x43A;&#x438;&#x441;&#x43B;&#x43E;&#x442;&#x44B; &#x420;&#x435;&#x43D;&#x438;&#x439; &#x438;&#x437;&#x432;&#x43B;&#x435;&#x43A;&#x430;&#x44E;&#x442; &#x441;&#x43E;&#x440;&#x431;&#x446;&#x438;&#x435;&#x439; &#x438;&#x43B;&#x438; &#x44D;&#x43A;&#x441;&#x442;&#x440;&#x430;&#x43A;&#x446;&#x438;&#x435;&#x439;. &#x41A;&#x43E;&#x43D;&#x435;&#x447;&#x43D;&#x44B;&#x43C; &#x43F;&#x440;&#x43E;&#x434;&#x443;&#x43A;&#x442;&#x43E;&#x43C; &#x44F;&#x432;&#x43B;&#x44F;&#x435;&#x442;&#x441;&#x44F; &#x43F;&#x435;&#x440;&#x440;&#x435;&#x43D;&#x430;&#x442; &#x430;&#x43C;&#x43C;&#x43E;&#x43D;&#x438;&#x44F; NH<sub>4</sub>ReO<sub>4</sub>. &#x412;&#x43E;&#x441;&#x441;&#x442;&#x430;&#x43D;&#x430;&#x432;&#x43B;&#x438;&#x432;&#x430;&#x44F; &#x435;&#x433;&#x43E; &#x432;&#x43E;&#x434;&#x43E;&#x440;&#x43E;&#x434;&#x43E;&#x43C;, &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x430;&#x44E;&#x442; &#x43F;&#x43E;&#x440;&#x43E;&#x448;&#x43E;&#x43A; &#x420;&#x435;&#x43D;&#x438;&#x44F;, &#x43F;&#x440;&#x435;&#x432;&#x440;&#x430;&#x449;&#x430;&#x435;&#x43C;&#x44B;&#x439; &#x437;&#x430;&#x442;&#x435;&#x43C; &#x432; &#x43A;&#x43E;&#x43C;&#x43F;&#x430;&#x43A;&#x442;&#x43D;&#x44B;&#x435; &#x437;&#x430;&#x433;&#x43E;&#x442;&#x43E;&#x432;&#x43A;&#x438; &#x43C;&#x435;&#x442;&#x43E;&#x434;&#x43E;&#x43C; &#x43F;&#x43E;&#x440;&#x43E;&#x448;&#x43A;&#x43E;&#x432;&#x43E;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;&#x443;&#x440;&#x433;&#x438;&#x438;. &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x43D;&#x44F;&#x44E;&#x442; &#x442;&#x430;&#x43A;&#x436;&#x435; &#x43F;&#x43B;&#x430;&#x432;&#x43A;&#x443; &#x420;&#x435;&#x43D;&#x438;&#x44F; &#x432; &#x44D;&#x43B;&#x435;&#x43A;&#x442;&#x440;&#x43E;&#x43D;&#x43D;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x432;&#x44B;&#x445; &#x43F;&#x435;&#x447;&#x430;&#x445;.\n</p><p><a class=\"ogln\" name=\"m4\">&#x41F;&#x440;&#x438;&#x43C;&#x435;&#x43D;&#x435;&#x43D;&#x438;&#x435; &#x420;&#x435;&#x43D;&#x438;&#x44F;.</a> &#x41A;&#x430;&#x43A; &#x442;&#x443;&#x433;&#x43E;&#x43F;&#x43B;&#x430;&#x432;&#x43A;&#x438;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B; &#x420;&#x435;&#x43D;&#x438;&#x439;, &#x430; &#x442;&#x430;&#x43A;&#x436;&#x435; &#x441;&#x43F;&#x43B;&#x430;&#x432;&#x44B; W &#x441; Re &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x44E;&#x442; &#x432; &#x43F;&#x440;&#x43E;&#x438;&#x437;&#x432;&#x43E;&#x434;&#x441;&#x442;&#x432;&#x435; &#x44D;&#x43B;&#x435;&#x43A;&#x442;&#x440;&#x43E;&#x43D;&#x43D;&#x44B;&#x445; &#x43F;&#x440;&#x438;&#x431;&#x43E;&#x440;&#x43E;&#x432;. &#x41A;&#x440;&#x43E;&#x43C;&#x435; &#x442;&#x43E;&#x433;&#x43E;, &#x438;&#x437; &#x420;&#x435;&#x43D;&#x438;&#x44F; &#x438; &#x435;&#x433;&#x43E; &#x441;&#x43F;&#x43B;&#x430;&#x432;&#x43E;&#x432; &#x441; W &#x438;&#x437;&#x433;&#x43E;&#x442;&#x430;&#x432;&#x43B;&#x438;&#x432;&#x430;&#x44E;&#x442; &#x442;&#x435;&#x440;&#x43C;&#x43E;&#x43F;&#x430;&#x440;&#x44B; &#x434;&#x43B;&#x44F; &#x438;&#x437;&#x43C;&#x435;&#x440;&#x435;&#x43D;&#x438;&#x44F; &#x442;&#x435;&#x43C;&#x43F;&#x435;&#x440;&#x430;&#x442;&#x443;&#x440; &#x434;&#x43E; 2500 &#xB0;&#x421;, &#x44D;&#x43B;&#x435;&#x43A;&#x442;&#x440;&#x43E;&#x43A;&#x43E;&#x43D;&#x442;&#x430;&#x43A;&#x442;&#x44B; &#x438; &#x434;&#x435;&#x442;&#x430;&#x43B;&#x438; &#x442;&#x43E;&#x447;&#x43D;&#x44B;&#x445; &#x43F;&#x440;&#x438;&#x431;&#x43E;&#x440;&#x43E;&#x432;. &#x421;&#x43F;&#x43B;&#x430;&#x432;&#x44B; Re &#x441; W, &#x41C;&#x43E;, Ta &#x43E;&#x442;&#x43B;&#x438;&#x447;&#x430;&#x44E;&#x442;&#x441;&#x44F; &#x432;&#x44B;&#x441;&#x43E;&#x43A;&#x43E;&#x439; &#x436;&#x430;&#x440;&#x43E;&#x43F;&#x440;&#x43E;&#x447;&#x43D;&#x43E;&#x441;&#x442;&#x44C;&#x44E;. &#x41E;&#x43D;&#x438; &#x43F;&#x440;&#x438;&#x43C;&#x435;&#x43D;&#x44F;&#x44E;&#x442;&#x441;&#x44F; &#x432; &#x430;&#x432;&#x438;&#x430;- &#x438; &#x43A;&#x43E;&#x441;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x442;&#x435;&#x445;&#x43D;&#x438;&#x43A;&#x435;. &#x420;&#x435;&#x43D;&#x438;&#x439; &#x438; &#x435;&#x433;&#x43E; &#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x44F; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x44E;&#x442;&#x441;&#x44F; &#x432; &#x43A;&#x430;&#x447;&#x435;&#x441;&#x442;&#x432;&#x435; &#x44D;&#x444;&#x444;&#x435;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x445; &#x43A;&#x430;&#x442;&#x430;&#x43B;&#x438;&#x437;&#x430;&#x442;&#x43E;&#x440;&#x43E;&#x432; &#x43F;&#x440;&#x438; &#x43A;&#x440;&#x435;&#x43A;&#x438;&#x43D;&#x433;&#x435; &#x43D;&#x435;&#x444;&#x442;&#x438;.\n</p></sup>",
+        "Атомная масса": "186.21",
+        "Плотность, кг/м³": "21000",
+        "Температура плавления, °С": "3180",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.138",
+        "Электроотрицательность": "1.9",
+        "Ковалентный радиус, Å": "1.28",
+        "1-й ионизац. потенциал, эв": "7.87"
+    },
+    {
+        "Химический символ": "Os",
+        "label": "Осмий Osmium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Xe)4f145d66s2",
+        "description": "<b>&#x41E;&#x441;&#x43C;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Osmium), Os, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; VIII &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 76, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 190,2; &#x43E;&#x434;&#x438;&#x43D; &#x438;&#x437; <a href=\"art.php?t=pt\">&#x43F;&#x43B;&#x430;&#x442;&#x438;&#x43D;&#x43E;&#x432;&#x44B;&#x445; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;&#x43E;&#x432;</a>.\n",
+        "Атомная масса": "190.23",
+        "Плотность, кг/м³": "22500",
+        "Температура плавления, °С": "3000",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.13",
+        "Электроотрицательность": "2.2",
+        "Ковалентный радиус, Å": "1.26",
+        "1-й ионизац. потенциал, эв": "8.70"
+    },
+    {
+        "Химический символ": "Ir",
+        "label": "Иридий Iridium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Xe)4f145d76s2",
+        "description": "<b>&#x418;&#x440;&#x438;&#x434;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Iridium), Ir, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; VIII &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 77, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 192,22; &#x43F;&#x440;&#x438;&#x43D;&#x430;&#x434;&#x43B;&#x435;&#x436;&#x438;&#x442; &#x43A; <a href=\"art.php?t=pt\">&#x43F;&#x43B;&#x430;&#x442;&#x438;&#x43D;&#x43E;&#x432;&#x44B;&#x43C; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;&#x430;&#x43C;</a>. &#x412; &#x43F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x435; &#x418;&#x440;&#x438;&#x434;&#x438;&#x439; &#x43F;&#x440;&#x435;&#x434;&#x441;&#x442;&#x430;&#x432;&#x43B;&#x435;&#x43D; &#x434;&#x432;&#x443;&#x43C;&#x44F; &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x43C;&#x438; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x430;&#x43C;&#x438;, <sup>191</sup>Ir (38,5%) &#x438; <sup>193</sup> Ir (61,5%).\n",
+        "Атомная масса": "192.22",
+        "Плотность, кг/м³": "22400",
+        "Температура плавления, °С": "2410",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.13",
+        "Электроотрицательность": "2.2",
+        "Ковалентный радиус, Å": "1.27",
+        "1-й ионизац. потенциал, эв": "9.00"
+    },
+    {
+        "Химический символ": "Pt",
+        "label": "Платина Platinum",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Xe)4f145d96s1",
+        "description": "<b>&#x41F;&#x43B;&#x430;&#x442;&#x438;&#x43D;&#x430;</b> (&#x43B;&#x430;&#x442;. Platinum), Pt, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; VIII &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 78, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 195,09; &#x442;&#x44F;&#x436;&#x435;&#x43B;&#x44B;&#x439; &#x442;&#x443;&#x433;&#x43E;&#x43F;&#x43B;&#x430;&#x432;&#x43A;&#x438;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;. &#x41E; &#x41F;&#x43B;&#x430;&#x442;&#x438;&#x43D;&#x435;, &#x430; &#x442;&#x430;&#x43A;&#x436;&#x435; &#x43E; &#x440;&#x443;&#x442;&#x435;&#x43D;&#x438;&#x438;, &#x440;&#x43E;&#x434;&#x438;&#x438;, &#x43F;&#x430;&#x43B;&#x43B;&#x430;&#x434;&#x438;&#x438;, &#x43E;&#x441;&#x43C;&#x438;&#x438; &#x438; &#x438;&#x440;&#x438;&#x434;&#x438;&#x438;, &#x441;&#x43E;&#x43F;&#x443;&#x442;&#x441;&#x442;&#x432;&#x443;&#x44E;&#x449;&#x438;&#x445; &#x41F;&#x43B;&#x430;&#x442;&#x438;&#x43D;&#x435; &#x432; &#x437;&#x435;&#x43C;&#x43D;&#x43E;&#x439; &#x43A;&#x43E;&#x440;&#x435; &#x438; &#x441;&#x445;&#x43E;&#x434;&#x43D;&#x44B;&#x445; &#x441; &#x43D;&#x435;&#x44E; &#x43F;&#x43E; &#x441;&#x432;&#x43E;&#x439;&#x441;&#x442;&#x432;&#x430;&#x43C;, &#x441;&#x43C;. <a href=\"art.php?t=pt\">&#x41F;&#x43B;&#x430;&#x442;&#x438;&#x43D;&#x43E;&#x432;&#x44B;&#x435; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;&#x44B;</a>.\n",
+        "Атомная масса": "195.08",
+        "Плотность, кг/м³": "21400",
+        "Температура плавления, °С": "1769",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.134",
+        "Электроотрицательность": "2.2",
+        "Ковалентный радиус, Å": "1.30",
+        "1-й ионизац. потенциал, эв": "9.00"
+    },
+    {
+        "Химический символ": "Au",
+        "label": "Золото Gold",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Xe)4f145d106s1",
+        "description": "<b>&#x417;&#x43E;&#x43B;&#x43E;&#x442;&#x43E;</b> (&#x43B;&#x430;&#x442;. Aurum), Au, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; I &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 79, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 196,9665; &#x442;&#x44F;&#x436;&#x435;&#x43B;&#x44B;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B; &#x436;&#x435;&#x43B;&#x442;&#x43E;&#x433;&#x43E; &#x446;&#x432;&#x435;&#x442;&#x430;. &#x421;&#x43E;&#x441;&#x442;&#x43E;&#x438;&#x442; &#x438;&#x437; &#x43E;&#x434;&#x43D;&#x43E;&#x433;&#x43E; &#x443;&#x441;&#x442;&#x43E;&#x439;&#x447;&#x438;&#x432;&#x43E;&#x433;&#x43E; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x430; <sup>197</sup>&#x410;u.\n",
+        "Атомная масса": "196.97",
+        "Плотность, кг/м³": "19300",
+        "Температура плавления, °С": "1063",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.13",
+        "Электроотрицательность": "2.4",
+        "Ковалентный радиус, Å": "1.34",
+        "1-й ионизац. потенциал, эв": "9.22"
+    },
+    {
+        "Химический символ": "Hg",
+        "label": "Ртуть Mercury",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Xe)4f145d106s2",
+        "description": "<b>&#x420;&#x442;&#x443;&#x442;&#x44C;</b> (&#x43B;&#x430;&#x442;. Hydrargyrum), Hg, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; II &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 80, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 200,59; &#x441;&#x435;&#x440;&#x435;&#x431;&#x440;&#x438;&#x441;&#x442;&#x43E;-&#x431;&#x435;&#x43B;&#x44B;&#x439; &#x442;&#x44F;&#x436;&#x435;&#x43B;&#x44B;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;, &#x436;&#x438;&#x434;&#x43A;&#x438;&#x439; &#x43F;&#x440;&#x438; &#x43A;&#x43E;&#x43C;&#x43D;&#x430;&#x442;&#x43D;&#x43E;&#x439; &#x442;&#x435;&#x43C;&#x43F;&#x435;&#x440;&#x430;&#x442;&#x443;&#x440;&#x435;. &#x412; &#x43F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x435; &#x420;&#x442;&#x443;&#x442;&#x44C; &#x43F;&#x440;&#x435;&#x434;&#x441;&#x442;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x430; &#x441;&#x435;&#x43C;&#x44C;&#x44E; &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x43C;&#x438; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x430;&#x43C;&#x438; &#x441; &#x43C;&#x430;&#x441;&#x441;&#x43E;&#x432;&#x44B;&#x43C;&#x438; &#x447;&#x438;&#x441;&#x43B;&#x430;&#x43C;&#x438;: 196 (0,2%), 198 (10,0%), 199 (16,8%), 200 (23,1%), 201 (13,2%), 202 (29,8%), 204 (6,9%).\n",
+        "Атомная масса": "200.59",
+        "Плотность, кг/м³": "13520",
+        "Температура плавления, °С": "-38.9",
+        "Температура кипения, °С": "357",
+        "Теплоемкость, кДж/(кг·°С)": "0.138",
+        "Электроотрицательность": "1.9",
+        "Ковалентный радиус, Å": "1.49",
+        "1-й ионизац. потенциал, эв": "10.43"
+    },
+    {
+        "Химический символ": "Tl",
+        "label": "Таллий Thallium",
+        "Электронная формула": "(Xe)4f145d106s26p1",
+        "description": "<b>&#x422;&#x430;&#x43B;&#x43B;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Thallium), Tl, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; III &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 81, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 204,37; &#x43D;&#x430; &#x441;&#x432;&#x435;&#x436;&#x435;&#x43C; &#x440;&#x430;&#x437;&#x440;&#x435;&#x437;&#x435; &#x441;&#x435;&#x440;&#x44B;&#x439; &#x431;&#x43B;&#x435;&#x441;&#x442;&#x44F;&#x449;&#x438;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;; &#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x438;&#x442;&#x441;&#x44F; &#x43A; &#x440;&#x435;&#x434;&#x43A;&#x438;&#x43C; &#x440;&#x430;&#x441;&#x441;&#x435;&#x44F;&#x43D;&#x43D;&#x44B;&#x43C; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x430;&#x43C;. &#x412; &#x43F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x435; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; &#x43F;&#x440;&#x435;&#x434;&#x441;&#x442;&#x430;&#x432;&#x43B;&#x435;&#x43D; &#x434;&#x432;&#x443;&#x43C;&#x44F; &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x43C;&#x438; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x430;&#x43C;&#x438; <sup>203</sup>Tl (29,5%) &#x438; <sup>205</sup>Tl (70,5%) &#x438; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x43C;&#x438; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x430;&#x43C;&#x438; <sup>207</sup>Tl - <sup>210</sup>Tl - &#x447;&#x43B;&#x435;&#x43D;&#x430;&#x43C;&#x438; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x445; &#x440;&#x44F;&#x434;&#x43E;&#x432;. &#x418;&#x441;&#x43A;&#x443;&#x441;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x43E; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x44B; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x435; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x44B; <sup>202</sup>Tl (&#x422;<sub>&#xBD;</sub> = 12,5 &#x441;&#x443;&#x442;), <sup>204</sup>Tl (T<sub>&#xBD;</sub>= 4,26 &#x433;&#x43E;&#x434;&#x430;), <sup>206</sup>Tl (&#x422;<sub>&#xBD;</sub> = 4,19 &#x43C;&#x438;&#x43D;) &#x438; &#x434;&#x440;&#x443;&#x433;&#x438;&#x435;. &#x422;&#x430;&#x43B;&#x43B;&#x438;&#x439; &#x43E;&#x442;&#x43A;&#x440;&#x44B;&#x442; &#x432; 1861&#x433;&#x43E;&#x434;&#x443; &#x423;. &#x41A;&#x440;&#x443;&#x43A;&#x441;&#x43E;&#x43C; &#x432; &#x448;&#x43B;&#x430;&#x43C;&#x435; &#x441;&#x435;&#x440;&#x43D;&#x43E;&#x43A;&#x438;&#x441;&#x43B;&#x43E;&#x442;&#x43D;&#x43E;&#x433;&#x43E; &#x43F;&#x440;&#x43E;&#x438;&#x437;&#x432;&#x43E;&#x434;&#x441;&#x442;&#x432;&#x430; &#x441;&#x43F;&#x435;&#x43A;&#x442;&#x440;&#x43E;&#x441;&#x43A;&#x43E;&#x43F;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x43C; &#x43C;&#x435;&#x442;&#x43E;&#x434;&#x43E;&#x43C; &#x43F;&#x43E; &#x445;&#x430;&#x440;&#x430;&#x43A;&#x442;&#x435;&#x440;&#x43D;&#x43E;&#x439; &#x437;&#x435;&#x43B;&#x435;&#x43D;&#x43E;&#x439; &#x43B;&#x438;&#x43D;&#x438;&#x438; &#x432; &#x441;&#x43F;&#x435;&#x43A;&#x442;&#x440;&#x435; (&#x43E;&#x442;&#x441;&#x44E;&#x434;&#x430; &#x43D;&#x430;&#x437;&#x432;&#x430;&#x43D;&#x438;&#x435;: &#x43E;&#x442; &#x433;&#x440;&#x435;&#x447;. thallos - &#x43C;&#x43E;&#x43B;&#x43E;&#x434;&#x430;&#x44F;, &#x437;&#x435;&#x43B;&#x435;&#x43D;&#x430;&#x44F; &#x432;&#x435;&#x442;&#x43A;&#x430;). &#x412; 1862 &#x433;&#x43E;&#x434;&#x443; &#x444;&#x440;&#x430;&#x43D;&#x446;&#x443;&#x437;&#x441;&#x43A;&#x438;&#x439; &#x445;&#x438;&#x43C;&#x438;&#x43A; &#x41A;. &#x41E;. &#x41B;&#x430;&#x43C;&#x438; &#x432;&#x43F;&#x435;&#x440;&#x432;&#x44B;&#x435; &#x432;&#x44B;&#x434;&#x435;&#x43B;&#x438;&#x43B; &#x422;&#x430;&#x43B;&#x43B;&#x438;&#x439; &#x438; &#x443;&#x441;&#x442;&#x430;&#x43D;&#x43E;&#x432;&#x438;&#x43B; &#x435;&#x433;&#x43E; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x443;&#x44E; &#x43F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x443;.\n",
+        "Атомная масса": "204.38",
+        "Плотность, кг/м³": "11850",
+        "Температура плавления, °С": "303",
+        "Температура кипения, °С": "1457",
+        "Теплоемкость, кДж/(кг·°С)": "0.13",
+        "Электроотрицательность": "1.8",
+        "Ковалентный радиус, Å": "1.48",
+        "1-й ионизац. потенциал, эв": "9.01"
+    },
+    {
+        "Химический символ": "Pb",
+        "label": "Свинец Lead",
+        "Электронная формула": "(Xe)4f145d106s26p2",
+        "description": "<b>&#x421;&#x432;&#x438;&#x43D;&#x435;&#x446;</b> (&#x43B;&#x430;&#x442;. Plumbum), Pb, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; IV &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 82, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 207,2. &#x421;&#x432;&#x438;&#x43D;&#x435;&#x446; - &#x442;&#x44F;&#x436;&#x435;&#x43B;&#x44B;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B; &#x433;&#x43E;&#x43B;&#x443;&#x431;&#x43E;&#x432;&#x430;&#x442;&#x43E;-&#x441;&#x435;&#x440;&#x43E;&#x433;&#x43E; &#x446;&#x432;&#x435;&#x442;&#x430;, &#x43E;&#x447;&#x435;&#x43D;&#x44C; &#x43F;&#x43B;&#x430;&#x441;&#x442;&#x438;&#x447;&#x43D;&#x44B;&#x439;, &#x43C;&#x44F;&#x433;&#x43A;&#x438;&#x439; (&#x440;&#x435;&#x436;&#x435;&#x442;&#x441;&#x44F; &#x43D;&#x43E;&#x436;&#x43E;&#x43C;, &#x446;&#x430;&#x440;&#x430;&#x43F;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x43D;&#x43E;&#x433;&#x442;&#x435;&#x43C;). &#x41F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x43D;&#x44B;&#x439; &#x421;&#x432;&#x438;&#x43D;&#x435;&#x446; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x438;&#x442; &#x438;&#x437; 5 &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x441; &#x43C;&#x430;&#x441;&#x441;&#x43E;&#x432;&#x44B;&#x43C;&#x438; &#x447;&#x438;&#x441;&#x43B;&#x430;&#x43C;&#x438; 202 (&#x441;&#x43B;&#x435;&#x434;&#x44B;), 204 (1,5%), 206 (23,6%), 207 (22,6%), 208 (52,3%). &#x41F;&#x43E;&#x441;&#x43B;&#x435;&#x434;&#x43D;&#x438;&#x435; &#x442;&#x440;&#x438; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x430; - &#x43A;&#x43E;&#x43D;&#x435;&#x447;&#x43D;&#x44B;&#x435; &#x43F;&#x440;&#x43E;&#x434;&#x443;&#x43A;&#x442;&#x44B; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x445; &#x43F;&#x440;&#x435;&#x432;&#x440;&#x430;&#x449;&#x435;&#x43D;&#x438;&#x439; <sup>238</sup>U, <sup>235</sup>U &#x438; <sup>232</sup>Th. &#x41F;&#x440;&#x438; &#x44F;&#x434;&#x435;&#x440;&#x43D;&#x44B;&#x445; &#x440;&#x435;&#x430;&#x43A;&#x446;&#x438;&#x44F;&#x445; &#x43E;&#x431;&#x440;&#x430;&#x437;&#x443;&#x44E;&#x442;&#x441;&#x44F; &#x43C;&#x43D;&#x43E;&#x433;&#x43E;&#x447;&#x438;&#x441;&#x43B;&#x435;&#x43D;&#x43D;&#x44B;&#x435; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x435; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x44B; &#x421;&#x432;&#x438;&#x43D;&#x446;&#x430;.\n",
+        "Атомная масса": "207.2",
+        "Плотность, кг/м³": "11400",
+        "Температура плавления, °С": "327.4",
+        "Температура кипения, °С": "1740",
+        "Теплоемкость, кДж/(кг·°С)": "0.13",
+        "Электроотрицательность": "1.8",
+        "Ковалентный радиус, Å": "1.47",
+        "1-й ионизац. потенциал, эв": "7.37"
+    },
+    {
+        "Химический символ": "Bi",
+        "label": "Висмут Bismuth",
+        "Электронная формула": "(Xe)4f145d106s26p3",
+        "description": "<b>&#x412;&#x438;&#x441;&#x43C;&#x443;&#x442;</b> (&#x43B;&#x430;&#x442;. Bismuthum), Bi, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; V &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 83, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 208,980; &#x441;&#x435;&#x440;&#x435;&#x431;&#x440;&#x438;&#x441;&#x442;&#x43E;-&#x441;&#x435;&#x440;&#x44B;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B; &#x441; &#x440;&#x43E;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x44B;&#x43C; &#x43E;&#x442;&#x442;&#x435;&#x43D;&#x43A;&#x43E;&#x43C;. &#x41F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x43D;&#x44B;&#x439; &#x412;&#x438;&#x441;&#x43C;&#x443;&#x442; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x438;&#x442; &#x438;&#x437; &#x43E;&#x434;&#x43D;&#x43E;&#x433;&#x43E; &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x43E;&#x433;&#x43E; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x430; <sup>209</sup>Bi.\n",
+        "Атомная масса": "208.98",
+        "Плотность, кг/м³": "9800",
+        "Температура плавления, °С": "271.3",
+        "Температура кипения, °С": "1560",
+        "Теплоемкость, кДж/(кг·°С)": "0.142",
+        "Электроотрицательность": "1.9",
+        "Ковалентный радиус, Å": "1.46",
+        "1-й ионизац. потенциал, эв": "7.29"
+    },
+    {
+        "Химический символ": "Po",
+        "label": "Полоний Polonium",
+        "Электронная формула": "(Xe)4f145d106s26p4",
+        "description": "<b>&#x41F;&#x43E;&#x43B;&#x43E;&#x43D;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Polonium), Po, &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x439; &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; VI &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 84. &#x41F;&#x43E;&#x43B;&#x43E;&#x43D;&#x438;&#x439; - &#x43F;&#x435;&#x440;&#x432;&#x44B;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;, &#x43E;&#x442;&#x43A;&#x440;&#x44B;&#x442;&#x44B;&#x439; &#x43F;&#x43E; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x43C; &#x441;&#x432;&#x43E;&#x439;&#x441;&#x442;&#x432;&#x430;&#x43C; &#x41F;. &#x41A;&#x44E;&#x440;&#x438; &#x438; &#x41C;. &#x421;&#x43A;&#x43B;&#x43E;&#x434;&#x43E;&#x432;&#x441;&#x43A;&#x43E;&#x439;-&#x41A;&#x44E;&#x440;&#x438; &#x432; 1898 &#x433;&#x43E;&#x434;&#x443;. &#x41D;&#x430;&#x437;&#x432;&#x430;&#x43D; &#x432; &#x447;&#x435;&#x441;&#x442;&#x44C; &#x41F;&#x43E;&#x43B;&#x44C;&#x448;&#x438; (&#x43B;&#x430;&#x442;. Polonia) - &#x440;&#x43E;&#x434;&#x438;&#x43D;&#x44B; &#x41C;. &#x421;&#x43A;&#x43B;&#x43E;&#x434;&#x43E;&#x432;&#x441;&#x43A;&#x43E;&#x439;-&#x41A;&#x44E;&#x440;&#x438;. &#x418;&#x437;&#x432;&#x435;&#x441;&#x442;&#x43D;&#x43E; 25 &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x41F;&#x43E;&#x43B;&#x43E;&#x43D;&#x438;&#x44F; &#x441; &#x43C;&#x430;&#x441;&#x441;&#x43E;&#x432;&#x44B;&#x43C;&#x438; &#x447;&#x438;&#x441;&#x43B;&#x430;&#x43C;&#x438; &#x43E;&#x442; 194 &#x434;&#x43E; 218. &#x41D;&#x430;&#x438;&#x431;&#x43E;&#x43B;&#x435;&#x435; &#x434;&#x43E;&#x43B;&#x433;&#x43E;&#x436;&#x438;&#x432;&#x443;&#x449;&#x438;&#x43C; &#x44F;&#x432;&#x43B;&#x44F;&#x435;&#x442;&#x441;&#x44F; &#x438;&#x441;&#x43A;&#x443;&#x441;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x43E; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x43D;&#x44B;&#x439; &#x3B1;-&#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x439; <sup>209</sup>&#x420;&#x43E; (&#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434; &#x43F;&#x43E;&#x43B;&#x443;&#x440;&#x430;&#x441;&#x43F;&#x430;&#x434;&#x430; T<sub>&#xBD;</sub>= 103 &#x433;&#x43E;&#x434;&#x430;). &#x412; &#x43F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x435; &#x432;&#x441;&#x442;&#x440;&#x435;&#x447;&#x430;&#x44E;&#x442;&#x441;&#x44F; 7 &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x41F;&#x43E;&#x43B;&#x43E;&#x43D;&#x438;&#x439; &#x441; &#x43C;&#x430;&#x441;&#x441;&#x43E;&#x432;&#x44B;&#x43C;&#x438; &#x447;&#x438;&#x441;&#x43B;&#x430;&#x43C;&#x438; 210-212, 214-216 &#x438; 218 &#x43A;&#x430;&#x43A; &#x447;&#x43B;&#x435;&#x43D;&#x44B; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x445; &#x440;&#x44F;&#x434;&#x43E;&#x432; &#x443;&#x440;&#x430;&#x43D;&#x430;, &#x430;&#x43A;&#x442;&#x438;&#x43D;&#x43E;&#x443;&#x440;&#x430;&#x43D;&#x430; &#x438; &#x442;&#x43E;&#x440;&#x438;&#x44F;. &#x41D;&#x430;&#x438;&#x431;&#x43E;&#x43B;&#x435;&#x435; &#x443;&#x441;&#x442;&#x43E;&#x439;&#x447;&#x438;&#x432; &#x438;&#x437; &#x43D;&#x438;&#x445; &#x3B1;-&#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x439; <sup>210</sup>&#x420;&#x43E; (&#x422;<sub>&#xBD;</sub> = 138 &#x441;&#x443;&#x442;). &#x41C;&#x438;&#x43B;&#x43B;&#x438;&#x433;&#x440;&#x430;&#x43C;&#x43C;&#x43E;&#x432;&#x44B;&#x435; &#x43A;&#x43E;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x442;&#x432;&#x430; <sup>210</sup>&#x420;&#x43E; &#x43C;&#x43E;&#x436;&#x43D;&#x43E; &#x432;&#x44B;&#x434;&#x435;&#x43B;&#x438;&#x442;&#x44C; &#x43D;&#x435; &#x442;&#x43E;&#x43B;&#x44C;&#x43A;&#x43E; &#x438;&#x437; &#x43F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x43D;&#x44B;&#x445; &#x43E;&#x431;&#x44A;&#x435;&#x43A;&#x442;&#x43E;&#x432;, &#x43D;&#x43E; &#x438; &#x441;&#x438;&#x43D;&#x442;&#x435;&#x437;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C; &#x438;&#x441;&#x43A;&#x443;&#x441;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x43E; &#x43F;&#x43E; &#x44F;&#x434;&#x435;&#x440;&#x43D;&#x43E;&#x439; &#x440;&#x435;&#x430;&#x43A;&#x446;&#x438;&#x438; &#x43D;&#x435;&#x439;&#x442;&#x440;&#x43E;&#x43D;&#x43E;&#x432; &#x441; &#x432;&#x438;&#x441;&#x43C;&#x443;&#x442;&#x43E;&#x43C;. &#x41F;&#x440;&#x430;&#x43A;&#x442;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438; &#x432;&#x441;&#x435; &#x441;&#x432;&#x435;&#x434;&#x435;&#x43D;&#x438;&#x44F; &#x43E; &#x41F;&#x43E;&#x43B;&#x43E;&#x43D;&#x438;&#x438; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x44B; &#x441; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435;&#x43C; <sup>210</sup>&#x420;&#x43E;.\n",
+        "Атомная масса": "[209]",
+        "Плотность, кг/м³": "9300",
+        "Температура плавления, °С": "254",
+        "Температура кипения, °С": "962",
+        "Теплоемкость, кДж/(кг·°С)": "0.125",
+        "Электроотрицательность": "2.0",
+        "Ковалентный радиус, Å": "1.46",
+        "1-й ионизац. потенциал, эв": "8.43"
+    },
+    {
+        "Химический символ": "At",
+        "label": "Астат Astatine",
+        "Электронная формула": "(Xe)4f145d106s26p5",
+        "description": "<b>&#x410;&#x441;&#x442;&#x430;&#x442;</b> (&#x43B;&#x430;&#x442;. Astatium) , &#x430;&#x441;&#x442;&#x430;&#x442;&#x438;&#x43D;, At, &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x439; &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; VII &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 85. &#x421;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x443; &#x410;&#x441;&#x442;&#x430;&#x442;&#x430; &#x43D;&#x435;&#x442;; &#x438;&#x437;&#x432;&#x435;&#x441;&#x442;&#x43D;&#x43E; &#x43D;&#x435; &#x43C;&#x435;&#x43D;&#x435;&#x435; 20 &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x410;&#x441;&#x442;&#x430;&#x442;&#x430;, &#x438;&#x437; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x445; &#x43D;&#x430;&#x438;&#x431;&#x43E;&#x43B;&#x435;&#x435; &#x434;&#x43E;&#x43B;&#x433;&#x43E;&#x436;&#x438;&#x432;&#x443;&#x449;&#x438;&#x439; <sup>210</sup>At &#x438;&#x43C;&#x435;&#x435;&#x442; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434; &#x43F;&#x43E;&#x43B;&#x443;&#x440;&#x430;&#x441;&#x43F;&#x430;&#x434;&#x430; &#x422;<sub>&#xBD;</sub> 8,3 &#x447;. &#x41C;&#x43D;&#x43E;&#x433;&#x43E;&#x43A;&#x440;&#x430;&#x442;&#x43D;&#x44B;&#x435; &#x43F;&#x43E;&#x43F;&#x44B;&#x442;&#x43A;&#x438; &#x443;&#x447;&#x435;&#x43D;&#x44B;&#x445; &#x440;&#x430;&#x437;&#x43D;&#x44B;&#x445; &#x441;&#x442;&#x440;&#x430;&#x43D; &#x43E;&#x442;&#x43A;&#x440;&#x44B;&#x442;&#x44C; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; &#x2116; 85 &#x432;&#x441;&#x435;&#x432;&#x43E;&#x437;&#x43C;&#x43E;&#x436;&#x43D;&#x44B;&#x43C;&#x438; &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x43C;&#x438; &#x438; &#x444;&#x438;&#x437;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x43C;&#x438; &#x441;&#x43F;&#x43E;&#x441;&#x43E;&#x431;&#x430;&#x43C;&#x438; &#x432; &#x43F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x43D;&#x44B;&#x445; &#x43E;&#x431;&#x44A;&#x435;&#x43A;&#x442;&#x430;&#x445; &#x431;&#x44B;&#x43B;&#x438; &#x43D;&#x435;&#x443;&#x434;&#x430;&#x447;&#x43D;&#x44B;. &#x412; 1940 &#x433;&#x43E;&#x434;&#x443; &#x42D;. &#x421;&#x435;&#x433;&#x440;&#x435;, T. &#x41A;&#x43E;&#x440;&#x441;&#x43E;&#x43D; &#x438; &#x423;. &#x41C;&#x430;&#x43A;-&#x41A;&#x435;&#x43D;&#x437;&#x438; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x438;&#x43B;&#x438; &#x43D;&#x430; &#x446;&#x438;&#x43A;&#x43B;&#x43E;&#x442;&#x440;&#x43E;&#x43D;&#x435; &#x432; &#x411;&#x435;&#x440;&#x43A;&#x43B;&#x438; (&#x421;&#x428;&#x410;) &#x43F;&#x435;&#x440;&#x432;&#x44B;&#x439; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F; <sup>211</sup>At, &#x431;&#x43E;&#x43C;&#x431;&#x430;&#x440;&#x434;&#x438;&#x440;&#x443;&#x44F; &#x432;&#x438;&#x441;&#x43C;&#x443;&#x442; &#x3B1;-&#x447;&#x430;&#x441;&#x442;&#x438;&#x446;&#x430;&#x43C;&#x438;. &#x41D;&#x430;&#x437;&#x432;&#x430;&#x43D;&#x438;&#x435; &quot;&#x410;&#x441;&#x442;&#x430;&#x442;&quot; &#x434;&#x430;&#x43D;&#x43E; &#x43E;&#x442; &#x433;&#x440;&#x435;&#x447;. astatos- &#x43D;&#x435;&#x443;&#x441;&#x442;&#x43E;&#x439;&#x447;&#x438;&#x432;&#x44B;&#x439;. &#x41B;&#x438;&#x448;&#x44C; &#x43F;&#x43E;&#x441;&#x43B;&#x435; &#x44D;&#x442;&#x43E;&#x433;&#x43E; &#x438;&#x441;&#x43A;&#x443;&#x441;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x43E;&#x433;&#x43E; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x410;&#x441;&#x442;&#x430;&#x442;&#x430; &#x431;&#x44B;&#x43B;&#x43E; &#x43F;&#x43E;&#x43A;&#x430;&#x437;&#x430;&#x43D;&#x43E;, &#x447;&#x442;&#x43E; 4 &#x435;&#x433;&#x43E; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x430; (<sup>215</sup>At, <sup>216</sup>At, <sup>218</sup>At &#x438; <sup>219</sup>At) &#x43E;&#x431;&#x440;&#x430;&#x437;&#x443;&#x44E;&#x442;&#x441;&#x44F; &#x432; &#x43E;&#x447;&#x435;&#x43D;&#x44C; &#x43C;&#x430;&#x43B;&#x43E;&#x432;&#x435;&#x440;&#x43E;&#x44F;&#x442;&#x43D;&#x44B;&#x445; (5&#xB7;10<sup>-5</sup>-0,02%) &#x43E;&#x442;&#x432;&#x435;&#x442;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x44F;&#x445; &#x442;&#x440;&#x435;&#x445; &#x43F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x43D;&#x44B;&#x445; &#x440;&#x44F;&#x434;&#x43E;&#x432; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x43E;&#x433;&#x43E; &#x440;&#x430;&#x441;&#x43F;&#x430;&#x434;&#x430; &#x443;&#x440;&#x430;&#x43D;&#x430; &#x438; &#x442;&#x43E;&#x440;&#x438;&#x44F;. &#x410;&#x441;&#x442;&#x430;&#x442; &#x445;&#x43E;&#x440;&#x43E;&#x448;&#x43E; &#x430;&#x434;&#x441;&#x43E;&#x440;&#x431;&#x438;&#x440;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x43D;&#x430; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;&#x430;&#x445; (Ag, Au, Pt), &#x43B;&#x435;&#x433;&#x43A;&#x43E; &#x438;&#x441;&#x43F;&#x430;&#x440;&#x44F;&#x435;&#x442;&#x441;&#x44F; &#x432; &#x43E;&#x431;&#x44B;&#x447;&#x43D;&#x44B;&#x445; &#x443;&#x441;&#x43B;&#x43E;&#x432;&#x438;&#x44F;&#x445; &#x438; &#x432; &#x432;&#x430;&#x43A;&#x443;&#x443;&#x43C;&#x435;. &#x411;&#x43B;&#x430;&#x433;&#x43E;&#x434;&#x430;&#x440;&#x44F; &#x44D;&#x442;&#x43E;&#x43C;&#x443; &#x443;&#x434;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x432;&#x44B;&#x434;&#x435;&#x43B;&#x438;&#x442;&#x44C; &#x410;&#x441;&#x442;&#x430;&#x442; (&#x434;&#x43E; 85%) &#x438;&#x437; &#x43F;&#x440;&#x43E;&#x434;&#x443;&#x43A;&#x442;&#x43E;&#x432; &#x43E;&#x431;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x432;&#x438;&#x441;&#x43C;&#x443;&#x442;&#x430; &#x43F;&#x443;&#x442;&#x435;&#x43C; &#x438;&#x445; &#x432;&#x430;&#x43A;&#x443;&#x443;&#x43C;&#x43D;&#x43E;&#x439; &#x434;&#x438;&#x441;&#x442;&#x438;&#x43B;&#x43B;&#x44F;&#x446;&#x438;&#x438; &#x441; &#x43F;&#x43E;&#x433;&#x43B;&#x43E;&#x449;&#x435;&#x43D;&#x438;&#x435;&#x43C; &#x410;&#x441;&#x442;&#x430;&#x442;&#x430; &#x441;&#x435;&#x440;&#x435;&#x431;&#x440;&#x43E;&#x43C; &#x438;&#x43B;&#x438; &#x43F;&#x43B;&#x430;&#x442;&#x438;&#x43D;&#x43E;&#x439;. &#x425;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x435; &#x441;&#x432;&#x43E;&#x439;&#x441;&#x442;&#x432;&#x430; &#x410;&#x441;&#x442;&#x430;&#x442;&#x430; &#x43E;&#x447;&#x435;&#x43D;&#x44C; &#x438;&#x43D;&#x442;&#x435;&#x440;&#x435;&#x441;&#x43D;&#x44B; &#x438; &#x441;&#x432;&#x43E;&#x435;&#x43E;&#x431;&#x440;&#x430;&#x437;&#x43D;&#x44B;; &#x43E;&#x43D; &#x431;&#x43B;&#x438;&#x437;&#x43E;&#x43A; &#x43A;&#x430;&#x43A; &#x43A; &#x438;&#x43E;&#x434;&#x443;, &#x442;&#x430;&#x43A; &#x438; &#x43A; &#x43F;&#x43E;&#x43B;&#x43E;&#x43D;&#x438;&#x44E;, &#x442;&#x43E; &#x435;&#x441;&#x442;&#x44C; &#x43F;&#x440;&#x43E;&#x44F;&#x432;&#x43B;&#x44F;&#x435;&#x442; &#x441;&#x432;&#x43E;&#x439;&#x441;&#x442;&#x432;&#x430; &#x438; &#x43D;&#x435;&#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;&#x430; (&#x433;&#x430;&#x43B;&#x43E;&#x433;&#x435;&#x43D;&#x430;) &#x438; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;&#x430;. &#x422;&#x430;&#x43A;&#x43E;&#x435; &#x441;&#x43E;&#x447;&#x435;&#x442;&#x430;&#x43D;&#x438;&#x435; &#x441;&#x432;&#x43E;&#x439;&#x441;&#x442;&#x432; &#x43E;&#x431;&#x443;&#x441;&#x43B;&#x43E;&#x432;&#x43B;&#x435;&#x43D;&#x43E; &#x43F;&#x43E;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x438;&#x435;&#x43C; &#x410;&#x441;&#x442;&#x430;&#x442;&#x430; &#x432; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x435;: &#x43E;&#x43D; &#x44F;&#x432;&#x43B;&#x44F;&#x435;&#x442;&#x441;&#x44F; &#x43D;&#x430;&#x438;&#x431;&#x43E;&#x43B;&#x435;&#x435; &#x442;&#x44F;&#x436;&#x435;&#x43B;&#x44B;&#x43C; (&#x438; &#x441;&#x43B;&#x435;&#x434;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E;, &#x43D;&#x430;&#x438;&#x431;&#x43E;&#x43B;&#x435;&#x435; &quot;&#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x43C;&quot;) &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x43E;&#x43C; &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x433;&#x430;&#x43B;&#x43E;&#x433;&#x435;&#x43D;&#x43E;&#x432;. &#x41F;&#x43E;&#x434;&#x43E;&#x431;&#x43D;&#x43E; &#x433;&#x430;&#x43B;&#x43E;&#x433;&#x435;&#x43D;&#x430;&#x43C; &#x410;&#x441;&#x442;&#x430;&#x442; &#x434;&#x430;&#x435;&#x442; &#x43D;&#x435;&#x440;&#x430;&#x441;&#x442;&#x432;&#x43E;&#x440;&#x438;&#x43C;&#x443;&#x44E; &#x441;&#x43E;&#x43B;&#x44C; AgAt; &#x43F;&#x43E;&#x434;&#x43E;&#x431;&#x43D;&#x43E; &#x438;&#x43E;&#x434;&#x443; &#x43E;&#x43A;&#x438;&#x441;&#x43B;&#x44F;&#x435;&#x442;&#x441;&#x44F; &#x434;&#x43E; 5-&#x432;&#x430;&#x43B;&#x435;&#x43D;&#x442;&#x43D;&#x43E;&#x433;&#x43E; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x44F;&#x43D;&#x438;&#x44F; (&#x441;&#x43E;&#x43B;&#x44C; AgAtO<sub>3</sub> &#x430;&#x43D;&#x430;&#x43B;&#x43E;&#x433;&#x438;&#x447;&#x43D;&#x430; AgJO<sub>3</sub>). &#x41E;&#x434;&#x43D;&#x430;&#x43A;&#x43E;, &#x43A;&#x430;&#x43A; &#x438; &#x442;&#x438;&#x43F;&#x438;&#x447;&#x43D;&#x44B;&#x435; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;&#x44B;, &#x410;&#x441;&#x442;&#x430;&#x442; &#x43E;&#x441;&#x430;&#x436;&#x434;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x441;&#x435;&#x440;&#x43E;&#x432;&#x43E;&#x434;&#x43E;&#x440;&#x43E;&#x434;&#x43E;&#x43C; &#x434;&#x430;&#x436;&#x435; &#x438;&#x437; &#x441;&#x438;&#x43B;&#x44C;&#x43D;&#x43E; &#x43A;&#x438;&#x441;&#x43B;&#x44B;&#x445; &#x440;&#x430;&#x441;&#x442;&#x432;&#x43E;&#x440;&#x43E;&#x432;, &#x432;&#x44B;&#x442;&#x435;&#x441;&#x43D;&#x44F;&#x435;&#x442;&#x441;&#x44F; &#x446;&#x438;&#x43D;&#x43A;&#x43E;&#x43C; &#x438;&#x437; &#x441;&#x435;&#x440;&#x43D;&#x43E;&#x43A;&#x438;&#x441;&#x43B;&#x44B;&#x445; &#x440;&#x430;&#x441;&#x442;&#x432;&#x43E;&#x440;&#x43E;&#x432;, &#x430; &#x43F;&#x440;&#x438; &#x44D;&#x43B;&#x435;&#x43A;&#x442;&#x440;&#x43E;&#x43B;&#x438;&#x437;&#x435; &#x43E;&#x441;&#x430;&#x436;&#x434;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x43D;&#x430; &#x43A;&#x430;&#x442;&#x43E;&#x434;&#x435;. &#x41F;&#x440;&#x438;&#x441;&#x443;&#x442;&#x441;&#x442;&#x432;&#x438;&#x435; &#x410;&#x441;&#x442;&#x430;&#x442;&#x430; &#x43E;&#x43F;&#x440;&#x435;&#x434;&#x435;&#x43B;&#x44F;&#x44E;&#x442; &#x43F;&#x43E; &#x445;&#x430;&#x440;&#x430;&#x43A;&#x442;&#x435;&#x440;&#x43D;&#x43E;&#x43C;&#x443; &#x3B1;-&#x438;&#x437;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x44E;.\n",
+        "Атомная масса": "[210]",
+        "Плотность, кг/м³": " ",
+        "Температура плавления, °С": "302",
+        "Температура кипения, °С": "337",
+        "Теплоемкость, кДж/(кг·°С)": " ",
+        "Электроотрицательность": "2.2",
+        "Ковалентный радиус, Å": "1.45",
+        "1-й ионизац. потенциал, эв": " "
+    },
+    {
+        "Химический символ": "Rn",
+        "label": "Радон Radon",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Xe)4f145d106s26p6",
+        "description": "<b>&#x420;&#x430;&#x434;&#x43E;&#x43D;</b> (&#x43B;&#x430;&#x442;. Radonum), Rn, &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x439; &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; VIII &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 86, &#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x438;&#x442;&#x441;&#x44F; &#x43A; &#x438;&#x43D;&#x435;&#x440;&#x442;&#x43D;&#x44B;&#x43C; &#x433;&#x430;&#x437;&#x430;&#x43C;. &#x422;&#x440;&#x438; &#x3B1;-&#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x430; &#x420;&#x430;&#x434;&#x43E;&#x43D; &#x432;&#x441;&#x442;&#x440;&#x435;&#x447;&#x430;&#x44E;&#x442;&#x441;&#x44F; &#x432; &#x43F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x435; &#x43A;&#x430;&#x43A; &#x447;&#x43B;&#x435;&#x43D;&#x44B; &#x435;&#x441;&#x442;&#x435;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x44B;&#x445; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x445; &#x440;&#x44F;&#x434;&#x43E;&#x432;. <sup>219</sup>Rn (&#x447;&#x43B;&#x435;&#x43D; &#x440;&#x44F;&#x434;&#x430; &#x430;&#x43A;&#x442;&#x438;&#x43D;&#x43E;&#x443;&#x440;&#x430;&#x43D;&#x430;; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434; &#x43F;&#x43E;&#x43B;&#x443;&#x440;&#x430;&#x441;&#x43F;&#x430;&#x434;&#x430; &#x422;<sub>&#xBD;</sub> = 3,92 &#x441;&#x435;&#x43A;); <sup>220</sup>Rn (&#x440;&#x44F;&#x434; &#x442;&#x43E;&#x440;&#x438;&#x44F;, &#x422;<sub>&#xBD;</sub> = 54,5 &#x441;&#x435;&#x43A;) &#x438; <sup>222</sup>Rn (&#x440;&#x44F;&#x434; &#x443;&#x440;&#x430;&#x43D;&#x430; - &#x440;&#x430;&#x434;&#x438;&#x44F;, &#x422;<sub>&#xBD;</sub> = 3,823 &#x441;&#x443;&#x442;). &#x418;&#x437;&#x43E;&#x442;&#x43E;&#x43F; <sup>219</sup>Rn &#x43D;&#x430;&#x437;&#x44B;&#x432;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x442;&#x430;&#x43A;&#x436;&#x435; &#x430;&#x43A;&#x442;&#x438;&#x43D;&#x43E;&#x43D; (&#x441;&#x438;&#x43C;&#x432;&#x43E;&#x43B; An), <sup>220</sup>Rn - &#x442;&#x43E;&#x440;&#x43E;&#x43D; (Tn), a <sup>222</sup>Rn &#x43D;&#x430;&#x437;&#x44B;&#x432;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x438;&#x441;&#x442;&#x438;&#x43D;&#x43D;&#x44B;&#x43C; &#x420;&#x430;&#x434;&#x43E;&#x43D;&#x43E;&#x43C; &#x438; &#x447;&#x430;&#x441;&#x442;&#x43E; &#x43E;&#x431;&#x43E;&#x437;&#x43D;&#x430;&#x447;&#x430;&#x44E;&#x442; &#x43F;&#x440;&#x43E;&#x441;&#x442;&#x43E; &#x441;&#x438;&#x43C;&#x432;&#x43E;&#x43B;&#x43E;&#x43C; Rn. &#x418;&#x441;&#x43A;&#x443;&#x441;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x43E;, &#x441; &#x43F;&#x43E;&#x43C;&#x43E;&#x449;&#x44C;&#x44E; &#x44F;&#x434;&#x435;&#x440;&#x43D;&#x44B;&#x445; &#x440;&#x435;&#x430;&#x43A;&#x446;&#x438;&#x439; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x43E; &#x441;&#x432;&#x44B;&#x448;&#x435; 20 &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x420;&#x430;&#x434;&#x43E;&#x43D;&#x430; &#x441; &#x43C;&#x430;&#x441;&#x441;&#x43E;&#x432;&#x44B;&#x43C;&#x438; &#x447;&#x438;&#x441;&#x43B;&#x430;&#x43C;&#x438; &#x43C;&#x435;&#x436;&#x434;&#x443; 201 &#x438; 222. &#x414;&#x43B;&#x44F; &#x441;&#x438;&#x43D;&#x442;&#x435;&#x437;&#x430; &#x43D;&#x435;&#x439;&#x442;&#x440;&#x43E;&#x43D;&#x43E;&#x434;&#x435;&#x444;&#x438;&#x446;&#x438;&#x442;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x420;&#x430;&#x434;&#x43E;&#x43D;&#x430; &#x441; &#x43C;&#x430;&#x441;&#x441;&#x43E;&#x432;&#x44B;&#x43C;&#x438; &#x447;&#x438;&#x441;&#x43B;&#x430;&#x43C;&#x438; 206-212 &#x432; &#x41E;&#x431;&#x44A;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x43D;&#x43E;&#x43C; &#x438;&#x43D;&#x441;&#x442;&#x438;&#x442;&#x443;&#x442;&#x435; &#x44F;&#x434;&#x435;&#x440;&#x43D;&#x44B;&#x445; &#x438;&#x441;&#x441;&#x43B;&#x435;&#x434;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x439; (&#x433;. &#x414;&#x443;&#x431;&#x43D;&#x430;, &#x421;&#x421;&#x421;&#x420;) &#x441;&#x43E;&#x437;&#x434;&#x430;&#x43D;&#x430; &#x441;&#x43F;&#x435;&#x446;&#x438;&#x430;&#x43B;&#x44C;&#x43D;&#x430;&#x44F; &#x433;&#x430;&#x437;&#x43E;&#x445;&#x440;&#x43E;&#x43C;&#x430;&#x442;&#x43E;&#x433;&#x440;&#x430;&#x444;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x430;&#x44F; &#x443;&#x441;&#x442;&#x430;&#x43D;&#x43E;&#x432;&#x43A;&#x430;, &#x43F;&#x43E;&#x437;&#x432;&#x43E;&#x43B;&#x44F;&#x44E;&#x449;&#x430;&#x44F; &#x437;&#x430; &#x43F;&#x43E;&#x43B;&#x447;&#x430;&#x441;&#x430; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x430;&#x442;&#x44C; &#x441;&#x443;&#x43C;&#x43C;&#x443; &#x44D;&#x442;&#x438;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x432; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438; &#x447;&#x438;&#x441;&#x442;&#x43E;&#x43C; &#x432;&#x438;&#x434;&#x435;.\n",
+        "Атомная масса": "[222]",
+        "Плотность, кг/м³": "9.91",
+        "Температура плавления, °С": "-71",
+        "Температура кипения, °С": "-62",
+        "Теплоемкость, кДж/(кг·°С)": "0.09",
+        "Электроотрицательность": " ",
+        "Ковалентный радиус, Å": "2.14",
+        "1-й ионизац. потенциал, эв": "10.75"
+    },
+    {
+        "Химический символ": "Fr",
+        "label": "Франций Francium",
+        "Электронная формула": "(Rn)7s1",
+        "description": "<b>&#x424;&#x440;&#x430;&#x43D;&#x446;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Francium), Fr, &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x439; &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; I &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;, &#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x438;&#x442;&#x441;&#x44F; &#x43A; &#x449;&#x435;&#x43B;&#x43E;&#x447;&#x43D;&#x44B;&#x43C; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;&#x430;&#x43C;; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 87. &#x421;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x43D;&#x435; &#x438;&#x43C;&#x435;&#x435;&#x442;. &#x418;&#x437;&#x432;&#x435;&#x441;&#x442;&#x43D;&#x43E; &#x431;&#x43E;&#x43B;&#x435;&#x435; 20 &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x424;&#x440;&#x430;&#x43D;&#x446;&#x438;&#x44F; &#x441; &#x43C;&#x430;&#x441;&#x441;&#x43E;&#x432;&#x44B;&#x43C;&#x438; &#x447;&#x438;&#x441;&#x43B;&#x430;&#x43C;&#x438; &#x43E;&#x442; 203 &#x434;&#x43E; 229; &#x432;&#x441;&#x435; &#x43E;&#x43D;&#x438; &#x43E;&#x447;&#x435;&#x43D;&#x44C; &#x43D;&#x435;&#x443;&#x441;&#x442;&#x43E;&#x439;&#x447;&#x438;&#x432;&#x44B;; &#x43D;&#x430;&#x438;&#x431;&#x43E;&#x43B;&#x435;&#x435; &#x434;&#x43E;&#x43B;&#x433;&#x43E;&#x436;&#x438;&#x432;&#x443;&#x449;&#x438;&#x439; &#x3B2;-&#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x439; <sup>223</sup>Fr (&#x422;<sub>&#xBD;</sub> = 21,8 &#x43C;&#x438;&#x43D;) &#x432;&#x441;&#x442;&#x440;&#x435;&#x447;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x432; &#x43F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x435;.\n",
+        "Атомная масса": "[223]",
+        "Плотность, кг/м³": " ",
+        "Температура плавления, °С": "27",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": " ",
+        "Электроотрицательность": "0.7",
+        "Ковалентный радиус, Å": " ",
+        "1-й ионизац. потенциал, эв": "4.08"
+    },
+    {
+        "Химический символ": "Ra",
+        "label": "Радий Radium",
+        "Электронная формула": "(Rn)7s2",
+        "description": "<b>&#x420;&#x430;&#x434;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Radium), Ra, &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x439; &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; II &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 88. &#x418;&#x437;&#x432;&#x435;&#x441;&#x442;&#x43D;&#x44B; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x44B; &#x420;&#x430;&#x434;&#x438;&#x44F; &#x441; &#x43C;&#x430;&#x441;&#x441;&#x43E;&#x432;&#x44B;&#x43C;&#x438; &#x447;&#x438;&#x441;&#x43B;&#x430;&#x43C;&#x438; 204-234. &#x421;&#x430;&#x43C;&#x44B;&#x43C; &#x434;&#x43E;&#x43B;&#x433;&#x43E;&#x436;&#x438;&#x432;&#x443;&#x449;&#x438;&#x43C; &#x44F;&#x432;&#x43B;&#x44F;&#x435;&#x442;&#x441;&#x44F; &#x3B1;-&#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x439; <sup>226</sup>Ra &#x441; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x43E;&#x43C; &#x43F;&#x43E;&#x43B;&#x443;&#x440;&#x430;&#x441;&#x43F;&#x430;&#x434;&#x430; &#x43E;&#x43A;&#x43E;&#x43B;&#x43E; 1600 &#x43B;&#x435;&#x442;. &#x412; &#x43F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x435; &#x43A;&#x430;&#x43A; &#x447;&#x43B;&#x435;&#x43D;&#x44B; &#x435;&#x441;&#x442;&#x435;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x44B;&#x445; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x445; &#x440;&#x44F;&#x434;&#x43E;&#x432; &#x432;&#x441;&#x442;&#x440;&#x435;&#x447;&#x430;&#x44E;&#x442;&#x441;&#x44F; <sup>222</sup>Ra (&#x441;&#x43F;&#x435;&#x446;&#x438;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x435; &#x43D;&#x430;&#x437;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x430; - &#x430;&#x43A;&#x442;&#x438;&#x43D;&#x438;&#x439;-&#x438;&#x43A;&#x441;, &#x441;&#x438;&#x43C;&#x432;&#x43E;&#x43B; &#x410;&#x441;&#x425;), <sup>224</sup>Ra (&#x442;&#x43E;&#x440;&#x438;&#x439;-&#x438;&#x43A;&#x441;, ThX), <sup>226</sup>Ra &#x438; <sup>228</sup>Ra (&#x43C;&#x435;&#x437;&#x43E;&#x442;&#x43E;&#x440;&#x438;&#x439;-I, MsThI).\n",
+        "Атомная масса": "[226]",
+        "Плотность, кг/м³": "5000",
+        "Температура плавления, °С": "700",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": " ",
+        "Электроотрицательность": "0.9",
+        "Ковалентный радиус, Å": " ",
+        "1-й ионизац. потенциал, эв": "5.28"
+    },
+    {
+        "Химический символ": "Ac",
+        "label": "Актиний Actinium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Rn)6d17s2",
+        "description": "<b>&#x410;&#x43A;&#x442;&#x438;&#x43D;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Actinium, &#x43E;&#x442; &#x433;&#x440;&#x435;&#x447;. aktis, &#x440;&#x43E;&#x434;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x439; &#x43F;&#x430;&#x434;&#x435;&#x436; aktinos - &#x43B;&#x443;&#x447;), &#x410;&#x441;, &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x439; &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; III &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 89. &#x421;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x43D;&#x435; &#x438;&#x43C;&#x435;&#x435;&#x442;. &#x41E;&#x442;&#x43A;&#x440;&#x44B;&#x442; &#x432; 1899 &#x433;&#x43E;&#x434;&#x443; &#x444;&#x440;&#x430;&#x43D;&#x446;&#x443;&#x437;&#x441;&#x43A;&#x438;&#x43C; &#x445;&#x438;&#x43C;&#x438;&#x43A;&#x43E;&#x43C; &#x410;. &#x414;&#x435;&#x431;&#x44C;&#x435;&#x440;&#x43D;&#x43E;&#x43C; &#x43F;&#x440;&#x438; &#x438;&#x437;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x438; &#x43E;&#x442;&#x445;&#x43E;&#x434;&#x43E;&#x432; &#x43E;&#x442; &#x43F;&#x435;&#x440;&#x435;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x438; &#x443;&#x440;&#x430;&#x43D;&#x43E;&#x432;&#x43E;&#x439; &#x440;&#x443;&#x434;&#x44B;. &#x418;&#x437;&#x432;&#x435;&#x441;&#x442;&#x43D;&#x43E; 10 &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x410;&#x43A;&#x442;&#x438;&#x43D;&#x438;&#x44F; &#x441; &#x43C;&#x430;&#x441;&#x441;&#x43E;&#x432;&#x44B;&#x43C;&#x438; &#x447;&#x438;&#x441;&#x43B;&#x430;&#x43C;&#x438; &#x43E;&#x442; 221 &#x434;&#x43E; 230. &#x41D;&#x430;&#x438;&#x431;&#x43E;&#x43B;&#x435;&#x435; &#x434;&#x43E;&#x43B;&#x433;&#x43E;&#x436;&#x438;&#x432;&#x443;&#x449;&#x438;&#x439; <sup>227</sup>&#x410;&#x441; (&#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434; &#x43F;&#x43E;&#x43B;&#x443;&#x440;&#x430;&#x441;&#x43F;&#x430;&#x434;&#x430; T<sub>&#xBD;</sub> = 21,8 &#x433;&#x43E;&#x434;&#x430;) &#x438;&#x441;&#x43F;&#x443;&#x441;&#x43A;&#x430;&#x435;&#x442; &#x3B2;-&#x447;&#x430;&#x441;&#x442;&#x438;&#x446;&#x44B; (98,8%) &#x438; &#x3B1;-&#x447;&#x430;&#x441;&#x442;&#x438;&#x446;&#x44B; (1,2%). &#x418;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x44B; <sup>227</sup>&#x410;&#x441; &#x438; <sup>228</sup>&#x410;&#x441; (T<sub>&#xBD;</sub> = 6,13 &#x447;;, &#x435;&#x433;&#x43E; &#x43D;&#x430;&#x437;&#x44B;&#x432;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x442;&#x430;&#x43A;&#x436;&#x435; &#x43C;&#x435;&#x437;&#x43E;&#x442;&#x43E;&#x440;&#x438;&#x439; II, MsThII) &#x432;&#x441;&#x442;&#x440;&#x435;&#x447;&#x430;&#x44E;&#x442;&#x441;&#x44F; &#x432; &#x43F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x435; &#x432; &#x440;&#x443;&#x434;&#x430;&#x445; &#x443;&#x440;&#x430;&#x43D;&#x430; &#x438; &#x442;&#x43E;&#x440;&#x438;&#x44F; &#x43A;&#x430;&#x43A; &#x447;&#x43B;&#x435;&#x43D;&#x44B; &#x435;&#x441;&#x442;&#x435;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x44B;&#x445; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x445; &#x441;&#x435;&#x43C;&#x435;&#x439;&#x441;&#x442;&#x432;. &#x41F;&#x43E;&#x432;&#x435;&#x440;&#x445;&#x43D;&#x43E;&#x441;&#x442;&#x43D;&#x44B;&#x439; &#x441;&#x43B;&#x43E;&#x439; &#x437;&#x435;&#x43C;&#x43D;&#x43E;&#x439; &#x43A;&#x43E;&#x440;&#x44B; &#x442;&#x43E;&#x43B;&#x449;&#x438;&#x43D;&#x43E;&#x439; 1,6 &#x43A;&#x43C; &#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x438;&#x442; 11 300 &#x442; <sup>227</sup>&#x410;&#x441;, &#x43D;&#x43E; &#x43F;&#x43E; &#x441;&#x440;&#x430;&#x432;&#x43D;&#x435;&#x43D;&#x438;&#x44E; &#x441; &#x434;&#x440;&#x443;&#x433;&#x438;&#x43C;&#x438; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x430;&#x43C;&#x438; &#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x430;&#x43D;&#x438;&#x435; &#x410;&#x43A;&#x442;&#x438;&#x43D;&#x438;&#x439; &#x432; &#x437;&#x435;&#x43C;&#x43D;&#x43E;&#x439; &#x43A;&#x43E;&#x440;&#x435; &#x43E;&#x447;&#x435;&#x43D;&#x44C; &#x43C;&#x430;&#x43B;&#x43E; (6&#xB7;10<sup>-10</sup>% &#x43F;&#x43E; &#x43C;&#x430;&#x441;&#x441;&#x435;).\n",
+        "Атомная масса": "[227]",
+        "Плотность, кг/м³": "10070",
+        "Температура плавления, °С": "1050",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": " ",
+        "Электроотрицательность": "1.1",
+        "Ковалентный радиус, Å": " ",
+        "1-й ионизац. потенциал, эв": "5.17"
+    },
+    {
+        "Химический символ": "Th",
+        "label": "Торий Thorium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Rn)6d27s2",
+        "description": "<b>&#x422;&#x43E;&#x440;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Thorium), Th, &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x439; &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;, &#x43F;&#x435;&#x440;&#x432;&#x44B;&#x439; &#x447;&#x43B;&#x435;&#x43D; &#x441;&#x435;&#x43C;&#x435;&#x439;&#x441;&#x442;&#x432;&#x430; <a href=\"art.php?t=ac\">&#x430;&#x43A;&#x442;&#x438;&#x43D;&#x43E;&#x438;&#x434;&#x43E;&#x432;</a>, &#x432;&#x445;&#x43E;&#x434;&#x44F;&#x449;&#x438;&#x445; &#x432; III &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x443; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 90, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 232,038; &#x441;&#x435;&#x440;&#x435;&#x431;&#x440;&#x438;&#x441;&#x442;&#x43E;-&#x431;&#x435;&#x43B;&#x44B;&#x439; &#x43F;&#x43B;&#x430;&#x441;&#x442;&#x438;&#x447;&#x43D;&#x44B;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;. &#x41F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x43D;&#x44B;&#x439; &#x422;&#x43E;&#x440;&#x438;&#x439; &#x43F;&#x440;&#x430;&#x43A;&#x442;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x438;&#x442; &#x438;&#x437; &#x43E;&#x434;&#x43D;&#x43E;&#x433;&#x43E; &#x434;&#x43E;&#x43B;&#x433;&#x43E;&#x436;&#x438;&#x432;&#x443;&#x449;&#x435;&#x433;&#x43E; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x430; <sup>232</sup>Th - &#x440;&#x43E;&#x434;&#x43E;&#x43D;&#x430;&#x447;&#x430;&#x43B;&#x44C;&#x43D;&#x438;&#x43A;&#x430; &#x43E;&#x434;&#x43D;&#x43E;&#x433;&#x43E; &#x438;&#x437; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x445; &#x440;&#x44F;&#x434;&#x43E;&#x432; - &#x441; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x43E;&#x43C; &#x43F;&#x43E;&#x43B;&#x443;&#x440;&#x430;&#x441;&#x43F;&#x430;&#x434;&#x430; &#x422;<sub>&#xBD;</sub> = 1,39&#xB7;10<sup>10</sup> &#x43B;&#x435;&#x442; (&#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x430;&#x43D;&#x438;&#x435; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x430; <sup>228</sup>Th, &#x43D;&#x430;&#x445;&#x43E;&#x434;&#x44F;&#x449;&#x435;&#x433;&#x43E;&#x441;&#x44F; &#x441; &#x43D;&#x438;&#x43C; &#x432; &#x440;&#x430;&#x432;&#x43D;&#x43E;&#x432;&#x435;&#x441;&#x438;&#x438;, &#x43D;&#x438;&#x447;&#x442;&#x43E;&#x436;&#x43D;&#x43E; - 1,37&#xB7;10<sup>-8 </sup>%) &#x438; &#x447;&#x435;&#x442;&#x44B;&#x440;&#x435;&#x445; &#x43A;&#x43E;&#x440;&#x43E;&#x442;&#x43A;&#x43E;&#x436;&#x438;&#x432;&#x443;&#x449;&#x438;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432;, &#x434;&#x432;&#x430; &#x438;&#x437; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x445; &#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x44F;&#x442;&#x441;&#x44F; &#x43A; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x43E;&#x43C;&#x443; &#x440;&#x44F;&#x434;&#x443; &#x443;&#x440;&#x430;&#x43D;&#x430; - &#x440;&#x430;&#x434;&#x438;&#x44F;: <sup>234</sup>Th (&#x422;<sub>&#xBD;</sub> = 24,1 &#x441;&#x443;&#x442;) &#x438; <sup>230</sup>Th (&#x422;<sub>&#xBD;</sub> = 8,0&#xB7;10<sup>4</sup> &#x43B;&#x435;&#x442;), &#x43E;&#x441;&#x442;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x435; - &#x43A; &#x440;&#x44F;&#x434;&#x443; &#x430;&#x43A;&#x442;&#x438;&#x43D;&#x438;&#x44F;: <sup>23l</sup>Th (&#x422;<sub>&#xBD;</sub> = 25,6 &#x447;) &#x438; <sup>227</sup>Th (&#x422;<sub>&#xBD;</sub>= 18,17 &#x441;&#x443;&#x442;). &#x418;&#x437; &#x438;&#x441;&#x43A;&#x443;&#x441;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x43E; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x43D;&#x430;&#x438;&#x431;&#x43E;&#x43B;&#x435;&#x435; &#x443;&#x441;&#x442;&#x43E;&#x439;&#x447;&#x438;&#x432; <sup>229</sup>Th (&#x422;<sub>&#xBD;</sub> = 7340 &#x43B;&#x435;&#x442;).\n",
+        "Атомная масса": "232.04",
+        "Плотность, кг/м³": "11700",
+        "Температура плавления, °С": "1750",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.142",
+        "Электроотрицательность": "1.3",
+        "Ковалентный радиус, Å": "1.65",
+        "1-й ионизац. потенциал, эв": "6.08"
+    },
+    {
+        "Химический символ": "Pa",
+        "label": "Проактиний Protactinium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Rn)5f26d17s2",
+        "description": "<b>&#x41F;&#x440;&#x43E;&#x442;&#x430;&#x43A;&#x442;&#x438;&#x43D;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Protactinium), &#x420;&#x430;, &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x439; &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 91, &#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x438;&#x442;&#x441;&#x44F; &#x43A; <a href=\"art.php?t=ac\">&#x430;&#x43A;&#x442;&#x438;&#x43D;&#x43E;&#x438;&#x434;&#x430;&#x43C;</a>. &#x41F;&#x435;&#x440;&#x432;&#x44B;&#x439; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F; &#x41F;&#x440;&#x43E;&#x442;&#x430;&#x43A;&#x442;&#x438;&#x43D;&#x438;&#x44F; (&#x442;&#x43E;&#x447;&#x43D;&#x435;&#x435;, &#x44F;&#x434;&#x435;&#x440;&#x43D;&#x44B;&#x439; &#x438;&#x437;&#x43E;&#x43C;&#x435;&#x440;) - &#x43A;&#x43E;&#x440;&#x43E;&#x442;&#x43A;&#x43E;&#x436;&#x438;&#x432;&#x443;&#x449;&#x438;&#x439; <sup>234m</sup>&#x420;&#x430; (&#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434; &#x43F;&#x43E;&#x43B;&#x443;&#x440;&#x430;&#x441;&#x43F;&#x430;&#x434;&#x430; &#x422;<sub>&#xBD;</sub> =1,18 &#x43C;&#x438;&#x43D;) &#x431;&#x44B;&#x43B; &#x43E;&#x431;&#x43D;&#x430;&#x440;&#x443;&#x436;&#x435;&#x43D; &#x432; 1913 &#x433;&#x43E;&#x434;&#x443; &#x41A;. &#x424;&#x430;&#x44F;&#x43D;&#x441;&#x43E;&#x43C; &#x438; &#x43D;&#x435;&#x43C;&#x435;&#x446;&#x43A;&#x438;&#x43C; &#x444;&#x438;&#x437;&#x438;&#x43A;&#x43E;&#x43C; &#x41E;. &#x413;&#x435;&#x440;&#x438;&#x43D;&#x433;&#x43E;&#x43C; &#x432; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x43E;&#x43C; &#x440;&#x44F;&#x434;&#x443; &#x443;&#x440;&#x430;&#x43D;&#x430; - &#x440;&#x430;&#x434;&#x438;&#x44F;. &#x412; 1918 &#x433;&#x43E;&#x434;&#x443; &#x41E;. &#x422;&#x430;&#x43D; &#x441;&#x43E;&#x432;&#x43C;&#x435;&#x441;&#x442;&#x43D;&#x43E; &#x441; &#x41B;. &#x41C;&#x430;&#x439;&#x442;&#x43D;&#x435;&#x440; &#x438; &#x43D;&#x435;&#x437;&#x430;&#x432;&#x438;&#x441;&#x438;&#x43C;&#x43E; &#x43E;&#x442; &#x43D;&#x438;&#x445; &#x424;. &#x421;&#x43E;&#x434;&#x434;&#x438; &#x438; &#x430;&#x43D;&#x433;&#x43B;&#x438;&#x439;&#x441;&#x43A;&#x438;&#x439; &#x445;&#x438;&#x43C;&#x438;&#x43A; &#x414;&#x436;. &#x41A;&#x440;&#x430;&#x43D;&#x441;&#x442;&#x43E;&#x43D; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x438;&#x43B;&#x438; &#x438; &#x434;&#x43E;&#x43B;&#x433;&#x43E;&#x436;&#x438;&#x432;&#x443;&#x449;&#x438;&#x439; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F; <sup>231</sup>&#x420;&#x430; (&#x422;<sub>&#xBD;</sub> = 32 400 &#x43B;&#x435;&#x442;), &#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x44F;&#x449;&#x438;&#x439;&#x441;&#x44F; &#x43A; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x43E;&#x43C;&#x443; &#x440;&#x44F;&#x434;&#x443; &#x430;&#x43A;&#x442;&#x438;&#x43D;&#x43E;&#x443;&#x440;&#x430;&#x43D;&#x430;. &#x412; &#x44D;&#x442;&#x43E;&#x43C; &#x440;&#x44F;&#x434;&#x443; &#x41F;&#x440;&#x43E;&#x442;&#x430;&#x43A;&#x442;&#x438;&#x43D;&#x438;&#x439;- &#x43F;&#x440;&#x435;&#x434;&#x448;&#x435;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x438;&#x43A; &#x430;&#x43A;&#x442;&#x438;&#x43D;&#x438;&#x44F; (&#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F; <sup>227</sup>&#x410;&#x441; &#x43E;&#x431;&#x440;&#x430;&#x437;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x43F;&#x440;&#x438; &#x3B1;-&#x440;&#x430;&#x441;&#x43F;&#x430;&#x434;&#x435; <sup>231</sup>&#x420;&#x430;), &#x447;&#x442;&#x43E; &#x438; &#x43E;&#x442;&#x440;&#x430;&#x436;&#x435;&#x43D;&#x43E; &#x432; &#x43D;&#x430;&#x437;&#x432;&#x430;&#x43D;&#x438;&#x438; &#x43F;&#x440;&#x43E;&#x442;&#x430;&#x43A;&#x442;&#x438;&#x43D;&#x438;&#x439; (&#x43E;&#x442; &#x433;&#x440;&#x435;&#x447;. &#x440;r&#x43E;tos - &#x43F;&#x435;&#x440;&#x432;&#x44B;&#x439;). &#x418;&#x437;&#x432;&#x435;&#x441;&#x442;&#x43D;&#x44B; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x44B; &#x41F;&#x440;&#x43E;&#x442;&#x430;&#x43A;&#x442;&#x438;&#x43D;&#x438;&#x44F; &#x441; &#x43C;&#x430;&#x441;&#x441;&#x43E;&#x432;&#x44B;&#x43C;&#x438; &#x447;&#x438;&#x441;&#x43B;&#x430;&#x43C;&#x438; 224-237 &#x438; &#x44F;&#x434;&#x435;&#x440;&#x43D;&#x44B;&#x439; &#x438;&#x437;&#x43E;&#x43C;&#x435;&#x440; <sup>234m</sup>&#x420;&#x430;. &#x418;&#x437; &#x43D;&#x438;&#x445; &#x43D;&#x430;&#x438;&#x431;&#x43E;&#x43B;&#x435;&#x435; &#x443;&#x441;&#x442;&#x43E;&#x439;&#x447;&#x438;&#x432; <sup>231</sup>&#x420;&#x430; &#x441; &#x43C;&#x430;&#x441;&#x441;&#x43E;&#x439; 231,0359. &#x412; &#x43F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x435; &#x43A;&#x430;&#x43A; &#x447;&#x43B;&#x435;&#x43D;&#x44B; &#x435;&#x441;&#x442;&#x435;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x44B;&#x445; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x445; &#x440;&#x44F;&#x434;&#x43E;&#x432; &#x432;&#x441;&#x442;&#x440;&#x435;&#x447;&#x430;&#x44E;&#x442;&#x441;&#x44F; <sup>231</sup>&#x420;&#x430; &#x438; <sup>231</sup>&#x420;&#x430; (&#x441;&#x43F;&#x435;&#x446;&#x438;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x435; &#x43D;&#x430;&#x437;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x43F;&#x43E;&#x441;&#x43B;&#x435;&#x434;&#x43D;&#x435;&#x433;&#x43E; &#x443;&#x440;&#x430;&#x43D;-&#x437;&#x435;&#x442;, &#x441;&#x438;&#x43C;&#x432;&#x43E;&#x43B; UZ), &#x430; &#x442;&#x430;&#x43A;&#x436;&#x435; <sup>234m</sup>&#x420;&#x430; (&#x443;&#x440;&#x430;&#x43D;-&#x438;&#x43A;&#x441;-2, UX<sub>2</sub>).\n",
+        "Атомная масса": "231.04",
+        "Плотность, кг/м³": "15400",
+        "Температура плавления, °С": "1560",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.121",
+        "Электроотрицательность": "1.5",
+        "Ковалентный радиус, Å": " ",
+        "1-й ионизац. потенциал, эв": "5.89"
+    },
+    {
+        "Химический символ": "U",
+        "label": "Уран Uranium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Rn)5f36d17s2",
+        "description": "<b>&#x423;&#x440;&#x430;&#x43D;</b> (&#x43B;&#x430;&#x442;. Uranium), U, &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x439; &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; III &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;, &#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x438;&#x442;&#x441;&#x44F; &#x43A; &#x441;&#x435;&#x43C;&#x435;&#x439;&#x441;&#x442;&#x432;&#x443; <a href=\"art.php?t=ac\">&#x430;&#x43A;&#x442;&#x438;&#x43D;&#x43E;&#x438;&#x434;&#x43E;&#x432;</a>; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 92, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 238,029; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;. &#x41F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x43D;&#x44B;&#x439; &#x423;&#x440;&#x430;&#x43D; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x438;&#x442; &#x438;&#x437; &#x441;&#x43C;&#x435;&#x441;&#x438; &#x442;&#x440;&#x435;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432;: <sup>238</sup>U - 99,2739% &#x441; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x43E;&#x43C; &#x43F;&#x43E;&#x43B;&#x443;&#x440;&#x430;&#x441;&#x43F;&#x430;&#x434;&#x430; T<sub>&#xBD;</sub> = 4,51&#xB7;10<sup>9</sup> &#x43B;&#x435;&#x442;, <sup>235</sup>U - 0,7024% (T<sub>&#xBD;</sub> = 7,13&#xB7;10<sup>8</sup> &#x43B;&#x435;&#x442;) &#x438; <sup>234</sup>U - 0,0057% (T<sub>&#xBD;</sub> = 2,48&#xB7;10<sup>5</sup> &#x43B;&#x435;&#x442;).\n",
+        "Атомная масса": "238.03",
+        "Плотность, кг/м³": "19050",
+        "Температура плавления, °С": "1132",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.117",
+        "Электроотрицательность": "1.3",
+        "Ковалентный радиус, Å": "1.42",
+        "1-й ионизац. потенциал, эв": "6.05"
+    },
+    {
+        "Химический символ": "Np",
+        "label": "Нептуний Neptunium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Rn)5f46d17s2",
+        "description": "<b>&#x41D;&#x435;&#x43F;&#x442;&#x443;&#x43D;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Neptunium), Np, &#x438;&#x441;&#x43A;&#x443;&#x441;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x43E; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x43D;&#x44B;&#x439; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x439; &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; &#x441;&#x435;&#x43C;&#x435;&#x439;&#x441;&#x442;&#x432;&#x430; <a href=\"art.php?t=ac\">&#x430;&#x43A;&#x442;&#x438;&#x43D;&#x43E;&#x438;&#x434;&#x43E;&#x432;</a>; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 93, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 237,0482. &#x41E;&#x442;&#x43A;&#x440;&#x44B;&#x442; &#x432; 1940 &#x433;&#x43E;&#x434;&#x443; &#x430;&#x43C;&#x435;&#x440;&#x438;&#x43A;&#x430;&#x43D;&#x441;&#x43A;&#x438;&#x43C;&#x438; &#x443;&#x447;&#x435;&#x43D;&#x44B;&#x43C;&#x438; &#x42D;. M. &#x41C;&#x430;&#x43A;&#x43C;&#x438;&#x43B;&#x43B;&#x430;&#x43D;&#x43E;&#x43C; &#x438; &#x424;. X. &#x42D;&#x439;&#x431;&#x43B;&#x441;&#x43E;&#x43D;&#x43E;&#x43C;, &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x435; &#x443;&#x441;&#x442;&#x430;&#x43D;&#x43E;&#x432;&#x438;&#x43B;&#x438;, &#x447;&#x442;&#x43E; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F; &#x443;&#x440;&#x430;&#x43D;&#x430; <sup>239</sup>U, &#x43E;&#x431;&#x440;&#x430;&#x437;&#x443;&#x44E;&#x449;&#x438;&#x439;&#x441;&#x44F; &#x43F;&#x440;&#x438; &#x43E;&#x431;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x438; <sup>238</sup>U &#x43D;&#x435;&#x439;&#x442;&#x440;&#x43E;&#x43D;&#x430;&#x43C;&#x438;, &#x431;&#x44B;&#x441;&#x442;&#x440;&#x43E; &#x440;&#x430;&#x441;&#x43F;&#x430;&#x434;&#x430;&#x435;&#x442;&#x441;&#x44F;, &#x438;&#x441;&#x43F;&#x443;&#x441;&#x43A;&#x430;&#x44F; &#x3B2;-&#x447;&#x430;&#x441;&#x442;&#x438;&#x446;&#x443;, &#x438; &#x43F;&#x440;&#x435;&#x432;&#x440;&#x430;&#x449;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x432; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x430; &#x441; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x43C; &#x43D;&#x43E;&#x43C;&#x435;&#x440;&#x43E;&#x43C; 93. &#x41D;&#x430;&#x437;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x43F;&#x440;&#x43E;&#x438;&#x441;&#x445;&#x43E;&#x434;&#x438;&#x442; &#x43E;&#x442; &#x43F;&#x43B;&#x430;&#x43D;&#x435;&#x442;&#x44B; &#x41D;&#x435;&#x43F;&#x442;&#x443;&#x43D;.\n",
+        "Атомная масса": "[237]",
+        "Плотность, кг/м³": "20450",
+        "Температура плавления, °С": "640",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.12",
+        "Электроотрицательность": "1.3",
+        "Ковалентный радиус, Å": " ",
+        "1-й ионизац. потенциал, эв": "6.19"
+    },
+    {
+        "Химический символ": "Pu",
+        "label": "Плутоний Plutonium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Rn)5f66d07s2",
+        "description": "<b>&#x41F;&#x43B;&#x443;&#x442;&#x43E;&#x43D;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Plutonium), Pu, &#x438;&#x441;&#x43A;&#x443;&#x441;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x43E; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x43D;&#x44B;&#x439; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x439; &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 94; &#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x438;&#x442;&#x441;&#x44F; &#x43A; <a href=\"art.php?t=ac\">&#x430;&#x43A;&#x442;&#x438;&#x43D;&#x43E;&#x438;&#x434;&#x430;&#x43C;</a>. &#x41E;&#x442;&#x43A;&#x440;&#x44B;&#x442; &#x432; 1940-41 &#x433;&#x43E;&#x434;&#x430;&#x445; &#x430;&#x43C;&#x435;&#x440;&#x438;&#x43A;&#x430;&#x43D;&#x441;&#x43A;&#x438;&#x43C;&#x438; &#x443;&#x447;&#x435;&#x43D;&#x44B;&#x43C;&#x438; &#x413;. &#x421;&#x438;&#x431;&#x43E;&#x440;&#x433;&#x43E;&#x43C;, &#x42D;. &#x41C;&#x430;&#x43A;&#x43C;&#x438;&#x43B;&#x43B;&#x430;&#x43D;&#x43E;&#x43C;, &#x414;&#x436;. &#x41A;&#x435;&#x43D;&#x43D;&#x435;&#x434;&#x438; &#x438; &#x410;. &#x412;&#x430;&#x43B;&#x435;&#x43C;, &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x435; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x438;&#x43B;&#x438; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F; <sup>238</sup>&#x420;u &#x432; &#x440;&#x435;&#x437;&#x443;&#x43B;&#x44C;&#x442;&#x430;&#x442;&#x435; &#x43E;&#x431;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x443;&#x440;&#x430;&#x43D;&#x430; &#x44F;&#x434;&#x440;&#x430;&#x43C;&#x438; &#x442;&#x44F;&#x436;&#x435;&#x43B;&#x43E;&#x433;&#x43E; &#x432;&#x43E;&#x434;&#x43E;&#x440;&#x43E;&#x434;&#x430; - &#x434;&#x435;&#x439;&#x442;&#x43E;&#x43D;&#x430;&#x43C;&#x438;. &#x41D;&#x430;&#x437;&#x432;&#x430;&#x43D; &#x432; &#x447;&#x435;&#x441;&#x442;&#x44C; &#x43F;&#x43B;&#x430;&#x43D;&#x435;&#x442;&#x44B; &#x41F;&#x43B;&#x443;&#x442;&#x43E;&#x43D;, &#x43A;&#x430;&#x43A; &#x438; &#x43F;&#x440;&#x435;&#x434;&#x448;&#x435;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x438;&#x43A;&#x438; &#x41F;&#x43B;&#x443;&#x442;&#x43E;&#x43D;&#x438;&#x44F; &#x432; &#x442;&#x430;&#x431;&#x43B;&#x438;&#x446;&#x435; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430; - &#x443;&#x440;&#x430;&#x43D; &#x438; &#x43D;&#x435;&#x43F;&#x442;&#x443;&#x43D;&#x438;&#x439;, &#x43D;&#x430;&#x437;&#x432;&#x430;&#x43D;&#x438;&#x44F; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x445; &#x442;&#x430;&#x43A;&#x436;&#x435; &#x43F;&#x440;&#x43E;&#x438;&#x437;&#x43E;&#x448;&#x43B;&#x438; &#x43E;&#x442; &#x43F;&#x43B;&#x430;&#x43D;&#x435;&#x442; &#x423;&#x440;&#x430;&#x43D;&#x430; &#x438; &#x41D;&#x435;&#x43F;&#x442;&#x443;&#x43D;&#x430;. &#x418;&#x437;&#x432;&#x435;&#x441;&#x442;&#x43D;&#x44B; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x44B; &#x41F;&#x43B;&#x443;&#x442;&#x43E;&#x43D;&#x438;&#x44F; &#x441; &#x43C;&#x430;&#x441;&#x441;&#x43E;&#x432;&#x44B;&#x43C;&#x438; &#x447;&#x438;&#x441;&#x43B;&#x430;&#x43C;&#x438; &#x43E;&#x442; 232 &#x434;&#x43E; 246. &#x421;&#x43B;&#x435;&#x434;&#x44B; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; <sup>247</sup>&#x420;u &#x438; <sup>255</sup>&#x420;u &#x43E;&#x431;&#x43D;&#x430;&#x440;&#x443;&#x436;&#x435;&#x43D;&#x44B; &#x432; &#x43F;&#x44B;&#x43B;&#x438;, &#x441;&#x43E;&#x431;&#x440;&#x430;&#x43D;&#x43D;&#x43E;&#x439; &#x43F;&#x43E;&#x441;&#x43B;&#x435; &#x432;&#x437;&#x440;&#x44B;&#x432;&#x43E;&#x432; &#x442;&#x435;&#x440;&#x43C;&#x43E;&#x44F;&#x434;&#x435;&#x440;&#x43D;&#x44B;&#x445; &#x431;&#x43E;&#x43C;&#x431;. &#x421;&#x430;&#x43C;&#x44B;&#x43C; &#x434;&#x43E;&#x43B;&#x433;&#x43E;&#x436;&#x438;&#x432;&#x443;&#x449;&#x438;&#x43C; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x43C; &#x41F;&#x43B;&#x443;&#x442;&#x43E;&#x43D;&#x438;&#x439; &#x44F;&#x432;&#x43B;&#x44F;&#x435;&#x442;&#x441;&#x44F; &#x3B1;-&#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x439; <sup>244</sup>&#x420;u (&#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434; &#x43F;&#x43E;&#x43B;&#x443;&#x440;&#x430;&#x441;&#x43F;&#x430;&#x434;&#x430; T<sub>&#xBD;</sub> &#x43E;&#x43A;&#x43E;&#x43B;&#x43E; 7,5&#xB7;10<sup>7</sup> &#x43B;&#x435;&#x442;). &#x412;&#x435;&#x43B;&#x438;&#x447;&#x438;&#x43D;&#x44B; T<sub>&#xBD;</sub> &#x432;&#x441;&#x435;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x41F;&#x43B;&#x443;&#x442;&#x43E;&#x43D;&#x438;&#x44F; &#x43C;&#x43D;&#x43E;&#x433;&#x43E; &#x43C;&#x435;&#x43D;&#x44C;&#x448;&#x435; &#x432;&#x43E;&#x437;&#x440;&#x430;&#x441;&#x442;&#x430; &#x417;&#x435;&#x43C;&#x43B;&#x438;, &#x438; &#x43F;&#x43E;&#x44D;&#x442;&#x43E;&#x43C;&#x443; &#x432;&#x435;&#x441;&#x44C; &#x43F;&#x435;&#x440;&#x432;&#x438;&#x447;&#x43D;&#x44B;&#x439; &#x41F;&#x43B;&#x443;&#x442;&#x43E;&#x43D;&#x438;&#x439; (&#x441;&#x443;&#x449;&#x435;&#x441;&#x442;&#x432;&#x43E;&#x432;&#x430;&#x432;&#x448;&#x438;&#x439; &#x43D;&#x430; &#x43D;&#x430;&#x448;&#x435;&#x439; &#x43F;&#x43B;&#x430;&#x43D;&#x435;&#x442;&#x435; &#x43F;&#x440;&#x438; &#x435;&#x435; &#x444;&#x43E;&#x440;&#x43C;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x438;) &#x43F;&#x43E;&#x43B;&#x43D;&#x43E;&#x441;&#x442;&#x44C;&#x44E; &#x440;&#x430;&#x441;&#x43F;&#x430;&#x43B;&#x441;&#x44F;. &#x41E;&#x434;&#x43D;&#x430;&#x43A;&#x43E; &#x43D;&#x438;&#x447;&#x442;&#x43E;&#x436;&#x43D;&#x44B;&#x435; &#x43A;&#x43E;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x442;&#x432;&#x430; <sup>239</sup>&#x420;u &#x43F;&#x43E;&#x441;&#x442;&#x43E;&#x44F;&#x43D;&#x43D;&#x43E; &#x43E;&#x431;&#x440;&#x430;&#x437;&#x443;&#x44E;&#x442;&#x441;&#x44F; &#x43F;&#x440;&#x438; &#x3B2;-&#x440;&#x430;&#x441;&#x43F;&#x430;&#x434;&#x435; <sup>239</sup>Np, &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x439;, &#x432; &#x441;&#x432;&#x43E;&#x44E; &#x43E;&#x447;&#x435;&#x440;&#x435;&#x434;&#x44C;, &#x432;&#x43E;&#x437;&#x43D;&#x438;&#x43A;&#x430;&#x435;&#x442; &#x43F;&#x440;&#x438; &#x44F;&#x434;&#x435;&#x440;&#x43D;&#x43E;&#x439; &#x440;&#x435;&#x430;&#x43A;&#x446;&#x438;&#x438; &#x443;&#x440;&#x430;&#x43D;&#x430; &#x441; &#x43D;&#x435;&#x439;&#x442;&#x440;&#x43E;&#x43D;&#x430;&#x43C;&#x438; (&#x43D;&#x430;&#x43F;&#x440;&#x438;&#x43C;&#x435;&#x440;, &#x43D;&#x435;&#x439;&#x442;&#x440;&#x43E;&#x43D;&#x430;&#x43C;&#x438; &#x43A;&#x43E;&#x441;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x433;&#x43E; &#x438;&#x437;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x44F;). &#x41F;&#x43E;&#x44D;&#x442;&#x43E;&#x43C;&#x443; &#x441;&#x43B;&#x435;&#x434;&#x44B; &#x41F;&#x43B;&#x443;&#x442;&#x43E;&#x43D;&#x438;&#x44F; &#x43E;&#x431;&#x43D;&#x430;&#x440;&#x443;&#x436;&#x435;&#x43D;&#x44B; &#x432; &#x443;&#x440;&#x430;&#x43D;&#x43E;&#x432;&#x44B;&#x445; &#x440;&#x443;&#x434;&#x430;&#x445;.\n",
+        "Атомная масса": "[244]",
+        "Плотность, кг/м³": "19840",
+        "Температура плавления, °С": "640",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.13",
+        "Электроотрицательность": "1.3",
+        "Ковалентный радиус, Å": " ",
+        "1-й ионизац. потенциал, эв": "6.06"
+    },
+    {
+        "Химический символ": "Am",
+        "label": "Америций Americium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Rn)5f76d07s2",
+        "description": "<b>&#x410;&#x43C;&#x435;&#x440;&#x438;&#x446;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Americium), Am, &#x438;&#x441;&#x43A;&#x443;&#x441;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x43E; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x43D;&#x44B;&#x439; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x439; &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;, &#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x438;&#x442;&#x441;&#x44F; &#x43A; &#x430;&#x43A;&#x442;&#x438;&#x43D;&#x43E;&#x438;&#x434;&#x430;&#x43C;, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 95. &#x421;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x43D;&#x435; &#x438;&#x43C;&#x435;&#x435;&#x442;. &#x421;&#x438;&#x43D;&#x442;&#x435;&#x437;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D; &#x432; &#x43A;&#x43E;&#x43D;&#x446;&#x435; 1944 - &#x43D;&#x430;&#x447;&#x430;&#x43B;&#x435; 1945 &#x430;&#x43C;&#x435;&#x440;&#x438;&#x43A;&#x430;&#x43D;&#x441;&#x43A;&#x438;&#x43C;&#x438; &#x443;&#x447;&#x435;&#x43D;&#x44B;&#x43C;&#x438; &#x413;. &#x421;&#x438;&#x431;&#x43E;&#x440;&#x433;&#x43E;&#x43C;, &#x420;. &#x414;&#x436;&#x435;&#x439;&#x43C;&#x441;&#x43E;&#x43C;, &#x41B;. &#x41C;&#x43E;&#x440;&#x433;&#x430;&#x43D;&#x43E;&#x43C; &#x438; &#x410;. &#x413;&#x438;&#x43E;&#x440;&#x441;&#x43E; &#x432; &#x440;&#x435;&#x437;&#x443;&#x43B;&#x44C;&#x442;&#x430;&#x442;&#x435; &#x43E;&#x431;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x43F;&#x43B;&#x443;&#x442;&#x43E;&#x43D;&#x438;&#x44F; <sup>239</sup>&#x420;u &#x43D;&#x435;&#x439;&#x442;&#x440;&#x43E;&#x43D;&#x430;&#x43C;&#x438;. &#x41D;&#x430;&#x437;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x410;&#x43C;&#x435;&#x440;&#x438;&#x446;&#x438;&#x439; &#x434;&#x430;&#x43D;&#x43E; &#x43E;&#x442; &#x441;&#x43B;&#x43E;&#x432;&#x430; &quot;&#x410;&#x43C;&#x435;&#x440;&#x438;&#x43A;&#x430;&quot; &#x43F;&#x43E; &#x430;&#x43D;&#x430;&#x43B;&#x43E;&#x433;&#x438;&#x438; &#x441; &#x433;&#x43E;&#x43C;&#x43E;&#x43B;&#x43E;&#x433;&#x43E;&#x43C; &#x410;&#x43C;&#x435;&#x440;&#x438;&#x446;&#x438;&#x44F; &#x432; &#x440;&#x44F;&#x434;&#x443; &#x43B;&#x430;&#x43D;&#x442;&#x430;&#x43D;&#x43E;&#x438;&#x434;&#x43E;&#x432; - &#x435;&#x432;&#x440;&#x43E;&#x43F;&#x438;&#x435;&#x43C;, &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x439; &#x437;&#x430;&#x43D;&#x438;&#x43C;&#x430;&#x435;&#x442; &#x43F;&#x43E;&#x441;&#x43B;&#x435; &#x43B;&#x430;&#x43D;&#x442;&#x430;&#x43D;&#x430; &#x442;&#x430;&#x43A;&#x43E;&#x435; &#x436;&#x435; &#x43C;&#x435;&#x441;&#x442;&#x43E; (&#x448;&#x435;&#x441;&#x442;&#x43E;&#x435;), &#x43A;&#x430;&#x43A; &#x438; &#x410;&#x43C;&#x435;&#x440;&#x438;&#x446;&#x438;&#x439; &#x43F;&#x43E;&#x441;&#x43B;&#x435; &#x430;&#x43A;&#x442;&#x438;&#x43D;&#x438;&#x44F;. &#x418;&#x437;&#x432;&#x435;&#x441;&#x442;&#x43D;&#x44B; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x44B; &#x410;&#x43C;&#x435;&#x440;&#x438;&#x446;&#x438;&#x44F; &#x441; &#x43C;&#x430;&#x441;&#x441;&#x43E;&#x432;&#x44B;&#x43C;&#x438; &#x447;&#x438;&#x441;&#x43B;&#x430;&#x43C;&#x438; 237-246 &#x438; &#x44F;&#x434;&#x435;&#x440;&#x43D;&#x44B;&#x435; &#x438;&#x437;&#x43E;&#x43C;&#x435;&#x440;&#x44B; <sup>242m</sup>Am, <sup>244m</sup>Am &#x438; &#x442;&#x430;&#x43A; &#x43D;&#x430;&#x437;&#x44B;&#x432;&#x430;&#x435;&#x43C;&#x44B;&#x445; &#x434;&#x435;&#x43B;&#x44F;&#x449;&#x438;&#x435;&#x441;&#x44F; &#x44F;&#x434;&#x435;&#x440;&#x43D;&#x44B;&#x435; &#x438;&#x437;&#x43E;&#x43C;&#x435;&#x440;&#x44B; <sup>238mf</sup>Am, <sup>240mf</sup>Am, <sup>242mf</sup>Am &#x438; <sup>244mf</sup>Am, &#x431;&#x44B;&#x441;&#x442;&#x440;&#x44B;&#x439; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x439; &#x440;&#x430;&#x441;&#x43F;&#x430;&#x434; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x445; (&#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x44B; &#x43F;&#x43E;&#x43B;&#x443;&#x440;&#x430;&#x441;&#x43F;&#x430;&#x434;&#x430; T<sub>&#xBD;</sub> &#x43B;&#x435;&#x436;&#x430;&#x442; &#x432; &#x43F;&#x440;&#x435;&#x434;&#x435;&#x43B;&#x430;&#x445; 60 &#x43C;&#x43A;&#x441;&#x435;&#x43A;-14 &#x43C;&#x441;&#x435;&#x43A;) &#x43F;&#x440;&#x43E;&#x442;&#x435;&#x43A;&#x430;&#x435;&#x442; &#x43F;&#x443;&#x442;&#x435;&#x43C; &#x441;&#x43F;&#x43E;&#x43D;&#x442;&#x430;&#x43D;&#x43D;&#x43E;&#x433;&#x43E; &#x434;&#x435;&#x43B;&#x435;&#x43D;&#x438;&#x44F; (&#x441;&#x43F;&#x43E;&#x43D;&#x442;&#x430;&#x43D;&#x43D;&#x43E;&#x435; &#x434;&#x435;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x442;&#x430;&#x43A;&#x438;&#x445; &#x44F;&#x434;&#x435;&#x440;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x43C;&#x435;&#x440;&#x43E;&#x432;, &#x43D;&#x430;&#x445;&#x43E;&#x434;&#x44F;&#x449;&#x438;&#x445;&#x441;&#x44F; &#x432; &#x432;&#x43E;&#x437;&#x431;&#x443;&#x436;&#x434;&#x435;&#x43D;&#x43D;&#x43E;&#x43C; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x44F;&#x43D;&#x438;&#x438;, &#x43E;&#x431;&#x43D;&#x430;&#x440;&#x443;&#x436;&#x435;&#x43D;&#x43E; &#x432; 1962 &#x433;&#x43E;&#x434;&#x443; &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x43E;&#x439; &#x441;&#x43E;&#x432;&#x435;&#x442;&#x441;&#x43A;&#x438;&#x445; &#x444;&#x438;&#x437;&#x438;&#x43A;&#x43E;&#x432; &#x432; &#x414;&#x443;&#x431;&#x43D;&#x435; &#x43D;&#x430; &#x43F;&#x440;&#x438;&#x43C;&#x435;&#x440;&#x435; <sup>242mf</sup>Am). &#x41D;&#x430;&#x438;&#x431;&#x43E;&#x43B;&#x435;&#x435; &#x434;&#x43E;&#x43B;&#x433;&#x43E;&#x436;&#x438;&#x432;&#x443;&#x449;&#x438;&#x439; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F; <sup>243</sup>&#x410;m &#x3B1;-&#x430;&#x43A;&#x442;&#x438;&#x432;&#x435;&#x43D; (&#x422;<sub>&#xBD;</sub> = 7950 &#x43B;&#x435;&#x442;). &#x41F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435; <sup>243</sup>&#x410;m &#x432; &#x43C;&#x438;&#x43B;&#x43B;&#x438;&#x433;&#x440;&#x430;&#x43C;&#x43C;&#x43E;&#x432;&#x44B;&#x445; &#x43A;&#x43E;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x442;&#x432;&#x430;&#x445; &#x441;&#x432;&#x44F;&#x437;&#x430;&#x43D;&#x43E; &#x441; &#x431;&#x43E;&#x43B;&#x44C;&#x448;&#x438;&#x43C;&#x438; &#x442;&#x440;&#x443;&#x434;&#x43D;&#x43E;&#x441;&#x442;&#x44F;&#x43C;&#x438; &#x438; &#x431;&#x44B;&#x43B;&#x43E; &#x43E;&#x441;&#x443;&#x449;&#x435;&#x441;&#x442;&#x432;&#x43B;&#x435;&#x43D;&#x43E; &#x43F;&#x43E;&#x441;&#x43B;&#x435; 1960. &#x414;&#x440;&#x443;&#x433;&#x43E;&#x439; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F; &#x410;&#x43C;&#x435;&#x440;&#x438;&#x446;&#x438;&#x44F;, <sup>241</sup>&#x410;m (&#x3B1;-&#x440;&#x430;&#x441;&#x43F;&#x430;&#x434;, T<sub>&#xBD;</sub> = 458 &#x43B;&#x435;&#x442;) &#x43A;&#x430;&#x43A; &#x43F;&#x43E;&#x431;&#x43E;&#x447;&#x43D;&#x44B;&#x439; &#x43F;&#x440;&#x43E;&#x434;&#x443;&#x43A;&#x442; &#x43E;&#x431;&#x440;&#x430;&#x437;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x432; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x445; &#x440;&#x435;&#x430;&#x43A;&#x442;&#x43E;&#x440;&#x430;&#x445; &#x438;&#x437; <sup>239</sup>&#x420;u &#x438; &#x43C;&#x43E;&#x436;&#x435;&#x442; &#x431;&#x44B;&#x442;&#x44C; &#x432;&#x44B;&#x434;&#x435;&#x43B;&#x435;&#x43D; &#x438;&#x437; &#x43E;&#x442;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x430;&#x43D;&#x43D;&#x43E;&#x433;&#x43E; &#x44F;&#x434;&#x435;&#x440;&#x43D;&#x43E;&#x433;&#x43E; &#x433;&#x43E;&#x440;&#x44E;&#x447;&#x435;&#x433;&#x43E; &#x432; &#x43A;&#x43E;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x442;&#x432;&#x430;&#x445;, &#x434;&#x43E;&#x441;&#x442;&#x443;&#x43F;&#x43D;&#x44B;&#x445; &#x434;&#x43B;&#x44F; &#x432;&#x437;&#x432;&#x435;&#x448;&#x438;&#x432;&#x430;&#x43D;&#x438;&#x44F;. &#x414;&#x43B;&#x44F; &#x438;&#x437;&#x432;&#x43B;&#x435;&#x447;&#x435;&#x43D;&#x438;&#x44F; <sup>241</sup>&#x410;m &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x44E;&#x442; &#x441;&#x43E;&#x43E;&#x441;&#x430;&#x436;&#x434;&#x435;&#x43D;&#x438;&#x435; &#x441; &#x441;&#x43E;&#x43B;&#x44F;&#x43C;&#x438; &#x43B;&#x430;&#x43D;&#x442;&#x430;&#x43D;&#x430;, &#x445;&#x440;&#x43E;&#x43C;&#x430;&#x442;&#x43E;&#x433;&#x440;&#x430;&#x444;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x438; &#x44D;&#x43A;&#x441;&#x442;&#x440;&#x430;&#x43A;&#x446;&#x438;&#x43E;&#x43D;&#x43D;&#x44B;&#x435; &#x43C;&#x435;&#x442;&#x43E;&#x434;&#x44B;.\n",
+        "Атомная масса": "[243]",
+        "Плотность, кг/м³": "13670",
+        "Температура плавления, °С": "994",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": "0.138",
+        "Электроотрицательность": "1.3",
+        "Ковалентный радиус, Å": " ",
+        "1-й ионизац. потенциал, эв": "5.99"
+    },
+    {
+        "Химический символ": "Cm",
+        "label": "Кюрий Curium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Rn)5f76d17s2",
+        "description": "<b>&#x41A;&#x44E;&#x440;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Curium), Cm, &#x438;&#x441;&#x43A;&#x443;&#x441;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x43E; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x43D;&#x44B;&#x439; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x439; &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; &#x441;&#x435;&#x43C;&#x435;&#x439;&#x441;&#x442;&#x432;&#x430; <a href=\"art.php?t=ac\">&#x430;&#x43A;&#x442;&#x438;&#x43D;&#x43E;&#x438;&#x434;&#x43E;&#x432;</a>, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 96. &#x421;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x43D;&#x435; &#x438;&#x43C;&#x435;&#x435;&#x442;. &#x412;&#x43F;&#x435;&#x440;&#x432;&#x44B;&#x435; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D; &#x432; 1944 &#x430;&#x43C;&#x435;&#x440;&#x438;&#x43A;&#x430;&#x43D;&#x441;&#x43A;&#x438;&#x43C; &#x443;&#x447;&#x435;&#x43D;&#x44B;&#x43C;&#x438; &#x413;. &#x421;&#x438;&#x431;&#x43E;&#x440;&#x433;&#x43E;&#x43C;, &#x420;. &#x414;&#x436;&#x435;&#x439;&#x43C;&#x441;&#x43E;&#x43C; &#x438; &#x410;. &#x413;&#x438;&#x43E;&#x440;&#x441;&#x43E; &#x43F;&#x43E; &#x44F;&#x434;&#x435;&#x440;&#x43D;&#x43E;&#x439; &#x440;&#x435;&#x430;&#x43A;&#x446;&#x438;&#x438;<sup>239</sup><sub>94</sub>&#x420;u(&#x3B1;,n)<sup>242</sup> <sub>96</sub>Cm. &#x41D;&#x430;&#x437;&#x432;&#x430;&#x43D; &#x432; &#x447;&#x435;&#x441;&#x442;&#x44C; &#x41F;. &#x41A;&#x44E;&#x440;&#x438; &#x438; &#x41C;. &#x421;&#x43A;&#x43B;&#x43E;&#x434;&#x43E;&#x432;&#x441;&#x43A;&#x43E;&#x439;-&#x41A;&#x44E;&#x440;&#x438; - &#x43E;&#x441;&#x43D;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x435;&#x439; &#x43D;&#x430;&#x443;&#x43A;&#x438; &#x43E; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x43E;&#x441;&#x442;&#x438;. &#x418;&#x437;&#x432;&#x435;&#x441;&#x442;&#x43D;&#x44B; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x44B; &#x41A;&#x44E;&#x440;&#x438;&#x44F; &#x441; &#x43C;&#x430;&#x441;&#x441;&#x43E;&#x432;&#x44B;&#x43C;&#x438; &#x447;&#x438;&#x441;&#x43B;&#x430;&#x43C;&#x438; 232, 236-252, &#x438;&#x437; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x445; &#x441;&#x430;&#x43C;&#x44B;&#x439; &#x434;&#x43E;&#x43B;&#x433;&#x43E;&#x436;&#x438;&#x432;&#x443;&#x449;&#x438;&#x439; <sup>247</sup>Cm (&#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434; &#x43F;&#x43E;&#x43B;&#x443;&#x440;&#x430;&#x441;&#x43F;&#x430;&#x434;&#x430; &#x422;<sub>&#xBD;</sub> = 1,64&#xB7;10<sup>7</sup> &#x43B;&#x435;&#x442;). &#x412; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x445; &#x440;&#x435;&#x430;&#x43A;&#x442;&#x43E;&#x440;&#x430;&#x445; &#x43D;&#x435;&#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x435; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x44B; &#x41A;&#x44E;&#x440;&#x438;&#x44F; (<sup>244</sup>Cm, &#x422;<sub>&#xBD;</sub> = 17,59 &#x43B;&#x435;&#x442;, &#x438; &#x434;&#x440;&#x443;&#x433;&#x438;&#x435;) &#x43C;&#x43E;&#x436;&#x43D;&#x43E; &#x43D;&#x430;&#x43A;&#x43E;&#x43F;&#x438;&#x442;&#x44C; &#x432; &#x43A;&#x438;&#x43B;&#x43E;&#x433;&#x440;&#x430;&#x43C;&#x43C;&#x43E;&#x432;&#x44B;&#x445; &#x43A;&#x43E;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x442;&#x432;&#x430;&#x445; &#x437;&#x430; &#x441;&#x447;&#x435;&#x442; &#x434;&#x43B;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E;&#x433;&#x43E; &#x43E;&#x431;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x43D;&#x435;&#x439;&#x442;&#x440;&#x43E;&#x43D;&#x430;&#x43C;&#x438; &#x43F;&#x43B;&#x443;&#x442;&#x43E;&#x43D;&#x438;&#x44F; &#x438;&#x43B;&#x438; &#x443;&#x440;&#x430;&#x43D;&#x430;. &#x41A;&#x44E;&#x440;&#x438;&#x439; - &#x431;&#x43B;&#x435;&#x441;&#x442;&#x44F;&#x449;&#x438;&#x439; &#x441;&#x435;&#x440;&#x435;&#x431;&#x440;&#x438;&#x441;&#x442;&#x44B;&#x439; &#x43C;&#x435;&#x442;&#x430;&#x43B;&#x43B;, t<sub>&#x43F;&#x43B;</sub> 1340 &#xB0;&#x421;, &#x440;&#x430;&#x441;&#x441;&#x447;&#x438;&#x442;&#x430;&#x43D;&#x43D;&#x43E;&#x435; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x43F;&#x43B;&#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x442;&#x438; &#x43E;&#x43A;&#x43E;&#x43B;&#x43E; 113 &#x433;/&#x441;&#x43C;<sup>3</sup>. &#x41D;&#x430;&#x438;&#x431;&#x43E;&#x43B;&#x435;&#x435; &#x442;&#x438;&#x43F;&#x438;&#x447;&#x43D;&#x430;&#x44F; &#x441;&#x442;&#x435;&#x43F;&#x435;&#x43D;&#x44C; &#x43E;&#x43A;&#x438;&#x441;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x41A;&#x44E;&#x440;&#x438;&#x44F;, &#x43A;&#x430;&#x43A; &#x438; &#x434;&#x440;&#x443;&#x433;&#x438;&#x445; &#x442;&#x44F;&#x436;&#x435;&#x43B;&#x44B;&#x445; &#x430;&#x43A;&#x442;&#x438;&#x43D;&#x43E;&#x438;&#x434;&#x43E;&#x432;, +3; &#x432; &#x447;&#x430;&#x441;&#x442;&#x43D;&#x43E;&#x441;&#x442;&#x438;, &#x441;&#x438;&#x43D;&#x442;&#x435;&#x437;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x44B; Cm<sub>2</sub>&#x41E;<sub>3</sub>, CmCl<sub>3</sub> &#x438; &#x434;&#x440;&#x443;&#x433;&#x438;&#x435;. &#x41E;&#x434;&#x43D;&#x430;&#x43A;&#x43E; &#x438;&#x437;&#x432;&#x435;&#x441;&#x442;&#x43D;&#x44B; &#x438; &#x443;&#x441;&#x442;&#x43E;&#x439;&#x447;&#x438;&#x432;&#x44B;&#x435; &#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x44F; &#x41A;&#x44E;&#x440;&#x438;&#x44F; &#x441;&#x43E; &#x441;&#x442;&#x435;&#x43F;&#x435;&#x43D;&#x44C;&#x44E; &#x43E;&#x43A;&#x438;&#x441;&#x43B;&#x435;&#x43D;&#x438;&#x44F; +4 (CmO<sub>2</sub>, CmF<sub>4</sub>). &#x41E;&#x442; &#x434;&#x440;&#x443;&#x433;&#x438;&#x445; &#x430;&#x43A;&#x442;&#x438;&#x43D;&#x43E;&#x438;&#x434;&#x43E;&#x432; &#x41A;&#x44E;&#x440;&#x438;&#x439; &#x43C;&#x43E;&#x436;&#x43D;&#x43E; &#x43E;&#x442;&#x434;&#x435;&#x43B;&#x438;&#x442;&#x44C; &#x438;&#x43E;&#x43D;&#x43E;&#x43E;&#x431;&#x43C;&#x435;&#x43D;&#x43D;&#x44B;&#x43C;&#x438; &#x43C;&#x435;&#x442;&#x43E;&#x434;&#x430;&#x43C;&#x438;. &#x421;&#x438;&#x43B;&#x44C;&#x43D;&#x43E;&#x435; &#x432;&#x44B;&#x434;&#x435;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x442;&#x435;&#x43F;&#x43B;&#x430; &#x432; &#x43F;&#x440;&#x435;&#x43F;&#x430;&#x440;&#x430;&#x442;&#x430;&#x445; &#x41A;&#x44E;&#x440;&#x438;&#x44F;, &#x43E;&#x431;&#x443;&#x441;&#x43B;&#x43E;&#x432;&#x43B;&#x435;&#x43D;&#x43D;&#x43E;&#x435; &#x435;&#x433;&#x43E; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x43C; &#x440;&#x430;&#x441;&#x43F;&#x430;&#x434;&#x43E;&#x43C;, &#x434;&#x430;&#x435;&#x442; &#x432;&#x43E;&#x437;&#x43C;&#x43E;&#x436;&#x43D;&#x43E;&#x441;&#x442;&#x44C; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x44C; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x44B; <sup>242</sup>Cm, <sup>244</sup>Cm &#x438; &#x434;&#x440;&#x443;&#x433;&#x438;&#x445; &#x434;&#x43B;&#x44F; &#x441;&#x43E;&#x437;&#x434;&#x430;&#x43D;&#x438;&#x44F; &#x43C;&#x430;&#x43B;&#x43E;&#x433;&#x430;&#x431;&#x430;&#x440;&#x438;&#x442;&#x43D;&#x44B;&#x445; &#x438;&#x441;&#x442;&#x43E;&#x447;&#x43D;&#x438;&#x43A;&#x43E;&#x432; &#x44D;&#x43B;&#x435;&#x43A;&#x442;&#x440;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x433;&#x43E; &#x442;&#x43E;&#x43A;&#x430;. &#x421;&#x440;&#x43E;&#x43A; &#x43D;&#x435;&#x43F;&#x440;&#x435;&#x440;&#x44B;&#x432;&#x43D;&#x43E;&#x439; &#x440;&#x430;&#x431;&#x43E;&#x442;&#x44B; &#x442;&#x430;&#x43A;&#x438;&#x445; &#x433;&#x435;&#x43D;&#x435;&#x440;&#x430;&#x442;&#x43E;&#x440;&#x43E;&#x432; &#x434;&#x43E;&#x441;&#x442;&#x438;&#x433;&#x430;&#x435;&#x442; &#x43D;&#x435;&#x441;&#x43A;&#x43E;&#x43B;&#x44C;&#x43A;&#x438;&#x445; &#x43C;&#x435;&#x441;&#x44F;&#x446;&#x435;&#x432;.\n",
+        "Атомная масса": "[247]",
+        "Плотность, кг/м³": "13510",
+        "Температура плавления, °С": "1340",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": " ",
+        "Электроотрицательность": "1.3",
+        "Ковалентный радиус, Å": " ",
+        "1-й ионизац. потенциал, эв": "6.02"
+    },
+    {
+        "Химический символ": "Bk",
+        "label": "Берклий Berkelium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Rn)5f96d07s2",
+        "description": "<b>&#x411;&#x435;&#x440;&#x43A;&#x43B;&#x438;&#x439;</b>, &#x431;&#x435;&#x440;&#x43A;&#x435;&#x43B;&#x438;&#x439; (Berkelium), Bk, &#x438;&#x441;&#x43A;&#x443;&#x441;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x43E; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x43D;&#x44B;&#x439; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x439; &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;, &#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x438;&#x442;&#x441;&#x44F; &#x43A; <a href=\"art.php?t=ac\">&#x430;&#x43A;&#x442;&#x438;&#x43D;&#x43E;&#x438;&#x434;&#x430;&#x43C;</a>, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 97. &#x421;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x43D;&#x435; &#x438;&#x43C;&#x435;&#x435;&#x442;. &#x421;&#x438;&#x43D;&#x442;&#x435;&#x437;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D; &#x432; &#x434;&#x435;&#x43A;&#x430;&#x431;&#x440;&#x435; 1949 &#x433;&#x43E;&#x434;&#x430; &#x430;&#x43C;&#x435;&#x440;&#x438;&#x43A;&#x430;&#x43D;&#x441;&#x43A;&#x438;&#x43C;&#x438; &#x443;&#x447;&#x435;&#x43D;&#x44B;&#x43C;&#x438; &#x421;. &#x422;&#x43E;&#x43C;&#x43F;&#x441;&#x43E;&#x43D;&#x43E;&#x43C;, &#x410;. &#x413;&#x438;&#x43E;&#x440;&#x441;&#x43E; &#x438; &#x413;. &#x421;&#x438;&#x431;&#x43E;&#x440;&#x433;&#x43E;&#x43C; &#x432; &#x440;&#x435;&#x437;&#x443;&#x43B;&#x44C;&#x442;&#x430;&#x442;&#x435; &#x43E;&#x431;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x3B1;-&#x447;&#x430;&#x441;&#x442;&#x438;&#x446;&#x430;&#x43C;&#x438; &#x43D;&#x430; &#x446;&#x438;&#x43A;&#x43B;&#x43E;&#x442;&#x440;&#x43E;&#x43D;&#x435; &#x43E;&#x43A;&#x441;&#x438;&#x434;&#x430; &#x430;&#x43C;&#x435;&#x440;&#x438;&#x446;&#x438;&#x44F; <sup>241</sup>Am<sub>2</sub>O<sub>3</sub>. &#x41D;&#x430;&#x437;&#x432;&#x430;&#x43D; &#x432; &#x447;&#x435;&#x441;&#x442;&#x44C; &#x433;. &#x411;&#x435;&#x440;&#x43A;&#x43B;&#x438; (&#x41A;&#x430;&#x43B;&#x438;&#x444;&#x43E;&#x440;&#x43D;&#x438;&#x44F;, &#x421;&#x428;&#x410;), &#x433;&#x434;&#x435; &#x431;&#x44B;&#x43B;&#x438; &#x43F;&#x440;&#x43E;&#x432;&#x435;&#x434;&#x435;&#x43D;&#x44B; &#x43C;&#x43D;&#x43E;&#x433;&#x43E;&#x447;&#x438;&#x441;&#x43B;&#x435;&#x43D;&#x43D;&#x44B;&#x435; &#x440;&#x430;&#x431;&#x43E;&#x442;&#x44B; &#x43F;&#x43E; &#x441;&#x438;&#x43D;&#x442;&#x435;&#x437;&#x443; &#x438; &#x438;&#x441;&#x441;&#x43B;&#x435;&#x434;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44E; &#x430;&#x43A;&#x442;&#x438;&#x43D;&#x43E;&#x438;&#x434;&#x43E;&#x432;, &#x432; &#x442;&#x43E;&#x43C; &#x447;&#x438;&#x441;&#x43B;&#x435; &#x438; &#x411;&#x435;&#x440;&#x43A;&#x43B;&#x438;&#x44F;. &#x41F;&#x440;&#x438; &#x432;&#x44B;&#x431;&#x43E;&#x440;&#x435; &#x43D;&#x430;&#x437;&#x432;&#x430;&#x43D;&#x438;&#x44F; &#x434;&#x43B;&#x44F; &#x411;&#x435;&#x440;&#x43A;&#x43B;&#x438;&#x44F; &#x443;&#x447;&#x435;&#x43D;&#x44B;&#x435; &#x443;&#x447;&#x43B;&#x438;, &#x447;&#x442;&#x43E; &#x433;&#x43E;&#x43C;&#x43E;&#x43B;&#x43E;&#x433; &#x411;&#x435;&#x440;&#x43A;&#x43B;&#x438;&#x44F; &#x432; &#x440;&#x44F;&#x434;&#x443; &#x43B;&#x430;&#x43D;&#x442;&#x430;&#x43D;&#x43E;&#x438;&#x434;&#x43E;&#x432; - &#x442;&#x435;&#x440;&#x431;&#x438;&#x439;, &#x437;&#x430;&#x43D;&#x438;&#x43C;&#x430;&#x44E;&#x449;&#x438;&#x439; &#x43F;&#x43E;&#x441;&#x43B;&#x435; &#x43B;&#x430;&#x43D;&#x442;&#x430;&#x43D;&#x430; &#x442;&#x430;&#x43A;&#x43E;&#x435; &#x436;&#x435; &#x43C;&#x435;&#x441;&#x442;&#x43E; (&#x432;&#x43E;&#x441;&#x44C;&#x43C;&#x43E;&#x435;), &#x43A;&#x430;&#x43A; &#x438; &#x411;&#x435;&#x440;&#x43A;&#x43B;&#x438;&#x439; &#x43F;&#x43E;&#x441;&#x43B;&#x435; &#x430;&#x43A;&#x442;&#x438;&#x43D;&#x438;&#x44F;, &#x43D;&#x430;&#x437;&#x432;&#x430;&#x43D; &#x432; &#x447;&#x435;&#x441;&#x442;&#x44C; &#x448;&#x432;&#x435;&#x434;&#x441;&#x43A;&#x43E;&#x433;&#x43E; &#x433;&#x43E;&#x440;&#x43E;&#x434;&#x430; &#x418;&#x442;&#x442;&#x435;&#x440;&#x431;&#x438;, &#x432; &#x43E;&#x43A;&#x440;&#x435;&#x441;&#x442;&#x43D;&#x43E;&#x441;&#x442;&#x44F;&#x445; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x43E;&#x433;&#x43E; &#x431;&#x44B;&#x43B;&#x438; &#x432;&#x43F;&#x435;&#x440;&#x432;&#x44B;&#x435; &#x43D;&#x430;&#x439;&#x434;&#x435;&#x43D;&#x44B; &#x43C;&#x43D;&#x43E;&#x433;&#x438;&#x435; &#x440;&#x435;&#x434;&#x43A;&#x43E;&#x437;&#x435;&#x43C;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x435; &#x43C;&#x438;&#x43D;&#x435;&#x440;&#x430;&#x43B;&#x44B;. &#x418;&#x437;&#x432;&#x435;&#x441;&#x442;&#x43D;&#x44B; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x44B; &#x411;&#x435;&#x440;&#x43A;&#x43B;&#x438;&#x44F; &#x441; &#x43C;&#x430;&#x441;&#x441;&#x43E;&#x432;&#x44B;&#x43C;&#x438; &#x447;&#x438;&#x441;&#x43B;&#x430;&#x43C;&#x438; 243-250 &#x438; &#x44F;&#x434;&#x435;&#x440;&#x43D;&#x44B;&#x439; &#x438;&#x437;&#x43E;&#x43C;&#x435;&#x440; <sup>248m</sup>Bk. &#x41D;&#x430;&#x438;&#x431;&#x43E;&#x43B;&#x435;&#x435; &#x434;&#x43E;&#x43B;&#x433;&#x43E;&#x436;&#x438;&#x432;&#x443;&#x449;&#x438;&#x435; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x44B; &#x411;&#x435;&#x440;&#x43A;&#x43B;&#x438;&#x44F;: <sup>247</sup>Bk (&#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434; &#x43F;&#x43E;&#x43B;&#x443;&#x440;&#x430;&#x441;&#x43F;&#x430;&#x434;&#x430; &#x422;<sub>&#xBD;</sub> = 1380&#xB1;250 &#x43B;&#x435;&#x442;), &#x438;&#x441;&#x43F;&#x443;&#x441;&#x43A;&#x430;&#x435;&#x442; &#x3B1;-&#x447;&#x430;&#x441;&#x442;&#x438;&#x446;&#x44B;, <sup>249</sup>Bk (&#x422;<sub>&#xBD;</sub> = 314 &#x434;&#x43D;&#x435;&#x439;), &#x438;&#x441;&#x43F;&#x443;&#x441;&#x43A;&#x430;&#x435;&#x442; &#x3B2;-&#x447;&#x430;&#x441;&#x442;&#x438;&#x446;&#x44B; (&gt;99%) &#x438; &#x3B1;-&#x447;&#x430;&#x441;&#x442;&#x438;&#x446;&#x44B; (2,2-10<sup>-3</sup>%). <sup>249</sup>Bk &#x43E;&#x431;&#x440;&#x430;&#x437;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x441; &#x43D;&#x435;&#x431;&#x43E;&#x43B;&#x44C;&#x448;&#x438;&#x43C; &#x432;&#x44B;&#x445;&#x43E;&#x434;&#x43E;&#x43C; &#x43F;&#x440;&#x438; &#x434;&#x43B;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E;&#x43C; (&#x43D;&#x435;&#x441;&#x43A;&#x43E;&#x43B;&#x44C;&#x43A;&#x43E; &#x43B;&#x435;&#x442;) &#x43E;&#x431;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x438; &#x43D;&#x435;&#x439;&#x442;&#x440;&#x43E;&#x43D;&#x430;&#x43C;&#x438; &#x432; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x43E;&#x43C; &#x440;&#x435;&#x430;&#x43A;&#x442;&#x43E;&#x440;&#x435; &#x43F;&#x43B;&#x443;&#x442;&#x43E;&#x43D;&#x438;&#x44F; &#x438;&#x43B;&#x438; &#x443;&#x440;&#x430;&#x43D;&#x430;. &#x418;&#x437; &#x43E;&#x431;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x43D;&#x43E;&#x433;&#x43E; &#x43F;&#x43B;&#x443;&#x442;&#x43E;&#x43D;&#x438;&#x44F; &#x430;&#x43C;&#x435;&#x440;&#x438;&#x43A;&#x430;&#x43D;&#x441;&#x43A;&#x438;&#x435; &#x443;&#x447;&#x435;&#x43D;&#x44B;&#x435; &#x411;. &#x41A;&#x430;&#x43D;&#x43D;&#x438;&#x43D;&#x433;&#x435;&#x43C; &#x438; &#x421;. &#x422;&#x43E;&#x43C;&#x43F;&#x441;&#x43E;&#x43D; &#x432; 1958 &#x433;&#x43E;&#x434;&#x443; &#x432;&#x43F;&#x435;&#x440;&#x432;&#x44B;&#x435; &#x432;&#x44B;&#x434;&#x435;&#x43B;&#x438;&#x43B;&#x438; &#x411;&#x435;&#x440;&#x43A;&#x43B;&#x438;&#x439; &#x432; &#x43A;&#x43E;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x442;&#x432;&#x435;, &#x434;&#x43E;&#x441;&#x442;&#x443;&#x43F;&#x43D;&#x43E;&#x43C; &#x434;&#x43B;&#x44F; &#x432;&#x437;&#x432;&#x435;&#x448;&#x438;&#x432;&#x430;&#x43D;&#x438;&#x44F; (&#x43E;&#x43A;&#x43E;&#x43B;&#x43E; 0,4 &#x43C;&#x43A;&#x433;).\n",
+        "Атомная масса": "[247]",
+        "Плотность, кг/м³": "14000",
+        "Температура плавления, °С": " ",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": " ",
+        "Электроотрицательность": "1.3",
+        "Ковалентный радиус, Å": " ",
+        "1-й ионизац. потенциал, эв": "6.23"
+    },
+    {
+        "Химический символ": "Cf",
+        "label": "Калифорний Californium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Rn)5f106d07s2",
+        "description": "<b>&#x41A;&#x430;&#x43B;&#x438;&#x444;&#x43E;&#x440;&#x43D;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Californium), Cf, &#x438;&#x441;&#x43A;&#x443;&#x441;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x43E; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x43D;&#x44B;&#x439; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x439; &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; &#x441;&#x435;&#x43C;&#x435;&#x439;&#x441;&#x442;&#x432;&#x430; <a href=\"art.php?t=ac\">&#x430;&#x43A;&#x442;&#x438;&#x43D;&#x43E;&#x438;&#x434;&#x43E;&#x432;</a>, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 98. &#x421;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x43D;&#x435; &#x438;&#x43C;&#x435;&#x435;&#x442;. &#x412;&#x43F;&#x435;&#x440;&#x432;&#x44B;&#x435; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D; &#x432; 1950 &#x430;&#x43C;&#x435;&#x440;&#x438;&#x43A;&#x430;&#x43D;&#x441;&#x43A;&#x438;&#x43C;&#x438; &#x443;&#x447;&#x435;&#x43D;&#x44B;&#x43C;&#x438; &#x421;. &#x422;&#x43E;&#x43C;&#x43F;&#x441;&#x43E;&#x43D;&#x43E;&#x43C;, &#x410;. &#x413;&#x438;&#x43E;&#x440;&#x441;&#x43E;, &#x41A;. &#x421;&#x442;&#x440;&#x438;&#x442;&#x43E;&#x43C; &#x438; &#x413;. &#x421;&#x438;&#x431;&#x43E;&#x440;&#x433;&#x43E;&#x43C; &#x43F;&#x43E; &#x44F;&#x434;&#x435;&#x440;&#x43D;&#x43E;&#x439; &#x440;&#x435;&#x430;&#x43A;&#x446;&#x438;&#x438; <sup>242</sup>Cm(&#x3B1;,n)<sup>245</sup>Cf. &#x41D;&#x430;&#x437;&#x432;&#x430;&#x43D; &#x43F;&#x43E; &#x43C;&#x435;&#x441;&#x442;&#x443; &#x43E;&#x442;&#x43A;&#x440;&#x44B;&#x442;&#x438;&#x44F; (&#x448;&#x442;&#x430;&#x442; &#x41A;&#x430;&#x43B;&#x438;&#x444;&#x43E;&#x440;&#x43D;&#x438;&#x44F;, &#x421;&#x428;&#x410;). &#x418;&#x437;&#x432;&#x435;&#x441;&#x442;&#x43D;&#x44B; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x44B; &#x41A;&#x430;&#x43B;&#x438;&#x444;&#x43E;&#x440;&#x43D;&#x438;&#x44F; &#x441; &#x43C;&#x430;&#x441;&#x441;&#x43E;&#x432;&#x44B;&#x43C;&#x438; &#x447;&#x438;&#x441;&#x43B;&#x430;&#x43C;&#x438; 238-256. &#x418;&#x437; &#x43D;&#x438;&#x445; &#x441;&#x43B;&#x435;&#x434;&#x443;&#x44E;&#x449;&#x438;&#x435; &#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E; &#x443;&#x441;&#x442;&#x43E;&#x439;&#x447;&#x438;&#x432;&#x44B; &#x438; &#x43C;&#x43E;&#x433;&#x443;&#x442; &#x431;&#x44B;&#x442;&#x44C; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x44B; &#x432; &#x43C;&#x430;&#x43A;&#x440;&#x43E;&#x43A;&#x43E;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x442;&#x432;&#x430;&#x445; &#x43F;&#x440;&#x438; &#x434;&#x43B;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E;&#x43C; &#x43E;&#x431;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x438; &#x443;&#x440;&#x430;&#x43D;&#x430; &#x438;&#x43B;&#x438; &#x43F;&#x43B;&#x443;&#x442;&#x43E;&#x43D;&#x438;&#x44F; &#x43D;&#x435;&#x439;&#x442;&#x440;&#x43E;&#x43D;&#x430;&#x43C;&#x438;: <sup>249</sup>Cf (T<sub>&#xBD;</sub> = 360 &#x43B;&#x435;&#x442;), <sup>250</sup>Cf (13,2 &#x433;&#x43E;&#x434;&#x430;), <sup>251</sup>Cf (&#x431;&#x43E;&#x43B;&#x435;&#x435; 800 &#x43B;&#x435;&#x442;) &#x438; <sup>252</sup>Cf (2,65 &#x433;&#x43E;&#x434;&#x430;). &#x41F;&#x435;&#x440;&#x432;&#x44B;&#x435; &#x442;&#x432;&#x435;&#x440;&#x434;&#x44B;&#x435; &#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x44F; &#x41A;&#x430;&#x43B;&#x438;&#x444;&#x43E;&#x440;&#x43D;&#x438;&#x44F; - <sup>249</sup>Cf<sub>2</sub>O<sub>3</sub> &#x438; <sup>249</sup>CfOCl &#x43F;&#x440;&#x438;&#x433;&#x43E;&#x442;&#x43E;&#x432;&#x43B;&#x435;&#x43D;&#x44B; &#x432; 1958. &#x41D;&#x430;&#x438;&#x431;&#x43E;&#x43B;&#x435;&#x435; &#x442;&#x438;&#x43F;&#x438;&#x447;&#x43D;&#x430;&#x44F; &#x441;&#x442;&#x435;&#x43F;&#x435;&#x43D;&#x44C; &#x43E;&#x43A;&#x438;&#x441;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x41A;&#x430;&#x43B;&#x438;&#x444;&#x43E;&#x440;&#x43D;&#x438;&#x44F;, &#x43A;&#x430;&#x43A; &#x438; &#x434;&#x440;&#x443;&#x433;&#x438;&#x445; &#x442;&#x44F;&#x436;&#x435;&#x43B;&#x44B;&#x445; &#x430;&#x43A;&#x442;&#x438;&#x43D;&#x43E;&#x438;&#x434;&#x43E;&#x432;, +3; &#x43C;&#x435;&#x43D;&#x435;&#x435; &#x442;&#x438;&#x43F;&#x438;&#x447;&#x43D;&#x430; +2. &#x41E;&#x442; &#x434;&#x440;&#x443;&#x433;&#x438;&#x445; &#x430;&#x43A;&#x442;&#x438;&#x43D;&#x43E;&#x438;&#x434;&#x43E;&#x432; &#x41A;&#x430;&#x43B;&#x438;&#x444;&#x43E;&#x440;&#x43D;&#x438;&#x439; &#x43E;&#x442;&#x434;&#x435;&#x43B;&#x44F;&#x44E;&#x442; &#x44D;&#x43A;&#x441;&#x442;&#x440;&#x430;&#x43A;&#x446;&#x438;&#x43E;&#x43D;&#x43D;&#x44B;&#x43C;&#x438; &#x438; &#x445;&#x440;&#x43E;&#x43C;&#x430;&#x442;&#x43E;&#x433;&#x440;&#x430;&#x444;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x43C;&#x438; &#x43C;&#x435;&#x442;&#x43E;&#x434;&#x430;&#x43C;&#x438;. &#x41F;&#x440;&#x435;&#x43F;&#x430;&#x440;&#x430;&#x442;&#x44B; <sup>252</sup>Cf &#x43C;&#x43E;&#x433;&#x443;&#x442; &#x431;&#x44B;&#x442;&#x44C; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x43D;&#x44B; &#x43A;&#x430;&#x43A; &#x43C;&#x43E;&#x449;&#x43D;&#x44B;&#x435; &#x43C;&#x430;&#x43B;&#x43E;&#x433;&#x430;&#x431;&#x430;&#x440;&#x438;&#x442;&#x43D;&#x44B;&#x435; &#x438;&#x441;&#x442;&#x43E;&#x447;&#x43D;&#x438;&#x43A;&#x438; &#x43D;&#x435;&#x439;&#x442;&#x440;&#x43E;&#x43D;&#x43E;&#x432;.\n",
+        "Атомная масса": "[251]",
+        "Плотность, кг/м³": " ",
+        "Температура плавления, °С": " ",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": " ",
+        "Электроотрицательность": "1.3",
+        "Ковалентный радиус, Å": " ",
+        "1-й ионизац. потенциал, эв": "6.30"
+    },
+    {
+        "Химический символ": "Es",
+        "label": "Эйнштейний Einsteinium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Rn)5f116d07s2",
+        "description": "<b>&#x42D;&#x439;&#x43D;&#x448;&#x442;&#x435;&#x439;&#x43D;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Einsteinium, &#x432; &#x447;&#x435;&#x441;&#x442;&#x44C; &#x410;&#x43B;&#x44C;&#x431;&#x435;&#x440;&#x442;&#x430; &#x42D;&#x439;&#x43D;&#x448;&#x442;&#x435;&#x439;&#x43D;&#x430;), Es, &#x438;&#x441;&#x43A;&#x443;&#x441;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x43E; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x43D;&#x44B;&#x439; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x439; &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; &#x441;&#x435;&#x43C;&#x435;&#x439;&#x441;&#x442;&#x432;&#x430; <a href=\"art.php?t=ac\">&#x430;&#x43A;&#x442;&#x438;&#x43D;&#x43E;&#x438;&#x434;&#x43E;&#x432;</a>; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 99; &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x43D;&#x435; &#x438;&#x43C;&#x435;&#x435;&#x442; (&#x438;&#x437;&#x432;&#x435;&#x441;&#x442;&#x43D;&#x44B; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x44B; Es &#x441; &#x43C;&#x430;&#x441;&#x441;&#x43E;&#x432;&#x44B;&#x43C;&#x438; &#x447;&#x438;&#x441;&#x43B;&#x430;&#x43C;&#x438; &#x43E;&#x442; 242 &#x434;&#x43E; 257). &#x418;&#x437; &#x442;&#x440;&#x430;&#x43D;&#x441;&#x443;&#x440;&#x430;&#x43D;&#x43E;&#x432;&#x44B;&#x445; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x43E;&#x432; &#x43E;&#x43D; &#x431;&#x44B;&#x43B; &#x43E;&#x442;&#x43A;&#x440;&#x44B;&#x442; &#x441;&#x435;&#x434;&#x44C;&#x43C;&#x44B;&#x43C;; &#x438;&#x434;&#x435;&#x43D;&#x442;&#x438;&#x444;&#x438;&#x446;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D; &#x410;. &#x413;&#x438;&#x43E;&#x440;&#x441;&#x43E; &#x438; &#x434;&#x440;. &#x432; &#x434;&#x435;&#x43A;&#x430;&#x431;&#x440;&#x435; 1952 &#x433;&#x43E;&#x434;&#x430;. &#x42D;&#x439;&#x43D;&#x448;&#x442;&#x435;&#x439;&#x43D;&#x438;&#x439; &#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x430;&#x43B;&#x441;&#x44F; &#x432; &#x43F;&#x44B;&#x43B;&#x438;, &#x441;&#x43E;&#x431;&#x440;&#x430;&#x43D;&#x43D;&#x43E;&#x439; &#x43F;&#x43E;&#x441;&#x43B;&#x435; &#x442;&#x435;&#x440;&#x43C;&#x43E;&#x44F;&#x434;&#x435;&#x440;&#x43D;&#x43E;&#x433;&#x43E; &#x432;&#x437;&#x440;&#x44B;&#x432;&#x430;; &#x440;&#x430;&#x431;&#x43E;&#x442;&#x430; &#x43F;&#x440;&#x43E;&#x432;&#x43E;&#x434;&#x438;&#x43B;&#x430;&#x441;&#x44C; &#x441; &#x443;&#x447;&#x430;&#x441;&#x442;&#x438;&#x435;&#x43C; &#x441;&#x43E;&#x442;&#x440;&#x443;&#x434;&#x43D;&#x438;&#x43A;&#x43E;&#x432; &#x420;&#x430;&#x434;&#x438;&#x430;&#x446;&#x438;&#x43E;&#x43D;&#x43D;&#x43E;&#x439; &#x43B;&#x430;&#x431;&#x43E;&#x440;&#x430;&#x442;&#x43E;&#x440;&#x438;&#x438; &#x41A;&#x430;&#x43B;&#x438;&#x444;&#x43E;&#x440;&#x43D;&#x438;&#x439;&#x441;&#x43A;&#x43E;&#x433;&#x43E; &#x443;&#x43D;&#x438;&#x432;&#x435;&#x440;&#x441;&#x438;&#x442;&#x435;&#x442;&#x430;, &#x410;&#x440;&#x433;&#x43E;&#x43D;&#x43D;&#x441;&#x43A;&#x43E;&#x439; &#x43D;&#x430;&#x446;&#x438;&#x43E;&#x43D;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x439; &#x43B;&#x430;&#x431;&#x43E;&#x440;&#x430;&#x442;&#x43E;&#x440;&#x438;&#x438; &#x438; &#x41B;&#x43E;&#x441;-&#x410;&#x43B;&#x430;&#x43C;&#x43E;&#x441;&#x441;&#x43A;&#x43E;&#x439; &#x43D;&#x430;&#x443;&#x447;&#x43D;&#x43E;&#x439; &#x43B;&#x430;&#x431;&#x43E;&#x440;&#x430;&#x442;&#x43E;&#x440;&#x438;&#x438; (&#x421;&#x428;&#x410;). &#x41E;&#x431;&#x43D;&#x430;&#x440;&#x443;&#x436;&#x435;&#x43D;&#x43D;&#x44B;&#x439; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F; <sup>253</sup>Es &#x441; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x43E;&#x43C; &#x43F;&#x43E;&#x43B;&#x443;&#x440;&#x430;&#x441;&#x43F;&#x430;&#x434;&#x430; T<sub>&#xBD;</sub> = 20,5 &#x441;&#x443;&#x442;&#x43E;&#x43A; &#x43E;&#x431;&#x440;&#x430;&#x437;&#x43E;&#x432;&#x430;&#x43B;&#x441;&#x44F; &#x43F;&#x440;&#x438; &#x3B2;-&#x440;&#x430;&#x441;&#x43F;&#x430;&#x434;&#x435; <sup>253</sup>U &#x438; &#x434;&#x43E;&#x447;&#x435;&#x440;&#x43D;&#x438;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; (<sup>253</sup>U &#x43E;&#x431;&#x440;&#x430;&#x437;&#x43E;&#x432;&#x430;&#x43B;&#x441;&#x44F; &#x432; &#x440;&#x435;&#x437;&#x443;&#x43B;&#x44C;&#x442;&#x430;&#x442;&#x435; &#x43F;&#x440;&#x435;&#x438;&#x43C;&#x443;&#x449;&#x435;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x43E; &#x43F;&#x43E;&#x441;&#x43B;&#x435;&#x434;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E;&#x433;&#x43E; &#x437;&#x430;&#x445;&#x432;&#x430;&#x442;&#x430; 15 &#x43D;&#x435;&#x439;&#x442;&#x440;&#x43E;&#x43D;&#x43E;&#x432; &#x44F;&#x434;&#x440;&#x430;&#x43C;&#x438; <sup>238</sup>U).\n",
+        "Атомная масса": "[252]",
+        "Плотность, кг/м³": " ",
+        "Температура плавления, °С": " ",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": " ",
+        "Электроотрицательность": "1.3",
+        "Ковалентный радиус, Å": " ",
+        "1-й ионизац. потенциал, эв": "6.42"
+    },
+    {
+        "Химический символ": "Fm",
+        "label": "Фермий Fermium",
+        "color": "0xF96727",
+        "shadow": "0xE96219",
+        "Электронная формула": "(Rn)5f126d07s2",
+        "description": "<b>&#x424;&#x435;&#x440;&#x43C;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Fermium, &#x432; &#x447;&#x435;&#x441;&#x442;&#x44C; &#x42D;. &#x424;&#x435;&#x440;&#x43C;&#x438;), Fm, &#x438;&#x441;&#x43A;&#x443;&#x441;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x43E; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x43D;&#x44B;&#x439; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x439; &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; &#x441;&#x435;&#x43C;&#x435;&#x439;&#x441;&#x442;&#x432;&#x430; <a href=\"art.php?t=ac\">&#x430;&#x43A;&#x442;&#x438;&#x43D;&#x43E;&#x438;&#x434;&#x43E;&#x432;</a>; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 100; &#x441;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x43D;&#x435; &#x438;&#x43C;&#x435;&#x435;&#x442; (&#x438;&#x437;&#x432;&#x435;&#x441;&#x442;&#x43D;&#x44B; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x44B; &#x424;&#x435;&#x440;&#x43C;&#x438;&#x44F; &#x441; &#x43C;&#x430;&#x441;&#x441;&#x43E;&#x432;&#x44B;&#x43C;&#x438; &#x447;&#x438;&#x441;&#x43B;&#x430;&#x43C;&#x438; &#x43E;&#x442; 244 &#x434;&#x43E; 258). &#x412;&#x43F;&#x435;&#x440;&#x432;&#x44B;&#x435; &#x424;&#x435;&#x440;&#x43C;&#x438;&#x439; &#x438;&#x434;&#x435;&#x43D;&#x442;&#x438;&#x444;&#x438;&#x446;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D; &#x410;. &#x413;&#x438;&#x43E;&#x440;&#x441;&#x43E; &#x438; &#x434;&#x440;&#x443;&#x433;&#x438;&#x43C;&#x438; &#x432; &#x44F;&#x43D;&#x432;&#x430;&#x440;&#x435; 1953 &#x433;&#x43E;&#x434;&#x430; &#x432; &#x432;&#x438;&#x434;&#x435; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x430; <sup>255</sup>Fm &#x441; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x43E;&#x43C; &#x43F;&#x43E;&#x43B;&#x443;&#x440;&#x430;&#x441;&#x43F;&#x430;&#x434;&#x430; T<sub>&#xBD;</sub> = 20,1 &#x447;, &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x439; &#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x430;&#x43B;&#x441;&#x44F; &#x432; &#x43F;&#x44B;&#x43B;&#x438;, &#x441;&#x43E;&#x431;&#x440;&#x430;&#x43D;&#x43D;&#x43E;&#x439; &#x43F;&#x43E;&#x441;&#x43B;&#x435; &#x442;&#x435;&#x440;&#x43C;&#x43E;&#x44F;&#x434;&#x435;&#x440;&#x43D;&#x43E;&#x433;&#x43E; &#x432;&#x437;&#x440;&#x44B;&#x432;&#x430; (&#x440;&#x430;&#x431;&#x43E;&#x442;&#x430; &#x43F;&#x440;&#x43E;&#x438;&#x437;&#x432;&#x43E;&#x434;&#x438;&#x43B;&#x430;&#x441;&#x44C; &#x441; &#x443;&#x447;&#x430;&#x441;&#x442;&#x438;&#x435;&#x43C; &#x443;&#x447;&#x435;&#x43D;&#x44B;&#x445; &#x420;&#x430;&#x434;&#x438;&#x430;&#x446;&#x438;&#x43E;&#x43D;&#x43D;&#x43E;&#x439; &#x43B;&#x430;&#x431;&#x43E;&#x440;&#x430;&#x442;&#x43E;&#x440;&#x438;&#x438; &#x41A;&#x430;&#x43B;&#x438;&#x444;&#x43E;&#x440;&#x43D;&#x438;&#x439;&#x441;&#x43A;&#x43E;&#x433;&#x43E; &#x443;&#x43D;&#x438;&#x432;&#x435;&#x440;&#x441;&#x438;&#x442;&#x435;&#x442;&#x430;, &#x41B;&#x43E;&#x441;-&#x410;&#x43B;&#x430;&#x43C;&#x43E;&#x441;&#x441;&#x43A;&#x43E;&#x439; &#x43D;&#x430;&#x443;&#x447;&#x43D;&#x43E;&#x439; &#x43B;&#x430;&#x431;&#x43E;&#x440;&#x430;&#x442;&#x43E;&#x440;&#x438;&#x438; &#x438; &#x410;&#x440;&#x433;&#x43E;&#x43D;&#x43D;&#x441;&#x43A;&#x43E;&#x439; &#x43D;&#x430;&#x446;&#x438;&#x43E;&#x43D;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x439; &#x43B;&#x430;&#x431;&#x43E;&#x440;&#x430;&#x442;&#x43E;&#x440;&#x438;&#x438;). &#x41E;&#x431;&#x43D;&#x430;&#x440;&#x443;&#x436;&#x435;&#x43D;&#x43D;&#x44B;&#x439; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F; - &#x43F;&#x440;&#x43E;&#x434;&#x443;&#x43A;&#x442; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x43E;&#x433;&#x43E; &#x440;&#x430;&#x441;&#x43F;&#x430;&#x434;&#x430; <sup>255</sup>U, &#x43E;&#x431;&#x440;&#x430;&#x437;&#x43E;&#x432;&#x430;&#x432;&#x448;&#x435;&#x433;&#x43E;&#x441;&#x44F; &#x432; &#x440;&#x435;&#x437;&#x443;&#x43B;&#x44C;&#x442;&#x430;&#x442;&#x435; &#x43F;&#x43E;&#x441;&#x43B;&#x435;&#x434;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E;&#x433;&#x43E; &#x437;&#x430;&#x445;&#x432;&#x430;&#x442;&#x430; 17 &#x43D;&#x435;&#x439;&#x442;&#x440;&#x43E;&#x43D;&#x43E;&#x432; &#x44F;&#x434;&#x440;&#x430;&#x43C;&#x438; <sup>238</sup>U.\n",
+        "Атомная масса": "[257]",
+        "Плотность, кг/м³": " ",
+        "Температура плавления, °С": " ",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": " ",
+        "Электроотрицательность": "1.3",
+        "Ковалентный радиус, Å": " ",
+        "1-й ионизац. потенциал, эв": "6.50"
+    },
+    {
+        "Химический символ": "Md",
+        "label": "Менделевий Mendelevium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Rn)5f136d07s2",
+        "description": "<b>&#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x432;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Mendelevium), Md, &#x438;&#x441;&#x43A;&#x443;&#x441;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x43E; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x43D;&#x44B;&#x439; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x439; &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; &#x441;&#x435;&#x43C;&#x435;&#x439;&#x441;&#x442;&#x432;&#x430; <a href=\"art.php?t=ac\">&#x430;&#x43A;&#x442;&#x438;&#x43D;&#x43E;&#x438;&#x434;&#x43E;&#x432;</a>, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 101. &#x421;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x43D;&#x435; &#x438;&#x43C;&#x435;&#x435;&#x442;. &#x41F;&#x435;&#x440;&#x432;&#x44B;&#x435; &#x430;&#x442;&#x43E;&#x43C;&#x44B; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x432;&#x438;&#x44F; &#x441;&#x438;&#x43D;&#x442;&#x435;&#x437;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43B;&#x438; &#x432; 1955 &#x430;&#x43C;&#x435;&#x440;&#x438;&#x43A;&#x430;&#x43D;&#x441;&#x43A;&#x438;&#x435; &#x443;&#x447;&#x435;&#x43D;&#x44B;&#x435; &#x410;. &#x413;&#x438;&#x43E;&#x440;&#x441;&#x43E;, &#x411;. &#x425;&#x430;&#x440;&#x432;&#x438;, &#x413;. &#x427;&#x43E;&#x43F;&#x43F;&#x438;&#x43D;, &#x421;. &#x422;&#x43E;&#x43C;&#x43F;&#x441;&#x43E;&#x43D; &#x438; &#x413;. &#x421;&#x438;&#x431;&#x43E;&#x440;&#x433;, &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x435; &#x43E;&#x431;&#x43B;&#x443;&#x447;&#x430;&#x43B;&#x438; &#x44F;&#x434;&#x440;&#x430; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x430; &#x44D;&#x439;&#x43D;&#x448;&#x442;&#x435;&#x439;&#x43D;&#x438;&#x44F; <sup>253</sup>Es &#x441;&#x438;&#x43B;&#x44C;&#x43D;&#x43E; &#x440;&#x430;&#x437;&#x43E;&#x433;&#x43D;&#x430;&#x43D;&#x43D;&#x44B;&#x43C;&#x438; &#x44F;&#x434;&#x440;&#x430;&#x43C;&#x438; &#x433;&#x435;&#x43B;&#x438;&#x44F; (&#x3B1;-&#x447;&#x430;&#x441;&#x442;&#x438;&#x446;&#x430;&#x43C;&#x438;). &#x41F;&#x440;&#x438; &#x44D;&#x442;&#x43E;&#x43C; &#x43F;&#x440;&#x43E;&#x442;&#x435;&#x43A;&#x430;&#x43B;&#x430; &#x44F;&#x434;&#x435;&#x440;&#x43D;&#x430;&#x44F; &#x440;&#x435;&#x430;&#x43A;&#x446;&#x438;&#x44F; <sup>253</sup>Es (&#x3B1;, <i>n</i>) <sup>256</sup>Md. &#x423;&#x447;&#x435;&#x43D;&#x44B;&#x43C;&#x438; &#x41E;&#x431;&#x44A;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x43D;&#x43E;&#x433;&#x43E; &#x438;&#x43D;&#x441;&#x442;&#x438;&#x442;&#x443;&#x442;&#x430; &#x44F;&#x434;&#x435;&#x440;&#x43D;&#x44B;&#x445; &#x438;&#x441;&#x441;&#x43B;&#x435;&#x434;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x439; &#x432; &#x414;&#x443;&#x431;&#x43D;&#x435; &#x432; 1962 &#x433;&#x43E;&#x434;&#x443; &#x438; &#x43F;&#x43E;&#x437;&#x436;&#x435; &#x434;&#x43B;&#x44F; &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x445; &#x438;&#x441;&#x441;&#x43B;&#x435;&#x434;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x439; &#x431;&#x44B;&#x43B;&#x438; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x44B; &#x441;&#x43E;&#x442;&#x43D;&#x438; &#x430;&#x442;&#x43E;&#x43C;&#x43E;&#x432; Md &#x43F;&#x43E; &#x440;&#x435;&#x430;&#x43A;&#x446;&#x438;&#x438; <sup>238</sup>U (<sup>22</sup> Ne, &#x440; &#x417;n) <sup>256</sup>Md. &#x412; &#x43F;&#x435;&#x440;&#x432;&#x44B;&#x445; &#x43E;&#x43F;&#x44B;&#x442;&#x430;&#x445; &#x430;&#x43C;&#x435;&#x440;&#x438;&#x43A;&#x430;&#x43D;&#x441;&#x43A;&#x438;&#x435; &#x443;&#x447;&#x435;&#x43D;&#x44B;&#x435; &#x440;&#x430;&#x441;&#x43F;&#x43E;&#x43B;&#x430;&#x433;&#x430;&#x43B;&#x438; &#x432;&#x441;&#x435;&#x433;&#x43E; 17 &#x430;&#x442;&#x43E;&#x43C;&#x430;&#x43C;&#x438; &#x43D;&#x43E;&#x432;&#x43E;&#x433;&#x43E; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x430;. &#x422;&#x435;&#x43C; &#x43D;&#x435; &#x43C;&#x435;&#x43D;&#x435;&#x435; &#x443;&#x434;&#x430;&#x43B;&#x43E;&#x441;&#x44C; &#x43E;&#x43F;&#x440;&#x435;&#x434;&#x435;&#x43B;&#x438;&#x442;&#x44C; &#x43D;&#x435;&#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x435; &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x435; &#x441;&#x432;&#x43E;&#x439;&#x441;&#x442;&#x432;&#x430; &#x43D;&#x43E;&#x432;&#x43E;&#x433;&#x43E; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x430; &#x438; &#x443;&#x441;&#x442;&#x430;&#x43D;&#x43E;&#x432;&#x438;&#x442;&#x44C; &#x435;&#x433;&#x43E; &#x43F;&#x43E;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x438;&#x435; &#x432; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x435;. &#x42D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; &#x43D;&#x430;&#x437;&#x432;&#x430;&#x43D; &#x432; &#x447;&#x435;&#x441;&#x442;&#x44C; &#x414;. &#x418;. &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;. &#x418;&#x437;&#x432;&#x435;&#x441;&#x442;&#x43D;&#x44B; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x44B; Md &#x441; &#x43C;&#x430;&#x441;&#x441;&#x43E;&#x432;&#x44B;&#x43C;&#x438; &#x447;&#x438;&#x441;&#x43B;&#x430;&#x43C;&#x438; 252, 254-258. &#x41D;&#x430;&#x438;&#x431;&#x43E;&#x43B;&#x435;&#x435; &#x443;&#x441;&#x442;&#x43E;&#x439;&#x447;&#x438;&#x432; &quot;-&#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x439; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F; <sup>258</sup>Md, &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434; &#x43F;&#x43E;&#x43B;&#x443;&#x440;&#x430;&#x441;&#x43F;&#x430;&#x434;&#x430; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x43E;&#x433;&#x43E; &#x422;<sub>&#xBD;</sub> 54 &#x441;&#x443;&#x442;. &#x41A;&#x430;&#x43A; &#x438; &#x434;&#x440;&#x443;&#x433;&#x438;&#x435; &#x442;&#x44F;&#x436;&#x435;&#x43B;&#x44B;&#x435; &#x430;&#x43A;&#x442;&#x438;&#x43D;&#x43E;&#x438;&#x434;&#x44B;, Md &#x432; &#x440;&#x430;&#x441;&#x442;&#x432;&#x43E;&#x440;&#x430;&#x445; &#x441;&#x43F;&#x43E;&#x441;&#x43E;&#x431;&#x435;&#x43D; &#x43F;&#x440;&#x43E;&#x44F;&#x432;&#x43B;&#x44F;&#x442;&#x44C; &#x441;&#x442;&#x435;&#x43F;&#x435;&#x43D;&#x44C; &#x43E;&#x43A;&#x438;&#x441;&#x43B;&#x435;&#x43D;&#x438;&#x44F; + 3. &#x41A;&#x440;&#x43E;&#x43C;&#x435; &#x442;&#x43E;&#x433;&#x43E;, Md &#x43C;&#x43E;&#x436;&#x435;&#x442; &#x438;&#x43C;&#x435;&#x442;&#x44C; &#x441;&#x442;&#x435;&#x43F;&#x435;&#x43D;&#x438; &#x43E;&#x43A;&#x438;&#x441;&#x43B;&#x435;&#x43D;&#x438;&#x44F; + 2 &#x438;, &#x43A;&#x430;&#x43A; &#x432; 1972 &#x433;&#x43E;&#x434;&#x443; &#x443;&#x441;&#x442;&#x430;&#x43D;&#x43E;&#x432;&#x438;&#x43B;&#x438; &#x441;&#x43E;&#x432;&#x435;&#x442;&#x441;&#x43A;&#x438;&#x435; &#x445;&#x438;&#x43C;&#x438;&#x43A;&#x438;, +1.\n",
+        "Атомная масса": "[258]",
+        "Плотность, кг/м³": " ",
+        "Температура плавления, °С": " ",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": " ",
+        "Электроотрицательность": "1.3",
+        "Ковалентный радиус, Å": " ",
+        "1-й ионизац. потенциал, эв": "6.58"
+    },
+    {
+        "Химический символ": "No",
+        "label": "Нобелий Nobelium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Rn)5f146d07s2",
+        "description": "<b>&#x41D;&#x43E;&#x431;&#x435;&#x43B;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Nobelium), No, &#x438;&#x441;&#x43A;&#x443;&#x441;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x43E; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x43D;&#x44B;&#x439; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x439; &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; &#x441;&#x435;&#x43C;&#x435;&#x439;&#x441;&#x442;&#x432;&#x430; <a href=\"art.php?t=ac\">&#x430;&#x43A;&#x442;&#x438;&#x43D;&#x43E;&#x438;&#x434;&#x43E;&#x432;</a>, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 102. &#x41F;&#x435;&#x440;&#x432;&#x43E;&#x439; &#x437;&#x430;&#x44F;&#x432;&#x438;&#x43B;&#x430; &#x43E; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x438; &#x430;&#x442;&#x43E;&#x43C;&#x43E;&#x432; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x430; 102 &#x432; 1957&#x433;&#x43E;&#x434;&#x443; &#x43C;&#x435;&#x436;&#x434;&#x443;&#x43D;&#x430;&#x440;&#x43E;&#x434;&#x43D;&#x430;&#x44F; &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x430; &#x443;&#x447;&#x435;&#x43D;&#x44B;&#x445;, &#x440;&#x430;&#x431;&#x43E;&#x442;&#x430;&#x432;&#x448;&#x438;&#x445; &#x432; &#x421;&#x442;&#x43E;&#x43A;&#x433;&#x43E;&#x43B;&#x44C;&#x43C;&#x435; (&#x428;&#x432;&#x435;&#x446;&#x438;&#x44F;), &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x430;&#x44F; &#x438; &#x43F;&#x440;&#x435;&#x434;&#x43B;&#x43E;&#x436;&#x438;&#x43B;&#x430; &#x43D;&#x430;&#x437;&#x432;&#x430;&#x442;&#x44C; &#x435;&#x433;&#x43E; &#x432; &#x447;&#x435;&#x441;&#x442;&#x44C; &#x410;. &#x41D;&#x43E;&#x431;&#x435;&#x43B;&#x44F;, &#x43E;&#x441;&#x43D;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44F; &#x444;&#x43E;&#x43D;&#x434;&#x430; &#x43C;&#x435;&#x436;&#x434;&#x443;&#x43D;&#x430;&#x440;&#x43E;&#x434;&#x43D;&#x44B;&#x445; (&#x43D;&#x43E;&#x431;&#x435;&#x43B;&#x435;&#x432;&#x441;&#x43A;&#x438;&#x445;) &#x43F;&#x440;&#x435;&#x43C;&#x438;&#x439;. &#x41E;&#x434;&#x43D;&#x430;&#x43A;&#x43E; &#x43F;&#x43E;&#x441;&#x43B;&#x435;&#x434;&#x443;&#x44E;&#x449;&#x438;&#x435; &#x43E;&#x43F;&#x44B;&#x442;&#x44B;, &#x432;&#x44B;&#x43F;&#x43E;&#x43B;&#x43D;&#x435;&#x43D;&#x43D;&#x44B;&#x435; &#x432; &#x411;&#x435;&#x440;&#x43A;&#x43B;&#x438; (&#x421;&#x428;&#x410;) &#x438; &#x432; &#x41E;&#x431;&#x44A;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x43D;&#x43E;&#x43C; &#x438;&#x43D;&#x441;&#x442;&#x438;&#x442;&#x443;&#x442;&#x435; &#x44F;&#x434;&#x435;&#x440;&#x43D;&#x44B;&#x445; &#x438;&#x441;&#x441;&#x43B;&#x435;&#x434;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x439; (&#x414;&#x443;&#x431;&#x43D;&#x430;, &#x421;&#x421;&#x421;&#x420;), &#x43F;&#x43E;&#x43A;&#x430;&#x437;&#x430;&#x43B;&#x438;, &#x447;&#x442;&#x43E; &#x432;&#x44B;&#x432;&#x43E;&#x434; &#x441;&#x442;&#x43E;&#x43A;&#x433;&#x43E;&#x43B;&#x44C;&#x43C;&#x441;&#x43A;&#x43E;&#x439; &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x431;&#x44B;&#x43B; &#x43E;&#x448;&#x438;&#x431;&#x43E;&#x447;&#x435;&#x43D;. &#x41F;&#x435;&#x440;&#x432;&#x44B;&#x435; &#x43D;&#x430;&#x434;&#x435;&#x436;&#x43D;&#x44B;&#x435; &#x441;&#x432;&#x435;&#x434;&#x435;&#x43D;&#x438;&#x44F; &#x43E;&#x431; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x430;&#x445; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x430; 102 &#x441; &#x43C;&#x430;&#x441;&#x441;&#x43E;&#x432;&#x44B;&#x43C;&#x438; &#x447;&#x438;&#x441;&#x43B;&#x430;&#x43C;&#x438; 251-256 &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x44B; &#x432; 1963-67 &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x43E;&#x439; &#x441;&#x43E;&#x432;&#x435;&#x442;&#x441;&#x43A;&#x438;&#x445; &#x444;&#x438;&#x437;&#x438;&#x43A;&#x43E;&#x432; &#x432; &#x414;&#x443;&#x431;&#x43D;&#x435;, &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x443;&#x44E; &#x432;&#x43E;&#x437;&#x433;&#x43B;&#x430;&#x432;&#x43B;&#x44F;&#x43B; &#x413;. &#x41D;. &#x424;&#x43B;&#x435;&#x440;&#x43E;&#x432;. &#x414;&#x43B;&#x44F; &#x438;&#x445; &#x441;&#x438;&#x43D;&#x442;&#x435;&#x437;&#x430; &#x44F;&#x434;&#x440;&#x430; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; U, Pu &#x438; Am &#x43E;&#x431;&#x43B;&#x443;&#x447;&#x430;&#x43B;&#x438; &#x443;&#x441;&#x43A;&#x43E;&#x440;&#x435;&#x43D;&#x43D;&#x44B;&#x43C;&#x438; &#x438;&#x43E;&#x43D;&#x430;&#x43C;&#x438; Ne, &#x41E; &#x438; N. &#x420;&#x435;&#x437;&#x443;&#x43B;&#x44C;&#x442;&#x430;&#x442;&#x44B; &#x434;&#x443;&#x431;&#x43D;&#x435;&#x43D;&#x441;&#x43A;&#x43E;&#x439; &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x431;&#x44B;&#x43B;&#x438; &#x43F;&#x43E;&#x43B;&#x43D;&#x43E;&#x441;&#x442;&#x44C;&#x44E; &#x43F;&#x43E;&#x434;&#x442;&#x432;&#x435;&#x440;&#x436;&#x434;&#x435;&#x43D;&#x44B;. &#x421;&#x43E;&#x432;&#x435;&#x442;&#x441;&#x43A;&#x438;&#x435; &#x443;&#x447;&#x435;&#x43D;&#x44B;&#x435; &#x43F;&#x440;&#x435;&#x434;&#x43B;&#x43E;&#x436;&#x438;&#x43B;&#x438; &#x434;&#x430;&#x442;&#x44C; 102-&#x43C;&#x443; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x443; &#x43D;&#x430;&#x437;&#x432;&#x430;&#x43D;&#x438;&#x435; &quot;&#x416;&#x43E;&#x43B;&#x438;&#x43E;&#x442;&#x438;&#x439;&quot; (&#x43B;&#x430;&#x442;. Joliotium, &#x441;&#x438;&#x43C;&#x432;&#x43E;&#x43B; Jl) &#x432; &#x447;&#x435;&#x441;&#x442;&#x44C; &#x424;&#x440;&#x435;&#x434;&#x435;&#x440;&#x438;&#x43A;&#x430; &#x416;&#x43E;&#x43B;&#x438;&#x43E;-&#x41A;&#x44E;&#x440;&#x438;. &#x418;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x44B; &#x41D;&#x43E;&#x431;&#x435;&#x43B;&#x438;&#x44F; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x44B; &#x441; &#x43C;&#x430;&#x441;&#x441;&#x43E;&#x432;&#x44B;&#x43C;&#x438; &#x447;&#x438;&#x441;&#x43B;&#x430;&#x43C;&#x438; 250-260 &#x438; 262; &#x43D;&#x430;&#x438;&#x431;&#x43E;&#x43B;&#x435;&#x435; &#x434;&#x43E;&#x43B;&#x433;&#x43E;&#x436;&#x438;&#x432;&#x443;&#x449;&#x438;&#x439; <sup>259</sup>No (&#x422;<sub>&#xBD;</sub> &#x43E;&#x43A;&#x43E;&#x43B;&#x43E; 1,5 &#x447;) &#x441;&#x438;&#x43D;&#x442;&#x435;&#x437;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D; &#x432; 1970 &#x432; &#x41E;&#x43A;-&#x420;&#x438;&#x434;&#x436;&#x435; (&#x421;&#x428;&#x410;). &#x41F;&#x435;&#x440;&#x432;&#x430;&#x44F; &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x430;&#x44F; &#x438;&#x43D;&#x434;&#x435;&#x43D;&#x442;&#x438;&#x444;&#x438;&#x43A;&#x430;&#x446;&#x438;&#x44F; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x430; 102 &#x432;&#x44B;&#x43F;&#x43E;&#x43B;&#x43D;&#x435;&#x43D;&#x430; &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x43E;&#x439; &#x441;&#x43E;&#x442;&#x440;&#x443;&#x434;&#x43D;&#x438;&#x43A;&#x43E;&#x432; &#x424;&#x43B;&#x435;&#x440;&#x43E;&#x432;&#x430; &#x43F;&#x43E; &#x43C;&#x435;&#x442;&#x43E;&#x434;&#x438;&#x43A;&#x435;, &#x440;&#x430;&#x437;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x430;&#x43D;&#x43D;&#x43E;&#x439; &#x434;&#x43B;&#x44F; &#x438;&#x437;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x43A;&#x443;&#x440;&#x447;&#x430;&#x442;&#x43E;&#x432;&#x438;&#x44F; (&#x420;&#x435;&#x437;&#x435;&#x440;&#x444;&#x43E;&#x440;&#x434;&#x438;&#x44F;, &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x430; 104). &#x41E;&#x43A;&#x430;&#x437;&#x430;&#x43B;&#x43E;&#x441;&#x44C; , &#x447;&#x442;&#x43E; &#x43B;&#x435;&#x442;&#x443;&#x447;&#x435;&#x441;&#x442;&#x44C; &#x445;&#x43B;&#x43E;&#x440;&#x438;&#x434;&#x430; &#x43D;&#x43E;&#x431;&#x435;&#x43B;&#x438;&#x44F; &#x431;&#x43B;&#x438;&#x437;&#x43A;&#x430; &#x43A; &#x43B;&#x435;&#x442;&#x443;&#x447;&#x435;&#x441;&#x442;&#x438; &#x445;&#x43B;&#x43E;&#x440;&#x438;&#x434;&#x43E;&#x432; Fm &#x438; Cf - &#x434;&#x440;&#x443;&#x433;&#x438;&#x445; &#x430;&#x43A;&#x442;&#x438;&#x43D;&#x43E;&#x438;&#x434;&#x43E;&#x432;. &#x41D;&#x430;&#x438;&#x431;&#x43E;&#x43B;&#x435;&#x435; &#x443;&#x441;&#x442;&#x43E;&#x439;&#x447;&#x438;&#x432;&#x430;&#x44F; &#x441;&#x442;&#x435;&#x43F;&#x435;&#x43D;&#x44C; &#x43E;&#x43A;&#x438;&#x441;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x41D;&#x43E;&#x431;&#x435;&#x43B;&#x438;&#x44F; &#x432; &#x440;&#x430;&#x441;&#x442;&#x432;&#x43E;&#x440;&#x435; +2; &#x432; &#x441;&#x442;&#x435;&#x43F;&#x435;&#x43D;&#x44C; &#x43E;&#x43A;&#x438;&#x441;&#x43B;&#x435;&#x43D;&#x438;&#x44F; +3 &#x43F;&#x435;&#x440;&#x435;&#x445;&#x43E;&#x434;&#x438;&#x442; &#x43F;&#x43E;&#x434; &#x434;&#x435;&#x439;&#x441;&#x442;&#x432;&#x438;&#x435;&#x43C; &#x441;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x43E;&#x43A;&#x438;&#x441;&#x43B;&#x438;&#x442;&#x435;&#x43B;&#x435;&#x439;.\n",
+        "Атомная масса": "[259]",
+        "Плотность, кг/м³": " ",
+        "Температура плавления, °С": " ",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": " ",
+        "Электроотрицательность": "1.3",
+        "Ковалентный радиус, Å": " ",
+        "1-й ионизац. потенциал, эв": "6.65"
+    },
+    {
+        "Химический символ": "Lr",
+        "label": "Лоуренсий Lawrencium",
+        "color": "0xFCA06E",
+        "shadow": "0xFE8E62",
+        "Электронная формула": "(Rn)5f146d17s2",
+        "description": "<b>&#x41B;&#x43E;&#x443;&#x440;&#x435;&#x43D;&#x441;&#x438;&#x439;</b> (&#x43B;&#x430;&#x442;. Lawrencium), Lr, &#x438;&#x441;&#x43A;&#x443;&#x441;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x43E; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x43D;&#x44B;&#x439; &#x440;&#x430;&#x434;&#x438;&#x43E;&#x430;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x439; &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; &#x441;&#x435;&#x43C;&#x435;&#x439;&#x441;&#x442;&#x432;&#x430; <a href=\"art.php?t=ac\">&#x430;&#x43A;&#x442;&#x438;&#x43D;&#x43E;&#x438;&#x434;&#x43E;&#x432;</a>, &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; 103. &#x421;&#x442;&#x430;&#x431;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x43D;&#x435; &#x438;&#x43C;&#x435;&#x435;&#x442;. &#x41F;&#x435;&#x440;&#x432;&#x44B;&#x435; &#x43E;&#x43F;&#x44B;&#x442;&#x44B; &#x43F;&#x43E; &#x441;&#x438;&#x43D;&#x442;&#x435;&#x437;&#x443; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x430; &#x2116; 103 &#x431;&#x44B;&#x43B;&#x438; &#x432;&#x44B;&#x43F;&#x43E;&#x43B;&#x43D;&#x435;&#x43D;&#x44B; &#x432; 1961 &#x430;&#x43C;&#x435;&#x440;&#x438;&#x43A;&#x430;&#x43D;&#x441;&#x43A;&#x438;&#x43C;&#x438; &#x443;&#x447;&#x435;&#x43D;&#x44B;&#x43C;&#x438; &#x432;&#x43E; &#x433;&#x43B;&#x430;&#x432;&#x435; &#x441; &#x410;. &#x413;&#x438;&#x43E;&#x440;&#x441;&#x43E;. &#x420;&#x435;&#x437;&#x443;&#x43B;&#x44C;&#x442;&#x430;&#x442;&#x44B; &#x44D;&#x442;&#x438;&#x445; &#x43E;&#x43F;&#x44B;&#x442;&#x43E;&#x432; &#x432; &#x434;&#x430;&#x43B;&#x44C;&#x43D;&#x435;&#x439;&#x448;&#x435;&#x43C; &#x43D;&#x435; &#x43F;&#x43E;&#x434;&#x442;&#x432;&#x435;&#x440;&#x434;&#x438;&#x43B;&#x438;&#x441;&#x44C;, &#x43D;&#x43E; &#x434;&#x430;&#x43D;&#x43D;&#x43E;&#x435; &#x430;&#x43C;&#x435;&#x440;&#x438;&#x43A;&#x430;&#x43D;&#x441;&#x43A;&#x438;&#x43C;&#x438; &#x438;&#x441;&#x441;&#x43B;&#x435;&#x434;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44F;&#x43C;&#x438; &#x43D;&#x430;&#x437;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x430; 103 &#x432; &#x447;&#x435;&#x441;&#x442;&#x44C; &#x42D;. &#x41B;&#x43E;&#x443;&#x440;&#x435;&#x43D;&#x441;&#x430; &#x431;&#x44B;&#x43B;&#x43E; &#x43F;&#x440;&#x438;&#x43D;&#x44F;&#x442;&#x43E;. &#x41F;&#x435;&#x440;&#x432;&#x44B;&#x435; &#x43D;&#x430;&#x434;&#x435;&#x436;&#x43D;&#x44B;&#x435; &#x441;&#x432;&#x435;&#x434;&#x435;&#x43D;&#x438;&#x44F; &#x43E;&#x431; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x435; <sup>256</sup>Lr &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x44B; &#x432; 1965 &#x441;&#x43E;&#x432;&#x435;&#x442;&#x441;&#x43A;&#x438;&#x43C;&#x438; &#x444;&#x438;&#x437;&#x438;&#x43A;&#x430;&#x43C;&#x438; &#x432; &#x41E;&#x431;&#x44A;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x43D;&#x43E;&#x43C; &#x438;&#x43D;&#x441;&#x442;&#x438;&#x442;&#x443;&#x442;&#x435; &#x44F;&#x434;&#x435;&#x440;&#x43D;&#x44B;&#x445; &#x438;&#x441;&#x441;&#x43B;&#x435;&#x434;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x439; (&#x414;&#x443;&#x431;&#x43D;&#x430;). &#x41E;&#x43D;&#x438; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x438;&#x43B;&#x438; &#x44F;&#x434;&#x440;&#x430; <sup>256</sup>Lr &#x43F;&#x440;&#x438; &#x43E;&#x431;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x438; &#x43C;&#x438;&#x448;&#x435;&#x43D;&#x438; &#x438;&#x437; &#x430;&#x43C;&#x435;&#x440;&#x438;&#x446;&#x438;&#x44F; <sup>243</sup>&#x410;m &#x443;&#x441;&#x43A;&#x43E;&#x440;&#x435;&#x43D;&#x43D;&#x44B;&#x43C;&#x438; &#x438;&#x43E;&#x43D;&#x430;&#x43C;&#x438; <sup>18</sup>&#x41E;. &#x423;&#x441;&#x442;&#x430;&#x43D;&#x43E;&#x432;&#x43B;&#x435;&#x43D;&#x43E;, &#x447;&#x442;&#x43E; &#x44F;&#x434;&#x440;&#x430; <sup>256</sup>Lr &#x438;&#x441;&#x43F;&#x443;&#x441;&#x43A;&#x430;&#x44E;&#x442; &#x3B1;-&#x447;&#x430;&#x441;&#x442;&#x438;&#x446;&#x44B; &#x438; &#x447;&#x442;&#x43E; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434; &#x43F;&#x43E;&#x43B;&#x443;&#x440;&#x430;&#x441;&#x43F;&#x430;&#x434;&#x430; &#x441;&#x43E;&#x441;&#x442;&#x430;&#x432;&#x43B;&#x44F;&#x435;&#x442; &#x43E;&#x43A;&#x43E;&#x43B;&#x43E; 35 &#x441;&#x435;&#x43A;. &#x412; 1969 &#x433;&#x43E;&#x434;&#x443; &#x432; &#x414;&#x443;&#x431;&#x43D;&#x435; &#x432;&#x43F;&#x435;&#x440;&#x432;&#x44B;&#x435; &#x431;&#x44B;&#x43B; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D; &#x438; &#x434;&#x440;&#x443;&#x433;&#x43E;&#x439; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F; <sup>255</sup>Lr. &#x410;&#x43C;&#x435;&#x440;&#x438;&#x43A;&#x430;&#x43D;&#x441;&#x43A;&#x438;&#x435; &#x444;&#x438;&#x437;&#x438;&#x43A;&#x438;, &#x440;&#x430;&#x431;&#x43E;&#x442;&#x430;&#x44E;&#x449;&#x438;&#x435; &#x432; &#x411;&#x435;&#x440;&#x43A;&#x43B;&#x438;, &#x432; 1971 &#x433;&#x43E;&#x434;&#x443; &#x441;&#x43E;&#x43E;&#x431;&#x449;&#x438;&#x43B;&#x438; &#x43E; &#x441;&#x438;&#x43D;&#x442;&#x435;&#x437;&#x435; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F;&#x43E;&#x432; &#x41B;&#x43E;&#x443;&#x440;&#x435;&#x43D;&#x441;&#x438;&#x44F; &#x441; &#x43C;&#x430;&#x441;&#x441;&#x43E;&#x432;&#x44B;&#x43C;&#x438; &#x447;&#x438;&#x441;&#x43B;&#x430;&#x43C;&#x438; 257-260. &#x41D;&#x430;&#x438;&#x431;&#x43E;&#x43B;&#x435;&#x435; &#x434;&#x43E;&#x43B;&#x433;&#x43E;&#x436;&#x438;&#x432;&#x443;&#x449;&#x438;&#x43C; &#x44F;&#x432;&#x43B;&#x44F;&#x435;&#x442;&#x441;&#x44F; &#x438;&#x437;&#x43E;&#x442;&#x43E;&#x43F; <sup>260</sup>Lr &#x441; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x43E;&#x43C; &#x43F;&#x43E;&#x43B;&#x443;&#x440;&#x430;&#x441;&#x43F;&#x430;&#x434;&#x430; &#x43E;&#x43A;&#x43E;&#x43B;&#x43E; 3 &#x43C;&#x438;&#x43D;. &#x41F;&#x43E; &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x435; &#x441;&#x432;&#x43E;&#x439;&#x441;&#x442;&#x432;&#x430;&#x43C; &#x41B;&#x43E;&#x443;&#x440;&#x435;&#x43D;&#x441;&#x438;&#x439; &#x434;&#x43E;&#x43B;&#x436;&#x435;&#x43D; &#x431;&#x44B;&#x442;&#x44C; &#x43F;&#x43E;&#x445;&#x43E;&#x436;&#x438;&#x43C; &#x43D;&#x430; &#x434;&#x440;&#x443;&#x433;&#x438;&#x435; &#x442;&#x44F;&#x436;&#x435;&#x43B;&#x44B;&#x435; &#x430;&#x43A;&#x442;&#x438;&#x43D;&#x43E;&#x43D;&#x434;&#x44B;, &#x442;&#x430;&#x43A; &#x447;&#x442;&#x43E; &#x43D;&#x430;&#x438;&#x431;&#x43E;&#x43B;&#x435;&#x435; &#x442;&#x438;&#x43F;&#x438;&#x447;&#x43D;&#x430;&#x44F; &#x441;&#x442;&#x435;&#x43F;&#x435;&#x43D;&#x44C; &#x43E;&#x43A;&#x438;&#x441;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x41B;&#x43E;&#x443;&#x440;&#x435;&#x43D;&#x441;&#x438;&#x44F; &#x434;&#x43E;&#x43B;&#x436;&#x43D;&#x430; &#x440;&#x430;&#x432;&#x43D;&#x44F;&#x442;&#x44C;&#x441;&#x44F; +3. &#x420;&#x435;&#x437;&#x443;&#x43B;&#x44C;&#x442;&#x430;&#x442;&#x44B; &#x440;&#x44F;&#x434;&#x430; &#x438;&#x441;&#x441;&#x43B;&#x435;&#x434;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x439; &#x441;&#x432;&#x43E;&#x439;&#x441;&#x442;&#x432; &#x41B;&#x43E;&#x443;&#x440;&#x435;&#x43D;&#x441;&#x438;&#x439; &#x43F;&#x43E;&#x434;&#x442;&#x432;&#x435;&#x440;&#x436;&#x434;&#x430;&#x44E;&#x442; &#x44D;&#x442;&#x43E; &#x43F;&#x440;&#x435;&#x434;&#x43F;&#x43E;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x438;&#x435;.\n",
+        "Атомная масса": "[262]",
+        "Плотность, кг/м³": " ",
+        "Температура плавления, °С": " ",
+        "Температура кипения, °С": " ",
+        "Теплоемкость, кДж/(кг·°С)": " ",
+        "Электроотрицательность": " ",
+        "Ковалентный радиус, Å": " ",
+        "1-й ионизац. потенциал, эв": " "
+    }
+]
+},{}],15:[function(require,module,exports){
+'use strict';
+
+// This THREEx helper makes it easy to handle the mouse events in your 3D scene
+//
+// * CHANGES NEEDED
+//   * handle drag/drop
+//   * notify events not object3D - like DOM
+//     * so single object with property
+//   * DONE bubling implement bubling/capturing
+//   * DONE implement event.stopPropagation()
+//   * DONE implement event.type = "click" and co
+//   * DONE implement event.target
+//
+// # Lets get started
+//
+// First you include it in your page
+//
+// ```<script src='threex.domevent.js'>< /script>```
+//
+// # use the object oriented api
+//
+// You bind an event like this
+// 
+// ```mesh.on('click', function(object3d){ ... })```
+//
+// To unbind an event, just do
+//
+// ```mesh.off('click', function(object3d){ ... })```
+//
+// As an alternative, there is another naming closer DOM events.
+// Pick the one you like, they are doing the same thing
+//
+// ```mesh.addEventListener('click', function(object3d){ ... })```
+// ```mesh.removeEventListener('click', function(object3d){ ... })```
+//
+// # Supported Events
+//
+// Always in a effort to stay close to usual pratices, the events name are the same as in DOM.
+// The semantic is the same too.
+// Currently, the available events are
+// [click, dblclick, mouseup, mousedown](http://www.quirksmode.org/dom/events/click.html),
+// [mouseover and mouse out](http://www.quirksmode.org/dom/events/mouseover.html).
+//
+// # use the standalone api
+//
+// The object-oriented api modifies THREE.Object3D class.
+// It is a global class, so it may be legitimatly considered unclean by some people.
+// If this bother you, simply do ```THREEx.DomEvents.noConflict()``` and use the
+// standalone API. In fact, the object oriented API is just a thin wrapper
+// on top of the standalone API.
+//
+// First, you instanciate the object
+//
+// ```var domEvent = new THREEx.DomEvent();```
+// 
+// Then you bind an event like this
+//
+// ```domEvent.bind(mesh, 'click', function(object3d){ object3d.scale.x *= 2; });```
+//
+// To unbind an event, just do
+//
+// ```domEvent.unbind(mesh, 'click', callback);```
+//
+// 
+// # Code
+
+//
+
+/** @namespace */
+var THREEx = THREEx || {};
+
+// # Constructor
+THREEx.DomEvents = function (camera, domElement) {
+	this._camera = camera || null;
+	this._domElement = domElement || document;
+	this._raycaster = new THREE.Raycaster();
+	this._selected = null;
+	this._boundObjs = {};
+	// Bind dom event for mouse and touch
+	var _this = this;
+
+	this._$onClick = function () {
+		_this._onClick.apply(_this, arguments);
+	};
+	this._$onDblClick = function () {
+		_this._onDblClick.apply(_this, arguments);
+	};
+	this._$onMouseMove = function () {
+		_this._onMouseMove.apply(_this, arguments);
+	};
+	this._$onMouseDown = function () {
+		_this._onMouseDown.apply(_this, arguments);
+	};
+	this._$onMouseUp = function () {
+		_this._onMouseUp.apply(_this, arguments);
+	};
+	this._$onTouchMove = function () {
+		_this._onTouchMove.apply(_this, arguments);
+	};
+	this._$onTouchStart = function () {
+		_this._onTouchStart.apply(_this, arguments);
+	};
+	this._$onTouchEnd = function () {
+		_this._onTouchEnd.apply(_this, arguments);
+	};
+	this._$onContextmenu = function () {
+		_this._onContextmenu.apply(_this, arguments);
+	};
+	this._domElement.addEventListener('click', this._$onClick, false);
+	this._domElement.addEventListener('dblclick', this._$onDblClick, false);
+	this._domElement.addEventListener('mousemove', this._$onMouseMove, false);
+	this._domElement.addEventListener('mousedown', this._$onMouseDown, false);
+	this._domElement.addEventListener('mouseup', this._$onMouseUp, false);
+	this._domElement.addEventListener('touchmove', this._$onTouchMove, false);
+	this._domElement.addEventListener('touchstart', this._$onTouchStart, false);
+	this._domElement.addEventListener('touchend', this._$onTouchEnd, false);
+	this._domElement.addEventListener('contextmenu', this._$onContextmenu, false);
+};
+
+// # Destructor
+THREEx.DomEvents.prototype.destroy = function () {
+	// unBind dom event for mouse and touch
+	this._domElement.removeEventListener('click', this._$onClick, false);
+	this._domElement.removeEventListener('dblclick', this._$onDblClick, false);
+	this._domElement.removeEventListener('mousemove', this._$onMouseMove, false);
+	this._domElement.removeEventListener('mousedown', this._$onMouseDown, false);
+	this._domElement.removeEventListener('mouseup', this._$onMouseUp, false);
+	this._domElement.removeEventListener('touchmove', this._$onTouchMove, false);
+	this._domElement.removeEventListener('touchstart', this._$onTouchStart, false);
+	this._domElement.removeEventListener('touchend', this._$onTouchEnd, false);
+	this._domElement.removeEventListener('contextmenu', this._$onContextmenu, false);
+};
+
+THREEx.DomEvents.eventNames = ["click", "dblclick", "mouseover", "mouseout", "mousemove", "mousedown", "mouseup", "contextmenu", "touchstart", "touchend"];
+
+THREEx.DomEvents.prototype._getRelativeMouseXY = function (domEvent) {
+	var element = domEvent.target || domEvent.srcElement;
+	if (element.nodeType === 3) {
+		element = element.parentNode; // Safari fix -- see http://www.quirksmode.org/js/events_properties.html
+	}
+
+	//get the real position of an element relative to the page starting point (0, 0)
+	//credits go to brainjam on answering http://stackoverflow.com/questions/5755312/getting-mouse-position-relative-to-content-area-of-an-element
+	var elPosition = { x: 0, y: 0 };
+	var tmpElement = element;
+	//store padding
+	var style = getComputedStyle(tmpElement, null);
+	elPosition.y += parseInt(style.getPropertyValue("padding-top"), 10);
+	elPosition.x += parseInt(style.getPropertyValue("padding-left"), 10);
+	//add positions
+	do {
+		elPosition.x += tmpElement.offsetLeft;
+		elPosition.y += tmpElement.offsetTop;
+		style = getComputedStyle(tmpElement, null);
+
+		elPosition.x += parseInt(style.getPropertyValue("border-left-width"), 10);
+		elPosition.y += parseInt(style.getPropertyValue("border-top-width"), 10);
+	} while (tmpElement = tmpElement.offsetParent);
+
+	var elDimension = {
+		width: element === window ? window.innerWidth : element.offsetWidth,
+		height: element === window ? window.innerHeight : element.offsetHeight
+	};
+
+	return {
+		x: +((domEvent.pageX - elPosition.x) / elDimension.width) * 2 - 1,
+		y: -((domEvent.pageY - elPosition.y) / elDimension.height) * 2 + 1
+	};
+};
+
+/********************************************************************************/
+/*		domevent context						*/
+/********************************************************************************/
+
+// handle domevent context in object3d instance
+
+THREEx.DomEvents.prototype._objectCtxInit = function (object3d) {
+	object3d._3xDomEvent = {};
+};
+THREEx.DomEvents.prototype._objectCtxDeinit = function (object3d) {
+	delete object3d._3xDomEvent;
+};
+THREEx.DomEvents.prototype._objectCtxIsInit = function (object3d) {
+	return object3d._3xDomEvent ? true : false;
+};
+THREEx.DomEvents.prototype._objectCtxGet = function (object3d) {
+	return object3d._3xDomEvent;
+};
+
+/********************************************************************************/
+/*										*/
+/********************************************************************************/
+
+/**
+ * Getter/Setter for camera
+*/
+THREEx.DomEvents.prototype.camera = function (value) {
+	if (value) this._camera = value;
+	return this._camera;
+};
+
+THREEx.DomEvents.prototype.bind = function (object3d, eventName, callback, useCapture) {
+	console.assert(THREEx.DomEvents.eventNames.indexOf(eventName) !== -1, "not available events:" + eventName);
+
+	if (!this._objectCtxIsInit(object3d)) this._objectCtxInit(object3d);
+	var objectCtx = this._objectCtxGet(object3d);
+	if (!objectCtx[eventName + 'Handlers']) objectCtx[eventName + 'Handlers'] = [];
+
+	objectCtx[eventName + 'Handlers'].push({
+		callback: callback,
+		useCapture: useCapture
+	});
+
+	// add this object in this._boundObjs
+	if (this._boundObjs[eventName] === undefined) {
+		this._boundObjs[eventName] = [];
+	}
+	this._boundObjs[eventName].push(object3d);
+};
+THREEx.DomEvents.prototype.addEventListener = THREEx.DomEvents.prototype.bind;
+
+THREEx.DomEvents.prototype.unbind = function (object3d, eventName, callback, useCapture) {
+	console.assert(THREEx.DomEvents.eventNames.indexOf(eventName) !== -1, "not available events:" + eventName);
+
+	if (!this._objectCtxIsInit(object3d)) this._objectCtxInit(object3d);
+
+	var objectCtx = this._objectCtxGet(object3d);
+	if (!objectCtx[eventName + 'Handlers']) objectCtx[eventName + 'Handlers'] = [];
+
+	var handlers = objectCtx[eventName + 'Handlers'];
+	for (var i = 0; i < handlers.length; i++) {
+		var handler = handlers[i];
+		if (callback != handler.callback) continue;
+		if (useCapture != handler.useCapture) continue;
+		handlers.splice(i, 1);
+		break;
+	}
+	// from this object from this._boundObjs
+	var index = this._boundObjs[eventName].indexOf(object3d);
+	console.assert(index !== -1);
+	this._boundObjs[eventName].splice(index, 1);
+};
+THREEx.DomEvents.prototype.removeEventListener = THREEx.DomEvents.prototype.unbind;
+
+THREEx.DomEvents.prototype._bound = function (eventName, object3d) {
+	var objectCtx = this._objectCtxGet(object3d);
+	if (!objectCtx) return false;
+	return objectCtx[eventName + 'Handlers'] ? true : false;
+};
+
+/********************************************************************************/
+/*		onMove								*/
+/********************************************************************************/
+
+// # handle mousemove kind of events
+
+THREEx.DomEvents.prototype._onMove = function (eventName, mouseX, mouseY, origDomEvent) {
+	//console.log('eventName', eventName, 'boundObjs', this._boundObjs[eventName])
+	// get objects bound to this event
+	var boundObjs = this._boundObjs[eventName];
+	if (boundObjs === undefined || boundObjs.length === 0) return;
+	// compute the intersection
+	var vector = new THREE.Vector2();
+
+	// update the picking ray with the camera and mouse position
+	vector.set(mouseX, mouseY);
+	this._raycaster.setFromCamera(vector, this._camera);
+
+	var intersects = this._raycaster.intersectObjects(boundObjs);
+
+	var oldSelected = this._selected;
+
+	if (intersects.length > 0) {
+		var notifyOver, notifyOut, notifyMove;
+		var intersect = intersects[0];
+		var newSelected = intersect.object;
+		this._selected = newSelected;
+		// if newSelected bound mousemove, notify it
+		notifyMove = this._bound('mousemove', newSelected);
+
+		if (oldSelected != newSelected) {
+			// if newSelected bound mouseenter, notify it
+			notifyOver = this._bound('mouseover', newSelected);
+			// if there is a oldSelect and oldSelected bound mouseleave, notify it
+			notifyOut = oldSelected && this._bound('mouseout', oldSelected);
+		}
+	} else {
+		// if there is a oldSelect and oldSelected bound mouseleave, notify it
+		notifyOut = oldSelected && this._bound('mouseout', oldSelected);
+		this._selected = null;
+	}
+
+	// notify mouseMove - done at the end with a copy of the list to allow callback to remove handlers
+	notifyMove && this._notify('mousemove', newSelected, origDomEvent, intersect);
+	// notify mouseEnter - done at the end with a copy of the list to allow callback to remove handlers
+	notifyOver && this._notify('mouseover', newSelected, origDomEvent, intersect);
+	// notify mouseLeave - done at the end with a copy of the list to allow callback to remove handlers
+	notifyOut && this._notify('mouseout', oldSelected, origDomEvent, intersect);
+};
+
+/********************************************************************************/
+/*		onEvent								*/
+/********************************************************************************/
+
+// # handle click kind of events
+
+THREEx.DomEvents.prototype._onEvent = function (eventName, mouseX, mouseY, origDomEvent) {
+	//console.log('eventName', eventName, 'boundObjs', this._boundObjs[eventName])
+	// get objects bound to this event
+	var boundObjs = this._boundObjs[eventName];
+	if (boundObjs === undefined || boundObjs.length === 0) return;
+	// compute the intersection
+	var vector = new THREE.Vector2();
+
+	// update the picking ray with the camera and mouse position
+	vector.set(mouseX, mouseY);
+	this._raycaster.setFromCamera(vector, this._camera);
+
+	var intersects = this._raycaster.intersectObjects(boundObjs, true);
+	// if there are no intersections, return now
+	if (intersects.length === 0) return;
+
+	// init some variables
+	var intersect = intersects[0];
+	var object3d = intersect.object;
+	var objectCtx = this._objectCtxGet(object3d);
+	var objectParent = object3d.parent;
+
+	while (typeof objectCtx == 'undefined' && objectParent) {
+		objectCtx = this._objectCtxGet(objectParent);
+		objectParent = objectParent.parent;
+	}
+	if (!objectCtx) return;
+
+	// notify handlers
+	this._notify(eventName, object3d, origDomEvent, intersect);
+};
+
+THREEx.DomEvents.prototype._notify = function (eventName, object3d, origDomEvent, intersect) {
+	var objectCtx = this._objectCtxGet(object3d);
+	var handlers = objectCtx ? objectCtx[eventName + 'Handlers'] : null;
+
+	// parameter check
+	console.assert(arguments.length === 4);
+
+	// do bubbling
+	if (!objectCtx || !handlers || handlers.length === 0) {
+		object3d.parent && this._notify(eventName, object3d.parent, origDomEvent, intersect);
+		return;
+	}
+
+	// notify all handlers
+	var handlers = objectCtx[eventName + 'Handlers'];
+	for (var i = 0; i < handlers.length; i++) {
+		var handler = handlers[i];
+		var toPropagate = true;
+		handler.callback({
+			type: eventName,
+			target: object3d,
+			origDomEvent: origDomEvent,
+			intersect: intersect,
+			stopPropagation: function stopPropagation() {
+				toPropagate = false;
+			}
+		});
+		if (!toPropagate) continue;
+		// do bubbling
+		if (handler.useCapture === false) {
+			object3d.parent && this._notify(eventName, object3d.parent, origDomEvent, intersect);
+		}
+	}
+};
+
+/********************************************************************************/
+/*		handle mouse events						*/
+/********************************************************************************/
+// # handle mouse events
+
+THREEx.DomEvents.prototype._onMouseDown = function (event) {
+	return this._onMouseEvent('mousedown', event);
+};
+THREEx.DomEvents.prototype._onMouseUp = function (event) {
+	return this._onMouseEvent('mouseup', event);
+};
+
+THREEx.DomEvents.prototype._onMouseEvent = function (eventName, domEvent) {
+	var mouseCoords = this._getRelativeMouseXY(domEvent);
+	this._onEvent(eventName, mouseCoords.x, mouseCoords.y, domEvent);
+};
+
+THREEx.DomEvents.prototype._onMouseMove = function (domEvent) {
+	var mouseCoords = this._getRelativeMouseXY(domEvent);
+	this._onMove('mousemove', mouseCoords.x, mouseCoords.y, domEvent);
+	this._onMove('mouseover', mouseCoords.x, mouseCoords.y, domEvent);
+	this._onMove('mouseout', mouseCoords.x, mouseCoords.y, domEvent);
+};
+
+THREEx.DomEvents.prototype._onClick = function (event) {
+	// TODO handle touch ?
+	this._onMouseEvent('click', event);
+};
+THREEx.DomEvents.prototype._onDblClick = function (event) {
+	// TODO handle touch ?
+	this._onMouseEvent('dblclick', event);
+};
+
+THREEx.DomEvents.prototype._onContextmenu = function (event) {
+	//TODO don't have a clue about how this should work with touch..
+	this._onMouseEvent('contextmenu', event);
+};
+
+/********************************************************************************/
+/*		handle touch events						*/
+/********************************************************************************/
+// # handle touch events
+
+
+THREEx.DomEvents.prototype._onTouchStart = function (event) {
+	return this._onTouchEvent('touchstart', event);
+};
+THREEx.DomEvents.prototype._onTouchEnd = function (event) {
+	return this._onTouchEvent('touchend', event);
+};
+
+THREEx.DomEvents.prototype._onTouchMove = function (domEvent) {
+	if (domEvent.touches.length != 1) return undefined;
+
+	domEvent.preventDefault();
+
+	var mouseX = +(domEvent.touches[0].pageX / window.innerWidth) * 2 - 1;
+	var mouseY = -(domEvent.touches[0].pageY / window.innerHeight) * 2 + 1;
+	this._onMove('mousemove', mouseX, mouseY, domEvent);
+	this._onMove('mouseover', mouseX, mouseY, domEvent);
+	this._onMove('mouseout', mouseX, mouseY, domEvent);
+};
+
+THREEx.DomEvents.prototype._onTouchEvent = function (eventName, domEvent) {
+	if (domEvent.touches.length != 1) return undefined;
+
+	domEvent.preventDefault();
+
+	var mouseX = +(domEvent.touches[0].pageX / window.innerWidth) * 2 - 1;
+	var mouseY = -(domEvent.touches[0].pageY / window.innerHeight) * 2 + 1;
+	this._onEvent(eventName, mouseX, mouseY, domEvent);
+};
+
+module.exports = THREEx.DomEvents;
+
+},{}],16:[function(require,module,exports){
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Molecule = require('./Molecule');
+var OrbitControls = require('./OrbitControls');
+var DomEvents = require('./domEvents');
+
+var Model = function () {
+	function Model(wrap, w, h) {
+		_classCallCheck(this, Model);
+
+		this.w = w;
+		this.h = h;
+
+		this.molecules = [];
+
+		// init three.js
+		this.renderer = new THREE.WebGLRenderer({
+			antialias: true,
+			alpha: true
+		});
+		this.renderer.setClearColor(0xffffff, 0);
+		this.renderer.setSize(this.w, this.h);
+
+		this.wrap = wrap;
+		console.log(wrap);
+		this.wrap.appendChild(this.renderer.domElement);
+
+		this.camera = new THREE.PerspectiveCamera(75, this.w / this.h, 0.1, 1000);
+		this.orbit = new THREE.OrbitControls(this.camera, this.renderer.domElement, this.wrap);
+		this.scene = new THREE.Scene();
+
+		this.lights = [];
+		this.lights[0] = new THREE.PointLight(0xffffff, 1, 0);
+		this.lights[1] = new THREE.PointLight(0xffffff, 1, 0);
+		this.lights[2] = new THREE.PointLight(0xffffff, 1, 0);
+
+		this.lights[0].position.set(0, 200, 0);
+		this.lights[1].position.set(100, 200, 100);
+		this.lights[2].position.set(-100, -200, -100);
+
+		this.scene.add(this.lights[0]);
+		this.scene.add(this.lights[1]);
+		this.scene.add(this.lights[2]);
+
+		this.domEvents = new DomEvents(this.camera, this.wrap);
+	}
+
+	_createClass(Model, [{
+		key: 'resize',
+		value: function resize(w, h) {
+			this.w = w;
+			this.h = h;
+
+			this.camera.aspect = this.w / this.h;
+			this.camera.updateProjectionMatrix();
+			this.renderer.setSize(this.w, this.h);
+		}
+	}, {
+		key: 'addMolecule',
+		value: function addMolecule(data) {
+			var mol = new Molecule(this, this.molecules.length, data);
+			return this.molecules.push(mol);
+		}
+	}, {
+		key: 'removeMolecule',
+		value: function removeMolecule(i) {
+			if (this.molecules[i]) {
+				this.molecules[i].remove();
+				this.molecules.splice(i, 1);
+			}
+		}
+	}, {
+		key: 'start',
+		value: function start() {
+			this.loop();
+		}
+	}, {
+		key: 'loop',
+		value: function loop() {
+			var _this = this;
+
+			requestAnimationFrame(function () {
+				return _this.loop();
+			});
+
+			this.camera.lookAt(this.scene.position);
+			this.camera.updateMatrixWorld();
+
+			for (var i = 0; i < this.molecules.length; i++) {
+				this.molecules[i].update();
+			}
+
+			this.renderer.render(this.scene, this.camera);
+		}
+	}]);
+
+	return Model;
+}();
+
+module.exports = Model;
+
+},{"./Molecule":12,"./OrbitControls":13,"./domEvents":15}],17:[function(require,module,exports){
 'use strict';
 
 var types = require('./types.json');
@@ -126,19 +3294,32 @@ var substances = require('./substances.json');
 module.exports = {
   state: {
     types: types,
-    substances: substances
+    substances: substances,
+    history: [],
+    stars: []
   },
   getters: {
     types: function types(state) {
       return state.types;
     },
+
     substances: function substances(state) {
-      return state.substances;
+      return function (type) {
+        return state.substances[type];
+      };
+    }
+  },
+  mutations: {
+    addStar: function addStar(state, subs) {
+      state.stars.push(subs);
+    },
+    addHistory: function addHistory(state) {
+      state.history.push(state.currentSubstance);
     }
   }
 };
 
-},{"./substances.json":6,"./types.json":7}],6:[function(require,module,exports){
+},{"./substances.json":18,"./types.json":19}],18:[function(require,module,exports){
 module.exports={
   "acids": {
     "color": "orange",
@@ -294,7 +3475,7 @@ module.exports={
   }
 }
 
-},{}],7:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 module.exports=[
   {
     "type": "acids",
@@ -340,35 +3521,208 @@ module.exports=[
   }
 ]
 
-},{}],8:[function(require,module,exports){
-;(function(){
+},{}],20:[function(require,module,exports){
+module.exports={
+  "NOT_LOADED_SUBSTANCE": {
+    "id": 0,
+    "ru": "Извините, вещество не найдено",
+    "en": "Sorry, substance not found"
+  }
+}
+
+},{}],21:[function(require,module,exports){
 'use strict';
 
-var Navigation = require('../components/Navigation.vue');
+var database = require('./clientDataBase');
+var substance = require('./substanceData');
+var errors = require('./errors.json');
+
+module.exports = {
+  modules: {
+    substance: substance,
+    database: database
+  },
+  state: {
+    loading: false,
+    errorLog: "",
+    lang: "ru",
+    standartLang: "en"
+  },
+  mutations: {
+    loadingStart: function loadingStart(state) {
+      state.loading = true;
+    },
+    loadingEnd: function loadingEnd(state) {
+      state.loading = false;
+    },
+    errorLog: function errorLog(state, log) {
+      state.errorLog = log;
+    },
+    changeLang: function changeLang(state, lang) {
+      state.lang = lang;
+    }
+  },
+  actions: {
+    error: function error(_ref, obj) {
+      var commit = _ref.commit,
+          state = _ref.state;
+
+      commit('errorLog', errors[obj.type][state.lang || state.standartLang]);
+      console.log(obj.error);
+    }
+  }
+};
+
+},{"./clientDataBase":17,"./errors.json":20,"./substanceData":22}],22:[function(require,module,exports){
+'use strict';
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var pubchem = require('pubchem-access').domain('compound');
+var axios = require('axios');
+
+var key = require('./key.json');
+
+module.exports = {
+  state: {
+    data: {}
+  },
+  mutations: {
+    changeData: function changeData(state, data) {
+      state.data = data;
+    }
+  },
+  actions: {
+    loadSubstance: function loadSubstance(_ref, req) {
+      var commit, dispatch, rootState, enReq;
+      return Promise.resolve().then(function () {
+        commit = _ref.commit;
+        dispatch = _ref.dispatch;
+        rootState = _ref.rootState;
+
+        commit('loadingStart');
+
+        return Promise.resolve().then(function () {
+          return dispatch('translateReq', req);
+        }).then(function (_resp) {
+          enReq = _resp;
+
+          dispatch('getPubchemData', {
+            req: enReq,
+            cb: function cb(data) {
+              var structure;
+              return Promise.resolve().then(function () {
+                console.log(data);
+                return dispatch('getStructureData', data.CID);
+              }).then(function (_resp) {
+                structure = _resp;
+
+                commit('changeData', _extends({}, structure, data));
+              });
+            }
+          });
+        }).catch(function (e) {
+          dispatch('error', {
+            type: 'NOT_LOADED_SUBSTANCE',
+            error: e
+          });
+        });
+      }).then(function () {
+
+        commit('loadingEnd');
+      });
+    },
+    translateReq: function translateReq(_ref2, req) {
+      var commit, translate, response;
+      return Promise.resolve().then(function () {
+        commit = _ref2.commit;
+        translate = 'https://translate.yandex.net/api/v1.5/tr.json/translate?' + 'key=' + key.yat + '&text=' + encodeURIComponent(req) + '&lang=ru-en';
+        return axios.get(translate);
+      }).then(function (_resp) {
+        response = _resp;
+
+        return response.data.text[0].replace('the ', '');
+      });
+    },
+    getPubchemData: function getPubchemData(context, props) {
+      pubchem.setName(props.req).getProperties(["IUPACName", "MolecularFormula", "MolecularWeight"]).execute(function (data, status) {
+        if (status !== 1) throw Error;else props.cb(data);
+      });
+    },
+    getStructureData: function getStructureData(context, CID) {
+      var url3d, url2d, response;
+      return Promise.resolve().then(function () {
+        url3d = 'https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/' + CID + '/record/JSON/?record_type=3d&response_type=display';
+        url2d = 'https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/' + CID + '/record/JSON/?record_type=2d&response_type=display';
+        response = void 0;
+        return Promise.resolve().then(function () {
+          return axios.get(url3d);
+        }).then(function (_resp) {
+          response = _resp;
+          response.data.typeStructure = '3d';
+        }).catch(function (e) {
+          return Promise.resolve().then(function () {
+            return axios.get(url2d);
+          }).then(function (_resp) {
+            response = _resp;
+            response.data.typeStructure = '2d';
+          });
+        });
+      }).then(function () {
+        return response.data;
+      });
+    }
+  }
+};
+
+},{"./key.json":23,"axios":29,"pubchem-access":57}],23:[function(require,module,exports){
+module.exports={
+  "yat": "trnsl.1.1.20171003T172921Z.f8b33207004fee57.22869296b2cd117d77da956d6f8d1e48d81c43c8"
+}
+
+},{}],24:[function(require,module,exports){
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("html {\n  background: rgb(246, 246, 246);\n}")
+;(function(){
+
+
+const Navigation = require('../components/Navigation.vue');
+const Errors = require('../components/Errors.vue');
+const Preloader = require('../components/Preloader.vue');
 
 module.exports = {
   name: 'app',
   components: {
-    Navigation: Navigation
+    Navigation,
+    Errors,
+    Preloader
+  },
+  computed: {
+    errorLog() {
+      return this.$store.state.errorLog;
+    },
+    loading() {
+      return this.$store.state.loading;
+    }
   }
 };
 })()
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"app"}},[_c('navigation'),_vm._v(" "),_c('router-view')],1)}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"app"}},[_c('navigation'),_vm._v(" "),_c('router-view'),_vm._v(" "),_c('errors',{attrs:{"errorLog":_vm.errorLog}}),_vm._v(" "),_c('preloader',{directives:[{name:"show",rawName:"v-show",value:(_vm.loading),expression:"loading"}]})],1)}
 __vue__options__.staticRenderFns = []
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   module.hot.accept()
+  module.hot.dispose(__vueify_style_dispose__)
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-3b72e0ed", __vue__options__)
   } else {
-    hotAPI.rerender("data-v-3b72e0ed", __vue__options__)
+    hotAPI.reload("data-v-3b72e0ed", __vue__options__)
   }
 })()}
-},{"../components/Navigation.vue":1,"vue":16,"vue-hot-reload-api":14}],9:[function(require,module,exports){
+},{"../components/Errors.vue":2,"../components/Navigation.vue":5,"../components/Preloader.vue":6,"vue":62,"vue-hot-reload-api":60,"vueify/lib/insert-css":63}],25:[function(require,module,exports){
 var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("#main[data-v-2125c4c6] {\n  margin-top: 25%;\n}\nh1[data-v-2125c4c6] {\n  font-weight: 200;\n}")
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
@@ -383,28 +3737,28 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-2125c4c6", __vue__options__)
   } else {
-    hotAPI.rerender("data-v-2125c4c6", __vue__options__)
+    hotAPI.reload("data-v-2125c4c6", __vue__options__)
   }
 })()}
-},{"vue":16,"vue-hot-reload-api":14,"vueify/lib/insert-css":17}],10:[function(require,module,exports){
-var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("h1[data-v-23e8c2e7] {\n  margin-top: 0;\n  font-weight: 300;\n  font-size: 2em;\n}\n.collection .collection-item.avatar[data-v-23e8c2e7] {\n  min-height: inherit;\n  width: 100%;\n}\n\na.btn-star[data-v-23e8c2e7] {\n  position: absolute;\n  right: 10px;\n  top: 50%;\n  margin-top: -5px;\n  width: 40px;\n  height: 40px;\n  border-radius: 50%;\n  text-align: center;\n}\na.btn-star i[data-v-23e8c2e7] {\n  line-height: 40px;\n}")
+},{"vue":62,"vue-hot-reload-api":60,"vueify/lib/insert-css":63}],26:[function(require,module,exports){
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("h1[data-v-23e8c2e7] {\n  margin-top: 0;\n  font-weight: 300;\n  font-size: 2em;\n}")
 ;(function(){
-'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = {
-  data: function data() {
+
+const CardSubstance = require('../components/CardSubstance.vue');
+
+module.exports = {
+  components: {
+    CardSubstance
+  },
+  data() {
     return {
-      data: this.$store.state.substances[this.$route.params.type],
-      colorBtnStar: 'grey-text'
+      type: this.$route.params.type
     };
   },
-
-  methods: {
-    substanceStar: function substanceStar() {
-      this.colorBtnStar = this.colorBtnStar == 'grey-text' ? 'orange-text' : 'grey-text';
+  computed: {
+    data() {
+      return this.$store.getters.substances(this.type);
     }
   }
 };
@@ -412,7 +3766,7 @@ exports.default = {
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"container",attrs:{"id":"substances"}},[_c('h1',[_vm._v("Тип \""+_vm._s(_vm.data.label)+"\":")]),_vm._v(" "),_c('ul',{staticClass:"collection"},_vm._l((_vm.data.substances),function(item){return _c('li',{staticClass:"collection-item avatar waves-effect"},[_c('i',{staticClass:"material-icons circle",class:_vm.data.color},[_vm._v("assignment")]),_vm._v(" "),_c('span',{staticClass:"title"},[_vm._v(_vm._s(item.formula))]),_vm._v(" "),_c('p',[_vm._v(_vm._s(item.label))]),_vm._v(" "),_c('a',{staticClass:"waves-effect secondary-content btn-star",on:{"click":_vm.substanceStar}},[_c('i',{staticClass:"material-icons",class:_vm.colorBtnStar},[_vm._v("star")])])])}))])}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"container",attrs:{"id":"substances"}},[_c('h1',[_vm._v("Тип \""+_vm._s(_vm.data.label)+"\":")]),_vm._v(" "),_vm._l((_vm.data.substances),function(item){return _c('card-substance',{attrs:{"data":item}})})],2)}
 __vue__options__.staticRenderFns = []
 __vue__options__._scopeId = "data-v-23e8c2e7"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
@@ -423,22 +3777,23 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-23e8c2e7", __vue__options__)
   } else {
-    hotAPI.rerender("data-v-23e8c2e7", __vue__options__)
+    hotAPI.reload("data-v-23e8c2e7", __vue__options__)
   }
 })()}
-},{"vue":16,"vue-hot-reload-api":14,"vueify/lib/insert-css":17}],11:[function(require,module,exports){
+},{"../components/CardSubstance.vue":1,"vue":62,"vue-hot-reload-api":60,"vueify/lib/insert-css":63}],27:[function(require,module,exports){
 var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("h1[data-v-1237fda8] {\n  margin-top: 0;\n  font-weight: 300;\n  font-size: 2em;\n}\na[data-v-1237fda8] {\n  color: #000;\n}\n.card-content[data-v-1237fda8] {\n  position: relative;\n}\n.card-content a.btn-floating[data-v-1237fda8] {\n  top: -20px;\n}")
 ;(function(){
-"use strict";
+
 
 module.exports = {
   computed: {
-    types: function types() {
-      return this.$store.state.types;
+    types() {
+      console.log(this.$store);
+      return this.$store.state.database.types;
     }
   },
   methods: {
-    getLearnLink: function getLearnLink(type) {
+    getLearnLink(type) {
       return "train/" + type;
     }
   }
@@ -458,29 +3813,41 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-1237fda8", __vue__options__)
   } else {
-    hotAPI.rerender("data-v-1237fda8", __vue__options__)
+    hotAPI.reload("data-v-1237fda8", __vue__options__)
   }
 })()}
-},{"vue":16,"vue-hot-reload-api":14,"vueify/lib/insert-css":17}],12:[function(require,module,exports){
+},{"vue":62,"vue-hot-reload-api":60,"vueify/lib/insert-css":63}],28:[function(require,module,exports){
 var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("h1[data-v-5f14c517] {\n  margin-top: 0;\n  font-weight: 300;\n  font-size: 2em;\n}")
 ;(function(){
-"use strict";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = {
-  data: function data() {
+
+const ModelSubstance = require('../components/ModelSubstance.vue');
+const InfoSubstance = require('../components/InfoSubstance.vue');
+
+module.exports = {
+  components: {
+    ModelSubstance,
+    InfoSubstance
+  },
+  data() {
     return {
       query: this.$route.query.q
     };
+  },
+  computed: {
+    structureData() {
+      return this.$store.state.substance.data;
+    }
+  },
+  mounted() {
+    this.$store.dispatch('loadSubstance', this.query);
   }
 };
 })()
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"container",attrs:{"id":"substance"}},[_c('h1',[_vm._v("Запрос \""+_vm._s(_vm.query)+"\":")])])}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"container",attrs:{"id":"substance"}},[_c('model-substance',{attrs:{"data":_vm.structureData}}),_vm._v(" "),_c('info-substance')],1)}
 __vue__options__.staticRenderFns = []
 __vue__options__._scopeId = "data-v-5f14c517"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
@@ -491,10 +3858,1603 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-5f14c517", __vue__options__)
   } else {
-    hotAPI.rerender("data-v-5f14c517", __vue__options__)
+    hotAPI.reload("data-v-5f14c517", __vue__options__)
   }
 })()}
-},{"vue":16,"vue-hot-reload-api":14,"vueify/lib/insert-css":17}],13:[function(require,module,exports){
+},{"../components/InfoSubstance.vue":3,"../components/ModelSubstance.vue":4,"vue":62,"vue-hot-reload-api":60,"vueify/lib/insert-css":63}],29:[function(require,module,exports){
+module.exports = require('./lib/axios');
+},{"./lib/axios":31}],30:[function(require,module,exports){
+(function (process){
+'use strict';
+
+var utils = require('./../utils');
+var settle = require('./../core/settle');
+var buildURL = require('./../helpers/buildURL');
+var parseHeaders = require('./../helpers/parseHeaders');
+var isURLSameOrigin = require('./../helpers/isURLSameOrigin');
+var createError = require('../core/createError');
+var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || require('./../helpers/btoa');
+
+module.exports = function xhrAdapter(config) {
+  return new Promise(function dispatchXhrRequest(resolve, reject) {
+    var requestData = config.data;
+    var requestHeaders = config.headers;
+
+    if (utils.isFormData(requestData)) {
+      delete requestHeaders['Content-Type']; // Let the browser set it
+    }
+
+    var request = new XMLHttpRequest();
+    var loadEvent = 'onreadystatechange';
+    var xDomain = false;
+
+    // For IE 8/9 CORS support
+    // Only supports POST and GET calls and doesn't returns the response headers.
+    // DON'T do this for testing b/c XMLHttpRequest is mocked, not XDomainRequest.
+    if (process.env.NODE_ENV !== 'test' &&
+        typeof window !== 'undefined' &&
+        window.XDomainRequest && !('withCredentials' in request) &&
+        !isURLSameOrigin(config.url)) {
+      request = new window.XDomainRequest();
+      loadEvent = 'onload';
+      xDomain = true;
+      request.onprogress = function handleProgress() {};
+      request.ontimeout = function handleTimeout() {};
+    }
+
+    // HTTP basic authentication
+    if (config.auth) {
+      var username = config.auth.username || '';
+      var password = config.auth.password || '';
+      requestHeaders.Authorization = 'Basic ' + btoa(username + ':' + password);
+    }
+
+    request.open(config.method.toUpperCase(), buildURL(config.url, config.params, config.paramsSerializer), true);
+
+    // Set the request timeout in MS
+    request.timeout = config.timeout;
+
+    // Listen for ready state
+    request[loadEvent] = function handleLoad() {
+      if (!request || (request.readyState !== 4 && !xDomain)) {
+        return;
+      }
+
+      // The request errored out and we didn't get a response, this will be
+      // handled by onerror instead
+      // With one exception: request that using file: protocol, most browsers
+      // will return status as 0 even though it's a successful request
+      if (request.status === 0 && !(request.responseURL && request.responseURL.indexOf('file:') === 0)) {
+        return;
+      }
+
+      // Prepare the response
+      var responseHeaders = 'getAllResponseHeaders' in request ? parseHeaders(request.getAllResponseHeaders()) : null;
+      var responseData = !config.responseType || config.responseType === 'text' ? request.responseText : request.response;
+      var response = {
+        data: responseData,
+        // IE sends 1223 instead of 204 (https://github.com/mzabriskie/axios/issues/201)
+        status: request.status === 1223 ? 204 : request.status,
+        statusText: request.status === 1223 ? 'No Content' : request.statusText,
+        headers: responseHeaders,
+        config: config,
+        request: request
+      };
+
+      settle(resolve, reject, response);
+
+      // Clean up request
+      request = null;
+    };
+
+    // Handle low level network errors
+    request.onerror = function handleError() {
+      // Real errors are hidden from us by the browser
+      // onerror should only fire if it's a network error
+      reject(createError('Network Error', config, null, request));
+
+      // Clean up request
+      request = null;
+    };
+
+    // Handle timeout
+    request.ontimeout = function handleTimeout() {
+      reject(createError('timeout of ' + config.timeout + 'ms exceeded', config, 'ECONNABORTED',
+        request));
+
+      // Clean up request
+      request = null;
+    };
+
+    // Add xsrf header
+    // This is only done if running in a standard browser environment.
+    // Specifically not if we're in a web worker, or react-native.
+    if (utils.isStandardBrowserEnv()) {
+      var cookies = require('./../helpers/cookies');
+
+      // Add xsrf header
+      var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
+          cookies.read(config.xsrfCookieName) :
+          undefined;
+
+      if (xsrfValue) {
+        requestHeaders[config.xsrfHeaderName] = xsrfValue;
+      }
+    }
+
+    // Add headers to the request
+    if ('setRequestHeader' in request) {
+      utils.forEach(requestHeaders, function setRequestHeader(val, key) {
+        if (typeof requestData === 'undefined' && key.toLowerCase() === 'content-type') {
+          // Remove Content-Type if data is undefined
+          delete requestHeaders[key];
+        } else {
+          // Otherwise add header to the request
+          request.setRequestHeader(key, val);
+        }
+      });
+    }
+
+    // Add withCredentials to request if needed
+    if (config.withCredentials) {
+      request.withCredentials = true;
+    }
+
+    // Add responseType to request if needed
+    if (config.responseType) {
+      try {
+        request.responseType = config.responseType;
+      } catch (e) {
+        // Expected DOMException thrown by browsers not compatible XMLHttpRequest Level 2.
+        // But, this can be suppressed for 'json' type as it can be parsed by default 'transformResponse' function.
+        if (config.responseType !== 'json') {
+          throw e;
+        }
+      }
+    }
+
+    // Handle progress if needed
+    if (typeof config.onDownloadProgress === 'function') {
+      request.addEventListener('progress', config.onDownloadProgress);
+    }
+
+    // Not all browsers support upload events
+    if (typeof config.onUploadProgress === 'function' && request.upload) {
+      request.upload.addEventListener('progress', config.onUploadProgress);
+    }
+
+    if (config.cancelToken) {
+      // Handle cancellation
+      config.cancelToken.promise.then(function onCanceled(cancel) {
+        if (!request) {
+          return;
+        }
+
+        request.abort();
+        reject(cancel);
+        // Clean up request
+        request = null;
+      });
+    }
+
+    if (requestData === undefined) {
+      requestData = null;
+    }
+
+    // Send the request
+    request.send(requestData);
+  });
+};
+
+}).call(this,require('_process'))
+},{"../core/createError":37,"./../core/settle":40,"./../helpers/btoa":44,"./../helpers/buildURL":45,"./../helpers/cookies":47,"./../helpers/isURLSameOrigin":49,"./../helpers/parseHeaders":51,"./../utils":53,"_process":56}],31:[function(require,module,exports){
+'use strict';
+
+var utils = require('./utils');
+var bind = require('./helpers/bind');
+var Axios = require('./core/Axios');
+var defaults = require('./defaults');
+
+/**
+ * Create an instance of Axios
+ *
+ * @param {Object} defaultConfig The default config for the instance
+ * @return {Axios} A new instance of Axios
+ */
+function createInstance(defaultConfig) {
+  var context = new Axios(defaultConfig);
+  var instance = bind(Axios.prototype.request, context);
+
+  // Copy axios.prototype to instance
+  utils.extend(instance, Axios.prototype, context);
+
+  // Copy context to instance
+  utils.extend(instance, context);
+
+  return instance;
+}
+
+// Create the default instance to be exported
+var axios = createInstance(defaults);
+
+// Expose Axios class to allow class inheritance
+axios.Axios = Axios;
+
+// Factory for creating new instances
+axios.create = function create(instanceConfig) {
+  return createInstance(utils.merge(defaults, instanceConfig));
+};
+
+// Expose Cancel & CancelToken
+axios.Cancel = require('./cancel/Cancel');
+axios.CancelToken = require('./cancel/CancelToken');
+axios.isCancel = require('./cancel/isCancel');
+
+// Expose all/spread
+axios.all = function all(promises) {
+  return Promise.all(promises);
+};
+axios.spread = require('./helpers/spread');
+
+module.exports = axios;
+
+// Allow use of default import syntax in TypeScript
+module.exports.default = axios;
+
+},{"./cancel/Cancel":32,"./cancel/CancelToken":33,"./cancel/isCancel":34,"./core/Axios":35,"./defaults":42,"./helpers/bind":43,"./helpers/spread":52,"./utils":53}],32:[function(require,module,exports){
+'use strict';
+
+/**
+ * A `Cancel` is an object that is thrown when an operation is canceled.
+ *
+ * @class
+ * @param {string=} message The message.
+ */
+function Cancel(message) {
+  this.message = message;
+}
+
+Cancel.prototype.toString = function toString() {
+  return 'Cancel' + (this.message ? ': ' + this.message : '');
+};
+
+Cancel.prototype.__CANCEL__ = true;
+
+module.exports = Cancel;
+
+},{}],33:[function(require,module,exports){
+'use strict';
+
+var Cancel = require('./Cancel');
+
+/**
+ * A `CancelToken` is an object that can be used to request cancellation of an operation.
+ *
+ * @class
+ * @param {Function} executor The executor function.
+ */
+function CancelToken(executor) {
+  if (typeof executor !== 'function') {
+    throw new TypeError('executor must be a function.');
+  }
+
+  var resolvePromise;
+  this.promise = new Promise(function promiseExecutor(resolve) {
+    resolvePromise = resolve;
+  });
+
+  var token = this;
+  executor(function cancel(message) {
+    if (token.reason) {
+      // Cancellation has already been requested
+      return;
+    }
+
+    token.reason = new Cancel(message);
+    resolvePromise(token.reason);
+  });
+}
+
+/**
+ * Throws a `Cancel` if cancellation has been requested.
+ */
+CancelToken.prototype.throwIfRequested = function throwIfRequested() {
+  if (this.reason) {
+    throw this.reason;
+  }
+};
+
+/**
+ * Returns an object that contains a new `CancelToken` and a function that, when called,
+ * cancels the `CancelToken`.
+ */
+CancelToken.source = function source() {
+  var cancel;
+  var token = new CancelToken(function executor(c) {
+    cancel = c;
+  });
+  return {
+    token: token,
+    cancel: cancel
+  };
+};
+
+module.exports = CancelToken;
+
+},{"./Cancel":32}],34:[function(require,module,exports){
+'use strict';
+
+module.exports = function isCancel(value) {
+  return !!(value && value.__CANCEL__);
+};
+
+},{}],35:[function(require,module,exports){
+'use strict';
+
+var defaults = require('./../defaults');
+var utils = require('./../utils');
+var InterceptorManager = require('./InterceptorManager');
+var dispatchRequest = require('./dispatchRequest');
+var isAbsoluteURL = require('./../helpers/isAbsoluteURL');
+var combineURLs = require('./../helpers/combineURLs');
+
+/**
+ * Create a new instance of Axios
+ *
+ * @param {Object} instanceConfig The default config for the instance
+ */
+function Axios(instanceConfig) {
+  this.defaults = instanceConfig;
+  this.interceptors = {
+    request: new InterceptorManager(),
+    response: new InterceptorManager()
+  };
+}
+
+/**
+ * Dispatch a request
+ *
+ * @param {Object} config The config specific for this request (merged with this.defaults)
+ */
+Axios.prototype.request = function request(config) {
+  /*eslint no-param-reassign:0*/
+  // Allow for axios('example/url'[, config]) a la fetch API
+  if (typeof config === 'string') {
+    config = utils.merge({
+      url: arguments[0]
+    }, arguments[1]);
+  }
+
+  config = utils.merge(defaults, this.defaults, { method: 'get' }, config);
+  config.method = config.method.toLowerCase();
+
+  // Support baseURL config
+  if (config.baseURL && !isAbsoluteURL(config.url)) {
+    config.url = combineURLs(config.baseURL, config.url);
+  }
+
+  // Hook up interceptors middleware
+  var chain = [dispatchRequest, undefined];
+  var promise = Promise.resolve(config);
+
+  this.interceptors.request.forEach(function unshiftRequestInterceptors(interceptor) {
+    chain.unshift(interceptor.fulfilled, interceptor.rejected);
+  });
+
+  this.interceptors.response.forEach(function pushResponseInterceptors(interceptor) {
+    chain.push(interceptor.fulfilled, interceptor.rejected);
+  });
+
+  while (chain.length) {
+    promise = promise.then(chain.shift(), chain.shift());
+  }
+
+  return promise;
+};
+
+// Provide aliases for supported request methods
+utils.forEach(['delete', 'get', 'head', 'options'], function forEachMethodNoData(method) {
+  /*eslint func-names:0*/
+  Axios.prototype[method] = function(url, config) {
+    return this.request(utils.merge(config || {}, {
+      method: method,
+      url: url
+    }));
+  };
+});
+
+utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
+  /*eslint func-names:0*/
+  Axios.prototype[method] = function(url, data, config) {
+    return this.request(utils.merge(config || {}, {
+      method: method,
+      url: url,
+      data: data
+    }));
+  };
+});
+
+module.exports = Axios;
+
+},{"./../defaults":42,"./../helpers/combineURLs":46,"./../helpers/isAbsoluteURL":48,"./../utils":53,"./InterceptorManager":36,"./dispatchRequest":38}],36:[function(require,module,exports){
+'use strict';
+
+var utils = require('./../utils');
+
+function InterceptorManager() {
+  this.handlers = [];
+}
+
+/**
+ * Add a new interceptor to the stack
+ *
+ * @param {Function} fulfilled The function to handle `then` for a `Promise`
+ * @param {Function} rejected The function to handle `reject` for a `Promise`
+ *
+ * @return {Number} An ID used to remove interceptor later
+ */
+InterceptorManager.prototype.use = function use(fulfilled, rejected) {
+  this.handlers.push({
+    fulfilled: fulfilled,
+    rejected: rejected
+  });
+  return this.handlers.length - 1;
+};
+
+/**
+ * Remove an interceptor from the stack
+ *
+ * @param {Number} id The ID that was returned by `use`
+ */
+InterceptorManager.prototype.eject = function eject(id) {
+  if (this.handlers[id]) {
+    this.handlers[id] = null;
+  }
+};
+
+/**
+ * Iterate over all the registered interceptors
+ *
+ * This method is particularly useful for skipping over any
+ * interceptors that may have become `null` calling `eject`.
+ *
+ * @param {Function} fn The function to call for each interceptor
+ */
+InterceptorManager.prototype.forEach = function forEach(fn) {
+  utils.forEach(this.handlers, function forEachHandler(h) {
+    if (h !== null) {
+      fn(h);
+    }
+  });
+};
+
+module.exports = InterceptorManager;
+
+},{"./../utils":53}],37:[function(require,module,exports){
+'use strict';
+
+var enhanceError = require('./enhanceError');
+
+/**
+ * Create an Error with the specified message, config, error code, request and response.
+ *
+ * @param {string} message The error message.
+ * @param {Object} config The config.
+ * @param {string} [code] The error code (for example, 'ECONNABORTED').
+ * @param {Object} [request] The request.
+ * @param {Object} [response] The response.
+ * @returns {Error} The created error.
+ */
+module.exports = function createError(message, config, code, request, response) {
+  var error = new Error(message);
+  return enhanceError(error, config, code, request, response);
+};
+
+},{"./enhanceError":39}],38:[function(require,module,exports){
+'use strict';
+
+var utils = require('./../utils');
+var transformData = require('./transformData');
+var isCancel = require('../cancel/isCancel');
+var defaults = require('../defaults');
+
+/**
+ * Throws a `Cancel` if cancellation has been requested.
+ */
+function throwIfCancellationRequested(config) {
+  if (config.cancelToken) {
+    config.cancelToken.throwIfRequested();
+  }
+}
+
+/**
+ * Dispatch a request to the server using the configured adapter.
+ *
+ * @param {object} config The config that is to be used for the request
+ * @returns {Promise} The Promise to be fulfilled
+ */
+module.exports = function dispatchRequest(config) {
+  throwIfCancellationRequested(config);
+
+  // Ensure headers exist
+  config.headers = config.headers || {};
+
+  // Transform request data
+  config.data = transformData(
+    config.data,
+    config.headers,
+    config.transformRequest
+  );
+
+  // Flatten headers
+  config.headers = utils.merge(
+    config.headers.common || {},
+    config.headers[config.method] || {},
+    config.headers || {}
+  );
+
+  utils.forEach(
+    ['delete', 'get', 'head', 'post', 'put', 'patch', 'common'],
+    function cleanHeaderConfig(method) {
+      delete config.headers[method];
+    }
+  );
+
+  var adapter = config.adapter || defaults.adapter;
+
+  return adapter(config).then(function onAdapterResolution(response) {
+    throwIfCancellationRequested(config);
+
+    // Transform response data
+    response.data = transformData(
+      response.data,
+      response.headers,
+      config.transformResponse
+    );
+
+    return response;
+  }, function onAdapterRejection(reason) {
+    if (!isCancel(reason)) {
+      throwIfCancellationRequested(config);
+
+      // Transform response data
+      if (reason && reason.response) {
+        reason.response.data = transformData(
+          reason.response.data,
+          reason.response.headers,
+          config.transformResponse
+        );
+      }
+    }
+
+    return Promise.reject(reason);
+  });
+};
+
+},{"../cancel/isCancel":34,"../defaults":42,"./../utils":53,"./transformData":41}],39:[function(require,module,exports){
+'use strict';
+
+/**
+ * Update an Error with the specified config, error code, and response.
+ *
+ * @param {Error} error The error to update.
+ * @param {Object} config The config.
+ * @param {string} [code] The error code (for example, 'ECONNABORTED').
+ * @param {Object} [request] The request.
+ * @param {Object} [response] The response.
+ * @returns {Error} The error.
+ */
+module.exports = function enhanceError(error, config, code, request, response) {
+  error.config = config;
+  if (code) {
+    error.code = code;
+  }
+  error.request = request;
+  error.response = response;
+  return error;
+};
+
+},{}],40:[function(require,module,exports){
+'use strict';
+
+var createError = require('./createError');
+
+/**
+ * Resolve or reject a Promise based on response status.
+ *
+ * @param {Function} resolve A function that resolves the promise.
+ * @param {Function} reject A function that rejects the promise.
+ * @param {object} response The response.
+ */
+module.exports = function settle(resolve, reject, response) {
+  var validateStatus = response.config.validateStatus;
+  // Note: status is not exposed by XDomainRequest
+  if (!response.status || !validateStatus || validateStatus(response.status)) {
+    resolve(response);
+  } else {
+    reject(createError(
+      'Request failed with status code ' + response.status,
+      response.config,
+      null,
+      response.request,
+      response
+    ));
+  }
+};
+
+},{"./createError":37}],41:[function(require,module,exports){
+'use strict';
+
+var utils = require('./../utils');
+
+/**
+ * Transform the data for a request or a response
+ *
+ * @param {Object|String} data The data to be transformed
+ * @param {Array} headers The headers for the request or response
+ * @param {Array|Function} fns A single function or Array of functions
+ * @returns {*} The resulting transformed data
+ */
+module.exports = function transformData(data, headers, fns) {
+  /*eslint no-param-reassign:0*/
+  utils.forEach(fns, function transform(fn) {
+    data = fn(data, headers);
+  });
+
+  return data;
+};
+
+},{"./../utils":53}],42:[function(require,module,exports){
+(function (process){
+'use strict';
+
+var utils = require('./utils');
+var normalizeHeaderName = require('./helpers/normalizeHeaderName');
+
+var DEFAULT_CONTENT_TYPE = {
+  'Content-Type': 'application/x-www-form-urlencoded'
+};
+
+function setContentTypeIfUnset(headers, value) {
+  if (!utils.isUndefined(headers) && utils.isUndefined(headers['Content-Type'])) {
+    headers['Content-Type'] = value;
+  }
+}
+
+function getDefaultAdapter() {
+  var adapter;
+  if (typeof XMLHttpRequest !== 'undefined') {
+    // For browsers use XHR adapter
+    adapter = require('./adapters/xhr');
+  } else if (typeof process !== 'undefined') {
+    // For node use HTTP adapter
+    adapter = require('./adapters/http');
+  }
+  return adapter;
+}
+
+var defaults = {
+  adapter: getDefaultAdapter(),
+
+  transformRequest: [function transformRequest(data, headers) {
+    normalizeHeaderName(headers, 'Content-Type');
+    if (utils.isFormData(data) ||
+      utils.isArrayBuffer(data) ||
+      utils.isBuffer(data) ||
+      utils.isStream(data) ||
+      utils.isFile(data) ||
+      utils.isBlob(data)
+    ) {
+      return data;
+    }
+    if (utils.isArrayBufferView(data)) {
+      return data.buffer;
+    }
+    if (utils.isURLSearchParams(data)) {
+      setContentTypeIfUnset(headers, 'application/x-www-form-urlencoded;charset=utf-8');
+      return data.toString();
+    }
+    if (utils.isObject(data)) {
+      setContentTypeIfUnset(headers, 'application/json;charset=utf-8');
+      return JSON.stringify(data);
+    }
+    return data;
+  }],
+
+  transformResponse: [function transformResponse(data) {
+    /*eslint no-param-reassign:0*/
+    if (typeof data === 'string') {
+      try {
+        data = JSON.parse(data);
+      } catch (e) { /* Ignore */ }
+    }
+    return data;
+  }],
+
+  timeout: 0,
+
+  xsrfCookieName: 'XSRF-TOKEN',
+  xsrfHeaderName: 'X-XSRF-TOKEN',
+
+  maxContentLength: -1,
+
+  validateStatus: function validateStatus(status) {
+    return status >= 200 && status < 300;
+  }
+};
+
+defaults.headers = {
+  common: {
+    'Accept': 'application/json, text/plain, */*'
+  }
+};
+
+utils.forEach(['delete', 'get', 'head'], function forEachMethodNoData(method) {
+  defaults.headers[method] = {};
+});
+
+utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
+  defaults.headers[method] = utils.merge(DEFAULT_CONTENT_TYPE);
+});
+
+module.exports = defaults;
+
+}).call(this,require('_process'))
+},{"./adapters/http":30,"./adapters/xhr":30,"./helpers/normalizeHeaderName":50,"./utils":53,"_process":56}],43:[function(require,module,exports){
+'use strict';
+
+module.exports = function bind(fn, thisArg) {
+  return function wrap() {
+    var args = new Array(arguments.length);
+    for (var i = 0; i < args.length; i++) {
+      args[i] = arguments[i];
+    }
+    return fn.apply(thisArg, args);
+  };
+};
+
+},{}],44:[function(require,module,exports){
+'use strict';
+
+// btoa polyfill for IE<10 courtesy https://github.com/davidchambers/Base64.js
+
+var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
+
+function E() {
+  this.message = 'String contains an invalid character';
+}
+E.prototype = new Error;
+E.prototype.code = 5;
+E.prototype.name = 'InvalidCharacterError';
+
+function btoa(input) {
+  var str = String(input);
+  var output = '';
+  for (
+    // initialize result and counter
+    var block, charCode, idx = 0, map = chars;
+    // if the next str index does not exist:
+    //   change the mapping table to "="
+    //   check if d has no fractional digits
+    str.charAt(idx | 0) || (map = '=', idx % 1);
+    // "8 - idx % 1 * 8" generates the sequence 2, 4, 6, 8
+    output += map.charAt(63 & block >> 8 - idx % 1 * 8)
+  ) {
+    charCode = str.charCodeAt(idx += 3 / 4);
+    if (charCode > 0xFF) {
+      throw new E();
+    }
+    block = block << 8 | charCode;
+  }
+  return output;
+}
+
+module.exports = btoa;
+
+},{}],45:[function(require,module,exports){
+'use strict';
+
+var utils = require('./../utils');
+
+function encode(val) {
+  return encodeURIComponent(val).
+    replace(/%40/gi, '@').
+    replace(/%3A/gi, ':').
+    replace(/%24/g, '$').
+    replace(/%2C/gi, ',').
+    replace(/%20/g, '+').
+    replace(/%5B/gi, '[').
+    replace(/%5D/gi, ']');
+}
+
+/**
+ * Build a URL by appending params to the end
+ *
+ * @param {string} url The base of the url (e.g., http://www.google.com)
+ * @param {object} [params] The params to be appended
+ * @returns {string} The formatted url
+ */
+module.exports = function buildURL(url, params, paramsSerializer) {
+  /*eslint no-param-reassign:0*/
+  if (!params) {
+    return url;
+  }
+
+  var serializedParams;
+  if (paramsSerializer) {
+    serializedParams = paramsSerializer(params);
+  } else if (utils.isURLSearchParams(params)) {
+    serializedParams = params.toString();
+  } else {
+    var parts = [];
+
+    utils.forEach(params, function serialize(val, key) {
+      if (val === null || typeof val === 'undefined') {
+        return;
+      }
+
+      if (utils.isArray(val)) {
+        key = key + '[]';
+      }
+
+      if (!utils.isArray(val)) {
+        val = [val];
+      }
+
+      utils.forEach(val, function parseValue(v) {
+        if (utils.isDate(v)) {
+          v = v.toISOString();
+        } else if (utils.isObject(v)) {
+          v = JSON.stringify(v);
+        }
+        parts.push(encode(key) + '=' + encode(v));
+      });
+    });
+
+    serializedParams = parts.join('&');
+  }
+
+  if (serializedParams) {
+    url += (url.indexOf('?') === -1 ? '?' : '&') + serializedParams;
+  }
+
+  return url;
+};
+
+},{"./../utils":53}],46:[function(require,module,exports){
+'use strict';
+
+/**
+ * Creates a new URL by combining the specified URLs
+ *
+ * @param {string} baseURL The base URL
+ * @param {string} relativeURL The relative URL
+ * @returns {string} The combined URL
+ */
+module.exports = function combineURLs(baseURL, relativeURL) {
+  return relativeURL
+    ? baseURL.replace(/\/+$/, '') + '/' + relativeURL.replace(/^\/+/, '')
+    : baseURL;
+};
+
+},{}],47:[function(require,module,exports){
+'use strict';
+
+var utils = require('./../utils');
+
+module.exports = (
+  utils.isStandardBrowserEnv() ?
+
+  // Standard browser envs support document.cookie
+  (function standardBrowserEnv() {
+    return {
+      write: function write(name, value, expires, path, domain, secure) {
+        var cookie = [];
+        cookie.push(name + '=' + encodeURIComponent(value));
+
+        if (utils.isNumber(expires)) {
+          cookie.push('expires=' + new Date(expires).toGMTString());
+        }
+
+        if (utils.isString(path)) {
+          cookie.push('path=' + path);
+        }
+
+        if (utils.isString(domain)) {
+          cookie.push('domain=' + domain);
+        }
+
+        if (secure === true) {
+          cookie.push('secure');
+        }
+
+        document.cookie = cookie.join('; ');
+      },
+
+      read: function read(name) {
+        var match = document.cookie.match(new RegExp('(^|;\\s*)(' + name + ')=([^;]*)'));
+        return (match ? decodeURIComponent(match[3]) : null);
+      },
+
+      remove: function remove(name) {
+        this.write(name, '', Date.now() - 86400000);
+      }
+    };
+  })() :
+
+  // Non standard browser env (web workers, react-native) lack needed support.
+  (function nonStandardBrowserEnv() {
+    return {
+      write: function write() {},
+      read: function read() { return null; },
+      remove: function remove() {}
+    };
+  })()
+);
+
+},{"./../utils":53}],48:[function(require,module,exports){
+'use strict';
+
+/**
+ * Determines whether the specified URL is absolute
+ *
+ * @param {string} url The URL to test
+ * @returns {boolean} True if the specified URL is absolute, otherwise false
+ */
+module.exports = function isAbsoluteURL(url) {
+  // A URL is considered absolute if it begins with "<scheme>://" or "//" (protocol-relative URL).
+  // RFC 3986 defines scheme name as a sequence of characters beginning with a letter and followed
+  // by any combination of letters, digits, plus, period, or hyphen.
+  return /^([a-z][a-z\d\+\-\.]*:)?\/\//i.test(url);
+};
+
+},{}],49:[function(require,module,exports){
+'use strict';
+
+var utils = require('./../utils');
+
+module.exports = (
+  utils.isStandardBrowserEnv() ?
+
+  // Standard browser envs have full support of the APIs needed to test
+  // whether the request URL is of the same origin as current location.
+  (function standardBrowserEnv() {
+    var msie = /(msie|trident)/i.test(navigator.userAgent);
+    var urlParsingNode = document.createElement('a');
+    var originURL;
+
+    /**
+    * Parse a URL to discover it's components
+    *
+    * @param {String} url The URL to be parsed
+    * @returns {Object}
+    */
+    function resolveURL(url) {
+      var href = url;
+
+      if (msie) {
+        // IE needs attribute set twice to normalize properties
+        urlParsingNode.setAttribute('href', href);
+        href = urlParsingNode.href;
+      }
+
+      urlParsingNode.setAttribute('href', href);
+
+      // urlParsingNode provides the UrlUtils interface - http://url.spec.whatwg.org/#urlutils
+      return {
+        href: urlParsingNode.href,
+        protocol: urlParsingNode.protocol ? urlParsingNode.protocol.replace(/:$/, '') : '',
+        host: urlParsingNode.host,
+        search: urlParsingNode.search ? urlParsingNode.search.replace(/^\?/, '') : '',
+        hash: urlParsingNode.hash ? urlParsingNode.hash.replace(/^#/, '') : '',
+        hostname: urlParsingNode.hostname,
+        port: urlParsingNode.port,
+        pathname: (urlParsingNode.pathname.charAt(0) === '/') ?
+                  urlParsingNode.pathname :
+                  '/' + urlParsingNode.pathname
+      };
+    }
+
+    originURL = resolveURL(window.location.href);
+
+    /**
+    * Determine if a URL shares the same origin as the current location
+    *
+    * @param {String} requestURL The URL to test
+    * @returns {boolean} True if URL shares the same origin, otherwise false
+    */
+    return function isURLSameOrigin(requestURL) {
+      var parsed = (utils.isString(requestURL)) ? resolveURL(requestURL) : requestURL;
+      return (parsed.protocol === originURL.protocol &&
+            parsed.host === originURL.host);
+    };
+  })() :
+
+  // Non standard browser envs (web workers, react-native) lack needed support.
+  (function nonStandardBrowserEnv() {
+    return function isURLSameOrigin() {
+      return true;
+    };
+  })()
+);
+
+},{"./../utils":53}],50:[function(require,module,exports){
+'use strict';
+
+var utils = require('../utils');
+
+module.exports = function normalizeHeaderName(headers, normalizedName) {
+  utils.forEach(headers, function processHeader(value, name) {
+    if (name !== normalizedName && name.toUpperCase() === normalizedName.toUpperCase()) {
+      headers[normalizedName] = value;
+      delete headers[name];
+    }
+  });
+};
+
+},{"../utils":53}],51:[function(require,module,exports){
+'use strict';
+
+var utils = require('./../utils');
+
+/**
+ * Parse headers into an object
+ *
+ * ```
+ * Date: Wed, 27 Aug 2014 08:58:49 GMT
+ * Content-Type: application/json
+ * Connection: keep-alive
+ * Transfer-Encoding: chunked
+ * ```
+ *
+ * @param {String} headers Headers needing to be parsed
+ * @returns {Object} Headers parsed into an object
+ */
+module.exports = function parseHeaders(headers) {
+  var parsed = {};
+  var key;
+  var val;
+  var i;
+
+  if (!headers) { return parsed; }
+
+  utils.forEach(headers.split('\n'), function parser(line) {
+    i = line.indexOf(':');
+    key = utils.trim(line.substr(0, i)).toLowerCase();
+    val = utils.trim(line.substr(i + 1));
+
+    if (key) {
+      parsed[key] = parsed[key] ? parsed[key] + ', ' + val : val;
+    }
+  });
+
+  return parsed;
+};
+
+},{"./../utils":53}],52:[function(require,module,exports){
+'use strict';
+
+/**
+ * Syntactic sugar for invoking a function and expanding an array for arguments.
+ *
+ * Common use case would be to use `Function.prototype.apply`.
+ *
+ *  ```js
+ *  function f(x, y, z) {}
+ *  var args = [1, 2, 3];
+ *  f.apply(null, args);
+ *  ```
+ *
+ * With `spread` this example can be re-written.
+ *
+ *  ```js
+ *  spread(function(x, y, z) {})([1, 2, 3]);
+ *  ```
+ *
+ * @param {Function} callback
+ * @returns {Function}
+ */
+module.exports = function spread(callback) {
+  return function wrap(arr) {
+    return callback.apply(null, arr);
+  };
+};
+
+},{}],53:[function(require,module,exports){
+'use strict';
+
+var bind = require('./helpers/bind');
+var isBuffer = require('is-buffer');
+
+/*global toString:true*/
+
+// utils is a library of generic helper functions non-specific to axios
+
+var toString = Object.prototype.toString;
+
+/**
+ * Determine if a value is an Array
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an Array, otherwise false
+ */
+function isArray(val) {
+  return toString.call(val) === '[object Array]';
+}
+
+/**
+ * Determine if a value is an ArrayBuffer
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an ArrayBuffer, otherwise false
+ */
+function isArrayBuffer(val) {
+  return toString.call(val) === '[object ArrayBuffer]';
+}
+
+/**
+ * Determine if a value is a FormData
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an FormData, otherwise false
+ */
+function isFormData(val) {
+  return (typeof FormData !== 'undefined') && (val instanceof FormData);
+}
+
+/**
+ * Determine if a value is a view on an ArrayBuffer
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a view on an ArrayBuffer, otherwise false
+ */
+function isArrayBufferView(val) {
+  var result;
+  if ((typeof ArrayBuffer !== 'undefined') && (ArrayBuffer.isView)) {
+    result = ArrayBuffer.isView(val);
+  } else {
+    result = (val) && (val.buffer) && (val.buffer instanceof ArrayBuffer);
+  }
+  return result;
+}
+
+/**
+ * Determine if a value is a String
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a String, otherwise false
+ */
+function isString(val) {
+  return typeof val === 'string';
+}
+
+/**
+ * Determine if a value is a Number
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Number, otherwise false
+ */
+function isNumber(val) {
+  return typeof val === 'number';
+}
+
+/**
+ * Determine if a value is undefined
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if the value is undefined, otherwise false
+ */
+function isUndefined(val) {
+  return typeof val === 'undefined';
+}
+
+/**
+ * Determine if a value is an Object
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an Object, otherwise false
+ */
+function isObject(val) {
+  return val !== null && typeof val === 'object';
+}
+
+/**
+ * Determine if a value is a Date
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Date, otherwise false
+ */
+function isDate(val) {
+  return toString.call(val) === '[object Date]';
+}
+
+/**
+ * Determine if a value is a File
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a File, otherwise false
+ */
+function isFile(val) {
+  return toString.call(val) === '[object File]';
+}
+
+/**
+ * Determine if a value is a Blob
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Blob, otherwise false
+ */
+function isBlob(val) {
+  return toString.call(val) === '[object Blob]';
+}
+
+/**
+ * Determine if a value is a Function
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Function, otherwise false
+ */
+function isFunction(val) {
+  return toString.call(val) === '[object Function]';
+}
+
+/**
+ * Determine if a value is a Stream
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Stream, otherwise false
+ */
+function isStream(val) {
+  return isObject(val) && isFunction(val.pipe);
+}
+
+/**
+ * Determine if a value is a URLSearchParams object
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a URLSearchParams object, otherwise false
+ */
+function isURLSearchParams(val) {
+  return typeof URLSearchParams !== 'undefined' && val instanceof URLSearchParams;
+}
+
+/**
+ * Trim excess whitespace off the beginning and end of a string
+ *
+ * @param {String} str The String to trim
+ * @returns {String} The String freed of excess whitespace
+ */
+function trim(str) {
+  return str.replace(/^\s*/, '').replace(/\s*$/, '');
+}
+
+/**
+ * Determine if we're running in a standard browser environment
+ *
+ * This allows axios to run in a web worker, and react-native.
+ * Both environments support XMLHttpRequest, but not fully standard globals.
+ *
+ * web workers:
+ *  typeof window -> undefined
+ *  typeof document -> undefined
+ *
+ * react-native:
+ *  navigator.product -> 'ReactNative'
+ */
+function isStandardBrowserEnv() {
+  if (typeof navigator !== 'undefined' && navigator.product === 'ReactNative') {
+    return false;
+  }
+  return (
+    typeof window !== 'undefined' &&
+    typeof document !== 'undefined'
+  );
+}
+
+/**
+ * Iterate over an Array or an Object invoking a function for each item.
+ *
+ * If `obj` is an Array callback will be called passing
+ * the value, index, and complete array for each item.
+ *
+ * If 'obj' is an Object callback will be called passing
+ * the value, key, and complete object for each property.
+ *
+ * @param {Object|Array} obj The object to iterate
+ * @param {Function} fn The callback to invoke for each item
+ */
+function forEach(obj, fn) {
+  // Don't bother if no value provided
+  if (obj === null || typeof obj === 'undefined') {
+    return;
+  }
+
+  // Force an array if not already something iterable
+  if (typeof obj !== 'object' && !isArray(obj)) {
+    /*eslint no-param-reassign:0*/
+    obj = [obj];
+  }
+
+  if (isArray(obj)) {
+    // Iterate over array values
+    for (var i = 0, l = obj.length; i < l; i++) {
+      fn.call(null, obj[i], i, obj);
+    }
+  } else {
+    // Iterate over object keys
+    for (var key in obj) {
+      if (Object.prototype.hasOwnProperty.call(obj, key)) {
+        fn.call(null, obj[key], key, obj);
+      }
+    }
+  }
+}
+
+/**
+ * Accepts varargs expecting each argument to be an object, then
+ * immutably merges the properties of each object and returns result.
+ *
+ * When multiple objects contain the same key the later object in
+ * the arguments list will take precedence.
+ *
+ * Example:
+ *
+ * ```js
+ * var result = merge({foo: 123}, {foo: 456});
+ * console.log(result.foo); // outputs 456
+ * ```
+ *
+ * @param {Object} obj1 Object to merge
+ * @returns {Object} Result of all merge properties
+ */
+function merge(/* obj1, obj2, obj3, ... */) {
+  var result = {};
+  function assignValue(val, key) {
+    if (typeof result[key] === 'object' && typeof val === 'object') {
+      result[key] = merge(result[key], val);
+    } else {
+      result[key] = val;
+    }
+  }
+
+  for (var i = 0, l = arguments.length; i < l; i++) {
+    forEach(arguments[i], assignValue);
+  }
+  return result;
+}
+
+/**
+ * Extends object a by mutably adding to it the properties of object b.
+ *
+ * @param {Object} a The object to be extended
+ * @param {Object} b The object to copy properties from
+ * @param {Object} thisArg The object to bind function to
+ * @return {Object} The resulting value of object a
+ */
+function extend(a, b, thisArg) {
+  forEach(b, function assignValue(val, key) {
+    if (thisArg && typeof val === 'function') {
+      a[key] = bind(val, thisArg);
+    } else {
+      a[key] = val;
+    }
+  });
+  return a;
+}
+
+module.exports = {
+  isArray: isArray,
+  isArrayBuffer: isArrayBuffer,
+  isBuffer: isBuffer,
+  isFormData: isFormData,
+  isArrayBufferView: isArrayBufferView,
+  isString: isString,
+  isNumber: isNumber,
+  isObject: isObject,
+  isUndefined: isUndefined,
+  isDate: isDate,
+  isFile: isFile,
+  isBlob: isBlob,
+  isFunction: isFunction,
+  isStream: isStream,
+  isURLSearchParams: isURLSearchParams,
+  isStandardBrowserEnv: isStandardBrowserEnv,
+  forEach: forEach,
+  merge: merge,
+  extend: extend,
+  trim: trim
+};
+
+},{"./helpers/bind":43,"is-buffer":55}],54:[function(require,module,exports){
+
+/**
+ * Expose `Emitter`.
+ */
+
+module.exports = Emitter;
+
+/**
+ * Initialize a new `Emitter`.
+ *
+ * @api public
+ */
+
+function Emitter(obj) {
+  if (obj) return mixin(obj);
+};
+
+/**
+ * Mixin the emitter properties.
+ *
+ * @param {Object} obj
+ * @return {Object}
+ * @api private
+ */
+
+function mixin(obj) {
+  for (var key in Emitter.prototype) {
+    obj[key] = Emitter.prototype[key];
+  }
+  return obj;
+}
+
+/**
+ * Listen on the given `event` with `fn`.
+ *
+ * @param {String} event
+ * @param {Function} fn
+ * @return {Emitter}
+ * @api public
+ */
+
+Emitter.prototype.on =
+Emitter.prototype.addEventListener = function(event, fn){
+  this._callbacks = this._callbacks || {};
+  (this._callbacks[event] = this._callbacks[event] || [])
+    .push(fn);
+  return this;
+};
+
+/**
+ * Adds an `event` listener that will be invoked a single
+ * time then automatically removed.
+ *
+ * @param {String} event
+ * @param {Function} fn
+ * @return {Emitter}
+ * @api public
+ */
+
+Emitter.prototype.once = function(event, fn){
+  var self = this;
+  this._callbacks = this._callbacks || {};
+
+  function on() {
+    self.off(event, on);
+    fn.apply(this, arguments);
+  }
+
+  on.fn = fn;
+  this.on(event, on);
+  return this;
+};
+
+/**
+ * Remove the given callback for `event` or all
+ * registered callbacks.
+ *
+ * @param {String} event
+ * @param {Function} fn
+ * @return {Emitter}
+ * @api public
+ */
+
+Emitter.prototype.off =
+Emitter.prototype.removeListener =
+Emitter.prototype.removeAllListeners =
+Emitter.prototype.removeEventListener = function(event, fn){
+  this._callbacks = this._callbacks || {};
+
+  // all
+  if (0 == arguments.length) {
+    this._callbacks = {};
+    return this;
+  }
+
+  // specific event
+  var callbacks = this._callbacks[event];
+  if (!callbacks) return this;
+
+  // remove all handlers
+  if (1 == arguments.length) {
+    delete this._callbacks[event];
+    return this;
+  }
+
+  // remove specific handler
+  var cb;
+  for (var i = 0; i < callbacks.length; i++) {
+    cb = callbacks[i];
+    if (cb === fn || cb.fn === fn) {
+      callbacks.splice(i, 1);
+      break;
+    }
+  }
+  return this;
+};
+
+/**
+ * Emit `event` with the given args.
+ *
+ * @param {String} event
+ * @param {Mixed} ...
+ * @return {Emitter}
+ */
+
+Emitter.prototype.emit = function(event){
+  this._callbacks = this._callbacks || {};
+  var args = [].slice.call(arguments, 1)
+    , callbacks = this._callbacks[event];
+
+  if (callbacks) {
+    callbacks = callbacks.slice(0);
+    for (var i = 0, len = callbacks.length; i < len; ++i) {
+      callbacks[i].apply(this, args);
+    }
+  }
+
+  return this;
+};
+
+/**
+ * Return array of callbacks for `event`.
+ *
+ * @param {String} event
+ * @return {Array}
+ * @api public
+ */
+
+Emitter.prototype.listeners = function(event){
+  this._callbacks = this._callbacks || {};
+  return this._callbacks[event] || [];
+};
+
+/**
+ * Check if this emitter has `event` handlers.
+ *
+ * @param {String} event
+ * @return {Boolean}
+ * @api public
+ */
+
+Emitter.prototype.hasListeners = function(event){
+  return !! this.listeners(event).length;
+};
+
+},{}],55:[function(require,module,exports){
+/*!
+ * Determine if an object is a Buffer
+ *
+ * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
+ * @license  MIT
+ */
+
+// The _isBuffer check is for Safari 5-7 support, because it's missing
+// Object.prototype.constructor. Remove this eventually
+module.exports = function (obj) {
+  return obj != null && (isBuffer(obj) || isSlowBuffer(obj) || !!obj._isBuffer)
+}
+
+function isBuffer (obj) {
+  return !!obj.constructor && typeof obj.constructor.isBuffer === 'function' && obj.constructor.isBuffer(obj)
+}
+
+// For Node v0.10 support. Remove this eventually.
+function isSlowBuffer (obj) {
+  return typeof obj.readFloatLE === 'function' && typeof obj.slice === 'function' && isBuffer(obj.slice(0, 0))
+}
+
+},{}],56:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -680,7 +5640,1469 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],14:[function(require,module,exports){
+},{}],57:[function(require,module,exports){
+(function(root, factory) {
+	if (typeof define === "function" && define.amd) {
+		define(["superagent"], function(a0) {
+            return factory(a0);
+        });
+    } else if (typeof exports === "object") {
+        module.exports = factory(require("superagent"));
+    } else {
+        factory(request);
+    }
+})(this, function(request) {
+	"use strict";
+    /*
+     * A module to communicate with PubChem.
+     * Facilitates the use of PubChem API for JS environments.
+     * Suitable for front-end and Node development.
+     * @module pubchem-api
+     */
+    
+    // Base of the Pubchem API
+    var baseUrl = "https://pubchem.ncbi.nlm.nih.gov/rest/pug";
+    
+    /**
+     * Defines Find constructor.
+     * @param {string} prop - param associated with passed property
+     * @param {string} [optionGet] - Additional option associated with CmpdOps obj.
+     */
+    function Find (prop, optionGet) {
+        this.prop = prop;
+        this.optionGet = optionGet;		 
+    }
+    
+    /**
+     * The final callback passed by user
+     * @callback finalCallback
+     * @param {string|Object} data - parsed response obtained from PubChem
+     * @param {number} [status] - status of the response
+     */
+    
+    /**
+     * Returns object with the final "find()" function.
+     * @function
+     * @param {string} url - almost complete url (lacks only data format)
+     * @returns {Object} obj - object containing "find()" function
+     * @returns {Object} obj.find - final function calling "execSearch()"
+     */
+    Find.prototype.exec = function (url) {		
+		function execute (callback, dataFormat, optionF) {
+            execSearch(url, callback, {
+				prop: this.prop,
+				optionF: optionF,
+				optionGet: this.optionGet,
+				dF: dataFormat
+            });
+        }
+        return {
+            execute: execute.bind(this)	
+        };
+    };
+    
+    /**
+     * Executes the request to PubChem.
+     * @param {string} url - almost complete url (lacks only data format)
+     * @param {finalCallback} callback - handles the response
+     * @param {Object} obj - object that holds additional info (property, additional options, requested data format)
+     * @param {string} obj.prop - param associated with passed property
+     * @param {string} [obj.optionF] - option associated with "find()" function
+     * @param {string} [obj.optionGet] - option associated with "get" function
+     * @param {string} [obj.dF=JSON] - requested data format
+     */
+    function execSearch (url, callback, obj) {
+        if (typeof obj.dF === "undefined") {
+            obj.dF = "JSON";
+        }        
+        
+        request
+            .get(url.appendToPubchem(obj.dF))
+            .end(function (err, res) {
+                if (res.ok) {
+                    // If response is status OK, then returns status = 1.
+                    if (obj.dF !== "JSON" || obj.optionF === "raw") {
+                        // Does not parse the response body if JSON is NOT requested or "raw" option is passed.
+                        callback(res.body, 1);
+                    } else {
+                        // Parses the response body accordingly to the requested data.
+                        callback(parseProperties(res.body, obj.prop, obj.optionGet), 1);
+                    }                  
+                } else if (res.serverError) {
+                    // If server error is encountered, then returns status = 2.
+                    callback("Service unavailable.", 2);
+                } else if (res.clientError) {                    
+                    // Handles client error. Returns status > 2, according to the encountered hindrance.
+                    var errObj = new ClientError(res.body);
+                    callback(errObj.getInfo(), errObj.getStatus());
+                }               
+        });
+    }
+    
+    /**
+     * Defines ClientError constructor.
+     * @param {Object} body - response body to be parsed accordingly.
+     */
+    function ClientError (body) {
+        this.messagesFromServer = ["Missing CID list", "No CID found", "Expected a property list"];
+        this.responses = ["wrong CID number", "compound not found", "expected a property list"];
+        this.message = body.Fault.Message;
+    }
+	
+	ClientError.prototype.getInfo = function () {
+		return this.responses[this.getStatus() - 3];
+	};
+	
+	ClientError.prototype.getStatus = function () {
+		return this.messagesFromServer.indexOf(this.message) + 3;
+	};
+    
+    /**
+     * Checks if the passed parameter is a valid CAS number.
+     * @function
+     * @param {string} toVerify - input to verify
+     */
+    function checkElement (toVerify) {
+		var reg = new RegExp(/^(\d{1,8})-(\d{1,8})-(\d{1})$/), match = toVerify.match(reg);
+		if (match === null) { return false; }
+		var part1 = match[1], part2 = match[2],
+			checkDigit = match[3].charAt(0),
+			sum = 0,
+			totalLength = part1.length + part2.length;
+		for(var i = 0; i < part1.length; i += 1) {
+			sum += part1.charAt(i) * totalLength;
+			totalLength -= 1;
+		}
+		for(var j = 0; j < part2.length; j += 1) {
+			sum += part2.charAt(j) * totalLength;
+			totalLength -= 1;
+		}
+		return (sum % 10) === parseInt(checkDigit, 10);
+	}
+    
+    /**
+     * Appends a slash and a string.
+     * @param {string} toAppend - fragment to appendToPubchem to the string on which this method is called
+     * @returns {string} newUrl
+     */
+    if (!String.prototype.appendToPubchem) {
+		String.prototype.appendToPubchem = function (toAppend) {
+			return this + "/" + toAppend;
+		};
+    }
+    
+    /*
+     * Parses the response body.
+     * @function
+     * @param {Object} body - response body to be parsed
+     * @param {string} prop - param associated with passed property
+     * @param {string} [optionGet] - option associated with "get" function
+     * @returns {string|Object}
+     */
+    function parseProperties (body, prop, optionGet) {		
+        if (prop === "Synonym") {
+			var allNames = body.InformationList.Information[0][prop]; 
+            if (typeof optionGet === "undefined") {
+                return allNames;
+			} else if (optionGet === "cas") {				
+                for (var i = 0; i < allNames.length; i += 1) {
+                    var el = allNames[i];
+                    if (checkElement(el)) { return el; }
+				}
+			} else if (typeof optionGet === "number") {
+                return optionGet > 0 ?
+					allNames.slice(0, optionGet).map(function (element) {
+						return element.toLowerCase();
+					}):
+					"";
+            }
+        } else if (prop === "propertyArray") {
+            return body.PropertyTable.Properties[0];   
+        } else {            
+            return body.PropertyTable.Properties[0][prop];
+        }
+    }
+    
+    /**
+     * Defines CmpdSpace ("Compound Space") constructor.
+     * @class CmpdSpace
+     * @param {string} url - base Pubchem url
+     */
+    function CmpdSpace (url) {
+        // Properties that can be requested according to PubChem API.
+        var properties = ["name", "name", "smiles", "cid", "inchi", "inchikey"];
+        // Slightly changed names of those properties.
+        var alias = ["Name", "Cas", "Smiles", "Cid", "Inchi", "InchiKey"];
+        // Generates all setters.
+		for(var i = 0; i <= properties.length; i += 1) {
+			(function (j) {				
+				this["set" + alias[j]] = function (toFind) {
+					var newUrl = url.appendToPubchem(properties[j]).appendToPubchem(toFind);
+					return new CmpdOps(newUrl);
+				};
+			}.call(this, i));
+		}
+    }
+    
+    /**
+     * Defines CmpdOps ("Compound Operations") constructor.
+     * @class CmpdOps
+     * @param {string} url - base Pubchem url with the already passed data appendToPubchemed to it
+     */
+    var CmpdOps = function (url) {
+        // Array of properties according to PubChem API.
+        var properties = ["IUPACName", "MolecularFormula", "MolecularWeight",
+                           "CanonicalSMILES", "IsomericSMILES", "InChI",
+                           "InChIKey", "XLogP", "ExactMass",
+                           "MonoisotopicMass", "TPSA", "Complexity",
+                           "Charge", "HBondDonorCount", "HBondAcceptorCount",
+                           "RotatableBondCount", "HeavyAtomCount", "IsotopeAtomCount",
+                           "AtomStereoCount", "DefinedAtomStereoCount", "UndefinedAtomStereoCount",
+                           "BondStereoCount", "DefinedBondStereoCount", "UndefinedBondStereoCount",
+                           "CovalentUnitCount", "Volume3D", "XStericQuadrupole3D",
+                           "YStericQuadrupole3D", "ZStericQuadrupole3D", "FeatureCount3D",
+                           "FeatureAcceptorCount3D", "FeatureDonorCount3D", "FeatureAnionCount3D",
+                           "FeatureCationCount3D", "FeatureRingCount3D", "FeatureHydrophobeCount3D",
+                           "ConformerModelRMSD3D", "EffectiveRotorCount3D", "ConformerCount3D",
+                           "Fingerprint2D"];
+        
+        // Generates all getters.
+		for(var i = 0; i <= properties.length; i += 1) {
+			(function (j) {				
+				this["get" + properties[j]] = function (toFind) {
+					var newUrl = url.appendToPubchem("property").appendToPubchem(properties[j]);
+					return new Find(properties[j]).exec(newUrl);
+				};
+			}.call(this, i));
+		}
+		// Getter for array of properties
+        this.getProperties = function (toFind) {
+            if (!Array.isArray(toFind)) {
+                throw new Error("Only array is accepted.");
+            } else {
+                var newUrl = url.appendToPubchem("property") + "/";
+                toFind.forEach(function (element) {
+                    if (properties.indexOf(element) >= 0) {
+                        newUrl += element + ",";
+                    }
+                });
+                return new Find("propertyArray").exec(newUrl);
+            }
+        };
+		// Getter for Cas nr
+        this.getCas = function () {
+			var newUrl = url.appendToPubchem("synonyms");
+            return new Find("Synonym", "cas").exec(newUrl);
+        };
+		/**
+		 * Getter for names
+		 * @param {number} number - "undefined" for all names
+		 *							> 0 for specified number of names to display 
+		 */
+        this.getNames = function (number) {
+            var newUrl = url.appendToPubchem("synonyms");
+            return new Find("Synonym", number).exec(newUrl);
+        };
+    };
+    
+    /** Sets domain. */
+	var pubchem = {
+		domain: function (domain, method) {
+			var newUrl = baseUrl.appendToPubchem(domain);        
+			if (domain === "compound") {  
+				return typeof method === undefined ? new CmpdSpace(newUrl): new CmpdSpace(newUrl, "post");
+			} else {
+				throw new Error("Unknown domain.");
+			}
+		}
+	};
+	return pubchem;
+});
+},{"superagent":59}],58:[function(require,module,exports){
+
+/**
+ * Reduce `arr` with `fn`.
+ *
+ * @param {Array} arr
+ * @param {Function} fn
+ * @param {Mixed} initial
+ *
+ * TODO: combatible error handling?
+ */
+
+module.exports = function(arr, fn, initial){  
+  var idx = 0;
+  var len = arr.length;
+  var curr = arguments.length == 3
+    ? initial
+    : arr[idx++];
+
+  while (idx < len) {
+    curr = fn.call(null, curr, arr[idx], ++idx, arr);
+  }
+  
+  return curr;
+};
+},{}],59:[function(require,module,exports){
+/**
+ * Module dependencies.
+ */
+
+var Emitter = require('emitter');
+var reduce = require('reduce');
+
+/**
+ * Root reference for iframes.
+ */
+
+var root;
+if (typeof window !== 'undefined') { // Browser window
+  root = window;
+} else if (typeof self !== 'undefined') { // Web Worker
+  root = self;
+} else { // Other environments
+  root = this;
+}
+
+/**
+ * Noop.
+ */
+
+function noop(){};
+
+/**
+ * Check if `obj` is a host object,
+ * we don't want to serialize these :)
+ *
+ * TODO: future proof, move to compoent land
+ *
+ * @param {Object} obj
+ * @return {Boolean}
+ * @api private
+ */
+
+function isHost(obj) {
+  var str = {}.toString.call(obj);
+
+  switch (str) {
+    case '[object File]':
+    case '[object Blob]':
+    case '[object FormData]':
+      return true;
+    default:
+      return false;
+  }
+}
+
+/**
+ * Determine XHR.
+ */
+
+request.getXHR = function () {
+  if (root.XMLHttpRequest
+      && (!root.location || 'file:' != root.location.protocol
+          || !root.ActiveXObject)) {
+    return new XMLHttpRequest;
+  } else {
+    try { return new ActiveXObject('Microsoft.XMLHTTP'); } catch(e) {}
+    try { return new ActiveXObject('Msxml2.XMLHTTP.6.0'); } catch(e) {}
+    try { return new ActiveXObject('Msxml2.XMLHTTP.3.0'); } catch(e) {}
+    try { return new ActiveXObject('Msxml2.XMLHTTP'); } catch(e) {}
+  }
+  return false;
+};
+
+/**
+ * Removes leading and trailing whitespace, added to support IE.
+ *
+ * @param {String} s
+ * @return {String}
+ * @api private
+ */
+
+var trim = ''.trim
+  ? function(s) { return s.trim(); }
+  : function(s) { return s.replace(/(^\s*|\s*$)/g, ''); };
+
+/**
+ * Check if `obj` is an object.
+ *
+ * @param {Object} obj
+ * @return {Boolean}
+ * @api private
+ */
+
+function isObject(obj) {
+  return obj === Object(obj);
+}
+
+/**
+ * Serialize the given `obj`.
+ *
+ * @param {Object} obj
+ * @return {String}
+ * @api private
+ */
+
+function serialize(obj) {
+  if (!isObject(obj)) return obj;
+  var pairs = [];
+  for (var key in obj) {
+    if (null != obj[key]) {
+      pairs.push(encodeURIComponent(key)
+        + '=' + encodeURIComponent(obj[key]));
+    }
+  }
+  return pairs.join('&');
+}
+
+/**
+ * Expose serialization method.
+ */
+
+ request.serializeObject = serialize;
+
+ /**
+  * Parse the given x-www-form-urlencoded `str`.
+  *
+  * @param {String} str
+  * @return {Object}
+  * @api private
+  */
+
+function parseString(str) {
+  var obj = {};
+  var pairs = str.split('&');
+  var parts;
+  var pair;
+
+  for (var i = 0, len = pairs.length; i < len; ++i) {
+    pair = pairs[i];
+    parts = pair.split('=');
+    obj[decodeURIComponent(parts[0])] = decodeURIComponent(parts[1]);
+  }
+
+  return obj;
+}
+
+/**
+ * Expose parser.
+ */
+
+request.parseString = parseString;
+
+/**
+ * Default MIME type map.
+ *
+ *     superagent.types.xml = 'application/xml';
+ *
+ */
+
+request.types = {
+  html: 'text/html',
+  json: 'application/json',
+  xml: 'application/xml',
+  urlencoded: 'application/x-www-form-urlencoded',
+  'form': 'application/x-www-form-urlencoded',
+  'form-data': 'application/x-www-form-urlencoded'
+};
+
+/**
+ * Default serialization map.
+ *
+ *     superagent.serialize['application/xml'] = function(obj){
+ *       return 'generated xml here';
+ *     };
+ *
+ */
+
+ request.serialize = {
+   'application/x-www-form-urlencoded': serialize,
+   'application/json': JSON.stringify
+ };
+
+ /**
+  * Default parsers.
+  *
+  *     superagent.parse['application/xml'] = function(str){
+  *       return { object parsed from str };
+  *     };
+  *
+  */
+
+request.parse = {
+  'application/x-www-form-urlencoded': parseString,
+  'application/json': JSON.parse
+};
+
+/**
+ * Parse the given header `str` into
+ * an object containing the mapped fields.
+ *
+ * @param {String} str
+ * @return {Object}
+ * @api private
+ */
+
+function parseHeader(str) {
+  var lines = str.split(/\r?\n/);
+  var fields = {};
+  var index;
+  var line;
+  var field;
+  var val;
+
+  lines.pop(); // trailing CRLF
+
+  for (var i = 0, len = lines.length; i < len; ++i) {
+    line = lines[i];
+    index = line.indexOf(':');
+    field = line.slice(0, index).toLowerCase();
+    val = trim(line.slice(index + 1));
+    fields[field] = val;
+  }
+
+  return fields;
+}
+
+/**
+ * Return the mime type for the given `str`.
+ *
+ * @param {String} str
+ * @return {String}
+ * @api private
+ */
+
+function type(str){
+  return str.split(/ *; */).shift();
+};
+
+/**
+ * Return header field parameters.
+ *
+ * @param {String} str
+ * @return {Object}
+ * @api private
+ */
+
+function params(str){
+  return reduce(str.split(/ *; */), function(obj, str){
+    var parts = str.split(/ *= */)
+      , key = parts.shift()
+      , val = parts.shift();
+
+    if (key && val) obj[key] = val;
+    return obj;
+  }, {});
+};
+
+/**
+ * Initialize a new `Response` with the given `xhr`.
+ *
+ *  - set flags (.ok, .error, etc)
+ *  - parse header
+ *
+ * Examples:
+ *
+ *  Aliasing `superagent` as `request` is nice:
+ *
+ *      request = superagent;
+ *
+ *  We can use the promise-like API, or pass callbacks:
+ *
+ *      request.get('/').end(function(res){});
+ *      request.get('/', function(res){});
+ *
+ *  Sending data can be chained:
+ *
+ *      request
+ *        .post('/user')
+ *        .send({ name: 'tj' })
+ *        .end(function(res){});
+ *
+ *  Or passed to `.send()`:
+ *
+ *      request
+ *        .post('/user')
+ *        .send({ name: 'tj' }, function(res){});
+ *
+ *  Or passed to `.post()`:
+ *
+ *      request
+ *        .post('/user', { name: 'tj' })
+ *        .end(function(res){});
+ *
+ * Or further reduced to a single call for simple cases:
+ *
+ *      request
+ *        .post('/user', { name: 'tj' }, function(res){});
+ *
+ * @param {XMLHTTPRequest} xhr
+ * @param {Object} options
+ * @api private
+ */
+
+function Response(req, options) {
+  options = options || {};
+  this.req = req;
+  this.xhr = this.req.xhr;
+  // responseText is accessible only if responseType is '' or 'text' and on older browsers
+  this.text = ((this.req.method !='HEAD' && (this.xhr.responseType === '' || this.xhr.responseType === 'text')) || typeof this.xhr.responseType === 'undefined')
+     ? this.xhr.responseText
+     : null;
+  this.statusText = this.req.xhr.statusText;
+  this.setStatusProperties(this.xhr.status);
+  this.header = this.headers = parseHeader(this.xhr.getAllResponseHeaders());
+  // getAllResponseHeaders sometimes falsely returns "" for CORS requests, but
+  // getResponseHeader still works. so we get content-type even if getting
+  // other headers fails.
+  this.header['content-type'] = this.xhr.getResponseHeader('content-type');
+  this.setHeaderProperties(this.header);
+  this.body = this.req.method != 'HEAD'
+    ? this.parseBody(this.text ? this.text : this.xhr.response)
+    : null;
+}
+
+/**
+ * Get case-insensitive `field` value.
+ *
+ * @param {String} field
+ * @return {String}
+ * @api public
+ */
+
+Response.prototype.get = function(field){
+  return this.header[field.toLowerCase()];
+};
+
+/**
+ * Set header related properties:
+ *
+ *   - `.type` the content type without params
+ *
+ * A response of "Content-Type: text/plain; charset=utf-8"
+ * will provide you with a `.type` of "text/plain".
+ *
+ * @param {Object} header
+ * @api private
+ */
+
+Response.prototype.setHeaderProperties = function(header){
+  // content-type
+  var ct = this.header['content-type'] || '';
+  this.type = type(ct);
+
+  // params
+  var obj = params(ct);
+  for (var key in obj) this[key] = obj[key];
+};
+
+/**
+ * Force given parser
+ * 
+ * Sets the body parser no matter type.
+ * 
+ * @param {Function}
+ * @api public
+ */
+
+Response.prototype.parse = function(fn){
+  this.parser = fn;
+  return this;
+};
+
+/**
+ * Parse the given body `str`.
+ *
+ * Used for auto-parsing of bodies. Parsers
+ * are defined on the `superagent.parse` object.
+ *
+ * @param {String} str
+ * @return {Mixed}
+ * @api private
+ */
+
+Response.prototype.parseBody = function(str){
+  var parse = this.parser || request.parse[this.type];
+  return parse && str && (str.length || str instanceof Object)
+    ? parse(str)
+    : null;
+};
+
+/**
+ * Set flags such as `.ok` based on `status`.
+ *
+ * For example a 2xx response will give you a `.ok` of __true__
+ * whereas 5xx will be __false__ and `.error` will be __true__. The
+ * `.clientError` and `.serverError` are also available to be more
+ * specific, and `.statusType` is the class of error ranging from 1..5
+ * sometimes useful for mapping respond colors etc.
+ *
+ * "sugar" properties are also defined for common cases. Currently providing:
+ *
+ *   - .noContent
+ *   - .badRequest
+ *   - .unauthorized
+ *   - .notAcceptable
+ *   - .notFound
+ *
+ * @param {Number} status
+ * @api private
+ */
+
+Response.prototype.setStatusProperties = function(status){
+  // handle IE9 bug: http://stackoverflow.com/questions/10046972/msie-returns-status-code-of-1223-for-ajax-request
+  if (status === 1223) {
+    status = 204;
+  }
+
+  var type = status / 100 | 0;
+
+  // status / class
+  this.status = this.statusCode = status;
+  this.statusType = type;
+
+  // basics
+  this.info = 1 == type;
+  this.ok = 2 == type;
+  this.clientError = 4 == type;
+  this.serverError = 5 == type;
+  this.error = (4 == type || 5 == type)
+    ? this.toError()
+    : false;
+
+  // sugar
+  this.accepted = 202 == status;
+  this.noContent = 204 == status;
+  this.badRequest = 400 == status;
+  this.unauthorized = 401 == status;
+  this.notAcceptable = 406 == status;
+  this.notFound = 404 == status;
+  this.forbidden = 403 == status;
+};
+
+/**
+ * Return an `Error` representative of this response.
+ *
+ * @return {Error}
+ * @api public
+ */
+
+Response.prototype.toError = function(){
+  var req = this.req;
+  var method = req.method;
+  var url = req.url;
+
+  var msg = 'cannot ' + method + ' ' + url + ' (' + this.status + ')';
+  var err = new Error(msg);
+  err.status = this.status;
+  err.method = method;
+  err.url = url;
+
+  return err;
+};
+
+/**
+ * Expose `Response`.
+ */
+
+request.Response = Response;
+
+/**
+ * Initialize a new `Request` with the given `method` and `url`.
+ *
+ * @param {String} method
+ * @param {String} url
+ * @api public
+ */
+
+function Request(method, url) {
+  var self = this;
+  Emitter.call(this);
+  this._query = this._query || [];
+  this.method = method;
+  this.url = url;
+  this.header = {};
+  this._header = {};
+  this.on('end', function(){
+    var err = null;
+    var res = null;
+
+    try {
+      res = new Response(self);
+    } catch(e) {
+      err = new Error('Parser is unable to parse the response');
+      err.parse = true;
+      err.original = e;
+      return self.callback(err);
+    }
+
+    self.emit('response', res);
+
+    if (err) {
+      return self.callback(err, res);
+    }
+
+    if (res.status >= 200 && res.status < 300) {
+      return self.callback(err, res);
+    }
+
+    var new_err = new Error(res.statusText || 'Unsuccessful HTTP response');
+    new_err.original = err;
+    new_err.response = res;
+    new_err.status = res.status;
+
+    self.callback(new_err, res);
+  });
+}
+
+/**
+ * Mixin `Emitter`.
+ */
+
+Emitter(Request.prototype);
+
+/**
+ * Allow for extension
+ */
+
+Request.prototype.use = function(fn) {
+  fn(this);
+  return this;
+}
+
+/**
+ * Set timeout to `ms`.
+ *
+ * @param {Number} ms
+ * @return {Request} for chaining
+ * @api public
+ */
+
+Request.prototype.timeout = function(ms){
+  this._timeout = ms;
+  return this;
+};
+
+/**
+ * Clear previous timeout.
+ *
+ * @return {Request} for chaining
+ * @api public
+ */
+
+Request.prototype.clearTimeout = function(){
+  this._timeout = 0;
+  clearTimeout(this._timer);
+  return this;
+};
+
+/**
+ * Abort the request, and clear potential timeout.
+ *
+ * @return {Request}
+ * @api public
+ */
+
+Request.prototype.abort = function(){
+  if (this.aborted) return;
+  this.aborted = true;
+  this.xhr.abort();
+  this.clearTimeout();
+  this.emit('abort');
+  return this;
+};
+
+/**
+ * Set header `field` to `val`, or multiple fields with one object.
+ *
+ * Examples:
+ *
+ *      req.get('/')
+ *        .set('Accept', 'application/json')
+ *        .set('X-API-Key', 'foobar')
+ *        .end(callback);
+ *
+ *      req.get('/')
+ *        .set({ Accept: 'application/json', 'X-API-Key': 'foobar' })
+ *        .end(callback);
+ *
+ * @param {String|Object} field
+ * @param {String} val
+ * @return {Request} for chaining
+ * @api public
+ */
+
+Request.prototype.set = function(field, val){
+  if (isObject(field)) {
+    for (var key in field) {
+      this.set(key, field[key]);
+    }
+    return this;
+  }
+  this._header[field.toLowerCase()] = val;
+  this.header[field] = val;
+  return this;
+};
+
+/**
+ * Remove header `field`.
+ *
+ * Example:
+ *
+ *      req.get('/')
+ *        .unset('User-Agent')
+ *        .end(callback);
+ *
+ * @param {String} field
+ * @return {Request} for chaining
+ * @api public
+ */
+
+Request.prototype.unset = function(field){
+  delete this._header[field.toLowerCase()];
+  delete this.header[field];
+  return this;
+};
+
+/**
+ * Get case-insensitive header `field` value.
+ *
+ * @param {String} field
+ * @return {String}
+ * @api private
+ */
+
+Request.prototype.getHeader = function(field){
+  return this._header[field.toLowerCase()];
+};
+
+/**
+ * Set Content-Type to `type`, mapping values from `request.types`.
+ *
+ * Examples:
+ *
+ *      superagent.types.xml = 'application/xml';
+ *
+ *      request.post('/')
+ *        .type('xml')
+ *        .send(xmlstring)
+ *        .end(callback);
+ *
+ *      request.post('/')
+ *        .type('application/xml')
+ *        .send(xmlstring)
+ *        .end(callback);
+ *
+ * @param {String} type
+ * @return {Request} for chaining
+ * @api public
+ */
+
+Request.prototype.type = function(type){
+  this.set('Content-Type', request.types[type] || type);
+  return this;
+};
+
+/**
+ * Set Accept to `type`, mapping values from `request.types`.
+ *
+ * Examples:
+ *
+ *      superagent.types.json = 'application/json';
+ *
+ *      request.get('/agent')
+ *        .accept('json')
+ *        .end(callback);
+ *
+ *      request.get('/agent')
+ *        .accept('application/json')
+ *        .end(callback);
+ *
+ * @param {String} accept
+ * @return {Request} for chaining
+ * @api public
+ */
+
+Request.prototype.accept = function(type){
+  this.set('Accept', request.types[type] || type);
+  return this;
+};
+
+/**
+ * Set Authorization field value with `user` and `pass`.
+ *
+ * @param {String} user
+ * @param {String} pass
+ * @return {Request} for chaining
+ * @api public
+ */
+
+Request.prototype.auth = function(user, pass){
+  var str = btoa(user + ':' + pass);
+  this.set('Authorization', 'Basic ' + str);
+  return this;
+};
+
+/**
+* Add query-string `val`.
+*
+* Examples:
+*
+*   request.get('/shoes')
+*     .query('size=10')
+*     .query({ color: 'blue' })
+*
+* @param {Object|String} val
+* @return {Request} for chaining
+* @api public
+*/
+
+Request.prototype.query = function(val){
+  if ('string' != typeof val) val = serialize(val);
+  if (val) this._query.push(val);
+  return this;
+};
+
+/**
+ * Write the field `name` and `val` for "multipart/form-data"
+ * request bodies.
+ *
+ * ``` js
+ * request.post('/upload')
+ *   .field('foo', 'bar')
+ *   .end(callback);
+ * ```
+ *
+ * @param {String} name
+ * @param {String|Blob|File} val
+ * @return {Request} for chaining
+ * @api public
+ */
+
+Request.prototype.field = function(name, val){
+  if (!this._formData) this._formData = new root.FormData();
+  this._formData.append(name, val);
+  return this;
+};
+
+/**
+ * Queue the given `file` as an attachment to the specified `field`,
+ * with optional `filename`.
+ *
+ * ``` js
+ * request.post('/upload')
+ *   .attach(new Blob(['<a id="a"><b id="b">hey!</b></a>'], { type: "text/html"}))
+ *   .end(callback);
+ * ```
+ *
+ * @param {String} field
+ * @param {Blob|File} file
+ * @param {String} filename
+ * @return {Request} for chaining
+ * @api public
+ */
+
+Request.prototype.attach = function(field, file, filename){
+  if (!this._formData) this._formData = new root.FormData();
+  this._formData.append(field, file, filename);
+  return this;
+};
+
+/**
+ * Send `data`, defaulting the `.type()` to "json" when
+ * an object is given.
+ *
+ * Examples:
+ *
+ *       // querystring
+ *       request.get('/search')
+ *         .end(callback)
+ *
+ *       // multiple data "writes"
+ *       request.get('/search')
+ *         .send({ search: 'query' })
+ *         .send({ range: '1..5' })
+ *         .send({ order: 'desc' })
+ *         .end(callback)
+ *
+ *       // manual json
+ *       request.post('/user')
+ *         .type('json')
+ *         .send('{"name":"tj"})
+ *         .end(callback)
+ *
+ *       // auto json
+ *       request.post('/user')
+ *         .send({ name: 'tj' })
+ *         .end(callback)
+ *
+ *       // manual x-www-form-urlencoded
+ *       request.post('/user')
+ *         .type('form')
+ *         .send('name=tj')
+ *         .end(callback)
+ *
+ *       // auto x-www-form-urlencoded
+ *       request.post('/user')
+ *         .type('form')
+ *         .send({ name: 'tj' })
+ *         .end(callback)
+ *
+ *       // defaults to x-www-form-urlencoded
+  *      request.post('/user')
+  *        .send('name=tobi')
+  *        .send('species=ferret')
+  *        .end(callback)
+ *
+ * @param {String|Object} data
+ * @return {Request} for chaining
+ * @api public
+ */
+
+Request.prototype.send = function(data){
+  var obj = isObject(data);
+  var type = this.getHeader('Content-Type');
+
+  // merge
+  if (obj && isObject(this._data)) {
+    for (var key in data) {
+      this._data[key] = data[key];
+    }
+  } else if ('string' == typeof data) {
+    if (!type) this.type('form');
+    type = this.getHeader('Content-Type');
+    if ('application/x-www-form-urlencoded' == type) {
+      this._data = this._data
+        ? this._data + '&' + data
+        : data;
+    } else {
+      this._data = (this._data || '') + data;
+    }
+  } else {
+    this._data = data;
+  }
+
+  if (!obj || isHost(data)) return this;
+  if (!type) this.type('json');
+  return this;
+};
+
+/**
+ * Invoke the callback with `err` and `res`
+ * and handle arity check.
+ *
+ * @param {Error} err
+ * @param {Response} res
+ * @api private
+ */
+
+Request.prototype.callback = function(err, res){
+  var fn = this._callback;
+  this.clearTimeout();
+  fn(err, res);
+};
+
+/**
+ * Invoke callback with x-domain error.
+ *
+ * @api private
+ */
+
+Request.prototype.crossDomainError = function(){
+  var err = new Error('Origin is not allowed by Access-Control-Allow-Origin');
+  err.crossDomain = true;
+  this.callback(err);
+};
+
+/**
+ * Invoke callback with timeout error.
+ *
+ * @api private
+ */
+
+Request.prototype.timeoutError = function(){
+  var timeout = this._timeout;
+  var err = new Error('timeout of ' + timeout + 'ms exceeded');
+  err.timeout = timeout;
+  this.callback(err);
+};
+
+/**
+ * Enable transmission of cookies with x-domain requests.
+ *
+ * Note that for this to work the origin must not be
+ * using "Access-Control-Allow-Origin" with a wildcard,
+ * and also must set "Access-Control-Allow-Credentials"
+ * to "true".
+ *
+ * @api public
+ */
+
+Request.prototype.withCredentials = function(){
+  this._withCredentials = true;
+  return this;
+};
+
+/**
+ * Initiate request, invoking callback `fn(res)`
+ * with an instanceof `Response`.
+ *
+ * @param {Function} fn
+ * @return {Request} for chaining
+ * @api public
+ */
+
+Request.prototype.end = function(fn){
+  var self = this;
+  var xhr = this.xhr = request.getXHR();
+  var query = this._query.join('&');
+  var timeout = this._timeout;
+  var data = this._formData || this._data;
+
+  // store callback
+  this._callback = fn || noop;
+
+  // state change
+  xhr.onreadystatechange = function(){
+    if (4 != xhr.readyState) return;
+
+    // In IE9, reads to any property (e.g. status) off of an aborted XHR will
+    // result in the error "Could not complete the operation due to error c00c023f"
+    var status;
+    try { status = xhr.status } catch(e) { status = 0; }
+
+    if (0 == status) {
+      if (self.timedout) return self.timeoutError();
+      if (self.aborted) return;
+      return self.crossDomainError();
+    }
+    self.emit('end');
+  };
+
+  // progress
+  var handleProgress = function(e){
+    if (e.total > 0) {
+      e.percent = e.loaded / e.total * 100;
+    }
+    self.emit('progress', e);
+  };
+  if (this.hasListeners('progress')) {
+    xhr.onprogress = handleProgress;
+  }
+  try {
+    if (xhr.upload && this.hasListeners('progress')) {
+      xhr.upload.onprogress = handleProgress;
+    }
+  } catch(e) {
+    // Accessing xhr.upload fails in IE from a web worker, so just pretend it doesn't exist.
+    // Reported here:
+    // https://connect.microsoft.com/IE/feedback/details/837245/xmlhttprequest-upload-throws-invalid-argument-when-used-from-web-worker-context
+  }
+
+  // timeout
+  if (timeout && !this._timer) {
+    this._timer = setTimeout(function(){
+      self.timedout = true;
+      self.abort();
+    }, timeout);
+  }
+
+  // querystring
+  if (query) {
+    query = request.serializeObject(query);
+    this.url += ~this.url.indexOf('?')
+      ? '&' + query
+      : '?' + query;
+  }
+
+  // initiate request
+  xhr.open(this.method, this.url, true);
+
+  // CORS
+  if (this._withCredentials) xhr.withCredentials = true;
+
+  // body
+  if ('GET' != this.method && 'HEAD' != this.method && 'string' != typeof data && !isHost(data)) {
+    // serialize stuff
+    var contentType = this.getHeader('Content-Type');
+    var serialize = request.serialize[contentType ? contentType.split(';')[0] : ''];
+    if (serialize) data = serialize(data);
+  }
+
+  // set header fields
+  for (var field in this.header) {
+    if (null == this.header[field]) continue;
+    xhr.setRequestHeader(field, this.header[field]);
+  }
+
+  // send stuff
+  this.emit('request', this);
+  xhr.send(data);
+  return this;
+};
+
+/**
+ * Faux promise support
+ *
+ * @param {Function} fulfill
+ * @param {Function} reject
+ * @return {Request}
+ */
+
+Request.prototype.then = function (fulfill, reject) {
+  return this.end(function(err, res) {
+    err ? reject(err) : fulfill(res);
+  });
+}
+
+/**
+ * Expose `Request`.
+ */
+
+request.Request = Request;
+
+/**
+ * Issue a request:
+ *
+ * Examples:
+ *
+ *    request('GET', '/users').end(callback)
+ *    request('/users').end(callback)
+ *    request('/users', callback)
+ *
+ * @param {String} method
+ * @param {String|Function} url or callback
+ * @return {Request}
+ * @api public
+ */
+
+function request(method, url) {
+  // callback
+  if ('function' == typeof url) {
+    return new Request('GET', method).end(url);
+  }
+
+  // url first
+  if (1 == arguments.length) {
+    return new Request('GET', method);
+  }
+
+  return new Request(method, url);
+}
+
+/**
+ * GET `url` with optional callback `fn(res)`.
+ *
+ * @param {String} url
+ * @param {Mixed|Function} data or fn
+ * @param {Function} fn
+ * @return {Request}
+ * @api public
+ */
+
+request.get = function(url, data, fn){
+  var req = request('GET', url);
+  if ('function' == typeof data) fn = data, data = null;
+  if (data) req.query(data);
+  if (fn) req.end(fn);
+  return req;
+};
+
+/**
+ * HEAD `url` with optional callback `fn(res)`.
+ *
+ * @param {String} url
+ * @param {Mixed|Function} data or fn
+ * @param {Function} fn
+ * @return {Request}
+ * @api public
+ */
+
+request.head = function(url, data, fn){
+  var req = request('HEAD', url);
+  if ('function' == typeof data) fn = data, data = null;
+  if (data) req.send(data);
+  if (fn) req.end(fn);
+  return req;
+};
+
+/**
+ * DELETE `url` with optional callback `fn(res)`.
+ *
+ * @param {String} url
+ * @param {Function} fn
+ * @return {Request}
+ * @api public
+ */
+
+request.del = function(url, fn){
+  var req = request('DELETE', url);
+  if (fn) req.end(fn);
+  return req;
+};
+
+/**
+ * PATCH `url` with optional `data` and callback `fn(res)`.
+ *
+ * @param {String} url
+ * @param {Mixed} data
+ * @param {Function} fn
+ * @return {Request}
+ * @api public
+ */
+
+request.patch = function(url, data, fn){
+  var req = request('PATCH', url);
+  if ('function' == typeof data) fn = data, data = null;
+  if (data) req.send(data);
+  if (fn) req.end(fn);
+  return req;
+};
+
+/**
+ * POST `url` with optional `data` and callback `fn(res)`.
+ *
+ * @param {String} url
+ * @param {Mixed} data
+ * @param {Function} fn
+ * @return {Request}
+ * @api public
+ */
+
+request.post = function(url, data, fn){
+  var req = request('POST', url);
+  if ('function' == typeof data) fn = data, data = null;
+  if (data) req.send(data);
+  if (fn) req.end(fn);
+  return req;
+};
+
+/**
+ * PUT `url` with optional `data` and callback `fn(res)`.
+ *
+ * @param {String} url
+ * @param {Mixed|Function} data or fn
+ * @param {Function} fn
+ * @return {Request}
+ * @api public
+ */
+
+request.put = function(url, data, fn){
+  var req = request('PUT', url);
+  if ('function' == typeof data) fn = data, data = null;
+  if (data) req.send(data);
+  if (fn) req.end(fn);
+  return req;
+};
+
+/**
+ * Expose `request`.
+ */
+
+module.exports = request;
+
+},{"emitter":54,"reduce":58}],60:[function(require,module,exports){
 var Vue // late bind
 var version
 var map = window.__VUE_HOT_MAP__ = Object.create(null)
@@ -826,7 +7248,7 @@ exports.reload = tryWrap(function (id, options) {
   })
 })
 
-},{}],15:[function(require,module,exports){
+},{}],61:[function(require,module,exports){
 (function (process){
 /**
   * vue-router v2.7.0
@@ -3337,7 +9759,7 @@ if (inBrowser && window.Vue) {
 module.exports = VueRouter;
 
 }).call(this,require('_process'))
-},{"_process":13}],16:[function(require,module,exports){
+},{"_process":56}],62:[function(require,module,exports){
 (function (process,global){
 /*!
  * Vue.js v2.4.4
@@ -13533,7 +19955,7 @@ Vue$3.compile = compileToFunctions;
 module.exports = Vue$3;
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"_process":13}],17:[function(require,module,exports){
+},{"_process":56}],63:[function(require,module,exports){
 var inserted = exports.cache = {}
 
 function noop () {}
@@ -13558,7 +19980,7 @@ exports.insert = function (css) {
   }
 }
 
-},{}],18:[function(require,module,exports){
+},{}],64:[function(require,module,exports){
 (function (process){
 /**
  * vuex v2.4.0
@@ -14445,4 +20867,4 @@ var index = {
 module.exports = index;
 
 }).call(this,require('_process'))
-},{"_process":13}]},{},[4]);
+},{"_process":56}]},{},[9]);
