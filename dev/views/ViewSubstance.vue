@@ -1,6 +1,6 @@
 <template>
   <div id="substance" class="container">
-    <model-substance :data="structureData"></model-substance>
+    <model-substance></model-substance>
     <info-substance></info-substance>
   </div>
 </template>
@@ -19,13 +19,11 @@
         query: this.$route.query.q
       }
     },
-    computed: {
-      structureData() {
-        return this.$store.state.substance.data;
-      }
-    },
     mounted() {
-      this.$store.dispatch('loadSubstance', this.query);
+      this.$store.dispatch('loadSubstance', {
+        req: this.query,
+        cb: (data) => this.$emit('generateStructure', data)
+      });
     }
   }
 </script>

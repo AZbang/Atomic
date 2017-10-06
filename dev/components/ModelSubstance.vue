@@ -6,15 +6,18 @@
   const Model = require('../model');
 
   module.exports = {
-    props: ['data'],
+    methods: {
+      generateStructure(data) {
+        this.model.removeMolecule(0);
+        this.model.addMolecule(data);
+      }
+    },
     mounted() {
       let wrap = document.getElementById('model');
       this.model = new Model(wrap, window.innerWidth, window.innerHeight/2);
-      setTimeout(() => {
-        this.model.removeMolecule(0);
-        this.model.addMolecule(this.data);
-        this.model.start();
-      }, 5000);
+      this.model.start();
+
+      this.$parent.$on('generateStructure', this.generateStructure);
     }
   }
 </script>

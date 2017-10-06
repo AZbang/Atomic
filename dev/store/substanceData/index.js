@@ -13,17 +13,17 @@ module.exports = {
     }
   },
   actions: {
-    async loadSubstance({commit, dispatch, rootState}, req) {
+    async loadSubstance({commit, dispatch, rootState}, props) {
       commit('loadingStart');
 
       try {
-        let enReq = await dispatch('translateReq', req);
+        let enReq = await dispatch('translateReq', props.req);
         dispatch('getPubchemData', {
           req: enReq,
           cb: async (data) => {
-            console.log(data);
             let structure = await dispatch('getStructureData', data.CID);
             commit('changeData', {...structure, ...data});
+            props.cb(structure);
           }
         });
       } catch(e) {
@@ -51,7 +51,7 @@ module.exports = {
   			.setName(props.req)
   			.getProperties(["IUPACName", "MolecularFormula", "MolecularWeight"])
   			.execute((data, status) => {
-    		  if(status !== 1) throw Error;
+    		  if(status !== 1) throw Error();
           else props.cb(data);
   			});
   	},

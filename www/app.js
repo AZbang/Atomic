@@ -42,7 +42,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-42fd26f0", __vue__options__)
   } else {
-    hotAPI.reload("data-v-42fd26f0", __vue__options__)
+    hotAPI.rerender("data-v-42fd26f0", __vue__options__)
   }
 })()}
 },{"vue":62,"vue-hot-reload-api":60,"vueify/lib/insert-css":63}],2:[function(require,module,exports){
@@ -73,7 +73,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-34e3276b", __vue__options__)
   } else {
-    hotAPI.reload("data-v-34e3276b", __vue__options__)
+    hotAPI.rerender("data-v-34e3276b", __vue__options__)
   }
 })()}
 },{"vue":62,"vue-hot-reload-api":60,"vueify/lib/insert-css":63}],3:[function(require,module,exports){
@@ -94,7 +94,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-199f4e12", __vue__options__)
   } else {
-    hotAPI.reload("data-v-199f4e12", __vue__options__)
+    hotAPI.rerender("data-v-199f4e12", __vue__options__)
   }
 })()}
 },{"vue":62,"vue-hot-reload-api":60}],4:[function(require,module,exports){
@@ -105,15 +105,18 @@ var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("#model {
 const Model = require('../model');
 
 module.exports = {
-  props: ['data'],
+  methods: {
+    generateStructure(data) {
+      this.model.removeMolecule(0);
+      this.model.addMolecule(data);
+    }
+  },
   mounted() {
     let wrap = document.getElementById('model');
     this.model = new Model(wrap, window.innerWidth, window.innerHeight / 2);
-    setTimeout(() => {
-      this.model.removeMolecule(0);
-      this.model.addMolecule(this.data);
-      this.model.start();
-    }, 5000);
+    this.model.start();
+
+    this.$parent.$on('generateStructure', this.generateStructure);
   }
 };
 })()
@@ -130,7 +133,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-5383ea47", __vue__options__)
   } else {
-    hotAPI.reload("data-v-5383ea47", __vue__options__)
+    hotAPI.rerender("data-v-5383ea47", __vue__options__)
   }
 })()}
 },{"../model":16,"vue":62,"vue-hot-reload-api":60,"vueify/lib/insert-css":63}],5:[function(require,module,exports){
@@ -162,7 +165,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-96bedcd8", __vue__options__)
   } else {
-    hotAPI.reload("data-v-96bedcd8", __vue__options__)
+    hotAPI.rerender("data-v-96bedcd8", __vue__options__)
   }
 })()}
 },{"./Search.vue":7,"./SideNav.vue":8,"vue":62,"vue-hot-reload-api":60,"vueify/lib/insert-css":63}],6:[function(require,module,exports){
@@ -179,7 +182,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-61fa2826", __vue__options__)
   } else {
-    hotAPI.reload("data-v-61fa2826", __vue__options__)
+    hotAPI.rerender("data-v-61fa2826", __vue__options__)
   }
 })()}
 },{"vue":62,"vue-hot-reload-api":60,"vueify/lib/insert-css":63}],7:[function(require,module,exports){
@@ -197,7 +200,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-b00e91b0", __vue__options__)
   } else {
-    hotAPI.reload("data-v-b00e91b0", __vue__options__)
+    hotAPI.rerender("data-v-b00e91b0", __vue__options__)
   }
 })()}
 },{"vue":62,"vue-hot-reload-api":60,"vueify/lib/insert-css":63}],8:[function(require,module,exports){
@@ -230,7 +233,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-3fa316fc", __vue__options__)
   } else {
-    hotAPI.reload("data-v-3fa316fc", __vue__options__)
+    hotAPI.rerender("data-v-3fa316fc", __vue__options__)
   }
 })()}
 },{"vue":62,"vue-hot-reload-api":60,"vueify/lib/insert-css":63}],9:[function(require,module,exports){
@@ -3593,7 +3596,7 @@ module.exports = {
     }
   },
   actions: {
-    loadSubstance: function loadSubstance(_ref, req) {
+    loadSubstance: function loadSubstance(_ref, props) {
       var commit, dispatch, rootState, enReq;
       return Promise.resolve().then(function () {
         commit = _ref.commit;
@@ -3603,7 +3606,7 @@ module.exports = {
         commit('loadingStart');
 
         return Promise.resolve().then(function () {
-          return dispatch('translateReq', req);
+          return dispatch('translateReq', props.req);
         }).then(function (_resp) {
           enReq = _resp;
 
@@ -3612,12 +3615,12 @@ module.exports = {
             cb: function cb(data) {
               var structure;
               return Promise.resolve().then(function () {
-                console.log(data);
                 return dispatch('getStructureData', data.CID);
               }).then(function (_resp) {
                 structure = _resp;
 
                 commit('changeData', _extends({}, structure, data));
+                props.cb(structure);
               });
             }
           });
@@ -3646,7 +3649,7 @@ module.exports = {
     },
     getPubchemData: function getPubchemData(context, props) {
       pubchem.setName(props.req).getProperties(["IUPACName", "MolecularFormula", "MolecularWeight"]).execute(function (data, status) {
-        if (status !== 1) throw Error;else props.cb(data);
+        if (status !== 1) throw Error();else props.cb(data);
       });
     },
     getStructureData: function getStructureData(context, CID) {
@@ -3719,7 +3722,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-3b72e0ed", __vue__options__)
   } else {
-    hotAPI.reload("data-v-3b72e0ed", __vue__options__)
+    hotAPI.rerender("data-v-3b72e0ed", __vue__options__)
   }
 })()}
 },{"../components/Errors.vue":2,"../components/Navigation.vue":5,"../components/Preloader.vue":6,"vue":62,"vue-hot-reload-api":60,"vueify/lib/insert-css":63}],25:[function(require,module,exports){
@@ -3737,7 +3740,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-2125c4c6", __vue__options__)
   } else {
-    hotAPI.reload("data-v-2125c4c6", __vue__options__)
+    hotAPI.rerender("data-v-2125c4c6", __vue__options__)
   }
 })()}
 },{"vue":62,"vue-hot-reload-api":60,"vueify/lib/insert-css":63}],26:[function(require,module,exports){
@@ -3777,7 +3780,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-23e8c2e7", __vue__options__)
   } else {
-    hotAPI.reload("data-v-23e8c2e7", __vue__options__)
+    hotAPI.rerender("data-v-23e8c2e7", __vue__options__)
   }
 })()}
 },{"../components/CardSubstance.vue":1,"vue":62,"vue-hot-reload-api":60,"vueify/lib/insert-css":63}],27:[function(require,module,exports){
@@ -3813,7 +3816,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-1237fda8", __vue__options__)
   } else {
-    hotAPI.reload("data-v-1237fda8", __vue__options__)
+    hotAPI.rerender("data-v-1237fda8", __vue__options__)
   }
 })()}
 },{"vue":62,"vue-hot-reload-api":60,"vueify/lib/insert-css":63}],28:[function(require,module,exports){
@@ -3834,20 +3837,18 @@ module.exports = {
       query: this.$route.query.q
     };
   },
-  computed: {
-    structureData() {
-      return this.$store.state.substance.data;
-    }
-  },
   mounted() {
-    this.$store.dispatch('loadSubstance', this.query);
+    this.$store.dispatch('loadSubstance', {
+      req: this.query,
+      cb: data => this.$emit('generateStructure', data)
+    });
   }
 };
 })()
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"container",attrs:{"id":"substance"}},[_c('model-substance',{attrs:{"data":_vm.structureData}}),_vm._v(" "),_c('info-substance')],1)}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"container",attrs:{"id":"substance"}},[_c('model-substance'),_vm._v(" "),_c('info-substance')],1)}
 __vue__options__.staticRenderFns = []
 __vue__options__._scopeId = "data-v-5f14c517"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
@@ -3858,7 +3859,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-5f14c517", __vue__options__)
   } else {
-    hotAPI.reload("data-v-5f14c517", __vue__options__)
+    hotAPI.rerender("data-v-5f14c517", __vue__options__)
   }
 })()}
 },{"../components/InfoSubstance.vue":3,"../components/ModelSubstance.vue":4,"vue":62,"vue-hot-reload-api":60,"vueify/lib/insert-css":63}],29:[function(require,module,exports){
