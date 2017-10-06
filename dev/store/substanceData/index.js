@@ -22,13 +22,13 @@ module.exports = {
       commit('loadingStart');
 
       try {
-        let enReq = await dispatch('translateReq', props.req);
+        let enReq = await dispatch('translateReq', {req: props.req, translate: 'ru-en'});
         dispatch('getPubchemData', {
           req: enReq,
           cb: async (data) => {
-            let correctEnReq = await dispatch('translateReq', data.IUPACName);
-            let info = await dispatch('wikiData', correctEnReq);
-            commit('info', {info, label: correctEnReq, formula: data.MolecularFormula});
+            let correctRuReq = await dispatch('translateReq', {req: data.IUPACName, translate: 'en-ru'});
+            let info = await dispatch('wikiData', correctRuReq);
+            commit('info', {...info, formula: data.MolecularFormula});
 
             let structure = await dispatch('getStructureData', data.CID);
             commit('structure', structure);
@@ -46,18 +46,20 @@ module.exports = {
       }
     },
 
-    async wikiData(context, req) {
-      let wiki = 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=' + req;
+    async wikiData({rootState}, req) {
+      let wiki = 'https://' + 'ru' + '.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&origin=*&titles=' + req;
 
-      let response = await axios.get(wiki);
-    	return response.data.query.pages[Object.keys(obj)[0]];
+      let response = await axios.get(wiki, {headers: {"Content-Type": "application/json; charset=UTF-8"}});
+      let pages = response.data.query.pages;
+      console.log(pages)
+    	return pages[Object.keys(pages)[0]];
     },
 
-  	async translateReq({commit}, req) {
+  	async translateReq({commit}, props) {
   		let translate = 'https://translate.yandex.net/api/v1.5/tr.json/translate?' +
   			'key=' + key.yat +
-  			'&text=' + encodeURIComponent(req) +
-  			'&lang=ru-en';
+  			'&text=' + encodeURIComponent(props.req) +
+  			'&lang=' + props.translate;
 
     	let response = await axios.get(translate);
     	return response.data.text[0].replace('the ', '');

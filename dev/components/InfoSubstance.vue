@@ -1,8 +1,8 @@
 <template>
   <div class="card">
-    <h1>{{data.label}}</h1>
+    <h1>{{data.title}}</h1>
     <h3>{{data.formula}}</h3>
-    <p>{{data.text}}</p>
+    <p>{{data.extract}}</p>
   </div>
 </template>
 

@@ -92,7 +92,7 @@ module.exports = {
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"card"},[_c('h1',[_vm._v(_vm._s(_vm.data.label))]),_vm._v(" "),_c('h3',[_vm._v(_vm._s(_vm.data.formula))]),_vm._v(" "),_c('p',[_vm._v(_vm._s(_vm.data.text))])])}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"card"},[_c('h1',[_vm._v(_vm._s(_vm.data.title))]),_vm._v(" "),_c('h3',[_vm._v(_vm._s(_vm.data.formula))]),_vm._v(" "),_c('p',[_vm._v(_vm._s(_vm.data.extract))])])}
 __vue__options__.staticRenderFns = []
 __vue__options__._scopeId = "data-v-199f4e12"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
@@ -3588,6 +3588,8 @@ module.exports = {
 },{"./clientDataBase":17,"./errors.json":20,"./substanceData":22}],22:[function(require,module,exports){
 'use strict';
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var pubchem = require('pubchem-access').domain('compound');
 // const wikipedia = require("wikipedia-js");
 var axios = require('axios');
@@ -3618,23 +3620,23 @@ module.exports = {
         commit('loadingStart');
 
         return Promise.resolve().then(function () {
-          return dispatch('translateReq', props.req);
+          return dispatch('translateReq', { req: props.req, translate: 'ru-en' });
         }).then(function (_resp) {
           enReq = _resp;
 
           dispatch('getPubchemData', {
             req: enReq,
             cb: function cb(data) {
-              var correctEnReq, info, structure;
+              var correctRuReq, info, structure;
               return Promise.resolve().then(function () {
-                return dispatch('translateReq', data.IUPACName);
+                return dispatch('translateReq', { req: data.IUPACName, translate: 'en-ru' });
               }).then(function (_resp) {
-                correctEnReq = _resp;
-                return dispatch('wikiData', correctEnReq);
+                correctRuReq = _resp;
+                return dispatch('wikiData', correctRuReq);
               }).then(function (_resp) {
                 info = _resp;
 
-                commit('info', { info: info, label: correctEnReq, formula: data.MolecularFormula });
+                commit('info', _extends({}, info, { formula: data.MolecularFormula }));
 
                 return dispatch('getStructureData', data.CID);
               }).then(function (_resp) {
@@ -3656,22 +3658,25 @@ module.exports = {
         });
       }).then(function () {});
     },
-    wikiData: function wikiData(context, req) {
-      var wiki, response;
+    wikiData: function wikiData(_ref2, req) {
+      var rootState, wiki, response, pages;
       return Promise.resolve().then(function () {
-        wiki = 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=' + req;
-        return axios.get(wiki);
+        rootState = _ref2.rootState;
+        wiki = 'https://' + 'ru' + '.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&origin=*&titles=' + req;
+        return axios.get(wiki, { headers: { "Content-Type": "application/json; charset=UTF-8" } });
       }).then(function (_resp) {
         response = _resp;
+        pages = response.data.query.pages;
 
-        return response.data.query.pages[Object.keys(obj)[0]];
+        console.log(pages);
+        return pages[Object.keys(pages)[0]];
       });
     },
-    translateReq: function translateReq(_ref2, req) {
+    translateReq: function translateReq(_ref3, props) {
       var commit, translate, response;
       return Promise.resolve().then(function () {
-        commit = _ref2.commit;
-        translate = 'https://translate.yandex.net/api/v1.5/tr.json/translate?' + 'key=' + key.yat + '&text=' + encodeURIComponent(req) + '&lang=ru-en';
+        commit = _ref3.commit;
+        translate = 'https://translate.yandex.net/api/v1.5/tr.json/translate?' + 'key=' + key.yat + '&text=' + encodeURIComponent(props.req) + '&lang=' + props.translate;
         return axios.get(translate);
       }).then(function (_resp) {
         response = _resp;
