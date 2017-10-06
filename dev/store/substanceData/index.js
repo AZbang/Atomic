@@ -1,15 +1,20 @@
 const pubchem = require('pubchem-access').domain('compound');
+// const wikipedia = require("wikipedia-js");
 const axios = require('axios');
 
 const key = require('./key.json');
 
 module.exports = {
   state: {
-    data: {}
+    structure: {},
+    info: {}
   },
   mutations: {
-    changeData(state, data) {
-      state.data = data;
+    structure(state, structure) {
+      state.structure = structure;
+    },
+    info(state, info) {
+      state.info = info;
     }
   },
   actions: {
@@ -21,9 +26,15 @@ module.exports = {
         dispatch('getPubchemData', {
           req: enReq,
           cb: async (data) => {
+            let correctEnReq = await dispatch('translateReq', data.IUPACName);
+            let info = await dispatch('wikiData', correctEnReq);
+            commit('info', {info, label: correctEnReq, formula: data.MolecularFormula});
+
             let structure = await dispatch('getStructureData', data.CID);
-            commit('changeData', {...structure, ...data});
+            commit('structure', structure);
             props.cb(structure);
+
+            commit('loadingEnd');
           }
         });
       } catch(e) {
@@ -31,9 +42,15 @@ module.exports = {
           type: 'NOT_LOADED_SUBSTANCE',
           error: e
         });
+        commit('loadingEnd');
       }
+    },
 
-      commit('loadingEnd');
+    async wikiData(context, req) {
+      let wiki = 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=' + req;
+
+      let response = await axios.get(wiki);
+    	return response.data.query.pages[Object.keys(obj)[0]];
     },
 
   	async translateReq({commit}, req) {
