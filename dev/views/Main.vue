@@ -15,7 +15,7 @@
 <style scoped>
  	#main {
 		position: absolute;
-    top: 0;
+    top: 58px;
 	  width: 100vw;
     height: 100vh;
     display: flex;

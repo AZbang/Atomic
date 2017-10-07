@@ -15,6 +15,7 @@
       searchSubstance() {
         this.$router.push({path: '/empty'});
         setTimeout(() => this.$router.push({path: '/substance', query: {label: this.searchReq}}), 10);
+        $('#search').val('');
       }
     }
   }
@@ -35,11 +36,14 @@
     box-sizing: border-box;
     padding: 0 45px 0 15px;
     border: 0;
+    color: #333;
   }
-  .search-wrapper i.material-icons {
+  i.material-icons {
     position: absolute;
     top: 10px;
     right: 10px;
     cursor: pointer;
+    color: #333;
+    margin-top: -13px;
   }
 </style>

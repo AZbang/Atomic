@@ -9,6 +9,7 @@ module.exports = {
     atoms,
     history: [],
     stars: [],
+    currentData: {}
   },
   getters: {
     types(state) {
@@ -20,10 +21,20 @@ module.exports = {
   },
   mutations: {
     addStar(state, subs) {
+      subs.isStar = true;
       state.stars.push(subs);
     },
-    addHistory(state) {
-      state.history.push(state.currentSubstance);
+    removeStar(state, subs) {
+      subs.isStar = false;
+      for(let i = 0; i < state.stars.length; i++) {
+        if(state.stars[i].label === subs.label) {
+          state.stars.splice(i, 1);
+          break;
+        }
+      }
+    },
+    addHistory(state, subs) {
+      state.history.push(subs);
     }
   }
 }

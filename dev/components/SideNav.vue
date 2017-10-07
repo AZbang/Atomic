@@ -34,11 +34,11 @@
 
 <style scoped>
   .button-collapse {
-    margin-top: 6px;
     width: 50px;
     height: 50px;
     border-radius: 50%;
     box-shadow: none;
+    margin: 3px 0;
   }
   .button-collapse i {
     position: absolute;
@@ -46,7 +46,7 @@
     right: 13px;
     cursor: pointer;
     line-height: 33px;
-    color: #333;
+    color: #fff;
   }
   .router-link-active {
     color: #1976D2;

@@ -1,5 +1,5 @@
 <template>
-  <div id="navigation" class="row">
+  <nav id="navigation" class="row nav blue">
     <div class="col s2">
       <side-nav></side-nav>
     </div>
@@ -7,7 +7,7 @@
     <div class="col s10">
       <search></search>
     </div>
-  </div>
+  </nav>
 </template>
 
 <script>
@@ -23,7 +23,8 @@
 </script>
 
 <style scoped>
-  .row {
-    margin-top: 6px;
+  .nav {
+    height: 58px;
+
   }
 </style>

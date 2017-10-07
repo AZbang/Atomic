@@ -21,7 +21,6 @@ module.exports = {
     async loadSubstance({commit, dispatch, rootState}, props) {
       commit('loadingStart');
 
-      console.log(props);
       try {
         let enReq = await dispatch('translateReq', {req: props.formula || props.label, translate: 'ru-en'});
         let data = await dispatch('getPubchemData', enReq);
@@ -32,6 +31,8 @@ module.exports = {
         let structure = await dispatch('getStructureData', data.CID);
         commit('structure', structure);
         props.cb(structure);
+
+        commit('addHistory', props);
       } catch(e) {
         dispatch('error', {
           type: 'NOT_LOADED_SUBSTANCE',
