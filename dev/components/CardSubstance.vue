@@ -28,6 +28,10 @@
 <style scoped>
   .card-panel {
     width: 100%;
+    margin-bottom: 5px;
+  }
+  a {
+    color: #333;
   }
   span {
     font-size: 1.4em;

@@ -8,7 +8,7 @@
     data() {
       return {
         isClick: this.data.isStar,
-        classStar: this.data.isStar ? 'orange-text' : 'grey-text'
+        classStar: this.data.isStar ? 'blue-text' : 'grey-text'
       }
     },
     methods: {
@@ -17,7 +17,7 @@
           this.classStar = 'grey-text';
           this.$store.commit('removeStar', this.data);
         } else {
-          this.classStar = 'orange-text';
+          this.classStar = 'blue-text';
           this.$store.commit('addStar', this.data);
         }
 

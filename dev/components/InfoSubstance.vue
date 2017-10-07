@@ -6,7 +6,7 @@
       <star-button :data="briefData"></star-button>
     </div>
 
-    <p class="description">{{data.extract}}</p>
+    <div class="description" v-html="$options.filters.replaceNLtoBr(data.extract)"></div>
   </div>
 </template>
 
@@ -16,6 +16,12 @@
   module.exports = {
     components: {
       StarButton
+    },
+    filters: {
+      replaceNLtoBr(str) {
+        if(!str) return '';
+        return str.replace('\n', '<br><br>');
+      }
     },
     computed: {
       data() {
