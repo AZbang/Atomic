@@ -1,8 +1,8 @@
 <template>
-  <div class="card">
-    <h1>{{data.title}}</h1>
-    <h3>{{data.formula}}</h3>
-    <p>{{data.extract}}</p>
+  <div v-show="!loading" class="card-panel">
+    <span class="title">{{data.title}}</span>
+    <p class="formula">{{data.formula}}</p class="formula">
+    <p class="description">{{data.extract}}</p>
   </div>
 </template>
 
@@ -11,13 +11,23 @@
     computed: {
       data() {
         return this.$store.state.substance.info;
+      },
+      loading() {
+        return this.$store.state.loading;
       }
     }
   }
 </script>
 
 <style scoped>
-  .card {
+  .title {
+    font-size: 2em;
+  }
+  .formula {
+    font-size: 1.4em;
+    margin-top: -4px;
+  }
+  .card-panel {
     margin-top: 90%;
     width: 100%;
   }

@@ -1,5 +1,5 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".card[data-v-42fd26f0] {\n  width: 100%;\n}\n\na.btn-star[data-v-42fd26f0] {\n  position: absolute;\n  right: 10px;\n  top: 50%;\n  margin-top: -5px;\n  width: 40px;\n  height: 40px;\n  border-radius: 50%;\n  text-align: center;\n}\na.btn-star i[data-v-42fd26f0] {\n  line-height: 40px;\n}")
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".card-panel[data-v-42fd26f0] {\n  width: 100%;\n}\nspan[data-v-42fd26f0] {\n  font-size: 1.4em;\n}\n\na.btn-star[data-v-42fd26f0] {\n  position: absolute;\n  right: 10px;\n  top: 50%;\n  margin-top: -20px;\n  width: 40px;\n  height: 40px;\n  border-radius: 50%;\n  text-align: center;\n}\na.btn-star i[data-v-42fd26f0] {\n  line-height: 40px;\n}")
 ;(function(){
 
 
@@ -31,7 +31,7 @@ module.exports = {
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('router-link',{attrs:{"to":_vm.getSubstanceLink(_vm.data.label)}},[_c('div',{staticClass:"card waves-effect"},[_c('img',{attrs:{"src":"http://cosmetic.ua/uploads/spool/photo/00000018037-filename-00002-tape.jpg","alt":""}}),_vm._v(" "),_c('div',{staticClass:"card-content white-text"},[_c('span',{staticClass:"card-title"},[_vm._v(_vm._s(_vm.data.formula))]),_vm._v(" "),_c('p',[_vm._v(_vm._s(_vm.data.label))])]),_vm._v(" "),_c('a',{staticClass:"waves-effect btn-star",class:_vm.classStar},[_c('i',{staticClass:"material-icons"},[_vm._v("star")])])])])}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('router-link',{attrs:{"to":_vm.getSubstanceLink(_vm.data.label)}},[_c('div',{staticClass:"card-panel waves-effect"},[_c('span',[_vm._v(_vm._s(_vm.data.label))]),_vm._v(" "),_c('br'),_vm._v(" "),_c('span',{staticClass:"card-title"},[_vm._v(_vm._s(_vm.data.formula))]),_vm._v(" "),_c('a',{staticClass:"waves-effect btn-star",class:_vm.classStar},[_c('i',{staticClass:"material-icons"},[_vm._v("star")])])])])}
 __vue__options__.staticRenderFns = []
 __vue__options__._scopeId = "data-v-42fd26f0"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
@@ -55,6 +55,7 @@ module.exports = {
   computed: {
     showError() {
       Materialize.toast(this.errorLog, 10000, 'error-log');
+      this.$router.back();
       return this.errorLog;
     }
   }
@@ -77,7 +78,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   }
 })()}
 },{"vue":62,"vue-hot-reload-api":60,"vueify/lib/insert-css":63}],3:[function(require,module,exports){
-var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".card[data-v-199f4e12] {\n  margin-top: 90%;\n  width: 100%;\n}")
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".title[data-v-199f4e12] {\n  font-size: 2em;\n}\n.formula[data-v-199f4e12] {\n  font-size: 1.4em;\n  margin-top: -4px;\n}\n.card-panel[data-v-199f4e12] {\n  margin-top: 90%;\n  width: 100%;\n}")
 ;(function(){
 
 
@@ -85,6 +86,9 @@ module.exports = {
   computed: {
     data() {
       return this.$store.state.substance.info;
+    },
+    loading() {
+      return this.$store.state.loading;
     }
   }
 };
@@ -92,7 +96,7 @@ module.exports = {
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"card"},[_c('h1',[_vm._v(_vm._s(_vm.data.title))]),_vm._v(" "),_c('h3',[_vm._v(_vm._s(_vm.data.formula))]),_vm._v(" "),_c('p',[_vm._v(_vm._s(_vm.data.extract))])])}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{directives:[{name:"show",rawName:"v-show",value:(!_vm.loading),expression:"!loading"}],staticClass:"card-panel"},[_c('span',{staticClass:"title"},[_vm._v(_vm._s(_vm.data.title))]),_vm._v(" "),_c('p',{staticClass:"formula"},[_vm._v(_vm._s(_vm.data.formula))]),_vm._v(" "),_c('p',{staticClass:"description"},[_vm._v(_vm._s(_vm.data.extract))])])}
 __vue__options__.staticRenderFns = []
 __vue__options__._scopeId = "data-v-199f4e12"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
@@ -3343,84 +3347,84 @@ module.exports={
       },
       {
         "formula": "HAlO2",
-        "label": "Метаалюминиевая"
+        "label": "Метаалюминиевая кислота"
       },
       {
         "formula": "HBO2",
-        "label": "Метаборная"
+        "label": "Метаборная кислота"
       },
       {
         "formula": "H3BO3",
-        "label": "Ортоборная"
+        "label": "Ортоборная кислота"
       },
       {
         "formula": "HBr",
-        "label": "Бромоводородная"
+        "label": "Бромоводородная кислота"
       }
       ,{"formula": "HCOOH",
-        "label": "Муравьиная"}
+        "label": "Муравьиная кислота"}
       ,{"formula": "HCN",
-        "label": "Циановодородная"}
+        "label": "Циановодородная кислота"}
       ,{"formula": "H2CO3",
-        "label": "Угольная"}
+        "label": "Угольная кислота"}
       ,{"formula": "H2C2O4",
-        "label": "Щавелевая"}
+        "label": "Щавелевая кислота"}
       ,{"formula": "H4C2O2",
-        "label": "Уксусная"}
+        "label": "Уксусная кислота"}
       ,{"formula": "HCl",
-        "label": "Хлороводородная"}
+        "label": "Хлороводородная кислота"}
       ,{"formula": "HClO",
-        "label": "Хлорноватистая"}
+        "label": "Хлорноватистая кислота"}
       ,{"formula": "HClO2",
-        "label": "Хлористая"}
+        "label": "Хлористая кислота"}
       ,{"formula": "HClO3",
-        "label": "Хлорноватая"}
+        "label": "Хлорноватая кислота"}
       ,{"formula": "HClO4",
-        "label": "Хлорная"}
+        "label": "Хлорная кислота"}
       ,{"formula": "HCrO2",
-        "label": "Метахромистая"}
+        "label": "Метахромистая кислота"}
       ,{"formula": "HCrO4",
-        "label": "Хромовая"}
+        "label": "Хромовая кислота"}
       ,{"formula": "HCr2O7",
-        "label": "Двухромовая"}
+        "label": "Двухромовая кислота"}
       ,{"formula": "HI",
-        "label": "Иодоводородная"}
-      ,{"formula": "HMnO4",
-        "label": "Марганцевая"}
+        "label": "Иодоводородная кислота"}
+      ,{"formula": "HMnO4 кислота",
+        "label": "Марганцевая кислота"}
       ,{"formula": "H2MnO4",
-        "label": "Марганцовистая"}
+        "label": "Марганцовистая кислота"}
       ,{"formula": "H2MoO4",
-        "label": "Молибденовая"}
+        "label": "Молибденовая кислота"}
       ,{"formula": "HNO2",
-        "label": "Азотистая"}
+        "label": "Азотистая кислота"}
       ,{"formula": "HNO3",
-        "label": "Азотная"}
+        "label": "Азотная кислота"}
       ,{"formula": "HPO3",
-        "label": "Метафосфорная"}
+        "label": "Метафосфорная кислота"}
       ,{"formula": "HPO4",
-        "label": "Ортофосфорная"}
+        "label": "Ортофосфорная кислота"}
       ,{"formula": "H4P2O7",
-          "label": "Двуфосфорная (Пирофосфорная)"}
+          "label": "Двуфосфорная кислота"}
       ,{"formula": "H3PO3",
-        "label": "Фосфористая"}
+        "label": "Фосфористая кислота"}
       ,{"formula": "H3PO2",
-        "label": "Фосфорноватистая"}
+        "label": "Фосфорноватистая кислота"}
       ,{"formula": "H2S",
-        "label": "Сероводородная"}
+        "label": "Сероводородная кислота"}
       ,{"formula": "H2SO3",
-        "label": "Сернистая"}
+        "label": "Сернистая кислота"}
       ,{"formula": "H2SO4",
-        "label": "Серная"}
+        "label": "Серная кислота"}
       ,{"formula": "H2S2O3",
-        "label": "Тиосерная"}
+        "label": "Тиосерная кислота"}
       ,{"formula": "H2Se",
-        "label": "Селеноводородная"}
+        "label": "Селеноводородная кислота"}
       ,{"formula": "H2SiO3",
-        "label": "Кремниевая"}
+        "label": "Кремниевая кислота"}
       ,{"formula": "HVO3",
-        "label": "Ванадиевая"}
+        "label": "Ванадиевая кислота"}
       ,{"formula": "H2WO4",
-        "label": "Вольфрамовая"}
+        "label": "Вольфрамовая кислота"}
     ]
   },
   "oxides": {
@@ -3611,7 +3615,7 @@ module.exports = {
   },
   actions: {
     loadSubstance: function loadSubstance(_ref, props) {
-      var commit, dispatch, rootState, enReq;
+      var commit, dispatch, rootState, enReq, data, correctRuReq, info, structure;
       return Promise.resolve().then(function () {
         commit = _ref.commit;
         dispatch = _ref.dispatch;
@@ -3623,40 +3627,34 @@ module.exports = {
           return dispatch('translateReq', { req: props.req, translate: 'ru-en' });
         }).then(function (_resp) {
           enReq = _resp;
+          return dispatch('getPubchemData', enReq);
+        }).then(function (_resp) {
+          data = _resp;
+          return dispatch('translateReq', { req: data.IUPACName, translate: 'en-ru' });
+        }).then(function (_resp) {
+          correctRuReq = _resp;
+          return dispatch('wikiData', correctRuReq);
+        }).then(function (_resp) {
+          info = _resp;
 
-          dispatch('getPubchemData', {
-            req: enReq,
-            cb: function cb(data) {
-              var correctRuReq, info, structure;
-              return Promise.resolve().then(function () {
-                return dispatch('translateReq', { req: data.IUPACName, translate: 'en-ru' });
-              }).then(function (_resp) {
-                correctRuReq = _resp;
-                return dispatch('wikiData', correctRuReq);
-              }).then(function (_resp) {
-                info = _resp;
+          commit('info', _extends({}, info, { formula: data.MolecularFormula }));
 
-                commit('info', _extends({}, info, { formula: data.MolecularFormula }));
+          return dispatch('getStructureData', data.CID);
+        }).then(function (_resp) {
+          structure = _resp;
 
-                return dispatch('getStructureData', data.CID);
-              }).then(function (_resp) {
-                structure = _resp;
-
-                commit('structure', structure);
-                props.cb(structure);
-
-                commit('loadingEnd');
-              });
-            }
-          });
+          commit('structure', structure);
+          props.cb(structure);
         }).catch(function (e) {
           dispatch('error', {
             type: 'NOT_LOADED_SUBSTANCE',
             error: e
           });
-          commit('loadingEnd');
         });
-      }).then(function () {});
+      }).then(function () {
+
+        commit('loadingEnd');
+      });
     },
     wikiData: function wikiData(_ref2, req) {
       var rootState, wiki, response, pages;
@@ -3668,7 +3666,6 @@ module.exports = {
         response = _resp;
         pages = response.data.query.pages;
 
-        console.log(pages);
         return pages[Object.keys(pages)[0]];
       });
     },
@@ -3684,9 +3681,15 @@ module.exports = {
         return response.data.text[0].replace('the ', '');
       });
     },
-    getPubchemData: function getPubchemData(context, props) {
-      pubchem.setName(props.req).getProperties(["IUPACName", "MolecularFormula", "MolecularWeight"]).execute(function (data, status) {
-        if (status !== 1) throw Error();else props.cb(data);
+    getPubchemData: function getPubchemData(context, req) {
+      var pubchem, response;
+      return Promise.resolve().then(function () {
+        pubchem = 'https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/' + encodeURIComponent(req) + '/property/IUPACName,MolecularFormula,MolecularWeight,/JSON';
+        return axios.get(pubchem);
+      }).then(function (_resp) {
+        response = _resp;
+
+        return response.data.PropertyTable.Properties[0];
       });
     },
     getStructureData: function getStructureData(context, CID) {
@@ -3763,11 +3766,11 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   }
 })()}
 },{"../components/Errors.vue":2,"../components/Navigation.vue":5,"../components/Preloader.vue":6,"vue":62,"vue-hot-reload-api":60,"vueify/lib/insert-css":63}],25:[function(require,module,exports){
-var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("#main[data-v-2125c4c6] {\n  margin-top: 25%;\n}\nh1[data-v-2125c4c6] {\n  font-weight: 200;\n}")
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("#main[data-v-2125c4c6] {\n\t\tposition: absolute;\n    top: 0;\n\t  width: 100vw;\n    height: 100vh;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n \t}\n\th1[data-v-2125c4c6] {\n\t\tfont-weight: 200;\n\t}")
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
 __vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _vm._m(0)}
-__vue__options__.staticRenderFns = [function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"center-align container сenter",attrs:{"id":"main"}},[_c('h1',[_vm._v("Molecules!")]),_vm._v(" "),_c('p',{staticClass:"flow-text"},[_vm._v("Интерактивный тренажер по изучению веществ неорганической химии.")]),_vm._v(" "),_c('a',{staticClass:"waves-effect waves-light btn-large blue darken-2"},[_vm._v("Начните с H2SO4!")]),_vm._v(" "),_c('br'),_vm._v(" "),_c('br'),_vm._v(" "),_c('br'),_vm._v(" "),_c('p',{staticClass:"flow-text"},[_vm._v("Сервис разработал:"),_c('br'),_c('a',{attrs:{"href":"https://github.com/AZbang"}},[_vm._v("@azbang")])])])}]
+__vue__options__.staticRenderFns = [function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"main"}},[_c('div',{staticClass:"wrap center-align container"},[_c('h1',[_vm._v("Molecules!")]),_vm._v(" "),_c('p',{staticClass:"flow-text"},[_vm._v("Интерактивный тренажер по изучению веществ неорганической химии.")]),_vm._v(" "),_c('a',{staticClass:"waves-effect waves-light btn-large blue darken-2"},[_vm._v("Начните с H2SO4!")]),_vm._v(" "),_c('br'),_vm._v(" "),_c('br'),_vm._v(" "),_c('br'),_vm._v(" "),_c('p',{staticClass:"flow-text"},[_vm._v("Сервис разработал:"),_c('br'),_c('a',{attrs:{"href":"https://github.com/AZbang"}},[_vm._v("@azbang")])])])])}]
 __vue__options__._scopeId = "data-v-2125c4c6"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)

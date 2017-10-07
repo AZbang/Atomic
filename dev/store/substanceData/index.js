@@ -23,27 +23,23 @@ module.exports = {
 
       try {
         let enReq = await dispatch('translateReq', {req: props.req, translate: 'ru-en'});
-        dispatch('getPubchemData', {
-          req: enReq,
-          cb: async (data) => {
-            let correctRuReq = await dispatch('translateReq', {req: data.IUPACName, translate: 'en-ru'});
-            let info = await dispatch('wikiData', correctRuReq);
-            commit('info', {...info, formula: data.MolecularFormula});
+        let data = await dispatch('getPubchemData', enReq);
 
-            let structure = await dispatch('getStructureData', data.CID);
-            commit('structure', structure);
-            props.cb(structure);
+        let correctRuReq = await dispatch('translateReq', {req: data.IUPACName, translate: 'en-ru'});
+        let info = await dispatch('wikiData', correctRuReq);
+        commit('info', {...info, formula: data.MolecularFormula});
 
-            commit('loadingEnd');
-          }
-        });
+        let structure = await dispatch('getStructureData', data.CID);
+        commit('structure', structure);
+        props.cb(structure);
       } catch(e) {
         dispatch('error', {
           type: 'NOT_LOADED_SUBSTANCE',
           error: e
         });
-        commit('loadingEnd');
       }
+
+      commit('loadingEnd');
     },
 
     async wikiData({rootState}, req) {
@@ -51,7 +47,6 @@ module.exports = {
 
       let response = await axios.get(wiki, {headers: {"Content-Type": "application/json; charset=UTF-8"}});
       let pages = response.data.query.pages;
-      console.log(pages)
     	return pages[Object.keys(pages)[0]];
     },
 
@@ -65,14 +60,10 @@ module.exports = {
     	return response.data.text[0].replace('the ', '');
   	},
 
-  	getPubchemData(context, props) {
-      pubchem
-  			.setName(props.req)
-  			.getProperties(["IUPACName", "MolecularFormula", "MolecularWeight"])
-  			.execute((data, status) => {
-    		  if(status !== 1) throw Error();
-          else props.cb(data);
-  			});
+  	async getPubchemData(context, req) {
+      let pubchem = 'https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/' + encodeURIComponent(req) + '/property/IUPACName,MolecularFormula,MolecularWeight,/JSON';
+      let response = await axios.get(pubchem);
+      return response.data.PropertyTable.Properties[0];
   	},
 
   	async getStructureData(context, CID) {

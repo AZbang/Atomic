@@ -1,11 +1,9 @@
 <template lang="html">
   <router-link :to="getSubstanceLink(data.label)">
-    <div class="card waves-effect">
-      <img src="http://cosmetic.ua/uploads/spool/photo/00000018037-filename-00002-tape.jpg" alt="">
-      <div class="card-content white-text">
-        <span class="card-title">{{data.formula}}</span>
-        <p>{{data.label}}</p>
-      </div>
+    <div class="card-panel waves-effect">
+      <span>{{data.label}}</span>
+      <br>
+      <span class="card-title">{{data.formula}}</span>
       <a class="waves-effect btn-star" :class="classStar"><i class="material-icons">star</i></a>
     </div>
   </router-link>
@@ -40,15 +38,18 @@
 </script>
 
 <style scoped>
-  .card {
+  .card-panel {
     width: 100%;
+  }
+  span {
+    font-size: 1.4em;
   }
 
   a.btn-star {
     position: absolute;
     right: 10px;
     top: 50%;
-    margin-top: -5px;
+    margin-top: -20px;
     width: 40px;
     height: 40px;
     border-radius: 50%;
