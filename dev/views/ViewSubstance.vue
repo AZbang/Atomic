@@ -14,14 +14,15 @@
       ModelSubstance,
       InfoSubstance
     },
-    data() {
-      return {
-        query: this.$route.query.q
+    computed: {
+      structureData() {
+        return this.$store.state.substance.data;
       }
     },
     mounted() {
       this.$store.dispatch('loadSubstance', {
-        req: this.query,
+        formula: this.$route.query.formula,
+        label: this.$route.query.label,
         cb: (data) => this.$emit('generateStructure', data)
       });
     }

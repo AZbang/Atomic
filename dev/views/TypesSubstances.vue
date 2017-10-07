@@ -21,8 +21,7 @@
   module.exports = {
     computed: {
       types() {
-        console.log(this.$store);
-        return this.$store.state.database.types
+        return this.$store.state.database.types;
       }
     },
     methods: {

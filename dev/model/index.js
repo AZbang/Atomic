@@ -18,7 +18,6 @@ class Model {
 		this.renderer.setSize(this.w, this.h);
 
 		this.wrap = wrap;
-		console.log(wrap)
 		this.wrap.appendChild(this.renderer.domElement);
 
 		this.camera = new THREE.PerspectiveCamera(75, this.w / this.h, 0.1, 1000);

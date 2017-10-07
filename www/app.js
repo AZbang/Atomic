@@ -11,6 +11,11 @@ module.exports = {
       classStar: 'grey-text'
     };
   },
+  computed: {
+    link() {
+      return "/substance?label=" + this.data.label + '&formula=' + this.data.formula;
+    }
+  },
   methods: {
     substanceToggleStar() {
       if (this.isClick) {
@@ -21,9 +26,6 @@ module.exports = {
       }
 
       this.isClick = !this.isClick;
-    },
-    getSubstanceLink(req) {
-      return "/substance?q=" + req;
     }
   }
 };
@@ -31,7 +33,7 @@ module.exports = {
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('router-link',{attrs:{"to":_vm.getSubstanceLink(_vm.data.label)}},[_c('div',{staticClass:"card-panel waves-effect"},[_c('span',[_vm._v(_vm._s(_vm.data.label))]),_vm._v(" "),_c('br'),_vm._v(" "),_c('span',{staticClass:"card-title"},[_vm._v(_vm._s(_vm.data.formula))]),_vm._v(" "),_c('a',{staticClass:"waves-effect btn-star",class:_vm.classStar},[_c('i',{staticClass:"material-icons"},[_vm._v("star")])])])])}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('router-link',{attrs:{"to":_vm.link}},[_c('div',{staticClass:"card-panel waves-effect"},[_c('span',[_vm._v(_vm._s(_vm.data.label))]),_vm._v(" "),_c('br'),_vm._v(" "),_c('span',{staticClass:"card-title"},[_vm._v(_vm._s(_vm.data.formula))]),_vm._v(" "),_c('a',{staticClass:"waves-effect btn-star",class:_vm.classStar},[_c('i',{staticClass:"material-icons"},[_vm._v("star")])])])])}
 __vue__options__.staticRenderFns = []
 __vue__options__._scopeId = "data-v-42fd26f0"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
@@ -127,6 +129,7 @@ module.exports = {
   mounted() {
     let wrap = document.getElementById('model');
     this.model = new Model(wrap, window.innerWidth, window.innerHeight / 2);
+    this.model.atomsData = this.$store.state.database.atoms;
     this.model.start();
 
     this.$parent.$on('generateStructure', this.generateStructure);
@@ -149,7 +152,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
     hotAPI.rerender("data-v-5383ea47", __vue__options__)
   }
 })()}
-},{"../model":16,"vue":62,"vue-hot-reload-api":60,"vueify/lib/insert-css":63}],5:[function(require,module,exports){
+},{"../model":15,"vue":62,"vue-hot-reload-api":60,"vueify/lib/insert-css":63}],5:[function(require,module,exports){
 var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".row[data-v-96bedcd8] {\n  margin-top: 6px;\n}")
 ;(function(){
 
@@ -200,10 +203,28 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
 })()}
 },{"vue":62,"vue-hot-reload-api":60,"vueify/lib/insert-css":63}],7:[function(require,module,exports){
 var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".search-wrapper[data-v-b00e91b0] {\n  box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.1), 0 1px 1px 0 rgba(0,0,0,0.05), 0 3px 1px -6px rgba(0,0,0,0.1) !important;\n}\n.search-wrapper input#search[data-v-b00e91b0] {\n  display: block;\n  font-size: 16px;\n  font-weight: 300;\n  width: 100%;\n  height: 45px;\n  margin: 0;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  padding: 0 45px 0 15px;\n  border: 0;\n}\n.search-wrapper i.material-icons[data-v-b00e91b0] {\n  position: absolute;\n  top: 10px;\n  right: 10px;\n  cursor: pointer;\n}")
+;(function(){
+
+
+module.exports = {
+  data() {
+    return {
+      searchReq: ''
+    };
+  },
+  methods: {
+    searchSubstance() {
+      this.$router.push({ path: '/empty' });
+      setTimeout(() => this.$router.push({ path: '/substance', query: { label: this.searchReq } }), 10);
+    }
+  }
+};
+})()
+if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _vm._m(0)}
-__vue__options__.staticRenderFns = [function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"search-wrapper card"},[_c('input',{attrs:{"id":"search"}}),_c('i',{staticClass:"material-icons"},[_vm._v("search")])])}]
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"search-wrapper card"},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.searchReq),expression:"searchReq"}],attrs:{"id":"search"},domProps:{"value":(_vm.searchReq)},on:{"keyup":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"enter",13)){ return null; }_vm.searchSubstance($event)},"input":function($event){if($event.target.composing){ return; }_vm.searchReq=$event.target.value}}}),_c('i',{staticClass:"material-icons"},[_vm._v("search")])])}
+__vue__options__.staticRenderFns = []
 __vue__options__._scopeId = "data-v-b00e91b0"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -272,7 +293,7 @@ Vue.use(Vuex);
 
 var router = new VueRouter({
 	routes: [{ path: '/', redirect: '/main' }, { path: '/main', component: Main }, { path: '/types', component: TypesSubstances }, { path: '/type/:type', component: Substances }, { path: '/substance', component: ViewSubstance, props: function props(route) {
-			return { query: route.query.q };
+			return { label: route.query.label, formula: route.query.formula };
 		} }]
 });
 
@@ -292,8 +313,6 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var atoms = require('./atoms.json');
-
 var Atom = function () {
 	function Atom(molecule, id, x, y, z) {
 		_classCallCheck(this, Atom);
@@ -309,7 +328,7 @@ var Atom = function () {
 
 		this.nodes = [];
 
-		this.data = atoms[id - 1];
+		this.data = this.model.atomsData[id - 1];
 
 		this.color = +('' + this.data.color).toLowerCase();
 		this.shadow = +('' + this.data.shadow).toLowerCase();
@@ -346,32 +365,11 @@ var Atom = function () {
 			var _this = this;
 
 			this.model.domEvents.addEventListener(this.mesh, 'click', function (event) {
-
 				_this.molecule.atoms.forEach(function (atom) {
 					atom.meshSelect.visible = false;
 				});
 				_this.meshSelect.visible = true;
-
-				var table = $('<table class="ui blue table"><tbody></tbody></table>');
-
-				table.find('tbody').append('<tr><td>\u041F\u043E\u0440\u044F\u0434\u043A\u043E\u0432\u044B\u0439 \u043D\u043E\u043C\u0435\u0440 \u0430\u0442\u043E\u043C\u0430</td><td>' + _this.id + '</td></tr>');
-				for (var key in _this.data) {
-					if (key == 'description' || key == 'label' || key == 'shadow' || key == 'color') continue;
-					table.find('tbody').append('<tr><td>' + key + '</td><td>' + _this.data[key] + '</td></tr>');
-				}
-				$('#info-atom .content').empty();
-				$('#info-atom .content').append('<i class="right floated large close icon" style="cursor: pointer"></i>');
-				$('#info-atom .content i.close').on('click', function () {
-					$('#info-atom').hide();
-					$('#info-substance').show().transition('pulse');
-				});
-				$('#info-atom .content').append('<div class="header">' + _this.data.label.split(' ')[0] + '</div>');
-				$('#info-atom .content').append('<div class="meta">' + _this.data.label.split(' ')[1] + '</div>');
-				$('#info-atom .content').append('<div class="description">' + _this.data.description + '</div>');
-				$('#info-atom .content').append(table);
-				$('#info-substance').hide();
-				$('#info-atom').show().transition('pulse');
-			}, false);
+			});
 		}
 	}, {
 		key: 'remove',
@@ -385,7 +383,7 @@ var Atom = function () {
 
 module.exports = Atom;
 
-},{"./atoms.json":14}],11:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 "use strict";
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1130,12 +1128,566 @@ THREE.OrbitControls.prototype = Object.create(THREE.EventDispatcher.prototype);
 module.exports = THREE.OrbitControls;
 
 },{}],14:[function(require,module,exports){
+'use strict';
+
+// This THREEx helper makes it easy to handle the mouse events in your 3D scene
+//
+// * CHANGES NEEDED
+//   * handle drag/drop
+//   * notify events not object3D - like DOM
+//     * so single object with property
+//   * DONE bubling implement bubling/capturing
+//   * DONE implement event.stopPropagation()
+//   * DONE implement event.type = "click" and co
+//   * DONE implement event.target
+//
+// # Lets get started
+//
+// First you include it in your page
+//
+// ```<script src='threex.domevent.js'>< /script>```
+//
+// # use the object oriented api
+//
+// You bind an event like this
+// 
+// ```mesh.on('click', function(object3d){ ... })```
+//
+// To unbind an event, just do
+//
+// ```mesh.off('click', function(object3d){ ... })```
+//
+// As an alternative, there is another naming closer DOM events.
+// Pick the one you like, they are doing the same thing
+//
+// ```mesh.addEventListener('click', function(object3d){ ... })```
+// ```mesh.removeEventListener('click', function(object3d){ ... })```
+//
+// # Supported Events
+//
+// Always in a effort to stay close to usual pratices, the events name are the same as in DOM.
+// The semantic is the same too.
+// Currently, the available events are
+// [click, dblclick, mouseup, mousedown](http://www.quirksmode.org/dom/events/click.html),
+// [mouseover and mouse out](http://www.quirksmode.org/dom/events/mouseover.html).
+//
+// # use the standalone api
+//
+// The object-oriented api modifies THREE.Object3D class.
+// It is a global class, so it may be legitimatly considered unclean by some people.
+// If this bother you, simply do ```THREEx.DomEvents.noConflict()``` and use the
+// standalone API. In fact, the object oriented API is just a thin wrapper
+// on top of the standalone API.
+//
+// First, you instanciate the object
+//
+// ```var domEvent = new THREEx.DomEvent();```
+// 
+// Then you bind an event like this
+//
+// ```domEvent.bind(mesh, 'click', function(object3d){ object3d.scale.x *= 2; });```
+//
+// To unbind an event, just do
+//
+// ```domEvent.unbind(mesh, 'click', callback);```
+//
+// 
+// # Code
+
+//
+
+/** @namespace */
+var THREEx = THREEx || {};
+
+// # Constructor
+THREEx.DomEvents = function (camera, domElement) {
+	this._camera = camera || null;
+	this._domElement = domElement || document;
+	this._raycaster = new THREE.Raycaster();
+	this._selected = null;
+	this._boundObjs = {};
+	// Bind dom event for mouse and touch
+	var _this = this;
+
+	this._$onClick = function () {
+		_this._onClick.apply(_this, arguments);
+	};
+	this._$onDblClick = function () {
+		_this._onDblClick.apply(_this, arguments);
+	};
+	this._$onMouseMove = function () {
+		_this._onMouseMove.apply(_this, arguments);
+	};
+	this._$onMouseDown = function () {
+		_this._onMouseDown.apply(_this, arguments);
+	};
+	this._$onMouseUp = function () {
+		_this._onMouseUp.apply(_this, arguments);
+	};
+	this._$onTouchMove = function () {
+		_this._onTouchMove.apply(_this, arguments);
+	};
+	this._$onTouchStart = function () {
+		_this._onTouchStart.apply(_this, arguments);
+	};
+	this._$onTouchEnd = function () {
+		_this._onTouchEnd.apply(_this, arguments);
+	};
+	this._$onContextmenu = function () {
+		_this._onContextmenu.apply(_this, arguments);
+	};
+	this._domElement.addEventListener('click', this._$onClick, false);
+	this._domElement.addEventListener('dblclick', this._$onDblClick, false);
+	this._domElement.addEventListener('mousemove', this._$onMouseMove, false);
+	this._domElement.addEventListener('mousedown', this._$onMouseDown, false);
+	this._domElement.addEventListener('mouseup', this._$onMouseUp, false);
+	this._domElement.addEventListener('touchmove', this._$onTouchMove, false);
+	this._domElement.addEventListener('touchstart', this._$onTouchStart, false);
+	this._domElement.addEventListener('touchend', this._$onTouchEnd, false);
+	this._domElement.addEventListener('contextmenu', this._$onContextmenu, false);
+};
+
+// # Destructor
+THREEx.DomEvents.prototype.destroy = function () {
+	// unBind dom event for mouse and touch
+	this._domElement.removeEventListener('click', this._$onClick, false);
+	this._domElement.removeEventListener('dblclick', this._$onDblClick, false);
+	this._domElement.removeEventListener('mousemove', this._$onMouseMove, false);
+	this._domElement.removeEventListener('mousedown', this._$onMouseDown, false);
+	this._domElement.removeEventListener('mouseup', this._$onMouseUp, false);
+	this._domElement.removeEventListener('touchmove', this._$onTouchMove, false);
+	this._domElement.removeEventListener('touchstart', this._$onTouchStart, false);
+	this._domElement.removeEventListener('touchend', this._$onTouchEnd, false);
+	this._domElement.removeEventListener('contextmenu', this._$onContextmenu, false);
+};
+
+THREEx.DomEvents.eventNames = ["click", "dblclick", "mouseover", "mouseout", "mousemove", "mousedown", "mouseup", "contextmenu", "touchstart", "touchend"];
+
+THREEx.DomEvents.prototype._getRelativeMouseXY = function (domEvent) {
+	var element = domEvent.target || domEvent.srcElement;
+	if (element.nodeType === 3) {
+		element = element.parentNode; // Safari fix -- see http://www.quirksmode.org/js/events_properties.html
+	}
+
+	//get the real position of an element relative to the page starting point (0, 0)
+	//credits go to brainjam on answering http://stackoverflow.com/questions/5755312/getting-mouse-position-relative-to-content-area-of-an-element
+	var elPosition = { x: 0, y: 0 };
+	var tmpElement = element;
+	//store padding
+	var style = getComputedStyle(tmpElement, null);
+	elPosition.y += parseInt(style.getPropertyValue("padding-top"), 10);
+	elPosition.x += parseInt(style.getPropertyValue("padding-left"), 10);
+	//add positions
+	do {
+		elPosition.x += tmpElement.offsetLeft;
+		elPosition.y += tmpElement.offsetTop;
+		style = getComputedStyle(tmpElement, null);
+
+		elPosition.x += parseInt(style.getPropertyValue("border-left-width"), 10);
+		elPosition.y += parseInt(style.getPropertyValue("border-top-width"), 10);
+	} while (tmpElement = tmpElement.offsetParent);
+
+	var elDimension = {
+		width: element === window ? window.innerWidth : element.offsetWidth,
+		height: element === window ? window.innerHeight : element.offsetHeight
+	};
+
+	return {
+		x: +((domEvent.pageX - elPosition.x) / elDimension.width) * 2 - 1,
+		y: -((domEvent.pageY - elPosition.y) / elDimension.height) * 2 + 1
+	};
+};
+
+/********************************************************************************/
+/*		domevent context						*/
+/********************************************************************************/
+
+// handle domevent context in object3d instance
+
+THREEx.DomEvents.prototype._objectCtxInit = function (object3d) {
+	object3d._3xDomEvent = {};
+};
+THREEx.DomEvents.prototype._objectCtxDeinit = function (object3d) {
+	delete object3d._3xDomEvent;
+};
+THREEx.DomEvents.prototype._objectCtxIsInit = function (object3d) {
+	return object3d._3xDomEvent ? true : false;
+};
+THREEx.DomEvents.prototype._objectCtxGet = function (object3d) {
+	return object3d._3xDomEvent;
+};
+
+/********************************************************************************/
+/*										*/
+/********************************************************************************/
+
+/**
+ * Getter/Setter for camera
+*/
+THREEx.DomEvents.prototype.camera = function (value) {
+	if (value) this._camera = value;
+	return this._camera;
+};
+
+THREEx.DomEvents.prototype.bind = function (object3d, eventName, callback, useCapture) {
+	console.assert(THREEx.DomEvents.eventNames.indexOf(eventName) !== -1, "not available events:" + eventName);
+
+	if (!this._objectCtxIsInit(object3d)) this._objectCtxInit(object3d);
+	var objectCtx = this._objectCtxGet(object3d);
+	if (!objectCtx[eventName + 'Handlers']) objectCtx[eventName + 'Handlers'] = [];
+
+	objectCtx[eventName + 'Handlers'].push({
+		callback: callback,
+		useCapture: useCapture
+	});
+
+	// add this object in this._boundObjs
+	if (this._boundObjs[eventName] === undefined) {
+		this._boundObjs[eventName] = [];
+	}
+	this._boundObjs[eventName].push(object3d);
+};
+THREEx.DomEvents.prototype.addEventListener = THREEx.DomEvents.prototype.bind;
+
+THREEx.DomEvents.prototype.unbind = function (object3d, eventName, callback, useCapture) {
+	console.assert(THREEx.DomEvents.eventNames.indexOf(eventName) !== -1, "not available events:" + eventName);
+
+	if (!this._objectCtxIsInit(object3d)) this._objectCtxInit(object3d);
+
+	var objectCtx = this._objectCtxGet(object3d);
+	if (!objectCtx[eventName + 'Handlers']) objectCtx[eventName + 'Handlers'] = [];
+
+	var handlers = objectCtx[eventName + 'Handlers'];
+	for (var i = 0; i < handlers.length; i++) {
+		var handler = handlers[i];
+		if (callback != handler.callback) continue;
+		if (useCapture != handler.useCapture) continue;
+		handlers.splice(i, 1);
+		break;
+	}
+	// from this object from this._boundObjs
+	var index = this._boundObjs[eventName].indexOf(object3d);
+	console.assert(index !== -1);
+	this._boundObjs[eventName].splice(index, 1);
+};
+THREEx.DomEvents.prototype.removeEventListener = THREEx.DomEvents.prototype.unbind;
+
+THREEx.DomEvents.prototype._bound = function (eventName, object3d) {
+	var objectCtx = this._objectCtxGet(object3d);
+	if (!objectCtx) return false;
+	return objectCtx[eventName + 'Handlers'] ? true : false;
+};
+
+/********************************************************************************/
+/*		onMove								*/
+/********************************************************************************/
+
+// # handle mousemove kind of events
+
+THREEx.DomEvents.prototype._onMove = function (eventName, mouseX, mouseY, origDomEvent) {
+	//console.log('eventName', eventName, 'boundObjs', this._boundObjs[eventName])
+	// get objects bound to this event
+	var boundObjs = this._boundObjs[eventName];
+	if (boundObjs === undefined || boundObjs.length === 0) return;
+	// compute the intersection
+	var vector = new THREE.Vector2();
+
+	// update the picking ray with the camera and mouse position
+	vector.set(mouseX, mouseY);
+	this._raycaster.setFromCamera(vector, this._camera);
+
+	var intersects = this._raycaster.intersectObjects(boundObjs);
+
+	var oldSelected = this._selected;
+
+	if (intersects.length > 0) {
+		var notifyOver, notifyOut, notifyMove;
+		var intersect = intersects[0];
+		var newSelected = intersect.object;
+		this._selected = newSelected;
+		// if newSelected bound mousemove, notify it
+		notifyMove = this._bound('mousemove', newSelected);
+
+		if (oldSelected != newSelected) {
+			// if newSelected bound mouseenter, notify it
+			notifyOver = this._bound('mouseover', newSelected);
+			// if there is a oldSelect and oldSelected bound mouseleave, notify it
+			notifyOut = oldSelected && this._bound('mouseout', oldSelected);
+		}
+	} else {
+		// if there is a oldSelect and oldSelected bound mouseleave, notify it
+		notifyOut = oldSelected && this._bound('mouseout', oldSelected);
+		this._selected = null;
+	}
+
+	// notify mouseMove - done at the end with a copy of the list to allow callback to remove handlers
+	notifyMove && this._notify('mousemove', newSelected, origDomEvent, intersect);
+	// notify mouseEnter - done at the end with a copy of the list to allow callback to remove handlers
+	notifyOver && this._notify('mouseover', newSelected, origDomEvent, intersect);
+	// notify mouseLeave - done at the end with a copy of the list to allow callback to remove handlers
+	notifyOut && this._notify('mouseout', oldSelected, origDomEvent, intersect);
+};
+
+/********************************************************************************/
+/*		onEvent								*/
+/********************************************************************************/
+
+// # handle click kind of events
+
+THREEx.DomEvents.prototype._onEvent = function (eventName, mouseX, mouseY, origDomEvent) {
+	//console.log('eventName', eventName, 'boundObjs', this._boundObjs[eventName])
+	// get objects bound to this event
+	var boundObjs = this._boundObjs[eventName];
+	if (boundObjs === undefined || boundObjs.length === 0) return;
+	// compute the intersection
+	var vector = new THREE.Vector2();
+
+	// update the picking ray with the camera and mouse position
+	vector.set(mouseX, mouseY);
+	this._raycaster.setFromCamera(vector, this._camera);
+
+	var intersects = this._raycaster.intersectObjects(boundObjs, true);
+	// if there are no intersections, return now
+	if (intersects.length === 0) return;
+
+	// init some variables
+	var intersect = intersects[0];
+	var object3d = intersect.object;
+	var objectCtx = this._objectCtxGet(object3d);
+	var objectParent = object3d.parent;
+
+	while (typeof objectCtx == 'undefined' && objectParent) {
+		objectCtx = this._objectCtxGet(objectParent);
+		objectParent = objectParent.parent;
+	}
+	if (!objectCtx) return;
+
+	// notify handlers
+	this._notify(eventName, object3d, origDomEvent, intersect);
+};
+
+THREEx.DomEvents.prototype._notify = function (eventName, object3d, origDomEvent, intersect) {
+	var objectCtx = this._objectCtxGet(object3d);
+	var handlers = objectCtx ? objectCtx[eventName + 'Handlers'] : null;
+
+	// parameter check
+	console.assert(arguments.length === 4);
+
+	// do bubbling
+	if (!objectCtx || !handlers || handlers.length === 0) {
+		object3d.parent && this._notify(eventName, object3d.parent, origDomEvent, intersect);
+		return;
+	}
+
+	// notify all handlers
+	var handlers = objectCtx[eventName + 'Handlers'];
+	for (var i = 0; i < handlers.length; i++) {
+		var handler = handlers[i];
+		var toPropagate = true;
+		handler.callback({
+			type: eventName,
+			target: object3d,
+			origDomEvent: origDomEvent,
+			intersect: intersect,
+			stopPropagation: function stopPropagation() {
+				toPropagate = false;
+			}
+		});
+		if (!toPropagate) continue;
+		// do bubbling
+		if (handler.useCapture === false) {
+			object3d.parent && this._notify(eventName, object3d.parent, origDomEvent, intersect);
+		}
+	}
+};
+
+/********************************************************************************/
+/*		handle mouse events						*/
+/********************************************************************************/
+// # handle mouse events
+
+THREEx.DomEvents.prototype._onMouseDown = function (event) {
+	return this._onMouseEvent('mousedown', event);
+};
+THREEx.DomEvents.prototype._onMouseUp = function (event) {
+	return this._onMouseEvent('mouseup', event);
+};
+
+THREEx.DomEvents.prototype._onMouseEvent = function (eventName, domEvent) {
+	var mouseCoords = this._getRelativeMouseXY(domEvent);
+	this._onEvent(eventName, mouseCoords.x, mouseCoords.y, domEvent);
+};
+
+THREEx.DomEvents.prototype._onMouseMove = function (domEvent) {
+	var mouseCoords = this._getRelativeMouseXY(domEvent);
+	this._onMove('mousemove', mouseCoords.x, mouseCoords.y, domEvent);
+	this._onMove('mouseover', mouseCoords.x, mouseCoords.y, domEvent);
+	this._onMove('mouseout', mouseCoords.x, mouseCoords.y, domEvent);
+};
+
+THREEx.DomEvents.prototype._onClick = function (event) {
+	// TODO handle touch ?
+	this._onMouseEvent('click', event);
+};
+THREEx.DomEvents.prototype._onDblClick = function (event) {
+	// TODO handle touch ?
+	this._onMouseEvent('dblclick', event);
+};
+
+THREEx.DomEvents.prototype._onContextmenu = function (event) {
+	//TODO don't have a clue about how this should work with touch..
+	this._onMouseEvent('contextmenu', event);
+};
+
+/********************************************************************************/
+/*		handle touch events						*/
+/********************************************************************************/
+// # handle touch events
+
+
+THREEx.DomEvents.prototype._onTouchStart = function (event) {
+	return this._onTouchEvent('touchstart', event);
+};
+THREEx.DomEvents.prototype._onTouchEnd = function (event) {
+	return this._onTouchEvent('touchend', event);
+};
+
+THREEx.DomEvents.prototype._onTouchMove = function (domEvent) {
+	if (domEvent.touches.length != 1) return undefined;
+
+	domEvent.preventDefault();
+
+	var mouseX = +(domEvent.touches[0].pageX / window.innerWidth) * 2 - 1;
+	var mouseY = -(domEvent.touches[0].pageY / window.innerHeight) * 2 + 1;
+	this._onMove('mousemove', mouseX, mouseY, domEvent);
+	this._onMove('mouseover', mouseX, mouseY, domEvent);
+	this._onMove('mouseout', mouseX, mouseY, domEvent);
+};
+
+THREEx.DomEvents.prototype._onTouchEvent = function (eventName, domEvent) {
+	if (domEvent.touches.length != 1) return undefined;
+
+	domEvent.preventDefault();
+
+	var mouseX = +(domEvent.touches[0].pageX / window.innerWidth) * 2 - 1;
+	var mouseY = -(domEvent.touches[0].pageY / window.innerHeight) * 2 + 1;
+	this._onEvent(eventName, mouseX, mouseY, domEvent);
+};
+
+module.exports = THREEx.DomEvents;
+
+},{}],15:[function(require,module,exports){
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Molecule = require('./Molecule');
+var OrbitControls = require('./OrbitControls');
+var DomEvents = require('./domEvents');
+
+var Model = function () {
+	function Model(wrap, w, h) {
+		_classCallCheck(this, Model);
+
+		this.w = w;
+		this.h = h;
+
+		this.molecules = [];
+
+		// init three.js
+		this.renderer = new THREE.WebGLRenderer({
+			antialias: true,
+			alpha: true
+		});
+		this.renderer.setClearColor(0xffffff, 0);
+		this.renderer.setSize(this.w, this.h);
+
+		this.wrap = wrap;
+		this.wrap.appendChild(this.renderer.domElement);
+
+		this.camera = new THREE.PerspectiveCamera(75, this.w / this.h, 0.1, 1000);
+		this.orbit = new THREE.OrbitControls(this.camera, this.renderer.domElement, this.wrap);
+		this.scene = new THREE.Scene();
+
+		this.lights = [];
+		this.lights[0] = new THREE.PointLight(0xffffff, 1, 0);
+		this.lights[1] = new THREE.PointLight(0xffffff, 1, 0);
+		this.lights[2] = new THREE.PointLight(0xffffff, 1, 0);
+
+		this.lights[0].position.set(0, 200, 0);
+		this.lights[1].position.set(100, 200, 100);
+		this.lights[2].position.set(-100, -200, -100);
+
+		this.scene.add(this.lights[0]);
+		this.scene.add(this.lights[1]);
+		this.scene.add(this.lights[2]);
+
+		this.domEvents = new DomEvents(this.camera, this.wrap);
+	}
+
+	_createClass(Model, [{
+		key: 'resize',
+		value: function resize(w, h) {
+			this.w = w;
+			this.h = h;
+
+			this.camera.aspect = this.w / this.h;
+			this.camera.updateProjectionMatrix();
+			this.renderer.setSize(this.w, this.h);
+		}
+	}, {
+		key: 'addMolecule',
+		value: function addMolecule(data) {
+			var mol = new Molecule(this, this.molecules.length, data);
+			return this.molecules.push(mol);
+		}
+	}, {
+		key: 'removeMolecule',
+		value: function removeMolecule(i) {
+			if (this.molecules[i]) {
+				this.molecules[i].remove();
+				this.molecules.splice(i, 1);
+			}
+		}
+	}, {
+		key: 'start',
+		value: function start() {
+			this.loop();
+		}
+	}, {
+		key: 'loop',
+		value: function loop() {
+			var _this = this;
+
+			requestAnimationFrame(function () {
+				return _this.loop();
+			});
+
+			this.camera.lookAt(this.scene.position);
+			this.camera.updateMatrixWorld();
+
+			for (var i = 0; i < this.molecules.length; i++) {
+				this.molecules[i].update();
+			}
+
+			this.renderer.render(this.scene, this.camera);
+		}
+	}]);
+
+	return Model;
+}();
+
+module.exports = Model;
+
+},{"./Molecule":12,"./OrbitControls":13,"./domEvents":14}],16:[function(require,module,exports){
 module.exports=[
     {
         "Химический символ": "H",
         "label": "Водород Hydrogen",
-        "color": "0xFFFFFF",
-        "shadow": "0xEEEEEE",
+        "color": "0x6a9fd1",
+        "shadow": "0x6a9fd1",
         "Электронная формула": "()1s0",
         "description": "<b>&#x412;&#x43E;&#x434;&#x43E;&#x440;&#x43E;&#x434;</b> (&#x43B;&#x430;&#x442;. Hydrogenium), H, &#x445;&#x438;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;, &#x43F;&#x435;&#x440;&#x432;&#x44B;&#x439; &#x43F;&#x43E; &#x43F;&#x43E;&#x440;&#x44F;&#x434;&#x43A;&#x43E;&#x432;&#x43E;&#x43C;&#x443; &#x43D;&#x43E;&#x43C;&#x435;&#x440;&#x443; &#x432; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x435; &#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x430;; &#x430;&#x442;&#x43E;&#x43C;&#x43D;&#x430;&#x44F; &#x43C;&#x430;&#x441;&#x441;&#x430; 1,0079. &#x41F;&#x440;&#x438; &#x43E;&#x431;&#x44B;&#x447;&#x43D;&#x44B;&#x445; &#x443;&#x441;&#x43B;&#x43E;&#x432;&#x438;&#x44F;&#x445; &#x412;&#x43E;&#x434;&#x43E;&#x440;&#x43E;&#x434; - &#x433;&#x430;&#x437;; &#x43D;&#x435; &#x438;&#x43C;&#x435;&#x435;&#x442; &#x446;&#x432;&#x435;&#x442;&#x430;, &#x437;&#x430;&#x43F;&#x430;&#x445;&#x430; &#x438; &#x432;&#x43A;&#x443;&#x441;&#x430;.\n",
         "Атомная масса": "1.0079",
@@ -2746,571 +3298,19 @@ module.exports=[
         "1-й ионизац. потенциал, эв": " "
     }
 ]
-},{}],15:[function(require,module,exports){
-'use strict';
 
-// This THREEx helper makes it easy to handle the mouse events in your 3D scene
-//
-// * CHANGES NEEDED
-//   * handle drag/drop
-//   * notify events not object3D - like DOM
-//     * so single object with property
-//   * DONE bubling implement bubling/capturing
-//   * DONE implement event.stopPropagation()
-//   * DONE implement event.type = "click" and co
-//   * DONE implement event.target
-//
-// # Lets get started
-//
-// First you include it in your page
-//
-// ```<script src='threex.domevent.js'>< /script>```
-//
-// # use the object oriented api
-//
-// You bind an event like this
-// 
-// ```mesh.on('click', function(object3d){ ... })```
-//
-// To unbind an event, just do
-//
-// ```mesh.off('click', function(object3d){ ... })```
-//
-// As an alternative, there is another naming closer DOM events.
-// Pick the one you like, they are doing the same thing
-//
-// ```mesh.addEventListener('click', function(object3d){ ... })```
-// ```mesh.removeEventListener('click', function(object3d){ ... })```
-//
-// # Supported Events
-//
-// Always in a effort to stay close to usual pratices, the events name are the same as in DOM.
-// The semantic is the same too.
-// Currently, the available events are
-// [click, dblclick, mouseup, mousedown](http://www.quirksmode.org/dom/events/click.html),
-// [mouseover and mouse out](http://www.quirksmode.org/dom/events/mouseover.html).
-//
-// # use the standalone api
-//
-// The object-oriented api modifies THREE.Object3D class.
-// It is a global class, so it may be legitimatly considered unclean by some people.
-// If this bother you, simply do ```THREEx.DomEvents.noConflict()``` and use the
-// standalone API. In fact, the object oriented API is just a thin wrapper
-// on top of the standalone API.
-//
-// First, you instanciate the object
-//
-// ```var domEvent = new THREEx.DomEvent();```
-// 
-// Then you bind an event like this
-//
-// ```domEvent.bind(mesh, 'click', function(object3d){ object3d.scale.x *= 2; });```
-//
-// To unbind an event, just do
-//
-// ```domEvent.unbind(mesh, 'click', callback);```
-//
-// 
-// # Code
-
-//
-
-/** @namespace */
-var THREEx = THREEx || {};
-
-// # Constructor
-THREEx.DomEvents = function (camera, domElement) {
-	this._camera = camera || null;
-	this._domElement = domElement || document;
-	this._raycaster = new THREE.Raycaster();
-	this._selected = null;
-	this._boundObjs = {};
-	// Bind dom event for mouse and touch
-	var _this = this;
-
-	this._$onClick = function () {
-		_this._onClick.apply(_this, arguments);
-	};
-	this._$onDblClick = function () {
-		_this._onDblClick.apply(_this, arguments);
-	};
-	this._$onMouseMove = function () {
-		_this._onMouseMove.apply(_this, arguments);
-	};
-	this._$onMouseDown = function () {
-		_this._onMouseDown.apply(_this, arguments);
-	};
-	this._$onMouseUp = function () {
-		_this._onMouseUp.apply(_this, arguments);
-	};
-	this._$onTouchMove = function () {
-		_this._onTouchMove.apply(_this, arguments);
-	};
-	this._$onTouchStart = function () {
-		_this._onTouchStart.apply(_this, arguments);
-	};
-	this._$onTouchEnd = function () {
-		_this._onTouchEnd.apply(_this, arguments);
-	};
-	this._$onContextmenu = function () {
-		_this._onContextmenu.apply(_this, arguments);
-	};
-	this._domElement.addEventListener('click', this._$onClick, false);
-	this._domElement.addEventListener('dblclick', this._$onDblClick, false);
-	this._domElement.addEventListener('mousemove', this._$onMouseMove, false);
-	this._domElement.addEventListener('mousedown', this._$onMouseDown, false);
-	this._domElement.addEventListener('mouseup', this._$onMouseUp, false);
-	this._domElement.addEventListener('touchmove', this._$onTouchMove, false);
-	this._domElement.addEventListener('touchstart', this._$onTouchStart, false);
-	this._domElement.addEventListener('touchend', this._$onTouchEnd, false);
-	this._domElement.addEventListener('contextmenu', this._$onContextmenu, false);
-};
-
-// # Destructor
-THREEx.DomEvents.prototype.destroy = function () {
-	// unBind dom event for mouse and touch
-	this._domElement.removeEventListener('click', this._$onClick, false);
-	this._domElement.removeEventListener('dblclick', this._$onDblClick, false);
-	this._domElement.removeEventListener('mousemove', this._$onMouseMove, false);
-	this._domElement.removeEventListener('mousedown', this._$onMouseDown, false);
-	this._domElement.removeEventListener('mouseup', this._$onMouseUp, false);
-	this._domElement.removeEventListener('touchmove', this._$onTouchMove, false);
-	this._domElement.removeEventListener('touchstart', this._$onTouchStart, false);
-	this._domElement.removeEventListener('touchend', this._$onTouchEnd, false);
-	this._domElement.removeEventListener('contextmenu', this._$onContextmenu, false);
-};
-
-THREEx.DomEvents.eventNames = ["click", "dblclick", "mouseover", "mouseout", "mousemove", "mousedown", "mouseup", "contextmenu", "touchstart", "touchend"];
-
-THREEx.DomEvents.prototype._getRelativeMouseXY = function (domEvent) {
-	var element = domEvent.target || domEvent.srcElement;
-	if (element.nodeType === 3) {
-		element = element.parentNode; // Safari fix -- see http://www.quirksmode.org/js/events_properties.html
-	}
-
-	//get the real position of an element relative to the page starting point (0, 0)
-	//credits go to brainjam on answering http://stackoverflow.com/questions/5755312/getting-mouse-position-relative-to-content-area-of-an-element
-	var elPosition = { x: 0, y: 0 };
-	var tmpElement = element;
-	//store padding
-	var style = getComputedStyle(tmpElement, null);
-	elPosition.y += parseInt(style.getPropertyValue("padding-top"), 10);
-	elPosition.x += parseInt(style.getPropertyValue("padding-left"), 10);
-	//add positions
-	do {
-		elPosition.x += tmpElement.offsetLeft;
-		elPosition.y += tmpElement.offsetTop;
-		style = getComputedStyle(tmpElement, null);
-
-		elPosition.x += parseInt(style.getPropertyValue("border-left-width"), 10);
-		elPosition.y += parseInt(style.getPropertyValue("border-top-width"), 10);
-	} while (tmpElement = tmpElement.offsetParent);
-
-	var elDimension = {
-		width: element === window ? window.innerWidth : element.offsetWidth,
-		height: element === window ? window.innerHeight : element.offsetHeight
-	};
-
-	return {
-		x: +((domEvent.pageX - elPosition.x) / elDimension.width) * 2 - 1,
-		y: -((domEvent.pageY - elPosition.y) / elDimension.height) * 2 + 1
-	};
-};
-
-/********************************************************************************/
-/*		domevent context						*/
-/********************************************************************************/
-
-// handle domevent context in object3d instance
-
-THREEx.DomEvents.prototype._objectCtxInit = function (object3d) {
-	object3d._3xDomEvent = {};
-};
-THREEx.DomEvents.prototype._objectCtxDeinit = function (object3d) {
-	delete object3d._3xDomEvent;
-};
-THREEx.DomEvents.prototype._objectCtxIsInit = function (object3d) {
-	return object3d._3xDomEvent ? true : false;
-};
-THREEx.DomEvents.prototype._objectCtxGet = function (object3d) {
-	return object3d._3xDomEvent;
-};
-
-/********************************************************************************/
-/*										*/
-/********************************************************************************/
-
-/**
- * Getter/Setter for camera
-*/
-THREEx.DomEvents.prototype.camera = function (value) {
-	if (value) this._camera = value;
-	return this._camera;
-};
-
-THREEx.DomEvents.prototype.bind = function (object3d, eventName, callback, useCapture) {
-	console.assert(THREEx.DomEvents.eventNames.indexOf(eventName) !== -1, "not available events:" + eventName);
-
-	if (!this._objectCtxIsInit(object3d)) this._objectCtxInit(object3d);
-	var objectCtx = this._objectCtxGet(object3d);
-	if (!objectCtx[eventName + 'Handlers']) objectCtx[eventName + 'Handlers'] = [];
-
-	objectCtx[eventName + 'Handlers'].push({
-		callback: callback,
-		useCapture: useCapture
-	});
-
-	// add this object in this._boundObjs
-	if (this._boundObjs[eventName] === undefined) {
-		this._boundObjs[eventName] = [];
-	}
-	this._boundObjs[eventName].push(object3d);
-};
-THREEx.DomEvents.prototype.addEventListener = THREEx.DomEvents.prototype.bind;
-
-THREEx.DomEvents.prototype.unbind = function (object3d, eventName, callback, useCapture) {
-	console.assert(THREEx.DomEvents.eventNames.indexOf(eventName) !== -1, "not available events:" + eventName);
-
-	if (!this._objectCtxIsInit(object3d)) this._objectCtxInit(object3d);
-
-	var objectCtx = this._objectCtxGet(object3d);
-	if (!objectCtx[eventName + 'Handlers']) objectCtx[eventName + 'Handlers'] = [];
-
-	var handlers = objectCtx[eventName + 'Handlers'];
-	for (var i = 0; i < handlers.length; i++) {
-		var handler = handlers[i];
-		if (callback != handler.callback) continue;
-		if (useCapture != handler.useCapture) continue;
-		handlers.splice(i, 1);
-		break;
-	}
-	// from this object from this._boundObjs
-	var index = this._boundObjs[eventName].indexOf(object3d);
-	console.assert(index !== -1);
-	this._boundObjs[eventName].splice(index, 1);
-};
-THREEx.DomEvents.prototype.removeEventListener = THREEx.DomEvents.prototype.unbind;
-
-THREEx.DomEvents.prototype._bound = function (eventName, object3d) {
-	var objectCtx = this._objectCtxGet(object3d);
-	if (!objectCtx) return false;
-	return objectCtx[eventName + 'Handlers'] ? true : false;
-};
-
-/********************************************************************************/
-/*		onMove								*/
-/********************************************************************************/
-
-// # handle mousemove kind of events
-
-THREEx.DomEvents.prototype._onMove = function (eventName, mouseX, mouseY, origDomEvent) {
-	//console.log('eventName', eventName, 'boundObjs', this._boundObjs[eventName])
-	// get objects bound to this event
-	var boundObjs = this._boundObjs[eventName];
-	if (boundObjs === undefined || boundObjs.length === 0) return;
-	// compute the intersection
-	var vector = new THREE.Vector2();
-
-	// update the picking ray with the camera and mouse position
-	vector.set(mouseX, mouseY);
-	this._raycaster.setFromCamera(vector, this._camera);
-
-	var intersects = this._raycaster.intersectObjects(boundObjs);
-
-	var oldSelected = this._selected;
-
-	if (intersects.length > 0) {
-		var notifyOver, notifyOut, notifyMove;
-		var intersect = intersects[0];
-		var newSelected = intersect.object;
-		this._selected = newSelected;
-		// if newSelected bound mousemove, notify it
-		notifyMove = this._bound('mousemove', newSelected);
-
-		if (oldSelected != newSelected) {
-			// if newSelected bound mouseenter, notify it
-			notifyOver = this._bound('mouseover', newSelected);
-			// if there is a oldSelect and oldSelected bound mouseleave, notify it
-			notifyOut = oldSelected && this._bound('mouseout', oldSelected);
-		}
-	} else {
-		// if there is a oldSelect and oldSelected bound mouseleave, notify it
-		notifyOut = oldSelected && this._bound('mouseout', oldSelected);
-		this._selected = null;
-	}
-
-	// notify mouseMove - done at the end with a copy of the list to allow callback to remove handlers
-	notifyMove && this._notify('mousemove', newSelected, origDomEvent, intersect);
-	// notify mouseEnter - done at the end with a copy of the list to allow callback to remove handlers
-	notifyOver && this._notify('mouseover', newSelected, origDomEvent, intersect);
-	// notify mouseLeave - done at the end with a copy of the list to allow callback to remove handlers
-	notifyOut && this._notify('mouseout', oldSelected, origDomEvent, intersect);
-};
-
-/********************************************************************************/
-/*		onEvent								*/
-/********************************************************************************/
-
-// # handle click kind of events
-
-THREEx.DomEvents.prototype._onEvent = function (eventName, mouseX, mouseY, origDomEvent) {
-	//console.log('eventName', eventName, 'boundObjs', this._boundObjs[eventName])
-	// get objects bound to this event
-	var boundObjs = this._boundObjs[eventName];
-	if (boundObjs === undefined || boundObjs.length === 0) return;
-	// compute the intersection
-	var vector = new THREE.Vector2();
-
-	// update the picking ray with the camera and mouse position
-	vector.set(mouseX, mouseY);
-	this._raycaster.setFromCamera(vector, this._camera);
-
-	var intersects = this._raycaster.intersectObjects(boundObjs, true);
-	// if there are no intersections, return now
-	if (intersects.length === 0) return;
-
-	// init some variables
-	var intersect = intersects[0];
-	var object3d = intersect.object;
-	var objectCtx = this._objectCtxGet(object3d);
-	var objectParent = object3d.parent;
-
-	while (typeof objectCtx == 'undefined' && objectParent) {
-		objectCtx = this._objectCtxGet(objectParent);
-		objectParent = objectParent.parent;
-	}
-	if (!objectCtx) return;
-
-	// notify handlers
-	this._notify(eventName, object3d, origDomEvent, intersect);
-};
-
-THREEx.DomEvents.prototype._notify = function (eventName, object3d, origDomEvent, intersect) {
-	var objectCtx = this._objectCtxGet(object3d);
-	var handlers = objectCtx ? objectCtx[eventName + 'Handlers'] : null;
-
-	// parameter check
-	console.assert(arguments.length === 4);
-
-	// do bubbling
-	if (!objectCtx || !handlers || handlers.length === 0) {
-		object3d.parent && this._notify(eventName, object3d.parent, origDomEvent, intersect);
-		return;
-	}
-
-	// notify all handlers
-	var handlers = objectCtx[eventName + 'Handlers'];
-	for (var i = 0; i < handlers.length; i++) {
-		var handler = handlers[i];
-		var toPropagate = true;
-		handler.callback({
-			type: eventName,
-			target: object3d,
-			origDomEvent: origDomEvent,
-			intersect: intersect,
-			stopPropagation: function stopPropagation() {
-				toPropagate = false;
-			}
-		});
-		if (!toPropagate) continue;
-		// do bubbling
-		if (handler.useCapture === false) {
-			object3d.parent && this._notify(eventName, object3d.parent, origDomEvent, intersect);
-		}
-	}
-};
-
-/********************************************************************************/
-/*		handle mouse events						*/
-/********************************************************************************/
-// # handle mouse events
-
-THREEx.DomEvents.prototype._onMouseDown = function (event) {
-	return this._onMouseEvent('mousedown', event);
-};
-THREEx.DomEvents.prototype._onMouseUp = function (event) {
-	return this._onMouseEvent('mouseup', event);
-};
-
-THREEx.DomEvents.prototype._onMouseEvent = function (eventName, domEvent) {
-	var mouseCoords = this._getRelativeMouseXY(domEvent);
-	this._onEvent(eventName, mouseCoords.x, mouseCoords.y, domEvent);
-};
-
-THREEx.DomEvents.prototype._onMouseMove = function (domEvent) {
-	var mouseCoords = this._getRelativeMouseXY(domEvent);
-	this._onMove('mousemove', mouseCoords.x, mouseCoords.y, domEvent);
-	this._onMove('mouseover', mouseCoords.x, mouseCoords.y, domEvent);
-	this._onMove('mouseout', mouseCoords.x, mouseCoords.y, domEvent);
-};
-
-THREEx.DomEvents.prototype._onClick = function (event) {
-	// TODO handle touch ?
-	this._onMouseEvent('click', event);
-};
-THREEx.DomEvents.prototype._onDblClick = function (event) {
-	// TODO handle touch ?
-	this._onMouseEvent('dblclick', event);
-};
-
-THREEx.DomEvents.prototype._onContextmenu = function (event) {
-	//TODO don't have a clue about how this should work with touch..
-	this._onMouseEvent('contextmenu', event);
-};
-
-/********************************************************************************/
-/*		handle touch events						*/
-/********************************************************************************/
-// # handle touch events
-
-
-THREEx.DomEvents.prototype._onTouchStart = function (event) {
-	return this._onTouchEvent('touchstart', event);
-};
-THREEx.DomEvents.prototype._onTouchEnd = function (event) {
-	return this._onTouchEvent('touchend', event);
-};
-
-THREEx.DomEvents.prototype._onTouchMove = function (domEvent) {
-	if (domEvent.touches.length != 1) return undefined;
-
-	domEvent.preventDefault();
-
-	var mouseX = +(domEvent.touches[0].pageX / window.innerWidth) * 2 - 1;
-	var mouseY = -(domEvent.touches[0].pageY / window.innerHeight) * 2 + 1;
-	this._onMove('mousemove', mouseX, mouseY, domEvent);
-	this._onMove('mouseover', mouseX, mouseY, domEvent);
-	this._onMove('mouseout', mouseX, mouseY, domEvent);
-};
-
-THREEx.DomEvents.prototype._onTouchEvent = function (eventName, domEvent) {
-	if (domEvent.touches.length != 1) return undefined;
-
-	domEvent.preventDefault();
-
-	var mouseX = +(domEvent.touches[0].pageX / window.innerWidth) * 2 - 1;
-	var mouseY = -(domEvent.touches[0].pageY / window.innerHeight) * 2 + 1;
-	this._onEvent(eventName, mouseX, mouseY, domEvent);
-};
-
-module.exports = THREEx.DomEvents;
-
-},{}],16:[function(require,module,exports){
-'use strict';
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Molecule = require('./Molecule');
-var OrbitControls = require('./OrbitControls');
-var DomEvents = require('./domEvents');
-
-var Model = function () {
-	function Model(wrap, w, h) {
-		_classCallCheck(this, Model);
-
-		this.w = w;
-		this.h = h;
-
-		this.molecules = [];
-
-		// init three.js
-		this.renderer = new THREE.WebGLRenderer({
-			antialias: true,
-			alpha: true
-		});
-		this.renderer.setClearColor(0xffffff, 0);
-		this.renderer.setSize(this.w, this.h);
-
-		this.wrap = wrap;
-		console.log(wrap);
-		this.wrap.appendChild(this.renderer.domElement);
-
-		this.camera = new THREE.PerspectiveCamera(75, this.w / this.h, 0.1, 1000);
-		this.orbit = new THREE.OrbitControls(this.camera, this.renderer.domElement, this.wrap);
-		this.scene = new THREE.Scene();
-
-		this.lights = [];
-		this.lights[0] = new THREE.PointLight(0xffffff, 1, 0);
-		this.lights[1] = new THREE.PointLight(0xffffff, 1, 0);
-		this.lights[2] = new THREE.PointLight(0xffffff, 1, 0);
-
-		this.lights[0].position.set(0, 200, 0);
-		this.lights[1].position.set(100, 200, 100);
-		this.lights[2].position.set(-100, -200, -100);
-
-		this.scene.add(this.lights[0]);
-		this.scene.add(this.lights[1]);
-		this.scene.add(this.lights[2]);
-
-		this.domEvents = new DomEvents(this.camera, this.wrap);
-	}
-
-	_createClass(Model, [{
-		key: 'resize',
-		value: function resize(w, h) {
-			this.w = w;
-			this.h = h;
-
-			this.camera.aspect = this.w / this.h;
-			this.camera.updateProjectionMatrix();
-			this.renderer.setSize(this.w, this.h);
-		}
-	}, {
-		key: 'addMolecule',
-		value: function addMolecule(data) {
-			var mol = new Molecule(this, this.molecules.length, data);
-			return this.molecules.push(mol);
-		}
-	}, {
-		key: 'removeMolecule',
-		value: function removeMolecule(i) {
-			if (this.molecules[i]) {
-				this.molecules[i].remove();
-				this.molecules.splice(i, 1);
-			}
-		}
-	}, {
-		key: 'start',
-		value: function start() {
-			this.loop();
-		}
-	}, {
-		key: 'loop',
-		value: function loop() {
-			var _this = this;
-
-			requestAnimationFrame(function () {
-				return _this.loop();
-			});
-
-			this.camera.lookAt(this.scene.position);
-			this.camera.updateMatrixWorld();
-
-			for (var i = 0; i < this.molecules.length; i++) {
-				this.molecules[i].update();
-			}
-
-			this.renderer.render(this.scene, this.camera);
-		}
-	}]);
-
-	return Model;
-}();
-
-module.exports = Model;
-
-},{"./Molecule":12,"./OrbitControls":13,"./domEvents":15}],17:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 'use strict';
 
 var types = require('./types.json');
 var substances = require('./substances.json');
+var atoms = require('./atoms.json');
 
 module.exports = {
   state: {
     types: types,
     substances: substances,
+    atoms: atoms,
     history: [],
     stars: []
   },
@@ -3335,7 +3335,7 @@ module.exports = {
   }
 };
 
-},{"./substances.json":18,"./types.json":19}],18:[function(require,module,exports){
+},{"./atoms.json":16,"./substances.json":18,"./types.json":19}],18:[function(require,module,exports){
 module.exports={
   "acids": {
     "color": "orange",
@@ -3615,7 +3615,7 @@ module.exports = {
   },
   actions: {
     loadSubstance: function loadSubstance(_ref, props) {
-      var commit, dispatch, rootState, enReq, data, correctRuReq, info, structure;
+      var commit, dispatch, rootState, enReq, data, info, structure;
       return Promise.resolve().then(function () {
         commit = _ref.commit;
         dispatch = _ref.dispatch;
@@ -3623,17 +3623,15 @@ module.exports = {
 
         commit('loadingStart');
 
+        console.log(props);
         return Promise.resolve().then(function () {
-          return dispatch('translateReq', { req: props.req, translate: 'ru-en' });
+          return dispatch('translateReq', { req: props.formula || props.label, translate: 'ru-en' });
         }).then(function (_resp) {
           enReq = _resp;
           return dispatch('getPubchemData', enReq);
         }).then(function (_resp) {
           data = _resp;
-          return dispatch('translateReq', { req: data.IUPACName, translate: 'en-ru' });
-        }).then(function (_resp) {
-          correctRuReq = _resp;
-          return dispatch('wikiData', correctRuReq);
+          return dispatch('wikiData', props.label);
         }).then(function (_resp) {
           info = _resp;
 
@@ -3660,7 +3658,7 @@ module.exports = {
       var rootState, wiki, response, pages;
       return Promise.resolve().then(function () {
         rootState = _ref2.rootState;
-        wiki = 'https://' + 'ru' + '.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&origin=*&titles=' + req;
+        wiki = 'https://' + rootState.lang + '.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&origin=*&titles=' + req;
         return axios.get(wiki, { headers: { "Content-Type": "application/json; charset=UTF-8" } });
       }).then(function (_resp) {
         response = _resp;
@@ -3831,7 +3829,6 @@ var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("h1[data-
 module.exports = {
   computed: {
     types() {
-      console.log(this.$store);
       return this.$store.state.database.types;
     }
   },
@@ -3872,14 +3869,15 @@ module.exports = {
     ModelSubstance,
     InfoSubstance
   },
-  data() {
-    return {
-      query: this.$route.query.q
-    };
+  computed: {
+    structureData() {
+      return this.$store.state.substance.data;
+    }
   },
   mounted() {
     this.$store.dispatch('loadSubstance', {
-      req: this.query,
+      formula: this.$route.query.formula,
+      label: this.$route.query.label,
       cb: data => this.$emit('generateStructure', data)
     });
   }
@@ -3899,7 +3897,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-5f14c517", __vue__options__)
   } else {
-    hotAPI.rerender("data-v-5f14c517", __vue__options__)
+    hotAPI.reload("data-v-5f14c517", __vue__options__)
   }
 })()}
 },{"../components/InfoSubstance.vue":3,"../components/ModelSubstance.vue":4,"vue":62,"vue-hot-reload-api":60,"vueify/lib/insert-css":63}],29:[function(require,module,exports){

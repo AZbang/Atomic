@@ -21,12 +21,12 @@ module.exports = {
     async loadSubstance({commit, dispatch, rootState}, props) {
       commit('loadingStart');
 
+      console.log(props);
       try {
-        let enReq = await dispatch('translateReq', {req: props.req, translate: 'ru-en'});
+        let enReq = await dispatch('translateReq', {req: props.formula || props.label, translate: 'ru-en'});
         let data = await dispatch('getPubchemData', enReq);
 
-        let correctRuReq = await dispatch('translateReq', {req: data.IUPACName, translate: 'en-ru'});
-        let info = await dispatch('wikiData', correctRuReq);
+        let info = await dispatch('wikiData', props.label);
         commit('info', {...info, formula: data.MolecularFormula});
 
         let structure = await dispatch('getStructureData', data.CID);
@@ -43,7 +43,7 @@ module.exports = {
     },
 
     async wikiData({rootState}, req) {
-      let wiki = 'https://' + 'ru' + '.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&origin=*&titles=' + req;
+      let wiki = 'https://' + rootState.lang + '.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&origin=*&titles=' + req;
 
       let response = await axios.get(wiki, {headers: {"Content-Type": "application/json; charset=UTF-8"}});
       let pages = response.data.query.pages;

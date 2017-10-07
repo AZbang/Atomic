@@ -22,7 +22,7 @@ var router = new VueRouter({
 		{path: '/main', component: Main},
 		{path: '/types', component: TypesSubstances},
 		{path: '/type/:type', component:	Substances},
-    {path: '/substance', component: ViewSubstance, props: (route) => ({ query: route.query.q })},
+    {path: '/substance', component: ViewSubstance, props: (route) => ({label: route.query.label, formula: route.query.formula})},
     // {path: '/trainer_types', component: TrainerTypes},
     // {path: '/trainer', component: Trainer},
     // {path: '/marked', component: MarkedSubstances}

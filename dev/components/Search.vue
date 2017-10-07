@@ -1,8 +1,24 @@
 <template>
   <div class="search-wrapper card">
-    <input id="search"><i class="material-icons">search</i>
+    <input id="search" @keyup.enter="searchSubstance" v-model="searchReq"><i class="material-icons">search</i>
   </div>
 </template>
+
+<script>
+  module.exports = {
+    data() {
+      return {
+        searchReq: ''
+      }
+    },
+    methods: {
+      searchSubstance() {
+        this.$router.push({path: '/empty'});
+        setTimeout(() => this.$router.push({path: '/substance', query: {label: this.searchReq}}), 10);
+      }
+    }
+  }
+</script>
 
 <style scoped>
   .search-wrapper {

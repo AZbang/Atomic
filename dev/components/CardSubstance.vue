@@ -1,5 +1,5 @@
 <template lang="html">
-  <router-link :to="getSubstanceLink(data.label)">
+  <router-link :to="link">
     <div class="card-panel waves-effect">
       <span>{{data.label}}</span>
       <br>
@@ -18,6 +18,11 @@
         classStar: 'grey-text'
       }
     },
+    computed: {
+      link() {
+        return "/substance?label=" + this.data.label + '&formula=' + this.data.formula;
+      }
+    },
     methods: {
       substanceToggleStar() {
         if(this.isClick) {
@@ -29,9 +34,6 @@
         }
 
         this.isClick = !this.isClick;
-      },
-      getSubstanceLink(req) {
-        return "/substance?q=" + req;
       }
     }
   }

@@ -1,10 +1,12 @@
 const types = require('./types.json');
 const substances = require('./substances.json');
+const atoms = require('./atoms.json');
 
 module.exports = {
   state: {
     types,
     substances,
+    atoms,
     history: [],
     stars: [],
   },

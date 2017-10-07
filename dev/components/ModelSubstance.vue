@@ -15,6 +15,7 @@
     mounted() {
       let wrap = document.getElementById('model');
       this.model = new Model(wrap, window.innerWidth, window.innerHeight/2);
+      this.model.atomsData = this.$store.state.database.atoms;
       this.model.start();
 
       this.$parent.$on('generateStructure', this.generateStructure);
