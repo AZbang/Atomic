@@ -29,7 +29,7 @@ var router = new VueRouter({
     // {path: '/trainer_types', component: TrainerTypes},
     // {path: '/trainer', component: Trainer},
     {path: '/stars', component: StarSubstances},
-		{path: '/history', component: HistorySubstances},	
+		{path: '/history', component: HistorySubstances},
 	]
 });
 

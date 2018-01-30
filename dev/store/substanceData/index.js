@@ -1,7 +1,5 @@
 const pubchem = require('pubchem-access').domain('compound');
-// const wikipedia = require("wikipedia-js");
 const axios = require('axios');
-
 const key = require('./key.json');
 
 module.exports = {

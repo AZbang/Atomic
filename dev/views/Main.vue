@@ -3,7 +3,7 @@
 		<div class="wrap center-align container">
 	    <h1>Molecules!</h1>
 	    <p class="flow-text">Интерактивный тренажер по изучению веществ неорганической химии.</p>
-	    <router-link :to="{ name: 'substance', params: {label="серная кислота"} }" class="waves-effect waves-light btn-large blue darken-2">Начните с H2SO4!</router-link>
+	    <router-link :to="{ name: 'substance', params: {label: 'серная кислота'} }" class="waves-effect waves-light btn-large blue darken-2">Начните с H2SO4!</router-link>
 	    <br>
 	    <br>
 	    <br>

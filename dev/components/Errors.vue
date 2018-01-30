@@ -9,7 +9,7 @@
     computed: {
       showError() {
         Materialize.toast(this.errorLog, 10000, 'error-log');
-        this.$router.back();
+        // this.$router.back();
         return this.errorLog;
       }
     }
