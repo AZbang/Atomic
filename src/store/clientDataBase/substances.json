@@ -1,0 +1,233 @@
+{
+   "acids":{
+      "color":"orange",
+      "label":"кислоты",
+      "substances":[
+         {
+            "label":"Серная кислота",
+            "formula":"H2SO4"
+         },
+         { 
+            "formula":"HAlO2",
+            "label":"Метаалюминиевая кислота"
+         },
+         {
+            "formula":"HBO2",
+            "label":"Метаборная кислота"
+         },
+         {
+            "formula":"H3BO3",
+            "label":"Ортоборная кислота"
+         },
+         {
+            "formula":"HBr",
+            "label":"Бромоводородная кислота"
+         },
+         {
+            "formula":"HCOOH",
+            "label":"Муравьиная кислота"
+         },
+         {
+            "formula":"HCN",
+            "label":"Циановодородная кислота"
+         },
+         {
+            "formula":"H2CO3",
+            "label":"Угольная кислота"
+         },
+         {
+            "formula":"H2C2O4",
+            "label":"Щавелевая кислота"
+         },
+         {
+            "formula":"H4C2O2",
+            "label":"Уксусная кислота"
+         },
+         {
+            "formula":"HCl",
+            "label":"Хлороводородная кислота"
+         },
+         {
+            "formula":"HClO",
+            "label":"Хлорноватистая кислота"
+         },
+         {
+            "formula":"HClO2",
+            "label":"Хлористая кислота"
+         },
+         {
+            "formula":"HClO3",
+            "label":"Хлорноватая кислота"
+         },
+         {
+            "formula":"HClO4",
+            "label":"Хлорная кислота"
+         },
+         {
+            "formula":"HCrO2",
+            "label":"Метахромистая кислота"
+         },
+         {
+            "formula":"HCrO4",
+            "label":"Хромовая кислота"
+         },
+         {
+            "formula":"HCr2O7",
+            "label":"Двухромовая кислота"
+         },
+         {
+            "formula":"HI",
+            "label":"Иодоводородная кислота"
+         },
+         {
+            "formula":"HMnO4 кислота",
+            "label":"Марганцевая кислота"
+         },
+         {
+            "formula":"H2MnO4",
+            "label":"Марганцовистая кислота"
+         },
+         {
+            "formula":"H2MoO4",
+            "label":"Молибденовая кислота"
+         },
+         {
+            "formula":"HNO2",
+            "label":"Азотистая кислота"
+         },
+         {
+            "formula":"HNO3",
+            "label":"Азотная кислота"
+         },
+         {
+            "formula":"HPO3",
+            "label":"Метафосфорная кислота"
+         },
+         {
+            "formula":"HPO4",
+            "label":"Ортофосфорная кислота"
+         },
+         {
+            "formula":"H4P2O7",
+            "label":"Двуфосфорная кислота"
+         },
+         {
+            "formula":"H3PO3",
+            "label":"Фосфористая кислота"
+         },
+         {
+            "formula":"H3PO2",
+            "label":"Фосфорноватистая кислота"
+         },
+         {
+            "formula":"H2S",
+            "label":"Сероводородная кислота"
+         },
+         {
+            "formula":"H2SO3",
+            "label":"Сернистая кислота"
+         },
+         {
+            "formula":"H2SO4",
+            "label":"Серная кислота"
+         },
+         {
+            "formula":"H2S2O3",
+            "label":"Тиосерная кислота"
+         },
+         {
+            "formula":"H2Se",
+            "label":"Селеноводородная кислота"
+         },
+         {
+            "formula":"H2SiO3",
+            "label":"Кремниевая кислота"
+         },
+         {
+            "formula":"HVO3",
+            "label":"Ванадиевая кислота"
+         },
+         {
+            "formula":"H2WO4",
+            "label":"Вольфрамовая кислота"
+         }
+      ]
+   },
+   "oxides":{
+      "color":"blue",
+      "label":"Оксиды",
+      "substances":[
+         {
+            "formula":"CO",
+            "label":"Оксид углерода (II)"
+         },
+         {
+            "formula":"CO2",
+            "label":"Оксид углерода (IV)"
+         },
+         {
+            "formula":"MgO",
+            "label":"Оксид магния"
+         },
+         {
+            "formula":"CaO",
+            "label":"Оксид кальция"
+         },
+         {
+            "formula":"FeO",
+            "label":"Оксид железа(II)"
+         },
+         {
+            "formula":"Fe2O3",
+            "label":"Оксид железа(III)"
+         },
+         {
+            "formula":"P2O5",
+            "label":"Оксид фосфора(V)"
+         }
+      ]
+   },
+   "foundations":{
+      "color":"indigo",
+      "label":"Основания",
+      "substances":[
+         {
+            "formula":"КОН",
+            "label":"гидроксид калия"
+         },
+         {
+            "formula":"Ca(OH)2",
+            "label":"гидроксид кальция"
+         },
+         {
+            "formula":"Fe(OH)2",
+            "label":"гидроксид железа (II)"
+         },
+         {
+            "formula":"Fe(OH)3",
+            "label":"гидроксид железа (III)"
+         }
+      ]
+   },
+   "salts":{
+      "color":"lime",
+      "label":"Соли",
+      "substances":[
+
+      ]
+   },
+   "caustics":{
+      "color":"red",
+      "label":"Щелочи",
+      "substances":[
+
+      ]
+   },
+   "alcohols":{
+      "color":"green",
+      "label":"Спирты",
+      "substances":[
+
+      ]
+   }
+}
