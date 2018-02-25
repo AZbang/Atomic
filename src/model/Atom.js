@@ -1,4 +1,4 @@
-class Atom {
+export default class Atom {
 	constructor(molecule, id, x, y, z) {
 		this.molecule = molecule;
 		this.model = molecule.model;
@@ -57,5 +57,3 @@ class Atom {
 		this.model.domEvents.unbind(this.mesh, 'click');
 	}
 }
-
-module.exports = Atom;

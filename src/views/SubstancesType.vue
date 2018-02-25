@@ -1,25 +1,23 @@
 <template lang="html">
-  <v-list two-line subheader style="margin: -20px">
-    <v-subheader>{{type.label}}</v-subheader>
-    <substance-preview v-for="item in substances" :data="item" :type="type" :key="item.formula"/>
-  </v-list>
+  <list-substances :data="substances" :label="type.label"/>
 </template>
 
 <script>
-  import SubstancePreview from '../components/SubstancePreview';
+  import ListSubstances from '../components/ListSubstances'
 
   export default {
-    components: {SubstancePreview},
+    components: {ListSubstances},
     computed: {
       type() {
-        return this.$store.state.database.substances[this.$route.params.type]
+        return this.$store.getters.getType(this.$route.params.type)
       },
       substances() {
-        return this.type.substances
+        return this.$store.getters.getSubstances(this.$route.params.type)
       }
+    },
+    mounted() {
+      this.$store.commit('setHeader', true);
+      this.$store.commit('setTitle', this.type.label);
     }
   }
 </script>
-
-<style lang="css">
-</style>

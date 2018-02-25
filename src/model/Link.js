@@ -1,5 +1,4 @@
-
-class Link {
+export default class Link {
 	constructor(molecula, atom1, atom2, type) {
 		this.molecula = molecula;
 		this.atom1 = atom1;
@@ -36,5 +35,3 @@ class Link {
 		}
 	}
 }
-
-module.exports = Link;

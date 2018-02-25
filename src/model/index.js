@@ -1,8 +1,8 @@
-const Molecule = require('./Molecule');
-const OrbitControls = require('./OrbitControls');
-const DomEvents = require('./domEvents');
+import Molecule from './Molecule'
+import OrbitControls from './OrbitControls'
+import DomEvents from './domEvents'
 
-class Model {
+export default class Model {
 	constructor(wrap, w, h) {
 		this.w = w;
 		this.h = h;
@@ -77,5 +77,3 @@ class Model {
 		this.renderer.render(this.scene, this.camera);
 	}
 }
-
-module.exports = Model;

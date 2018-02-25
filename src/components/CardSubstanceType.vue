@@ -1,6 +1,6 @@
 <template lang="html">
   <router-link :to="getTypeLink" tag="div">
-    <v-card class="card-substance-type">
+    <v-card ripple class="card-substance-type">
       <v-card-media class="white--text" height="200px" :src="data.img">
         <v-container fill-height fluid>
           <v-layout fill-height>

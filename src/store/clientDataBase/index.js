@@ -7,34 +7,32 @@ export default {
     types,
     substances,
     atoms,
-    history: [],
-    stars: [],
+    favorites: [],
     currentData: {}
   },
   getters: {
-    types(state) {
-      return state.types;
+    isFavotite: (state) => (formula) => {
+      return state.favorites.find((sub) => sub.formula === formula);
     },
-    substances: (state) => (type) => {
-      return state.substances[type];
+    getType: (state) => (type) => {
+      return state.types.find((item) => item.type === type);
+    },
+    getSubstances: (state) => (type) => {
+      let subs = [];
+      state.substances.forEach((item) => {
+        if(item.type === type) subs.push(item);
+      });
+      return subs;
     }
   },
   mutations: {
-    addStar(state, subs) {
-      subs.isStar = true;
-      state.stars.push(subs);
+    addFavorite(state, sub) {
+      state.favorites.push(sub);
     },
-    removeStar(state, subs) {
-      subs.isStar = false;
-      for(let i = 0; i < state.stars.length; i++) {
-        if(state.stars[i].label === subs.label) {
-          state.stars.splice(i, 1);
-          break;
-        }
-      }
-    },
-    addHistory(state, subs) {
-      state.history.push(subs);
+    removeFavorite(state, sub) {
+      state.favorites.forEach((item, i) => {
+        if(item.formula === sub.formula) state.favorites.splice(i, 1);
+      });
     }
   }
 }

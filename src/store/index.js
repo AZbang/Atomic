@@ -9,9 +9,11 @@ export default {
   },
   state: {
     loading: false,
-    errorLog: "",
-    lang: "ru",
-    defaultLang: "en"
+    errorLog: '',
+    title: 'Molecules',
+    lang: 'ru',
+    isHeader: true,
+    defaultLang: 'en'
   },
   mutations: {
     loadingStart(state) {
@@ -25,6 +27,12 @@ export default {
     },
     changeLang(state, lang) {
       state.lang = lang;
+    },
+    setTitle(state, title) {
+      state.title = title;
+    },
+    setHeader(state, isHeader) {
+      state.isHeader = isHeader;
     }
   },
   actions: {

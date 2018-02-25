@@ -1,7 +1,7 @@
-const Atom = require('./Atom');
-const Link = require('./Link');
+import Atom from './Atom'
+import Link from './Link'
 
-class Molecule {
+export default class Molecule {
 	constructor(model, index, data) {
 		this.model = model;
 		this.index = 0;
@@ -79,5 +79,3 @@ class Molecule {
 		this.stage.rotation.y += 0.0001;
 	}
 }
-
-module.exports = Molecule;

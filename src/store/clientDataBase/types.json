@@ -1,7 +1,9 @@
 [
   {
+    "color":"blue",
     "type": "oxides",
     "label": "Оксиды",
+    "chemical": 0,
     "img": "static/oxide.jpg",
     "link": "type/oxides",
     "description": "Окси́д — бинарное соединение химического элемента с кислородом в степени окисления −2, в котором сам кислород связан только с менее электроотрицательным элементом."
@@ -9,6 +11,8 @@
   {
     "type": "foundations",
     "label": "Основания",
+    "chemical": 0,
+    "color":"indigo",
     "img": "static/foundations.jpeg",
     "link": "type/foundations",
     "description": "Основание — химическое соединение, способное образовывать ковалентную связь с протоном либо с вакантной орбиталью другого химического соединения."
@@ -16,12 +20,16 @@
   {
     "type": "salts",
     "label": "Соли",
+    "chemical": 0,
+    "color":"lime",
     "img": "static/salt.jpg",
     "link": "type/salts",
     "description": "Со́ли — сложные вещества, которые в водных растворах диссоциируют на катионы металлов и анионы кислотных остатков. ИЮПАК определяет соли как химические соединения, состоящие из катионов и анионов."
   },
   {
+    "color":"orange",
     "type": "acids",
+    "chemical": 0,
     "label": "Кислоты",
     "img": "static/acid.jpg",
     "link": "type/acids",
@@ -30,12 +38,16 @@
   {
     "type": "caustics",
     "label": "Щелочи",
+    "chemical": 0,
+    "color":"red",
     "img": "static/caustic.jpg",
     "link": "type/caustics",
     "description": "Щёлочи — гидроксиды щелочных, щёлочноземельных металлов и некоторых других элементов, например, таллия. К щелочам относятся хорошо растворимые в воде основания. При диссоциации щёлочи образуют анионы OH− и катион металла."
   },
   {
     "type": "alcohols",
+    "color":"green",
+    "chemical": 1,
     "label": "Спирты",
     "img": "static/alcohols.jpg",
     "link": "type/alcohols",

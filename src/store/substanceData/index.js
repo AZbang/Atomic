@@ -30,16 +30,12 @@ export default {
 
         let structure = await dispatch('getStructureData', data.CID);
         commit('structure', structure);
-        props.cb(structure);
-
-        commit('addHistory', props);
       } catch(e) {
         dispatch('error', {
           type: 'NOT_LOADED_SUBSTANCE',
           error: e
         });
       }
-
       commit('loadingEnd');
     },
 

@@ -1,11 +1,20 @@
 <template lang="html">
-
+  <list-substances :data="substances" :label="'Сохраненные'"/>
 </template>
 
 <script>
-export default {
-}
-</script>
+  import ListSubstances from '../components/ListSubstances'
 
-<style lang="css">
-</style>
+  export default {
+    components: {ListSubstances},
+    computed: {
+      substances() {
+        return this.$store.state.database.favorites;
+      }
+    },
+    mounted() {
+      this.$store.commit('setHeader', true);
+      this.$store.commit('setTitle', 'Отмеченные вещества');
+    }
+  }
+</script>

@@ -1,18 +1,19 @@
 <template lang="html">
-  <v-toolbar app color="blue">
-    <v-toolbar-title v-show="!isSearch" class="white--text">{{this.$route.name}}</v-toolbar-title>
+  <v-toolbar app color="blue" v-if="isHeader">
+    <v-toolbar-title v-show="!isSearch" class="white--text">{{title}}</v-toolbar-title>
     <v-spacer v-show="!isSearch"></v-spacer>
+    <v-btn icon v-show="!isSearch" class="white--text" @click="toggleSearch">
+      <v-icon>search</v-icon>
+    </v-btn>
     <v-text-field
-      ref="search"
-      style="margin-left: 6px; box-shadow: none;"
-      v-show="isSearch"
+      style="margin: 0 10px; box-shadow: none;"
+      v-if="isSearch"
+      :autofocus="true"
       v-model="req"
+      append-icon="search"
       @blur="isSearch = false"
       solo placeholder="Search substance">
     </v-text-field>
-    <v-btn icon class="white--text" @click="toggleSearch">
-      <v-icon>search</v-icon>
-    </v-btn>
   </v-toolbar>
 </template>
 
@@ -24,10 +25,17 @@
         isSearch: false
       }
     },
+    computed: {
+      title() {
+        return this.$store.state.title;
+      },
+      isHeader() {
+        return this.$store.state.isHeader;
+      }
+    },
     methods: {
       toggleSearch() {
-        this.isSearch = !this.isSearch;
-        this.$refs.search.$el.focus();
+        this.isSearch = !this.isSearch
       }
     }
   }

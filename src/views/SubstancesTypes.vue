@@ -10,9 +10,13 @@ import CardSubstanceType from '../components/CardSubstanceType.vue'
 export default {
   components: {CardSubstanceType},
   computed: {
-    types () {
+    types() {
       return this.$store.state.database.types
     }
+  },
+  mounted() {
+    this.$store.commit('setHeader', true);
+    this.$store.commit('setTitle', 'Типы веществ');
   }
 }
 </script>
