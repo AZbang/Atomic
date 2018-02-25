@@ -1,6 +1,6 @@
 import database from './clientDataBase'
 import substance from './substanceData'
-import errors from './errors.json'
+import ERRORS from './errors.json'
 
 export default {
   modules: {
@@ -9,21 +9,18 @@ export default {
   },
   state: {
     loading: false,
-    errorLog: '',
+    message: {},
     title: 'Molecules',
     lang: 'ru',
     isHeader: true,
     defaultLang: 'en'
   },
   mutations: {
-    loadingStart(state) {
-      state.loading = true;
+    loading(state, v) {
+      state.loading = v;
     },
-    loadingEnd(state) {
-      state.loading = false;
-    },
-    errorLog(state, log) {
-      state.errorLog = log;
+    setMessage(state, log) {
+      state.message = {...ERRORS[log]};
     },
     changeLang(state, lang) {
       state.lang = lang;
@@ -33,12 +30,6 @@ export default {
     },
     setHeader(state, isHeader) {
       state.isHeader = isHeader;
-    }
-  },
-  actions: {
-    error({commit, state}, obj) {
-      commit('errorLog', errors[obj.type][state.lang || state.defaultLang]);
-      console.log(obj.error);
     }
   }
 }

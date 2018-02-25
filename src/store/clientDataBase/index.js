@@ -11,8 +11,8 @@ export default {
     currentData: {}
   },
   getters: {
-    isFavotite: (state) => (formula) => {
-      return state.favorites.find((sub) => sub.formula === formula);
+    isFavotite: (state) => (title) => {
+      return state.favorites.find((sub) => sub.title === title);
     },
     getType: (state) => (type) => {
       return state.types.find((item) => item.type === type);

@@ -27,7 +27,7 @@ export default class Atom {
 				color: this.color,
 				emissive: this.shadow,
 				side: THREE.DoubleSide,
-				shading: THREE.FlatShading
+				flatShading: THREE.FlatShading
 			})
 		));
 		this.mesh.position.set(this.x, this.y, this.z);

@@ -5,9 +5,9 @@
         <v-icon color="grey lighten-1">chevron_left</v-icon>
       </v-btn>
       <v-spacer></v-spacer>
-      <toggle-favorite :data="data"/>
+      <toggle-favorite :data="info"/>
     </v-toolbar>
-    <model-substance v-if="model" :data="model"/>
+    <model-substance v-if="model.typeStructure" :data="model"/>
   </div>
 </template>
 
@@ -23,10 +23,14 @@
       },
       model() {
         return this.$store.state.substance.structure;
+      },
+      info() {
+        return this.$store.state.substance.info;
       }
     },
     methods: {
       back() {
+        this.renderModel = false;
         this.$router.go(-1);
       }
     },
@@ -34,6 +38,7 @@
       this.$store.commit('setHeader', false);
       this.$store.commit('setTitle', 'Вещество');
       this.$store.dispatch('loadSubstance', this.$route.query);
+      this.renderModel = true;
     }
   }
 </script>

@@ -1,7 +1,12 @@
 {
   "NOT_LOADED_SUBSTANCE": {
-    "id": 0,
+    "ru": "Извините, не удается загрузить вещество",
+    "en": "Sorry, can't load substance",
+    "type": "error"
+  },
+  "NOT_FOUND_SUBSTANCE": {
     "ru": "Извините, вещество не найдено",
-    "en": "Sorry, substance not found"
+    "en": "Sorry, substance not found",
+    "type": "error"
   }
 }

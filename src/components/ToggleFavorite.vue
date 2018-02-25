@@ -9,7 +9,12 @@ export default {
   props: ['data'],
   data() {
     return {
-      isFavorite: this.$store.getters.isFavotite(this.data.formula)
+      isFavorite: this.$store.getters.isFavotite(this.data.title)
+    }
+  },
+  watch: {
+    data(v) {
+      this.isFavorite = this.$store.getters.isFavotite(this.data.title);
     }
   },
   methods: {

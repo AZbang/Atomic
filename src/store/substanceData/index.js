@@ -19,32 +19,40 @@ export default {
   },
   actions: {
     async loadSubstance({commit, dispatch, rootState}, props) {
-      commit('loadingStart');
+      commit('loading', true);
 
       try {
+        let info = await dispatch('wikiData', props.label);
+        if(!info) commit('setMessage', 'NOT_FOUND_SUBSTANCE');
+
+        let type = null;
+        let txt = info.extract.toLowerCase() + info.title.toLowerCase();
+        if(txt.search(/спирт/) !== -1) type = 'alcohols';
+        else if(txt.search(/оксид/) !== -1) type = 'oxides';
+        else if(txt.search(/щелоч/) !== -1) type = 'caustics';
+        else if(txt.search(/основан|основный/) !== -1) type = 'foundations';
+        else if(txt.search(/cоль/) !== -1) type = 'salts';
+        else if(txt.search(/кислот/) !== -1) type = 'acids';
+
         let enReq = await dispatch('translateReq', {req: props.formula || props.label, translate: 'ru-en'});
         let data = await dispatch('getPubchemData', enReq);
 
-        let info = await dispatch('wikiData', props.label);
-        commit('info', {...info, formula: data.MolecularFormula});
-
         let structure = await dispatch('getStructureData', data.CID);
+        commit('info', {...info, type, formula: data.MolecularFormula});
         commit('structure', structure);
       } catch(e) {
-        dispatch('error', {
-          type: 'NOT_LOADED_SUBSTANCE',
-          error: e
-        });
+        console.log(e);
+        commit('setMessage', 'NOT_LOADED_SUBSTANCE');
       }
-      commit('loadingEnd');
-    },
 
+      commit('loading', false);
+    },
     async wikiData({rootState}, req) {
       let wiki = 'https://' + rootState.lang + '.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&origin=*&titles=' + req;
-
       let response = await axios.get(wiki, {headers: {"Content-Type": "application/json; charset=UTF-8"}});
       let pages = response.data.query.pages;
-    	return pages[Object.keys(pages)[0]];
+      let data = pages[Object.keys(pages)[0]];
+      if(data.extract.search(/химич|органич|соедин|формул/) !== -1) return data;
     },
 
   	async translateReq({commit}, props) {

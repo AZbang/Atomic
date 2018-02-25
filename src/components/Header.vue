@@ -10,9 +10,11 @@
       v-if="isSearch"
       :autofocus="true"
       v-model="req"
+      @key.enter="searchSubstance"
       append-icon="search"
+      :append-icon-cb="searchSubstance"
       @blur="isSearch = false"
-      solo placeholder="Search substance">
+      solo placeholder="Введите вещество, например 'Вода'">
     </v-text-field>
   </v-toolbar>
 </template>
@@ -36,6 +38,9 @@
     methods: {
       toggleSearch() {
         this.isSearch = !this.isSearch
+      },
+      searchSubstance() {
+        this.$router.push('/substance?label=' + this.req);
       }
     }
   }
