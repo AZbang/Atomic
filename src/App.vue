@@ -37,6 +37,7 @@
 
   .loading {
     position: fixed;
+    z-index: 100000000;
     top: 50%;
     left: 50%;
     margin: -25px;

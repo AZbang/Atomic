@@ -1,12 +1,12 @@
 <template lang="html">
-  <v-btn icon flat ripple :color="isFavorite ? 'pink' : 'grey'" @click="toggleFavorite">
-    <v-icon :color="isFavorite ? 'pink lighten-1' : 'grey lighten-1'">favorite</v-icon>
+  <v-btn icon flat ripple :color="isFavorite ? 'pink' : (color || 'grey')" @click="toggleFavorite">
+    <v-icon :color="isFavorite ? 'pink lighten-1' : (color || 'grey lighten-1')">favorite</v-icon>
   </v-btn>
 </template>
 
 <script>
 export default {
-  props: ['data'],
+  props: ['data', 'color'],
   data() {
     return {
       isFavorite: this.$store.getters.isFavotite(this.data.title)

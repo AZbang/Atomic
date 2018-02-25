@@ -26,19 +26,21 @@ export default {
         if(!info) commit('setMessage', 'NOT_FOUND_SUBSTANCE');
 
         let type = null;
-        let txt = info.extract.toLowerCase() + info.title.toLowerCase();
-        if(txt.search(/спирт/) !== -1) type = 'alcohols';
-        else if(txt.search(/оксид/) !== -1) type = 'oxides';
-        else if(txt.search(/щелоч/) !== -1) type = 'caustics';
-        else if(txt.search(/основан|основный/) !== -1) type = 'foundations';
-        else if(txt.search(/cоль/) !== -1) type = 'salts';
-        else if(txt.search(/кислот/) !== -1) type = 'acids';
-
+        if(info.extract) {
+          let txt = info.extract.toLowerCase() + info.title.toLowerCase();
+          if(txt.search(/спирт/) !== -1) type = 'alcohols';
+          else if(txt.search(/оксид/) !== -1) type = 'oxides';
+          else if(txt.search(/щелоч/) !== -1) type = 'caustics';
+          else if(txt.search(/основан|основный/) !== -1) type = 'foundations';
+          else if(txt.search(/cоль/) !== -1) type = 'salts';
+          else if(txt.search(/кислот/) !== -1) type = 'acids';
+        }
+        let image = await dispatch('wikiImages', 'Файл:' + info.pageprops.page_image_free);
         let enReq = await dispatch('translateReq', {req: props.formula || props.label, translate: 'ru-en'});
         let data = await dispatch('getPubchemData', enReq);
 
         let structure = await dispatch('getStructureData', data.CID);
-        commit('info', {...info, type, formula: data.MolecularFormula});
+        commit('info', {...info, type, image: image[0].thumburl, formula: data.MolecularFormula});
         commit('structure', structure);
       } catch(e) {
         console.log(e);
@@ -48,11 +50,19 @@ export default {
       commit('loading', false);
     },
     async wikiData({rootState}, req) {
-      let wiki = 'https://' + rootState.lang + '.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&origin=*&titles=' + req;
+      let wiki = 'https://' + rootState.lang + '.wikipedia.org/w/api.php?format=json&action=query&prop=extracts|pageprops&exintro=&explaintext=&origin=*&titles=' + req;
       let response = await axios.get(wiki, {headers: {"Content-Type": "application/json; charset=UTF-8"}});
       let pages = response.data.query.pages;
       let data = pages[Object.keys(pages)[0]];
-      if(data.extract.search(/химич|органич|соедин|формул/) !== -1) return data;
+
+      if(data.extract.search(/химич|органич|соедин|формул|спирт|оксид|щелоч|основан|основный|cоль|кислот/) !== -1) return data;
+    },
+    async wikiImages({rootState}, req) {
+      let wiki = 'https://' + rootState.lang + '.wikipedia.org/w/api.php?format=json&action=query&prop=imageinfo&&iiprop=url&iiurlwidth=1024&origin=*&titles=' + req;
+      let response = await axios.get(wiki, {headers: {"Content-Type": "application/json; charset=UTF-8"}});
+      let pages = response.data.query.pages;
+      let data = pages[Object.keys(pages)[0]];
+      return data.imageinfo;
     },
 
   	async translateReq({commit}, props) {

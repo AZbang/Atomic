@@ -10,7 +10,7 @@
       v-if="isSearch"
       :autofocus="true"
       v-model="req"
-      @key.enter="searchSubstance"
+      @keyup.enter="searchSubstance"
       append-icon="search"
       :append-icon-cb="searchSubstance"
       @blur="isSearch = false"

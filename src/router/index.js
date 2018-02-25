@@ -8,25 +8,21 @@ export default {
   routes: [
     {
       path: '/',
-      name: 'Chemicals Types',
       meta: 'substances',
       component: SubstancesTypes
     },
     {
       path: '/types',
-      name: 'Substances Types',
       meta: 'substances',
       component: SubstancesTypes
     },
     {
       path: '/types/:type',
-      name: 'Type Substances',
       meta: 'substances',
       component: SubstancesType
     },
     {
       path: '/substance',
-      name: 'Substance',
       meta: 'substances',
       component: Substance,
       props: route => ({label: route.query.label, formula: route.query.formula})
@@ -34,13 +30,11 @@ export default {
     {
       path: '/learn',
       meta: 'learn',
-      name: 'Learn Substances',
       component: Learn
     },
     {
       path: '/favorites',
       meta: 'favorites',
-      name: 'Favorites',
       component: Favorites
     }
   ]

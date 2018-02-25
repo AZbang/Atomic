@@ -1,7 +1,7 @@
 <template lang="html">
   <v-list two-line subheader style="margin: -20px">
     <v-subheader>{{label}}</v-subheader>
-    <substance-preview v-for="item in data" :data="item" :key="item.formula"/>
+    <substance-preview v-for="(item, i) in data" :data="item" :key="i"/>
   </v-list>
 </template>
 

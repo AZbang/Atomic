@@ -24,8 +24,8 @@ export default class Molecule {
 
 	_computedCenter() {
 		let pos = this._data.coords[0].conformers[0];
-		let sortX = pos.x.slice(0).sort((a, b) => a-b);
-		let sortY = pos.y.slice(0).sort((a, b) => a-b);
+		let sortX = pos.x.slice(0).sort((a, b) => b-a);
+		let sortY = pos.y.slice(0).sort((a, b) => b-a);
 
 		this.center = {
 			x: sortX[Math.round(sortX.length/2)],
