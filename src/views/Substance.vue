@@ -1,5 +1,5 @@
 <template lang="html">
-  <div id="substance" v-scroll="onScroll">
+  <div id="substance" v-scroll="onScroll" v-show="!loading">
     <v-toolbar app :class="header ? '' : 'substance__toolbar--pressed'" :color="header ? 'blue' : 'transparent'">
       <v-btn icon flat ripple @click="back" color="grey">
         <v-icon :color="header ? 'white' : 'grey lighten-1'">chevron_left</v-icon>
@@ -34,6 +34,9 @@
       },
       model() {
         return this.$store.state.substance.structure;
+      },
+      loading() {
+        return this.$store.state.loading
       },
       info() {
         return this.$store.state.substance.info;

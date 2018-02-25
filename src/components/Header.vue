@@ -40,6 +40,7 @@
         this.isSearch = !this.isSearch
       },
       searchSubstance() {
+        this.req = '';
         this.$router.push('/substance?label=' + this.req);
       }
     }

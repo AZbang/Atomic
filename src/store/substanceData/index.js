@@ -54,8 +54,7 @@ export default {
       let response = await axios.get(wiki, {headers: {"Content-Type": "application/json; charset=UTF-8"}});
       let pages = response.data.query.pages;
       let data = pages[Object.keys(pages)[0]];
-
-      if(data.extract.search(/химич|органич|соедин|формул|спирт|оксид|щелоч|основан|основный|cоль|кислот/) !== -1) return data;
+      if(data.extract.search(/химич|кристалл|дигидро|морфин|органич|соедин|формул|спирт|оксид|щелоч|основан|основный|cоль|кислот/) !== -1) return data;
     },
     async wikiImages({rootState}, req) {
       let wiki = 'https://' + rootState.lang + '.wikipedia.org/w/api.php?format=json&action=query&prop=imageinfo&&iiprop=url&iiurlwidth=1024&origin=*&titles=' + req;
