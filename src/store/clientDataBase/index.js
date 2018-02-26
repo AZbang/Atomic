@@ -1,12 +1,14 @@
 import types from './types.json'
-import substances from './substances.json'
+import foundations from './foundations.json'
+import oxides from './oxides.json'
+import acids from './acids.json'
+import salts from './salts.json'
 
 export default {
   state: {
     types,
-    substances,
-    favorites: [],
-    currentData: {}
+    substances: [].concat(oxides, foundations, acids, salts),
+    favorites: JSON.parse(localStorage.getItem('favorites')) || [],
   },
   getters: {
     isFavotite: (state) => (title) => {
@@ -26,11 +28,13 @@ export default {
   mutations: {
     addFavorite(state, sub) {
       state.favorites.push(sub);
+      localStorage.setItem('favorites', JSON.stringify(state.favorites));
     },
     removeFavorite(state, sub) {
       state.favorites.forEach((item, i) => {
         if(item.title.search(sub.title) !== -1 || item.title === sub.title) state.favorites.splice(i, 1);
       });
+      localStorage.setItem('favorites', JSON.stringify(state.favorites));
     }
   }
 }

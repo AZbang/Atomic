@@ -1,0 +1,22 @@
+[
+  {
+    "formula": "NaOH",
+    "title": "Гидроксид натрия",
+    "type": "foundations"
+  },
+  {
+    "formula": "KOH",
+    "title": "Гидроксид калия",
+    "type": "foundations"
+  },
+  {
+    "formula": "Ca(OH)2",
+    "title": "Гидроксид кальция",
+    "type": "foundations"
+  },
+  {
+    "formula": "LiOH",
+    "title": "Гидроксид лития",
+    "type": "foundations"
+  }
+]

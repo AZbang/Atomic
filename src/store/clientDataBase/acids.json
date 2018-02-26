@@ -1,0 +1,34 @@
+[
+  {
+    "formula": "H2SO4",
+    "title": "Серная кислота",
+    "type": "acids"
+  },
+  {
+    "formula": "H2SO3",
+    "title": "Сернистая кислота",
+    "type": "acids"
+  },
+  {
+    "formula": "HNO3",
+    "title": "Азотная кислота",
+    "type": "acids"
+  },
+
+  {
+    "formula": "H2CO3",
+    "title": "Угольная кислота",
+    "type": "acids"
+  },
+
+  {
+    "formula": "HNO3",
+    "title": "Азотная кислота",
+    "type": "acids"
+  },
+  {
+    "formula": "HCl",
+    "title": "Хлороводородная кислота",
+    "type": "acids"
+  }
+]

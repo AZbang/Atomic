@@ -1,0 +1,47 @@
+[
+  {
+    "formula": "Na2O",
+    "title": "Оксид натрия",
+    "type": "oxides"
+  },
+  {
+    "formula": "CaO",
+    "title": "Оксид кальция",
+    "type": "oxides"
+  },
+  {
+    "formula": "CuO",
+    "title": "Оксид меди(II)",
+    "type": "oxides"
+  },
+  {
+    "formula": "FeO",
+    "title": "Оксид железа(II)",
+    "type": "oxides"
+  },
+  {
+    "formula": "Al2O3",
+    "title": "Оксид алюминия",
+    "type": "oxides"
+  },
+  {
+    "formula": "Cr2O3",
+    "title": "Оксид хрома(III)",
+    "type": "oxides"
+  },
+  {
+    "formula": "MnO2",
+    "title": "Оксид марганца(IV)",
+    "type": "oxides"
+  },
+  {
+    "formula": "SO2",
+    "title": "Оксид серы(IV)",
+    "type": "oxides"
+  },
+  {
+    "formula": "P2O5",
+    "title": "Оксид фосфора(V)",
+    "type": "oxides"
+  }
+]

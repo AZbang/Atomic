@@ -1,0 +1,52 @@
+[
+  {
+    "formula": "NaCl",
+    "title": "Хлорид натрия",
+    "type": "salts"
+  },
+  {
+    "formula": "Na2SO4",
+    "title": "Сульфат натрия",
+    "type": "salts"
+  },
+  {
+    "formula": "СаSO4",
+    "title": "Сульфат кальция",
+    "type": "salts"
+  },
+  {
+    "formula": "СаCl2",
+    "title": "Хлорид кальция",
+    "type": "salts"
+  },
+  {
+    "formula": "(NH4)2SO4",
+    "title": "Сульфат аммония",
+    "type": "salts"
+  },
+  {
+    "formula": "Ca(NO3)2",
+    "title": "Нитрат кальция",
+    "type": "salts"
+  },
+  {
+    "formula": "Na2SiO3",
+    "title": "Силикат натрия",
+    "type": "salts"
+  },
+  {
+    "formula": "PbSO4",
+    "title": "Сульфат свинца",
+    "type": "salts"
+  },
+  {
+    "formula": "Na2CO3",
+    "title": "Карбонат натрия",
+    "type": "salts"
+  },
+  {
+    "formula": "NH4Cl",
+    "title": "Хлорид аммония",
+    "type": "salts"
+  }
+]

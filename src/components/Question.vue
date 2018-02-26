@@ -8,7 +8,7 @@
           <br>
           <br>
           <v-flex xs12>
-            <v-btn style="width: 44%" color="primary" large v-for="(answer, i) in answers" @click="setAnswer(answer)" :key="i">{{type ? answer.title : answer.formula}}</v-btn>
+            <v-btn color="primary" large v-for="(answer, i) in answers" @click="setAnswer(answer)" :key="i" :class="type ? 'big' : 'small'">{{type ? answer.title : answer.formula}}</v-btn>
           </v-flex>
         </v-layout>
       </v-card-text>
@@ -64,5 +64,11 @@
   }
   .question__variants {
     margin: 100% -24px 0;
+  }
+  .big {
+    width: 94%;
+  }
+  .small {
+    width: 44%;
   }
 </style>
