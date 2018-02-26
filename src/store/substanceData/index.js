@@ -50,10 +50,16 @@ export default {
       commit('loading', false);
     },
     async wikiData({rootState}, req) {
-      let wiki = 'https://' + rootState.lang + '.wikipedia.org/w/api.php?format=json&action=query&prop=extracts|pageprops&exintro=&explaintext=&origin=*&titles=' + req;
+      let wiki = 'https://' + rootState.lang + '.wikipedia.org/w/api.php?format=json&action=query&list=search&origin=*&srsearch=' + req;
       let response = await axios.get(wiki, {headers: {"Content-Type": "application/json; charset=UTF-8"}});
+      let search = response.data.query.search;
+      let title = search[0].title;
+
+      wiki = 'https://' + rootState.lang + '.wikipedia.org/w/api.php?format=json&action=query&prop=pageprops|extracts&exintro=&explaintext=&origin=*&titles=' + title;
+      response = await axios.get(wiki, {headers: {"Content-Type": "application/json; charset=UTF-8"}});
       let pages = response.data.query.pages;
       let data = pages[Object.keys(pages)[0]];
+      data.title = title;
       if(data.extract.search(/химич|кристалл|дигидро|морфин|органич|соедин|формул|спирт|оксид|щелоч|основан|основный|cоль|кислот/) !== -1) return data;
     },
     async wikiImages({rootState}, req) {

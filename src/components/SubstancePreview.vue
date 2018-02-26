@@ -26,7 +26,7 @@
         return this.$store.getters.getType(this.data.type) || {}
       },
       getLinkSubstance() {
-        return '/substance?label=' + this.data.title;
+        return '/substance?label=' + this.data.title + '&formula=' + this.data.formula;
       }
     }
   }

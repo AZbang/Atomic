@@ -1,5 +1,5 @@
 <template lang="html">
-  <list-substances :data="substances" :label="'Сохраненные'"/>
+  <list-substances :data="substances" :label="'Ваши сохраненные вещества для изучения'"/>
 </template>
 
 <script>

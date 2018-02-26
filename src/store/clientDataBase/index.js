@@ -1,18 +1,16 @@
 import types from './types.json'
 import substances from './substances.json'
-import atoms from './atoms.json'
 
 export default {
   state: {
     types,
     substances,
-    atoms,
     favorites: [],
     currentData: {}
   },
   getters: {
     isFavotite: (state) => (title) => {
-      return state.favorites.find((sub) => sub.title === title);
+      return state.favorites.find((sub) => (sub.title.search(title) !== -1 || sub.title === title));
     },
     getType: (state) => (type) => {
       return state.types.find((item) => item.type === type);
@@ -31,7 +29,7 @@ export default {
     },
     removeFavorite(state, sub) {
       state.favorites.forEach((item, i) => {
-        if(item.formula === sub.formula) state.favorites.splice(i, 1);
+        if(item.title.search(sub.title) !== -1 || item.title === sub.title) state.favorites.splice(i, 1);
       });
     }
   }

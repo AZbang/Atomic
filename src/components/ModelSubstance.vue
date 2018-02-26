@@ -1,5 +1,5 @@
 <template>
-  <div id="model" :class="data.typeStructure"></div>
+  <div id="model" ref="model" :class="data.typeStructure"></div>
 </template>
 
 <script>
@@ -7,6 +7,11 @@
 
   export default {
     props: ['data'],
+    computed: {
+      model() {
+        return this.$store.state.model
+      }
+    },
     watch: {
       data(v) {
         if(!v) return;
@@ -16,10 +21,9 @@
       }
     },
     mounted() {
-      this.model = new Model(document.getElementById('model'), window.innerWidth, window.innerHeight/2);
-      this.model.atomsData = this.$store.state.database.atoms;
-      this.model.start();
+      this.$refs.model.appendChild(this.model.renderer.domElement);
 
+      if(!this.data.typeStructure) return;
       this.model.removeMolecule(0);
       this.model.addMolecule(this.data);
     }

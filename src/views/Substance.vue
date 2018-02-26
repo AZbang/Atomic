@@ -1,5 +1,5 @@
 <template lang="html">
-  <div id="substance" v-scroll="onScroll" v-show="!loading">
+  <div id="substance" v-show="!loading">
     <v-toolbar app :class="header ? '' : 'substance__toolbar--pressed'" :color="header ? 'blue' : 'transparent'">
       <v-btn icon flat ripple @click="back" color="grey">
         <v-icon :color="header ? 'white' : 'grey lighten-1'">chevron_left</v-icon>
@@ -13,9 +13,9 @@
 </template>
 
 <script>
-  import ToggleFavorite from '../components/ToggleFavorite';
-  import ModelSubstance from '../components/ModelSubstance';
-  import InfoSubstance from '../components/InfoSubstance';
+  import ToggleFavorite from '../components/ToggleFavorite'
+  import ModelSubstance from '../components/ModelSubstance'
+  import InfoSubstance from '../components/InfoSubstance'
 
   export default {
     components: {
@@ -33,13 +33,13 @@
         return this.$store.getters.getType(this.data.type)
       },
       model() {
-        return this.$store.state.substance.structure;
+        return this.$store.state.substance.structure
       },
       loading() {
         return this.$store.state.loading
       },
       info() {
-        return this.$store.state.substance.info;
+        return this.$store.state.substance.info
       }
     },
     methods: {

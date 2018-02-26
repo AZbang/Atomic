@@ -1,6 +1,7 @@
 import database from './clientDataBase'
 import substance from './substanceData'
 import ERRORS from './errors.json'
+import Model from '../model'
 
 export default {
   modules: {
@@ -10,6 +11,7 @@ export default {
   state: {
     loading: false,
     message: {},
+    model: new Model(window.innerWidth, window.innerHeight/2),
     title: 'Molecules',
     lang: 'ru',
     isHeader: true,

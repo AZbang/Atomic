@@ -4,7 +4,7 @@
       <div>
         <h3 class="headline mb-0">{{data.title}}</h3>
         <span class="grey--text">{{data.formula}}</span><br>
-        <div>{{data.extract}}</div>
+        <div v-html="data.extract"></div>
         <img :src="data.image" style="margin: 30px auto; display: block; width: 90vw;"/>
       </div>
     </v-card-title>

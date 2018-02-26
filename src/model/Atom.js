@@ -1,3 +1,5 @@
+import atoms from './atoms';
+
 export default class Atom {
 	constructor(molecule, id, x, y, z) {
 		this.molecule = molecule;
@@ -11,7 +13,7 @@ export default class Atom {
 
 		this.nodes = [];
 
-		this.data = this.model.atomsData[id-1];
+		this.data = atoms[id-1];
 
 		this.color = +(''+this.data.color).toLowerCase();
 		this.shadow = +(''+this.data.shadow).toLowerCase();

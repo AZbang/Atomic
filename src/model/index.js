@@ -3,7 +3,7 @@ import OrbitControls from './OrbitControls'
 import DomEvents from './domEvents'
 
 export default class Model {
-	constructor(wrap, w, h) {
+	constructor(w, h) {
 		this.w = w;
 		this.h = h;
 
@@ -16,9 +16,6 @@ export default class Model {
 		});
 		this.renderer.setClearColor(0xffffff, 0);
 		this.renderer.setSize(this.w, this.h);
-
-		this.wrap = wrap;
-		this.wrap.appendChild(this.renderer.domElement);
 
 		this.camera = new THREE.PerspectiveCamera(75, this.w / this.h, 0.1, 1000);
 		this.orbit = new THREE.OrbitControls(this.camera, this.renderer.domElement, this.wrap);
@@ -38,6 +35,7 @@ export default class Model {
 		this.scene.add(this.lights[2]);
 
 		this.domEvents = new DomEvents(this.camera, this.wrap);
+		this.loop();
 	}
 
 	resize(w, h) {
@@ -59,11 +57,6 @@ export default class Model {
 			this.molecules.splice(i, 1);
 		}
 	}
-
-	start() {
-		this.loop();
-	}
-
 	loop() {
 		requestAnimationFrame(() => this.loop());
 
