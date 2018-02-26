@@ -4,7 +4,7 @@
     :type="message.type"
     :value="isShow"
     transition="scale-transition"
-  >{{message.ru}}</v-alert>
+  >{{message.log}}</v-alert>
 </template>
 
 <script>
@@ -23,7 +23,7 @@
       message(v) {
         this.isShow = true;
         setTimeout(() => this.isShow = false, 3000);
-        if(v.type === 'error') this.$router.go(-1);
+        if(v.toBack) this.$router.go(-1);
       }
     }
   }

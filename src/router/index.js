@@ -3,6 +3,8 @@ import SubstancesType from '@/views/SubstancesType'
 import Substance from '@/views/Substance'
 import Favorites from '@/views/Favorites'
 import Learn from '@/views/Learn'
+import Contest from '@/views/Contest'
+import Results from '@/views/Results'
 
 export default {
   routes: [
@@ -26,6 +28,18 @@ export default {
       meta: 'substances',
       component: Substance,
       props: route => ({label: route.query.label, formula: route.query.formula})
+    },
+    {
+      path: '/contest',
+      meta: 'learn',
+      component: Contest,
+      props: route => ({selects: route.query.selects, questions: route.query.questions})
+    },
+    {
+      path: '/result',
+      meta: 'learn',
+      component: Results,
+      props: route => ({score: route.query.score})
     },
     {
       path: '/learn',

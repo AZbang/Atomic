@@ -34,7 +34,7 @@ export default class Model {
 		this.scene.add(this.lights[1]);
 		this.scene.add(this.lights[2]);
 
-		this.domEvents = new DomEvents(this.camera, this.wrap);
+		// this.domEvents = new DomEvents(this.camera, this.wrap);
 		this.loop();
 	}
 

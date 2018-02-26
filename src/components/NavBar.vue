@@ -2,7 +2,7 @@
   <v-bottom-nav app :value="true" :active="section" color="white">
     <v-btn to="/favorites" flat color="blue" value="favorites">
       <span>Отмеченные</span>
-      <v-icon>favorite</v-icon>
+      <v-icon>bookmark</v-icon>
     </v-btn>
     <v-btn to="/types" flat color="blue" value="substances">
       <span>Справочник</span>

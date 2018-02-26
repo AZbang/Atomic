@@ -190,9 +190,9 @@
       "title":"Диоксид углерода"
    },
    {
-      "formula":"MgO",
+      "formula":"Na2O",
       "type": "oxides",
-      "title":"Оксид магния"
+      "title":"Оксид натрия"
    },
    {
       "formula":"CaO",
@@ -200,9 +200,9 @@
       "title":"Оксид кальция"
    },
    {
-      "formula":"FeO",
+      "formula":"Al2O3",
       "type": "oxides",
-      "title":"Оксид железа"
+      "title":"Оксид алюминия"
    },
    {
       "formula":"P2O5",

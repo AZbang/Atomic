@@ -1,6 +1,5 @@
 import database from './clientDataBase'
 import substance from './substanceData'
-import ERRORS from './errors.json'
 import Model from '../model'
 
 export default {
@@ -22,7 +21,7 @@ export default {
       state.loading = v;
     },
     setMessage(state, log) {
-      state.message = {...ERRORS[log]};
+      state.message = log;
     },
     changeLang(state, lang) {
       state.lang = lang;

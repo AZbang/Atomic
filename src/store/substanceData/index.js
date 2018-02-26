@@ -4,6 +4,7 @@ import key from './key.json'
 
 const pubchem = pubchemAccess.domain('compound');
 
+// ЖЕСТОЧАЙШАЯ ДИЧЬ, УХАДИ ПАКА НЕ ПОЗДНА
 export default {
   state: {
     structure: {},
@@ -23,7 +24,7 @@ export default {
 
       try {
         let info = await dispatch('wikiData', props.label);
-        if(!info) commit('setMessage', 'NOT_FOUND_SUBSTANCE');
+        if(!info) commit('setMessage', {log: 'Извините, вещество не найдено', toBack: true, type: 'error'});
 
         let type = null;
         if(info.extract) {
@@ -36,15 +37,20 @@ export default {
           else if(txt.search(/кислот/) !== -1) type = 'acids';
         }
         let image = await dispatch('wikiImages', 'Файл:' + info.pageprops.page_image_free);
-        let enReq = await dispatch('translateReq', {req: props.formula || props.label, translate: 'ru-en'});
-        let data = await dispatch('getPubchemData', enReq);
+        let enReq = await dispatch('translateReq', {req: props.label, translate: 'ru-en'});
+        let data;
+        try {
+          data = await dispatch('getPubchemData', enReq);
+        } catch(e) {
+          data = await dispatch('getPubchemData', props.formula);
+        }
 
         let structure = await dispatch('getStructureData', data.CID);
         commit('info', {...info, type, image: image[0].thumburl, formula: data.MolecularFormula});
         commit('structure', structure);
       } catch(e) {
         console.log(e);
-        commit('setMessage', 'NOT_LOADED_SUBSTANCE');
+        commit('setMessage', {log: 'Извините, не удается загрузить вещество', toBack: true, type: 'error'});
       }
 
       commit('loading', false);

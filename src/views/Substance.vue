@@ -44,7 +44,6 @@
     },
     methods: {
       back() {
-        this.renderModel = false;
         this.$router.go(-1);
       },
       onScroll(e) {
@@ -57,7 +56,6 @@
       this.$store.commit('setHeader', false);
       this.$store.commit('setTitle', 'Вещество');
       this.$store.dispatch('loadSubstance', this.$route.query);
-      this.renderModel = true;
     }
   }
 </script>

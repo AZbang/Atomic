@@ -1,5 +1,5 @@
 <template lang="html">
-  <list-substances :data="substances" :label="type.label"/>
+  <list-substances :data="substances" :label="'Самые частовстречающиеся ' + type.label"/>
 </template>
 
 <script>

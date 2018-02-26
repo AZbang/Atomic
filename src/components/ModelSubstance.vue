@@ -1,5 +1,5 @@
 <template>
-  <div id="model" ref="model" :class="data.typeStructure"></div>
+  <div class="model" ref="model" :class="data.typeStructure"></div>
 </template>
 
 <script>
@@ -31,7 +31,7 @@
 </script>
 
 <style lang="css">
-  #model {
+  .model {
     position: absolute;
     top: 0;
     left: 0;

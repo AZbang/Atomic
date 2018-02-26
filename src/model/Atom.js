@@ -47,15 +47,15 @@ export default class Atom {
 		this._bindEvents();
 	}
 	_bindEvents() {
-		this.model.domEvents.addEventListener(this.mesh, 'click', (event) => {
-			this.molecule.atoms.forEach((atom) => {
-				atom.meshSelect.visible = false;
-			});
-			this.meshSelect.visible = true;
-		})
+		// this.model.domEvents.addEventListener(this.mesh, 'click', (event) => {
+		// 	this.molecule.atoms.forEach((atom) => {
+		// 		atom.meshSelect.visible = false;
+		// 	});
+		// 	this.meshSelect.visible = true;
+		// })
 	}
 
 	remove() {
-		this.model.domEvents.unbind(this.mesh, 'click');
+		// this.model.domEvents.unbind(this.mesh, 'click');
 	}
 }
