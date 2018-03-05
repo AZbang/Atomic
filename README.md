@@ -1,5 +1,5 @@
 # Molecules — интерактивная модель строения веществ
-![banner](https://github.com/AZbang/media-storage/blob/master/Molecules/main.png)
+![banner](https://github.com/AZbang/media-storage/blob/master/Molecules/screen.png)
 
 ## Цель проекта: 
 **Разработать сервис-тренажер, который может послужить интерактивным справочником химических соединений.**
@@ -11,7 +11,7 @@
 
 **Таким образом Вы запоминаете в интерактивном виде строение, формулу и некоторые аспекты веществ просто находя его в базе.**
 
-## В планах:
+## Особенности:
 * Интерактивные режимы по запоминанию веществ.
 * Группировка веществ на секции, например "Кислоты", "Соли" и т.д.
 * История веществ, сохранения веществ.
@@ -25,10 +25,3 @@
 
 ## Лицензия:
 Проект распространяется под лицензии MIT.
-
-## Автор
- **Андрей Жевлаков (azbango5@gmail.com)**
- * __[VK](https://vk.com/id216312691)__
- * __[Group in VK: AZbang | Web Development](https://vk.com/azbang)__
- * __[Official Website](https://azbang.github.io/)__
- * __[Telegram](https://telegram.me/AZbang)__
