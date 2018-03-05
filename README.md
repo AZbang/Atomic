@@ -1,4 +1,4 @@
-# Molecules — интерактивная модель строения веществ
+# Molecules — мобильный интерактивный справочник химических соединений
 ![banner](https://github.com/AZbang/media-storage/blob/master/Molecules/screen.png)
 
 ## Цель проекта: 
